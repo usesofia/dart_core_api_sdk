@@ -1,8 +1,8 @@
-# openapi.model.ErrorEntity
+# dart_api_sdk.model.ErrorEntity
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dart_api_sdk/api.dart';
 ```
 
 ## Properties

@@ -1,8 +1,8 @@
-# openapi.model.ExceptionResponseEntity
+# dart_api_sdk.model.ExceptionResponseEntity
 
 ## Load the model package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dart_api_sdk/api.dart';
 ```
 
 ## Properties

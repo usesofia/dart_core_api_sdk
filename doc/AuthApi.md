@@ -1,8 +1,8 @@
-# openapi.api.AuthApi
+# dart_api_sdk.api.AuthApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dart_api_sdk/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -22,9 +22,9 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dart_api_sdk/api.dart';
 
-final api = Openapi().getAuthApi();
+final api = DartApiSdk().getAuthApi();
 final JsonObject body = Object; // JsonObject | 
 
 try {
@@ -62,9 +62,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dart_api_sdk/api.dart';
 
-final api = Openapi().getAuthApi();
+final api = DartApiSdk().getAuthApi();
 final JsonObject body = Object; // JsonObject | 
 
 try {
@@ -102,9 +102,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dart_api_sdk/api.dart';
 
-final api = Openapi().getAuthApi();
+final api = DartApiSdk().getAuthApi();
 final JsonObject body = Object; // JsonObject | 
 
 try {
@@ -142,9 +142,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dart_api_sdk/api.dart';
 
-final api = Openapi().getAuthApi();
+final api = DartApiSdk().getAuthApi();
 final SignUpWithEmailPasswordDto signUpWithEmailPasswordDto = ; // SignUpWithEmailPasswordDto | 
 
 try {

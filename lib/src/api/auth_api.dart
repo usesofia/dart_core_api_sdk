@@ -8,9 +8,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_value/json_object.dart';
-import 'package:openapi/src/model/exception_response_entity.dart';
-import 'package:openapi/src/model/sign_up_with_email_password_dto.dart';
-import 'package:openapi/src/model/user_entity.dart';
+import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
+import 'package:dart_api_sdk/src/model/sign_up_with_email_password_dto.dart';
+import 'package:dart_api_sdk/src/model/user_entity.dart';
 
 class AuthApi {
 

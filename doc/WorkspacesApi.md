@@ -1,8 +1,8 @@
-# openapi.api.WorkspacesApi
+# dart_api_sdk.api.WorkspacesApi
 
 ## Load the API package
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dart_api_sdk/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -19,9 +19,9 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:openapi/api.dart';
+import 'package:dart_api_sdk/api.dart';
 
-final api = Openapi().getWorkspacesApi();
+final api = DartApiSdk().getWorkspacesApi();
 
 try {
     api.workspacesControllerCreate();

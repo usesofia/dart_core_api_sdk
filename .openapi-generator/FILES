@@ -7,7 +7,7 @@ doc/ExceptionResponseEntity.md
 doc/SignUpWithEmailPasswordDto.md
 doc/UserEntity.md
 doc/WorkspacesApi.md
-lib/openapi.dart
+lib/dart_api_sdk.dart
 lib/src/api.dart
 lib/src/api/auth_api.dart
 lib/src/api/workspaces_api.dart

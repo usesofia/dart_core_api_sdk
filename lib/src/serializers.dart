@@ -11,13 +11,13 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart';
 import 'package:built_value/iso_8601_date_time_serializer.dart';
-import 'package:openapi/src/date_serializer.dart';
-import 'package:openapi/src/model/date.dart';
+import 'package:dart_api_sdk/src/date_serializer.dart';
+import 'package:dart_api_sdk/src/model/date.dart';
 
-import 'package:openapi/src/model/error_entity.dart';
-import 'package:openapi/src/model/exception_response_entity.dart';
-import 'package:openapi/src/model/sign_up_with_email_password_dto.dart';
-import 'package:openapi/src/model/user_entity.dart';
+import 'package:dart_api_sdk/src/model/error_entity.dart';
+import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
+import 'package:dart_api_sdk/src/model/sign_up_with_email_password_dto.dart';
+import 'package:dart_api_sdk/src/model/user_entity.dart';
 
 part 'serializers.g.dart';
 
