@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 analysis_options.yaml
 doc/AuthApi.md
@@ -26,9 +25,3 @@ lib/src/model/sign_up_with_email_password_dto.dart
 lib/src/model/user_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/auth_api_test.dart
-test/error_entity_test.dart
-test/exception_response_entity_test.dart
-test/sign_up_with_email_password_dto_test.dart
-test/user_entity_test.dart
-test/workspaces_api_test.dart
