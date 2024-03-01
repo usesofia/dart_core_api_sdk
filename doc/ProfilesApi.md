@@ -9,11 +9,53 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**profilesControllerGetMyProfile**](ProfilesApi.md#profilescontrollergetmyprofile) | **GET** /profiles/me | 
+[**profilesControllerCreate**](ProfilesApi.md#profilescontrollercreate) | **POST** /profiles | 
+[**profilesControllerGetMy**](ProfilesApi.md#profilescontrollergetmy) | **GET** /profiles/me | 
 
 
-# **profilesControllerGetMyProfile**
-> ProfileEntity profilesControllerGetMyProfile()
+# **profilesControllerCreate**
+> ProfileEntity profilesControllerCreate(createProfileDto)
+
+
+
+### Example
+```dart
+import 'package:dart_api_sdk/api.dart';
+
+final api = DartApiSdk().getProfilesApi();
+final CreateProfileDto createProfileDto = ; // CreateProfileDto | 
+
+try {
+    final response = api.profilesControllerCreate(createProfileDto);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling ProfilesApi->profilesControllerCreate: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createProfileDto** | [**CreateProfileDto**](CreateProfileDto.md)|  | 
+
+### Return type
+
+[**ProfileEntity**](ProfileEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **profilesControllerGetMy**
+> ProfileEntity profilesControllerGetMy()
 
 
 
@@ -24,10 +66,10 @@ import 'package:dart_api_sdk/api.dart';
 final api = DartApiSdk().getProfilesApi();
 
 try {
-    final response = api.profilesControllerGetMyProfile();
+    final response = api.profilesControllerGetMy();
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling ProfilesApi->profilesControllerGetMyProfile: $e\n');
+    print('Exception when calling ProfilesApi->profilesControllerGetMy: $e\n');
 }
 ```
 

@@ -2,6 +2,7 @@
 README.md
 analysis_options.yaml
 doc/AuthApi.md
+doc/CreateProfileDto.md
 doc/CredentialsEntity.md
 doc/ErrorEntity.md
 doc/ExceptionResponseEntity.md
@@ -25,6 +26,7 @@ lib/src/auth/basic_auth.dart
 lib/src/auth/bearer_auth.dart
 lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
+lib/src/model/create_profile_dto.dart
 lib/src/model/credentials_entity.dart
 lib/src/model/date.dart
 lib/src/model/error_entity.dart
@@ -37,9 +39,4 @@ lib/src/model/sign_up_with_email_password_dto.dart
 lib/src/model/user_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/credentials_entity_test.dart
-test/profile_entity_test.dart
-test/profiles_api_test.dart
-test/refresh_dto_test.dart
-test/send_email_verification_code_dto_test.dart
-test/sign_in_with_email_password_dto_test.dart
+test/create_profile_dto_test.dart

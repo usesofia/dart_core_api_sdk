@@ -13,6 +13,7 @@ export 'package:dart_api_sdk/src/api/auth_api.dart';
 export 'package:dart_api_sdk/src/api/profiles_api.dart';
 export 'package:dart_api_sdk/src/api/workspaces_api.dart';
 
+export 'package:dart_api_sdk/src/model/create_profile_dto.dart';
 export 'package:dart_api_sdk/src/model/credentials_entity.dart';
 export 'package:dart_api_sdk/src/model/error_entity.dart';
 export 'package:dart_api_sdk/src/model/exception_response_entity.dart';

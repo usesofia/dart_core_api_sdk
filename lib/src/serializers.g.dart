@@ -7,6 +7,7 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(CreateProfileDto.serializer)
       ..add(CredentialsEntity.serializer)
       ..add(ErrorEntity.serializer)
       ..add(ExceptionResponseEntity.serializer)

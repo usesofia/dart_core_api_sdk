@@ -68,12 +68,14 @@ Class | Method | HTTP request | Description
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSendEmailVerificationCode**](doc/AuthApi.md#authcontrollersendemailverificationcode) | **POST** /auth/sign-up/email-verification-code | 
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSignInWithEmailPassword**](doc/AuthApi.md#authcontrollersigninwithemailpassword) | **POST** /auth/sign-in/email-password | 
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSignUpWithEmailPassword**](doc/AuthApi.md#authcontrollersignupwithemailpassword) | **POST** /auth/sign-up/email-password | 
-[*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerGetMyProfile**](doc/ProfilesApi.md#profilescontrollergetmyprofile) | **GET** /profiles/me | 
+[*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerCreate**](doc/ProfilesApi.md#profilescontrollercreate) | **POST** /profiles | 
+[*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerGetMy**](doc/ProfilesApi.md#profilescontrollergetmy) | **GET** /profiles/me | 
 [*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerCreate**](doc/WorkspacesApi.md#workspacescontrollercreate) | **POST** /workspaces | 
 
 
 ## Documentation For Models
 
+ - [CreateProfileDto](doc/CreateProfileDto.md)
  - [CredentialsEntity](doc/CredentialsEntity.md)
  - [ErrorEntity](doc/ErrorEntity.md)
  - [ExceptionResponseEntity](doc/ExceptionResponseEntity.md)
