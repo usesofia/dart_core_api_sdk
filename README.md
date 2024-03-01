@@ -47,10 +47,11 @@ import 'package:dart_api_sdk/dart_api_sdk.dart';
 
 
 final api = DartApiSdk().getAuthApi();
-final JsonObject body = Object; // JsonObject | 
+final RefreshDto refreshDto = ; // RefreshDto | 
 
 try {
-    api.authControllerRefresh(body);
+    final response = await api.authControllerRefresh(refreshDto);
+    print(response);
 } catch on DioException (e) {
     print("Exception when calling AuthApi->authControllerRefresh: $e\n");
 }
@@ -67,13 +68,19 @@ Class | Method | HTTP request | Description
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSendEmailVerificationCode**](doc/AuthApi.md#authcontrollersendemailverificationcode) | **POST** /auth/sign-up/email-verification-code | 
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSignInWithEmailPassword**](doc/AuthApi.md#authcontrollersigninwithemailpassword) | **POST** /auth/sign-in/email-password | 
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSignUpWithEmailPassword**](doc/AuthApi.md#authcontrollersignupwithemailpassword) | **POST** /auth/sign-up/email-password | 
+[*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerGetMyProfile**](doc/ProfilesApi.md#profilescontrollergetmyprofile) | **GET** /profiles/me | 
 [*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerCreate**](doc/WorkspacesApi.md#workspacescontrollercreate) | **POST** /workspaces | 
 
 
 ## Documentation For Models
 
+ - [CredentialsEntity](doc/CredentialsEntity.md)
  - [ErrorEntity](doc/ErrorEntity.md)
  - [ExceptionResponseEntity](doc/ExceptionResponseEntity.md)
+ - [ProfileEntity](doc/ProfileEntity.md)
+ - [RefreshDto](doc/RefreshDto.md)
+ - [SendEmailVerificationCodeDto](doc/SendEmailVerificationCodeDto.md)
+ - [SignInWithEmailPasswordDto](doc/SignInWithEmailPasswordDto.md)
  - [SignUpWithEmailPasswordDto](doc/SignUpWithEmailPasswordDto.md)
  - [UserEntity](doc/UserEntity.md)
 

@@ -7,8 +7,13 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(CredentialsEntity.serializer)
       ..add(ErrorEntity.serializer)
       ..add(ExceptionResponseEntity.serializer)
+      ..add(ProfileEntity.serializer)
+      ..add(RefreshDto.serializer)
+      ..add(SendEmailVerificationCodeDto.serializer)
+      ..add(SignInWithEmailPasswordDto.serializer)
       ..add(SignUpWithEmailPasswordDto.serializer)
       ..add(UserEntity.serializer)
       ..addBuilderFactory(

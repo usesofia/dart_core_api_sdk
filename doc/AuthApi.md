@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **authControllerRefresh**
-> authControllerRefresh(body)
+> CredentialsEntity authControllerRefresh(refreshDto)
 
 
 
@@ -25,10 +25,11 @@ Method | HTTP request | Description
 import 'package:dart_api_sdk/api.dart';
 
 final api = DartApiSdk().getAuthApi();
-final JsonObject body = Object; // JsonObject | 
+final RefreshDto refreshDto = ; // RefreshDto | 
 
 try {
-    api.authControllerRefresh(body);
+    final response = api.authControllerRefresh(refreshDto);
+    print(response);
 } catch on DioException (e) {
     print('Exception when calling AuthApi->authControllerRefresh: $e\n');
 }
@@ -38,11 +39,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **JsonObject**|  | 
+ **refreshDto** | [**RefreshDto**](RefreshDto.md)|  | 
 
 ### Return type
 
-void (empty response body)
+[**CredentialsEntity**](CredentialsEntity.md)
 
 ### Authorization
 
@@ -51,12 +52,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authControllerSendEmailVerificationCode**
-> authControllerSendEmailVerificationCode(body)
+> authControllerSendEmailVerificationCode(sendEmailVerificationCodeDto)
 
 
 
@@ -65,10 +66,10 @@ No authorization required
 import 'package:dart_api_sdk/api.dart';
 
 final api = DartApiSdk().getAuthApi();
-final JsonObject body = Object; // JsonObject | 
+final SendEmailVerificationCodeDto sendEmailVerificationCodeDto = ; // SendEmailVerificationCodeDto | 
 
 try {
-    api.authControllerSendEmailVerificationCode(body);
+    api.authControllerSendEmailVerificationCode(sendEmailVerificationCodeDto);
 } catch on DioException (e) {
     print('Exception when calling AuthApi->authControllerSendEmailVerificationCode: $e\n');
 }
@@ -78,7 +79,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **JsonObject**|  | 
+ **sendEmailVerificationCodeDto** | [**SendEmailVerificationCodeDto**](SendEmailVerificationCodeDto.md)|  | 
 
 ### Return type
 
@@ -91,12 +92,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authControllerSignInWithEmailPassword**
-> authControllerSignInWithEmailPassword(body)
+> CredentialsEntity authControllerSignInWithEmailPassword(signInWithEmailPasswordDto)
 
 
 
@@ -105,10 +106,11 @@ No authorization required
 import 'package:dart_api_sdk/api.dart';
 
 final api = DartApiSdk().getAuthApi();
-final JsonObject body = Object; // JsonObject | 
+final SignInWithEmailPasswordDto signInWithEmailPasswordDto = ; // SignInWithEmailPasswordDto | 
 
 try {
-    api.authControllerSignInWithEmailPassword(body);
+    final response = api.authControllerSignInWithEmailPassword(signInWithEmailPasswordDto);
+    print(response);
 } catch on DioException (e) {
     print('Exception when calling AuthApi->authControllerSignInWithEmailPassword: $e\n');
 }
@@ -118,11 +120,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **JsonObject**|  | 
+ **signInWithEmailPasswordDto** | [**SignInWithEmailPasswordDto**](SignInWithEmailPasswordDto.md)|  | 
 
 ### Return type
 
-void (empty response body)
+[**CredentialsEntity**](CredentialsEntity.md)
 
 ### Authorization
 
@@ -131,7 +133,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -7,8 +7,11 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_value/json_object.dart';
+import 'package:dart_api_sdk/src/model/credentials_entity.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
+import 'package:dart_api_sdk/src/model/refresh_dto.dart';
+import 'package:dart_api_sdk/src/model/send_email_verification_code_dto.dart';
+import 'package:dart_api_sdk/src/model/sign_in_with_email_password_dto.dart';
 import 'package:dart_api_sdk/src/model/sign_up_with_email_password_dto.dart';
 import 'package:dart_api_sdk/src/model/user_entity.dart';
 
@@ -24,7 +27,7 @@ class AuthApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [refreshDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -32,10 +35,10 @@ class AuthApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [CredentialsEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> authControllerRefresh({ 
-    required JsonObject body,
+  Future<Response<CredentialsEntity>> authControllerRefresh({ 
+    required RefreshDto refreshDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -60,7 +63,8 @@ class AuthApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = body;
+      const _type = FullType(RefreshDto);
+      _bodyData = _serializers.serialize(refreshDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -83,14 +87,42 @@ class AuthApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    CredentialsEntity? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(CredentialsEntity),
+      ) as CredentialsEntity;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<CredentialsEntity>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// authControllerSendEmailVerificationCode
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [sendEmailVerificationCodeDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -101,7 +133,7 @@ class AuthApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> authControllerSendEmailVerificationCode({ 
-    required JsonObject body,
+    required SendEmailVerificationCodeDto sendEmailVerificationCodeDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -126,7 +158,8 @@ class AuthApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = body;
+      const _type = FullType(SendEmailVerificationCodeDto);
+      _bodyData = _serializers.serialize(sendEmailVerificationCodeDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -156,7 +189,7 @@ class AuthApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [signInWithEmailPasswordDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -164,10 +197,10 @@ class AuthApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [CredentialsEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> authControllerSignInWithEmailPassword({ 
-    required JsonObject body,
+  Future<Response<CredentialsEntity>> authControllerSignInWithEmailPassword({ 
+    required SignInWithEmailPasswordDto signInWithEmailPasswordDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -192,7 +225,8 @@ class AuthApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = body;
+      const _type = FullType(SignInWithEmailPasswordDto);
+      _bodyData = _serializers.serialize(signInWithEmailPasswordDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -215,7 +249,35 @@ class AuthApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    CredentialsEntity? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(CredentialsEntity),
+      ) as CredentialsEntity;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<CredentialsEntity>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// authControllerSignUpWithEmailPassword
