@@ -7,9 +7,9 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_value/json_object.dart';
 import 'package:dart_api_sdk/src/model/check_email_in_use_dto.dart';
 import 'package:dart_api_sdk/src/model/credentials_entity.dart';
+import 'package:dart_api_sdk/src/model/email_in_use_entity.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_api_sdk/src/model/refresh_dto.dart';
 import 'package:dart_api_sdk/src/model/send_email_verification_code_dto.dart';
@@ -37,9 +37,9 @@ class AuthApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [JsonObject] as data
+  /// Returns a [Future] containing a [Response] with a [EmailInUseEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<JsonObject>> authControllerCheckEmailInUse({ 
+  Future<Response<EmailInUseEntity>> authControllerCheckEmailInUse({ 
     required CheckEmailInUseDto checkEmailInUseDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -89,14 +89,14 @@ class AuthApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    JsonObject? _responseData;
+    EmailInUseEntity? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(JsonObject),
-      ) as JsonObject;
+        specifiedType: const FullType(EmailInUseEntity),
+      ) as EmailInUseEntity;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -108,7 +108,7 @@ class AuthApi {
       );
     }
 
-    return Response<JsonObject>(
+    return Response<EmailInUseEntity>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

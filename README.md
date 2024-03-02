@@ -79,6 +79,7 @@ Class | Method | HTTP request | Description
  - [CheckEmailInUseDto](doc/CheckEmailInUseDto.md)
  - [CreateProfileDto](doc/CreateProfileDto.md)
  - [CredentialsEntity](doc/CredentialsEntity.md)
+ - [EmailInUseEntity](doc/EmailInUseEntity.md)
  - [ErrorEntity](doc/ErrorEntity.md)
  - [ExceptionResponseEntity](doc/ExceptionResponseEntity.md)
  - [ProfileEntity](doc/ProfileEntity.md)

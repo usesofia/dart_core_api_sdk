@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **authControllerCheckEmailInUse**
-> JsonObject authControllerCheckEmailInUse(checkEmailInUseDto)
+> EmailInUseEntity authControllerCheckEmailInUse(checkEmailInUseDto)
 
 
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JsonObject**](JsonObject.md)
+[**EmailInUseEntity**](EmailInUseEntity.md)
 
 ### Authorization
 

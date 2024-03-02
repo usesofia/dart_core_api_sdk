@@ -5,6 +5,7 @@ doc/AuthApi.md
 doc/CheckEmailInUseDto.md
 doc/CreateProfileDto.md
 doc/CredentialsEntity.md
+doc/EmailInUseEntity.md
 doc/ErrorEntity.md
 doc/ExceptionResponseEntity.md
 doc/ProfileEntity.md
@@ -31,6 +32,7 @@ lib/src/model/check_email_in_use_dto.dart
 lib/src/model/create_profile_dto.dart
 lib/src/model/credentials_entity.dart
 lib/src/model/date.dart
+lib/src/model/email_in_use_entity.dart
 lib/src/model/error_entity.dart
 lib/src/model/exception_response_entity.dart
 lib/src/model/profile_entity.dart
@@ -41,4 +43,4 @@ lib/src/model/sign_up_with_email_password_dto.dart
 lib/src/model/user_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/check_email_in_use_dto_test.dart
+test/email_in_use_entity_test.dart

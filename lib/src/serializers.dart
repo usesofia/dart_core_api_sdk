@@ -17,6 +17,7 @@ import 'package:dart_api_sdk/src/model/date.dart';
 import 'package:dart_api_sdk/src/model/check_email_in_use_dto.dart';
 import 'package:dart_api_sdk/src/model/create_profile_dto.dart';
 import 'package:dart_api_sdk/src/model/credentials_entity.dart';
+import 'package:dart_api_sdk/src/model/email_in_use_entity.dart';
 import 'package:dart_api_sdk/src/model/error_entity.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_api_sdk/src/model/profile_entity.dart';
@@ -32,6 +33,7 @@ part 'serializers.g.dart';
   CheckEmailInUseDto,
   CreateProfileDto,
   CredentialsEntity,
+  EmailInUseEntity,
   ErrorEntity,
   ExceptionResponseEntity,
   ProfileEntity,
