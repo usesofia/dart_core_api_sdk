@@ -39,4 +39,3 @@ lib/src/model/sign_up_with_email_password_dto.dart
 lib/src/model/user_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/create_profile_dto_test.dart

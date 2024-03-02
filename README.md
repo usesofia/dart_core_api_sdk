@@ -47,13 +47,12 @@ import 'package:dart_api_sdk/dart_api_sdk.dart';
 
 
 final api = DartApiSdk().getAuthApi();
-final RefreshDto refreshDto = ; // RefreshDto | 
 
 try {
-    final response = await api.authControllerRefresh(refreshDto);
+    final response = await api.authControllerCheckEmailInUse();
     print(response);
 } catch on DioException (e) {
-    print("Exception when calling AuthApi->authControllerRefresh: $e\n");
+    print("Exception when calling AuthApi->authControllerCheckEmailInUse: $e\n");
 }
 
 ```
@@ -64,6 +63,7 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+[*AuthApi*](doc/AuthApi.md) | [**authControllerCheckEmailInUse**](doc/AuthApi.md#authcontrollercheckemailinuse) | **POST** /auth/check-email-in-use | 
 [*AuthApi*](doc/AuthApi.md) | [**authControllerRefresh**](doc/AuthApi.md#authcontrollerrefresh) | **POST** /auth/refresh | 
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSendEmailVerificationCode**](doc/AuthApi.md#authcontrollersendemailverificationcode) | **POST** /auth/sign-up/email-verification-code | 
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSignInWithEmailPassword**](doc/AuthApi.md#authcontrollersigninwithemailpassword) | **POST** /auth/sign-in/email-password | 
