@@ -47,9 +47,10 @@ import 'package:dart_api_sdk/dart_api_sdk.dart';
 
 
 final api = DartApiSdk().getAuthApi();
+final CheckEmailInUseDto checkEmailInUseDto = ; // CheckEmailInUseDto | 
 
 try {
-    final response = await api.authControllerCheckEmailInUse();
+    final response = await api.authControllerCheckEmailInUse(checkEmailInUseDto);
     print(response);
 } catch on DioException (e) {
     print("Exception when calling AuthApi->authControllerCheckEmailInUse: $e\n");
@@ -75,6 +76,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [CheckEmailInUseDto](doc/CheckEmailInUseDto.md)
  - [CreateProfileDto](doc/CreateProfileDto.md)
  - [CredentialsEntity](doc/CredentialsEntity.md)
  - [ErrorEntity](doc/ErrorEntity.md)

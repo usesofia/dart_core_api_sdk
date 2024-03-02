@@ -8,6 +8,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_value/json_object.dart';
+import 'package:dart_api_sdk/src/model/check_email_in_use_dto.dart';
 import 'package:dart_api_sdk/src/model/credentials_entity.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_api_sdk/src/model/refresh_dto.dart';
@@ -28,6 +29,7 @@ class AuthApi {
   /// 
   ///
   /// Parameters:
+  /// * [checkEmailInUseDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -38,6 +40,7 @@ class AuthApi {
   /// Returns a [Future] containing a [Response] with a [JsonObject] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>> authControllerCheckEmailInUse({ 
+    required CheckEmailInUseDto checkEmailInUseDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -55,11 +58,31 @@ class AuthApi {
         'secure': <Map<String, String>>[],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(CheckEmailInUseDto);
+      _bodyData = _serializers.serialize(checkEmailInUseDto, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioException(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,

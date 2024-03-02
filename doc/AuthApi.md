@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **authControllerCheckEmailInUse**
-> JsonObject authControllerCheckEmailInUse()
+> JsonObject authControllerCheckEmailInUse(checkEmailInUseDto)
 
 
 
@@ -26,9 +26,10 @@ Method | HTTP request | Description
 import 'package:dart_api_sdk/api.dart';
 
 final api = DartApiSdk().getAuthApi();
+final CheckEmailInUseDto checkEmailInUseDto = ; // CheckEmailInUseDto | 
 
 try {
-    final response = api.authControllerCheckEmailInUse();
+    final response = api.authControllerCheckEmailInUse(checkEmailInUseDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AuthApi->authControllerCheckEmailInUse: $e\n');
@@ -36,7 +37,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **checkEmailInUseDto** | [**CheckEmailInUseDto**](CheckEmailInUseDto.md)|  | 
 
 ### Return type
 
@@ -48,7 +52,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

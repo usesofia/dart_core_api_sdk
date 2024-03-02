@@ -14,6 +14,7 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:dart_api_sdk/src/date_serializer.dart';
 import 'package:dart_api_sdk/src/model/date.dart';
 
+import 'package:dart_api_sdk/src/model/check_email_in_use_dto.dart';
 import 'package:dart_api_sdk/src/model/create_profile_dto.dart';
 import 'package:dart_api_sdk/src/model/credentials_entity.dart';
 import 'package:dart_api_sdk/src/model/error_entity.dart';
@@ -28,6 +29,7 @@ import 'package:dart_api_sdk/src/model/user_entity.dart';
 part 'serializers.g.dart';
 
 @SerializersFor([
+  CheckEmailInUseDto,
   CreateProfileDto,
   CredentialsEntity,
   ErrorEntity,
