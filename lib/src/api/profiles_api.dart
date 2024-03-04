@@ -7,7 +7,7 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:dart_api_sdk/src/model/create_profile_dto.dart';
+import 'package:dart_api_sdk/src/model/create_profile_request_dto.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_api_sdk/src/model/profile_entity.dart';
 
@@ -23,7 +23,7 @@ class ProfilesApi {
   /// 
   ///
   /// Parameters:
-  /// * [createProfileDto] 
+  /// * [createProfileRequestDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,7 +34,7 @@ class ProfilesApi {
   /// Returns a [Future] containing a [Response] with a [ProfileEntity] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ProfileEntity>> profilesControllerCreate({ 
-    required CreateProfileDto createProfileDto,
+    required CreateProfileRequestDto createProfileRequestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -59,8 +59,8 @@ class ProfilesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateProfileDto);
-      _bodyData = _serializers.serialize(createProfileDto, specifiedType: _type);
+      const _type = FullType(CreateProfileRequestDto);
+      _bodyData = _serializers.serialize(createProfileRequestDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

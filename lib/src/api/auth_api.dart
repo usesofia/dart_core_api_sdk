@@ -7,14 +7,14 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:dart_api_sdk/src/model/check_email_in_use_dto.dart';
+import 'package:dart_api_sdk/src/model/check_email_in_use_request_dto.dart';
 import 'package:dart_api_sdk/src/model/credentials_entity.dart';
 import 'package:dart_api_sdk/src/model/email_in_use_entity.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
-import 'package:dart_api_sdk/src/model/refresh_dto.dart';
-import 'package:dart_api_sdk/src/model/send_email_verification_code_dto.dart';
-import 'package:dart_api_sdk/src/model/sign_in_with_email_password_dto.dart';
-import 'package:dart_api_sdk/src/model/sign_up_with_email_password_dto.dart';
+import 'package:dart_api_sdk/src/model/refresh_request_dto.dart';
+import 'package:dart_api_sdk/src/model/send_email_verification_code_request_dto.dart';
+import 'package:dart_api_sdk/src/model/sign_in_with_email_password_request_dto.dart';
+import 'package:dart_api_sdk/src/model/sign_up_with_email_password_request_dto.dart';
 import 'package:dart_api_sdk/src/model/user_entity.dart';
 
 class AuthApi {
@@ -29,7 +29,7 @@ class AuthApi {
   /// 
   ///
   /// Parameters:
-  /// * [checkEmailInUseDto] 
+  /// * [checkEmailInUseRequestDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -40,7 +40,7 @@ class AuthApi {
   /// Returns a [Future] containing a [Response] with a [EmailInUseEntity] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<EmailInUseEntity>> authControllerCheckEmailInUse({ 
-    required CheckEmailInUseDto checkEmailInUseDto,
+    required CheckEmailInUseRequestDto checkEmailInUseRequestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -65,8 +65,8 @@ class AuthApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CheckEmailInUseDto);
-      _bodyData = _serializers.serialize(checkEmailInUseDto, specifiedType: _type);
+      const _type = FullType(CheckEmailInUseRequestDto);
+      _bodyData = _serializers.serialize(checkEmailInUseRequestDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -124,7 +124,7 @@ class AuthApi {
   /// 
   ///
   /// Parameters:
-  /// * [refreshDto] 
+  /// * [refreshRequestDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -135,7 +135,7 @@ class AuthApi {
   /// Returns a [Future] containing a [Response] with a [CredentialsEntity] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<CredentialsEntity>> authControllerRefresh({ 
-    required RefreshDto refreshDto,
+    required RefreshRequestDto refreshRequestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -160,8 +160,8 @@ class AuthApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(RefreshDto);
-      _bodyData = _serializers.serialize(refreshDto, specifiedType: _type);
+      const _type = FullType(RefreshRequestDto);
+      _bodyData = _serializers.serialize(refreshRequestDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -219,7 +219,7 @@ class AuthApi {
   /// 
   ///
   /// Parameters:
-  /// * [sendEmailVerificationCodeDto] 
+  /// * [sendEmailVerificationCodeRequestDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -230,7 +230,7 @@ class AuthApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> authControllerSendEmailVerificationCode({ 
-    required SendEmailVerificationCodeDto sendEmailVerificationCodeDto,
+    required SendEmailVerificationCodeRequestDto sendEmailVerificationCodeRequestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -255,8 +255,8 @@ class AuthApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(SendEmailVerificationCodeDto);
-      _bodyData = _serializers.serialize(sendEmailVerificationCodeDto, specifiedType: _type);
+      const _type = FullType(SendEmailVerificationCodeRequestDto);
+      _bodyData = _serializers.serialize(sendEmailVerificationCodeRequestDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -286,7 +286,7 @@ class AuthApi {
   /// 
   ///
   /// Parameters:
-  /// * [signInWithEmailPasswordDto] 
+  /// * [signInWithEmailPasswordRequestDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -297,7 +297,7 @@ class AuthApi {
   /// Returns a [Future] containing a [Response] with a [CredentialsEntity] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<CredentialsEntity>> authControllerSignInWithEmailPassword({ 
-    required SignInWithEmailPasswordDto signInWithEmailPasswordDto,
+    required SignInWithEmailPasswordRequestDto signInWithEmailPasswordRequestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -322,8 +322,8 @@ class AuthApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(SignInWithEmailPasswordDto);
-      _bodyData = _serializers.serialize(signInWithEmailPasswordDto, specifiedType: _type);
+      const _type = FullType(SignInWithEmailPasswordRequestDto);
+      _bodyData = _serializers.serialize(signInWithEmailPasswordRequestDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -381,7 +381,7 @@ class AuthApi {
   /// 
   ///
   /// Parameters:
-  /// * [signUpWithEmailPasswordDto] 
+  /// * [signUpWithEmailPasswordRequestDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -392,7 +392,7 @@ class AuthApi {
   /// Returns a [Future] containing a [Response] with a [UserEntity] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UserEntity>> authControllerSignUpWithEmailPassword({ 
-    required SignUpWithEmailPasswordDto signUpWithEmailPasswordDto,
+    required SignUpWithEmailPasswordRequestDto signUpWithEmailPasswordRequestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -417,8 +417,8 @@ class AuthApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(SignUpWithEmailPasswordDto);
-      _bodyData = _serializers.serialize(signUpWithEmailPasswordDto, specifiedType: _type);
+      const _type = FullType(SignUpWithEmailPasswordRequestDto);
+      _bodyData = _serializers.serialize(signUpWithEmailPasswordRequestDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

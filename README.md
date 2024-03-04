@@ -47,10 +47,10 @@ import 'package:dart_api_sdk/dart_api_sdk.dart';
 
 
 final api = DartApiSdk().getAuthApi();
-final CheckEmailInUseDto checkEmailInUseDto = ; // CheckEmailInUseDto | 
+final CheckEmailInUseRequestDto checkEmailInUseRequestDto = ; // CheckEmailInUseRequestDto | 
 
 try {
-    final response = await api.authControllerCheckEmailInUse(checkEmailInUseDto);
+    final response = await api.authControllerCheckEmailInUse(checkEmailInUseRequestDto);
     print(response);
 } catch on DioException (e) {
     print("Exception when calling AuthApi->authControllerCheckEmailInUse: $e\n");
@@ -76,17 +76,17 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [CheckEmailInUseDto](doc/CheckEmailInUseDto.md)
- - [CreateProfileDto](doc/CreateProfileDto.md)
+ - [CheckEmailInUseRequestDto](doc/CheckEmailInUseRequestDto.md)
+ - [CreateProfileRequestDto](doc/CreateProfileRequestDto.md)
  - [CredentialsEntity](doc/CredentialsEntity.md)
  - [EmailInUseEntity](doc/EmailInUseEntity.md)
  - [ErrorEntity](doc/ErrorEntity.md)
  - [ExceptionResponseEntity](doc/ExceptionResponseEntity.md)
  - [ProfileEntity](doc/ProfileEntity.md)
- - [RefreshDto](doc/RefreshDto.md)
- - [SendEmailVerificationCodeDto](doc/SendEmailVerificationCodeDto.md)
- - [SignInWithEmailPasswordDto](doc/SignInWithEmailPasswordDto.md)
- - [SignUpWithEmailPasswordDto](doc/SignUpWithEmailPasswordDto.md)
+ - [RefreshRequestDto](doc/RefreshRequestDto.md)
+ - [SendEmailVerificationCodeRequestDto](doc/SendEmailVerificationCodeRequestDto.md)
+ - [SignInWithEmailPasswordRequestDto](doc/SignInWithEmailPasswordRequestDto.md)
+ - [SignUpWithEmailPasswordRequestDto](doc/SignUpWithEmailPasswordRequestDto.md)
  - [UserEntity](doc/UserEntity.md)
 
 

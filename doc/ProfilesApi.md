@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **profilesControllerCreate**
-> ProfileEntity profilesControllerCreate(createProfileDto)
+> ProfileEntity profilesControllerCreate(createProfileRequestDto)
 
 
 
@@ -23,10 +23,10 @@ Method | HTTP request | Description
 import 'package:dart_api_sdk/api.dart';
 
 final api = DartApiSdk().getProfilesApi();
-final CreateProfileDto createProfileDto = ; // CreateProfileDto | 
+final CreateProfileRequestDto createProfileRequestDto = ; // CreateProfileRequestDto | 
 
 try {
-    final response = api.profilesControllerCreate(createProfileDto);
+    final response = api.profilesControllerCreate(createProfileRequestDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling ProfilesApi->profilesControllerCreate: $e\n');
@@ -37,7 +37,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createProfileDto** | [**CreateProfileDto**](CreateProfileDto.md)|  | 
+ **createProfileRequestDto** | [**CreateProfileRequestDto**](CreateProfileRequestDto.md)|  | 
 
 ### Return type
 

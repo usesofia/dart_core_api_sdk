@@ -7,17 +7,17 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
-      ..add(CheckEmailInUseDto.serializer)
-      ..add(CreateProfileDto.serializer)
+      ..add(CheckEmailInUseRequestDto.serializer)
+      ..add(CreateProfileRequestDto.serializer)
       ..add(CredentialsEntity.serializer)
       ..add(EmailInUseEntity.serializer)
       ..add(ErrorEntity.serializer)
       ..add(ExceptionResponseEntity.serializer)
       ..add(ProfileEntity.serializer)
-      ..add(RefreshDto.serializer)
-      ..add(SendEmailVerificationCodeDto.serializer)
-      ..add(SignInWithEmailPasswordDto.serializer)
-      ..add(SignUpWithEmailPasswordDto.serializer)
+      ..add(RefreshRequestDto.serializer)
+      ..add(SendEmailVerificationCodeRequestDto.serializer)
+      ..add(SignInWithEmailPasswordRequestDto.serializer)
+      ..add(SignUpWithEmailPasswordRequestDto.serializer)
       ..add(UserEntity.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ErrorEntity)]),

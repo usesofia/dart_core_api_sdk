@@ -14,33 +14,33 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:dart_api_sdk/src/date_serializer.dart';
 import 'package:dart_api_sdk/src/model/date.dart';
 
-import 'package:dart_api_sdk/src/model/check_email_in_use_dto.dart';
-import 'package:dart_api_sdk/src/model/create_profile_dto.dart';
+import 'package:dart_api_sdk/src/model/check_email_in_use_request_dto.dart';
+import 'package:dart_api_sdk/src/model/create_profile_request_dto.dart';
 import 'package:dart_api_sdk/src/model/credentials_entity.dart';
 import 'package:dart_api_sdk/src/model/email_in_use_entity.dart';
 import 'package:dart_api_sdk/src/model/error_entity.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_api_sdk/src/model/profile_entity.dart';
-import 'package:dart_api_sdk/src/model/refresh_dto.dart';
-import 'package:dart_api_sdk/src/model/send_email_verification_code_dto.dart';
-import 'package:dart_api_sdk/src/model/sign_in_with_email_password_dto.dart';
-import 'package:dart_api_sdk/src/model/sign_up_with_email_password_dto.dart';
+import 'package:dart_api_sdk/src/model/refresh_request_dto.dart';
+import 'package:dart_api_sdk/src/model/send_email_verification_code_request_dto.dart';
+import 'package:dart_api_sdk/src/model/sign_in_with_email_password_request_dto.dart';
+import 'package:dart_api_sdk/src/model/sign_up_with_email_password_request_dto.dart';
 import 'package:dart_api_sdk/src/model/user_entity.dart';
 
 part 'serializers.g.dart';
 
 @SerializersFor([
-  CheckEmailInUseDto,
-  CreateProfileDto,
+  CheckEmailInUseRequestDto,
+  CreateProfileRequestDto,
   CredentialsEntity,
   EmailInUseEntity,
   ErrorEntity,
   ExceptionResponseEntity,
   ProfileEntity,
-  RefreshDto,
-  SendEmailVerificationCodeDto,
-  SignInWithEmailPasswordDto,
-  SignUpWithEmailPasswordDto,
+  RefreshRequestDto,
+  SendEmailVerificationCodeRequestDto,
+  SignInWithEmailPasswordRequestDto,
+  SignUpWithEmailPasswordRequestDto,
   UserEntity,
 ])
 Serializers serializers = (_$serializers.toBuilder()

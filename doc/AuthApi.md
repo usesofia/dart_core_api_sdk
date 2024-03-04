@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **authControllerCheckEmailInUse**
-> EmailInUseEntity authControllerCheckEmailInUse(checkEmailInUseDto)
+> EmailInUseEntity authControllerCheckEmailInUse(checkEmailInUseRequestDto)
 
 
 
@@ -26,10 +26,10 @@ Method | HTTP request | Description
 import 'package:dart_api_sdk/api.dart';
 
 final api = DartApiSdk().getAuthApi();
-final CheckEmailInUseDto checkEmailInUseDto = ; // CheckEmailInUseDto | 
+final CheckEmailInUseRequestDto checkEmailInUseRequestDto = ; // CheckEmailInUseRequestDto | 
 
 try {
-    final response = api.authControllerCheckEmailInUse(checkEmailInUseDto);
+    final response = api.authControllerCheckEmailInUse(checkEmailInUseRequestDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AuthApi->authControllerCheckEmailInUse: $e\n');
@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **checkEmailInUseDto** | [**CheckEmailInUseDto**](CheckEmailInUseDto.md)|  | 
+ **checkEmailInUseRequestDto** | [**CheckEmailInUseRequestDto**](CheckEmailInUseRequestDto.md)|  | 
 
 ### Return type
 
@@ -58,7 +58,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authControllerRefresh**
-> CredentialsEntity authControllerRefresh(refreshDto)
+> CredentialsEntity authControllerRefresh(refreshRequestDto)
 
 
 
@@ -67,10 +67,10 @@ No authorization required
 import 'package:dart_api_sdk/api.dart';
 
 final api = DartApiSdk().getAuthApi();
-final RefreshDto refreshDto = ; // RefreshDto | 
+final RefreshRequestDto refreshRequestDto = ; // RefreshRequestDto | 
 
 try {
-    final response = api.authControllerRefresh(refreshDto);
+    final response = api.authControllerRefresh(refreshRequestDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AuthApi->authControllerRefresh: $e\n');
@@ -81,7 +81,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **refreshDto** | [**RefreshDto**](RefreshDto.md)|  | 
+ **refreshRequestDto** | [**RefreshRequestDto**](RefreshRequestDto.md)|  | 
 
 ### Return type
 
@@ -99,7 +99,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authControllerSendEmailVerificationCode**
-> authControllerSendEmailVerificationCode(sendEmailVerificationCodeDto)
+> authControllerSendEmailVerificationCode(sendEmailVerificationCodeRequestDto)
 
 
 
@@ -108,10 +108,10 @@ No authorization required
 import 'package:dart_api_sdk/api.dart';
 
 final api = DartApiSdk().getAuthApi();
-final SendEmailVerificationCodeDto sendEmailVerificationCodeDto = ; // SendEmailVerificationCodeDto | 
+final SendEmailVerificationCodeRequestDto sendEmailVerificationCodeRequestDto = ; // SendEmailVerificationCodeRequestDto | 
 
 try {
-    api.authControllerSendEmailVerificationCode(sendEmailVerificationCodeDto);
+    api.authControllerSendEmailVerificationCode(sendEmailVerificationCodeRequestDto);
 } catch on DioException (e) {
     print('Exception when calling AuthApi->authControllerSendEmailVerificationCode: $e\n');
 }
@@ -121,7 +121,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sendEmailVerificationCodeDto** | [**SendEmailVerificationCodeDto**](SendEmailVerificationCodeDto.md)|  | 
+ **sendEmailVerificationCodeRequestDto** | [**SendEmailVerificationCodeRequestDto**](SendEmailVerificationCodeRequestDto.md)|  | 
 
 ### Return type
 
@@ -139,7 +139,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authControllerSignInWithEmailPassword**
-> CredentialsEntity authControllerSignInWithEmailPassword(signInWithEmailPasswordDto)
+> CredentialsEntity authControllerSignInWithEmailPassword(signInWithEmailPasswordRequestDto)
 
 
 
@@ -148,10 +148,10 @@ No authorization required
 import 'package:dart_api_sdk/api.dart';
 
 final api = DartApiSdk().getAuthApi();
-final SignInWithEmailPasswordDto signInWithEmailPasswordDto = ; // SignInWithEmailPasswordDto | 
+final SignInWithEmailPasswordRequestDto signInWithEmailPasswordRequestDto = ; // SignInWithEmailPasswordRequestDto | 
 
 try {
-    final response = api.authControllerSignInWithEmailPassword(signInWithEmailPasswordDto);
+    final response = api.authControllerSignInWithEmailPassword(signInWithEmailPasswordRequestDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AuthApi->authControllerSignInWithEmailPassword: $e\n');
@@ -162,7 +162,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **signInWithEmailPasswordDto** | [**SignInWithEmailPasswordDto**](SignInWithEmailPasswordDto.md)|  | 
+ **signInWithEmailPasswordRequestDto** | [**SignInWithEmailPasswordRequestDto**](SignInWithEmailPasswordRequestDto.md)|  | 
 
 ### Return type
 
@@ -180,7 +180,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authControllerSignUpWithEmailPassword**
-> UserEntity authControllerSignUpWithEmailPassword(signUpWithEmailPasswordDto)
+> UserEntity authControllerSignUpWithEmailPassword(signUpWithEmailPasswordRequestDto)
 
 
 
@@ -189,10 +189,10 @@ No authorization required
 import 'package:dart_api_sdk/api.dart';
 
 final api = DartApiSdk().getAuthApi();
-final SignUpWithEmailPasswordDto signUpWithEmailPasswordDto = ; // SignUpWithEmailPasswordDto | 
+final SignUpWithEmailPasswordRequestDto signUpWithEmailPasswordRequestDto = ; // SignUpWithEmailPasswordRequestDto | 
 
 try {
-    final response = api.authControllerSignUpWithEmailPassword(signUpWithEmailPasswordDto);
+    final response = api.authControllerSignUpWithEmailPassword(signUpWithEmailPasswordRequestDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AuthApi->authControllerSignUpWithEmailPassword: $e\n');
@@ -203,7 +203,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **signUpWithEmailPasswordDto** | [**SignUpWithEmailPasswordDto**](SignUpWithEmailPasswordDto.md)|  | 
+ **signUpWithEmailPasswordRequestDto** | [**SignUpWithEmailPasswordRequestDto**](SignUpWithEmailPasswordRequestDto.md)|  | 
 
 ### Return type
 
