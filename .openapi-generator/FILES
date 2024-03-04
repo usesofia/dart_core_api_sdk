@@ -43,9 +43,3 @@ lib/src/model/sign_up_with_email_password_request_dto.dart
 lib/src/model/user_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/check_email_in_use_request_dto_test.dart
-test/create_profile_request_dto_test.dart
-test/refresh_request_dto_test.dart
-test/send_email_verification_code_request_dto_test.dart
-test/sign_in_with_email_password_request_dto_test.dart
-test/sign_up_with_email_password_request_dto_test.dart
