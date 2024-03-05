@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **workspacesControllerCreate**
-> workspacesControllerCreate()
+> workspacesControllerCreate(body)
 
 
 
@@ -23,16 +23,20 @@ Method | HTTP request | Description
 import 'package:dart_api_sdk/api.dart';
 
 final api = DartApiSdk().getWorkspacesApi();
+final JsonObject body = Object; // JsonObject | 
 
 try {
-    api.workspacesControllerCreate();
+    api.workspacesControllerCreate(body);
 } catch on DioException (e) {
     print('Exception when calling WorkspacesApi->workspacesControllerCreate: $e\n');
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **JsonObject**|  | 
 
 ### Return type
 
@@ -44,7 +48,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
