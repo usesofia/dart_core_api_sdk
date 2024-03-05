@@ -50,6 +50,10 @@ part 'serializers.g.dart';
   WorkspaceJoinRequestEntity,
 ])
 Serializers serializers = (_$serializers.toBuilder()
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(UserRelatedWorkspaceEntity)]),
+        () => ListBuilder<UserRelatedWorkspaceEntity>(),
+      )
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())
       ..add(const DateSerializer())
