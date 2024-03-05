@@ -72,6 +72,7 @@ Class | Method | HTTP request | Description
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerCreate**](doc/ProfilesApi.md#profilescontrollercreate) | **POST** /profiles | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerGetMy**](doc/ProfilesApi.md#profilescontrollergetmy) | **GET** /profiles/me | 
 [*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerCreate**](doc/WorkspacesApi.md#workspacescontrollercreate) | **POST** /workspaces | 
+[*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerFetchUserRelatedWorkspaces**](doc/WorkspacesApi.md#workspacescontrollerfetchuserrelatedworkspaces) | **GET** /workspaces/related-to-me | 
 
 
 ## Documentation For Models
