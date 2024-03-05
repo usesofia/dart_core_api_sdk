@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **workspacesControllerCreate**
-> workspacesControllerCreate(body)
+> WorkspaceEntity workspacesControllerCreate(body)
 
 
 
@@ -26,7 +26,8 @@ final api = DartApiSdk().getWorkspacesApi();
 final JsonObject body = Object; // JsonObject | 
 
 try {
-    api.workspacesControllerCreate(body);
+    final response = api.workspacesControllerCreate(body);
+    print(response);
 } catch on DioException (e) {
     print('Exception when calling WorkspacesApi->workspacesControllerCreate: $e\n');
 }
@@ -40,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**WorkspaceEntity**](WorkspaceEntity.md)
 
 ### Authorization
 
@@ -49,12 +50,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **workspacesControllerFetchUserRelatedWorkspaces**
-> workspacesControllerFetchUserRelatedWorkspaces()
+> UserRelatedWorkspaceEntity workspacesControllerFetchUserRelatedWorkspaces()
 
 
 
@@ -65,7 +66,8 @@ import 'package:dart_api_sdk/api.dart';
 final api = DartApiSdk().getWorkspacesApi();
 
 try {
-    api.workspacesControllerFetchUserRelatedWorkspaces();
+    final response = api.workspacesControllerFetchUserRelatedWorkspaces();
+    print(response);
 } catch on DioException (e) {
     print('Exception when calling WorkspacesApi->workspacesControllerFetchUserRelatedWorkspaces: $e\n');
 }
@@ -76,7 +78,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**UserRelatedWorkspaceEntity**](UserRelatedWorkspaceEntity.md)
 
 ### Authorization
 
@@ -85,7 +87,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -19,6 +19,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(SignInWithEmailPasswordRequestDto.serializer)
       ..add(SignUpWithEmailPasswordRequestDto.serializer)
       ..add(UserEntity.serializer)
+      ..add(UserRelatedWorkspaceEntity.serializer)
+      ..add(WorkspaceEntity.serializer)
+      ..add(WorkspaceJoinRequestEntity.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ErrorEntity)]),
           () => new ListBuilder<ErrorEntity>())

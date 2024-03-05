@@ -11,6 +11,7 @@ import 'package:dart_api_sdk/src/auth/bearer_auth.dart';
 import 'package:dart_api_sdk/src/auth/oauth.dart';
 import 'package:dart_api_sdk/src/api/auth_api.dart';
 import 'package:dart_api_sdk/src/api/profiles_api.dart';
+import 'package:dart_api_sdk/src/api/workspace_join_requests_api.dart';
 import 'package:dart_api_sdk/src/api/workspaces_api.dart';
 
 class DartApiSdk {
@@ -77,6 +78,12 @@ class DartApiSdk {
   /// by doing that all interceptors will not be executed
   ProfilesApi getProfilesApi() {
     return ProfilesApi(dio, serializers);
+  }
+
+  /// Get WorkspaceJoinRequestsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  WorkspaceJoinRequestsApi getWorkspaceJoinRequestsApi() {
+    return WorkspaceJoinRequestsApi(dio, serializers);
   }
 
   /// Get WorkspacesApi instance, base route and serializer can be overridden by a given but be careful,

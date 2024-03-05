@@ -26,6 +26,9 @@ import 'package:dart_api_sdk/src/model/send_email_verification_code_request_dto.
 import 'package:dart_api_sdk/src/model/sign_in_with_email_password_request_dto.dart';
 import 'package:dart_api_sdk/src/model/sign_up_with_email_password_request_dto.dart';
 import 'package:dart_api_sdk/src/model/user_entity.dart';
+import 'package:dart_api_sdk/src/model/user_related_workspace_entity.dart';
+import 'package:dart_api_sdk/src/model/workspace_entity.dart';
+import 'package:dart_api_sdk/src/model/workspace_join_request_entity.dart';
 
 part 'serializers.g.dart';
 
@@ -42,6 +45,9 @@ part 'serializers.g.dart';
   SignInWithEmailPasswordRequestDto,
   SignUpWithEmailPasswordRequestDto,
   UserEntity,
+  UserRelatedWorkspaceEntity,
+  WorkspaceEntity,
+  WorkspaceJoinRequestEntity,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..add(const OneOfSerializer())

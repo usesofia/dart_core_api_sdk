@@ -8,6 +8,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_value/json_object.dart';
+import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
+import 'package:dart_api_sdk/src/model/user_related_workspace_entity.dart';
+import 'package:dart_api_sdk/src/model/workspace_entity.dart';
 
 class WorkspacesApi {
 
@@ -29,9 +32,9 @@ class WorkspacesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [WorkspaceEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> workspacesControllerCreate({ 
+  Future<Response<WorkspaceEntity>> workspacesControllerCreate({ 
     required JsonObject body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -80,7 +83,35 @@ class WorkspacesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    WorkspaceEntity? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(WorkspaceEntity),
+      ) as WorkspaceEntity;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<WorkspaceEntity>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// workspacesControllerFetchUserRelatedWorkspaces
@@ -94,9 +125,9 @@ class WorkspacesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [UserRelatedWorkspaceEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> workspacesControllerFetchUserRelatedWorkspaces({ 
+  Future<Response<UserRelatedWorkspaceEntity>> workspacesControllerFetchUserRelatedWorkspaces({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -125,7 +156,35 @@ class WorkspacesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    UserRelatedWorkspaceEntity? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(UserRelatedWorkspaceEntity),
+      ) as UserRelatedWorkspaceEntity;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<UserRelatedWorkspaceEntity>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
 }
