@@ -51,7 +51,3 @@ lib/src/model/workspace_entity.dart
 lib/src/model/workspace_join_request_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/user_related_workspace_entity_test.dart
-test/workspace_entity_test.dart
-test/workspace_join_request_entity_test.dart
-test/workspace_join_requests_api_test.dart
