@@ -16,7 +16,7 @@ class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
   @override
   final String type;
   @override
-  final String numberOfEmployeesRange;
+  final String? numberOfEmployeesRange;
   @override
   final String creatorUserId;
   @override
@@ -33,7 +33,7 @@ class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
       required this.prettyId,
       required this.name,
       required this.type,
-      required this.numberOfEmployeesRange,
+      this.numberOfEmployeesRange,
       required this.creatorUserId,
       required this.createdAt,
       required this.relationType})
@@ -46,8 +46,6 @@ class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
         name, r'UserRelatedWorkspaceEntity', 'name');
     BuiltValueNullFieldError.checkNotNull(
         type, r'UserRelatedWorkspaceEntity', 'type');
-    BuiltValueNullFieldError.checkNotNull(numberOfEmployeesRange,
-        r'UserRelatedWorkspaceEntity', 'numberOfEmployeesRange');
     BuiltValueNullFieldError.checkNotNull(
         creatorUserId, r'UserRelatedWorkspaceEntity', 'creatorUserId');
     BuiltValueNullFieldError.checkNotNull(
@@ -193,10 +191,7 @@ class UserRelatedWorkspaceEntityBuilder
                 name, r'UserRelatedWorkspaceEntity', 'name'),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'UserRelatedWorkspaceEntity', 'type'),
-            numberOfEmployeesRange: BuiltValueNullFieldError.checkNotNull(
-                numberOfEmployeesRange,
-                r'UserRelatedWorkspaceEntity',
-                'numberOfEmployeesRange'),
+            numberOfEmployeesRange: numberOfEmployeesRange,
             creatorUserId: BuiltValueNullFieldError.checkNotNull(
                 creatorUserId, r'UserRelatedWorkspaceEntity', 'creatorUserId'),
             createdAt: BuiltValueNullFieldError.checkNotNull(

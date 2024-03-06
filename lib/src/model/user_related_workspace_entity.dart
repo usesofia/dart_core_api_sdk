@@ -34,7 +34,7 @@ abstract class UserRelatedWorkspaceEntity implements Built<UserRelatedWorkspaceE
   String get type;
 
   @BuiltValueField(wireName: r'numberOfEmployeesRange')
-  String get numberOfEmployeesRange;
+  String? get numberOfEmployeesRange;
 
   @BuiltValueField(wireName: r'creatorUserId')
   String get creatorUserId;
@@ -88,11 +88,13 @@ class _$UserRelatedWorkspaceEntitySerializer implements PrimitiveSerializer<User
       object.type,
       specifiedType: const FullType(String),
     );
-    yield r'numberOfEmployeesRange';
-    yield serializers.serialize(
-      object.numberOfEmployeesRange,
-      specifiedType: const FullType(String),
-    );
+    if (object.numberOfEmployeesRange != null) {
+      yield r'numberOfEmployeesRange';
+      yield serializers.serialize(
+        object.numberOfEmployeesRange,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'creatorUserId';
     yield serializers.serialize(
       object.creatorUserId,
