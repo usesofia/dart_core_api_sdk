@@ -9,6 +9,7 @@ part of 'serializers.dart';
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CheckEmailInUseRequestDto.serializer)
       ..add(CreateProfileRequestDto.serializer)
+      ..add(CreateWorkspaceRequestDto.serializer)
       ..add(CredentialsEntity.serializer)
       ..add(EmailInUseEntity.serializer)
       ..add(ErrorEntity.serializer)

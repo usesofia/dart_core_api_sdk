@@ -16,8 +16,6 @@ class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
   @override
   final String type;
   @override
-  final String? numberOfEmployeesRange;
-  @override
   final String creatorUserId;
   @override
   final DateTime createdAt;
@@ -33,7 +31,6 @@ class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
       required this.prettyId,
       required this.name,
       required this.type,
-      this.numberOfEmployeesRange,
       required this.creatorUserId,
       required this.createdAt,
       required this.relationType})
@@ -71,7 +68,6 @@ class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
         prettyId == other.prettyId &&
         name == other.name &&
         type == other.type &&
-        numberOfEmployeesRange == other.numberOfEmployeesRange &&
         creatorUserId == other.creatorUserId &&
         createdAt == other.createdAt &&
         relationType == other.relationType;
@@ -84,7 +80,6 @@ class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
     _$hash = $jc(_$hash, prettyId.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, numberOfEmployeesRange.hashCode);
     _$hash = $jc(_$hash, creatorUserId.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, relationType.hashCode);
@@ -99,7 +94,6 @@ class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
           ..add('prettyId', prettyId)
           ..add('name', name)
           ..add('type', type)
-          ..add('numberOfEmployeesRange', numberOfEmployeesRange)
           ..add('creatorUserId', creatorUserId)
           ..add('createdAt', createdAt)
           ..add('relationType', relationType))
@@ -128,11 +122,6 @@ class UserRelatedWorkspaceEntityBuilder
   String? get type => _$this._type;
   set type(String? type) => _$this._type = type;
 
-  String? _numberOfEmployeesRange;
-  String? get numberOfEmployeesRange => _$this._numberOfEmployeesRange;
-  set numberOfEmployeesRange(String? numberOfEmployeesRange) =>
-      _$this._numberOfEmployeesRange = numberOfEmployeesRange;
-
   String? _creatorUserId;
   String? get creatorUserId => _$this._creatorUserId;
   set creatorUserId(String? creatorUserId) =>
@@ -157,7 +146,6 @@ class UserRelatedWorkspaceEntityBuilder
       _prettyId = $v.prettyId;
       _name = $v.name;
       _type = $v.type;
-      _numberOfEmployeesRange = $v.numberOfEmployeesRange;
       _creatorUserId = $v.creatorUserId;
       _createdAt = $v.createdAt;
       _relationType = $v.relationType;
@@ -191,7 +179,6 @@ class UserRelatedWorkspaceEntityBuilder
                 name, r'UserRelatedWorkspaceEntity', 'name'),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'UserRelatedWorkspaceEntity', 'type'),
-            numberOfEmployeesRange: numberOfEmployeesRange,
             creatorUserId: BuiltValueNullFieldError.checkNotNull(
                 creatorUserId, r'UserRelatedWorkspaceEntity', 'creatorUserId'),
             createdAt: BuiltValueNullFieldError.checkNotNull(

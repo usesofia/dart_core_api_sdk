@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **prettyId** | **String** |  | 
 **name** | **String** |  | 
 **type** | **String** |  | 
-**numberOfEmployeesRange** | **String** |  | [optional] 
 **creatorUserId** | **String** |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **relationType** | **String** |  | 

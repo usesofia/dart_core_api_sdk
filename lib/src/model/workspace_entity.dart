@@ -15,7 +15,6 @@ part 'workspace_entity.g.dart';
 /// * [prettyId] 
 /// * [name] 
 /// * [type] 
-/// * [numberOfEmployeesRange] 
 /// * [creatorUserId] 
 /// * [createdAt] 
 @BuiltValue()
@@ -31,9 +30,6 @@ abstract class WorkspaceEntity implements Built<WorkspaceEntity, WorkspaceEntity
 
   @BuiltValueField(wireName: r'type')
   String get type;
-
-  @BuiltValueField(wireName: r'numberOfEmployeesRange')
-  String get numberOfEmployeesRange;
 
   @BuiltValueField(wireName: r'creatorUserId')
   String get creatorUserId;
@@ -82,11 +78,6 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(String),
-    );
-    yield r'numberOfEmployeesRange';
-    yield serializers.serialize(
-      object.numberOfEmployeesRange,
       specifiedType: const FullType(String),
     );
     yield r'creatorUserId';
@@ -149,13 +140,6 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
             specifiedType: const FullType(String),
           ) as String;
           result.type = valueDes;
-          break;
-        case r'numberOfEmployeesRange':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.numberOfEmployeesRange = valueDes;
           break;
         case r'creatorUserId':
           final valueDes = serializers.deserialize(

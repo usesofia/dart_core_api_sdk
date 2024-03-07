@@ -6,23 +6,16 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'user_related_workspace_entity.g.dart';
+part 'create_workspace_request_dto.g.dart';
 
-/// UserRelatedWorkspaceEntity
+/// CreateWorkspaceRequestDto
 ///
 /// Properties:
-/// * [id] 
 /// * [prettyId] 
 /// * [name] 
 /// * [type] 
-/// * [creatorUserId] 
-/// * [createdAt] 
-/// * [relationType] 
 @BuiltValue()
-abstract class UserRelatedWorkspaceEntity implements Built<UserRelatedWorkspaceEntity, UserRelatedWorkspaceEntityBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
+abstract class CreateWorkspaceRequestDto implements Built<CreateWorkspaceRequestDto, CreateWorkspaceRequestDtoBuilder> {
   @BuiltValueField(wireName: r'prettyId')
   String get prettyId;
 
@@ -32,43 +25,29 @@ abstract class UserRelatedWorkspaceEntity implements Built<UserRelatedWorkspaceE
   @BuiltValueField(wireName: r'type')
   String get type;
 
-  @BuiltValueField(wireName: r'creatorUserId')
-  String get creatorUserId;
+  CreateWorkspaceRequestDto._();
 
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime get createdAt;
-
-  @BuiltValueField(wireName: r'relationType')
-  String get relationType;
-
-  UserRelatedWorkspaceEntity._();
-
-  factory UserRelatedWorkspaceEntity([void updates(UserRelatedWorkspaceEntityBuilder b)]) = _$UserRelatedWorkspaceEntity;
+  factory CreateWorkspaceRequestDto([void updates(CreateWorkspaceRequestDtoBuilder b)]) = _$CreateWorkspaceRequestDto;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserRelatedWorkspaceEntityBuilder b) => b;
+  static void _defaults(CreateWorkspaceRequestDtoBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UserRelatedWorkspaceEntity> get serializer => _$UserRelatedWorkspaceEntitySerializer();
+  static Serializer<CreateWorkspaceRequestDto> get serializer => _$CreateWorkspaceRequestDtoSerializer();
 }
 
-class _$UserRelatedWorkspaceEntitySerializer implements PrimitiveSerializer<UserRelatedWorkspaceEntity> {
+class _$CreateWorkspaceRequestDtoSerializer implements PrimitiveSerializer<CreateWorkspaceRequestDto> {
   @override
-  final Iterable<Type> types = const [UserRelatedWorkspaceEntity, _$UserRelatedWorkspaceEntity];
+  final Iterable<Type> types = const [CreateWorkspaceRequestDto, _$CreateWorkspaceRequestDto];
 
   @override
-  final String wireName = r'UserRelatedWorkspaceEntity';
+  final String wireName = r'CreateWorkspaceRequestDto';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    UserRelatedWorkspaceEntity object, {
+    CreateWorkspaceRequestDto object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
     yield r'prettyId';
     yield serializers.serialize(
       object.prettyId,
@@ -84,27 +63,12 @@ class _$UserRelatedWorkspaceEntitySerializer implements PrimitiveSerializer<User
       object.type,
       specifiedType: const FullType(String),
     );
-    yield r'creatorUserId';
-    yield serializers.serialize(
-      object.creatorUserId,
-      specifiedType: const FullType(String),
-    );
-    yield r'createdAt';
-    yield serializers.serialize(
-      object.createdAt,
-      specifiedType: const FullType(DateTime),
-    );
-    yield r'relationType';
-    yield serializers.serialize(
-      object.relationType,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    UserRelatedWorkspaceEntity object, {
+    CreateWorkspaceRequestDto object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -115,20 +79,13 @@ class _$UserRelatedWorkspaceEntitySerializer implements PrimitiveSerializer<User
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required UserRelatedWorkspaceEntityBuilder result,
+    required CreateWorkspaceRequestDtoBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
         case r'prettyId':
           final valueDes = serializers.deserialize(
             value,
@@ -150,27 +107,6 @@ class _$UserRelatedWorkspaceEntitySerializer implements PrimitiveSerializer<User
           ) as String;
           result.type = valueDes;
           break;
-        case r'creatorUserId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.creatorUserId = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'relationType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.relationType = valueDes;
-          break;
         default:
           unhandled.add(key);
           unhandled.add(value);
@@ -180,12 +116,12 @@ class _$UserRelatedWorkspaceEntitySerializer implements PrimitiveSerializer<User
   }
 
   @override
-  UserRelatedWorkspaceEntity deserialize(
+  CreateWorkspaceRequestDto deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = UserRelatedWorkspaceEntityBuilder();
+    final result = CreateWorkspaceRequestDtoBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

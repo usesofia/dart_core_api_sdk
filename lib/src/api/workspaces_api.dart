@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
+import 'package:dart_api_sdk/src/model/create_workspace_request_dto.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_api_sdk/src/model/user_related_workspace_entity.dart';
 import 'package:dart_api_sdk/src/model/workspace_entity.dart';
@@ -25,7 +25,7 @@ class WorkspacesApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [createWorkspaceRequestDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -36,7 +36,7 @@ class WorkspacesApi {
   /// Returns a [Future] containing a [Response] with a [WorkspaceEntity] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<WorkspaceEntity>> workspacesControllerCreate({ 
-    required JsonObject body,
+    required CreateWorkspaceRequestDto createWorkspaceRequestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -61,7 +61,8 @@ class WorkspacesApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = body;
+      const _type = FullType(CreateWorkspaceRequestDto);
+      _bodyData = _serializers.serialize(createWorkspaceRequestDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

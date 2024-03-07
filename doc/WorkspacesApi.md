@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **workspacesControllerCreate**
-> WorkspaceEntity workspacesControllerCreate(body)
+> WorkspaceEntity workspacesControllerCreate(createWorkspaceRequestDto)
 
 
 
@@ -23,10 +23,10 @@ Method | HTTP request | Description
 import 'package:dart_api_sdk/api.dart';
 
 final api = DartApiSdk().getWorkspacesApi();
-final JsonObject body = Object; // JsonObject | 
+final CreateWorkspaceRequestDto createWorkspaceRequestDto = ; // CreateWorkspaceRequestDto | 
 
 try {
-    final response = api.workspacesControllerCreate(body);
+    final response = api.workspacesControllerCreate(createWorkspaceRequestDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling WorkspacesApi->workspacesControllerCreate: $e\n');
@@ -37,7 +37,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **JsonObject**|  | 
+ **createWorkspaceRequestDto** | [**CreateWorkspaceRequestDto**](CreateWorkspaceRequestDto.md)|  | 
 
 ### Return type
 

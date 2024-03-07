@@ -16,6 +16,7 @@ export 'package:dart_api_sdk/src/api/workspaces_api.dart';
 
 export 'package:dart_api_sdk/src/model/check_email_in_use_request_dto.dart';
 export 'package:dart_api_sdk/src/model/create_profile_request_dto.dart';
+export 'package:dart_api_sdk/src/model/create_workspace_request_dto.dart';
 export 'package:dart_api_sdk/src/model/credentials_entity.dart';
 export 'package:dart_api_sdk/src/model/email_in_use_entity.dart';
 export 'package:dart_api_sdk/src/model/error_entity.dart';

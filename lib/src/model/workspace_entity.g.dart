@@ -16,8 +16,6 @@ class _$WorkspaceEntity extends WorkspaceEntity {
   @override
   final String type;
   @override
-  final String numberOfEmployeesRange;
-  @override
   final String creatorUserId;
   @override
   final DateTime createdAt;
@@ -30,7 +28,6 @@ class _$WorkspaceEntity extends WorkspaceEntity {
       required this.prettyId,
       required this.name,
       required this.type,
-      required this.numberOfEmployeesRange,
       required this.creatorUserId,
       required this.createdAt})
       : super._() {
@@ -39,8 +36,6 @@ class _$WorkspaceEntity extends WorkspaceEntity {
         prettyId, r'WorkspaceEntity', 'prettyId');
     BuiltValueNullFieldError.checkNotNull(name, r'WorkspaceEntity', 'name');
     BuiltValueNullFieldError.checkNotNull(type, r'WorkspaceEntity', 'type');
-    BuiltValueNullFieldError.checkNotNull(
-        numberOfEmployeesRange, r'WorkspaceEntity', 'numberOfEmployeesRange');
     BuiltValueNullFieldError.checkNotNull(
         creatorUserId, r'WorkspaceEntity', 'creatorUserId');
     BuiltValueNullFieldError.checkNotNull(
@@ -63,7 +58,6 @@ class _$WorkspaceEntity extends WorkspaceEntity {
         prettyId == other.prettyId &&
         name == other.name &&
         type == other.type &&
-        numberOfEmployeesRange == other.numberOfEmployeesRange &&
         creatorUserId == other.creatorUserId &&
         createdAt == other.createdAt;
   }
@@ -75,7 +69,6 @@ class _$WorkspaceEntity extends WorkspaceEntity {
     _$hash = $jc(_$hash, prettyId.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, numberOfEmployeesRange.hashCode);
     _$hash = $jc(_$hash, creatorUserId.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jf(_$hash);
@@ -89,7 +82,6 @@ class _$WorkspaceEntity extends WorkspaceEntity {
           ..add('prettyId', prettyId)
           ..add('name', name)
           ..add('type', type)
-          ..add('numberOfEmployeesRange', numberOfEmployeesRange)
           ..add('creatorUserId', creatorUserId)
           ..add('createdAt', createdAt))
         .toString();
@@ -116,11 +108,6 @@ class WorkspaceEntityBuilder
   String? get type => _$this._type;
   set type(String? type) => _$this._type = type;
 
-  String? _numberOfEmployeesRange;
-  String? get numberOfEmployeesRange => _$this._numberOfEmployeesRange;
-  set numberOfEmployeesRange(String? numberOfEmployeesRange) =>
-      _$this._numberOfEmployeesRange = numberOfEmployeesRange;
-
   String? _creatorUserId;
   String? get creatorUserId => _$this._creatorUserId;
   set creatorUserId(String? creatorUserId) =>
@@ -141,7 +128,6 @@ class WorkspaceEntityBuilder
       _prettyId = $v.prettyId;
       _name = $v.name;
       _type = $v.type;
-      _numberOfEmployeesRange = $v.numberOfEmployeesRange;
       _creatorUserId = $v.creatorUserId;
       _createdAt = $v.createdAt;
       _$v = null;
@@ -174,10 +160,6 @@ class WorkspaceEntityBuilder
                 name, r'WorkspaceEntity', 'name'),
             type: BuiltValueNullFieldError.checkNotNull(
                 type, r'WorkspaceEntity', 'type'),
-            numberOfEmployeesRange: BuiltValueNullFieldError.checkNotNull(
-                numberOfEmployeesRange,
-                r'WorkspaceEntity',
-                'numberOfEmployeesRange'),
             creatorUserId: BuiltValueNullFieldError.checkNotNull(
                 creatorUserId, r'WorkspaceEntity', 'creatorUserId'),
             createdAt: BuiltValueNullFieldError.checkNotNull(

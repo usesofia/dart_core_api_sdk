@@ -4,6 +4,7 @@ analysis_options.yaml
 doc/AuthApi.md
 doc/CheckEmailInUseRequestDto.md
 doc/CreateProfileRequestDto.md
+doc/CreateWorkspaceRequestDto.md
 doc/CredentialsEntity.md
 doc/EmailInUseEntity.md
 doc/ErrorEntity.md
@@ -35,6 +36,7 @@ lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
 lib/src/model/check_email_in_use_request_dto.dart
 lib/src/model/create_profile_request_dto.dart
+lib/src/model/create_workspace_request_dto.dart
 lib/src/model/credentials_entity.dart
 lib/src/model/date.dart
 lib/src/model/email_in_use_entity.dart
@@ -51,3 +53,4 @@ lib/src/model/workspace_entity.dart
 lib/src/model/workspace_join_request_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/create_workspace_request_dto_test.dart

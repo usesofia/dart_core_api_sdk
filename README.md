@@ -80,6 +80,7 @@ Class | Method | HTTP request | Description
 
  - [CheckEmailInUseRequestDto](doc/CheckEmailInUseRequestDto.md)
  - [CreateProfileRequestDto](doc/CreateProfileRequestDto.md)
+ - [CreateWorkspaceRequestDto](doc/CreateWorkspaceRequestDto.md)
  - [CredentialsEntity](doc/CredentialsEntity.md)
  - [EmailInUseEntity](doc/EmailInUseEntity.md)
  - [ErrorEntity](doc/ErrorEntity.md)
