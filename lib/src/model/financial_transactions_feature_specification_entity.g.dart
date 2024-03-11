@@ -13,7 +13,7 @@ class _$FinancialTransactionsFeatureSpecificationEntity
   @override
   final bool unlimited;
   @override
-  final num maxPerMonth;
+  final num? maxPerMonth;
   @override
   final String productId;
 
@@ -28,15 +28,13 @@ class _$FinancialTransactionsFeatureSpecificationEntity
   _$FinancialTransactionsFeatureSpecificationEntity._(
       {required this.id,
       required this.unlimited,
-      required this.maxPerMonth,
+      this.maxPerMonth,
       required this.productId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         id, r'FinancialTransactionsFeatureSpecificationEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(unlimited,
         r'FinancialTransactionsFeatureSpecificationEntity', 'unlimited');
-    BuiltValueNullFieldError.checkNotNull(maxPerMonth,
-        r'FinancialTransactionsFeatureSpecificationEntity', 'maxPerMonth');
     BuiltValueNullFieldError.checkNotNull(productId,
         r'FinancialTransactionsFeatureSpecificationEntity', 'productId');
   }
@@ -148,10 +146,7 @@ class FinancialTransactionsFeatureSpecificationEntityBuilder
                 unlimited,
                 r'FinancialTransactionsFeatureSpecificationEntity',
                 'unlimited'),
-            maxPerMonth: BuiltValueNullFieldError.checkNotNull(
-                maxPerMonth,
-                r'FinancialTransactionsFeatureSpecificationEntity',
-                'maxPerMonth'),
+            maxPerMonth: maxPerMonth,
             productId: BuiltValueNullFieldError.checkNotNull(
                 productId,
                 r'FinancialTransactionsFeatureSpecificationEntity',

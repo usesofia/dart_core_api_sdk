@@ -24,7 +24,7 @@ abstract class FinancialTransactionsFeatureSpecificationEntity implements Built<
   bool get unlimited;
 
   @BuiltValueField(wireName: r'maxPerMonth')
-  num get maxPerMonth;
+  num? get maxPerMonth;
 
   @BuiltValueField(wireName: r'productId')
   String get productId;
@@ -62,11 +62,13 @@ class _$FinancialTransactionsFeatureSpecificationEntitySerializer implements Pri
       object.unlimited,
       specifiedType: const FullType(bool),
     );
-    yield r'maxPerMonth';
-    yield serializers.serialize(
-      object.maxPerMonth,
-      specifiedType: const FullType(num),
-    );
+    if (object.maxPerMonth != null) {
+      yield r'maxPerMonth';
+      yield serializers.serialize(
+        object.maxPerMonth,
+        specifiedType: const FullType(num),
+      );
+    }
     yield r'productId';
     yield serializers.serialize(
       object.productId,
