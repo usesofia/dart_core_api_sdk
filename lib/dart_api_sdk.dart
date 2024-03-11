@@ -11,6 +11,7 @@ export 'package:dart_api_sdk/src/model/date.dart';
 
 export 'package:dart_api_sdk/src/api/auth_api.dart';
 export 'package:dart_api_sdk/src/api/profiles_api.dart';
+export 'package:dart_api_sdk/src/api/subscription_products_api.dart';
 export 'package:dart_api_sdk/src/api/workspace_join_requests_api.dart';
 export 'package:dart_api_sdk/src/api/workspace_subscriptions_api.dart';
 export 'package:dart_api_sdk/src/api/workspaces_api.dart';
@@ -25,6 +26,8 @@ export 'package:dart_api_sdk/src/model/email_in_use_entity.dart';
 export 'package:dart_api_sdk/src/model/error_entity.dart';
 export 'package:dart_api_sdk/src/model/exception_response_entity.dart';
 export 'package:dart_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
+export 'package:dart_api_sdk/src/model/payments_manager_product_data_entity.dart';
+export 'package:dart_api_sdk/src/model/payments_manager_product_price_entity.dart';
 export 'package:dart_api_sdk/src/model/profile_entity.dart';
 export 'package:dart_api_sdk/src/model/refresh_request_dto.dart';
 export 'package:dart_api_sdk/src/model/send_email_verification_code_request_dto.dart';

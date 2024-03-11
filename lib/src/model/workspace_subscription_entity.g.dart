@@ -6,6 +6,76 @@ part of 'workspace_subscription_entity.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const WorkspaceSubscriptionEntityStatusEnum
+    _$workspaceSubscriptionEntityStatusEnum_ACTIVE =
+    const WorkspaceSubscriptionEntityStatusEnum._('ACTIVE');
+const WorkspaceSubscriptionEntityStatusEnum
+    _$workspaceSubscriptionEntityStatusEnum_INACTIVE =
+    const WorkspaceSubscriptionEntityStatusEnum._('INACTIVE');
+const WorkspaceSubscriptionEntityStatusEnum
+    _$workspaceSubscriptionEntityStatusEnum_TRIAL =
+    const WorkspaceSubscriptionEntityStatusEnum._('TRIAL');
+
+WorkspaceSubscriptionEntityStatusEnum
+    _$workspaceSubscriptionEntityStatusEnumValueOf(String name) {
+  switch (name) {
+    case 'ACTIVE':
+      return _$workspaceSubscriptionEntityStatusEnum_ACTIVE;
+    case 'INACTIVE':
+      return _$workspaceSubscriptionEntityStatusEnum_INACTIVE;
+    case 'TRIAL':
+      return _$workspaceSubscriptionEntityStatusEnum_TRIAL;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<WorkspaceSubscriptionEntityStatusEnum>
+    _$workspaceSubscriptionEntityStatusEnumValues = new BuiltSet<
+        WorkspaceSubscriptionEntityStatusEnum>(const <WorkspaceSubscriptionEntityStatusEnum>[
+  _$workspaceSubscriptionEntityStatusEnum_ACTIVE,
+  _$workspaceSubscriptionEntityStatusEnum_INACTIVE,
+  _$workspaceSubscriptionEntityStatusEnum_TRIAL,
+]);
+
+Serializer<WorkspaceSubscriptionEntityStatusEnum>
+    _$workspaceSubscriptionEntityStatusEnumSerializer =
+    new _$WorkspaceSubscriptionEntityStatusEnumSerializer();
+
+class _$WorkspaceSubscriptionEntityStatusEnumSerializer
+    implements PrimitiveSerializer<WorkspaceSubscriptionEntityStatusEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'ACTIVE': 'ACTIVE',
+    'INACTIVE': 'INACTIVE',
+    'TRIAL': 'TRIAL',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'ACTIVE': 'ACTIVE',
+    'INACTIVE': 'INACTIVE',
+    'TRIAL': 'TRIAL',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    WorkspaceSubscriptionEntityStatusEnum
+  ];
+  @override
+  final String wireName = 'WorkspaceSubscriptionEntityStatusEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers, WorkspaceSubscriptionEntityStatusEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  WorkspaceSubscriptionEntityStatusEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      WorkspaceSubscriptionEntityStatusEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$WorkspaceSubscriptionEntity extends WorkspaceSubscriptionEntity {
   @override
   final String id;
@@ -16,7 +86,7 @@ class _$WorkspaceSubscriptionEntity extends WorkspaceSubscriptionEntity {
   @override
   final SubscriptionProductEntity product;
   @override
-  final num status;
+  final WorkspaceSubscriptionEntityStatusEnum status;
   @override
   final DateTime createdAt;
 
@@ -117,9 +187,10 @@ class WorkspaceSubscriptionEntityBuilder
   set product(SubscriptionProductEntityBuilder? product) =>
       _$this._product = product;
 
-  num? _status;
-  num? get status => _$this._status;
-  set status(num? status) => _$this._status = status;
+  WorkspaceSubscriptionEntityStatusEnum? _status;
+  WorkspaceSubscriptionEntityStatusEnum? get status => _$this._status;
+  set status(WorkspaceSubscriptionEntityStatusEnum? status) =>
+      _$this._status = status;
 
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;

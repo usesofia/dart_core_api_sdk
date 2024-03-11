@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **connectionFeatureSpecification** | [**ConnectionFeatureSpecificationEntity**](ConnectionFeatureSpecificationEntity.md) |  | 
 **financialTransactionsFeatureSpecification** | [**FinancialTransactionsFeatureSpecificationEntity**](FinancialTransactionsFeatureSpecificationEntity.md) |  | 
 **aiChatFeatureSpecification** | [**AiChatFeatureSpecificationEntity**](AiChatFeatureSpecificationEntity.md) |  | 
+**paymentsManagerData** | [**PaymentsManagerProductDataEntity**](PaymentsManagerProductDataEntity.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

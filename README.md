@@ -72,6 +72,7 @@ Class | Method | HTTP request | Description
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSignUpWithEmailPassword**](doc/AuthApi.md#authcontrollersignupwithemailpassword) | **POST** /auth/sign-up/email-password | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerCreate**](doc/ProfilesApi.md#profilescontrollercreate) | **POST** /profiles | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerGetMy**](doc/ProfilesApi.md#profilescontrollergetmy) | **GET** /profiles/me | 
+[*SubscriptionProductsApi*](doc/SubscriptionProductsApi.md) | [**subscriptionProductsControllerList**](doc/SubscriptionProductsApi.md#subscriptionproductscontrollerlist) | **GET** /subscription-products | 
 [*WorkspaceJoinRequestsApi*](doc/WorkspaceJoinRequestsApi.md) | [**workspaceJoinRequestsControllerCreateNewPendingOrReturnCurrent**](doc/WorkspaceJoinRequestsApi.md#workspacejoinrequestscontrollercreatenewpendingorreturncurrent) | **POST** /workspaces/{workspaceId}/join-requests | 
 [*WorkspaceSubscriptionsApi*](doc/WorkspaceSubscriptionsApi.md) | [**workspaceSubscriptionsControllerGet**](doc/WorkspaceSubscriptionsApi.md#workspacesubscriptionscontrollerget) | **GET** /workspaces/{workspaceId}/subscription | 
 [*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerCreate**](doc/WorkspacesApi.md#workspacescontrollercreate) | **POST** /workspaces | 
@@ -90,6 +91,8 @@ Class | Method | HTTP request | Description
  - [ErrorEntity](doc/ErrorEntity.md)
  - [ExceptionResponseEntity](doc/ExceptionResponseEntity.md)
  - [FinancialTransactionsFeatureSpecificationEntity](doc/FinancialTransactionsFeatureSpecificationEntity.md)
+ - [PaymentsManagerProductDataEntity](doc/PaymentsManagerProductDataEntity.md)
+ - [PaymentsManagerProductPriceEntity](doc/PaymentsManagerProductPriceEntity.md)
  - [ProfileEntity](doc/ProfileEntity.md)
  - [RefreshRequestDto](doc/RefreshRequestDto.md)
  - [SendEmailVerificationCodeRequestDto](doc/SendEmailVerificationCodeRequestDto.md)

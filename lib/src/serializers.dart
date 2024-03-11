@@ -24,6 +24,8 @@ import 'package:dart_api_sdk/src/model/email_in_use_entity.dart';
 import 'package:dart_api_sdk/src/model/error_entity.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
+import 'package:dart_api_sdk/src/model/payments_manager_product_data_entity.dart';
+import 'package:dart_api_sdk/src/model/payments_manager_product_price_entity.dart';
 import 'package:dart_api_sdk/src/model/profile_entity.dart';
 import 'package:dart_api_sdk/src/model/refresh_request_dto.dart';
 import 'package:dart_api_sdk/src/model/send_email_verification_code_request_dto.dart';
@@ -49,6 +51,8 @@ part 'serializers.g.dart';
   ErrorEntity,
   ExceptionResponseEntity,
   FinancialTransactionsFeatureSpecificationEntity,
+  PaymentsManagerProductDataEntity,
+  PaymentsManagerProductPriceEntity,
   ProfileEntity,
   RefreshRequestDto,
   SendEmailVerificationCodeRequestDto,
@@ -62,6 +66,10 @@ part 'serializers.g.dart';
   WorkspaceSubscriptionEntity,
 ])
 Serializers serializers = (_$serializers.toBuilder()
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(SubscriptionProductEntity)]),
+        () => ListBuilder<SubscriptionProductEntity>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(UserRelatedWorkspaceEntity)]),
         () => ListBuilder<UserRelatedWorkspaceEntity>(),

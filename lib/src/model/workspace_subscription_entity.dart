@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:dart_api_sdk/src/model/subscription_product_entity.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -33,7 +34,8 @@ abstract class WorkspaceSubscriptionEntity implements Built<WorkspaceSubscriptio
   SubscriptionProductEntity get product;
 
   @BuiltValueField(wireName: r'status')
-  num get status;
+  WorkspaceSubscriptionEntityStatusEnum get status;
+  // enum statusEnum {  ACTIVE,  INACTIVE,  TRIAL,  };
 
   @BuiltValueField(wireName: r'createdAt')
   DateTime get createdAt;
@@ -84,7 +86,7 @@ class _$WorkspaceSubscriptionEntitySerializer implements PrimitiveSerializer<Wor
     yield r'status';
     yield serializers.serialize(
       object.status,
-      specifiedType: const FullType(num),
+      specifiedType: const FullType(WorkspaceSubscriptionEntityStatusEnum),
     );
     yield r'createdAt';
     yield serializers.serialize(
@@ -145,8 +147,8 @@ class _$WorkspaceSubscriptionEntitySerializer implements PrimitiveSerializer<Wor
         case r'status':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(num),
-          ) as num;
+            specifiedType: const FullType(WorkspaceSubscriptionEntityStatusEnum),
+          ) as WorkspaceSubscriptionEntityStatusEnum;
           result.status = valueDes;
           break;
         case r'createdAt':
@@ -183,5 +185,22 @@ class _$WorkspaceSubscriptionEntitySerializer implements PrimitiveSerializer<Wor
     );
     return result.build();
   }
+}
+
+class WorkspaceSubscriptionEntityStatusEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'ACTIVE')
+  static const WorkspaceSubscriptionEntityStatusEnum ACTIVE = _$workspaceSubscriptionEntityStatusEnum_ACTIVE;
+  @BuiltValueEnumConst(wireName: r'INACTIVE')
+  static const WorkspaceSubscriptionEntityStatusEnum INACTIVE = _$workspaceSubscriptionEntityStatusEnum_INACTIVE;
+  @BuiltValueEnumConst(wireName: r'TRIAL')
+  static const WorkspaceSubscriptionEntityStatusEnum TRIAL = _$workspaceSubscriptionEntityStatusEnum_TRIAL;
+
+  static Serializer<WorkspaceSubscriptionEntityStatusEnum> get serializer => _$workspaceSubscriptionEntityStatusEnumSerializer;
+
+  const WorkspaceSubscriptionEntityStatusEnum._(String name): super(name);
+
+  static BuiltSet<WorkspaceSubscriptionEntityStatusEnum> get values => _$workspaceSubscriptionEntityStatusEnumValues;
+  static WorkspaceSubscriptionEntityStatusEnum valueOf(String name) => _$workspaceSubscriptionEntityStatusEnumValueOf(name);
 }
 

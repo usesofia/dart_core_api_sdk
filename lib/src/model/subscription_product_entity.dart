@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:dart_api_sdk/src/model/connection_feature_specification_entity.dart';
+import 'package:dart_api_sdk/src/model/payments_manager_product_data_entity.dart';
 import 'package:dart_api_sdk/src/model/ai_chat_feature_specification_entity.dart';
 import 'package:dart_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
 import 'package:built_value/built_value.dart';
@@ -20,6 +21,7 @@ part 'subscription_product_entity.g.dart';
 /// * [connectionFeatureSpecification] 
 /// * [financialTransactionsFeatureSpecification] 
 /// * [aiChatFeatureSpecification] 
+/// * [paymentsManagerData] 
 @BuiltValue()
 abstract class SubscriptionProductEntity implements Built<SubscriptionProductEntity, SubscriptionProductEntityBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -39,6 +41,9 @@ abstract class SubscriptionProductEntity implements Built<SubscriptionProductEnt
 
   @BuiltValueField(wireName: r'aiChatFeatureSpecification')
   AiChatFeatureSpecificationEntity get aiChatFeatureSpecification;
+
+  @BuiltValueField(wireName: r'paymentsManagerData')
+  PaymentsManagerProductDataEntity get paymentsManagerData;
 
   SubscriptionProductEntity._();
 
@@ -92,6 +97,11 @@ class _$SubscriptionProductEntitySerializer implements PrimitiveSerializer<Subsc
     yield serializers.serialize(
       object.aiChatFeatureSpecification,
       specifiedType: const FullType(AiChatFeatureSpecificationEntity),
+    );
+    yield r'paymentsManagerData';
+    yield serializers.serialize(
+      object.paymentsManagerData,
+      specifiedType: const FullType(PaymentsManagerProductDataEntity),
     );
   }
 
@@ -157,6 +167,13 @@ class _$SubscriptionProductEntitySerializer implements PrimitiveSerializer<Subsc
             specifiedType: const FullType(AiChatFeatureSpecificationEntity),
           ) as AiChatFeatureSpecificationEntity;
           result.aiChatFeatureSpecification.replace(valueDes);
+          break;
+        case r'paymentsManagerData':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(PaymentsManagerProductDataEntity),
+          ) as PaymentsManagerProductDataEntity;
+          result.paymentsManagerData.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -17,6 +17,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ErrorEntity.serializer)
       ..add(ExceptionResponseEntity.serializer)
       ..add(FinancialTransactionsFeatureSpecificationEntity.serializer)
+      ..add(PaymentsManagerProductDataEntity.serializer)
+      ..add(PaymentsManagerProductPriceEntity.serializer)
       ..add(ProfileEntity.serializer)
       ..add(RefreshRequestDto.serializer)
       ..add(SendEmailVerificationCodeRequestDto.serializer)
@@ -28,9 +30,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(WorkspaceEntity.serializer)
       ..add(WorkspaceJoinRequestEntity.serializer)
       ..add(WorkspaceSubscriptionEntity.serializer)
+      ..add(WorkspaceSubscriptionEntityStatusEnum.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ErrorEntity)]),
           () => new ListBuilder<ErrorEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(PaymentsManagerProductPriceEntity)]),
+          () => new ListBuilder<PaymentsManagerProductPriceEntity>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>()))

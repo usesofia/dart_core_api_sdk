@@ -20,6 +20,8 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
       financialTransactionsFeatureSpecification;
   @override
   final AiChatFeatureSpecificationEntity aiChatFeatureSpecification;
+  @override
+  final PaymentsManagerProductDataEntity paymentsManagerData;
 
   factory _$SubscriptionProductEntity(
           [void Function(SubscriptionProductEntityBuilder)? updates]) =>
@@ -31,7 +33,8 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
       required this.workspaceType,
       required this.connectionFeatureSpecification,
       required this.financialTransactionsFeatureSpecification,
-      required this.aiChatFeatureSpecification})
+      required this.aiChatFeatureSpecification,
+      required this.paymentsManagerData})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         id, r'SubscriptionProductEntity', 'id');
@@ -47,6 +50,8 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
         'financialTransactionsFeatureSpecification');
     BuiltValueNullFieldError.checkNotNull(aiChatFeatureSpecification,
         r'SubscriptionProductEntity', 'aiChatFeatureSpecification');
+    BuiltValueNullFieldError.checkNotNull(paymentsManagerData,
+        r'SubscriptionProductEntity', 'paymentsManagerData');
   }
 
   @override
@@ -69,7 +74,8 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
             other.connectionFeatureSpecification &&
         financialTransactionsFeatureSpecification ==
             other.financialTransactionsFeatureSpecification &&
-        aiChatFeatureSpecification == other.aiChatFeatureSpecification;
+        aiChatFeatureSpecification == other.aiChatFeatureSpecification &&
+        paymentsManagerData == other.paymentsManagerData;
   }
 
   @override
@@ -81,6 +87,7 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
     _$hash = $jc(_$hash, connectionFeatureSpecification.hashCode);
     _$hash = $jc(_$hash, financialTransactionsFeatureSpecification.hashCode);
     _$hash = $jc(_$hash, aiChatFeatureSpecification.hashCode);
+    _$hash = $jc(_$hash, paymentsManagerData.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -95,7 +102,8 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
               'connectionFeatureSpecification', connectionFeatureSpecification)
           ..add('financialTransactionsFeatureSpecification',
               financialTransactionsFeatureSpecification)
-          ..add('aiChatFeatureSpecification', aiChatFeatureSpecification))
+          ..add('aiChatFeatureSpecification', aiChatFeatureSpecification)
+          ..add('paymentsManagerData', paymentsManagerData))
         .toString();
   }
 }
@@ -149,6 +157,14 @@ class SubscriptionProductEntityBuilder
               aiChatFeatureSpecification) =>
       _$this._aiChatFeatureSpecification = aiChatFeatureSpecification;
 
+  PaymentsManagerProductDataEntityBuilder? _paymentsManagerData;
+  PaymentsManagerProductDataEntityBuilder get paymentsManagerData =>
+      _$this._paymentsManagerData ??=
+          new PaymentsManagerProductDataEntityBuilder();
+  set paymentsManagerData(
+          PaymentsManagerProductDataEntityBuilder? paymentsManagerData) =>
+      _$this._paymentsManagerData = paymentsManagerData;
+
   SubscriptionProductEntityBuilder() {
     SubscriptionProductEntity._defaults(this);
   }
@@ -164,6 +180,7 @@ class SubscriptionProductEntityBuilder
       _financialTransactionsFeatureSpecification =
           $v.financialTransactionsFeatureSpecification.toBuilder();
       _aiChatFeatureSpecification = $v.aiChatFeatureSpecification.toBuilder();
+      _paymentsManagerData = $v.paymentsManagerData.toBuilder();
       _$v = null;
     }
     return this;
@@ -198,7 +215,8 @@ class SubscriptionProductEntityBuilder
                   connectionFeatureSpecification.build(),
               financialTransactionsFeatureSpecification:
                   financialTransactionsFeatureSpecification.build(),
-              aiChatFeatureSpecification: aiChatFeatureSpecification.build());
+              aiChatFeatureSpecification: aiChatFeatureSpecification.build(),
+              paymentsManagerData: paymentsManagerData.build());
     } catch (_) {
       late String _$failedField;
       try {
@@ -208,6 +226,8 @@ class SubscriptionProductEntityBuilder
         financialTransactionsFeatureSpecification.build();
         _$failedField = 'aiChatFeatureSpecification';
         aiChatFeatureSpecification.build();
+        _$failedField = 'paymentsManagerData';
+        paymentsManagerData.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'SubscriptionProductEntity', _$failedField, e.toString());
