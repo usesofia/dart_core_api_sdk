@@ -71,6 +71,3 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/payments_manager_product_data_entity_test.dart
-test/payments_manager_product_price_entity_test.dart
-test/subscription_products_api_test.dart
