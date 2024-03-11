@@ -73,28 +73,34 @@ Class | Method | HTTP request | Description
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerCreate**](doc/ProfilesApi.md#profilescontrollercreate) | **POST** /profiles | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerGetMy**](doc/ProfilesApi.md#profilescontrollergetmy) | **GET** /profiles/me | 
 [*WorkspaceJoinRequestsApi*](doc/WorkspaceJoinRequestsApi.md) | [**workspaceJoinRequestsControllerCreateNewPendingOrReturnCurrent**](doc/WorkspaceJoinRequestsApi.md#workspacejoinrequestscontrollercreatenewpendingorreturncurrent) | **POST** /workspaces/{workspaceId}/join-requests | 
+[*WorkspaceSubscriptionsApi*](doc/WorkspaceSubscriptionsApi.md) | [**workspaceSubscriptionsControllerGet**](doc/WorkspaceSubscriptionsApi.md#workspacesubscriptionscontrollerget) | **GET** /workspaces/{workspaceId}/subscription | 
 [*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerCreate**](doc/WorkspacesApi.md#workspacescontrollercreate) | **POST** /workspaces | 
 [*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerFetchUserRelatedWorkspaces**](doc/WorkspacesApi.md#workspacescontrollerfetchuserrelatedworkspaces) | **GET** /workspaces/related-to-me | 
 
 
 ## Documentation For Models
 
+ - [AiChatFeatureSpecificationEntity](doc/AiChatFeatureSpecificationEntity.md)
  - [CheckEmailInUseRequestDto](doc/CheckEmailInUseRequestDto.md)
+ - [ConnectionFeatureSpecificationEntity](doc/ConnectionFeatureSpecificationEntity.md)
  - [CreateProfileRequestDto](doc/CreateProfileRequestDto.md)
  - [CreateWorkspaceRequestDto](doc/CreateWorkspaceRequestDto.md)
  - [CredentialsEntity](doc/CredentialsEntity.md)
  - [EmailInUseEntity](doc/EmailInUseEntity.md)
  - [ErrorEntity](doc/ErrorEntity.md)
  - [ExceptionResponseEntity](doc/ExceptionResponseEntity.md)
+ - [FinancialTransactionsFeatureSpecificationEntity](doc/FinancialTransactionsFeatureSpecificationEntity.md)
  - [ProfileEntity](doc/ProfileEntity.md)
  - [RefreshRequestDto](doc/RefreshRequestDto.md)
  - [SendEmailVerificationCodeRequestDto](doc/SendEmailVerificationCodeRequestDto.md)
  - [SignInWithEmailPasswordRequestDto](doc/SignInWithEmailPasswordRequestDto.md)
  - [SignUpWithEmailPasswordRequestDto](doc/SignUpWithEmailPasswordRequestDto.md)
+ - [SubscriptionProductEntity](doc/SubscriptionProductEntity.md)
  - [UserEntity](doc/UserEntity.md)
  - [UserRelatedWorkspaceEntity](doc/UserRelatedWorkspaceEntity.md)
  - [WorkspaceEntity](doc/WorkspaceEntity.md)
  - [WorkspaceJoinRequestEntity](doc/WorkspaceJoinRequestEntity.md)
+ - [WorkspaceSubscriptionEntity](doc/WorkspaceSubscriptionEntity.md)
 
 
 ## Documentation For Authorization

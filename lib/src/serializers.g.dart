@@ -7,22 +7,27 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(AiChatFeatureSpecificationEntity.serializer)
       ..add(CheckEmailInUseRequestDto.serializer)
+      ..add(ConnectionFeatureSpecificationEntity.serializer)
       ..add(CreateProfileRequestDto.serializer)
       ..add(CreateWorkspaceRequestDto.serializer)
       ..add(CredentialsEntity.serializer)
       ..add(EmailInUseEntity.serializer)
       ..add(ErrorEntity.serializer)
       ..add(ExceptionResponseEntity.serializer)
+      ..add(FinancialTransactionsFeatureSpecificationEntity.serializer)
       ..add(ProfileEntity.serializer)
       ..add(RefreshRequestDto.serializer)
       ..add(SendEmailVerificationCodeRequestDto.serializer)
       ..add(SignInWithEmailPasswordRequestDto.serializer)
       ..add(SignUpWithEmailPasswordRequestDto.serializer)
+      ..add(SubscriptionProductEntity.serializer)
       ..add(UserEntity.serializer)
       ..add(UserRelatedWorkspaceEntity.serializer)
       ..add(WorkspaceEntity.serializer)
       ..add(WorkspaceJoinRequestEntity.serializer)
+      ..add(WorkspaceSubscriptionEntity.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ErrorEntity)]),
           () => new ListBuilder<ErrorEntity>())
