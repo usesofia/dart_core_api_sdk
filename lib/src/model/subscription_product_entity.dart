@@ -16,7 +16,8 @@ part 'subscription_product_entity.g.dart';
 ///
 /// Properties:
 /// * [id] 
-/// * [stripeId] 
+/// * [paymentSystem] 
+/// * [paymentSystemProductId] 
 /// * [workspaceType] 
 /// * [connectionFeatureSpecification] 
 /// * [financialTransactionsFeatureSpecification] 
@@ -27,8 +28,11 @@ abstract class SubscriptionProductEntity implements Built<SubscriptionProductEnt
   @BuiltValueField(wireName: r'id')
   String get id;
 
-  @BuiltValueField(wireName: r'stripeId')
-  String get stripeId;
+  @BuiltValueField(wireName: r'paymentSystem')
+  String get paymentSystem;
+
+  @BuiltValueField(wireName: r'paymentSystemProductId')
+  String get paymentSystemProductId;
 
   @BuiltValueField(wireName: r'workspaceType')
   String get workspaceType;
@@ -73,9 +77,14 @@ class _$SubscriptionProductEntitySerializer implements PrimitiveSerializer<Subsc
       object.id,
       specifiedType: const FullType(String),
     );
-    yield r'stripeId';
+    yield r'paymentSystem';
     yield serializers.serialize(
-      object.stripeId,
+      object.paymentSystem,
+      specifiedType: const FullType(String),
+    );
+    yield r'paymentSystemProductId';
+    yield serializers.serialize(
+      object.paymentSystemProductId,
       specifiedType: const FullType(String),
     );
     yield r'workspaceType';
@@ -133,12 +142,19 @@ class _$SubscriptionProductEntitySerializer implements PrimitiveSerializer<Subsc
           ) as String;
           result.id = valueDes;
           break;
-        case r'stripeId':
+        case r'paymentSystem':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.stripeId = valueDes;
+          result.paymentSystem = valueDes;
+          break;
+        case r'paymentSystemProductId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.paymentSystemProductId = valueDes;
           break;
         case r'workspaceType':
           final valueDes = serializers.deserialize(

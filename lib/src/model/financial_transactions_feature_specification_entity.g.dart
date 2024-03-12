@@ -15,7 +15,7 @@ class _$FinancialTransactionsFeatureSpecificationEntity
   @override
   final num? maxPerMonth;
   @override
-  final String productId;
+  final String subscriptionProductId;
 
   factory _$FinancialTransactionsFeatureSpecificationEntity(
           [void Function(
@@ -29,14 +29,16 @@ class _$FinancialTransactionsFeatureSpecificationEntity
       {required this.id,
       required this.unlimited,
       this.maxPerMonth,
-      required this.productId})
+      required this.subscriptionProductId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         id, r'FinancialTransactionsFeatureSpecificationEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(unlimited,
         r'FinancialTransactionsFeatureSpecificationEntity', 'unlimited');
-    BuiltValueNullFieldError.checkNotNull(productId,
-        r'FinancialTransactionsFeatureSpecificationEntity', 'productId');
+    BuiltValueNullFieldError.checkNotNull(
+        subscriptionProductId,
+        r'FinancialTransactionsFeatureSpecificationEntity',
+        'subscriptionProductId');
   }
 
   @override
@@ -57,7 +59,7 @@ class _$FinancialTransactionsFeatureSpecificationEntity
         id == other.id &&
         unlimited == other.unlimited &&
         maxPerMonth == other.maxPerMonth &&
-        productId == other.productId;
+        subscriptionProductId == other.subscriptionProductId;
   }
 
   @override
@@ -66,7 +68,7 @@ class _$FinancialTransactionsFeatureSpecificationEntity
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, unlimited.hashCode);
     _$hash = $jc(_$hash, maxPerMonth.hashCode);
-    _$hash = $jc(_$hash, productId.hashCode);
+    _$hash = $jc(_$hash, subscriptionProductId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -78,7 +80,7 @@ class _$FinancialTransactionsFeatureSpecificationEntity
           ..add('id', id)
           ..add('unlimited', unlimited)
           ..add('maxPerMonth', maxPerMonth)
-          ..add('productId', productId))
+          ..add('subscriptionProductId', subscriptionProductId))
         .toString();
   }
 }
@@ -101,9 +103,10 @@ class FinancialTransactionsFeatureSpecificationEntityBuilder
   num? get maxPerMonth => _$this._maxPerMonth;
   set maxPerMonth(num? maxPerMonth) => _$this._maxPerMonth = maxPerMonth;
 
-  String? _productId;
-  String? get productId => _$this._productId;
-  set productId(String? productId) => _$this._productId = productId;
+  String? _subscriptionProductId;
+  String? get subscriptionProductId => _$this._subscriptionProductId;
+  set subscriptionProductId(String? subscriptionProductId) =>
+      _$this._subscriptionProductId = subscriptionProductId;
 
   FinancialTransactionsFeatureSpecificationEntityBuilder() {
     FinancialTransactionsFeatureSpecificationEntity._defaults(this);
@@ -115,7 +118,7 @@ class FinancialTransactionsFeatureSpecificationEntityBuilder
       _id = $v.id;
       _unlimited = $v.unlimited;
       _maxPerMonth = $v.maxPerMonth;
-      _productId = $v.productId;
+      _subscriptionProductId = $v.subscriptionProductId;
       _$v = null;
     }
     return this;
@@ -147,10 +150,10 @@ class FinancialTransactionsFeatureSpecificationEntityBuilder
                 r'FinancialTransactionsFeatureSpecificationEntity',
                 'unlimited'),
             maxPerMonth: maxPerMonth,
-            productId: BuiltValueNullFieldError.checkNotNull(
-                productId,
+            subscriptionProductId: BuiltValueNullFieldError.checkNotNull(
+                subscriptionProductId,
                 r'FinancialTransactionsFeatureSpecificationEntity',
-                'productId'));
+                'subscriptionProductId'));
     replace(_$result);
     return _$result;
   }

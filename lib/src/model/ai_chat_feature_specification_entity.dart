@@ -13,7 +13,7 @@ part 'ai_chat_feature_specification_entity.g.dart';
 /// Properties:
 /// * [id] 
 /// * [enabled] 
-/// * [productId] 
+/// * [subscriptionProductId] 
 @BuiltValue()
 abstract class AiChatFeatureSpecificationEntity implements Built<AiChatFeatureSpecificationEntity, AiChatFeatureSpecificationEntityBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -22,8 +22,8 @@ abstract class AiChatFeatureSpecificationEntity implements Built<AiChatFeatureSp
   @BuiltValueField(wireName: r'enabled')
   bool get enabled;
 
-  @BuiltValueField(wireName: r'productId')
-  String get productId;
+  @BuiltValueField(wireName: r'subscriptionProductId')
+  String get subscriptionProductId;
 
   AiChatFeatureSpecificationEntity._();
 
@@ -58,9 +58,9 @@ class _$AiChatFeatureSpecificationEntitySerializer implements PrimitiveSerialize
       object.enabled,
       specifiedType: const FullType(bool),
     );
-    yield r'productId';
+    yield r'subscriptionProductId';
     yield serializers.serialize(
-      object.productId,
+      object.subscriptionProductId,
       specifiedType: const FullType(String),
     );
   }
@@ -100,12 +100,12 @@ class _$AiChatFeatureSpecificationEntitySerializer implements PrimitiveSerialize
           ) as bool;
           result.enabled = valueDes;
           break;
-        case r'productId':
+        case r'subscriptionProductId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.productId = valueDes;
+          result.subscriptionProductId = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -10,8 +10,8 @@ const WorkspaceSubscriptionEntityStatusEnum
     _$workspaceSubscriptionEntityStatusEnum_ACTIVE =
     const WorkspaceSubscriptionEntityStatusEnum._('ACTIVE');
 const WorkspaceSubscriptionEntityStatusEnum
-    _$workspaceSubscriptionEntityStatusEnum_INACTIVE =
-    const WorkspaceSubscriptionEntityStatusEnum._('INACTIVE');
+    _$workspaceSubscriptionEntityStatusEnum_NOT_ACTIVE =
+    const WorkspaceSubscriptionEntityStatusEnum._('NOT_ACTIVE');
 const WorkspaceSubscriptionEntityStatusEnum
     _$workspaceSubscriptionEntityStatusEnum_TRIAL =
     const WorkspaceSubscriptionEntityStatusEnum._('TRIAL');
@@ -21,8 +21,8 @@ WorkspaceSubscriptionEntityStatusEnum
   switch (name) {
     case 'ACTIVE':
       return _$workspaceSubscriptionEntityStatusEnum_ACTIVE;
-    case 'INACTIVE':
-      return _$workspaceSubscriptionEntityStatusEnum_INACTIVE;
+    case 'NOT_ACTIVE':
+      return _$workspaceSubscriptionEntityStatusEnum_NOT_ACTIVE;
     case 'TRIAL':
       return _$workspaceSubscriptionEntityStatusEnum_TRIAL;
     default:
@@ -34,7 +34,7 @@ final BuiltSet<WorkspaceSubscriptionEntityStatusEnum>
     _$workspaceSubscriptionEntityStatusEnumValues = new BuiltSet<
         WorkspaceSubscriptionEntityStatusEnum>(const <WorkspaceSubscriptionEntityStatusEnum>[
   _$workspaceSubscriptionEntityStatusEnum_ACTIVE,
-  _$workspaceSubscriptionEntityStatusEnum_INACTIVE,
+  _$workspaceSubscriptionEntityStatusEnum_NOT_ACTIVE,
   _$workspaceSubscriptionEntityStatusEnum_TRIAL,
 ]);
 
@@ -46,12 +46,12 @@ class _$WorkspaceSubscriptionEntityStatusEnumSerializer
     implements PrimitiveSerializer<WorkspaceSubscriptionEntityStatusEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'ACTIVE': 'ACTIVE',
-    'INACTIVE': 'INACTIVE',
+    'NOT_ACTIVE': 'NOT_ACTIVE',
     'TRIAL': 'TRIAL',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'ACTIVE': 'ACTIVE',
-    'INACTIVE': 'INACTIVE',
+    'NOT_ACTIVE': 'NOT_ACTIVE',
     'TRIAL': 'TRIAL',
   };
 
@@ -82,9 +82,9 @@ class _$WorkspaceSubscriptionEntity extends WorkspaceSubscriptionEntity {
   @override
   final String workspaceId;
   @override
-  final String productId;
+  final String subscriptionProductId;
   @override
-  final SubscriptionProductEntity product;
+  final SubscriptionProductEntity subscriptionProduct;
   @override
   final WorkspaceSubscriptionEntityStatusEnum status;
   @override
@@ -97,8 +97,8 @@ class _$WorkspaceSubscriptionEntity extends WorkspaceSubscriptionEntity {
   _$WorkspaceSubscriptionEntity._(
       {required this.id,
       required this.workspaceId,
-      required this.productId,
-      required this.product,
+      required this.subscriptionProductId,
+      required this.subscriptionProduct,
       required this.status,
       required this.createdAt})
       : super._() {
@@ -106,10 +106,10 @@ class _$WorkspaceSubscriptionEntity extends WorkspaceSubscriptionEntity {
         id, r'WorkspaceSubscriptionEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
         workspaceId, r'WorkspaceSubscriptionEntity', 'workspaceId');
-    BuiltValueNullFieldError.checkNotNull(
-        productId, r'WorkspaceSubscriptionEntity', 'productId');
-    BuiltValueNullFieldError.checkNotNull(
-        product, r'WorkspaceSubscriptionEntity', 'product');
+    BuiltValueNullFieldError.checkNotNull(subscriptionProductId,
+        r'WorkspaceSubscriptionEntity', 'subscriptionProductId');
+    BuiltValueNullFieldError.checkNotNull(subscriptionProduct,
+        r'WorkspaceSubscriptionEntity', 'subscriptionProduct');
     BuiltValueNullFieldError.checkNotNull(
         status, r'WorkspaceSubscriptionEntity', 'status');
     BuiltValueNullFieldError.checkNotNull(
@@ -131,8 +131,8 @@ class _$WorkspaceSubscriptionEntity extends WorkspaceSubscriptionEntity {
     return other is WorkspaceSubscriptionEntity &&
         id == other.id &&
         workspaceId == other.workspaceId &&
-        productId == other.productId &&
-        product == other.product &&
+        subscriptionProductId == other.subscriptionProductId &&
+        subscriptionProduct == other.subscriptionProduct &&
         status == other.status &&
         createdAt == other.createdAt;
   }
@@ -142,8 +142,8 @@ class _$WorkspaceSubscriptionEntity extends WorkspaceSubscriptionEntity {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, workspaceId.hashCode);
-    _$hash = $jc(_$hash, productId.hashCode);
-    _$hash = $jc(_$hash, product.hashCode);
+    _$hash = $jc(_$hash, subscriptionProductId.hashCode);
+    _$hash = $jc(_$hash, subscriptionProduct.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jf(_$hash);
@@ -155,8 +155,8 @@ class _$WorkspaceSubscriptionEntity extends WorkspaceSubscriptionEntity {
     return (newBuiltValueToStringHelper(r'WorkspaceSubscriptionEntity')
           ..add('id', id)
           ..add('workspaceId', workspaceId)
-          ..add('productId', productId)
-          ..add('product', product)
+          ..add('subscriptionProductId', subscriptionProductId)
+          ..add('subscriptionProduct', subscriptionProduct)
           ..add('status', status)
           ..add('createdAt', createdAt))
         .toString();
@@ -177,15 +177,17 @@ class WorkspaceSubscriptionEntityBuilder
   String? get workspaceId => _$this._workspaceId;
   set workspaceId(String? workspaceId) => _$this._workspaceId = workspaceId;
 
-  String? _productId;
-  String? get productId => _$this._productId;
-  set productId(String? productId) => _$this._productId = productId;
+  String? _subscriptionProductId;
+  String? get subscriptionProductId => _$this._subscriptionProductId;
+  set subscriptionProductId(String? subscriptionProductId) =>
+      _$this._subscriptionProductId = subscriptionProductId;
 
-  SubscriptionProductEntityBuilder? _product;
-  SubscriptionProductEntityBuilder get product =>
-      _$this._product ??= new SubscriptionProductEntityBuilder();
-  set product(SubscriptionProductEntityBuilder? product) =>
-      _$this._product = product;
+  SubscriptionProductEntityBuilder? _subscriptionProduct;
+  SubscriptionProductEntityBuilder get subscriptionProduct =>
+      _$this._subscriptionProduct ??= new SubscriptionProductEntityBuilder();
+  set subscriptionProduct(
+          SubscriptionProductEntityBuilder? subscriptionProduct) =>
+      _$this._subscriptionProduct = subscriptionProduct;
 
   WorkspaceSubscriptionEntityStatusEnum? _status;
   WorkspaceSubscriptionEntityStatusEnum? get status => _$this._status;
@@ -205,8 +207,8 @@ class WorkspaceSubscriptionEntityBuilder
     if ($v != null) {
       _id = $v.id;
       _workspaceId = $v.workspaceId;
-      _productId = $v.productId;
-      _product = $v.product.toBuilder();
+      _subscriptionProductId = $v.subscriptionProductId;
+      _subscriptionProduct = $v.subscriptionProduct.toBuilder();
       _status = $v.status;
       _createdAt = $v.createdAt;
       _$v = null;
@@ -237,9 +239,11 @@ class WorkspaceSubscriptionEntityBuilder
                   id, r'WorkspaceSubscriptionEntity', 'id'),
               workspaceId: BuiltValueNullFieldError.checkNotNull(
                   workspaceId, r'WorkspaceSubscriptionEntity', 'workspaceId'),
-              productId: BuiltValueNullFieldError.checkNotNull(
-                  productId, r'WorkspaceSubscriptionEntity', 'productId'),
-              product: product.build(),
+              subscriptionProductId: BuiltValueNullFieldError.checkNotNull(
+                  subscriptionProductId,
+                  r'WorkspaceSubscriptionEntity',
+                  'subscriptionProductId'),
+              subscriptionProduct: subscriptionProduct.build(),
               status: BuiltValueNullFieldError.checkNotNull(
                   status, r'WorkspaceSubscriptionEntity', 'status'),
               createdAt: BuiltValueNullFieldError.checkNotNull(
@@ -247,8 +251,8 @@ class WorkspaceSubscriptionEntityBuilder
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'product';
-        product.build();
+        _$failedField = 'subscriptionProduct';
+        subscriptionProduct.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'WorkspaceSubscriptionEntity', _$failedField, e.toString());

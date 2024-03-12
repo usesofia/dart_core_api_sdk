@@ -12,18 +12,22 @@ part 'connection_feature_specification_entity.g.dart';
 ///
 /// Properties:
 /// * [id] 
+/// * [unlimited] 
 /// * [max] 
-/// * [productId] 
+/// * [subscriptionProductId] 
 @BuiltValue()
 abstract class ConnectionFeatureSpecificationEntity implements Built<ConnectionFeatureSpecificationEntity, ConnectionFeatureSpecificationEntityBuilder> {
   @BuiltValueField(wireName: r'id')
   String get id;
 
-  @BuiltValueField(wireName: r'max')
-  num get max;
+  @BuiltValueField(wireName: r'unlimited')
+  bool get unlimited;
 
-  @BuiltValueField(wireName: r'productId')
-  String get productId;
+  @BuiltValueField(wireName: r'max')
+  num? get max;
+
+  @BuiltValueField(wireName: r'subscriptionProductId')
+  String get subscriptionProductId;
 
   ConnectionFeatureSpecificationEntity._();
 
@@ -53,14 +57,21 @@ class _$ConnectionFeatureSpecificationEntitySerializer implements PrimitiveSeria
       object.id,
       specifiedType: const FullType(String),
     );
-    yield r'max';
+    yield r'unlimited';
     yield serializers.serialize(
-      object.max,
-      specifiedType: const FullType(num),
+      object.unlimited,
+      specifiedType: const FullType(bool),
     );
-    yield r'productId';
+    if (object.max != null) {
+      yield r'max';
+      yield serializers.serialize(
+        object.max,
+        specifiedType: const FullType(num),
+      );
+    }
+    yield r'subscriptionProductId';
     yield serializers.serialize(
-      object.productId,
+      object.subscriptionProductId,
       specifiedType: const FullType(String),
     );
   }
@@ -93,6 +104,13 @@ class _$ConnectionFeatureSpecificationEntitySerializer implements PrimitiveSeria
           ) as String;
           result.id = valueDes;
           break;
+        case r'unlimited':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.unlimited = valueDes;
+          break;
         case r'max':
           final valueDes = serializers.deserialize(
             value,
@@ -100,12 +118,12 @@ class _$ConnectionFeatureSpecificationEntitySerializer implements PrimitiveSeria
           ) as num;
           result.max = valueDes;
           break;
-        case r'productId':
+        case r'subscriptionProductId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.productId = valueDes;
+          result.subscriptionProductId = valueDes;
           break;
         default:
           unhandled.add(key);

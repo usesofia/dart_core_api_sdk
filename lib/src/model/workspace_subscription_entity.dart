@@ -15,8 +15,8 @@ part 'workspace_subscription_entity.g.dart';
 /// Properties:
 /// * [id] 
 /// * [workspaceId] 
-/// * [productId] 
-/// * [product] 
+/// * [subscriptionProductId] 
+/// * [subscriptionProduct] 
 /// * [status] 
 /// * [createdAt] 
 @BuiltValue()
@@ -27,15 +27,15 @@ abstract class WorkspaceSubscriptionEntity implements Built<WorkspaceSubscriptio
   @BuiltValueField(wireName: r'workspaceId')
   String get workspaceId;
 
-  @BuiltValueField(wireName: r'productId')
-  String get productId;
+  @BuiltValueField(wireName: r'subscriptionProductId')
+  String get subscriptionProductId;
 
-  @BuiltValueField(wireName: r'product')
-  SubscriptionProductEntity get product;
+  @BuiltValueField(wireName: r'subscriptionProduct')
+  SubscriptionProductEntity get subscriptionProduct;
 
   @BuiltValueField(wireName: r'status')
   WorkspaceSubscriptionEntityStatusEnum get status;
-  // enum statusEnum {  ACTIVE,  INACTIVE,  TRIAL,  };
+  // enum statusEnum {  ACTIVE,  NOT_ACTIVE,  TRIAL,  };
 
   @BuiltValueField(wireName: r'createdAt')
   DateTime get createdAt;
@@ -73,14 +73,14 @@ class _$WorkspaceSubscriptionEntitySerializer implements PrimitiveSerializer<Wor
       object.workspaceId,
       specifiedType: const FullType(String),
     );
-    yield r'productId';
+    yield r'subscriptionProductId';
     yield serializers.serialize(
-      object.productId,
+      object.subscriptionProductId,
       specifiedType: const FullType(String),
     );
-    yield r'product';
+    yield r'subscriptionProduct';
     yield serializers.serialize(
-      object.product,
+      object.subscriptionProduct,
       specifiedType: const FullType(SubscriptionProductEntity),
     );
     yield r'status';
@@ -130,19 +130,19 @@ class _$WorkspaceSubscriptionEntitySerializer implements PrimitiveSerializer<Wor
           ) as String;
           result.workspaceId = valueDes;
           break;
-        case r'productId':
+        case r'subscriptionProductId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.productId = valueDes;
+          result.subscriptionProductId = valueDes;
           break;
-        case r'product':
+        case r'subscriptionProduct':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(SubscriptionProductEntity),
           ) as SubscriptionProductEntity;
-          result.product.replace(valueDes);
+          result.subscriptionProduct.replace(valueDes);
           break;
         case r'status':
           final valueDes = serializers.deserialize(
@@ -191,8 +191,8 @@ class WorkspaceSubscriptionEntityStatusEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'ACTIVE')
   static const WorkspaceSubscriptionEntityStatusEnum ACTIVE = _$workspaceSubscriptionEntityStatusEnum_ACTIVE;
-  @BuiltValueEnumConst(wireName: r'INACTIVE')
-  static const WorkspaceSubscriptionEntityStatusEnum INACTIVE = _$workspaceSubscriptionEntityStatusEnum_INACTIVE;
+  @BuiltValueEnumConst(wireName: r'NOT_ACTIVE')
+  static const WorkspaceSubscriptionEntityStatusEnum NOT_ACTIVE = _$workspaceSubscriptionEntityStatusEnum_NOT_ACTIVE;
   @BuiltValueEnumConst(wireName: r'TRIAL')
   static const WorkspaceSubscriptionEntityStatusEnum TRIAL = _$workspaceSubscriptionEntityStatusEnum_TRIAL;
 

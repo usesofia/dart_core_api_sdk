@@ -11,9 +11,11 @@ class _$ConnectionFeatureSpecificationEntity
   @override
   final String id;
   @override
-  final num max;
+  final bool unlimited;
   @override
-  final String productId;
+  final num? max;
+  @override
+  final String subscriptionProductId;
 
   factory _$ConnectionFeatureSpecificationEntity(
           [void Function(ConnectionFeatureSpecificationEntityBuilder)?
@@ -22,14 +24,17 @@ class _$ConnectionFeatureSpecificationEntity
           ._build();
 
   _$ConnectionFeatureSpecificationEntity._(
-      {required this.id, required this.max, required this.productId})
+      {required this.id,
+      required this.unlimited,
+      this.max,
+      required this.subscriptionProductId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         id, r'ConnectionFeatureSpecificationEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        max, r'ConnectionFeatureSpecificationEntity', 'max');
-    BuiltValueNullFieldError.checkNotNull(
-        productId, r'ConnectionFeatureSpecificationEntity', 'productId');
+        unlimited, r'ConnectionFeatureSpecificationEntity', 'unlimited');
+    BuiltValueNullFieldError.checkNotNull(subscriptionProductId,
+        r'ConnectionFeatureSpecificationEntity', 'subscriptionProductId');
   }
 
   @override
@@ -46,16 +51,18 @@ class _$ConnectionFeatureSpecificationEntity
     if (identical(other, this)) return true;
     return other is ConnectionFeatureSpecificationEntity &&
         id == other.id &&
+        unlimited == other.unlimited &&
         max == other.max &&
-        productId == other.productId;
+        subscriptionProductId == other.subscriptionProductId;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, unlimited.hashCode);
     _$hash = $jc(_$hash, max.hashCode);
-    _$hash = $jc(_$hash, productId.hashCode);
+    _$hash = $jc(_$hash, subscriptionProductId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -64,8 +71,9 @@ class _$ConnectionFeatureSpecificationEntity
   String toString() {
     return (newBuiltValueToStringHelper(r'ConnectionFeatureSpecificationEntity')
           ..add('id', id)
+          ..add('unlimited', unlimited)
           ..add('max', max)
-          ..add('productId', productId))
+          ..add('subscriptionProductId', subscriptionProductId))
         .toString();
   }
 }
@@ -80,13 +88,18 @@ class ConnectionFeatureSpecificationEntityBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
+  bool? _unlimited;
+  bool? get unlimited => _$this._unlimited;
+  set unlimited(bool? unlimited) => _$this._unlimited = unlimited;
+
   num? _max;
   num? get max => _$this._max;
   set max(num? max) => _$this._max = max;
 
-  String? _productId;
-  String? get productId => _$this._productId;
-  set productId(String? productId) => _$this._productId = productId;
+  String? _subscriptionProductId;
+  String? get subscriptionProductId => _$this._subscriptionProductId;
+  set subscriptionProductId(String? subscriptionProductId) =>
+      _$this._subscriptionProductId = subscriptionProductId;
 
   ConnectionFeatureSpecificationEntityBuilder() {
     ConnectionFeatureSpecificationEntity._defaults(this);
@@ -96,8 +109,9 @@ class ConnectionFeatureSpecificationEntityBuilder
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
+      _unlimited = $v.unlimited;
       _max = $v.max;
-      _productId = $v.productId;
+      _subscriptionProductId = $v.subscriptionProductId;
       _$v = null;
     }
     return this;
@@ -123,10 +137,13 @@ class ConnectionFeatureSpecificationEntityBuilder
         new _$ConnectionFeatureSpecificationEntity._(
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'ConnectionFeatureSpecificationEntity', 'id'),
-            max: BuiltValueNullFieldError.checkNotNull(
-                max, r'ConnectionFeatureSpecificationEntity', 'max'),
-            productId: BuiltValueNullFieldError.checkNotNull(productId,
-                r'ConnectionFeatureSpecificationEntity', 'productId'));
+            unlimited: BuiltValueNullFieldError.checkNotNull(unlimited,
+                r'ConnectionFeatureSpecificationEntity', 'unlimited'),
+            max: max,
+            subscriptionProductId: BuiltValueNullFieldError.checkNotNull(
+                subscriptionProductId,
+                r'ConnectionFeatureSpecificationEntity',
+                'subscriptionProductId'));
     replace(_$result);
     return _$result;
   }

@@ -9,7 +9,8 @@ import 'package:dart_api_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
-**stripeId** | **String** |  | 
+**paymentSystem** | **String** |  | 
+**paymentSystemProductId** | **String** |  | 
 **workspaceType** | **String** |  | 
 **connectionFeatureSpecification** | [**ConnectionFeatureSpecificationEntity**](ConnectionFeatureSpecificationEntity.md) |  | 
 **financialTransactionsFeatureSpecification** | [**FinancialTransactionsFeatureSpecificationEntity**](FinancialTransactionsFeatureSpecificationEntity.md) |  | 

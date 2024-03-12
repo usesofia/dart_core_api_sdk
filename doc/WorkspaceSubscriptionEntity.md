@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **workspaceId** | **String** |  | 
-**productId** | **String** |  | 
-**product** | [**SubscriptionProductEntity**](SubscriptionProductEntity.md) |  | 
+**subscriptionProductId** | **String** |  | 
+**subscriptionProduct** | [**SubscriptionProductEntity**](SubscriptionProductEntity.md) |  | 
 **status** | **String** |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 

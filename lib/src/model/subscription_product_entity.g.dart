@@ -10,7 +10,9 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
   @override
   final String id;
   @override
-  final String stripeId;
+  final String paymentSystem;
+  @override
+  final String paymentSystemProductId;
   @override
   final String workspaceType;
   @override
@@ -29,7 +31,8 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
 
   _$SubscriptionProductEntity._(
       {required this.id,
-      required this.stripeId,
+      required this.paymentSystem,
+      required this.paymentSystemProductId,
       required this.workspaceType,
       required this.connectionFeatureSpecification,
       required this.financialTransactionsFeatureSpecification,
@@ -39,7 +42,9 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
     BuiltValueNullFieldError.checkNotNull(
         id, r'SubscriptionProductEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        stripeId, r'SubscriptionProductEntity', 'stripeId');
+        paymentSystem, r'SubscriptionProductEntity', 'paymentSystem');
+    BuiltValueNullFieldError.checkNotNull(paymentSystemProductId,
+        r'SubscriptionProductEntity', 'paymentSystemProductId');
     BuiltValueNullFieldError.checkNotNull(
         workspaceType, r'SubscriptionProductEntity', 'workspaceType');
     BuiltValueNullFieldError.checkNotNull(connectionFeatureSpecification,
@@ -68,7 +73,8 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
     if (identical(other, this)) return true;
     return other is SubscriptionProductEntity &&
         id == other.id &&
-        stripeId == other.stripeId &&
+        paymentSystem == other.paymentSystem &&
+        paymentSystemProductId == other.paymentSystemProductId &&
         workspaceType == other.workspaceType &&
         connectionFeatureSpecification ==
             other.connectionFeatureSpecification &&
@@ -82,7 +88,8 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, stripeId.hashCode);
+    _$hash = $jc(_$hash, paymentSystem.hashCode);
+    _$hash = $jc(_$hash, paymentSystemProductId.hashCode);
     _$hash = $jc(_$hash, workspaceType.hashCode);
     _$hash = $jc(_$hash, connectionFeatureSpecification.hashCode);
     _$hash = $jc(_$hash, financialTransactionsFeatureSpecification.hashCode);
@@ -96,7 +103,8 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
   String toString() {
     return (newBuiltValueToStringHelper(r'SubscriptionProductEntity')
           ..add('id', id)
-          ..add('stripeId', stripeId)
+          ..add('paymentSystem', paymentSystem)
+          ..add('paymentSystemProductId', paymentSystemProductId)
           ..add('workspaceType', workspaceType)
           ..add(
               'connectionFeatureSpecification', connectionFeatureSpecification)
@@ -117,9 +125,15 @@ class SubscriptionProductEntityBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  String? _stripeId;
-  String? get stripeId => _$this._stripeId;
-  set stripeId(String? stripeId) => _$this._stripeId = stripeId;
+  String? _paymentSystem;
+  String? get paymentSystem => _$this._paymentSystem;
+  set paymentSystem(String? paymentSystem) =>
+      _$this._paymentSystem = paymentSystem;
+
+  String? _paymentSystemProductId;
+  String? get paymentSystemProductId => _$this._paymentSystemProductId;
+  set paymentSystemProductId(String? paymentSystemProductId) =>
+      _$this._paymentSystemProductId = paymentSystemProductId;
 
   String? _workspaceType;
   String? get workspaceType => _$this._workspaceType;
@@ -173,7 +187,8 @@ class SubscriptionProductEntityBuilder
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
-      _stripeId = $v.stripeId;
+      _paymentSystem = $v.paymentSystem;
+      _paymentSystemProductId = $v.paymentSystemProductId;
       _workspaceType = $v.workspaceType;
       _connectionFeatureSpecification =
           $v.connectionFeatureSpecification.toBuilder();
@@ -207,8 +222,12 @@ class SubscriptionProductEntityBuilder
           new _$SubscriptionProductEntity._(
               id: BuiltValueNullFieldError.checkNotNull(
                   id, r'SubscriptionProductEntity', 'id'),
-              stripeId: BuiltValueNullFieldError.checkNotNull(
-                  stripeId, r'SubscriptionProductEntity', 'stripeId'),
+              paymentSystem: BuiltValueNullFieldError.checkNotNull(
+                  paymentSystem, r'SubscriptionProductEntity', 'paymentSystem'),
+              paymentSystemProductId: BuiltValueNullFieldError.checkNotNull(
+                  paymentSystemProductId,
+                  r'SubscriptionProductEntity',
+                  'paymentSystemProductId'),
               workspaceType: BuiltValueNullFieldError.checkNotNull(
                   workspaceType, r'SubscriptionProductEntity', 'workspaceType'),
               connectionFeatureSpecification:

@@ -13,21 +13,23 @@ class _$AiChatFeatureSpecificationEntity
   @override
   final bool enabled;
   @override
-  final String productId;
+  final String subscriptionProductId;
 
   factory _$AiChatFeatureSpecificationEntity(
           [void Function(AiChatFeatureSpecificationEntityBuilder)? updates]) =>
       (new AiChatFeatureSpecificationEntityBuilder()..update(updates))._build();
 
   _$AiChatFeatureSpecificationEntity._(
-      {required this.id, required this.enabled, required this.productId})
+      {required this.id,
+      required this.enabled,
+      required this.subscriptionProductId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         id, r'AiChatFeatureSpecificationEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
         enabled, r'AiChatFeatureSpecificationEntity', 'enabled');
-    BuiltValueNullFieldError.checkNotNull(
-        productId, r'AiChatFeatureSpecificationEntity', 'productId');
+    BuiltValueNullFieldError.checkNotNull(subscriptionProductId,
+        r'AiChatFeatureSpecificationEntity', 'subscriptionProductId');
   }
 
   @override
@@ -45,7 +47,7 @@ class _$AiChatFeatureSpecificationEntity
     return other is AiChatFeatureSpecificationEntity &&
         id == other.id &&
         enabled == other.enabled &&
-        productId == other.productId;
+        subscriptionProductId == other.subscriptionProductId;
   }
 
   @override
@@ -53,7 +55,7 @@ class _$AiChatFeatureSpecificationEntity
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
-    _$hash = $jc(_$hash, productId.hashCode);
+    _$hash = $jc(_$hash, subscriptionProductId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -63,7 +65,7 @@ class _$AiChatFeatureSpecificationEntity
     return (newBuiltValueToStringHelper(r'AiChatFeatureSpecificationEntity')
           ..add('id', id)
           ..add('enabled', enabled)
-          ..add('productId', productId))
+          ..add('subscriptionProductId', subscriptionProductId))
         .toString();
   }
 }
@@ -82,9 +84,10 @@ class AiChatFeatureSpecificationEntityBuilder
   bool? get enabled => _$this._enabled;
   set enabled(bool? enabled) => _$this._enabled = enabled;
 
-  String? _productId;
-  String? get productId => _$this._productId;
-  set productId(String? productId) => _$this._productId = productId;
+  String? _subscriptionProductId;
+  String? get subscriptionProductId => _$this._subscriptionProductId;
+  set subscriptionProductId(String? subscriptionProductId) =>
+      _$this._subscriptionProductId = subscriptionProductId;
 
   AiChatFeatureSpecificationEntityBuilder() {
     AiChatFeatureSpecificationEntity._defaults(this);
@@ -95,7 +98,7 @@ class AiChatFeatureSpecificationEntityBuilder
     if ($v != null) {
       _id = $v.id;
       _enabled = $v.enabled;
-      _productId = $v.productId;
+      _subscriptionProductId = $v.subscriptionProductId;
       _$v = null;
     }
     return this;
@@ -122,8 +125,10 @@ class AiChatFeatureSpecificationEntityBuilder
                 id, r'AiChatFeatureSpecificationEntity', 'id'),
             enabled: BuiltValueNullFieldError.checkNotNull(
                 enabled, r'AiChatFeatureSpecificationEntity', 'enabled'),
-            productId: BuiltValueNullFieldError.checkNotNull(
-                productId, r'AiChatFeatureSpecificationEntity', 'productId'));
+            subscriptionProductId: BuiltValueNullFieldError.checkNotNull(
+                subscriptionProductId,
+                r'AiChatFeatureSpecificationEntity',
+                'subscriptionProductId'));
     replace(_$result);
     return _$result;
   }

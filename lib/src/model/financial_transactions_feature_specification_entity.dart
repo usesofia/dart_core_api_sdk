@@ -14,7 +14,7 @@ part 'financial_transactions_feature_specification_entity.g.dart';
 /// * [id] 
 /// * [unlimited] 
 /// * [maxPerMonth] 
-/// * [productId] 
+/// * [subscriptionProductId] 
 @BuiltValue()
 abstract class FinancialTransactionsFeatureSpecificationEntity implements Built<FinancialTransactionsFeatureSpecificationEntity, FinancialTransactionsFeatureSpecificationEntityBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -26,8 +26,8 @@ abstract class FinancialTransactionsFeatureSpecificationEntity implements Built<
   @BuiltValueField(wireName: r'maxPerMonth')
   num? get maxPerMonth;
 
-  @BuiltValueField(wireName: r'productId')
-  String get productId;
+  @BuiltValueField(wireName: r'subscriptionProductId')
+  String get subscriptionProductId;
 
   FinancialTransactionsFeatureSpecificationEntity._();
 
@@ -69,9 +69,9 @@ class _$FinancialTransactionsFeatureSpecificationEntitySerializer implements Pri
         specifiedType: const FullType(num),
       );
     }
-    yield r'productId';
+    yield r'subscriptionProductId';
     yield serializers.serialize(
-      object.productId,
+      object.subscriptionProductId,
       specifiedType: const FullType(String),
     );
   }
@@ -118,12 +118,12 @@ class _$FinancialTransactionsFeatureSpecificationEntitySerializer implements Pri
           ) as num;
           result.maxPerMonth = valueDes;
           break;
-        case r'productId':
+        case r'subscriptionProductId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.productId = valueDes;
+          result.subscriptionProductId = valueDes;
           break;
         default:
           unhandled.add(key);

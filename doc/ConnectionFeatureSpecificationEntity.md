@@ -9,8 +9,9 @@ import 'package:dart_api_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
-**max** | **num** |  | 
-**productId** | **String** |  | 
+**unlimited** | **bool** |  | 
+**max** | **num** |  | [optional] 
+**subscriptionProductId** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
