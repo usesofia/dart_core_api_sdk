@@ -11,6 +11,7 @@ import 'package:dart_api_sdk/src/auth/bearer_auth.dart';
 import 'package:dart_api_sdk/src/auth/oauth.dart';
 import 'package:dart_api_sdk/src/api/auth_api.dart';
 import 'package:dart_api_sdk/src/api/profiles_api.dart';
+import 'package:dart_api_sdk/src/api/stripe_api.dart';
 import 'package:dart_api_sdk/src/api/subscription_products_api.dart';
 import 'package:dart_api_sdk/src/api/workspace_join_requests_api.dart';
 import 'package:dart_api_sdk/src/api/workspace_subscriptions_api.dart';
@@ -80,6 +81,12 @@ class DartApiSdk {
   /// by doing that all interceptors will not be executed
   ProfilesApi getProfilesApi() {
     return ProfilesApi(dio, serializers);
+  }
+
+  /// Get StripeApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  StripeApi getStripeApi() {
+    return StripeApi(dio, serializers);
   }
 
   /// Get SubscriptionProductsApi instance, base route and serializer can be overridden by a given but be careful,
