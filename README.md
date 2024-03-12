@@ -70,8 +70,6 @@ Class | Method | HTTP request | Description
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSendEmailVerificationCode**](doc/AuthApi.md#authcontrollersendemailverificationcode) | **POST** /auth/sign-up/email-verification-code | 
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSignInWithEmailPassword**](doc/AuthApi.md#authcontrollersigninwithemailpassword) | **POST** /auth/sign-in/email-password | 
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSignUpWithEmailPassword**](doc/AuthApi.md#authcontrollersignupwithemailpassword) | **POST** /auth/sign-up/email-password | 
-[*PaymentsManagerApi*](doc/PaymentsManagerApi.md) | [**paymentsManagerControllerCreateCheckoutSessionForStripe**](doc/PaymentsManagerApi.md#paymentsmanagercontrollercreatecheckoutsessionforstripe) | **POST** /payments-manager/stripe/checkout-session | 
-[*PaymentsManagerApi*](doc/PaymentsManagerApi.md) | [**paymentsManagerControllerStripeWebhook**](doc/PaymentsManagerApi.md#paymentsmanagercontrollerstripewebhook) | **POST** /payments-manager/stripe/webhook | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerCreate**](doc/ProfilesApi.md#profilescontrollercreate) | **POST** /profiles | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerGetMy**](doc/ProfilesApi.md#profilescontrollergetmy) | **GET** /profiles/me | 
 [*SubscriptionProductsApi*](doc/SubscriptionProductsApi.md) | [**subscriptionProductsControllerList**](doc/SubscriptionProductsApi.md#subscriptionproductscontrollerlist) | **GET** /subscription-products | 
@@ -85,10 +83,8 @@ Class | Method | HTTP request | Description
 
  - [AiChatFeatureSpecificationEntity](doc/AiChatFeatureSpecificationEntity.md)
  - [CheckEmailInUseRequestDto](doc/CheckEmailInUseRequestDto.md)
- - [CheckoutSessionEntity](doc/CheckoutSessionEntity.md)
  - [ConnectionFeatureSpecificationEntity](doc/ConnectionFeatureSpecificationEntity.md)
  - [CreateProfileRequestDto](doc/CreateProfileRequestDto.md)
- - [CreateStripeCheckoutSessionRequestDto](doc/CreateStripeCheckoutSessionRequestDto.md)
  - [CreateWorkspaceRequestDto](doc/CreateWorkspaceRequestDto.md)
  - [CredentialsEntity](doc/CredentialsEntity.md)
  - [EmailInUseEntity](doc/EmailInUseEntity.md)

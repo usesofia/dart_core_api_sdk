@@ -7,6 +7,7 @@ import 'package:dart_api_sdk/src/model/connection_feature_specification_entity.d
 import 'package:dart_api_sdk/src/model/payments_manager_product_data_entity.dart';
 import 'package:dart_api_sdk/src/model/ai_chat_feature_specification_entity.dart';
 import 'package:dart_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -19,6 +20,7 @@ part 'subscription_product_entity.g.dart';
 /// * [paymentSystem] 
 /// * [paymentSystemProductId] 
 /// * [workspaceType] 
+/// * [trialPeriodInDays] 
 /// * [connectionFeatureSpecification] 
 /// * [financialTransactionsFeatureSpecification] 
 /// * [aiChatFeatureSpecification] 
@@ -36,6 +38,9 @@ abstract class SubscriptionProductEntity implements Built<SubscriptionProductEnt
 
   @BuiltValueField(wireName: r'workspaceType')
   String get workspaceType;
+
+  @BuiltValueField(wireName: r'trialPeriodInDays')
+  JsonObject? get trialPeriodInDays;
 
   @BuiltValueField(wireName: r'connectionFeatureSpecification')
   ConnectionFeatureSpecificationEntity get connectionFeatureSpecification;
@@ -92,6 +97,13 @@ class _$SubscriptionProductEntitySerializer implements PrimitiveSerializer<Subsc
       object.workspaceType,
       specifiedType: const FullType(String),
     );
+    if (object.trialPeriodInDays != null) {
+      yield r'trialPeriodInDays';
+      yield serializers.serialize(
+        object.trialPeriodInDays,
+        specifiedType: const FullType(JsonObject),
+      );
+    }
     yield r'connectionFeatureSpecification';
     yield serializers.serialize(
       object.connectionFeatureSpecification,
@@ -162,6 +174,13 @@ class _$SubscriptionProductEntitySerializer implements PrimitiveSerializer<Subsc
             specifiedType: const FullType(String),
           ) as String;
           result.workspaceType = valueDes;
+          break;
+        case r'trialPeriodInDays':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.trialPeriodInDays = valueDes;
           break;
         case r'connectionFeatureSpecification':
           final valueDes = serializers.deserialize(

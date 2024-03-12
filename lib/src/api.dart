@@ -10,7 +10,6 @@ import 'package:dart_api_sdk/src/auth/basic_auth.dart';
 import 'package:dart_api_sdk/src/auth/bearer_auth.dart';
 import 'package:dart_api_sdk/src/auth/oauth.dart';
 import 'package:dart_api_sdk/src/api/auth_api.dart';
-import 'package:dart_api_sdk/src/api/payments_manager_api.dart';
 import 'package:dart_api_sdk/src/api/profiles_api.dart';
 import 'package:dart_api_sdk/src/api/subscription_products_api.dart';
 import 'package:dart_api_sdk/src/api/workspace_join_requests_api.dart';
@@ -75,12 +74,6 @@ class DartApiSdk {
   /// by doing that all interceptors will not be executed
   AuthApi getAuthApi() {
     return AuthApi(dio, serializers);
-  }
-
-  /// Get PaymentsManagerApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  PaymentsManagerApi getPaymentsManagerApi() {
-    return PaymentsManagerApi(dio, serializers);
   }
 
   /// Get ProfilesApi instance, base route and serializer can be overridden by a given but be careful,

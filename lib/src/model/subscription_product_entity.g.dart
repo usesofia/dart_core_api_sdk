@@ -16,6 +16,8 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
   @override
   final String workspaceType;
   @override
+  final JsonObject? trialPeriodInDays;
+  @override
   final ConnectionFeatureSpecificationEntity connectionFeatureSpecification;
   @override
   final FinancialTransactionsFeatureSpecificationEntity
@@ -34,6 +36,7 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
       required this.paymentSystem,
       required this.paymentSystemProductId,
       required this.workspaceType,
+      this.trialPeriodInDays,
       required this.connectionFeatureSpecification,
       required this.financialTransactionsFeatureSpecification,
       required this.aiChatFeatureSpecification,
@@ -76,6 +79,7 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
         paymentSystem == other.paymentSystem &&
         paymentSystemProductId == other.paymentSystemProductId &&
         workspaceType == other.workspaceType &&
+        trialPeriodInDays == other.trialPeriodInDays &&
         connectionFeatureSpecification ==
             other.connectionFeatureSpecification &&
         financialTransactionsFeatureSpecification ==
@@ -91,6 +95,7 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
     _$hash = $jc(_$hash, paymentSystem.hashCode);
     _$hash = $jc(_$hash, paymentSystemProductId.hashCode);
     _$hash = $jc(_$hash, workspaceType.hashCode);
+    _$hash = $jc(_$hash, trialPeriodInDays.hashCode);
     _$hash = $jc(_$hash, connectionFeatureSpecification.hashCode);
     _$hash = $jc(_$hash, financialTransactionsFeatureSpecification.hashCode);
     _$hash = $jc(_$hash, aiChatFeatureSpecification.hashCode);
@@ -106,6 +111,7 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
           ..add('paymentSystem', paymentSystem)
           ..add('paymentSystemProductId', paymentSystemProductId)
           ..add('workspaceType', workspaceType)
+          ..add('trialPeriodInDays', trialPeriodInDays)
           ..add(
               'connectionFeatureSpecification', connectionFeatureSpecification)
           ..add('financialTransactionsFeatureSpecification',
@@ -139,6 +145,11 @@ class SubscriptionProductEntityBuilder
   String? get workspaceType => _$this._workspaceType;
   set workspaceType(String? workspaceType) =>
       _$this._workspaceType = workspaceType;
+
+  JsonObject? _trialPeriodInDays;
+  JsonObject? get trialPeriodInDays => _$this._trialPeriodInDays;
+  set trialPeriodInDays(JsonObject? trialPeriodInDays) =>
+      _$this._trialPeriodInDays = trialPeriodInDays;
 
   ConnectionFeatureSpecificationEntityBuilder? _connectionFeatureSpecification;
   ConnectionFeatureSpecificationEntityBuilder
@@ -190,6 +201,7 @@ class SubscriptionProductEntityBuilder
       _paymentSystem = $v.paymentSystem;
       _paymentSystemProductId = $v.paymentSystemProductId;
       _workspaceType = $v.workspaceType;
+      _trialPeriodInDays = $v.trialPeriodInDays;
       _connectionFeatureSpecification =
           $v.connectionFeatureSpecification.toBuilder();
       _financialTransactionsFeatureSpecification =
@@ -230,6 +242,7 @@ class SubscriptionProductEntityBuilder
                   'paymentSystemProductId'),
               workspaceType: BuiltValueNullFieldError.checkNotNull(
                   workspaceType, r'SubscriptionProductEntity', 'workspaceType'),
+              trialPeriodInDays: trialPeriodInDays,
               connectionFeatureSpecification:
                   connectionFeatureSpecification.build(),
               financialTransactionsFeatureSpecification:

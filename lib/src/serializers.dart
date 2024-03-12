@@ -16,10 +16,8 @@ import 'package:dart_api_sdk/src/model/date.dart';
 
 import 'package:dart_api_sdk/src/model/ai_chat_feature_specification_entity.dart';
 import 'package:dart_api_sdk/src/model/check_email_in_use_request_dto.dart';
-import 'package:dart_api_sdk/src/model/checkout_session_entity.dart';
 import 'package:dart_api_sdk/src/model/connection_feature_specification_entity.dart';
 import 'package:dart_api_sdk/src/model/create_profile_request_dto.dart';
-import 'package:dart_api_sdk/src/model/create_stripe_checkout_session_request_dto.dart';
 import 'package:dart_api_sdk/src/model/create_workspace_request_dto.dart';
 import 'package:dart_api_sdk/src/model/credentials_entity.dart';
 import 'package:dart_api_sdk/src/model/email_in_use_entity.dart';
@@ -45,10 +43,8 @@ part 'serializers.g.dart';
 @SerializersFor([
   AiChatFeatureSpecificationEntity,
   CheckEmailInUseRequestDto,
-  CheckoutSessionEntity,
   ConnectionFeatureSpecificationEntity,
   CreateProfileRequestDto,
-  CreateStripeCheckoutSessionRequestDto,
   CreateWorkspaceRequestDto,
   CredentialsEntity,
   EmailInUseEntity,
