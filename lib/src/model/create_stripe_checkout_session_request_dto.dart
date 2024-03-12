@@ -13,6 +13,7 @@ part 'create_stripe_checkout_session_request_dto.g.dart';
 /// Properties:
 /// * [workspaceId] 
 /// * [priceId] 
+/// * [isTrial] 
 @BuiltValue()
 abstract class CreateStripeCheckoutSessionRequestDto implements Built<CreateStripeCheckoutSessionRequestDto, CreateStripeCheckoutSessionRequestDtoBuilder> {
   @BuiltValueField(wireName: r'workspaceId')
@@ -20,6 +21,9 @@ abstract class CreateStripeCheckoutSessionRequestDto implements Built<CreateStri
 
   @BuiltValueField(wireName: r'priceId')
   String get priceId;
+
+  @BuiltValueField(wireName: r'isTrial')
+  bool get isTrial;
 
   CreateStripeCheckoutSessionRequestDto._();
 
@@ -53,6 +57,11 @@ class _$CreateStripeCheckoutSessionRequestDtoSerializer implements PrimitiveSeri
     yield serializers.serialize(
       object.priceId,
       specifiedType: const FullType(String),
+    );
+    yield r'isTrial';
+    yield serializers.serialize(
+      object.isTrial,
+      specifiedType: const FullType(bool),
     );
   }
 
@@ -90,6 +99,13 @@ class _$CreateStripeCheckoutSessionRequestDtoSerializer implements PrimitiveSeri
             specifiedType: const FullType(String),
           ) as String;
           result.priceId = valueDes;
+          break;
+        case r'isTrial':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isTrial = valueDes;
           break;
         default:
           unhandled.add(key);

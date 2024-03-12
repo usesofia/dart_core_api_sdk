@@ -12,6 +12,8 @@ class _$CreateStripeCheckoutSessionRequestDto
   final String workspaceId;
   @override
   final String priceId;
+  @override
+  final bool isTrial;
 
   factory _$CreateStripeCheckoutSessionRequestDto(
           [void Function(CreateStripeCheckoutSessionRequestDtoBuilder)?
@@ -20,12 +22,14 @@ class _$CreateStripeCheckoutSessionRequestDto
           ._build();
 
   _$CreateStripeCheckoutSessionRequestDto._(
-      {required this.workspaceId, required this.priceId})
+      {required this.workspaceId, required this.priceId, required this.isTrial})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         workspaceId, r'CreateStripeCheckoutSessionRequestDto', 'workspaceId');
     BuiltValueNullFieldError.checkNotNull(
         priceId, r'CreateStripeCheckoutSessionRequestDto', 'priceId');
+    BuiltValueNullFieldError.checkNotNull(
+        isTrial, r'CreateStripeCheckoutSessionRequestDto', 'isTrial');
   }
 
   @override
@@ -43,7 +47,8 @@ class _$CreateStripeCheckoutSessionRequestDto
     if (identical(other, this)) return true;
     return other is CreateStripeCheckoutSessionRequestDto &&
         workspaceId == other.workspaceId &&
-        priceId == other.priceId;
+        priceId == other.priceId &&
+        isTrial == other.isTrial;
   }
 
   @override
@@ -51,6 +56,7 @@ class _$CreateStripeCheckoutSessionRequestDto
     var _$hash = 0;
     _$hash = $jc(_$hash, workspaceId.hashCode);
     _$hash = $jc(_$hash, priceId.hashCode);
+    _$hash = $jc(_$hash, isTrial.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -60,7 +66,8 @@ class _$CreateStripeCheckoutSessionRequestDto
     return (newBuiltValueToStringHelper(
             r'CreateStripeCheckoutSessionRequestDto')
           ..add('workspaceId', workspaceId)
-          ..add('priceId', priceId))
+          ..add('priceId', priceId)
+          ..add('isTrial', isTrial))
         .toString();
   }
 }
@@ -79,6 +86,10 @@ class CreateStripeCheckoutSessionRequestDtoBuilder
   String? get priceId => _$this._priceId;
   set priceId(String? priceId) => _$this._priceId = priceId;
 
+  bool? _isTrial;
+  bool? get isTrial => _$this._isTrial;
+  set isTrial(bool? isTrial) => _$this._isTrial = isTrial;
+
   CreateStripeCheckoutSessionRequestDtoBuilder() {
     CreateStripeCheckoutSessionRequestDto._defaults(this);
   }
@@ -88,6 +99,7 @@ class CreateStripeCheckoutSessionRequestDtoBuilder
     if ($v != null) {
       _workspaceId = $v.workspaceId;
       _priceId = $v.priceId;
+      _isTrial = $v.isTrial;
       _$v = null;
     }
     return this;
@@ -114,7 +126,9 @@ class CreateStripeCheckoutSessionRequestDtoBuilder
             workspaceId: BuiltValueNullFieldError.checkNotNull(workspaceId,
                 r'CreateStripeCheckoutSessionRequestDto', 'workspaceId'),
             priceId: BuiltValueNullFieldError.checkNotNull(
-                priceId, r'CreateStripeCheckoutSessionRequestDto', 'priceId'));
+                priceId, r'CreateStripeCheckoutSessionRequestDto', 'priceId'),
+            isTrial: BuiltValueNullFieldError.checkNotNull(
+                isTrial, r'CreateStripeCheckoutSessionRequestDto', 'isTrial'));
     replace(_$result);
     return _$result;
   }
