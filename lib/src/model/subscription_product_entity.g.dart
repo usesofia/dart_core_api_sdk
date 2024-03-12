@@ -16,7 +16,7 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
   @override
   final String workspaceType;
   @override
-  final JsonObject? trialPeriodInDays;
+  final num? trialPeriodInDays;
   @override
   final ConnectionFeatureSpecificationEntity connectionFeatureSpecification;
   @override
@@ -146,9 +146,9 @@ class SubscriptionProductEntityBuilder
   set workspaceType(String? workspaceType) =>
       _$this._workspaceType = workspaceType;
 
-  JsonObject? _trialPeriodInDays;
-  JsonObject? get trialPeriodInDays => _$this._trialPeriodInDays;
-  set trialPeriodInDays(JsonObject? trialPeriodInDays) =>
+  num? _trialPeriodInDays;
+  num? get trialPeriodInDays => _$this._trialPeriodInDays;
+  set trialPeriodInDays(num? trialPeriodInDays) =>
       _$this._trialPeriodInDays = trialPeriodInDays;
 
   ConnectionFeatureSpecificationEntityBuilder? _connectionFeatureSpecification;

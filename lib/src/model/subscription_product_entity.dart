@@ -7,7 +7,6 @@ import 'package:dart_api_sdk/src/model/connection_feature_specification_entity.d
 import 'package:dart_api_sdk/src/model/payments_manager_product_data_entity.dart';
 import 'package:dart_api_sdk/src/model/ai_chat_feature_specification_entity.dart';
 import 'package:dart_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -40,7 +39,7 @@ abstract class SubscriptionProductEntity implements Built<SubscriptionProductEnt
   String get workspaceType;
 
   @BuiltValueField(wireName: r'trialPeriodInDays')
-  JsonObject? get trialPeriodInDays;
+  num? get trialPeriodInDays;
 
   @BuiltValueField(wireName: r'connectionFeatureSpecification')
   ConnectionFeatureSpecificationEntity get connectionFeatureSpecification;
@@ -101,7 +100,7 @@ class _$SubscriptionProductEntitySerializer implements PrimitiveSerializer<Subsc
       yield r'trialPeriodInDays';
       yield serializers.serialize(
         object.trialPeriodInDays,
-        specifiedType: const FullType(JsonObject),
+        specifiedType: const FullType(num),
       );
     }
     yield r'connectionFeatureSpecification';
@@ -178,8 +177,8 @@ class _$SubscriptionProductEntitySerializer implements PrimitiveSerializer<Subsc
         case r'trialPeriodInDays':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
+            specifiedType: const FullType(num),
+          ) as num;
           result.trialPeriodInDays = valueDes;
           break;
         case r'connectionFeatureSpecification':

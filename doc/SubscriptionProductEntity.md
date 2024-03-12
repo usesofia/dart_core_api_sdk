@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **paymentSystem** | **String** |  | 
 **paymentSystemProductId** | **String** |  | 
 **workspaceType** | **String** |  | 
-**trialPeriodInDays** | [**JsonObject**](.md) |  | [optional] 
+**trialPeriodInDays** | **num** |  | [optional] 
 **connectionFeatureSpecification** | [**ConnectionFeatureSpecificationEntity**](ConnectionFeatureSpecificationEntity.md) |  | 
 **financialTransactionsFeatureSpecification** | [**FinancialTransactionsFeatureSpecificationEntity**](FinancialTransactionsFeatureSpecificationEntity.md) |  | 
 **aiChatFeatureSpecification** | [**AiChatFeatureSpecificationEntity**](AiChatFeatureSpecificationEntity.md) |  | 
