@@ -11,11 +11,15 @@ part 'payments_manager_product_price_entity.g.dart';
 /// PaymentsManagerProductPriceEntity
 ///
 /// Properties:
+/// * [id] 
 /// * [active] 
 /// * [unitAmount] 
 /// * [interval] 
 @BuiltValue()
 abstract class PaymentsManagerProductPriceEntity implements Built<PaymentsManagerProductPriceEntity, PaymentsManagerProductPriceEntityBuilder> {
+  @BuiltValueField(wireName: r'id')
+  String get id;
+
   @BuiltValueField(wireName: r'active')
   bool get active;
 
@@ -48,6 +52,11 @@ class _$PaymentsManagerProductPriceEntitySerializer implements PrimitiveSerializ
     PaymentsManagerProductPriceEntity object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
     yield r'active';
     yield serializers.serialize(
       object.active,
@@ -86,6 +95,13 @@ class _$PaymentsManagerProductPriceEntitySerializer implements PrimitiveSerializ
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
         case r'active':
           final valueDes = serializers.deserialize(
             value,

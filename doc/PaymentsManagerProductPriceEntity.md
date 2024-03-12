@@ -8,6 +8,7 @@ import 'package:dart_api_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** |  | 
 **active** | **bool** |  | 
 **unitAmount** | **num** |  | 
 **interval** | **String** |  | 

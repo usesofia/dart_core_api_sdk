@@ -9,6 +9,8 @@ part of 'payments_manager_product_price_entity.dart';
 class _$PaymentsManagerProductPriceEntity
     extends PaymentsManagerProductPriceEntity {
   @override
+  final String id;
+  @override
   final bool active;
   @override
   final num unitAmount;
@@ -21,8 +23,13 @@ class _$PaymentsManagerProductPriceEntity
           ._build();
 
   _$PaymentsManagerProductPriceEntity._(
-      {required this.active, required this.unitAmount, required this.interval})
+      {required this.id,
+      required this.active,
+      required this.unitAmount,
+      required this.interval})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'PaymentsManagerProductPriceEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
         active, r'PaymentsManagerProductPriceEntity', 'active');
     BuiltValueNullFieldError.checkNotNull(
@@ -44,6 +51,7 @@ class _$PaymentsManagerProductPriceEntity
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is PaymentsManagerProductPriceEntity &&
+        id == other.id &&
         active == other.active &&
         unitAmount == other.unitAmount &&
         interval == other.interval;
@@ -52,6 +60,7 @@ class _$PaymentsManagerProductPriceEntity
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, active.hashCode);
     _$hash = $jc(_$hash, unitAmount.hashCode);
     _$hash = $jc(_$hash, interval.hashCode);
@@ -62,6 +71,7 @@ class _$PaymentsManagerProductPriceEntity
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'PaymentsManagerProductPriceEntity')
+          ..add('id', id)
           ..add('active', active)
           ..add('unitAmount', unitAmount)
           ..add('interval', interval))
@@ -74,6 +84,10 @@ class PaymentsManagerProductPriceEntityBuilder
         Builder<PaymentsManagerProductPriceEntity,
             PaymentsManagerProductPriceEntityBuilder> {
   _$PaymentsManagerProductPriceEntity? _$v;
+
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   bool? _active;
   bool? get active => _$this._active;
@@ -94,6 +108,7 @@ class PaymentsManagerProductPriceEntityBuilder
   PaymentsManagerProductPriceEntityBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _id = $v.id;
       _active = $v.active;
       _unitAmount = $v.unitAmount;
       _interval = $v.interval;
@@ -120,6 +135,8 @@ class PaymentsManagerProductPriceEntityBuilder
   _$PaymentsManagerProductPriceEntity _build() {
     final _$result = _$v ??
         new _$PaymentsManagerProductPriceEntity._(
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'PaymentsManagerProductPriceEntity', 'id'),
             active: BuiltValueNullFieldError.checkNotNull(
                 active, r'PaymentsManagerProductPriceEntity', 'active'),
             unitAmount: BuiltValueNullFieldError.checkNotNull(
