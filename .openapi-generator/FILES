@@ -4,14 +4,17 @@ analysis_options.yaml
 doc/AiChatFeatureSpecificationEntity.md
 doc/AuthApi.md
 doc/CheckEmailInUseRequestDto.md
+doc/CheckoutSessionEntity.md
 doc/ConnectionFeatureSpecificationEntity.md
 doc/CreateProfileRequestDto.md
+doc/CreateStripeCheckoutSessionRequestDto.md
 doc/CreateWorkspaceRequestDto.md
 doc/CredentialsEntity.md
 doc/EmailInUseEntity.md
 doc/ErrorEntity.md
 doc/ExceptionResponseEntity.md
 doc/FinancialTransactionsFeatureSpecificationEntity.md
+doc/PaymentsManagerApi.md
 doc/PaymentsManagerProductDataEntity.md
 doc/PaymentsManagerProductPriceEntity.md
 doc/ProfileEntity.md
@@ -33,6 +36,7 @@ doc/WorkspacesApi.md
 lib/dart_api_sdk.dart
 lib/src/api.dart
 lib/src/api/auth_api.dart
+lib/src/api/payments_manager_api.dart
 lib/src/api/profiles_api.dart
 lib/src/api/subscription_products_api.dart
 lib/src/api/workspace_join_requests_api.dart
@@ -47,8 +51,10 @@ lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
 lib/src/model/ai_chat_feature_specification_entity.dart
 lib/src/model/check_email_in_use_request_dto.dart
+lib/src/model/checkout_session_entity.dart
 lib/src/model/connection_feature_specification_entity.dart
 lib/src/model/create_profile_request_dto.dart
+lib/src/model/create_stripe_checkout_session_request_dto.dart
 lib/src/model/create_workspace_request_dto.dart
 lib/src/model/credentials_entity.dart
 lib/src/model/date.dart
@@ -71,3 +77,6 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/checkout_session_entity_test.dart
+test/create_stripe_checkout_session_request_dto_test.dart
+test/payments_manager_api_test.dart
