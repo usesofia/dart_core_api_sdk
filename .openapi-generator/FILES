@@ -77,6 +77,3 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/checkout_session_entity_test.dart
-test/create_stripe_checkout_session_request_dto_test.dart
-test/payments_manager_api_test.dart
