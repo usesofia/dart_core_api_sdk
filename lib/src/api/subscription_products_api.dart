@@ -24,7 +24,7 @@ class SubscriptionProductsApi {
   /// 
   ///
   /// Parameters:
-  /// * [workspaceType] 
+  /// * [workspaceId] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,7 +35,7 @@ class SubscriptionProductsApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<SubscriptionProductEntity>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<SubscriptionProductEntity>>> subscriptionProductsControllerList({ 
-    required String workspaceType,
+    required String workspaceId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -43,7 +43,7 @@ class SubscriptionProductsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/subscription-products';
+    final _path = r'/workspaces/{workspaceId}/subscription-products'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -56,14 +56,9 @@ class SubscriptionProductsApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'workspaceType': encodeQueryParameter(_serializers, workspaceType, const FullType(String)),
-    };
-
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

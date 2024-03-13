@@ -20,6 +20,7 @@ part 'subscription_product_entity.g.dart';
 /// * [paymentSystemProductId] 
 /// * [workspaceType] 
 /// * [trialPeriodInDays] 
+/// * [trialAlreadyUsed] 
 /// * [connectionFeatureSpecification] 
 /// * [financialTransactionsFeatureSpecification] 
 /// * [aiChatFeatureSpecification] 
@@ -40,6 +41,9 @@ abstract class SubscriptionProductEntity implements Built<SubscriptionProductEnt
 
   @BuiltValueField(wireName: r'trialPeriodInDays')
   num? get trialPeriodInDays;
+
+  @BuiltValueField(wireName: r'trialAlreadyUsed')
+  bool get trialAlreadyUsed;
 
   @BuiltValueField(wireName: r'connectionFeatureSpecification')
   ConnectionFeatureSpecificationEntity get connectionFeatureSpecification;
@@ -103,6 +107,11 @@ class _$SubscriptionProductEntitySerializer implements PrimitiveSerializer<Subsc
         specifiedType: const FullType(num),
       );
     }
+    yield r'trialAlreadyUsed';
+    yield serializers.serialize(
+      object.trialAlreadyUsed,
+      specifiedType: const FullType(bool),
+    );
     yield r'connectionFeatureSpecification';
     yield serializers.serialize(
       object.connectionFeatureSpecification,
@@ -180,6 +189,13 @@ class _$SubscriptionProductEntitySerializer implements PrimitiveSerializer<Subsc
             specifiedType: const FullType(num),
           ) as num;
           result.trialPeriodInDays = valueDes;
+          break;
+        case r'trialAlreadyUsed':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.trialAlreadyUsed = valueDes;
           break;
         case r'connectionFeatureSpecification':
           final valueDes = serializers.deserialize(

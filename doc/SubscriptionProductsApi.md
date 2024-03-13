@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**subscriptionProductsControllerList**](SubscriptionProductsApi.md#subscriptionproductscontrollerlist) | **GET** /subscription-products | 
+[**subscriptionProductsControllerList**](SubscriptionProductsApi.md#subscriptionproductscontrollerlist) | **GET** /workspaces/{workspaceId}/subscription-products | 
 
 
 # **subscriptionProductsControllerList**
-> BuiltList<SubscriptionProductEntity> subscriptionProductsControllerList(workspaceType)
+> BuiltList<SubscriptionProductEntity> subscriptionProductsControllerList(workspaceId)
 
 
 
@@ -22,10 +22,10 @@ Method | HTTP request | Description
 import 'package:dart_api_sdk/api.dart';
 
 final api = DartApiSdk().getSubscriptionProductsApi();
-final String workspaceType = workspaceType_example; // String | 
+final String workspaceId = workspaceId_example; // String | 
 
 try {
-    final response = api.subscriptionProductsControllerList(workspaceType);
+    final response = api.subscriptionProductsControllerList(workspaceId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling SubscriptionProductsApi->subscriptionProductsControllerList: $e\n');
@@ -36,7 +36,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workspaceType** | **String**|  | 
+ **workspaceId** | **String**|  | 
 
 ### Return type
 
