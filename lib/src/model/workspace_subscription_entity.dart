@@ -18,6 +18,8 @@ part 'workspace_subscription_entity.g.dart';
 /// * [subscriptionProductId] 
 /// * [subscriptionProduct] 
 /// * [status] 
+/// * [paymentSystem] 
+/// * [paymentSystemSubscriptionId] 
 /// * [createdAt] 
 @BuiltValue()
 abstract class WorkspaceSubscriptionEntity implements Built<WorkspaceSubscriptionEntity, WorkspaceSubscriptionEntityBuilder> {
@@ -36,6 +38,13 @@ abstract class WorkspaceSubscriptionEntity implements Built<WorkspaceSubscriptio
   @BuiltValueField(wireName: r'status')
   WorkspaceSubscriptionEntityStatusEnum get status;
   // enum statusEnum {  ACTIVE,  NOT_ACTIVE,  TRIAL,  };
+
+  @BuiltValueField(wireName: r'paymentSystem')
+  WorkspaceSubscriptionEntityPaymentSystemEnum get paymentSystem;
+  // enum paymentSystemEnum {  STRIPE,  };
+
+  @BuiltValueField(wireName: r'paymentSystemSubscriptionId')
+  String get paymentSystemSubscriptionId;
 
   @BuiltValueField(wireName: r'createdAt')
   DateTime get createdAt;
@@ -87,6 +96,16 @@ class _$WorkspaceSubscriptionEntitySerializer implements PrimitiveSerializer<Wor
     yield serializers.serialize(
       object.status,
       specifiedType: const FullType(WorkspaceSubscriptionEntityStatusEnum),
+    );
+    yield r'paymentSystem';
+    yield serializers.serialize(
+      object.paymentSystem,
+      specifiedType: const FullType(WorkspaceSubscriptionEntityPaymentSystemEnum),
+    );
+    yield r'paymentSystemSubscriptionId';
+    yield serializers.serialize(
+      object.paymentSystemSubscriptionId,
+      specifiedType: const FullType(String),
     );
     yield r'createdAt';
     yield serializers.serialize(
@@ -151,6 +170,20 @@ class _$WorkspaceSubscriptionEntitySerializer implements PrimitiveSerializer<Wor
           ) as WorkspaceSubscriptionEntityStatusEnum;
           result.status = valueDes;
           break;
+        case r'paymentSystem':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkspaceSubscriptionEntityPaymentSystemEnum),
+          ) as WorkspaceSubscriptionEntityPaymentSystemEnum;
+          result.paymentSystem = valueDes;
+          break;
+        case r'paymentSystemSubscriptionId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.paymentSystemSubscriptionId = valueDes;
+          break;
         case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
@@ -202,5 +235,18 @@ class WorkspaceSubscriptionEntityStatusEnum extends EnumClass {
 
   static BuiltSet<WorkspaceSubscriptionEntityStatusEnum> get values => _$workspaceSubscriptionEntityStatusEnumValues;
   static WorkspaceSubscriptionEntityStatusEnum valueOf(String name) => _$workspaceSubscriptionEntityStatusEnumValueOf(name);
+}
+
+class WorkspaceSubscriptionEntityPaymentSystemEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'STRIPE')
+  static const WorkspaceSubscriptionEntityPaymentSystemEnum STRIPE = _$workspaceSubscriptionEntityPaymentSystemEnum_STRIPE;
+
+  static Serializer<WorkspaceSubscriptionEntityPaymentSystemEnum> get serializer => _$workspaceSubscriptionEntityPaymentSystemEnumSerializer;
+
+  const WorkspaceSubscriptionEntityPaymentSystemEnum._(String name): super(name);
+
+  static BuiltSet<WorkspaceSubscriptionEntityPaymentSystemEnum> get values => _$workspaceSubscriptionEntityPaymentSystemEnumValues;
+  static WorkspaceSubscriptionEntityPaymentSystemEnum valueOf(String name) => _$workspaceSubscriptionEntityPaymentSystemEnumValueOf(name);
 }
 

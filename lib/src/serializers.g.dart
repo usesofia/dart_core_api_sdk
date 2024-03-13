@@ -32,6 +32,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(WorkspaceEntity.serializer)
       ..add(WorkspaceJoinRequestEntity.serializer)
       ..add(WorkspaceSubscriptionEntity.serializer)
+      ..add(WorkspaceSubscriptionEntityPaymentSystemEnum.serializer)
       ..add(WorkspaceSubscriptionEntityStatusEnum.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ErrorEntity)]),

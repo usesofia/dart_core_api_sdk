@@ -38,9 +38,32 @@ final BuiltSet<WorkspaceSubscriptionEntityStatusEnum>
   _$workspaceSubscriptionEntityStatusEnum_TRIAL,
 ]);
 
+const WorkspaceSubscriptionEntityPaymentSystemEnum
+    _$workspaceSubscriptionEntityPaymentSystemEnum_STRIPE =
+    const WorkspaceSubscriptionEntityPaymentSystemEnum._('STRIPE');
+
+WorkspaceSubscriptionEntityPaymentSystemEnum
+    _$workspaceSubscriptionEntityPaymentSystemEnumValueOf(String name) {
+  switch (name) {
+    case 'STRIPE':
+      return _$workspaceSubscriptionEntityPaymentSystemEnum_STRIPE;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<WorkspaceSubscriptionEntityPaymentSystemEnum>
+    _$workspaceSubscriptionEntityPaymentSystemEnumValues = new BuiltSet<
+        WorkspaceSubscriptionEntityPaymentSystemEnum>(const <WorkspaceSubscriptionEntityPaymentSystemEnum>[
+  _$workspaceSubscriptionEntityPaymentSystemEnum_STRIPE,
+]);
+
 Serializer<WorkspaceSubscriptionEntityStatusEnum>
     _$workspaceSubscriptionEntityStatusEnumSerializer =
     new _$WorkspaceSubscriptionEntityStatusEnumSerializer();
+Serializer<WorkspaceSubscriptionEntityPaymentSystemEnum>
+    _$workspaceSubscriptionEntityPaymentSystemEnumSerializer =
+    new _$WorkspaceSubscriptionEntityPaymentSystemEnumSerializer();
 
 class _$WorkspaceSubscriptionEntityStatusEnumSerializer
     implements PrimitiveSerializer<WorkspaceSubscriptionEntityStatusEnum> {
@@ -76,6 +99,37 @@ class _$WorkspaceSubscriptionEntityStatusEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
+class _$WorkspaceSubscriptionEntityPaymentSystemEnumSerializer
+    implements
+        PrimitiveSerializer<WorkspaceSubscriptionEntityPaymentSystemEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'STRIPE': 'STRIPE',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'STRIPE': 'STRIPE',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    WorkspaceSubscriptionEntityPaymentSystemEnum
+  ];
+  @override
+  final String wireName = 'WorkspaceSubscriptionEntityPaymentSystemEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          WorkspaceSubscriptionEntityPaymentSystemEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  WorkspaceSubscriptionEntityPaymentSystemEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      WorkspaceSubscriptionEntityPaymentSystemEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$WorkspaceSubscriptionEntity extends WorkspaceSubscriptionEntity {
   @override
   final String id;
@@ -87,6 +141,10 @@ class _$WorkspaceSubscriptionEntity extends WorkspaceSubscriptionEntity {
   final SubscriptionProductEntity subscriptionProduct;
   @override
   final WorkspaceSubscriptionEntityStatusEnum status;
+  @override
+  final WorkspaceSubscriptionEntityPaymentSystemEnum paymentSystem;
+  @override
+  final String paymentSystemSubscriptionId;
   @override
   final DateTime createdAt;
 
@@ -100,6 +158,8 @@ class _$WorkspaceSubscriptionEntity extends WorkspaceSubscriptionEntity {
       required this.subscriptionProductId,
       required this.subscriptionProduct,
       required this.status,
+      required this.paymentSystem,
+      required this.paymentSystemSubscriptionId,
       required this.createdAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
@@ -112,6 +172,10 @@ class _$WorkspaceSubscriptionEntity extends WorkspaceSubscriptionEntity {
         r'WorkspaceSubscriptionEntity', 'subscriptionProduct');
     BuiltValueNullFieldError.checkNotNull(
         status, r'WorkspaceSubscriptionEntity', 'status');
+    BuiltValueNullFieldError.checkNotNull(
+        paymentSystem, r'WorkspaceSubscriptionEntity', 'paymentSystem');
+    BuiltValueNullFieldError.checkNotNull(paymentSystemSubscriptionId,
+        r'WorkspaceSubscriptionEntity', 'paymentSystemSubscriptionId');
     BuiltValueNullFieldError.checkNotNull(
         createdAt, r'WorkspaceSubscriptionEntity', 'createdAt');
   }
@@ -134,6 +198,8 @@ class _$WorkspaceSubscriptionEntity extends WorkspaceSubscriptionEntity {
         subscriptionProductId == other.subscriptionProductId &&
         subscriptionProduct == other.subscriptionProduct &&
         status == other.status &&
+        paymentSystem == other.paymentSystem &&
+        paymentSystemSubscriptionId == other.paymentSystemSubscriptionId &&
         createdAt == other.createdAt;
   }
 
@@ -145,6 +211,8 @@ class _$WorkspaceSubscriptionEntity extends WorkspaceSubscriptionEntity {
     _$hash = $jc(_$hash, subscriptionProductId.hashCode);
     _$hash = $jc(_$hash, subscriptionProduct.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, paymentSystem.hashCode);
+    _$hash = $jc(_$hash, paymentSystemSubscriptionId.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -158,6 +226,8 @@ class _$WorkspaceSubscriptionEntity extends WorkspaceSubscriptionEntity {
           ..add('subscriptionProductId', subscriptionProductId)
           ..add('subscriptionProduct', subscriptionProduct)
           ..add('status', status)
+          ..add('paymentSystem', paymentSystem)
+          ..add('paymentSystemSubscriptionId', paymentSystemSubscriptionId)
           ..add('createdAt', createdAt))
         .toString();
   }
@@ -194,6 +264,19 @@ class WorkspaceSubscriptionEntityBuilder
   set status(WorkspaceSubscriptionEntityStatusEnum? status) =>
       _$this._status = status;
 
+  WorkspaceSubscriptionEntityPaymentSystemEnum? _paymentSystem;
+  WorkspaceSubscriptionEntityPaymentSystemEnum? get paymentSystem =>
+      _$this._paymentSystem;
+  set paymentSystem(
+          WorkspaceSubscriptionEntityPaymentSystemEnum? paymentSystem) =>
+      _$this._paymentSystem = paymentSystem;
+
+  String? _paymentSystemSubscriptionId;
+  String? get paymentSystemSubscriptionId =>
+      _$this._paymentSystemSubscriptionId;
+  set paymentSystemSubscriptionId(String? paymentSystemSubscriptionId) =>
+      _$this._paymentSystemSubscriptionId = paymentSystemSubscriptionId;
+
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
@@ -210,6 +293,8 @@ class WorkspaceSubscriptionEntityBuilder
       _subscriptionProductId = $v.subscriptionProductId;
       _subscriptionProduct = $v.subscriptionProduct.toBuilder();
       _status = $v.status;
+      _paymentSystem = $v.paymentSystem;
+      _paymentSystemSubscriptionId = $v.paymentSystemSubscriptionId;
       _createdAt = $v.createdAt;
       _$v = null;
     }
@@ -240,12 +325,16 @@ class WorkspaceSubscriptionEntityBuilder
               workspaceId: BuiltValueNullFieldError.checkNotNull(
                   workspaceId, r'WorkspaceSubscriptionEntity', 'workspaceId'),
               subscriptionProductId: BuiltValueNullFieldError.checkNotNull(
-                  subscriptionProductId,
-                  r'WorkspaceSubscriptionEntity',
-                  'subscriptionProductId'),
+                  subscriptionProductId, r'WorkspaceSubscriptionEntity', 'subscriptionProductId'),
               subscriptionProduct: subscriptionProduct.build(),
               status: BuiltValueNullFieldError.checkNotNull(
                   status, r'WorkspaceSubscriptionEntity', 'status'),
+              paymentSystem: BuiltValueNullFieldError.checkNotNull(
+                  paymentSystem, r'WorkspaceSubscriptionEntity', 'paymentSystem'),
+              paymentSystemSubscriptionId: BuiltValueNullFieldError.checkNotNull(
+                  paymentSystemSubscriptionId,
+                  r'WorkspaceSubscriptionEntity',
+                  'paymentSystemSubscriptionId'),
               createdAt: BuiltValueNullFieldError.checkNotNull(
                   createdAt, r'WorkspaceSubscriptionEntity', 'createdAt'));
     } catch (_) {
