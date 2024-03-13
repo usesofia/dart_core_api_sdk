@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **paymentSystemProductId** | **String** |  | 
 **workspaceType** | **String** |  | 
 **trialPeriodInDays** | **num** |  | [optional] 
-**trialAlreadyUsed** | **bool** |  | 
+**trialAlreadyUsed** | **bool** |  | [optional] 
 **connectionFeatureSpecification** | [**ConnectionFeatureSpecificationEntity**](ConnectionFeatureSpecificationEntity.md) |  | 
 **financialTransactionsFeatureSpecification** | [**FinancialTransactionsFeatureSpecificationEntity**](FinancialTransactionsFeatureSpecificationEntity.md) |  | 
 **aiChatFeatureSpecification** | [**AiChatFeatureSpecificationEntity**](AiChatFeatureSpecificationEntity.md) |  | 

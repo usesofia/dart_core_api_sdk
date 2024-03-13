@@ -43,7 +43,7 @@ abstract class SubscriptionProductEntity implements Built<SubscriptionProductEnt
   num? get trialPeriodInDays;
 
   @BuiltValueField(wireName: r'trialAlreadyUsed')
-  bool get trialAlreadyUsed;
+  bool? get trialAlreadyUsed;
 
   @BuiltValueField(wireName: r'connectionFeatureSpecification')
   ConnectionFeatureSpecificationEntity get connectionFeatureSpecification;
@@ -107,11 +107,13 @@ class _$SubscriptionProductEntitySerializer implements PrimitiveSerializer<Subsc
         specifiedType: const FullType(num),
       );
     }
-    yield r'trialAlreadyUsed';
-    yield serializers.serialize(
-      object.trialAlreadyUsed,
-      specifiedType: const FullType(bool),
-    );
+    if (object.trialAlreadyUsed != null) {
+      yield r'trialAlreadyUsed';
+      yield serializers.serialize(
+        object.trialAlreadyUsed,
+        specifiedType: const FullType(bool),
+      );
+    }
     yield r'connectionFeatureSpecification';
     yield serializers.serialize(
       object.connectionFeatureSpecification,

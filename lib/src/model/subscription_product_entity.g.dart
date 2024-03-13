@@ -18,7 +18,7 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
   @override
   final num? trialPeriodInDays;
   @override
-  final bool trialAlreadyUsed;
+  final bool? trialAlreadyUsed;
   @override
   final ConnectionFeatureSpecificationEntity connectionFeatureSpecification;
   @override
@@ -39,7 +39,7 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
       required this.paymentSystemProductId,
       required this.workspaceType,
       this.trialPeriodInDays,
-      required this.trialAlreadyUsed,
+      this.trialAlreadyUsed,
       required this.connectionFeatureSpecification,
       required this.financialTransactionsFeatureSpecification,
       required this.aiChatFeatureSpecification,
@@ -53,8 +53,6 @@ class _$SubscriptionProductEntity extends SubscriptionProductEntity {
         r'SubscriptionProductEntity', 'paymentSystemProductId');
     BuiltValueNullFieldError.checkNotNull(
         workspaceType, r'SubscriptionProductEntity', 'workspaceType');
-    BuiltValueNullFieldError.checkNotNull(
-        trialAlreadyUsed, r'SubscriptionProductEntity', 'trialAlreadyUsed');
     BuiltValueNullFieldError.checkNotNull(connectionFeatureSpecification,
         r'SubscriptionProductEntity', 'connectionFeatureSpecification');
     BuiltValueNullFieldError.checkNotNull(
@@ -257,10 +255,7 @@ class SubscriptionProductEntityBuilder
               workspaceType: BuiltValueNullFieldError.checkNotNull(
                   workspaceType, r'SubscriptionProductEntity', 'workspaceType'),
               trialPeriodInDays: trialPeriodInDays,
-              trialAlreadyUsed: BuiltValueNullFieldError.checkNotNull(
-                  trialAlreadyUsed,
-                  r'SubscriptionProductEntity',
-                  'trialAlreadyUsed'),
+              trialAlreadyUsed: trialAlreadyUsed,
               connectionFeatureSpecification:
                   connectionFeatureSpecification.build(),
               financialTransactionsFeatureSpecification:
