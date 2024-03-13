@@ -8,9 +8,7 @@ part of 'credentials_entity.dart';
 
 class _$CredentialsEntity extends CredentialsEntity {
   @override
-  final String sub;
-  @override
-  final String type;
+  final String userId;
   @override
   final String accessToken;
   @override
@@ -21,13 +19,12 @@ class _$CredentialsEntity extends CredentialsEntity {
       (new CredentialsEntityBuilder()..update(updates))._build();
 
   _$CredentialsEntity._(
-      {required this.sub,
-      required this.type,
+      {required this.userId,
       required this.accessToken,
       required this.refreshToken})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(sub, r'CredentialsEntity', 'sub');
-    BuiltValueNullFieldError.checkNotNull(type, r'CredentialsEntity', 'type');
+    BuiltValueNullFieldError.checkNotNull(
+        userId, r'CredentialsEntity', 'userId');
     BuiltValueNullFieldError.checkNotNull(
         accessToken, r'CredentialsEntity', 'accessToken');
     BuiltValueNullFieldError.checkNotNull(
@@ -46,8 +43,7 @@ class _$CredentialsEntity extends CredentialsEntity {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CredentialsEntity &&
-        sub == other.sub &&
-        type == other.type &&
+        userId == other.userId &&
         accessToken == other.accessToken &&
         refreshToken == other.refreshToken;
   }
@@ -55,8 +51,7 @@ class _$CredentialsEntity extends CredentialsEntity {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, sub.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, userId.hashCode);
     _$hash = $jc(_$hash, accessToken.hashCode);
     _$hash = $jc(_$hash, refreshToken.hashCode);
     _$hash = $jf(_$hash);
@@ -66,8 +61,7 @@ class _$CredentialsEntity extends CredentialsEntity {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CredentialsEntity')
-          ..add('sub', sub)
-          ..add('type', type)
+          ..add('userId', userId)
           ..add('accessToken', accessToken)
           ..add('refreshToken', refreshToken))
         .toString();
@@ -78,13 +72,9 @@ class CredentialsEntityBuilder
     implements Builder<CredentialsEntity, CredentialsEntityBuilder> {
   _$CredentialsEntity? _$v;
 
-  String? _sub;
-  String? get sub => _$this._sub;
-  set sub(String? sub) => _$this._sub = sub;
-
-  String? _type;
-  String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
+  String? _userId;
+  String? get userId => _$this._userId;
+  set userId(String? userId) => _$this._userId = userId;
 
   String? _accessToken;
   String? get accessToken => _$this._accessToken;
@@ -101,8 +91,7 @@ class CredentialsEntityBuilder
   CredentialsEntityBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _sub = $v.sub;
-      _type = $v.type;
+      _userId = $v.userId;
       _accessToken = $v.accessToken;
       _refreshToken = $v.refreshToken;
       _$v = null;
@@ -127,10 +116,8 @@ class CredentialsEntityBuilder
   _$CredentialsEntity _build() {
     final _$result = _$v ??
         new _$CredentialsEntity._(
-            sub: BuiltValueNullFieldError.checkNotNull(
-                sub, r'CredentialsEntity', 'sub'),
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'CredentialsEntity', 'type'),
+            userId: BuiltValueNullFieldError.checkNotNull(
+                userId, r'CredentialsEntity', 'userId'),
             accessToken: BuiltValueNullFieldError.checkNotNull(
                 accessToken, r'CredentialsEntity', 'accessToken'),
             refreshToken: BuiltValueNullFieldError.checkNotNull(

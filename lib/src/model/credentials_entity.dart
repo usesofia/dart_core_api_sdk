@@ -11,17 +11,13 @@ part 'credentials_entity.g.dart';
 /// CredentialsEntity
 ///
 /// Properties:
-/// * [sub] 
-/// * [type] 
+/// * [userId] 
 /// * [accessToken] 
 /// * [refreshToken] 
 @BuiltValue()
 abstract class CredentialsEntity implements Built<CredentialsEntity, CredentialsEntityBuilder> {
-  @BuiltValueField(wireName: r'sub')
-  String get sub;
-
-  @BuiltValueField(wireName: r'type')
-  String get type;
+  @BuiltValueField(wireName: r'userId')
+  String get userId;
 
   @BuiltValueField(wireName: r'accessToken')
   String get accessToken;
@@ -52,14 +48,9 @@ class _$CredentialsEntitySerializer implements PrimitiveSerializer<CredentialsEn
     CredentialsEntity object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'sub';
+    yield r'userId';
     yield serializers.serialize(
-      object.sub,
-      specifiedType: const FullType(String),
-    );
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
+      object.userId,
       specifiedType: const FullType(String),
     );
     yield r'accessToken';
@@ -95,19 +86,12 @@ class _$CredentialsEntitySerializer implements PrimitiveSerializer<CredentialsEn
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'sub':
+        case r'userId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.sub = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
+          result.userId = valueDes;
           break;
         case r'accessToken':
           final valueDes = serializers.deserialize(

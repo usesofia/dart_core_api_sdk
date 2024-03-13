@@ -8,8 +8,7 @@ import 'package:dart_api_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sub** | **String** |  | 
-**type** | **String** |  | 
+**userId** | **String** |  | 
 **accessToken** | **String** |  | 
 **refreshToken** | **String** |  | 
 
