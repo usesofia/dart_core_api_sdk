@@ -83,6 +83,3 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/create_pluggy_connect_token_request_dto_test.dart
-test/pluggy_api_test.dart
-test/pluggy_connect_token_entity_test.dart
