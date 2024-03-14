@@ -6,6 +6,7 @@ doc/AuthApi.md
 doc/CheckEmailInUseRequestDto.md
 doc/CheckoutSessionEntity.md
 doc/ConnectionFeatureSpecificationEntity.md
+doc/CreatePluggyConnectTokenRequestDto.md
 doc/CreateProfileRequestDto.md
 doc/CreateStripeCheckoutSessionRequestDto.md
 doc/CreateWorkspaceRequestDto.md
@@ -16,6 +17,8 @@ doc/ExceptionResponseEntity.md
 doc/FinancialTransactionsFeatureSpecificationEntity.md
 doc/PaymentsManagerProductDataEntity.md
 doc/PaymentsManagerProductPriceEntity.md
+doc/PluggyApi.md
+doc/PluggyConnectTokenEntity.md
 doc/ProfileEntity.md
 doc/ProfilesApi.md
 doc/RefreshRequestDto.md
@@ -36,6 +39,7 @@ doc/WorkspacesApi.md
 lib/dart_api_sdk.dart
 lib/src/api.dart
 lib/src/api/auth_api.dart
+lib/src/api/pluggy_api.dart
 lib/src/api/profiles_api.dart
 lib/src/api/stripe_api.dart
 lib/src/api/subscription_products_api.dart
@@ -53,6 +57,7 @@ lib/src/model/ai_chat_feature_specification_entity.dart
 lib/src/model/check_email_in_use_request_dto.dart
 lib/src/model/checkout_session_entity.dart
 lib/src/model/connection_feature_specification_entity.dart
+lib/src/model/create_pluggy_connect_token_request_dto.dart
 lib/src/model/create_profile_request_dto.dart
 lib/src/model/create_stripe_checkout_session_request_dto.dart
 lib/src/model/create_workspace_request_dto.dart
@@ -64,6 +69,7 @@ lib/src/model/exception_response_entity.dart
 lib/src/model/financial_transactions_feature_specification_entity.dart
 lib/src/model/payments_manager_product_data_entity.dart
 lib/src/model/payments_manager_product_price_entity.dart
+lib/src/model/pluggy_connect_token_entity.dart
 lib/src/model/profile_entity.dart
 lib/src/model/refresh_request_dto.dart
 lib/src/model/send_email_verification_code_request_dto.dart
@@ -77,3 +83,6 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/create_pluggy_connect_token_request_dto_test.dart
+test/pluggy_api_test.dart
+test/pluggy_connect_token_entity_test.dart

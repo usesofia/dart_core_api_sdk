@@ -18,6 +18,7 @@ import 'package:dart_api_sdk/src/model/ai_chat_feature_specification_entity.dart
 import 'package:dart_api_sdk/src/model/check_email_in_use_request_dto.dart';
 import 'package:dart_api_sdk/src/model/checkout_session_entity.dart';
 import 'package:dart_api_sdk/src/model/connection_feature_specification_entity.dart';
+import 'package:dart_api_sdk/src/model/create_pluggy_connect_token_request_dto.dart';
 import 'package:dart_api_sdk/src/model/create_profile_request_dto.dart';
 import 'package:dart_api_sdk/src/model/create_stripe_checkout_session_request_dto.dart';
 import 'package:dart_api_sdk/src/model/create_workspace_request_dto.dart';
@@ -28,6 +29,7 @@ import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
 import 'package:dart_api_sdk/src/model/payments_manager_product_data_entity.dart';
 import 'package:dart_api_sdk/src/model/payments_manager_product_price_entity.dart';
+import 'package:dart_api_sdk/src/model/pluggy_connect_token_entity.dart';
 import 'package:dart_api_sdk/src/model/profile_entity.dart';
 import 'package:dart_api_sdk/src/model/refresh_request_dto.dart';
 import 'package:dart_api_sdk/src/model/send_email_verification_code_request_dto.dart';
@@ -47,6 +49,7 @@ part 'serializers.g.dart';
   CheckEmailInUseRequestDto,
   CheckoutSessionEntity,
   ConnectionFeatureSpecificationEntity,
+  CreatePluggyConnectTokenRequestDto,
   CreateProfileRequestDto,
   CreateStripeCheckoutSessionRequestDto,
   CreateWorkspaceRequestDto,
@@ -57,6 +60,7 @@ part 'serializers.g.dart';
   FinancialTransactionsFeatureSpecificationEntity,
   PaymentsManagerProductDataEntity,
   PaymentsManagerProductPriceEntity,
+  PluggyConnectTokenEntity,
   ProfileEntity,
   RefreshRequestDto,
   SendEmailVerificationCodeRequestDto,
