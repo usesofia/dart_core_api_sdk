@@ -3,6 +3,7 @@ README.md
 analysis_options.yaml
 doc/AiChatFeatureSpecificationEntity.md
 doc/AuthApi.md
+doc/BankConnectionsApi.md
 doc/CheckEmailInUseRequestDto.md
 doc/CheckoutSessionEntity.md
 doc/ConnectionFeatureSpecificationEntity.md
@@ -39,6 +40,7 @@ doc/WorkspacesApi.md
 lib/dart_api_sdk.dart
 lib/src/api.dart
 lib/src/api/auth_api.dart
+lib/src/api/bank_connections_api.dart
 lib/src/api/pluggy_api.dart
 lib/src/api/profiles_api.dart
 lib/src/api/stripe_api.dart
@@ -83,3 +85,4 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/bank_connections_api_test.dart

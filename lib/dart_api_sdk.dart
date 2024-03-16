@@ -10,6 +10,7 @@ export 'package:dart_api_sdk/src/serializers.dart';
 export 'package:dart_api_sdk/src/model/date.dart';
 
 export 'package:dart_api_sdk/src/api/auth_api.dart';
+export 'package:dart_api_sdk/src/api/bank_connections_api.dart';
 export 'package:dart_api_sdk/src/api/pluggy_api.dart';
 export 'package:dart_api_sdk/src/api/profiles_api.dart';
 export 'package:dart_api_sdk/src/api/stripe_api.dart';
