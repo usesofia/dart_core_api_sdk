@@ -15,6 +15,14 @@ import 'package:dart_api_sdk/src/date_serializer.dart';
 import 'package:dart_api_sdk/src/model/date.dart';
 
 import 'package:dart_api_sdk/src/model/ai_chat_feature_specification_entity.dart';
+import 'package:dart_api_sdk/src/model/bank_connection_entity.dart';
+import 'package:dart_api_sdk/src/model/bank_connector_entity.dart';
+import 'package:dart_api_sdk/src/model/bank_transaction_category_node_entity.dart';
+import 'package:dart_api_sdk/src/model/bank_transaction_cost_center_entity.dart';
+import 'package:dart_api_sdk/src/model/bank_transaction_credit_card_metadata_entity.dart';
+import 'package:dart_api_sdk/src/model/bank_transaction_entity.dart';
+import 'package:dart_api_sdk/src/model/bank_transaction_payment_data_entity.dart';
+import 'package:dart_api_sdk/src/model/bank_transactions_controller_get200_response.dart';
 import 'package:dart_api_sdk/src/model/check_email_in_use_request_dto.dart';
 import 'package:dart_api_sdk/src/model/checkout_session_entity.dart';
 import 'package:dart_api_sdk/src/model/connection_feature_specification_entity.dart';
@@ -27,6 +35,7 @@ import 'package:dart_api_sdk/src/model/email_in_use_entity.dart';
 import 'package:dart_api_sdk/src/model/error_entity.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
+import 'package:dart_api_sdk/src/model/page_response_entity.dart';
 import 'package:dart_api_sdk/src/model/payments_manager_product_data_entity.dart';
 import 'package:dart_api_sdk/src/model/payments_manager_product_price_entity.dart';
 import 'package:dart_api_sdk/src/model/pluggy_connect_token_entity.dart';
@@ -46,6 +55,14 @@ part 'serializers.g.dart';
 
 @SerializersFor([
   AiChatFeatureSpecificationEntity,
+  BankConnectionEntity,
+  BankConnectorEntity,
+  BankTransactionCategoryNodeEntity,
+  BankTransactionCostCenterEntity,
+  BankTransactionCreditCardMetadataEntity,
+  BankTransactionEntity,
+  BankTransactionPaymentDataEntity,
+  BankTransactionsControllerGet200Response,
   CheckEmailInUseRequestDto,
   CheckoutSessionEntity,
   ConnectionFeatureSpecificationEntity,
@@ -58,6 +75,7 @@ part 'serializers.g.dart';
   ErrorEntity,
   ExceptionResponseEntity,
   FinancialTransactionsFeatureSpecificationEntity,
+  PageResponseEntity,$PageResponseEntity,
   PaymentsManagerProductDataEntity,
   PaymentsManagerProductPriceEntity,
   PluggyConnectTokenEntity,
@@ -82,6 +100,7 @@ Serializers serializers = (_$serializers.toBuilder()
         const FullType(BuiltList, [FullType(UserRelatedWorkspaceEntity)]),
         () => ListBuilder<UserRelatedWorkspaceEntity>(),
       )
+      ..add(PageResponseEntity.serializer)
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())
       ..add(const DateSerializer())

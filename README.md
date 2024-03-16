@@ -70,7 +70,8 @@ Class | Method | HTTP request | Description
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSendEmailVerificationCode**](doc/AuthApi.md#authcontrollersendemailverificationcode) | **POST** /auth/sign-up/email-verification-code | 
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSignInWithEmailPassword**](doc/AuthApi.md#authcontrollersigninwithemailpassword) | **POST** /auth/sign-in/email-password | 
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSignUpWithEmailPassword**](doc/AuthApi.md#authcontrollersignupwithemailpassword) | **POST** /auth/sign-up/email-password | 
-[*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerFetchUserBankConnections**](doc/BankConnectionsApi.md#bankconnectionscontrollerfetchuserbankconnections) | **GET** /workspaces/{workspaceId}/bank-connections | 
+[*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerFetchUserBankConnections**](doc/BankConnectionsApi.md#bankconnectionscontrollerfetchuserbankconnections) | **GET** /workspaces/{workspaceId}/bank/connections | 
+[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGet**](doc/BankTransactionsApi.md#banktransactionscontrollerget) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
 [*PluggyApi*](doc/PluggyApi.md) | [**pluggyControllerCreate**](doc/PluggyApi.md#pluggycontrollercreate) | **POST** /pluggy/connect-token | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerCreate**](doc/ProfilesApi.md#profilescontrollercreate) | **POST** /profiles | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerGetMy**](doc/ProfilesApi.md#profilescontrollergetmy) | **GET** /profiles/me | 
@@ -86,6 +87,14 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AiChatFeatureSpecificationEntity](doc/AiChatFeatureSpecificationEntity.md)
+ - [BankConnectionEntity](doc/BankConnectionEntity.md)
+ - [BankConnectorEntity](doc/BankConnectorEntity.md)
+ - [BankTransactionCategoryNodeEntity](doc/BankTransactionCategoryNodeEntity.md)
+ - [BankTransactionCostCenterEntity](doc/BankTransactionCostCenterEntity.md)
+ - [BankTransactionCreditCardMetadataEntity](doc/BankTransactionCreditCardMetadataEntity.md)
+ - [BankTransactionEntity](doc/BankTransactionEntity.md)
+ - [BankTransactionPaymentDataEntity](doc/BankTransactionPaymentDataEntity.md)
+ - [BankTransactionsControllerGet200Response](doc/BankTransactionsControllerGet200Response.md)
  - [CheckEmailInUseRequestDto](doc/CheckEmailInUseRequestDto.md)
  - [CheckoutSessionEntity](doc/CheckoutSessionEntity.md)
  - [ConnectionFeatureSpecificationEntity](doc/ConnectionFeatureSpecificationEntity.md)
@@ -98,6 +107,7 @@ Class | Method | HTTP request | Description
  - [ErrorEntity](doc/ErrorEntity.md)
  - [ExceptionResponseEntity](doc/ExceptionResponseEntity.md)
  - [FinancialTransactionsFeatureSpecificationEntity](doc/FinancialTransactionsFeatureSpecificationEntity.md)
+ - [PageResponseEntity](doc/PageResponseEntity.md)
  - [PaymentsManagerProductDataEntity](doc/PaymentsManagerProductDataEntity.md)
  - [PaymentsManagerProductPriceEntity](doc/PaymentsManagerProductPriceEntity.md)
  - [PluggyConnectTokenEntity](doc/PluggyConnectTokenEntity.md)

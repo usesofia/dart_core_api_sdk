@@ -7,7 +7,19 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add($PageResponseEntity.serializer)
       ..add(AiChatFeatureSpecificationEntity.serializer)
+      ..add(BankConnectionEntity.serializer)
+      ..add(BankConnectorEntity.serializer)
+      ..add(BankTransactionCategoryNodeEntity.serializer)
+      ..add(BankTransactionCostCenterEntity.serializer)
+      ..add(BankTransactionCreditCardMetadataEntity.serializer)
+      ..add(BankTransactionEntity.serializer)
+      ..add(BankTransactionEntityProviderEnum.serializer)
+      ..add(BankTransactionEntityStatusEnum.serializer)
+      ..add(BankTransactionEntityTypeEnum.serializer)
+      ..add(BankTransactionPaymentDataEntity.serializer)
+      ..add(BankTransactionsControllerGet200Response.serializer)
       ..add(CheckEmailInUseRequestDto.serializer)
       ..add(CheckoutSessionEntity.serializer)
       ..add(ConnectionFeatureSpecificationEntity.serializer)
@@ -36,6 +48,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(WorkspaceSubscriptionEntity.serializer)
       ..add(WorkspaceSubscriptionEntityPaymentSystemEnum.serializer)
       ..add(WorkspaceSubscriptionEntityStatusEnum.serializer)
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(BankTransactionEntity)]),
+          () => new ListBuilder<BankTransactionEntity>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ErrorEntity)]),
           () => new ListBuilder<ErrorEntity>())

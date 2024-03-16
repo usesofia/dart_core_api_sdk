@@ -11,6 +11,7 @@ import 'package:dart_api_sdk/src/auth/bearer_auth.dart';
 import 'package:dart_api_sdk/src/auth/oauth.dart';
 import 'package:dart_api_sdk/src/api/auth_api.dart';
 import 'package:dart_api_sdk/src/api/bank_connections_api.dart';
+import 'package:dart_api_sdk/src/api/bank_transactions_api.dart';
 import 'package:dart_api_sdk/src/api/pluggy_api.dart';
 import 'package:dart_api_sdk/src/api/profiles_api.dart';
 import 'package:dart_api_sdk/src/api/stripe_api.dart';
@@ -83,6 +84,12 @@ class DartApiSdk {
   /// by doing that all interceptors will not be executed
   BankConnectionsApi getBankConnectionsApi() {
     return BankConnectionsApi(dio, serializers);
+  }
+
+  /// Get BankTransactionsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  BankTransactionsApi getBankTransactionsApi() {
+    return BankTransactionsApi(dio, serializers);
   }
 
   /// Get PluggyApi instance, base route and serializer can be overridden by a given but be careful,

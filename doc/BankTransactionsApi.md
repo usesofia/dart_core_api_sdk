@@ -1,4 +1,4 @@
-# dart_api_sdk.api.BankConnectionsApi
+# dart_api_sdk.api.BankTransactionsApi
 
 ## Load the API package
 ```dart
@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bankConnectionsControllerFetchUserBankConnections**](BankConnectionsApi.md#bankconnectionscontrollerfetchuserbankconnections) | **GET** /workspaces/{workspaceId}/bank/connections | 
+[**bankTransactionsControllerGet**](BankTransactionsApi.md#banktransactionscontrollerget) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
 
 
-# **bankConnectionsControllerFetchUserBankConnections**
-> BankConnectionEntity bankConnectionsControllerFetchUserBankConnections(workspaceId, enabled)
+# **bankTransactionsControllerGet**
+> BankTransactionsControllerGet200Response bankTransactionsControllerGet(workspaceId, pageIndex, pageSize)
 
 
 
@@ -21,15 +21,16 @@ Method | HTTP request | Description
 ```dart
 import 'package:dart_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankConnectionsApi();
+final api = DartApiSdk().getBankTransactionsApi();
 final String workspaceId = workspaceId_example; // String | 
-final bool enabled = true; // bool | 
+final num pageIndex = 8.14; // num | 
+final num pageSize = 8.14; // num | 
 
 try {
-    final response = api.bankConnectionsControllerFetchUserBankConnections(workspaceId, enabled);
+    final response = api.bankTransactionsControllerGet(workspaceId, pageIndex, pageSize);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankConnectionsApi->bankConnectionsControllerFetchUserBankConnections: $e\n');
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGet: $e\n');
 }
 ```
 
@@ -38,11 +39,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspaceId** | **String**|  | 
- **enabled** | **bool**|  | 
+ **pageIndex** | **num**|  | 
+ **pageSize** | **num**|  | 
 
 ### Return type
 
-[**BankConnectionEntity**](BankConnectionEntity.md)
+[**BankTransactionsControllerGet200Response**](BankTransactionsControllerGet200Response.md)
 
 ### Authorization
 
