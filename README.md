@@ -70,6 +70,8 @@ Class | Method | HTTP request | Description
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSendEmailVerificationCode**](doc/AuthApi.md#authcontrollersendemailverificationcode) | **POST** /auth/sign-up/email-verification-code | 
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSignInWithEmailPassword**](doc/AuthApi.md#authcontrollersigninwithemailpassword) | **POST** /auth/sign-in/email-password | 
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSignUpWithEmailPassword**](doc/AuthApi.md#authcontrollersignupwithemailpassword) | **POST** /auth/sign-up/email-password | 
+[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerActivateBankAccount**](doc/BankAccountsApi.md#bankaccountscontrolleractivatebankaccount) | **POST** /bank/accounts/{bankAccountId}/activate | 
+[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerDisableBankAccount**](doc/BankAccountsApi.md#bankaccountscontrollerdisablebankaccount) | **POST** /bank/accounts/{bankAccountId}/disable | 
 [*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerFetchConnectionBankAccounts**](doc/BankAccountsApi.md#bankaccountscontrollerfetchconnectionbankaccounts) | **GET** /workspaces/{workspaceId}/bank/connections/{bankConnectionId}/accounts | 
 [*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerFetchWorkspaceBankAccounts**](doc/BankAccountsApi.md#bankaccountscontrollerfetchworkspacebankaccounts) | **GET** /workspaces/{workspaceId}/bank/accounts | 
 [*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerFetchUserBankConnections**](doc/BankConnectionsApi.md#bankconnectionscontrollerfetchuserbankconnections) | **GET** /workspaces/{workspaceId}/bank/connections | 
