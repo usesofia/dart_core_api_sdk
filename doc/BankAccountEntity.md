@@ -1,4 +1,4 @@
-# dart_api_sdk.model.BankTransactionCreditCardMetadataEntity
+# dart_api_sdk.model.BankAccountEntity
 
 ## Load the model package
 ```dart
@@ -9,13 +9,16 @@ import 'package:dart_api_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
-**transactionId** | **String** |  | 
-**installmentNumber** | **num** |  | [optional] 
-**totalInstallments** | **num** |  | [optional] 
-**totalAmount** | **num** |  | [optional] 
-**payeeMCC** | **num** |  | [optional] 
-**cardNumber** | **String** |  | [optional] 
-**billId** | **String** |  | [optional] 
+**bankConnectionId** | **String** |  | 
+**bankConnection** | [**BankConnectionEntity**](BankConnectionEntity.md) |  | 
+**provider** | **String** |  | 
+**providerAccountId** | **String** |  | 
+**type** | **String** |  | 
+**enabled** | **bool** |  | 
+**number** | **String** |  | 
+**balance** | **num** |  | 
+**currencyCode** | **String** |  | 
+**name** | **String** |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 

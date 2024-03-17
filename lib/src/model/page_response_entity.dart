@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -15,6 +16,7 @@ part 'page_response_entity.g.dart';
 /// * [pageSize] 
 /// * [totalItems] 
 /// * [totalPages] 
+/// * [items] 
 @BuiltValue(instantiable: false)
 abstract class PageResponseEntity  {
   @BuiltValueField(wireName: r'pageIndex')
@@ -28,6 +30,9 @@ abstract class PageResponseEntity  {
 
   @BuiltValueField(wireName: r'totalPages')
   num get totalPages;
+
+  @BuiltValueField(wireName: r'items')
+  BuiltList<String> get items;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<PageResponseEntity> get serializer => _$PageResponseEntitySerializer();
@@ -64,6 +69,11 @@ class _$PageResponseEntitySerializer implements PrimitiveSerializer<PageResponse
     yield serializers.serialize(
       object.totalPages,
       specifiedType: const FullType(num),
+    );
+    yield r'items';
+    yield serializers.serialize(
+      object.items,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
     );
   }
 
@@ -155,6 +165,13 @@ class _$$PageResponseEntitySerializer implements PrimitiveSerializer<$PageRespon
             specifiedType: const FullType(num),
           ) as num;
           result.totalPages = valueDes;
+          break;
+        case r'items':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.items.replace(valueDes);
           break;
         default:
           unhandled.add(key);

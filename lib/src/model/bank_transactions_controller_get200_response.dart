@@ -18,12 +18,9 @@ part 'bank_transactions_controller_get200_response.g.dart';
 /// * [pageSize] 
 /// * [totalItems] 
 /// * [totalPages] 
-/// * [data] 
+/// * [items] 
 @BuiltValue()
 abstract class BankTransactionsControllerGet200Response implements PageResponseEntity, Built<BankTransactionsControllerGet200Response, BankTransactionsControllerGet200ResponseBuilder> {
-  @BuiltValueField(wireName: r'data')
-  BuiltList<BankTransactionEntity>? get data;
-
   BankTransactionsControllerGet200Response._();
 
   factory BankTransactionsControllerGet200Response([void updates(BankTransactionsControllerGet200ResponseBuilder b)]) = _$BankTransactionsControllerGet200Response;
@@ -62,17 +59,15 @@ class _$BankTransactionsControllerGet200ResponseSerializer implements PrimitiveS
       object.totalItems,
       specifiedType: const FullType(num),
     );
-    if (object.data != null) {
-      yield r'data';
-      yield serializers.serialize(
-        object.data,
-        specifiedType: const FullType(BuiltList, [FullType(BankTransactionEntity)]),
-      );
-    }
     yield r'pageIndex';
     yield serializers.serialize(
       object.pageIndex,
       specifiedType: const FullType(num),
+    );
+    yield r'items';
+    yield serializers.serialize(
+      object.items,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
     );
   }
 
@@ -118,19 +113,19 @@ class _$BankTransactionsControllerGet200ResponseSerializer implements PrimitiveS
           ) as num;
           result.totalItems = valueDes;
           break;
-        case r'data':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(BankTransactionEntity)]),
-          ) as BuiltList<BankTransactionEntity>;
-          result.data.replace(valueDes);
-          break;
         case r'pageIndex':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(num),
           ) as num;
           result.pageIndex = valueDes;
+          break;
+        case r'items':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.items.replace(valueDes);
           break;
         default:
           unhandled.add(key);

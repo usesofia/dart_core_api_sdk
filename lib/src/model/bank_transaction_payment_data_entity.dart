@@ -42,58 +42,58 @@ abstract class BankTransactionPaymentDataEntity implements Built<BankTransaction
   String get transactionId;
 
   @BuiltValueField(wireName: r'payeerName')
-  String get payeerName;
+  String? get payeerName;
 
   @BuiltValueField(wireName: r'payerBranchNumber')
-  String get payerBranchNumber;
+  String? get payerBranchNumber;
 
   @BuiltValueField(wireName: r'payerAccountNumber')
-  String get payerAccountNumber;
+  String? get payerAccountNumber;
 
   @BuiltValueField(wireName: r'payerRoutingNumber')
-  String get payerRoutingNumber;
+  String? get payerRoutingNumber;
 
   @BuiltValueField(wireName: r'payerRoutingNumberISPB')
-  String get payerRoutingNumberISPB;
+  String? get payerRoutingNumberISPB;
 
   @BuiltValueField(wireName: r'payerDocumentNumberType')
-  String get payerDocumentNumberType;
+  String? get payerDocumentNumberType;
 
   @BuiltValueField(wireName: r'payerDocumentNumberValue')
-  String get payerDocumentNumberValue;
+  String? get payerDocumentNumberValue;
 
   @BuiltValueField(wireName: r'reason')
-  String get reason;
+  String? get reason;
 
   @BuiltValueField(wireName: r'receiverName')
-  String get receiverName;
+  String? get receiverName;
 
   @BuiltValueField(wireName: r'receiverBranchNumber')
-  String get receiverBranchNumber;
+  String? get receiverBranchNumber;
 
   @BuiltValueField(wireName: r'receiverAccountNumber')
-  String get receiverAccountNumber;
+  String? get receiverAccountNumber;
 
   @BuiltValueField(wireName: r'receiverRoutingNumber')
-  String get receiverRoutingNumber;
+  String? get receiverRoutingNumber;
 
   @BuiltValueField(wireName: r'receiverRoutingNumberISPB')
-  String get receiverRoutingNumberISPB;
+  String? get receiverRoutingNumberISPB;
 
   @BuiltValueField(wireName: r'receiverDocumentNumberType')
-  String get receiverDocumentNumberType;
+  String? get receiverDocumentNumberType;
 
   @BuiltValueField(wireName: r'receiverDocumentNumberValue')
-  String get receiverDocumentNumberValue;
+  String? get receiverDocumentNumberValue;
 
   @BuiltValueField(wireName: r'paymentMethod')
-  String get paymentMethod;
+  String? get paymentMethod;
 
   @BuiltValueField(wireName: r'referenceNumber')
-  String get referenceNumber;
+  String? get referenceNumber;
 
   @BuiltValueField(wireName: r'receiverReferenceId')
-  String get receiverReferenceId;
+  String? get receiverReferenceId;
 
   @BuiltValueField(wireName: r'createdAt')
   DateTime get createdAt;
@@ -134,96 +134,132 @@ class _$BankTransactionPaymentDataEntitySerializer implements PrimitiveSerialize
       object.transactionId,
       specifiedType: const FullType(String),
     );
-    yield r'payeerName';
-    yield serializers.serialize(
-      object.payeerName,
-      specifiedType: const FullType(String),
-    );
-    yield r'payerBranchNumber';
-    yield serializers.serialize(
-      object.payerBranchNumber,
-      specifiedType: const FullType(String),
-    );
-    yield r'payerAccountNumber';
-    yield serializers.serialize(
-      object.payerAccountNumber,
-      specifiedType: const FullType(String),
-    );
-    yield r'payerRoutingNumber';
-    yield serializers.serialize(
-      object.payerRoutingNumber,
-      specifiedType: const FullType(String),
-    );
-    yield r'payerRoutingNumberISPB';
-    yield serializers.serialize(
-      object.payerRoutingNumberISPB,
-      specifiedType: const FullType(String),
-    );
-    yield r'payerDocumentNumberType';
-    yield serializers.serialize(
-      object.payerDocumentNumberType,
-      specifiedType: const FullType(String),
-    );
-    yield r'payerDocumentNumberValue';
-    yield serializers.serialize(
-      object.payerDocumentNumberValue,
-      specifiedType: const FullType(String),
-    );
-    yield r'reason';
-    yield serializers.serialize(
-      object.reason,
-      specifiedType: const FullType(String),
-    );
-    yield r'receiverName';
-    yield serializers.serialize(
-      object.receiverName,
-      specifiedType: const FullType(String),
-    );
-    yield r'receiverBranchNumber';
-    yield serializers.serialize(
-      object.receiverBranchNumber,
-      specifiedType: const FullType(String),
-    );
-    yield r'receiverAccountNumber';
-    yield serializers.serialize(
-      object.receiverAccountNumber,
-      specifiedType: const FullType(String),
-    );
-    yield r'receiverRoutingNumber';
-    yield serializers.serialize(
-      object.receiverRoutingNumber,
-      specifiedType: const FullType(String),
-    );
-    yield r'receiverRoutingNumberISPB';
-    yield serializers.serialize(
-      object.receiverRoutingNumberISPB,
-      specifiedType: const FullType(String),
-    );
-    yield r'receiverDocumentNumberType';
-    yield serializers.serialize(
-      object.receiverDocumentNumberType,
-      specifiedType: const FullType(String),
-    );
-    yield r'receiverDocumentNumberValue';
-    yield serializers.serialize(
-      object.receiverDocumentNumberValue,
-      specifiedType: const FullType(String),
-    );
-    yield r'paymentMethod';
-    yield serializers.serialize(
-      object.paymentMethod,
-      specifiedType: const FullType(String),
-    );
-    yield r'referenceNumber';
-    yield serializers.serialize(
-      object.referenceNumber,
-      specifiedType: const FullType(String),
-    );
-    yield r'receiverReferenceId';
-    yield serializers.serialize(
-      object.receiverReferenceId,
-      specifiedType: const FullType(String),
-    );
+    if (object.payeerName != null) {
+      yield r'payeerName';
+      yield serializers.serialize(
+        object.payeerName,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.payerBranchNumber != null) {
+      yield r'payerBranchNumber';
+      yield serializers.serialize(
+        object.payerBranchNumber,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.payerAccountNumber != null) {
+      yield r'payerAccountNumber';
+      yield serializers.serialize(
+        object.payerAccountNumber,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.payerRoutingNumber != null) {
+      yield r'payerRoutingNumber';
+      yield serializers.serialize(
+        object.payerRoutingNumber,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.payerRoutingNumberISPB != null) {
+      yield r'payerRoutingNumberISPB';
+      yield serializers.serialize(
+        object.payerRoutingNumberISPB,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.payerDocumentNumberType != null) {
+      yield r'payerDocumentNumberType';
+      yield serializers.serialize(
+        object.payerDocumentNumberType,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.payerDocumentNumberValue != null) {
+      yield r'payerDocumentNumberValue';
+      yield serializers.serialize(
+        object.payerDocumentNumberValue,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.reason != null) {
+      yield r'reason';
+      yield serializers.serialize(
+        object.reason,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.receiverName != null) {
+      yield r'receiverName';
+      yield serializers.serialize(
+        object.receiverName,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.receiverBranchNumber != null) {
+      yield r'receiverBranchNumber';
+      yield serializers.serialize(
+        object.receiverBranchNumber,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.receiverAccountNumber != null) {
+      yield r'receiverAccountNumber';
+      yield serializers.serialize(
+        object.receiverAccountNumber,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.receiverRoutingNumber != null) {
+      yield r'receiverRoutingNumber';
+      yield serializers.serialize(
+        object.receiverRoutingNumber,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.receiverRoutingNumberISPB != null) {
+      yield r'receiverRoutingNumberISPB';
+      yield serializers.serialize(
+        object.receiverRoutingNumberISPB,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.receiverDocumentNumberType != null) {
+      yield r'receiverDocumentNumberType';
+      yield serializers.serialize(
+        object.receiverDocumentNumberType,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.receiverDocumentNumberValue != null) {
+      yield r'receiverDocumentNumberValue';
+      yield serializers.serialize(
+        object.receiverDocumentNumberValue,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.paymentMethod != null) {
+      yield r'paymentMethod';
+      yield serializers.serialize(
+        object.paymentMethod,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.referenceNumber != null) {
+      yield r'referenceNumber';
+      yield serializers.serialize(
+        object.referenceNumber,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.receiverReferenceId != null) {
+      yield r'receiverReferenceId';
+      yield serializers.serialize(
+        object.receiverReferenceId,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'createdAt';
     yield serializers.serialize(
       object.createdAt,

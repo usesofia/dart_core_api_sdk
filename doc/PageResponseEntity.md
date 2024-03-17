@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **pageSize** | **num** |  | 
 **totalItems** | **num** |  | 
 **totalPages** | **num** |  | 
+**items** | **BuiltList&lt;String&gt;** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

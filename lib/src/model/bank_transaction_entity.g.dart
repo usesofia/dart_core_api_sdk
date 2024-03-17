@@ -205,33 +205,33 @@ class _$BankTransactionEntity extends BankTransactionEntity {
   @override
   final BankTransactionEntityStatusEnum status;
   @override
-  final String providerCategoryId;
+  final String? providerCategoryId;
   @override
-  final String providerCategoryName;
+  final String? providerCategoryName;
   @override
-  final String categoryId;
+  final String? categoryId;
   @override
-  final BankTransactionCategoryNodeEntity category;
+  final BankTransactionCategoryNodeEntity? category;
   @override
-  final String costCenterId;
+  final String? costCenterId;
   @override
-  final BankTransactionCostCenterEntity costCenter;
+  final BankTransactionCostCenterEntity? costCenter;
   @override
-  final String paymentDataId;
+  final String? paymentDataId;
   @override
-  final BankTransactionPaymentDataEntity paymentData;
+  final BankTransactionPaymentDataEntity? paymentData;
   @override
-  final String creditCardMetadataId;
+  final String? creditCardMetadataId;
   @override
-  final BankTransactionCreditCardMetadataEntity creditCardMetadata;
+  final BankTransactionCreditCardMetadataEntity? creditCardMetadata;
   @override
-  final String bestGuessCategoryId;
+  final String? bestGuessCategoryId;
   @override
-  final BankTransactionCategoryNodeEntity bestGuessCategory;
+  final BankTransactionCategoryNodeEntity? bestGuessCategory;
   @override
-  final DateTime ignoredAt;
+  final DateTime? ignoredAt;
   @override
-  final DateTime confirmedAt;
+  final DateTime? confirmedAt;
   @override
   final DateTime createdAt;
   @override
@@ -253,20 +253,20 @@ class _$BankTransactionEntity extends BankTransactionEntity {
       required this.amount,
       required this.type,
       required this.status,
-      required this.providerCategoryId,
-      required this.providerCategoryName,
-      required this.categoryId,
-      required this.category,
-      required this.costCenterId,
-      required this.costCenter,
-      required this.paymentDataId,
-      required this.paymentData,
-      required this.creditCardMetadataId,
-      required this.creditCardMetadata,
-      required this.bestGuessCategoryId,
-      required this.bestGuessCategory,
-      required this.ignoredAt,
-      required this.confirmedAt,
+      this.providerCategoryId,
+      this.providerCategoryName,
+      this.categoryId,
+      this.category,
+      this.costCenterId,
+      this.costCenter,
+      this.paymentDataId,
+      this.paymentData,
+      this.creditCardMetadataId,
+      this.creditCardMetadata,
+      this.bestGuessCategoryId,
+      this.bestGuessCategory,
+      this.ignoredAt,
+      this.confirmedAt,
       required this.createdAt,
       required this.updatedAt})
       : super._() {
@@ -291,34 +291,6 @@ class _$BankTransactionEntity extends BankTransactionEntity {
         type, r'BankTransactionEntity', 'type');
     BuiltValueNullFieldError.checkNotNull(
         status, r'BankTransactionEntity', 'status');
-    BuiltValueNullFieldError.checkNotNull(
-        providerCategoryId, r'BankTransactionEntity', 'providerCategoryId');
-    BuiltValueNullFieldError.checkNotNull(
-        providerCategoryName, r'BankTransactionEntity', 'providerCategoryName');
-    BuiltValueNullFieldError.checkNotNull(
-        categoryId, r'BankTransactionEntity', 'categoryId');
-    BuiltValueNullFieldError.checkNotNull(
-        category, r'BankTransactionEntity', 'category');
-    BuiltValueNullFieldError.checkNotNull(
-        costCenterId, r'BankTransactionEntity', 'costCenterId');
-    BuiltValueNullFieldError.checkNotNull(
-        costCenter, r'BankTransactionEntity', 'costCenter');
-    BuiltValueNullFieldError.checkNotNull(
-        paymentDataId, r'BankTransactionEntity', 'paymentDataId');
-    BuiltValueNullFieldError.checkNotNull(
-        paymentData, r'BankTransactionEntity', 'paymentData');
-    BuiltValueNullFieldError.checkNotNull(
-        creditCardMetadataId, r'BankTransactionEntity', 'creditCardMetadataId');
-    BuiltValueNullFieldError.checkNotNull(
-        creditCardMetadata, r'BankTransactionEntity', 'creditCardMetadata');
-    BuiltValueNullFieldError.checkNotNull(
-        bestGuessCategoryId, r'BankTransactionEntity', 'bestGuessCategoryId');
-    BuiltValueNullFieldError.checkNotNull(
-        bestGuessCategory, r'BankTransactionEntity', 'bestGuessCategory');
-    BuiltValueNullFieldError.checkNotNull(
-        ignoredAt, r'BankTransactionEntity', 'ignoredAt');
-    BuiltValueNullFieldError.checkNotNull(
-        confirmedAt, r'BankTransactionEntity', 'confirmedAt');
     BuiltValueNullFieldError.checkNotNull(
         createdAt, r'BankTransactionEntity', 'createdAt');
     BuiltValueNullFieldError.checkNotNull(
@@ -591,15 +563,15 @@ class BankTransactionEntityBuilder
       _providerCategoryId = $v.providerCategoryId;
       _providerCategoryName = $v.providerCategoryName;
       _categoryId = $v.categoryId;
-      _category = $v.category.toBuilder();
+      _category = $v.category?.toBuilder();
       _costCenterId = $v.costCenterId;
-      _costCenter = $v.costCenter.toBuilder();
+      _costCenter = $v.costCenter?.toBuilder();
       _paymentDataId = $v.paymentDataId;
-      _paymentData = $v.paymentData.toBuilder();
+      _paymentData = $v.paymentData?.toBuilder();
       _creditCardMetadataId = $v.creditCardMetadataId;
-      _creditCardMetadata = $v.creditCardMetadata.toBuilder();
+      _creditCardMetadata = $v.creditCardMetadata?.toBuilder();
       _bestGuessCategoryId = $v.bestGuessCategoryId;
-      _bestGuessCategory = $v.bestGuessCategory.toBuilder();
+      _bestGuessCategory = $v.bestGuessCategory?.toBuilder();
       _ignoredAt = $v.ignoredAt;
       _confirmedAt = $v.confirmedAt;
       _createdAt = $v.createdAt;
@@ -642,44 +614,44 @@ class BankTransactionEntityBuilder
                   description, r'BankTransactionEntity', 'description'),
               postedDate: BuiltValueNullFieldError.checkNotNull(
                   postedDate, r'BankTransactionEntity', 'postedDate'),
-              competencyDate:
-                  BuiltValueNullFieldError.checkNotNull(competencyDate, r'BankTransactionEntity', 'competencyDate'),
+              competencyDate: BuiltValueNullFieldError.checkNotNull(
+                  competencyDate, r'BankTransactionEntity', 'competencyDate'),
               amount: BuiltValueNullFieldError.checkNotNull(amount, r'BankTransactionEntity', 'amount'),
               type: BuiltValueNullFieldError.checkNotNull(type, r'BankTransactionEntity', 'type'),
               status: BuiltValueNullFieldError.checkNotNull(status, r'BankTransactionEntity', 'status'),
-              providerCategoryId: BuiltValueNullFieldError.checkNotNull(providerCategoryId, r'BankTransactionEntity', 'providerCategoryId'),
-              providerCategoryName: BuiltValueNullFieldError.checkNotNull(providerCategoryName, r'BankTransactionEntity', 'providerCategoryName'),
-              categoryId: BuiltValueNullFieldError.checkNotNull(categoryId, r'BankTransactionEntity', 'categoryId'),
-              category: category.build(),
-              costCenterId: BuiltValueNullFieldError.checkNotNull(costCenterId, r'BankTransactionEntity', 'costCenterId'),
-              costCenter: costCenter.build(),
-              paymentDataId: BuiltValueNullFieldError.checkNotNull(paymentDataId, r'BankTransactionEntity', 'paymentDataId'),
-              paymentData: paymentData.build(),
-              creditCardMetadataId: BuiltValueNullFieldError.checkNotNull(creditCardMetadataId, r'BankTransactionEntity', 'creditCardMetadataId'),
-              creditCardMetadata: creditCardMetadata.build(),
-              bestGuessCategoryId: BuiltValueNullFieldError.checkNotNull(bestGuessCategoryId, r'BankTransactionEntity', 'bestGuessCategoryId'),
-              bestGuessCategory: bestGuessCategory.build(),
-              ignoredAt: BuiltValueNullFieldError.checkNotNull(ignoredAt, r'BankTransactionEntity', 'ignoredAt'),
-              confirmedAt: BuiltValueNullFieldError.checkNotNull(confirmedAt, r'BankTransactionEntity', 'confirmedAt'),
+              providerCategoryId: providerCategoryId,
+              providerCategoryName: providerCategoryName,
+              categoryId: categoryId,
+              category: _category?.build(),
+              costCenterId: costCenterId,
+              costCenter: _costCenter?.build(),
+              paymentDataId: paymentDataId,
+              paymentData: _paymentData?.build(),
+              creditCardMetadataId: creditCardMetadataId,
+              creditCardMetadata: _creditCardMetadata?.build(),
+              bestGuessCategoryId: bestGuessCategoryId,
+              bestGuessCategory: _bestGuessCategory?.build(),
+              ignoredAt: ignoredAt,
+              confirmedAt: confirmedAt,
               createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankTransactionEntity', 'createdAt'),
               updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankTransactionEntity', 'updatedAt'));
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'category';
-        category.build();
+        _category?.build();
 
         _$failedField = 'costCenter';
-        costCenter.build();
+        _costCenter?.build();
 
         _$failedField = 'paymentData';
-        paymentData.build();
+        _paymentData?.build();
 
         _$failedField = 'creditCardMetadata';
-        creditCardMetadata.build();
+        _creditCardMetadata?.build();
 
         _$failedField = 'bestGuessCategory';
-        bestGuessCategory.build();
+        _bestGuessCategory?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'BankTransactionEntity', _$failedField, e.toString());

@@ -9,6 +9,7 @@ part of 'serializers.dart';
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add($PageResponseEntity.serializer)
       ..add(AiChatFeatureSpecificationEntity.serializer)
+      ..add(BankAccountEntity.serializer)
       ..add(BankConnectionEntity.serializer)
       ..add(BankConnectorEntity.serializer)
       ..add(BankTransactionCategoryNodeEntity.serializer)
@@ -49,16 +50,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(WorkspaceSubscriptionEntityPaymentSystemEnum.serializer)
       ..add(WorkspaceSubscriptionEntityStatusEnum.serializer)
       ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(BankTransactionEntity)]),
-          () => new ListBuilder<BankTransactionEntity>())
-      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ErrorEntity)]),
           () => new ListBuilder<ErrorEntity>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(PaymentsManagerProductPriceEntity)]),
           () => new ListBuilder<PaymentsManagerProductPriceEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>()))

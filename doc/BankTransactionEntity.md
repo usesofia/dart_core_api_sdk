@@ -19,20 +19,20 @@ Name | Type | Description | Notes
 **amount** | **num** |  | 
 **type** | **String** |  | 
 **status** | **String** |  | 
-**providerCategoryId** | **String** |  | 
-**providerCategoryName** | **String** |  | 
-**categoryId** | **String** |  | 
-**category** | [**BankTransactionCategoryNodeEntity**](BankTransactionCategoryNodeEntity.md) |  | 
-**costCenterId** | **String** |  | 
-**costCenter** | [**BankTransactionCostCenterEntity**](BankTransactionCostCenterEntity.md) |  | 
-**paymentDataId** | **String** |  | 
-**paymentData** | [**BankTransactionPaymentDataEntity**](BankTransactionPaymentDataEntity.md) |  | 
-**creditCardMetadataId** | **String** |  | 
-**creditCardMetadata** | [**BankTransactionCreditCardMetadataEntity**](BankTransactionCreditCardMetadataEntity.md) |  | 
-**bestGuessCategoryId** | **String** |  | 
-**bestGuessCategory** | [**BankTransactionCategoryNodeEntity**](BankTransactionCategoryNodeEntity.md) |  | 
-**ignoredAt** | [**DateTime**](DateTime.md) |  | 
-**confirmedAt** | [**DateTime**](DateTime.md) |  | 
+**providerCategoryId** | **String** |  | [optional] 
+**providerCategoryName** | **String** |  | [optional] 
+**categoryId** | **String** |  | [optional] 
+**category** | [**BankTransactionCategoryNodeEntity**](BankTransactionCategoryNodeEntity.md) |  | [optional] 
+**costCenterId** | **String** |  | [optional] 
+**costCenter** | [**BankTransactionCostCenterEntity**](BankTransactionCostCenterEntity.md) |  | [optional] 
+**paymentDataId** | **String** |  | [optional] 
+**paymentData** | [**BankTransactionPaymentDataEntity**](BankTransactionPaymentDataEntity.md) |  | [optional] 
+**creditCardMetadataId** | **String** |  | [optional] 
+**creditCardMetadata** | [**BankTransactionCreditCardMetadataEntity**](BankTransactionCreditCardMetadataEntity.md) |  | [optional] 
+**bestGuessCategoryId** | **String** |  | [optional] 
+**bestGuessCategory** | [**BankTransactionCategoryNodeEntity**](BankTransactionCategoryNodeEntity.md) |  | [optional] 
+**ignoredAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**confirmedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 

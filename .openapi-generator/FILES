@@ -3,6 +3,8 @@ README.md
 analysis_options.yaml
 doc/AiChatFeatureSpecificationEntity.md
 doc/AuthApi.md
+doc/BankAccountEntity.md
+doc/BankAccountsApi.md
 doc/BankConnectionEntity.md
 doc/BankConnectionsApi.md
 doc/BankConnectorEntity.md
@@ -50,6 +52,7 @@ doc/WorkspacesApi.md
 lib/dart_api_sdk.dart
 lib/src/api.dart
 lib/src/api/auth_api.dart
+lib/src/api/bank_accounts_api.dart
 lib/src/api/bank_connections_api.dart
 lib/src/api/bank_transactions_api.dart
 lib/src/api/pluggy_api.dart
@@ -67,6 +70,7 @@ lib/src/auth/bearer_auth.dart
 lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
 lib/src/model/ai_chat_feature_specification_entity.dart
+lib/src/model/bank_account_entity.dart
 lib/src/model/bank_connection_entity.dart
 lib/src/model/bank_connector_entity.dart
 lib/src/model/bank_transaction_category_node_entity.dart
@@ -105,13 +109,5 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/bank_connection_entity_test.dart
-test/bank_connector_entity_test.dart
-test/bank_transaction_category_node_entity_test.dart
-test/bank_transaction_cost_center_entity_test.dart
-test/bank_transaction_credit_card_metadata_entity_test.dart
-test/bank_transaction_entity_test.dart
-test/bank_transaction_payment_data_entity_test.dart
-test/bank_transactions_api_test.dart
-test/bank_transactions_controller_get200_response_test.dart
-test/page_response_entity_test.dart
+test/bank_account_entity_test.dart
+test/bank_accounts_api_test.dart

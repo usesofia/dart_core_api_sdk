@@ -82,46 +82,46 @@ abstract class BankTransactionEntity implements Built<BankTransactionEntity, Ban
   // enum statusEnum {  PENDING,  POSTED,  };
 
   @BuiltValueField(wireName: r'providerCategoryId')
-  String get providerCategoryId;
+  String? get providerCategoryId;
 
   @BuiltValueField(wireName: r'providerCategoryName')
-  String get providerCategoryName;
+  String? get providerCategoryName;
 
   @BuiltValueField(wireName: r'categoryId')
-  String get categoryId;
+  String? get categoryId;
 
   @BuiltValueField(wireName: r'category')
-  BankTransactionCategoryNodeEntity get category;
+  BankTransactionCategoryNodeEntity? get category;
 
   @BuiltValueField(wireName: r'costCenterId')
-  String get costCenterId;
+  String? get costCenterId;
 
   @BuiltValueField(wireName: r'costCenter')
-  BankTransactionCostCenterEntity get costCenter;
+  BankTransactionCostCenterEntity? get costCenter;
 
   @BuiltValueField(wireName: r'paymentDataId')
-  String get paymentDataId;
+  String? get paymentDataId;
 
   @BuiltValueField(wireName: r'paymentData')
-  BankTransactionPaymentDataEntity get paymentData;
+  BankTransactionPaymentDataEntity? get paymentData;
 
   @BuiltValueField(wireName: r'creditCardMetadataId')
-  String get creditCardMetadataId;
+  String? get creditCardMetadataId;
 
   @BuiltValueField(wireName: r'creditCardMetadata')
-  BankTransactionCreditCardMetadataEntity get creditCardMetadata;
+  BankTransactionCreditCardMetadataEntity? get creditCardMetadata;
 
   @BuiltValueField(wireName: r'bestGuessCategoryId')
-  String get bestGuessCategoryId;
+  String? get bestGuessCategoryId;
 
   @BuiltValueField(wireName: r'bestGuessCategory')
-  BankTransactionCategoryNodeEntity get bestGuessCategory;
+  BankTransactionCategoryNodeEntity? get bestGuessCategory;
 
   @BuiltValueField(wireName: r'ignoredAt')
-  DateTime get ignoredAt;
+  DateTime? get ignoredAt;
 
   @BuiltValueField(wireName: r'confirmedAt')
-  DateTime get confirmedAt;
+  DateTime? get confirmedAt;
 
   @BuiltValueField(wireName: r'createdAt')
   DateTime get createdAt;
@@ -207,76 +207,104 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
       object.status,
       specifiedType: const FullType(BankTransactionEntityStatusEnum),
     );
-    yield r'providerCategoryId';
-    yield serializers.serialize(
-      object.providerCategoryId,
-      specifiedType: const FullType(String),
-    );
-    yield r'providerCategoryName';
-    yield serializers.serialize(
-      object.providerCategoryName,
-      specifiedType: const FullType(String),
-    );
-    yield r'categoryId';
-    yield serializers.serialize(
-      object.categoryId,
-      specifiedType: const FullType(String),
-    );
-    yield r'category';
-    yield serializers.serialize(
-      object.category,
-      specifiedType: const FullType(BankTransactionCategoryNodeEntity),
-    );
-    yield r'costCenterId';
-    yield serializers.serialize(
-      object.costCenterId,
-      specifiedType: const FullType(String),
-    );
-    yield r'costCenter';
-    yield serializers.serialize(
-      object.costCenter,
-      specifiedType: const FullType(BankTransactionCostCenterEntity),
-    );
-    yield r'paymentDataId';
-    yield serializers.serialize(
-      object.paymentDataId,
-      specifiedType: const FullType(String),
-    );
-    yield r'paymentData';
-    yield serializers.serialize(
-      object.paymentData,
-      specifiedType: const FullType(BankTransactionPaymentDataEntity),
-    );
-    yield r'creditCardMetadataId';
-    yield serializers.serialize(
-      object.creditCardMetadataId,
-      specifiedType: const FullType(String),
-    );
-    yield r'creditCardMetadata';
-    yield serializers.serialize(
-      object.creditCardMetadata,
-      specifiedType: const FullType(BankTransactionCreditCardMetadataEntity),
-    );
-    yield r'bestGuessCategoryId';
-    yield serializers.serialize(
-      object.bestGuessCategoryId,
-      specifiedType: const FullType(String),
-    );
-    yield r'bestGuessCategory';
-    yield serializers.serialize(
-      object.bestGuessCategory,
-      specifiedType: const FullType(BankTransactionCategoryNodeEntity),
-    );
-    yield r'ignoredAt';
-    yield serializers.serialize(
-      object.ignoredAt,
-      specifiedType: const FullType(DateTime),
-    );
-    yield r'confirmedAt';
-    yield serializers.serialize(
-      object.confirmedAt,
-      specifiedType: const FullType(DateTime),
-    );
+    if (object.providerCategoryId != null) {
+      yield r'providerCategoryId';
+      yield serializers.serialize(
+        object.providerCategoryId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.providerCategoryName != null) {
+      yield r'providerCategoryName';
+      yield serializers.serialize(
+        object.providerCategoryName,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.categoryId != null) {
+      yield r'categoryId';
+      yield serializers.serialize(
+        object.categoryId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.category != null) {
+      yield r'category';
+      yield serializers.serialize(
+        object.category,
+        specifiedType: const FullType(BankTransactionCategoryNodeEntity),
+      );
+    }
+    if (object.costCenterId != null) {
+      yield r'costCenterId';
+      yield serializers.serialize(
+        object.costCenterId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.costCenter != null) {
+      yield r'costCenter';
+      yield serializers.serialize(
+        object.costCenter,
+        specifiedType: const FullType(BankTransactionCostCenterEntity),
+      );
+    }
+    if (object.paymentDataId != null) {
+      yield r'paymentDataId';
+      yield serializers.serialize(
+        object.paymentDataId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.paymentData != null) {
+      yield r'paymentData';
+      yield serializers.serialize(
+        object.paymentData,
+        specifiedType: const FullType(BankTransactionPaymentDataEntity),
+      );
+    }
+    if (object.creditCardMetadataId != null) {
+      yield r'creditCardMetadataId';
+      yield serializers.serialize(
+        object.creditCardMetadataId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.creditCardMetadata != null) {
+      yield r'creditCardMetadata';
+      yield serializers.serialize(
+        object.creditCardMetadata,
+        specifiedType: const FullType(BankTransactionCreditCardMetadataEntity),
+      );
+    }
+    if (object.bestGuessCategoryId != null) {
+      yield r'bestGuessCategoryId';
+      yield serializers.serialize(
+        object.bestGuessCategoryId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.bestGuessCategory != null) {
+      yield r'bestGuessCategory';
+      yield serializers.serialize(
+        object.bestGuessCategory,
+        specifiedType: const FullType(BankTransactionCategoryNodeEntity),
+      );
+    }
+    if (object.ignoredAt != null) {
+      yield r'ignoredAt';
+      yield serializers.serialize(
+        object.ignoredAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.confirmedAt != null) {
+      yield r'confirmedAt';
+      yield serializers.serialize(
+        object.confirmedAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
     yield r'createdAt';
     yield serializers.serialize(
       object.createdAt,

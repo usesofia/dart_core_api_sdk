@@ -13,41 +13,41 @@ class _$BankTransactionPaymentDataEntity
   @override
   final String transactionId;
   @override
-  final String payeerName;
+  final String? payeerName;
   @override
-  final String payerBranchNumber;
+  final String? payerBranchNumber;
   @override
-  final String payerAccountNumber;
+  final String? payerAccountNumber;
   @override
-  final String payerRoutingNumber;
+  final String? payerRoutingNumber;
   @override
-  final String payerRoutingNumberISPB;
+  final String? payerRoutingNumberISPB;
   @override
-  final String payerDocumentNumberType;
+  final String? payerDocumentNumberType;
   @override
-  final String payerDocumentNumberValue;
+  final String? payerDocumentNumberValue;
   @override
-  final String reason;
+  final String? reason;
   @override
-  final String receiverName;
+  final String? receiverName;
   @override
-  final String receiverBranchNumber;
+  final String? receiverBranchNumber;
   @override
-  final String receiverAccountNumber;
+  final String? receiverAccountNumber;
   @override
-  final String receiverRoutingNumber;
+  final String? receiverRoutingNumber;
   @override
-  final String receiverRoutingNumberISPB;
+  final String? receiverRoutingNumberISPB;
   @override
-  final String receiverDocumentNumberType;
+  final String? receiverDocumentNumberType;
   @override
-  final String receiverDocumentNumberValue;
+  final String? receiverDocumentNumberValue;
   @override
-  final String paymentMethod;
+  final String? paymentMethod;
   @override
-  final String referenceNumber;
+  final String? referenceNumber;
   @override
-  final String receiverReferenceId;
+  final String? receiverReferenceId;
   @override
   final DateTime createdAt;
   @override
@@ -60,24 +60,24 @@ class _$BankTransactionPaymentDataEntity
   _$BankTransactionPaymentDataEntity._(
       {required this.id,
       required this.transactionId,
-      required this.payeerName,
-      required this.payerBranchNumber,
-      required this.payerAccountNumber,
-      required this.payerRoutingNumber,
-      required this.payerRoutingNumberISPB,
-      required this.payerDocumentNumberType,
-      required this.payerDocumentNumberValue,
-      required this.reason,
-      required this.receiverName,
-      required this.receiverBranchNumber,
-      required this.receiverAccountNumber,
-      required this.receiverRoutingNumber,
-      required this.receiverRoutingNumberISPB,
-      required this.receiverDocumentNumberType,
-      required this.receiverDocumentNumberValue,
-      required this.paymentMethod,
-      required this.referenceNumber,
-      required this.receiverReferenceId,
+      this.payeerName,
+      this.payerBranchNumber,
+      this.payerAccountNumber,
+      this.payerRoutingNumber,
+      this.payerRoutingNumberISPB,
+      this.payerDocumentNumberType,
+      this.payerDocumentNumberValue,
+      this.reason,
+      this.receiverName,
+      this.receiverBranchNumber,
+      this.receiverAccountNumber,
+      this.receiverRoutingNumber,
+      this.receiverRoutingNumberISPB,
+      this.receiverDocumentNumberType,
+      this.receiverDocumentNumberValue,
+      this.paymentMethod,
+      this.referenceNumber,
+      this.receiverReferenceId,
       required this.createdAt,
       required this.updatedAt})
       : super._() {
@@ -85,42 +85,6 @@ class _$BankTransactionPaymentDataEntity
         id, r'BankTransactionPaymentDataEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
         transactionId, r'BankTransactionPaymentDataEntity', 'transactionId');
-    BuiltValueNullFieldError.checkNotNull(
-        payeerName, r'BankTransactionPaymentDataEntity', 'payeerName');
-    BuiltValueNullFieldError.checkNotNull(payerBranchNumber,
-        r'BankTransactionPaymentDataEntity', 'payerBranchNumber');
-    BuiltValueNullFieldError.checkNotNull(payerAccountNumber,
-        r'BankTransactionPaymentDataEntity', 'payerAccountNumber');
-    BuiltValueNullFieldError.checkNotNull(payerRoutingNumber,
-        r'BankTransactionPaymentDataEntity', 'payerRoutingNumber');
-    BuiltValueNullFieldError.checkNotNull(payerRoutingNumberISPB,
-        r'BankTransactionPaymentDataEntity', 'payerRoutingNumberISPB');
-    BuiltValueNullFieldError.checkNotNull(payerDocumentNumberType,
-        r'BankTransactionPaymentDataEntity', 'payerDocumentNumberType');
-    BuiltValueNullFieldError.checkNotNull(payerDocumentNumberValue,
-        r'BankTransactionPaymentDataEntity', 'payerDocumentNumberValue');
-    BuiltValueNullFieldError.checkNotNull(
-        reason, r'BankTransactionPaymentDataEntity', 'reason');
-    BuiltValueNullFieldError.checkNotNull(
-        receiverName, r'BankTransactionPaymentDataEntity', 'receiverName');
-    BuiltValueNullFieldError.checkNotNull(receiverBranchNumber,
-        r'BankTransactionPaymentDataEntity', 'receiverBranchNumber');
-    BuiltValueNullFieldError.checkNotNull(receiverAccountNumber,
-        r'BankTransactionPaymentDataEntity', 'receiverAccountNumber');
-    BuiltValueNullFieldError.checkNotNull(receiverRoutingNumber,
-        r'BankTransactionPaymentDataEntity', 'receiverRoutingNumber');
-    BuiltValueNullFieldError.checkNotNull(receiverRoutingNumberISPB,
-        r'BankTransactionPaymentDataEntity', 'receiverRoutingNumberISPB');
-    BuiltValueNullFieldError.checkNotNull(receiverDocumentNumberType,
-        r'BankTransactionPaymentDataEntity', 'receiverDocumentNumberType');
-    BuiltValueNullFieldError.checkNotNull(receiverDocumentNumberValue,
-        r'BankTransactionPaymentDataEntity', 'receiverDocumentNumberValue');
-    BuiltValueNullFieldError.checkNotNull(
-        paymentMethod, r'BankTransactionPaymentDataEntity', 'paymentMethod');
-    BuiltValueNullFieldError.checkNotNull(referenceNumber,
-        r'BankTransactionPaymentDataEntity', 'referenceNumber');
-    BuiltValueNullFieldError.checkNotNull(receiverReferenceId,
-        r'BankTransactionPaymentDataEntity', 'receiverReferenceId');
     BuiltValueNullFieldError.checkNotNull(
         createdAt, r'BankTransactionPaymentDataEntity', 'createdAt');
     BuiltValueNullFieldError.checkNotNull(
@@ -386,33 +350,30 @@ class BankTransactionPaymentDataEntityBuilder
         new _$BankTransactionPaymentDataEntity._(
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'BankTransactionPaymentDataEntity', 'id'),
-            transactionId: BuiltValueNullFieldError.checkNotNull(
-                transactionId, r'BankTransactionPaymentDataEntity', 'transactionId'),
-            payeerName: BuiltValueNullFieldError.checkNotNull(
-                payeerName, r'BankTransactionPaymentDataEntity', 'payeerName'),
-            payerBranchNumber: BuiltValueNullFieldError.checkNotNull(
-                payerBranchNumber, r'BankTransactionPaymentDataEntity', 'payerBranchNumber'),
-            payerAccountNumber: BuiltValueNullFieldError.checkNotNull(
-                payerAccountNumber, r'BankTransactionPaymentDataEntity', 'payerAccountNumber'),
-            payerRoutingNumber: BuiltValueNullFieldError.checkNotNull(
-                payerRoutingNumber, r'BankTransactionPaymentDataEntity', 'payerRoutingNumber'),
-            payerRoutingNumberISPB: BuiltValueNullFieldError.checkNotNull(
-                payerRoutingNumberISPB, r'BankTransactionPaymentDataEntity', 'payerRoutingNumberISPB'),
-            payerDocumentNumberType: BuiltValueNullFieldError.checkNotNull(payerDocumentNumberType, r'BankTransactionPaymentDataEntity', 'payerDocumentNumberType'),
-            payerDocumentNumberValue: BuiltValueNullFieldError.checkNotNull(payerDocumentNumberValue, r'BankTransactionPaymentDataEntity', 'payerDocumentNumberValue'),
-            reason: BuiltValueNullFieldError.checkNotNull(reason, r'BankTransactionPaymentDataEntity', 'reason'),
-            receiverName: BuiltValueNullFieldError.checkNotNull(receiverName, r'BankTransactionPaymentDataEntity', 'receiverName'),
-            receiverBranchNumber: BuiltValueNullFieldError.checkNotNull(receiverBranchNumber, r'BankTransactionPaymentDataEntity', 'receiverBranchNumber'),
-            receiverAccountNumber: BuiltValueNullFieldError.checkNotNull(receiverAccountNumber, r'BankTransactionPaymentDataEntity', 'receiverAccountNumber'),
-            receiverRoutingNumber: BuiltValueNullFieldError.checkNotNull(receiverRoutingNumber, r'BankTransactionPaymentDataEntity', 'receiverRoutingNumber'),
-            receiverRoutingNumberISPB: BuiltValueNullFieldError.checkNotNull(receiverRoutingNumberISPB, r'BankTransactionPaymentDataEntity', 'receiverRoutingNumberISPB'),
-            receiverDocumentNumberType: BuiltValueNullFieldError.checkNotNull(receiverDocumentNumberType, r'BankTransactionPaymentDataEntity', 'receiverDocumentNumberType'),
-            receiverDocumentNumberValue: BuiltValueNullFieldError.checkNotNull(receiverDocumentNumberValue, r'BankTransactionPaymentDataEntity', 'receiverDocumentNumberValue'),
-            paymentMethod: BuiltValueNullFieldError.checkNotNull(paymentMethod, r'BankTransactionPaymentDataEntity', 'paymentMethod'),
-            referenceNumber: BuiltValueNullFieldError.checkNotNull(referenceNumber, r'BankTransactionPaymentDataEntity', 'referenceNumber'),
-            receiverReferenceId: BuiltValueNullFieldError.checkNotNull(receiverReferenceId, r'BankTransactionPaymentDataEntity', 'receiverReferenceId'),
-            createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankTransactionPaymentDataEntity', 'createdAt'),
-            updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankTransactionPaymentDataEntity', 'updatedAt'));
+            transactionId: BuiltValueNullFieldError.checkNotNull(transactionId,
+                r'BankTransactionPaymentDataEntity', 'transactionId'),
+            payeerName: payeerName,
+            payerBranchNumber: payerBranchNumber,
+            payerAccountNumber: payerAccountNumber,
+            payerRoutingNumber: payerRoutingNumber,
+            payerRoutingNumberISPB: payerRoutingNumberISPB,
+            payerDocumentNumberType: payerDocumentNumberType,
+            payerDocumentNumberValue: payerDocumentNumberValue,
+            reason: reason,
+            receiverName: receiverName,
+            receiverBranchNumber: receiverBranchNumber,
+            receiverAccountNumber: receiverAccountNumber,
+            receiverRoutingNumber: receiverRoutingNumber,
+            receiverRoutingNumberISPB: receiverRoutingNumberISPB,
+            receiverDocumentNumberType: receiverDocumentNumberType,
+            receiverDocumentNumberValue: receiverDocumentNumberValue,
+            paymentMethod: paymentMethod,
+            referenceNumber: referenceNumber,
+            receiverReferenceId: receiverReferenceId,
+            createdAt: BuiltValueNullFieldError.checkNotNull(
+                createdAt, r'BankTransactionPaymentDataEntity', 'createdAt'),
+            updatedAt: BuiltValueNullFieldError.checkNotNull(
+                updatedAt, r'BankTransactionPaymentDataEntity', 'updatedAt'));
     replace(_$result);
     return _$result;
   }

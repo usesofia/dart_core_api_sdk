@@ -13,17 +13,17 @@ class _$BankTransactionCreditCardMetadataEntity
   @override
   final String transactionId;
   @override
-  final num installmentNumber;
+  final num? installmentNumber;
   @override
-  final num totalInstallments;
+  final num? totalInstallments;
   @override
-  final num totalAmount;
+  final num? totalAmount;
   @override
-  final num payeeMCC;
+  final num? payeeMCC;
   @override
-  final String cardNumber;
+  final String? cardNumber;
   @override
-  final String billId;
+  final String? billId;
   @override
   final DateTime createdAt;
   @override
@@ -38,12 +38,12 @@ class _$BankTransactionCreditCardMetadataEntity
   _$BankTransactionCreditCardMetadataEntity._(
       {required this.id,
       required this.transactionId,
-      required this.installmentNumber,
-      required this.totalInstallments,
-      required this.totalAmount,
-      required this.payeeMCC,
-      required this.cardNumber,
-      required this.billId,
+      this.installmentNumber,
+      this.totalInstallments,
+      this.totalAmount,
+      this.payeeMCC,
+      this.cardNumber,
+      this.billId,
       required this.createdAt,
       required this.updatedAt})
       : super._() {
@@ -51,18 +51,6 @@ class _$BankTransactionCreditCardMetadataEntity
         id, r'BankTransactionCreditCardMetadataEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(transactionId,
         r'BankTransactionCreditCardMetadataEntity', 'transactionId');
-    BuiltValueNullFieldError.checkNotNull(installmentNumber,
-        r'BankTransactionCreditCardMetadataEntity', 'installmentNumber');
-    BuiltValueNullFieldError.checkNotNull(totalInstallments,
-        r'BankTransactionCreditCardMetadataEntity', 'totalInstallments');
-    BuiltValueNullFieldError.checkNotNull(
-        totalAmount, r'BankTransactionCreditCardMetadataEntity', 'totalAmount');
-    BuiltValueNullFieldError.checkNotNull(
-        payeeMCC, r'BankTransactionCreditCardMetadataEntity', 'payeeMCC');
-    BuiltValueNullFieldError.checkNotNull(
-        cardNumber, r'BankTransactionCreditCardMetadataEntity', 'cardNumber');
-    BuiltValueNullFieldError.checkNotNull(
-        billId, r'BankTransactionCreditCardMetadataEntity', 'billId');
     BuiltValueNullFieldError.checkNotNull(
         createdAt, r'BankTransactionCreditCardMetadataEntity', 'createdAt');
     BuiltValueNullFieldError.checkNotNull(
@@ -221,21 +209,18 @@ class BankTransactionCreditCardMetadataEntityBuilder
         new _$BankTransactionCreditCardMetadataEntity._(
             id: BuiltValueNullFieldError.checkNotNull(
                 id, r'BankTransactionCreditCardMetadataEntity', 'id'),
-            transactionId: BuiltValueNullFieldError.checkNotNull(
-                transactionId, r'BankTransactionCreditCardMetadataEntity', 'transactionId'),
-            installmentNumber: BuiltValueNullFieldError.checkNotNull(
-                installmentNumber, r'BankTransactionCreditCardMetadataEntity', 'installmentNumber'),
-            totalInstallments: BuiltValueNullFieldError.checkNotNull(
-                totalInstallments, r'BankTransactionCreditCardMetadataEntity', 'totalInstallments'),
-            totalAmount: BuiltValueNullFieldError.checkNotNull(
-                totalAmount, r'BankTransactionCreditCardMetadataEntity', 'totalAmount'),
-            payeeMCC: BuiltValueNullFieldError.checkNotNull(
-                payeeMCC, r'BankTransactionCreditCardMetadataEntity', 'payeeMCC'),
-            cardNumber: BuiltValueNullFieldError.checkNotNull(
-                cardNumber, r'BankTransactionCreditCardMetadataEntity', 'cardNumber'),
-            billId: BuiltValueNullFieldError.checkNotNull(billId, r'BankTransactionCreditCardMetadataEntity', 'billId'),
-            createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankTransactionCreditCardMetadataEntity', 'createdAt'),
-            updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankTransactionCreditCardMetadataEntity', 'updatedAt'));
+            transactionId: BuiltValueNullFieldError.checkNotNull(transactionId,
+                r'BankTransactionCreditCardMetadataEntity', 'transactionId'),
+            installmentNumber: installmentNumber,
+            totalInstallments: totalInstallments,
+            totalAmount: totalAmount,
+            payeeMCC: payeeMCC,
+            cardNumber: cardNumber,
+            billId: billId,
+            createdAt: BuiltValueNullFieldError.checkNotNull(createdAt,
+                r'BankTransactionCreditCardMetadataEntity', 'createdAt'),
+            updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt,
+                r'BankTransactionCreditCardMetadataEntity', 'updatedAt'));
     replace(_$result);
     return _$result;
   }

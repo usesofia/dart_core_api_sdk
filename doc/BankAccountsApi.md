@@ -1,4 +1,4 @@
-# dart_api_sdk.api.BankConnectionsApi
+# dart_api_sdk.api.BankAccountsApi
 
 ## Load the API package
 ```dart
@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bankConnectionsControllerFetchUserBankConnections**](BankConnectionsApi.md#bankconnectionscontrollerfetchuserbankconnections) | **GET** /workspaces/{workspaceId}/bank/connections | 
+[**bankAccountsControllerFetchConnectionBankAccounts**](BankAccountsApi.md#bankaccountscontrollerfetchconnectionbankaccounts) | **GET** /workspaces/{workspaceId}/bank/connections/{bankConnectionId}/accounts | 
 
 
-# **bankConnectionsControllerFetchUserBankConnections**
-> BuiltList<BankConnectionEntity> bankConnectionsControllerFetchUserBankConnections(workspaceId, enabled)
+# **bankAccountsControllerFetchConnectionBankAccounts**
+> BuiltList<BankAccountEntity> bankAccountsControllerFetchConnectionBankAccounts(workspaceId, bankConnectionId)
 
 
 
@@ -21,15 +21,15 @@ Method | HTTP request | Description
 ```dart
 import 'package:dart_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankConnectionsApi();
+final api = DartApiSdk().getBankAccountsApi();
 final String workspaceId = workspaceId_example; // String | 
-final bool enabled = true; // bool | 
+final String bankConnectionId = bankConnectionId_example; // String | 
 
 try {
-    final response = api.bankConnectionsControllerFetchUserBankConnections(workspaceId, enabled);
+    final response = api.bankAccountsControllerFetchConnectionBankAccounts(workspaceId, bankConnectionId);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankConnectionsApi->bankConnectionsControllerFetchUserBankConnections: $e\n');
+    print('Exception when calling BankAccountsApi->bankAccountsControllerFetchConnectionBankAccounts: $e\n');
 }
 ```
 
@@ -38,11 +38,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspaceId** | **String**|  | 
- **enabled** | **bool**|  | 
+ **bankConnectionId** | **String**|  | 
 
 ### Return type
 
-[**BuiltList&lt;BankConnectionEntity&gt;**](BankConnectionEntity.md)
+[**BuiltList&lt;BankAccountEntity&gt;**](BankAccountEntity.md)
 
 ### Authorization
 

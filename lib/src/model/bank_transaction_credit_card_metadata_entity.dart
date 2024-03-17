@@ -30,22 +30,22 @@ abstract class BankTransactionCreditCardMetadataEntity implements Built<BankTran
   String get transactionId;
 
   @BuiltValueField(wireName: r'installmentNumber')
-  num get installmentNumber;
+  num? get installmentNumber;
 
   @BuiltValueField(wireName: r'totalInstallments')
-  num get totalInstallments;
+  num? get totalInstallments;
 
   @BuiltValueField(wireName: r'totalAmount')
-  num get totalAmount;
+  num? get totalAmount;
 
   @BuiltValueField(wireName: r'payeeMCC')
-  num get payeeMCC;
+  num? get payeeMCC;
 
   @BuiltValueField(wireName: r'cardNumber')
-  String get cardNumber;
+  String? get cardNumber;
 
   @BuiltValueField(wireName: r'billId')
-  String get billId;
+  String? get billId;
 
   @BuiltValueField(wireName: r'createdAt')
   DateTime get createdAt;
@@ -86,36 +86,48 @@ class _$BankTransactionCreditCardMetadataEntitySerializer implements PrimitiveSe
       object.transactionId,
       specifiedType: const FullType(String),
     );
-    yield r'installmentNumber';
-    yield serializers.serialize(
-      object.installmentNumber,
-      specifiedType: const FullType(num),
-    );
-    yield r'totalInstallments';
-    yield serializers.serialize(
-      object.totalInstallments,
-      specifiedType: const FullType(num),
-    );
-    yield r'totalAmount';
-    yield serializers.serialize(
-      object.totalAmount,
-      specifiedType: const FullType(num),
-    );
-    yield r'payeeMCC';
-    yield serializers.serialize(
-      object.payeeMCC,
-      specifiedType: const FullType(num),
-    );
-    yield r'cardNumber';
-    yield serializers.serialize(
-      object.cardNumber,
-      specifiedType: const FullType(String),
-    );
-    yield r'billId';
-    yield serializers.serialize(
-      object.billId,
-      specifiedType: const FullType(String),
-    );
+    if (object.installmentNumber != null) {
+      yield r'installmentNumber';
+      yield serializers.serialize(
+        object.installmentNumber,
+        specifiedType: const FullType(num),
+      );
+    }
+    if (object.totalInstallments != null) {
+      yield r'totalInstallments';
+      yield serializers.serialize(
+        object.totalInstallments,
+        specifiedType: const FullType(num),
+      );
+    }
+    if (object.totalAmount != null) {
+      yield r'totalAmount';
+      yield serializers.serialize(
+        object.totalAmount,
+        specifiedType: const FullType(num),
+      );
+    }
+    if (object.payeeMCC != null) {
+      yield r'payeeMCC';
+      yield serializers.serialize(
+        object.payeeMCC,
+        specifiedType: const FullType(num),
+      );
+    }
+    if (object.cardNumber != null) {
+      yield r'cardNumber';
+      yield serializers.serialize(
+        object.cardNumber,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.billId != null) {
+      yield r'billId';
+      yield serializers.serialize(
+        object.billId,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'createdAt';
     yield serializers.serialize(
       object.createdAt,

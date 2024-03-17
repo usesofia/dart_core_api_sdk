@@ -9,8 +9,6 @@ part of 'bank_transactions_controller_get200_response.dart';
 class _$BankTransactionsControllerGet200Response
     extends BankTransactionsControllerGet200Response {
   @override
-  final BuiltList<BankTransactionEntity>? data;
-  @override
   final num pageIndex;
   @override
   final num pageSize;
@@ -18,6 +16,8 @@ class _$BankTransactionsControllerGet200Response
   final num totalItems;
   @override
   final num totalPages;
+  @override
+  final BuiltList<String> items;
 
   factory _$BankTransactionsControllerGet200Response(
           [void Function(BankTransactionsControllerGet200ResponseBuilder)?
@@ -26,11 +26,11 @@ class _$BankTransactionsControllerGet200Response
           ._build();
 
   _$BankTransactionsControllerGet200Response._(
-      {this.data,
-      required this.pageIndex,
+      {required this.pageIndex,
       required this.pageSize,
       required this.totalItems,
-      required this.totalPages})
+      required this.totalPages,
+      required this.items})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         pageIndex, r'BankTransactionsControllerGet200Response', 'pageIndex');
@@ -40,6 +40,8 @@ class _$BankTransactionsControllerGet200Response
         totalItems, r'BankTransactionsControllerGet200Response', 'totalItems');
     BuiltValueNullFieldError.checkNotNull(
         totalPages, r'BankTransactionsControllerGet200Response', 'totalPages');
+    BuiltValueNullFieldError.checkNotNull(
+        items, r'BankTransactionsControllerGet200Response', 'items');
   }
 
   @override
@@ -56,21 +58,21 @@ class _$BankTransactionsControllerGet200Response
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is BankTransactionsControllerGet200Response &&
-        data == other.data &&
         pageIndex == other.pageIndex &&
         pageSize == other.pageSize &&
         totalItems == other.totalItems &&
-        totalPages == other.totalPages;
+        totalPages == other.totalPages &&
+        items == other.items;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jc(_$hash, pageIndex.hashCode);
     _$hash = $jc(_$hash, pageSize.hashCode);
     _$hash = $jc(_$hash, totalItems.hashCode);
     _$hash = $jc(_$hash, totalPages.hashCode);
+    _$hash = $jc(_$hash, items.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -79,11 +81,11 @@ class _$BankTransactionsControllerGet200Response
   String toString() {
     return (newBuiltValueToStringHelper(
             r'BankTransactionsControllerGet200Response')
-          ..add('data', data)
           ..add('pageIndex', pageIndex)
           ..add('pageSize', pageSize)
           ..add('totalItems', totalItems)
-          ..add('totalPages', totalPages))
+          ..add('totalPages', totalPages)
+          ..add('items', items))
         .toString();
   }
 }
@@ -94,12 +96,6 @@ class BankTransactionsControllerGet200ResponseBuilder
             BankTransactionsControllerGet200ResponseBuilder>,
         PageResponseEntityBuilder {
   _$BankTransactionsControllerGet200Response? _$v;
-
-  ListBuilder<BankTransactionEntity>? _data;
-  ListBuilder<BankTransactionEntity> get data =>
-      _$this._data ??= new ListBuilder<BankTransactionEntity>();
-  set data(covariant ListBuilder<BankTransactionEntity>? data) =>
-      _$this._data = data;
 
   num? _pageIndex;
   num? get pageIndex => _$this._pageIndex;
@@ -117,6 +113,10 @@ class BankTransactionsControllerGet200ResponseBuilder
   num? get totalPages => _$this._totalPages;
   set totalPages(covariant num? totalPages) => _$this._totalPages = totalPages;
 
+  ListBuilder<String>? _items;
+  ListBuilder<String> get items => _$this._items ??= new ListBuilder<String>();
+  set items(covariant ListBuilder<String>? items) => _$this._items = items;
+
   BankTransactionsControllerGet200ResponseBuilder() {
     BankTransactionsControllerGet200Response._defaults(this);
   }
@@ -124,11 +124,11 @@ class BankTransactionsControllerGet200ResponseBuilder
   BankTransactionsControllerGet200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _data = $v.data?.toBuilder();
       _pageIndex = $v.pageIndex;
       _pageSize = $v.pageSize;
       _totalItems = $v.totalItems;
       _totalPages = $v.totalPages;
+      _items = $v.items.toBuilder();
       _$v = null;
     }
     return this;
@@ -154,7 +154,6 @@ class BankTransactionsControllerGet200ResponseBuilder
     try {
       _$result = _$v ??
           new _$BankTransactionsControllerGet200Response._(
-              data: _data?.build(),
               pageIndex: BuiltValueNullFieldError.checkNotNull(pageIndex,
                   r'BankTransactionsControllerGet200Response', 'pageIndex'),
               pageSize: BuiltValueNullFieldError.checkNotNull(pageSize,
@@ -162,12 +161,13 @@ class BankTransactionsControllerGet200ResponseBuilder
               totalItems: BuiltValueNullFieldError.checkNotNull(totalItems,
                   r'BankTransactionsControllerGet200Response', 'totalItems'),
               totalPages: BuiltValueNullFieldError.checkNotNull(totalPages,
-                  r'BankTransactionsControllerGet200Response', 'totalPages'));
+                  r'BankTransactionsControllerGet200Response', 'totalPages'),
+              items: items.build());
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'data';
-        _data?.build();
+        _$failedField = 'items';
+        items.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'BankTransactionsControllerGet200Response',

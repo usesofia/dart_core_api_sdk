@@ -10,24 +10,24 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **transactionId** | **String** |  | 
-**payeerName** | **String** |  | 
-**payerBranchNumber** | **String** |  | 
-**payerAccountNumber** | **String** |  | 
-**payerRoutingNumber** | **String** |  | 
-**payerRoutingNumberISPB** | **String** |  | 
-**payerDocumentNumberType** | **String** |  | 
-**payerDocumentNumberValue** | **String** |  | 
-**reason** | **String** |  | 
-**receiverName** | **String** |  | 
-**receiverBranchNumber** | **String** |  | 
-**receiverAccountNumber** | **String** |  | 
-**receiverRoutingNumber** | **String** |  | 
-**receiverRoutingNumberISPB** | **String** |  | 
-**receiverDocumentNumberType** | **String** |  | 
-**receiverDocumentNumberValue** | **String** |  | 
-**paymentMethod** | **String** |  | 
-**referenceNumber** | **String** |  | 
-**receiverReferenceId** | **String** |  | 
+**payeerName** | **String** |  | [optional] 
+**payerBranchNumber** | **String** |  | [optional] 
+**payerAccountNumber** | **String** |  | [optional] 
+**payerRoutingNumber** | **String** |  | [optional] 
+**payerRoutingNumberISPB** | **String** |  | [optional] 
+**payerDocumentNumberType** | **String** |  | [optional] 
+**payerDocumentNumberValue** | **String** |  | [optional] 
+**reason** | **String** |  | [optional] 
+**receiverName** | **String** |  | [optional] 
+**receiverBranchNumber** | **String** |  | [optional] 
+**receiverAccountNumber** | **String** |  | [optional] 
+**receiverRoutingNumber** | **String** |  | [optional] 
+**receiverRoutingNumberISPB** | **String** |  | [optional] 
+**receiverDocumentNumberType** | **String** |  | [optional] 
+**receiverDocumentNumberValue** | **String** |  | [optional] 
+**paymentMethod** | **String** |  | [optional] 
+**referenceNumber** | **String** |  | [optional] 
+**receiverReferenceId** | **String** |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 
