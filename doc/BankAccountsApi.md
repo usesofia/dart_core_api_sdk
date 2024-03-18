@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**bankAccountsControllerDisableBankAccount**](BankAccountsApi.md#bankaccountscontrollerdisablebankaccount) | **POST** /bank/accounts/{bankAccountId}/disable | 
 [**bankAccountsControllerFetchConnectionBankAccounts**](BankAccountsApi.md#bankaccountscontrollerfetchconnectionbankaccounts) | **GET** /workspaces/{workspaceId}/bank/connections/{bankConnectionId}/accounts | 
 [**bankAccountsControllerFetchWorkspaceBankAccounts**](BankAccountsApi.md#bankaccountscontrollerfetchworkspacebankaccounts) | **GET** /workspaces/{workspaceId}/bank/accounts | 
+[**bankAccountsControllerGetBankAccountDetails**](BankAccountsApi.md#bankaccountscontrollergetbankaccountdetails) | **GET** /bank/accounts/{bankAccountId} | 
 
 
 # **bankAccountsControllerActivateBankAccount**
@@ -223,6 +224,47 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BuiltList&lt;BankAccountEntity&gt;**](BankAccountEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bankAccountsControllerGetBankAccountDetails**
+> BankAccountEntity bankAccountsControllerGetBankAccountDetails(bankAccountId)
+
+
+
+### Example
+```dart
+import 'package:dart_api_sdk/api.dart';
+
+final api = DartApiSdk().getBankAccountsApi();
+final String bankAccountId = bankAccountId_example; // String | 
+
+try {
+    final response = api.bankAccountsControllerGetBankAccountDetails(bankAccountId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling BankAccountsApi->bankAccountsControllerGetBankAccountDetails: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankAccountId** | **String**|  | 
+
+### Return type
+
+[**BankAccountEntity**](BankAccountEntity.md)
 
 ### Authorization
 
