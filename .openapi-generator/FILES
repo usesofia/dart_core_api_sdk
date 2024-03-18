@@ -41,6 +41,7 @@ doc/SignUpWithEmailPasswordRequestDto.md
 doc/StripeApi.md
 doc/SubscriptionProductEntity.md
 doc/SubscriptionProductsApi.md
+doc/UpdateBankTransactionRequestDto.md
 doc/UserEntity.md
 doc/UserRelatedWorkspaceEntity.md
 doc/WorkspaceEntity.md
@@ -102,6 +103,7 @@ lib/src/model/send_email_verification_code_request_dto.dart
 lib/src/model/sign_in_with_email_password_request_dto.dart
 lib/src/model/sign_up_with_email_password_request_dto.dart
 lib/src/model/subscription_product_entity.dart
+lib/src/model/update_bank_transaction_request_dto.dart
 lib/src/model/user_entity.dart
 lib/src/model/user_related_workspace_entity.dart
 lib/src/model/workspace_entity.dart
@@ -109,3 +111,4 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/update_bank_transaction_request_dto_test.dart

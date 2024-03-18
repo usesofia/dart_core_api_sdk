@@ -83,6 +83,7 @@ Class | Method | HTTP request | Description
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGet**](doc/BankTransactionsApi.md#banktransactionscontrollerget) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetRecent**](doc/BankTransactionsApi.md#banktransactionscontrollergetrecent) | **GET** /workspaces/{workspaceId}/bank/transactions/most-recent | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetTransactionDetails**](doc/BankTransactionsApi.md#banktransactionscontrollergettransactiondetails) | **GET** /bank/transactions/{bankTransactionId} | 
+[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerUpdateTransaction**](doc/BankTransactionsApi.md#banktransactionscontrollerupdatetransaction) | **PATCH** /bank/transactions/{bankTransactionId} | 
 [*PluggyApi*](doc/PluggyApi.md) | [**pluggyControllerCreate**](doc/PluggyApi.md#pluggycontrollercreate) | **POST** /pluggy/connect-token | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerCreate**](doc/ProfilesApi.md#profilescontrollercreate) | **POST** /profiles | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerGetMy**](doc/ProfilesApi.md#profilescontrollergetmy) | **GET** /profiles/me | 
@@ -129,6 +130,7 @@ Class | Method | HTTP request | Description
  - [SignInWithEmailPasswordRequestDto](doc/SignInWithEmailPasswordRequestDto.md)
  - [SignUpWithEmailPasswordRequestDto](doc/SignUpWithEmailPasswordRequestDto.md)
  - [SubscriptionProductEntity](doc/SubscriptionProductEntity.md)
+ - [UpdateBankTransactionRequestDto](doc/UpdateBankTransactionRequestDto.md)
  - [UserEntity](doc/UserEntity.md)
  - [UserRelatedWorkspaceEntity](doc/UserRelatedWorkspaceEntity.md)
  - [WorkspaceEntity](doc/WorkspaceEntity.md)

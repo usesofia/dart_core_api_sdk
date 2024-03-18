@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**bankTransactionsControllerGet**](BankTransactionsApi.md#banktransactionscontrollerget) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
 [**bankTransactionsControllerGetRecent**](BankTransactionsApi.md#banktransactionscontrollergetrecent) | **GET** /workspaces/{workspaceId}/bank/transactions/most-recent | 
 [**bankTransactionsControllerGetTransactionDetails**](BankTransactionsApi.md#banktransactionscontrollergettransactiondetails) | **GET** /bank/transactions/{bankTransactionId} | 
+[**bankTransactionsControllerUpdateTransaction**](BankTransactionsApi.md#banktransactionscontrollerupdatetransaction) | **PATCH** /bank/transactions/{bankTransactionId} | 
 
 
 # **bankTransactionsControllerGet**
@@ -137,6 +138,49 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bankTransactionsControllerUpdateTransaction**
+> BankTransactionEntity bankTransactionsControllerUpdateTransaction(bankTransactionId, updateBankTransactionRequestDto)
+
+
+
+### Example
+```dart
+import 'package:dart_api_sdk/api.dart';
+
+final api = DartApiSdk().getBankTransactionsApi();
+final String bankTransactionId = bankTransactionId_example; // String | 
+final UpdateBankTransactionRequestDto updateBankTransactionRequestDto = ; // UpdateBankTransactionRequestDto | 
+
+try {
+    final response = api.bankTransactionsControllerUpdateTransaction(bankTransactionId, updateBankTransactionRequestDto);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerUpdateTransaction: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankTransactionId** | **String**|  | 
+ **updateBankTransactionRequestDto** | [**UpdateBankTransactionRequestDto**](UpdateBankTransactionRequestDto.md)|  | 
+
+### Return type
+
+[**BankTransactionEntity**](BankTransactionEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
