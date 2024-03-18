@@ -107,6 +107,10 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<UserRelatedWorkspaceEntity>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(BankTransactionEntity)]),
+        () => ListBuilder<BankTransactionEntity>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(BankAccountEntity)]),
         () => ListBuilder<BankAccountEntity>(),
       )

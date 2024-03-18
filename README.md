@@ -81,6 +81,7 @@ Class | Method | HTTP request | Description
 [*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerFetchUserBankConnections**](doc/BankConnectionsApi.md#bankconnectionscontrollerfetchuserbankconnections) | **GET** /workspaces/{workspaceId}/bank/connections | 
 [*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerGetBankConnectionDetails**](doc/BankConnectionsApi.md#bankconnectionscontrollergetbankconnectiondetails) | **GET** /bank/connections/{bankConnectionId} | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGet**](doc/BankTransactionsApi.md#banktransactionscontrollerget) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
+[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetRecent**](doc/BankTransactionsApi.md#banktransactionscontrollergetrecent) | **GET** /workspaces/{workspaceId}/bank/transactions/most-recent | 
 [*PluggyApi*](doc/PluggyApi.md) | [**pluggyControllerCreate**](doc/PluggyApi.md#pluggycontrollercreate) | **POST** /pluggy/connect-token | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerCreate**](doc/ProfilesApi.md#profilescontrollercreate) | **POST** /profiles | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerGetMy**](doc/ProfilesApi.md#profilescontrollergetmy) | **GET** /profiles/me | 
