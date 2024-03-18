@@ -10,6 +10,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**bankAccountsControllerActivateBankAccount**](BankAccountsApi.md#bankaccountscontrolleractivatebankaccount) | **POST** /bank/accounts/{bankAccountId}/activate | 
+[**bankAccountsControllerCreateOrUpdateBankAccount**](BankAccountsApi.md#bankaccountscontrollercreateorupdatebankaccount) | **PUT** /workspaces/{workspaceId}/bank/accounts | 
 [**bankAccountsControllerCreateWorkspaceBankAccountsBalanceReport**](BankAccountsApi.md#bankaccountscontrollercreateworkspacebankaccountsbalancereport) | **POST** /workspaces/{workspaceId}/bank/accounts/balance-report | 
 [**bankAccountsControllerDisableBankAccount**](BankAccountsApi.md#bankaccountscontrollerdisablebankaccount) | **POST** /bank/accounts/{bankAccountId}/disable | 
 [**bankAccountsControllerFetchConnectionBankAccounts**](BankAccountsApi.md#bankaccountscontrollerfetchconnectionbankaccounts) | **GET** /workspaces/{workspaceId}/bank/connections/{bankConnectionId}/accounts | 
@@ -54,6 +55,49 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bankAccountsControllerCreateOrUpdateBankAccount**
+> BankAccountEntity bankAccountsControllerCreateOrUpdateBankAccount(workspaceId, createOrUpdateBankAccountRequestDto)
+
+
+
+### Example
+```dart
+import 'package:dart_api_sdk/api.dart';
+
+final api = DartApiSdk().getBankAccountsApi();
+final String workspaceId = workspaceId_example; // String | 
+final CreateOrUpdateBankAccountRequestDto createOrUpdateBankAccountRequestDto = ; // CreateOrUpdateBankAccountRequestDto | 
+
+try {
+    final response = api.bankAccountsControllerCreateOrUpdateBankAccount(workspaceId, createOrUpdateBankAccountRequestDto);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling BankAccountsApi->bankAccountsControllerCreateOrUpdateBankAccount: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **workspaceId** | **String**|  | 
+ **createOrUpdateBankAccountRequestDto** | [**CreateOrUpdateBankAccountRequestDto**](CreateOrUpdateBankAccountRequestDto.md)|  | 
+
+### Return type
+
+[**BankAccountEntity**](BankAccountEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

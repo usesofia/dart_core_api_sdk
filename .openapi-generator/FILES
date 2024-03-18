@@ -18,6 +18,7 @@ doc/BankTransactionsControllerGetBankTransactionsNotConfirmed200Response.md
 doc/CheckEmailInUseRequestDto.md
 doc/CheckoutSessionEntity.md
 doc/ConnectionFeatureSpecificationEntity.md
+doc/CreateOrUpdateBankAccountRequestDto.md
 doc/CreateOrUpdateBankConnectionRequestDto.md
 doc/CreatePluggyConnectTokenRequestDto.md
 doc/CreateProfileRequestDto.md
@@ -84,6 +85,7 @@ lib/src/model/bank_transactions_controller_get_bank_transactions_not_confirmed20
 lib/src/model/check_email_in_use_request_dto.dart
 lib/src/model/checkout_session_entity.dart
 lib/src/model/connection_feature_specification_entity.dart
+lib/src/model/create_or_update_bank_account_request_dto.dart
 lib/src/model/create_or_update_bank_connection_request_dto.dart
 lib/src/model/create_pluggy_connect_token_request_dto.dart
 lib/src/model/create_profile_request_dto.dart
@@ -113,3 +115,4 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/create_or_update_bank_account_request_dto_test.dart

@@ -27,6 +27,7 @@ import 'package:dart_api_sdk/src/model/bank_transactions_controller_get_bank_tra
 import 'package:dart_api_sdk/src/model/check_email_in_use_request_dto.dart';
 import 'package:dart_api_sdk/src/model/checkout_session_entity.dart';
 import 'package:dart_api_sdk/src/model/connection_feature_specification_entity.dart';
+import 'package:dart_api_sdk/src/model/create_or_update_bank_account_request_dto.dart';
 import 'package:dart_api_sdk/src/model/create_or_update_bank_connection_request_dto.dart';
 import 'package:dart_api_sdk/src/model/create_pluggy_connect_token_request_dto.dart';
 import 'package:dart_api_sdk/src/model/create_profile_request_dto.dart';
@@ -70,6 +71,7 @@ part 'serializers.g.dart';
   CheckEmailInUseRequestDto,
   CheckoutSessionEntity,
   ConnectionFeatureSpecificationEntity,
+  CreateOrUpdateBankAccountRequestDto,
   CreateOrUpdateBankConnectionRequestDto,
   CreatePluggyConnectTokenRequestDto,
   CreateProfileRequestDto,
