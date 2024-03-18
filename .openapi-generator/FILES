@@ -14,7 +14,7 @@ doc/BankTransactionCreditCardMetadataEntity.md
 doc/BankTransactionEntity.md
 doc/BankTransactionPaymentDataEntity.md
 doc/BankTransactionsApi.md
-doc/BankTransactionsControllerGet200Response.md
+doc/BankTransactionsControllerGetBankTransactionsNotConfirmed200Response.md
 doc/CheckEmailInUseRequestDto.md
 doc/CheckoutSessionEntity.md
 doc/ConnectionFeatureSpecificationEntity.md
@@ -79,7 +79,7 @@ lib/src/model/bank_transaction_cost_center_entity.dart
 lib/src/model/bank_transaction_credit_card_metadata_entity.dart
 lib/src/model/bank_transaction_entity.dart
 lib/src/model/bank_transaction_payment_data_entity.dart
-lib/src/model/bank_transactions_controller_get200_response.dart
+lib/src/model/bank_transactions_controller_get_bank_transactions_not_confirmed200_response.dart
 lib/src/model/check_email_in_use_request_dto.dart
 lib/src/model/checkout_session_entity.dart
 lib/src/model/connection_feature_specification_entity.dart
@@ -111,4 +111,4 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/update_bank_transaction_request_dto_test.dart
+test/bank_transactions_controller_get_bank_transactions_not_confirmed200_response_test.dart

@@ -12,10 +12,14 @@ part 'create_pluggy_connect_token_request_dto.g.dart';
 ///
 /// Properties:
 /// * [itemId] 
+/// * [workspaceId] 
 @BuiltValue()
 abstract class CreatePluggyConnectTokenRequestDto implements Built<CreatePluggyConnectTokenRequestDto, CreatePluggyConnectTokenRequestDtoBuilder> {
   @BuiltValueField(wireName: r'itemId')
   String? get itemId;
+
+  @BuiltValueField(wireName: r'workspaceId')
+  String get workspaceId;
 
   CreatePluggyConnectTokenRequestDto._();
 
@@ -47,6 +51,11 @@ class _$CreatePluggyConnectTokenRequestDtoSerializer implements PrimitiveSeriali
         specifiedType: const FullType(String),
       );
     }
+    yield r'workspaceId';
+    yield serializers.serialize(
+      object.workspaceId,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override
@@ -76,6 +85,13 @@ class _$CreatePluggyConnectTokenRequestDtoSerializer implements PrimitiveSeriali
             specifiedType: const FullType(String),
           ) as String;
           result.itemId = valueDes;
+          break;
+        case r'workspaceId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.workspaceId = valueDes;
           break;
         default:
           unhandled.add(key);

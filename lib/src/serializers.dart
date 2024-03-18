@@ -23,7 +23,7 @@ import 'package:dart_api_sdk/src/model/bank_transaction_cost_center_entity.dart'
 import 'package:dart_api_sdk/src/model/bank_transaction_credit_card_metadata_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_transaction_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_transaction_payment_data_entity.dart';
-import 'package:dart_api_sdk/src/model/bank_transactions_controller_get200_response.dart';
+import 'package:dart_api_sdk/src/model/bank_transactions_controller_get_bank_transactions_not_confirmed200_response.dart';
 import 'package:dart_api_sdk/src/model/check_email_in_use_request_dto.dart';
 import 'package:dart_api_sdk/src/model/checkout_session_entity.dart';
 import 'package:dart_api_sdk/src/model/connection_feature_specification_entity.dart';
@@ -65,7 +65,7 @@ part 'serializers.g.dart';
   BankTransactionCreditCardMetadataEntity,
   BankTransactionEntity,
   BankTransactionPaymentDataEntity,
-  BankTransactionsControllerGet200Response,
+  BankTransactionsControllerGetBankTransactionsNotConfirmed200Response,
   CheckEmailInUseRequestDto,
   CheckoutSessionEntity,
   ConnectionFeatureSpecificationEntity,

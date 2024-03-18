@@ -9,14 +9,76 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bankTransactionsControllerGet**](BankTransactionsApi.md#banktransactionscontrollerget) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
+[**bankTransactionsControllerGetBankTransactions**](BankTransactionsApi.md#banktransactionscontrollergetbanktransactions) | **GET** /workspaces/{workspaceId}/bank/transactions | 
+[**bankTransactionsControllerGetBankTransactionsNotConfirmed**](BankTransactionsApi.md#banktransactionscontrollergetbanktransactionsnotconfirmed) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
 [**bankTransactionsControllerGetRecent**](BankTransactionsApi.md#banktransactionscontrollergetrecent) | **GET** /workspaces/{workspaceId}/bank/transactions/most-recent | 
 [**bankTransactionsControllerGetTransactionDetails**](BankTransactionsApi.md#banktransactionscontrollergettransactiondetails) | **GET** /bank/transactions/{bankTransactionId} | 
 [**bankTransactionsControllerUpdateTransaction**](BankTransactionsApi.md#banktransactionscontrollerupdatetransaction) | **PATCH** /bank/transactions/{bankTransactionId} | 
 
 
-# **bankTransactionsControllerGet**
-> BankTransactionsControllerGet200Response bankTransactionsControllerGet(workspaceId, pageIndex, pageSize)
+# **bankTransactionsControllerGetBankTransactions**
+> BankTransactionsControllerGetBankTransactionsNotConfirmed200Response bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, costCenterIds, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored)
+
+
+
+### Example
+```dart
+import 'package:dart_api_sdk/api.dart';
+
+final api = DartApiSdk().getBankTransactionsApi();
+final String workspaceId = workspaceId_example; // String | 
+final num pageIndex = 8.14; // num | 
+final num pageSize = 8.14; // num | 
+final String accountIds = accountIds_example; // String | 
+final String categoryIds = categoryIds_example; // String | 
+final String costCenterIds = costCenterIds_example; // String | 
+final String minPostedDate = minPostedDate_example; // String | 
+final String maxPostedDate = maxPostedDate_example; // String | 
+final String minCompetencyDate = minCompetencyDate_example; // String | 
+final String maxCompetencyDate = maxCompetencyDate_example; // String | 
+final bool showIgnored = true; // bool | 
+
+try {
+    final response = api.bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, costCenterIds, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetBankTransactions: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **workspaceId** | **String**|  | 
+ **pageIndex** | **num**|  | [optional] 
+ **pageSize** | **num**|  | [optional] 
+ **accountIds** | **String**|  | [optional] 
+ **categoryIds** | **String**|  | [optional] 
+ **costCenterIds** | **String**|  | [optional] 
+ **minPostedDate** | **String**|  | [optional] 
+ **maxPostedDate** | **String**|  | [optional] 
+ **minCompetencyDate** | **String**|  | [optional] 
+ **maxCompetencyDate** | **String**|  | [optional] 
+ **showIgnored** | **bool**|  | [optional] 
+
+### Return type
+
+[**BankTransactionsControllerGetBankTransactionsNotConfirmed200Response**](BankTransactionsControllerGetBankTransactionsNotConfirmed200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bankTransactionsControllerGetBankTransactionsNotConfirmed**
+> BankTransactionsControllerGetBankTransactionsNotConfirmed200Response bankTransactionsControllerGetBankTransactionsNotConfirmed(workspaceId, pageIndex, pageSize)
 
 
 
@@ -30,10 +92,10 @@ final num pageIndex = 8.14; // num |
 final num pageSize = 8.14; // num | 
 
 try {
-    final response = api.bankTransactionsControllerGet(workspaceId, pageIndex, pageSize);
+    final response = api.bankTransactionsControllerGetBankTransactionsNotConfirmed(workspaceId, pageIndex, pageSize);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGet: $e\n');
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetBankTransactionsNotConfirmed: $e\n');
 }
 ```
 
@@ -42,12 +104,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspaceId** | **String**|  | 
- **pageIndex** | **num**|  | 
- **pageSize** | **num**|  | 
+ **pageIndex** | **num**|  | [optional] 
+ **pageSize** | **num**|  | [optional] 
 
 ### Return type
 
-[**BankTransactionsControllerGet200Response**](BankTransactionsControllerGet200Response.md)
+[**BankTransactionsControllerGetBankTransactionsNotConfirmed200Response**](BankTransactionsControllerGetBankTransactionsNotConfirmed200Response.md)
 
 ### Authorization
 

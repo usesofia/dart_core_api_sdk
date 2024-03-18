@@ -10,6 +10,8 @@ class _$CreatePluggyConnectTokenRequestDto
     extends CreatePluggyConnectTokenRequestDto {
   @override
   final String? itemId;
+  @override
+  final String workspaceId;
 
   factory _$CreatePluggyConnectTokenRequestDto(
           [void Function(CreatePluggyConnectTokenRequestDtoBuilder)?
@@ -17,7 +19,12 @@ class _$CreatePluggyConnectTokenRequestDto
       (new CreatePluggyConnectTokenRequestDtoBuilder()..update(updates))
           ._build();
 
-  _$CreatePluggyConnectTokenRequestDto._({this.itemId}) : super._();
+  _$CreatePluggyConnectTokenRequestDto._(
+      {this.itemId, required this.workspaceId})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        workspaceId, r'CreatePluggyConnectTokenRequestDto', 'workspaceId');
+  }
 
   @override
   CreatePluggyConnectTokenRequestDto rebuild(
@@ -32,13 +39,15 @@ class _$CreatePluggyConnectTokenRequestDto
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CreatePluggyConnectTokenRequestDto &&
-        itemId == other.itemId;
+        itemId == other.itemId &&
+        workspaceId == other.workspaceId;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, itemId.hashCode);
+    _$hash = $jc(_$hash, workspaceId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -46,7 +55,8 @@ class _$CreatePluggyConnectTokenRequestDto
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CreatePluggyConnectTokenRequestDto')
-          ..add('itemId', itemId))
+          ..add('itemId', itemId)
+          ..add('workspaceId', workspaceId))
         .toString();
   }
 }
@@ -61,6 +71,10 @@ class CreatePluggyConnectTokenRequestDtoBuilder
   String? get itemId => _$this._itemId;
   set itemId(String? itemId) => _$this._itemId = itemId;
 
+  String? _workspaceId;
+  String? get workspaceId => _$this._workspaceId;
+  set workspaceId(String? workspaceId) => _$this._workspaceId = workspaceId;
+
   CreatePluggyConnectTokenRequestDtoBuilder() {
     CreatePluggyConnectTokenRequestDto._defaults(this);
   }
@@ -69,6 +83,7 @@ class CreatePluggyConnectTokenRequestDtoBuilder
     final $v = _$v;
     if ($v != null) {
       _itemId = $v.itemId;
+      _workspaceId = $v.workspaceId;
       _$v = null;
     }
     return this;
@@ -90,8 +105,11 @@ class CreatePluggyConnectTokenRequestDtoBuilder
   CreatePluggyConnectTokenRequestDto build() => _build();
 
   _$CreatePluggyConnectTokenRequestDto _build() {
-    final _$result =
-        _$v ?? new _$CreatePluggyConnectTokenRequestDto._(itemId: itemId);
+    final _$result = _$v ??
+        new _$CreatePluggyConnectTokenRequestDto._(
+            itemId: itemId,
+            workspaceId: BuiltValueNullFieldError.checkNotNull(workspaceId,
+                r'CreatePluggyConnectTokenRequestDto', 'workspaceId'));
     replace(_$result);
     return _$result;
   }

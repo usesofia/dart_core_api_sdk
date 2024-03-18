@@ -10,7 +10,7 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:dart_api_sdk/src/api_util.dart';
 import 'package:dart_api_sdk/src/model/bank_transaction_entity.dart';
-import 'package:dart_api_sdk/src/model/bank_transactions_controller_get200_response.dart';
+import 'package:dart_api_sdk/src/model/bank_transactions_controller_get_bank_transactions_not_confirmed200_response.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_api_sdk/src/model/update_bank_transaction_request_dto.dart';
 
@@ -22,7 +22,116 @@ class BankTransactionsApi {
 
   const BankTransactionsApi(this._dio, this._serializers);
 
-  /// bankTransactionsControllerGet
+  /// bankTransactionsControllerGetBankTransactions
+  /// 
+  ///
+  /// Parameters:
+  /// * [workspaceId] 
+  /// * [pageIndex] 
+  /// * [pageSize] 
+  /// * [accountIds] 
+  /// * [categoryIds] 
+  /// * [costCenterIds] 
+  /// * [minPostedDate] 
+  /// * [maxPostedDate] 
+  /// * [minCompetencyDate] 
+  /// * [maxCompetencyDate] 
+  /// * [showIgnored] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [BankTransactionsControllerGetBankTransactionsNotConfirmed200Response] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<BankTransactionsControllerGetBankTransactionsNotConfirmed200Response>> bankTransactionsControllerGetBankTransactions({ 
+    required String workspaceId,
+    num? pageIndex,
+    num? pageSize,
+    String? accountIds,
+    String? categoryIds,
+    String? costCenterIds,
+    String? minPostedDate,
+    String? maxPostedDate,
+    String? minCompetencyDate,
+    String? maxCompetencyDate,
+    bool? showIgnored,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/workspaces/{workspaceId}/bank/transactions'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (pageIndex != null) r'pageIndex': encodeQueryParameter(_serializers, pageIndex, const FullType(num)),
+      if (pageSize != null) r'pageSize': encodeQueryParameter(_serializers, pageSize, const FullType(num)),
+      if (accountIds != null) r'accountIds': encodeQueryParameter(_serializers, accountIds, const FullType(String)),
+      if (categoryIds != null) r'categoryIds': encodeQueryParameter(_serializers, categoryIds, const FullType(String)),
+      if (costCenterIds != null) r'costCenterIds': encodeQueryParameter(_serializers, costCenterIds, const FullType(String)),
+      if (minPostedDate != null) r'minPostedDate': encodeQueryParameter(_serializers, minPostedDate, const FullType(String)),
+      if (maxPostedDate != null) r'maxPostedDate': encodeQueryParameter(_serializers, maxPostedDate, const FullType(String)),
+      if (minCompetencyDate != null) r'minCompetencyDate': encodeQueryParameter(_serializers, minCompetencyDate, const FullType(String)),
+      if (maxCompetencyDate != null) r'maxCompetencyDate': encodeQueryParameter(_serializers, maxCompetencyDate, const FullType(String)),
+      if (showIgnored != null) r'showIgnored': encodeQueryParameter(_serializers, showIgnored, const FullType(bool)),
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    BankTransactionsControllerGetBankTransactionsNotConfirmed200Response? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(BankTransactionsControllerGetBankTransactionsNotConfirmed200Response),
+      ) as BankTransactionsControllerGetBankTransactionsNotConfirmed200Response;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<BankTransactionsControllerGetBankTransactionsNotConfirmed200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// bankTransactionsControllerGetBankTransactionsNotConfirmed
   /// 
   ///
   /// Parameters:
@@ -36,12 +145,12 @@ class BankTransactionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BankTransactionsControllerGet200Response] as data
+  /// Returns a [Future] containing a [Response] with a [BankTransactionsControllerGetBankTransactionsNotConfirmed200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankTransactionsControllerGet200Response>> bankTransactionsControllerGet({ 
+  Future<Response<BankTransactionsControllerGetBankTransactionsNotConfirmed200Response>> bankTransactionsControllerGetBankTransactionsNotConfirmed({ 
     required String workspaceId,
-    required num pageIndex,
-    required num pageSize,
+    num? pageIndex,
+    num? pageSize,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -63,8 +172,8 @@ class BankTransactionsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'pageIndex': encodeQueryParameter(_serializers, pageIndex, const FullType(num)),
-      r'pageSize': encodeQueryParameter(_serializers, pageSize, const FullType(num)),
+      if (pageIndex != null) r'pageIndex': encodeQueryParameter(_serializers, pageIndex, const FullType(num)),
+      if (pageSize != null) r'pageSize': encodeQueryParameter(_serializers, pageSize, const FullType(num)),
     };
 
     final _response = await _dio.request<Object>(
@@ -76,14 +185,14 @@ class BankTransactionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BankTransactionsControllerGet200Response? _responseData;
+    BankTransactionsControllerGetBankTransactionsNotConfirmed200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BankTransactionsControllerGet200Response),
-      ) as BankTransactionsControllerGet200Response;
+        specifiedType: const FullType(BankTransactionsControllerGetBankTransactionsNotConfirmed200Response),
+      ) as BankTransactionsControllerGetBankTransactionsNotConfirmed200Response;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -95,7 +204,7 @@ class BankTransactionsApi {
       );
     }
 
-    return Response<BankTransactionsControllerGet200Response>(
+    return Response<BankTransactionsControllerGetBankTransactionsNotConfirmed200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

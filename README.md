@@ -80,7 +80,8 @@ Class | Method | HTTP request | Description
 [*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerDisableBankConnection**](doc/BankConnectionsApi.md#bankconnectionscontrollerdisablebankconnection) | **POST** /bank/connections/{bankConnectionId}/disable | 
 [*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerFetchUserBankConnections**](doc/BankConnectionsApi.md#bankconnectionscontrollerfetchuserbankconnections) | **GET** /workspaces/{workspaceId}/bank/connections | 
 [*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerGetBankConnectionDetails**](doc/BankConnectionsApi.md#bankconnectionscontrollergetbankconnectiondetails) | **GET** /bank/connections/{bankConnectionId} | 
-[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGet**](doc/BankTransactionsApi.md#banktransactionscontrollerget) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
+[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetBankTransactions**](doc/BankTransactionsApi.md#banktransactionscontrollergetbanktransactions) | **GET** /workspaces/{workspaceId}/bank/transactions | 
+[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetBankTransactionsNotConfirmed**](doc/BankTransactionsApi.md#banktransactionscontrollergetbanktransactionsnotconfirmed) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetRecent**](doc/BankTransactionsApi.md#banktransactionscontrollergetrecent) | **GET** /workspaces/{workspaceId}/bank/transactions/most-recent | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetTransactionDetails**](doc/BankTransactionsApi.md#banktransactionscontrollergettransactiondetails) | **GET** /bank/transactions/{bankTransactionId} | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerUpdateTransaction**](doc/BankTransactionsApi.md#banktransactionscontrollerupdatetransaction) | **PATCH** /bank/transactions/{bankTransactionId} | 
@@ -107,7 +108,7 @@ Class | Method | HTTP request | Description
  - [BankTransactionCreditCardMetadataEntity](doc/BankTransactionCreditCardMetadataEntity.md)
  - [BankTransactionEntity](doc/BankTransactionEntity.md)
  - [BankTransactionPaymentDataEntity](doc/BankTransactionPaymentDataEntity.md)
- - [BankTransactionsControllerGet200Response](doc/BankTransactionsControllerGet200Response.md)
+ - [BankTransactionsControllerGetBankTransactionsNotConfirmed200Response](doc/BankTransactionsControllerGetBankTransactionsNotConfirmed200Response.md)
  - [CheckEmailInUseRequestDto](doc/CheckEmailInUseRequestDto.md)
  - [CheckoutSessionEntity](doc/CheckoutSessionEntity.md)
  - [ConnectionFeatureSpecificationEntity](doc/ConnectionFeatureSpecificationEntity.md)
