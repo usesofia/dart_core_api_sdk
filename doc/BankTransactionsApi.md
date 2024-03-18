@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**bankTransactionsControllerGet**](BankTransactionsApi.md#banktransactionscontrollerget) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
 [**bankTransactionsControllerGetRecent**](BankTransactionsApi.md#banktransactionscontrollergetrecent) | **GET** /workspaces/{workspaceId}/bank/transactions/most-recent | 
+[**bankTransactionsControllerGetTransactionDetails**](BankTransactionsApi.md#banktransactionscontrollergettransactiondetails) | **GET** /bank/transactions/{bankTransactionId} | 
 
 
 # **bankTransactionsControllerGet**
@@ -87,6 +88,47 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BuiltList&lt;BankTransactionEntity&gt;**](BankTransactionEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bankTransactionsControllerGetTransactionDetails**
+> BankTransactionEntity bankTransactionsControllerGetTransactionDetails(bankTransactionId)
+
+
+
+### Example
+```dart
+import 'package:dart_api_sdk/api.dart';
+
+final api = DartApiSdk().getBankTransactionsApi();
+final String bankTransactionId = bankTransactionId_example; // String | 
+
+try {
+    final response = api.bankTransactionsControllerGetTransactionDetails(bankTransactionId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetTransactionDetails: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bankTransactionId** | **String**|  | 
+
+### Return type
+
+[**BankTransactionEntity**](BankTransactionEntity.md)
 
 ### Authorization
 
