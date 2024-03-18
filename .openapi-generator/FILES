@@ -113,4 +113,3 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/create_or_update_bank_connection_request_dto_test.dart
