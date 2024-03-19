@@ -82,6 +82,7 @@ Class | Method | HTTP request | Description
 [*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerDisableBankConnection**](doc/BankConnectionsApi.md#bankconnectionscontrollerdisablebankconnection) | **POST** /bank/connections/{bankConnectionId}/disable | 
 [*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerFetchUserBankConnections**](doc/BankConnectionsApi.md#bankconnectionscontrollerfetchuserbankconnections) | **GET** /workspaces/{workspaceId}/bank/connections | 
 [*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerGetBankConnectionDetails**](doc/BankConnectionsApi.md#bankconnectionscontrollergetbankconnectiondetails) | **GET** /bank/connections/{bankConnectionId} | 
+[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerCreateOrUpdateBankTransactionsInBulk**](doc/BankTransactionsApi.md#banktransactionscontrollercreateorupdatebanktransactionsinbulk) | **PUT** /bank/transactions/bulk | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetBankTransactions**](doc/BankTransactionsApi.md#banktransactionscontrollergetbanktransactions) | **GET** /workspaces/{workspaceId}/bank/transactions | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetBankTransactionsNotConfirmed**](doc/BankTransactionsApi.md#banktransactionscontrollergetbanktransactionsnotconfirmed) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetRecent**](doc/BankTransactionsApi.md#banktransactionscontrollergetrecent) | **GET** /workspaces/{workspaceId}/bank/transactions/most-recent | 
@@ -111,21 +112,26 @@ Class | Method | HTTP request | Description
  - [BankTransactionEntity](doc/BankTransactionEntity.md)
  - [BankTransactionPaymentDataEntity](doc/BankTransactionPaymentDataEntity.md)
  - [BankTransactionsControllerGetBankTransactionsNotConfirmed200Response](doc/BankTransactionsControllerGetBankTransactionsNotConfirmed200Response.md)
+ - [CategoryGuessDto](doc/CategoryGuessDto.md)
  - [CheckEmailInUseRequestDto](doc/CheckEmailInUseRequestDto.md)
  - [CheckoutSessionEntity](doc/CheckoutSessionEntity.md)
  - [ConnectionFeatureSpecificationEntity](doc/ConnectionFeatureSpecificationEntity.md)
  - [CreateOrUpdateBankAccountRequestDto](doc/CreateOrUpdateBankAccountRequestDto.md)
  - [CreateOrUpdateBankConnectionRequestDto](doc/CreateOrUpdateBankConnectionRequestDto.md)
+ - [CreateOrUpdateBankTransactionsInBulkItemDto](doc/CreateOrUpdateBankTransactionsInBulkItemDto.md)
+ - [CreateOrUpdateBankTransactionsInBulkRequestDto](doc/CreateOrUpdateBankTransactionsInBulkRequestDto.md)
  - [CreatePluggyConnectTokenRequestDto](doc/CreatePluggyConnectTokenRequestDto.md)
  - [CreateProfileRequestDto](doc/CreateProfileRequestDto.md)
  - [CreateStripeCheckoutSessionRequestDto](doc/CreateStripeCheckoutSessionRequestDto.md)
  - [CreateWorkspaceRequestDto](doc/CreateWorkspaceRequestDto.md)
  - [CredentialsEntity](doc/CredentialsEntity.md)
+ - [CreditCardMetadataDto](doc/CreditCardMetadataDto.md)
  - [EmailInUseEntity](doc/EmailInUseEntity.md)
  - [ErrorEntity](doc/ErrorEntity.md)
  - [ExceptionResponseEntity](doc/ExceptionResponseEntity.md)
  - [FinancialTransactionsFeatureSpecificationEntity](doc/FinancialTransactionsFeatureSpecificationEntity.md)
  - [PageResponseEntity](doc/PageResponseEntity.md)
+ - [PaymentDataDto](doc/PaymentDataDto.md)
  - [PaymentsManagerProductDataEntity](doc/PaymentsManagerProductDataEntity.md)
  - [PaymentsManagerProductPriceEntity](doc/PaymentsManagerProductPriceEntity.md)
  - [PluggyConnectTokenEntity](doc/PluggyConnectTokenEntity.md)

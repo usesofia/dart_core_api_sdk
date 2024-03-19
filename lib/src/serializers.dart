@@ -24,21 +24,26 @@ import 'package:dart_api_sdk/src/model/bank_transaction_credit_card_metadata_ent
 import 'package:dart_api_sdk/src/model/bank_transaction_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_transaction_payment_data_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_transactions_controller_get_bank_transactions_not_confirmed200_response.dart';
+import 'package:dart_api_sdk/src/model/category_guess_dto.dart';
 import 'package:dart_api_sdk/src/model/check_email_in_use_request_dto.dart';
 import 'package:dart_api_sdk/src/model/checkout_session_entity.dart';
 import 'package:dart_api_sdk/src/model/connection_feature_specification_entity.dart';
 import 'package:dart_api_sdk/src/model/create_or_update_bank_account_request_dto.dart';
 import 'package:dart_api_sdk/src/model/create_or_update_bank_connection_request_dto.dart';
+import 'package:dart_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_item_dto.dart';
+import 'package:dart_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_request_dto.dart';
 import 'package:dart_api_sdk/src/model/create_pluggy_connect_token_request_dto.dart';
 import 'package:dart_api_sdk/src/model/create_profile_request_dto.dart';
 import 'package:dart_api_sdk/src/model/create_stripe_checkout_session_request_dto.dart';
 import 'package:dart_api_sdk/src/model/create_workspace_request_dto.dart';
 import 'package:dart_api_sdk/src/model/credentials_entity.dart';
+import 'package:dart_api_sdk/src/model/credit_card_metadata_dto.dart';
 import 'package:dart_api_sdk/src/model/email_in_use_entity.dart';
 import 'package:dart_api_sdk/src/model/error_entity.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
 import 'package:dart_api_sdk/src/model/page_response_entity.dart';
+import 'package:dart_api_sdk/src/model/payment_data_dto.dart';
 import 'package:dart_api_sdk/src/model/payments_manager_product_data_entity.dart';
 import 'package:dart_api_sdk/src/model/payments_manager_product_price_entity.dart';
 import 'package:dart_api_sdk/src/model/pluggy_connect_token_entity.dart';
@@ -68,21 +73,26 @@ part 'serializers.g.dart';
   BankTransactionEntity,
   BankTransactionPaymentDataEntity,
   BankTransactionsControllerGetBankTransactionsNotConfirmed200Response,
+  CategoryGuessDto,
   CheckEmailInUseRequestDto,
   CheckoutSessionEntity,
   ConnectionFeatureSpecificationEntity,
   CreateOrUpdateBankAccountRequestDto,
   CreateOrUpdateBankConnectionRequestDto,
+  CreateOrUpdateBankTransactionsInBulkItemDto,
+  CreateOrUpdateBankTransactionsInBulkRequestDto,
   CreatePluggyConnectTokenRequestDto,
   CreateProfileRequestDto,
   CreateStripeCheckoutSessionRequestDto,
   CreateWorkspaceRequestDto,
   CredentialsEntity,
+  CreditCardMetadataDto,
   EmailInUseEntity,
   ErrorEntity,
   ExceptionResponseEntity,
   FinancialTransactionsFeatureSpecificationEntity,
   PageResponseEntity,$PageResponseEntity,
+  PaymentDataDto,
   PaymentsManagerProductDataEntity,
   PaymentsManagerProductPriceEntity,
   PluggyConnectTokenEntity,

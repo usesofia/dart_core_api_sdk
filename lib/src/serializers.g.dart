@@ -22,20 +22,25 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BankTransactionPaymentDataEntity.serializer)
       ..add(BankTransactionsControllerGetBankTransactionsNotConfirmed200Response
           .serializer)
+      ..add(CategoryGuessDto.serializer)
       ..add(CheckEmailInUseRequestDto.serializer)
       ..add(CheckoutSessionEntity.serializer)
       ..add(ConnectionFeatureSpecificationEntity.serializer)
       ..add(CreateOrUpdateBankAccountRequestDto.serializer)
       ..add(CreateOrUpdateBankConnectionRequestDto.serializer)
+      ..add(CreateOrUpdateBankTransactionsInBulkItemDto.serializer)
+      ..add(CreateOrUpdateBankTransactionsInBulkRequestDto.serializer)
       ..add(CreatePluggyConnectTokenRequestDto.serializer)
       ..add(CreateProfileRequestDto.serializer)
       ..add(CreateStripeCheckoutSessionRequestDto.serializer)
       ..add(CreateWorkspaceRequestDto.serializer)
       ..add(CredentialsEntity.serializer)
+      ..add(CreditCardMetadataDto.serializer)
       ..add(EmailInUseEntity.serializer)
       ..add(ErrorEntity.serializer)
       ..add(ExceptionResponseEntity.serializer)
       ..add(FinancialTransactionsFeatureSpecificationEntity.serializer)
+      ..add(PaymentDataDto.serializer)
       ..add(PaymentsManagerProductDataEntity.serializer)
       ..add(PaymentsManagerProductPriceEntity.serializer)
       ..add(PluggyConnectTokenEntity.serializer)
@@ -53,6 +58,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(WorkspaceSubscriptionEntity.serializer)
       ..add(WorkspaceSubscriptionEntityPaymentSystemEnum.serializer)
       ..add(WorkspaceSubscriptionEntityStatusEnum.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(CategoryGuessDto)]),
+          () => new ListBuilder<CategoryGuessDto>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(CreateOrUpdateBankTransactionsInBulkItemDto)
+          ]),
+          () => new ListBuilder<CreateOrUpdateBankTransactionsInBulkItemDto>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ErrorEntity)]),
           () => new ListBuilder<ErrorEntity>())
