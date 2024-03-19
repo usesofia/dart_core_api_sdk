@@ -5,6 +5,8 @@ doc/AiChatFeatureSpecificationEntity.md
 doc/AuthApi.md
 doc/BankAccountEntity.md
 doc/BankAccountsApi.md
+doc/BankAccountsBalanceReportEntity.md
+doc/BankAccountsBalanceReportItemEntity.md
 doc/BankConnectionEntity.md
 doc/BankConnectionsApi.md
 doc/BankConnectorEntity.md
@@ -79,6 +81,8 @@ lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
 lib/src/model/ai_chat_feature_specification_entity.dart
 lib/src/model/bank_account_entity.dart
+lib/src/model/bank_accounts_balance_report_entity.dart
+lib/src/model/bank_accounts_balance_report_item_entity.dart
 lib/src/model/bank_connection_entity.dart
 lib/src/model/bank_connector_entity.dart
 lib/src/model/bank_transaction_category_node_entity.dart
@@ -125,3 +129,5 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/bank_accounts_balance_report_entity_test.dart
+test/bank_accounts_balance_report_item_entity_test.dart

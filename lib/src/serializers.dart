@@ -16,6 +16,8 @@ import 'package:dart_api_sdk/src/model/date.dart';
 
 import 'package:dart_api_sdk/src/model/ai_chat_feature_specification_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_account_entity.dart';
+import 'package:dart_api_sdk/src/model/bank_accounts_balance_report_entity.dart';
+import 'package:dart_api_sdk/src/model/bank_accounts_balance_report_item_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_connection_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_connector_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_transaction_category_node_entity.dart';
@@ -65,6 +67,8 @@ part 'serializers.g.dart';
 @SerializersFor([
   AiChatFeatureSpecificationEntity,
   BankAccountEntity,
+  BankAccountsBalanceReportEntity,
+  BankAccountsBalanceReportItemEntity,
   BankConnectionEntity,
   BankConnectorEntity,
   BankTransactionCategoryNodeEntity,
@@ -110,6 +114,10 @@ part 'serializers.g.dart';
   WorkspaceSubscriptionEntity,
 ])
 Serializers serializers = (_$serializers.toBuilder()
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(BankAccountsBalanceReportEntity)]),
+        () => ListBuilder<BankAccountsBalanceReportEntity>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(SubscriptionProductEntity)]),
         () => ListBuilder<SubscriptionProductEntity>(),

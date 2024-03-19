@@ -10,6 +10,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add($PageResponseEntity.serializer)
       ..add(AiChatFeatureSpecificationEntity.serializer)
       ..add(BankAccountEntity.serializer)
+      ..add(BankAccountsBalanceReportEntity.serializer)
+      ..add(BankAccountsBalanceReportItemEntity.serializer)
       ..add(BankConnectionEntity.serializer)
       ..add(BankConnectorEntity.serializer)
       ..add(BankTransactionCategoryNodeEntity.serializer)
@@ -58,6 +60,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(WorkspaceSubscriptionEntity.serializer)
       ..add(WorkspaceSubscriptionEntityPaymentSystemEnum.serializer)
       ..add(WorkspaceSubscriptionEntityStatusEnum.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(BankAccountsBalanceReportItemEntity)]),
+          () => new ListBuilder<BankAccountsBalanceReportItemEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(BankAccountEntity)]),
+          () => new ListBuilder<BankAccountEntity>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(CategoryGuessDto)]),
           () => new ListBuilder<CategoryGuessDto>())

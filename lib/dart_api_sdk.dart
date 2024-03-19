@@ -23,6 +23,8 @@ export 'package:dart_api_sdk/src/api/workspaces_api.dart';
 
 export 'package:dart_api_sdk/src/model/ai_chat_feature_specification_entity.dart';
 export 'package:dart_api_sdk/src/model/bank_account_entity.dart';
+export 'package:dart_api_sdk/src/model/bank_accounts_balance_report_entity.dart';
+export 'package:dart_api_sdk/src/model/bank_accounts_balance_report_item_entity.dart';
 export 'package:dart_api_sdk/src/model/bank_connection_entity.dart';
 export 'package:dart_api_sdk/src/model/bank_connector_entity.dart';
 export 'package:dart_api_sdk/src/model/bank_transaction_category_node_entity.dart';

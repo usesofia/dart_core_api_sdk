@@ -10,6 +10,7 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:dart_api_sdk/src/api_util.dart';
 import 'package:dart_api_sdk/src/model/bank_account_entity.dart';
+import 'package:dart_api_sdk/src/model/bank_accounts_balance_report_entity.dart';
 import 'package:dart_api_sdk/src/model/create_or_update_bank_account_request_dto.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
 
@@ -207,9 +208,9 @@ class BankAccountsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<BankAccountEntity>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<BankAccountsBalanceReportEntity>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<BankAccountEntity>>> bankAccountsControllerCreateWorkspaceBankAccountsBalanceReport({ 
+  Future<Response<BuiltList<BankAccountsBalanceReportEntity>>> bankAccountsControllerCreateWorkspaceBankAccountsBalanceReport({ 
     required String workspaceId,
     required bool enabled,
     required String types,
@@ -247,14 +248,14 @@ class BankAccountsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<BankAccountEntity>? _responseData;
+    BuiltList<BankAccountsBalanceReportEntity>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(BankAccountEntity)]),
-      ) as BuiltList<BankAccountEntity>;
+        specifiedType: const FullType(BuiltList, [FullType(BankAccountsBalanceReportEntity)]),
+      ) as BuiltList<BankAccountsBalanceReportEntity>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -266,7 +267,7 @@ class BankAccountsApi {
       );
     }
 
-    return Response<BuiltList<BankAccountEntity>>(
+    return Response<BuiltList<BankAccountsBalanceReportEntity>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

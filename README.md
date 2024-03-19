@@ -104,6 +104,8 @@ Class | Method | HTTP request | Description
 
  - [AiChatFeatureSpecificationEntity](doc/AiChatFeatureSpecificationEntity.md)
  - [BankAccountEntity](doc/BankAccountEntity.md)
+ - [BankAccountsBalanceReportEntity](doc/BankAccountsBalanceReportEntity.md)
+ - [BankAccountsBalanceReportItemEntity](doc/BankAccountsBalanceReportItemEntity.md)
  - [BankConnectionEntity](doc/BankConnectionEntity.md)
  - [BankConnectorEntity](doc/BankConnectorEntity.md)
  - [BankTransactionCategoryNodeEntity](doc/BankTransactionCategoryNodeEntity.md)
