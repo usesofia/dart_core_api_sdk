@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
+import 'package:dart_api_sdk/src/model/bank_account_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_transaction_credit_card_metadata_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_transaction_category_node_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_transaction_cost_center_entity.dart';
@@ -18,6 +19,7 @@ part 'bank_transaction_entity.g.dart';
 /// Properties:
 /// * [id] 
 /// * [accountId] 
+/// * [account] 
 /// * [workspaceId] 
 /// * [provider] 
 /// * [providerTransactionId] 
@@ -50,6 +52,9 @@ abstract class BankTransactionEntity implements Built<BankTransactionEntity, Ban
 
   @BuiltValueField(wireName: r'accountId')
   String get accountId;
+
+  @BuiltValueField(wireName: r'account')
+  BankAccountEntity get account;
 
   @BuiltValueField(wireName: r'workspaceId')
   String get workspaceId;
@@ -161,6 +166,11 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
     yield serializers.serialize(
       object.accountId,
       specifiedType: const FullType(String),
+    );
+    yield r'account';
+    yield serializers.serialize(
+      object.account,
+      specifiedType: const FullType(BankAccountEntity),
     );
     yield r'workspaceId';
     yield serializers.serialize(
@@ -351,6 +361,13 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
             specifiedType: const FullType(String),
           ) as String;
           result.accountId = valueDes;
+          break;
+        case r'account':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BankAccountEntity),
+          ) as BankAccountEntity;
+          result.account.replace(valueDes);
           break;
         case r'workspaceId':
           final valueDes = serializers.deserialize(

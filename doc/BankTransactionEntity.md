@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **accountId** | **String** |  | 
+**account** | [**BankAccountEntity**](BankAccountEntity.md) |  | 
 **workspaceId** | **String** |  | 
 **provider** | **String** |  | 
 **providerTransactionId** | **String** |  | 

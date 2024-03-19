@@ -187,6 +187,8 @@ class _$BankTransactionEntity extends BankTransactionEntity {
   @override
   final String accountId;
   @override
+  final BankAccountEntity account;
+  @override
   final String workspaceId;
   @override
   final BankTransactionEntityProviderEnum provider;
@@ -244,6 +246,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
   _$BankTransactionEntity._(
       {required this.id,
       required this.accountId,
+      required this.account,
       required this.workspaceId,
       required this.provider,
       required this.providerTransactionId,
@@ -273,6 +276,8 @@ class _$BankTransactionEntity extends BankTransactionEntity {
     BuiltValueNullFieldError.checkNotNull(id, r'BankTransactionEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
         accountId, r'BankTransactionEntity', 'accountId');
+    BuiltValueNullFieldError.checkNotNull(
+        account, r'BankTransactionEntity', 'account');
     BuiltValueNullFieldError.checkNotNull(
         workspaceId, r'BankTransactionEntity', 'workspaceId');
     BuiltValueNullFieldError.checkNotNull(
@@ -312,6 +317,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
     return other is BankTransactionEntity &&
         id == other.id &&
         accountId == other.accountId &&
+        account == other.account &&
         workspaceId == other.workspaceId &&
         provider == other.provider &&
         providerTransactionId == other.providerTransactionId &&
@@ -344,6 +350,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, accountId.hashCode);
+    _$hash = $jc(_$hash, account.hashCode);
     _$hash = $jc(_$hash, workspaceId.hashCode);
     _$hash = $jc(_$hash, provider.hashCode);
     _$hash = $jc(_$hash, providerTransactionId.hashCode);
@@ -378,6 +385,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
     return (newBuiltValueToStringHelper(r'BankTransactionEntity')
           ..add('id', id)
           ..add('accountId', accountId)
+          ..add('account', account)
           ..add('workspaceId', workspaceId)
           ..add('provider', provider)
           ..add('providerTransactionId', providerTransactionId)
@@ -418,6 +426,11 @@ class BankTransactionEntityBuilder
   String? _accountId;
   String? get accountId => _$this._accountId;
   set accountId(String? accountId) => _$this._accountId = accountId;
+
+  BankAccountEntityBuilder? _account;
+  BankAccountEntityBuilder get account =>
+      _$this._account ??= new BankAccountEntityBuilder();
+  set account(BankAccountEntityBuilder? account) => _$this._account = account;
 
   String? _workspaceId;
   String? get workspaceId => _$this._workspaceId;
@@ -551,6 +564,7 @@ class BankTransactionEntityBuilder
     if ($v != null) {
       _id = $v.id;
       _accountId = $v.accountId;
+      _account = $v.account.toBuilder();
       _workspaceId = $v.workspaceId;
       _provider = $v.provider;
       _providerTransactionId = $v.providerTransactionId;
@@ -604,6 +618,7 @@ class BankTransactionEntityBuilder
                   id, r'BankTransactionEntity', 'id'),
               accountId: BuiltValueNullFieldError.checkNotNull(
                   accountId, r'BankTransactionEntity', 'accountId'),
+              account: account.build(),
               workspaceId: BuiltValueNullFieldError.checkNotNull(
                   workspaceId, r'BankTransactionEntity', 'workspaceId'),
               provider: BuiltValueNullFieldError.checkNotNull(
@@ -638,6 +653,9 @@ class BankTransactionEntityBuilder
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'account';
+        account.build();
+
         _$failedField = 'category';
         _category?.build();
 
