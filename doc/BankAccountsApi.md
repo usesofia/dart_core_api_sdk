@@ -129,8 +129,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspaceId** | **String**|  | 
- **enabled** | **bool**|  | 
- **types** | **String**|  | 
+ **enabled** | **bool**|  | [optional] 
+ **types** | **String**|  | [optional] 
 
 ### Return type
 

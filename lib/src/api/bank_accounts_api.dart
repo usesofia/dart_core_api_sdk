@@ -212,8 +212,8 @@ class BankAccountsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<BankAccountsBalanceReportEntity>>> bankAccountsControllerCreateWorkspaceBankAccountsBalanceReport({ 
     required String workspaceId,
-    required bool enabled,
-    required String types,
+    bool? enabled,
+    String? types,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -235,8 +235,8 @@ class BankAccountsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'enabled': encodeQueryParameter(_serializers, enabled, const FullType(bool)),
-      r'types': encodeQueryParameter(_serializers, types, const FullType(String)),
+      if (enabled != null) r'enabled': encodeQueryParameter(_serializers, enabled, const FullType(bool)),
+      if (types != null) r'types': encodeQueryParameter(_serializers, types, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
