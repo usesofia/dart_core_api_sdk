@@ -115,10 +115,6 @@ part 'serializers.g.dart';
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BankAccountsBalanceReportEntity)]),
-        () => ListBuilder<BankAccountsBalanceReportEntity>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(SubscriptionProductEntity)]),
         () => ListBuilder<SubscriptionProductEntity>(),
       )

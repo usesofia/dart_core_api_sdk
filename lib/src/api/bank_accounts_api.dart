@@ -208,9 +208,9 @@ class BankAccountsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<BankAccountsBalanceReportEntity>] as data
+  /// Returns a [Future] containing a [Response] with a [BankAccountsBalanceReportEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<BankAccountsBalanceReportEntity>>> bankAccountsControllerCreateWorkspaceBankAccountsBalanceReport({ 
+  Future<Response<BankAccountsBalanceReportEntity>> bankAccountsControllerCreateWorkspaceBankAccountsBalanceReport({ 
     required String workspaceId,
     bool? enabled,
     String? types,
@@ -248,14 +248,14 @@ class BankAccountsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<BankAccountsBalanceReportEntity>? _responseData;
+    BankAccountsBalanceReportEntity? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(BankAccountsBalanceReportEntity)]),
-      ) as BuiltList<BankAccountsBalanceReportEntity>;
+        specifiedType: const FullType(BankAccountsBalanceReportEntity),
+      ) as BankAccountsBalanceReportEntity;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -267,7 +267,7 @@ class BankAccountsApi {
       );
     }
 
-    return Response<BuiltList<BankAccountsBalanceReportEntity>>(
+    return Response<BankAccountsBalanceReportEntity>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

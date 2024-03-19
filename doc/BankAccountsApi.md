@@ -103,7 +103,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bankAccountsControllerCreateWorkspaceBankAccountsBalanceReport**
-> BuiltList<BankAccountsBalanceReportEntity> bankAccountsControllerCreateWorkspaceBankAccountsBalanceReport(workspaceId, enabled, types)
+> BankAccountsBalanceReportEntity bankAccountsControllerCreateWorkspaceBankAccountsBalanceReport(workspaceId, enabled, types)
 
 
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;BankAccountsBalanceReportEntity&gt;**](BankAccountsBalanceReportEntity.md)
+[**BankAccountsBalanceReportEntity**](BankAccountsBalanceReportEntity.md)
 
 ### Authorization
 
