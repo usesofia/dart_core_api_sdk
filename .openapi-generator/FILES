@@ -8,6 +8,7 @@ doc/BankAccountsApi.md
 doc/BankAccountsBalanceReportEntity.md
 doc/BankAccountsBalanceReportItemEntity.md
 doc/BankConnectionEntity.md
+doc/BankConnectionWithAccountsEntity.md
 doc/BankConnectionsApi.md
 doc/BankConnectorEntity.md
 doc/BankTransactionCategoryNodeEntity.md
@@ -39,6 +40,7 @@ doc/PageResponseEntity.md
 doc/PaymentDataDto.md
 doc/PaymentsManagerProductDataEntity.md
 doc/PaymentsManagerProductPriceEntity.md
+doc/PlainBankAccountEntity.md
 doc/PluggyApi.md
 doc/PluggyConnectTokenEntity.md
 doc/ProfileEntity.md
@@ -84,6 +86,7 @@ lib/src/model/bank_account_entity.dart
 lib/src/model/bank_accounts_balance_report_entity.dart
 lib/src/model/bank_accounts_balance_report_item_entity.dart
 lib/src/model/bank_connection_entity.dart
+lib/src/model/bank_connection_with_accounts_entity.dart
 lib/src/model/bank_connector_entity.dart
 lib/src/model/bank_transaction_category_node_entity.dart
 lib/src/model/bank_transaction_cost_center_entity.dart
@@ -114,6 +117,7 @@ lib/src/model/page_response_entity.dart
 lib/src/model/payment_data_dto.dart
 lib/src/model/payments_manager_product_data_entity.dart
 lib/src/model/payments_manager_product_price_entity.dart
+lib/src/model/plain_bank_account_entity.dart
 lib/src/model/pluggy_connect_token_entity.dart
 lib/src/model/profile_entity.dart
 lib/src/model/refresh_request_dto.dart
@@ -129,3 +133,5 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/bank_connection_with_accounts_entity_test.dart
+test/plain_bank_account_entity_test.dart

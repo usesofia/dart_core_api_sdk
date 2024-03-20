@@ -142,7 +142,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bankConnectionsControllerFetchUserBankConnections**
-> BuiltList<BankConnectionEntity> bankConnectionsControllerFetchUserBankConnections(workspaceId, enabled)
+> BuiltList<BankConnectionWithAccountsEntity> bankConnectionsControllerFetchUserBankConnections(workspaceId, enabled)
 
 
 
@@ -167,11 +167,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspaceId** | **String**|  | 
- **enabled** | **bool**|  | 
+ **enabled** | **bool**|  | [optional] 
 
 ### Return type
 
-[**BuiltList&lt;BankConnectionEntity&gt;**](BankConnectionEntity.md)
+[**BuiltList&lt;BankConnectionWithAccountsEntity&gt;**](BankConnectionWithAccountsEntity.md)
 
 ### Authorization
 
@@ -185,7 +185,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bankConnectionsControllerGetBankConnectionDetails**
-> BankConnectionEntity bankConnectionsControllerGetBankConnectionDetails(bankConnectionId)
+> BankConnectionWithAccountsEntity bankConnectionsControllerGetBankConnectionDetails(bankConnectionId)
 
 
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BankConnectionEntity**](BankConnectionEntity.md)
+[**BankConnectionWithAccountsEntity**](BankConnectionWithAccountsEntity.md)
 
 ### Authorization
 

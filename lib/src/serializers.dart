@@ -19,6 +19,7 @@ import 'package:dart_api_sdk/src/model/bank_account_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_accounts_balance_report_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_accounts_balance_report_item_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_connection_entity.dart';
+import 'package:dart_api_sdk/src/model/bank_connection_with_accounts_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_connector_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_transaction_category_node_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_transaction_cost_center_entity.dart';
@@ -48,6 +49,7 @@ import 'package:dart_api_sdk/src/model/page_response_entity.dart';
 import 'package:dart_api_sdk/src/model/payment_data_dto.dart';
 import 'package:dart_api_sdk/src/model/payments_manager_product_data_entity.dart';
 import 'package:dart_api_sdk/src/model/payments_manager_product_price_entity.dart';
+import 'package:dart_api_sdk/src/model/plain_bank_account_entity.dart';
 import 'package:dart_api_sdk/src/model/pluggy_connect_token_entity.dart';
 import 'package:dart_api_sdk/src/model/profile_entity.dart';
 import 'package:dart_api_sdk/src/model/refresh_request_dto.dart';
@@ -70,6 +72,7 @@ part 'serializers.g.dart';
   BankAccountsBalanceReportEntity,
   BankAccountsBalanceReportItemEntity,
   BankConnectionEntity,
+  BankConnectionWithAccountsEntity,
   BankConnectorEntity,
   BankTransactionCategoryNodeEntity,
   BankTransactionCostCenterEntity,
@@ -99,6 +102,7 @@ part 'serializers.g.dart';
   PaymentDataDto,
   PaymentsManagerProductDataEntity,
   PaymentsManagerProductPriceEntity,
+  PlainBankAccountEntity,
   PluggyConnectTokenEntity,
   ProfileEntity,
   RefreshRequestDto,
@@ -119,10 +123,6 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<SubscriptionProductEntity>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BankConnectionEntity)]),
-        () => ListBuilder<BankConnectionEntity>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(UserRelatedWorkspaceEntity)]),
         () => ListBuilder<UserRelatedWorkspaceEntity>(),
       )
@@ -133,6 +133,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(BankAccountEntity)]),
         () => ListBuilder<BankAccountEntity>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(BankConnectionWithAccountsEntity)]),
+        () => ListBuilder<BankConnectionWithAccountsEntity>(),
       )
       ..add(PageResponseEntity.serializer)
       ..add(const OneOfSerializer())

@@ -10,6 +10,7 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:dart_api_sdk/src/api_util.dart';
 import 'package:dart_api_sdk/src/model/bank_connection_entity.dart';
+import 'package:dart_api_sdk/src/model/bank_connection_with_accounts_entity.dart';
 import 'package:dart_api_sdk/src/model/create_or_update_bank_connection_request_dto.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
 
@@ -281,11 +282,11 @@ class BankConnectionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<BankConnectionEntity>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<BankConnectionWithAccountsEntity>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<BankConnectionEntity>>> bankConnectionsControllerFetchUserBankConnections({ 
+  Future<Response<BuiltList<BankConnectionWithAccountsEntity>>> bankConnectionsControllerFetchUserBankConnections({ 
     required String workspaceId,
-    required bool enabled,
+    bool? enabled,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -307,7 +308,7 @@ class BankConnectionsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'enabled': encodeQueryParameter(_serializers, enabled, const FullType(bool)),
+      if (enabled != null) r'enabled': encodeQueryParameter(_serializers, enabled, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
@@ -319,14 +320,14 @@ class BankConnectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<BankConnectionEntity>? _responseData;
+    BuiltList<BankConnectionWithAccountsEntity>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(BankConnectionEntity)]),
-      ) as BuiltList<BankConnectionEntity>;
+        specifiedType: const FullType(BuiltList, [FullType(BankConnectionWithAccountsEntity)]),
+      ) as BuiltList<BankConnectionWithAccountsEntity>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -338,7 +339,7 @@ class BankConnectionsApi {
       );
     }
 
-    return Response<BuiltList<BankConnectionEntity>>(
+    return Response<BuiltList<BankConnectionWithAccountsEntity>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -362,9 +363,9 @@ class BankConnectionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BankConnectionEntity] as data
+  /// Returns a [Future] containing a [Response] with a [BankConnectionWithAccountsEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankConnectionEntity>> bankConnectionsControllerGetBankConnectionDetails({ 
+  Future<Response<BankConnectionWithAccountsEntity>> bankConnectionsControllerGetBankConnectionDetails({ 
     required String bankConnectionId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -394,14 +395,14 @@ class BankConnectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BankConnectionEntity? _responseData;
+    BankConnectionWithAccountsEntity? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BankConnectionEntity),
-      ) as BankConnectionEntity;
+        specifiedType: const FullType(BankConnectionWithAccountsEntity),
+      ) as BankConnectionWithAccountsEntity;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -413,7 +414,7 @@ class BankConnectionsApi {
       );
     }
 
-    return Response<BankConnectionEntity>(
+    return Response<BankConnectionWithAccountsEntity>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

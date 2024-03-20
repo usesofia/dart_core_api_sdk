@@ -13,6 +13,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BankAccountsBalanceReportEntity.serializer)
       ..add(BankAccountsBalanceReportItemEntity.serializer)
       ..add(BankConnectionEntity.serializer)
+      ..add(BankConnectionWithAccountsEntity.serializer)
       ..add(BankConnectorEntity.serializer)
       ..add(BankTransactionCategoryNodeEntity.serializer)
       ..add(BankTransactionCostCenterEntity.serializer)
@@ -45,6 +46,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(PaymentDataDto.serializer)
       ..add(PaymentsManagerProductDataEntity.serializer)
       ..add(PaymentsManagerProductPriceEntity.serializer)
+      ..add(PlainBankAccountEntity.serializer)
       ..add(PluggyConnectTokenEntity.serializer)
       ..add(ProfileEntity.serializer)
       ..add(RefreshRequestDto.serializer)
@@ -82,6 +84,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(PaymentsManagerProductPriceEntity)]),
           () => new ListBuilder<PaymentsManagerProductPriceEntity>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(PlainBankAccountEntity)]),
+          () => new ListBuilder<PlainBankAccountEntity>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
