@@ -133,5 +133,3 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/bank_connection_with_accounts_entity_test.dart
-test/plain_bank_account_entity_test.dart
