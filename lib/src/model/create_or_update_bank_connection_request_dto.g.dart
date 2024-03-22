@@ -15,7 +15,7 @@ class _$CreateOrUpdateBankConnectionRequestDto
   @override
   final String providerItemId;
   @override
-  final String connectorId;
+  final String providerConnectorId;
 
   factory _$CreateOrUpdateBankConnectionRequestDto(
           [void Function(CreateOrUpdateBankConnectionRequestDtoBuilder)?
@@ -27,7 +27,7 @@ class _$CreateOrUpdateBankConnectionRequestDto
       {required this.createdByUserId,
       required this.provider,
       required this.providerItemId,
-      required this.connectorId})
+      required this.providerConnectorId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(createdByUserId,
         r'CreateOrUpdateBankConnectionRequestDto', 'createdByUserId');
@@ -35,8 +35,8 @@ class _$CreateOrUpdateBankConnectionRequestDto
         provider, r'CreateOrUpdateBankConnectionRequestDto', 'provider');
     BuiltValueNullFieldError.checkNotNull(providerItemId,
         r'CreateOrUpdateBankConnectionRequestDto', 'providerItemId');
-    BuiltValueNullFieldError.checkNotNull(
-        connectorId, r'CreateOrUpdateBankConnectionRequestDto', 'connectorId');
+    BuiltValueNullFieldError.checkNotNull(providerConnectorId,
+        r'CreateOrUpdateBankConnectionRequestDto', 'providerConnectorId');
   }
 
   @override
@@ -56,7 +56,7 @@ class _$CreateOrUpdateBankConnectionRequestDto
         createdByUserId == other.createdByUserId &&
         provider == other.provider &&
         providerItemId == other.providerItemId &&
-        connectorId == other.connectorId;
+        providerConnectorId == other.providerConnectorId;
   }
 
   @override
@@ -65,7 +65,7 @@ class _$CreateOrUpdateBankConnectionRequestDto
     _$hash = $jc(_$hash, createdByUserId.hashCode);
     _$hash = $jc(_$hash, provider.hashCode);
     _$hash = $jc(_$hash, providerItemId.hashCode);
-    _$hash = $jc(_$hash, connectorId.hashCode);
+    _$hash = $jc(_$hash, providerConnectorId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -77,7 +77,7 @@ class _$CreateOrUpdateBankConnectionRequestDto
           ..add('createdByUserId', createdByUserId)
           ..add('provider', provider)
           ..add('providerItemId', providerItemId)
-          ..add('connectorId', connectorId))
+          ..add('providerConnectorId', providerConnectorId))
         .toString();
   }
 }
@@ -102,9 +102,10 @@ class CreateOrUpdateBankConnectionRequestDtoBuilder
   set providerItemId(String? providerItemId) =>
       _$this._providerItemId = providerItemId;
 
-  String? _connectorId;
-  String? get connectorId => _$this._connectorId;
-  set connectorId(String? connectorId) => _$this._connectorId = connectorId;
+  String? _providerConnectorId;
+  String? get providerConnectorId => _$this._providerConnectorId;
+  set providerConnectorId(String? providerConnectorId) =>
+      _$this._providerConnectorId = providerConnectorId;
 
   CreateOrUpdateBankConnectionRequestDtoBuilder() {
     CreateOrUpdateBankConnectionRequestDto._defaults(this);
@@ -116,7 +117,7 @@ class CreateOrUpdateBankConnectionRequestDtoBuilder
       _createdByUserId = $v.createdByUserId;
       _provider = $v.provider;
       _providerItemId = $v.providerItemId;
-      _connectorId = $v.connectorId;
+      _providerConnectorId = $v.providerConnectorId;
       _$v = null;
     }
     return this;
@@ -150,8 +151,10 @@ class CreateOrUpdateBankConnectionRequestDtoBuilder
                 providerItemId,
                 r'CreateOrUpdateBankConnectionRequestDto',
                 'providerItemId'),
-            connectorId: BuiltValueNullFieldError.checkNotNull(connectorId,
-                r'CreateOrUpdateBankConnectionRequestDto', 'connectorId'));
+            providerConnectorId: BuiltValueNullFieldError.checkNotNull(
+                providerConnectorId,
+                r'CreateOrUpdateBankConnectionRequestDto',
+                'providerConnectorId'));
     replace(_$result);
     return _$result;
   }

@@ -14,7 +14,7 @@ part 'create_or_update_bank_connection_request_dto.g.dart';
 /// * [createdByUserId] 
 /// * [provider] 
 /// * [providerItemId] 
-/// * [connectorId] 
+/// * [providerConnectorId] 
 @BuiltValue()
 abstract class CreateOrUpdateBankConnectionRequestDto implements Built<CreateOrUpdateBankConnectionRequestDto, CreateOrUpdateBankConnectionRequestDtoBuilder> {
   @BuiltValueField(wireName: r'createdByUserId')
@@ -26,8 +26,8 @@ abstract class CreateOrUpdateBankConnectionRequestDto implements Built<CreateOrU
   @BuiltValueField(wireName: r'providerItemId')
   String get providerItemId;
 
-  @BuiltValueField(wireName: r'connectorId')
-  String get connectorId;
+  @BuiltValueField(wireName: r'providerConnectorId')
+  String get providerConnectorId;
 
   CreateOrUpdateBankConnectionRequestDto._();
 
@@ -67,9 +67,9 @@ class _$CreateOrUpdateBankConnectionRequestDtoSerializer implements PrimitiveSer
       object.providerItemId,
       specifiedType: const FullType(String),
     );
-    yield r'connectorId';
+    yield r'providerConnectorId';
     yield serializers.serialize(
-      object.connectorId,
+      object.providerConnectorId,
       specifiedType: const FullType(String),
     );
   }
@@ -116,12 +116,12 @@ class _$CreateOrUpdateBankConnectionRequestDtoSerializer implements PrimitiveSer
           ) as String;
           result.providerItemId = valueDes;
           break;
-        case r'connectorId':
+        case r'providerConnectorId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.connectorId = valueDes;
+          result.providerConnectorId = valueDes;
           break;
         default:
           unhandled.add(key);

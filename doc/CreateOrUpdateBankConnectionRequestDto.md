@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **createdByUserId** | **String** |  | 
 **provider** | **String** |  | 
 **providerItemId** | **String** |  | 
-**connectorId** | **String** |  | 
+**providerConnectorId** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
