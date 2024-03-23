@@ -25,6 +25,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BankTransactionPaymentDataEntity.serializer)
       ..add(BankTransactionsControllerGetBankTransactionsNotConfirmed200Response
           .serializer)
+      ..add(BankTransactionsPageEntity.serializer)
       ..add(CategoryGuessDto.serializer)
       ..add(CheckEmailInUseRequestDto.serializer)
       ..add(CheckoutSessionEntity.serializer)
@@ -69,6 +70,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(BankAccountEntity)]),
           () => new ListBuilder<BankAccountEntity>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(BankTransactionEntity)]),
+          () => new ListBuilder<BankTransactionEntity>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(CategoryGuessDto)]),
           () => new ListBuilder<CategoryGuessDto>())

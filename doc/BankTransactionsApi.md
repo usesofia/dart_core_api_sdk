@@ -59,7 +59,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bankTransactionsControllerGetBankTransactions**
-> BankTransactionsControllerGetBankTransactionsNotConfirmed200Response bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, costCenterIds, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored)
+> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, costCenterIds, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored)
 
 
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BankTransactionsControllerGetBankTransactionsNotConfirmed200Response**](BankTransactionsControllerGetBankTransactionsNotConfirmed200Response.md)
+[**BankTransactionsPageEntity**](BankTransactionsPageEntity.md)
 
 ### Authorization
 

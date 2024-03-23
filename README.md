@@ -115,6 +115,7 @@ Class | Method | HTTP request | Description
  - [BankTransactionEntity](doc/BankTransactionEntity.md)
  - [BankTransactionPaymentDataEntity](doc/BankTransactionPaymentDataEntity.md)
  - [BankTransactionsControllerGetBankTransactionsNotConfirmed200Response](doc/BankTransactionsControllerGetBankTransactionsNotConfirmed200Response.md)
+ - [BankTransactionsPageEntity](doc/BankTransactionsPageEntity.md)
  - [CategoryGuessDto](doc/CategoryGuessDto.md)
  - [CheckEmailInUseRequestDto](doc/CheckEmailInUseRequestDto.md)
  - [CheckoutSessionEntity](doc/CheckoutSessionEntity.md)
