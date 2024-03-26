@@ -17,6 +17,7 @@ part 'workspace_entity.g.dart';
 /// * [type] 
 /// * [creatorUserId] 
 /// * [createdAt] 
+/// * [selectedTreeId] 
 @BuiltValue()
 abstract class WorkspaceEntity implements Built<WorkspaceEntity, WorkspaceEntityBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -36,6 +37,9 @@ abstract class WorkspaceEntity implements Built<WorkspaceEntity, WorkspaceEntity
 
   @BuiltValueField(wireName: r'createdAt')
   DateTime get createdAt;
+
+  @BuiltValueField(wireName: r'selectedTreeId')
+  String get selectedTreeId;
 
   WorkspaceEntity._();
 
@@ -89,6 +93,11 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
     yield serializers.serialize(
       object.createdAt,
       specifiedType: const FullType(DateTime),
+    );
+    yield r'selectedTreeId';
+    yield serializers.serialize(
+      object.selectedTreeId,
+      specifiedType: const FullType(String),
     );
   }
 
@@ -154,6 +163,13 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.createdAt = valueDes;
+          break;
+        case r'selectedTreeId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.selectedTreeId = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -19,6 +19,8 @@ class _$WorkspaceEntity extends WorkspaceEntity {
   final String creatorUserId;
   @override
   final DateTime createdAt;
+  @override
+  final String selectedTreeId;
 
   factory _$WorkspaceEntity([void Function(WorkspaceEntityBuilder)? updates]) =>
       (new WorkspaceEntityBuilder()..update(updates))._build();
@@ -29,7 +31,8 @@ class _$WorkspaceEntity extends WorkspaceEntity {
       required this.name,
       required this.type,
       required this.creatorUserId,
-      required this.createdAt})
+      required this.createdAt,
+      required this.selectedTreeId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'WorkspaceEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
@@ -40,6 +43,8 @@ class _$WorkspaceEntity extends WorkspaceEntity {
         creatorUserId, r'WorkspaceEntity', 'creatorUserId');
     BuiltValueNullFieldError.checkNotNull(
         createdAt, r'WorkspaceEntity', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(
+        selectedTreeId, r'WorkspaceEntity', 'selectedTreeId');
   }
 
   @override
@@ -59,7 +64,8 @@ class _$WorkspaceEntity extends WorkspaceEntity {
         name == other.name &&
         type == other.type &&
         creatorUserId == other.creatorUserId &&
-        createdAt == other.createdAt;
+        createdAt == other.createdAt &&
+        selectedTreeId == other.selectedTreeId;
   }
 
   @override
@@ -71,6 +77,7 @@ class _$WorkspaceEntity extends WorkspaceEntity {
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, creatorUserId.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, selectedTreeId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -83,7 +90,8 @@ class _$WorkspaceEntity extends WorkspaceEntity {
           ..add('name', name)
           ..add('type', type)
           ..add('creatorUserId', creatorUserId)
-          ..add('createdAt', createdAt))
+          ..add('createdAt', createdAt)
+          ..add('selectedTreeId', selectedTreeId))
         .toString();
   }
 }
@@ -117,6 +125,11 @@ class WorkspaceEntityBuilder
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
+  String? _selectedTreeId;
+  String? get selectedTreeId => _$this._selectedTreeId;
+  set selectedTreeId(String? selectedTreeId) =>
+      _$this._selectedTreeId = selectedTreeId;
+
   WorkspaceEntityBuilder() {
     WorkspaceEntity._defaults(this);
   }
@@ -130,6 +143,7 @@ class WorkspaceEntityBuilder
       _type = $v.type;
       _creatorUserId = $v.creatorUserId;
       _createdAt = $v.createdAt;
+      _selectedTreeId = $v.selectedTreeId;
       _$v = null;
     }
     return this;
@@ -163,7 +177,9 @@ class WorkspaceEntityBuilder
             creatorUserId: BuiltValueNullFieldError.checkNotNull(
                 creatorUserId, r'WorkspaceEntity', 'creatorUserId'),
             createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'WorkspaceEntity', 'createdAt'));
+                createdAt, r'WorkspaceEntity', 'createdAt'),
+            selectedTreeId: BuiltValueNullFieldError.checkNotNull(
+                selectedTreeId, r'WorkspaceEntity', 'selectedTreeId'));
     replace(_$result);
     return _$result;
   }
