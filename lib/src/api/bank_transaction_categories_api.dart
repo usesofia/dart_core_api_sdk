@@ -23,8 +23,8 @@ class BankTransactionCategoriesApi {
   /// 
   ///
   /// Parameters:
-  /// * [onlyLeafs] 
   /// * [workspaceId] 
+  /// * [onlyLeafs] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,8 +35,8 @@ class BankTransactionCategoriesApi {
   /// Returns a [Future] containing a [Response] with a [JsonObject] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>> bankTransactionCategoriesControllerGetBankTransactionCategories({ 
-    required bool onlyLeafs,
     required String workspaceId,
+    bool? onlyLeafs,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -58,7 +58,7 @@ class BankTransactionCategoriesApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'onlyLeafs': encodeQueryParameter(_serializers, onlyLeafs, const FullType(bool)),
+      if (onlyLeafs != null) r'onlyLeafs': encodeQueryParameter(_serializers, onlyLeafs, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(

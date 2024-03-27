@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **bankTransactionCategoriesControllerGetBankTransactionCategories**
-> JsonObject bankTransactionCategoriesControllerGetBankTransactionCategories(onlyLeafs, workspaceId)
+> JsonObject bankTransactionCategoriesControllerGetBankTransactionCategories(workspaceId, onlyLeafs)
 
 
 
@@ -22,11 +22,11 @@ Method | HTTP request | Description
 import 'package:dart_api_sdk/api.dart';
 
 final api = DartApiSdk().getBankTransactionCategoriesApi();
-final bool onlyLeafs = true; // bool | 
 final String workspaceId = workspaceId_example; // String | 
+final bool onlyLeafs = true; // bool | 
 
 try {
-    final response = api.bankTransactionCategoriesControllerGetBankTransactionCategories(onlyLeafs, workspaceId);
+    final response = api.bankTransactionCategoriesControllerGetBankTransactionCategories(workspaceId, onlyLeafs);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling BankTransactionCategoriesApi->bankTransactionCategoriesControllerGetBankTransactionCategories: $e\n');
@@ -37,8 +37,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **onlyLeafs** | **bool**|  | 
  **workspaceId** | **String**|  | 
+ **onlyLeafs** | **bool**|  | [optional] 
 
 ### Return type
 
