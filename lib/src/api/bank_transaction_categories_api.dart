@@ -7,8 +7,8 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_value/json_object.dart';
 import 'package:dart_api_sdk/src/api_util.dart';
+import 'package:dart_api_sdk/src/model/bank_transaction_category_entity.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
 
 class BankTransactionCategoriesApi {
@@ -32,9 +32,9 @@ class BankTransactionCategoriesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [JsonObject] as data
+  /// Returns a [Future] containing a [Response] with a [BankTransactionCategoryEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<JsonObject>> bankTransactionCategoriesControllerGetBankTransactionCategories({ 
+  Future<Response<BankTransactionCategoryEntity>> bankTransactionCategoriesControllerGetBankTransactionCategories({ 
     required String workspaceId,
     bool? onlyLeafs,
     CancelToken? cancelToken,
@@ -70,14 +70,14 @@ class BankTransactionCategoriesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    JsonObject? _responseData;
+    BankTransactionCategoryEntity? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(JsonObject),
-      ) as JsonObject;
+        specifiedType: const FullType(BankTransactionCategoryEntity),
+      ) as BankTransactionCategoryEntity;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -89,7 +89,7 @@ class BankTransactionCategoriesApi {
       );
     }
 
-    return Response<JsonObject>(
+    return Response<BankTransactionCategoryEntity>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

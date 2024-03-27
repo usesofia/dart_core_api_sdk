@@ -15,6 +15,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BankConnectionEntity.serializer)
       ..add(BankConnectionWithAccountsEntity.serializer)
       ..add(BankConnectorEntity.serializer)
+      ..add(BankTransactionCategoryEntity.serializer)
       ..add(BankTransactionCategoryPlainEntity.serializer)
       ..add(BankTransactionCostCenterEntity.serializer)
       ..add(BankTransactionCreditCardMetadataEntity.serializer)
@@ -71,6 +72,14 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(BankAccountEntity)]),
           () => new ListBuilder<BankAccountEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(BankTransactionCategoryPlainEntity)]),
+          () => new ListBuilder<BankTransactionCategoryPlainEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(BankTransactionCategoryPlainEntity)]),
+          () => new ListBuilder<BankTransactionCategoryPlainEntity>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(BankTransactionEntity)]),

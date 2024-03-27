@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **bankTransactionCategoriesControllerGetBankTransactionCategories**
-> JsonObject bankTransactionCategoriesControllerGetBankTransactionCategories(workspaceId, onlyLeafs)
+> BankTransactionCategoryEntity bankTransactionCategoriesControllerGetBankTransactionCategories(workspaceId, onlyLeafs)
 
 
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JsonObject**](JsonObject.md)
+[**BankTransactionCategoryEntity**](BankTransactionCategoryEntity.md)
 
 ### Authorization
 

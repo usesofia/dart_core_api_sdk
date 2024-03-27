@@ -12,6 +12,7 @@ doc/BankConnectionWithAccountsEntity.md
 doc/BankConnectionsApi.md
 doc/BankConnectorEntity.md
 doc/BankTransactionCategoriesApi.md
+doc/BankTransactionCategoryEntity.md
 doc/BankTransactionCategoryPlainEntity.md
 doc/BankTransactionCostCenterEntity.md
 doc/BankTransactionCostCentersApi.md
@@ -94,6 +95,7 @@ lib/src/model/bank_accounts_balance_report_item_entity.dart
 lib/src/model/bank_connection_entity.dart
 lib/src/model/bank_connection_with_accounts_entity.dart
 lib/src/model/bank_connector_entity.dart
+lib/src/model/bank_transaction_category_entity.dart
 lib/src/model/bank_transaction_category_plain_entity.dart
 lib/src/model/bank_transaction_cost_center_entity.dart
 lib/src/model/bank_transaction_credit_card_metadata_entity.dart
@@ -141,3 +143,4 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/bank_transaction_category_entity_test.dart

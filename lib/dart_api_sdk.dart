@@ -30,6 +30,7 @@ export 'package:dart_api_sdk/src/model/bank_accounts_balance_report_item_entity.
 export 'package:dart_api_sdk/src/model/bank_connection_entity.dart';
 export 'package:dart_api_sdk/src/model/bank_connection_with_accounts_entity.dart';
 export 'package:dart_api_sdk/src/model/bank_connector_entity.dart';
+export 'package:dart_api_sdk/src/model/bank_transaction_category_entity.dart';
 export 'package:dart_api_sdk/src/model/bank_transaction_category_plain_entity.dart';
 export 'package:dart_api_sdk/src/model/bank_transaction_cost_center_entity.dart';
 export 'package:dart_api_sdk/src/model/bank_transaction_credit_card_metadata_entity.dart';
