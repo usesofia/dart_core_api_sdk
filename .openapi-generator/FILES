@@ -14,6 +14,7 @@ doc/BankConnectorEntity.md
 doc/BankTransactionCategoriesApi.md
 doc/BankTransactionCategoryNodeEntity.md
 doc/BankTransactionCostCenterEntity.md
+doc/BankTransactionCostCentersApi.md
 doc/BankTransactionCreditCardMetadataEntity.md
 doc/BankTransactionEntity.md
 doc/BankTransactionPaymentDataEntity.md
@@ -24,6 +25,7 @@ doc/CategoryGuessDto.md
 doc/CheckEmailInUseRequestDto.md
 doc/CheckoutSessionEntity.md
 doc/ConnectionFeatureSpecificationEntity.md
+doc/CreateBankTransactionCostCenterRequestDto.md
 doc/CreateOrUpdateBankAccountRequestDto.md
 doc/CreateOrUpdateBankConnectionRequestDto.md
 doc/CreateOrUpdateBankTransactionsInBulkItemDto.md
@@ -69,6 +71,7 @@ lib/src/api/auth_api.dart
 lib/src/api/bank_accounts_api.dart
 lib/src/api/bank_connections_api.dart
 lib/src/api/bank_transaction_categories_api.dart
+lib/src/api/bank_transaction_cost_centers_api.dart
 lib/src/api/bank_transactions_api.dart
 lib/src/api/pluggy_api.dart
 lib/src/api/profiles_api.dart
@@ -102,6 +105,7 @@ lib/src/model/category_guess_dto.dart
 lib/src/model/check_email_in_use_request_dto.dart
 lib/src/model/checkout_session_entity.dart
 lib/src/model/connection_feature_specification_entity.dart
+lib/src/model/create_bank_transaction_cost_center_request_dto.dart
 lib/src/model/create_or_update_bank_account_request_dto.dart
 lib/src/model/create_or_update_bank_connection_request_dto.dart
 lib/src/model/create_or_update_bank_transactions_in_bulk_item_dto.dart
@@ -137,4 +141,5 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/bank_transaction_categories_api_test.dart
+test/bank_transaction_cost_centers_api_test.dart
+test/create_bank_transaction_cost_center_request_dto_test.dart

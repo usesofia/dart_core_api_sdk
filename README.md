@@ -83,6 +83,8 @@ Class | Method | HTTP request | Description
 [*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerFetchUserBankConnections**](doc/BankConnectionsApi.md#bankconnectionscontrollerfetchuserbankconnections) | **GET** /workspaces/{workspaceId}/bank/connections | 
 [*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerGetBankConnectionDetails**](doc/BankConnectionsApi.md#bankconnectionscontrollergetbankconnectiondetails) | **GET** /bank/connections/{bankConnectionId} | 
 [*BankTransactionCategoriesApi*](doc/BankTransactionCategoriesApi.md) | [**bankTransactionCategoriesControllerGetBankTransactionCategories**](doc/BankTransactionCategoriesApi.md#banktransactioncategoriescontrollergetbanktransactioncategories) | **GET** /workspaces/{workspaceId}/bank/transactions/categories | 
+[*BankTransactionCostCentersApi*](doc/BankTransactionCostCentersApi.md) | [**bankTransactionCostCentersControllerCreateCostCenter**](doc/BankTransactionCostCentersApi.md#banktransactioncostcenterscontrollercreatecostcenter) | **POST** /workspaces/{workspaceId}/bank/transactions/cost-centers | 
+[*BankTransactionCostCentersApi*](doc/BankTransactionCostCentersApi.md) | [**bankTransactionCostCentersControllerListCostCenters**](doc/BankTransactionCostCentersApi.md#banktransactioncostcenterscontrollerlistcostcenters) | **GET** /workspaces/{workspaceId}/bank/transactions/cost-centers | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerCreateOrUpdateBankTransactionsInBulk**](doc/BankTransactionsApi.md#banktransactionscontrollercreateorupdatebanktransactionsinbulk) | **PUT** /bank/transactions/bulk | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetBankTransactions**](doc/BankTransactionsApi.md#banktransactionscontrollergetbanktransactions) | **GET** /workspaces/{workspaceId}/bank/transactions | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetBankTransactionsNotConfirmed**](doc/BankTransactionsApi.md#banktransactionscontrollergetbanktransactionsnotconfirmed) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
@@ -121,6 +123,7 @@ Class | Method | HTTP request | Description
  - [CheckEmailInUseRequestDto](doc/CheckEmailInUseRequestDto.md)
  - [CheckoutSessionEntity](doc/CheckoutSessionEntity.md)
  - [ConnectionFeatureSpecificationEntity](doc/ConnectionFeatureSpecificationEntity.md)
+ - [CreateBankTransactionCostCenterRequestDto](doc/CreateBankTransactionCostCenterRequestDto.md)
  - [CreateOrUpdateBankAccountRequestDto](doc/CreateOrUpdateBankAccountRequestDto.md)
  - [CreateOrUpdateBankConnectionRequestDto](doc/CreateOrUpdateBankConnectionRequestDto.md)
  - [CreateOrUpdateBankTransactionsInBulkItemDto](doc/CreateOrUpdateBankTransactionsInBulkItemDto.md)

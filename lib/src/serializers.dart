@@ -32,6 +32,7 @@ import 'package:dart_api_sdk/src/model/category_guess_dto.dart';
 import 'package:dart_api_sdk/src/model/check_email_in_use_request_dto.dart';
 import 'package:dart_api_sdk/src/model/checkout_session_entity.dart';
 import 'package:dart_api_sdk/src/model/connection_feature_specification_entity.dart';
+import 'package:dart_api_sdk/src/model/create_bank_transaction_cost_center_request_dto.dart';
 import 'package:dart_api_sdk/src/model/create_or_update_bank_account_request_dto.dart';
 import 'package:dart_api_sdk/src/model/create_or_update_bank_connection_request_dto.dart';
 import 'package:dart_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_item_dto.dart';
@@ -86,6 +87,7 @@ part 'serializers.g.dart';
   CheckEmailInUseRequestDto,
   CheckoutSessionEntity,
   ConnectionFeatureSpecificationEntity,
+  CreateBankTransactionCostCenterRequestDto,
   CreateOrUpdateBankAccountRequestDto,
   CreateOrUpdateBankConnectionRequestDto,
   CreateOrUpdateBankTransactionsInBulkItemDto,
@@ -120,6 +122,10 @@ part 'serializers.g.dart';
   WorkspaceSubscriptionEntity,
 ])
 Serializers serializers = (_$serializers.toBuilder()
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(BankTransactionCostCenterEntity)]),
+        () => ListBuilder<BankTransactionCostCenterEntity>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(SubscriptionProductEntity)]),
         () => ListBuilder<SubscriptionProductEntity>(),
