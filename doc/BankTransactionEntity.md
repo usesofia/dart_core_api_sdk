@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **providerCategoryId** | **String** |  | [optional] 
 **providerCategoryName** | **String** |  | [optional] 
 **categoryId** | **String** |  | [optional] 
-**category** | [**BankTransactionCategoryNodeEntity**](BankTransactionCategoryNodeEntity.md) |  | [optional] 
+**category** | [**BankTransactionCategoryPlainEntity**](BankTransactionCategoryPlainEntity.md) |  | [optional] 
 **costCenterId** | **String** |  | [optional] 
 **costCenter** | [**BankTransactionCostCenterEntity**](BankTransactionCostCenterEntity.md) |  | [optional] 
 **paymentDataId** | **String** |  | [optional] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **creditCardMetadataId** | **String** |  | [optional] 
 **creditCardMetadata** | [**BankTransactionCreditCardMetadataEntity**](BankTransactionCreditCardMetadataEntity.md) |  | [optional] 
 **bestGuessCategoryId** | **String** |  | [optional] 
-**bestGuessCategory** | [**BankTransactionCategoryNodeEntity**](BankTransactionCategoryNodeEntity.md) |  | [optional] 
+**bestGuessCategory** | [**BankTransactionCategoryPlainEntity**](BankTransactionCategoryPlainEntity.md) |  | [optional] 
 **ignoredAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **confirmedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | 

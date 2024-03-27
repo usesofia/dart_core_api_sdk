@@ -213,7 +213,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
   @override
   final String? categoryId;
   @override
-  final BankTransactionCategoryNodeEntity? category;
+  final BankTransactionCategoryPlainEntity? category;
   @override
   final String? costCenterId;
   @override
@@ -229,7 +229,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
   @override
   final String? bestGuessCategoryId;
   @override
-  final BankTransactionCategoryNodeEntity? bestGuessCategory;
+  final BankTransactionCategoryPlainEntity? bestGuessCategory;
   @override
   final DateTime? ignoredAt;
   @override
@@ -486,10 +486,10 @@ class BankTransactionEntityBuilder
   String? get categoryId => _$this._categoryId;
   set categoryId(String? categoryId) => _$this._categoryId = categoryId;
 
-  BankTransactionCategoryNodeEntityBuilder? _category;
-  BankTransactionCategoryNodeEntityBuilder get category =>
-      _$this._category ??= new BankTransactionCategoryNodeEntityBuilder();
-  set category(BankTransactionCategoryNodeEntityBuilder? category) =>
+  BankTransactionCategoryPlainEntityBuilder? _category;
+  BankTransactionCategoryPlainEntityBuilder get category =>
+      _$this._category ??= new BankTransactionCategoryPlainEntityBuilder();
+  set category(BankTransactionCategoryPlainEntityBuilder? category) =>
       _$this._category = category;
 
   String? _costCenterId;
@@ -531,12 +531,12 @@ class BankTransactionEntityBuilder
   set bestGuessCategoryId(String? bestGuessCategoryId) =>
       _$this._bestGuessCategoryId = bestGuessCategoryId;
 
-  BankTransactionCategoryNodeEntityBuilder? _bestGuessCategory;
-  BankTransactionCategoryNodeEntityBuilder get bestGuessCategory =>
+  BankTransactionCategoryPlainEntityBuilder? _bestGuessCategory;
+  BankTransactionCategoryPlainEntityBuilder get bestGuessCategory =>
       _$this._bestGuessCategory ??=
-          new BankTransactionCategoryNodeEntityBuilder();
+          new BankTransactionCategoryPlainEntityBuilder();
   set bestGuessCategory(
-          BankTransactionCategoryNodeEntityBuilder? bestGuessCategory) =>
+          BankTransactionCategoryPlainEntityBuilder? bestGuessCategory) =>
       _$this._bestGuessCategory = bestGuessCategory;
 
   DateTime? _ignoredAt;

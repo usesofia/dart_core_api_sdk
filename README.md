@@ -112,7 +112,7 @@ Class | Method | HTTP request | Description
  - [BankConnectionEntity](doc/BankConnectionEntity.md)
  - [BankConnectionWithAccountsEntity](doc/BankConnectionWithAccountsEntity.md)
  - [BankConnectorEntity](doc/BankConnectorEntity.md)
- - [BankTransactionCategoryNodeEntity](doc/BankTransactionCategoryNodeEntity.md)
+ - [BankTransactionCategoryPlainEntity](doc/BankTransactionCategoryPlainEntity.md)
  - [BankTransactionCostCenterEntity](doc/BankTransactionCostCenterEntity.md)
  - [BankTransactionCreditCardMetadataEntity](doc/BankTransactionCreditCardMetadataEntity.md)
  - [BankTransactionEntity](doc/BankTransactionEntity.md)

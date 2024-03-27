@@ -6,7 +6,7 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:dart_api_sdk/src/model/bank_account_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_transaction_credit_card_metadata_entity.dart';
-import 'package:dart_api_sdk/src/model/bank_transaction_category_node_entity.dart';
+import 'package:dart_api_sdk/src/model/bank_transaction_category_plain_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_transaction_cost_center_entity.dart';
 import 'package:dart_api_sdk/src/model/bank_transaction_payment_data_entity.dart';
 import 'package:built_value/built_value.dart';
@@ -96,7 +96,7 @@ abstract class BankTransactionEntity implements Built<BankTransactionEntity, Ban
   String? get categoryId;
 
   @BuiltValueField(wireName: r'category')
-  BankTransactionCategoryNodeEntity? get category;
+  BankTransactionCategoryPlainEntity? get category;
 
   @BuiltValueField(wireName: r'costCenterId')
   String? get costCenterId;
@@ -120,7 +120,7 @@ abstract class BankTransactionEntity implements Built<BankTransactionEntity, Ban
   String? get bestGuessCategoryId;
 
   @BuiltValueField(wireName: r'bestGuessCategory')
-  BankTransactionCategoryNodeEntity? get bestGuessCategory;
+  BankTransactionCategoryPlainEntity? get bestGuessCategory;
 
   @BuiltValueField(wireName: r'ignoredAt')
   DateTime? get ignoredAt;
@@ -242,7 +242,7 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
       yield r'category';
       yield serializers.serialize(
         object.category,
-        specifiedType: const FullType(BankTransactionCategoryNodeEntity),
+        specifiedType: const FullType(BankTransactionCategoryPlainEntity),
       );
     }
     if (object.costCenterId != null) {
@@ -298,7 +298,7 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
       yield r'bestGuessCategory';
       yield serializers.serialize(
         object.bestGuessCategory,
-        specifiedType: const FullType(BankTransactionCategoryNodeEntity),
+        specifiedType: const FullType(BankTransactionCategoryPlainEntity),
       );
     }
     if (object.ignoredAt != null) {
@@ -456,8 +456,8 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
         case r'category':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BankTransactionCategoryNodeEntity),
-          ) as BankTransactionCategoryNodeEntity;
+            specifiedType: const FullType(BankTransactionCategoryPlainEntity),
+          ) as BankTransactionCategoryPlainEntity;
           result.category.replace(valueDes);
           break;
         case r'costCenterId':
@@ -512,8 +512,8 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
         case r'bestGuessCategory':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BankTransactionCategoryNodeEntity),
-          ) as BankTransactionCategoryNodeEntity;
+            specifiedType: const FullType(BankTransactionCategoryPlainEntity),
+          ) as BankTransactionCategoryPlainEntity;
           result.bestGuessCategory.replace(valueDes);
           break;
         case r'ignoredAt':
