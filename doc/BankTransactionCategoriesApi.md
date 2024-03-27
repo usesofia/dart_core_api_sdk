@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **bankTransactionCategoriesControllerGetBankTransactionCategories**
-> BankTransactionCategoryEntity bankTransactionCategoriesControllerGetBankTransactionCategories(workspaceId, onlyLeafs)
+> BuiltList<BankTransactionCategoryEntity> bankTransactionCategoriesControllerGetBankTransactionCategories(workspaceId, onlyLeafs)
 
 
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BankTransactionCategoryEntity**](BankTransactionCategoryEntity.md)
+[**BuiltList&lt;BankTransactionCategoryEntity&gt;**](BankTransactionCategoryEntity.md)
 
 ### Authorization
 

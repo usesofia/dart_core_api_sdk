@@ -7,6 +7,7 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:built_collection/built_collection.dart';
 import 'package:dart_api_sdk/src/api_util.dart';
 import 'package:dart_api_sdk/src/model/bank_transaction_category_entity.dart';
 import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
@@ -32,9 +33,9 @@ class BankTransactionCategoriesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BankTransactionCategoryEntity] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<BankTransactionCategoryEntity>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankTransactionCategoryEntity>> bankTransactionCategoriesControllerGetBankTransactionCategories({ 
+  Future<Response<BuiltList<BankTransactionCategoryEntity>>> bankTransactionCategoriesControllerGetBankTransactionCategories({ 
     required String workspaceId,
     bool? onlyLeafs,
     CancelToken? cancelToken,
@@ -70,14 +71,14 @@ class BankTransactionCategoriesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BankTransactionCategoryEntity? _responseData;
+    BuiltList<BankTransactionCategoryEntity>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BankTransactionCategoryEntity),
-      ) as BankTransactionCategoryEntity;
+        specifiedType: const FullType(BuiltList, [FullType(BankTransactionCategoryEntity)]),
+      ) as BuiltList<BankTransactionCategoryEntity>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -89,7 +90,7 @@ class BankTransactionCategoriesApi {
       );
     }
 
-    return Response<BankTransactionCategoryEntity>(
+    return Response<BuiltList<BankTransactionCategoryEntity>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

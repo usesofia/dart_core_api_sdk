@@ -133,6 +133,10 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<SubscriptionProductEntity>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(BankTransactionCategoryEntity)]),
+        () => ListBuilder<BankTransactionCategoryEntity>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(UserRelatedWorkspaceEntity)]),
         () => ListBuilder<UserRelatedWorkspaceEntity>(),
       )
