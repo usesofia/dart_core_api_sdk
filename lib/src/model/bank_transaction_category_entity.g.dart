@@ -12,7 +12,7 @@ class _$BankTransactionCategoryEntity extends BankTransactionCategoryEntity {
   @override
   final String name;
   @override
-  final String parentId;
+  final String? parentId;
   @override
   final BuiltList<BankTransactionCategoryPlainEntity> path;
   @override
@@ -25,7 +25,7 @@ class _$BankTransactionCategoryEntity extends BankTransactionCategoryEntity {
   _$BankTransactionCategoryEntity._(
       {required this.id,
       required this.name,
-      required this.parentId,
+      this.parentId,
       required this.path,
       required this.children})
       : super._() {
@@ -33,8 +33,6 @@ class _$BankTransactionCategoryEntity extends BankTransactionCategoryEntity {
         id, r'BankTransactionCategoryEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
         name, r'BankTransactionCategoryEntity', 'name');
-    BuiltValueNullFieldError.checkNotNull(
-        parentId, r'BankTransactionCategoryEntity', 'parentId');
     BuiltValueNullFieldError.checkNotNull(
         path, r'BankTransactionCategoryEntity', 'path');
     BuiltValueNullFieldError.checkNotNull(
@@ -156,8 +154,7 @@ class BankTransactionCategoryEntityBuilder
                   id, r'BankTransactionCategoryEntity', 'id'),
               name: BuiltValueNullFieldError.checkNotNull(
                   name, r'BankTransactionCategoryEntity', 'name'),
-              parentId: BuiltValueNullFieldError.checkNotNull(
-                  parentId, r'BankTransactionCategoryEntity', 'parentId'),
+              parentId: parentId,
               path: path.build(),
               children: children.build());
     } catch (_) {

@@ -27,7 +27,7 @@ abstract class BankTransactionCategoryEntity implements Built<BankTransactionCat
   String get name;
 
   @BuiltValueField(wireName: r'parentId')
-  String get parentId;
+  String? get parentId;
 
   @BuiltValueField(wireName: r'path')
   BuiltList<BankTransactionCategoryPlainEntity> get path;
@@ -68,11 +68,13 @@ class _$BankTransactionCategoryEntitySerializer implements PrimitiveSerializer<B
       object.name,
       specifiedType: const FullType(String),
     );
-    yield r'parentId';
-    yield serializers.serialize(
-      object.parentId,
-      specifiedType: const FullType(String),
-    );
+    if (object.parentId != null) {
+      yield r'parentId';
+      yield serializers.serialize(
+        object.parentId,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'path';
     yield serializers.serialize(
       object.path,

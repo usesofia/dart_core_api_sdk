@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **name** | **String** |  | 
-**parentId** | **String** |  | 
+**parentId** | **String** |  | [optional] 
 **path** | [**BuiltList&lt;BankTransactionCategoryPlainEntity&gt;**](BankTransactionCategoryPlainEntity.md) |  | 
 **children** | [**BuiltList&lt;BankTransactionCategoryPlainEntity&gt;**](BankTransactionCategoryPlainEntity.md) |  | 
 
