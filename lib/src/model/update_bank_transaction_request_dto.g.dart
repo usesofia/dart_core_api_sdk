@@ -9,43 +9,30 @@ part of 'update_bank_transaction_request_dto.dart';
 class _$UpdateBankTransactionRequestDto
     extends UpdateBankTransactionRequestDto {
   @override
-  final String description;
+  final String? description;
   @override
-  final String categoryId;
+  final String? categoryId;
   @override
-  final String costCenterId;
+  final String? costCenterId;
   @override
-  final DateTime competencyDate;
+  final DateTime? competencyDate;
   @override
-  final bool ignore;
+  final bool? ignore;
   @override
-  final bool confirm;
+  final bool? confirm;
 
   factory _$UpdateBankTransactionRequestDto(
           [void Function(UpdateBankTransactionRequestDtoBuilder)? updates]) =>
       (new UpdateBankTransactionRequestDtoBuilder()..update(updates))._build();
 
   _$UpdateBankTransactionRequestDto._(
-      {required this.description,
-      required this.categoryId,
-      required this.costCenterId,
-      required this.competencyDate,
-      required this.ignore,
-      required this.confirm})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        description, r'UpdateBankTransactionRequestDto', 'description');
-    BuiltValueNullFieldError.checkNotNull(
-        categoryId, r'UpdateBankTransactionRequestDto', 'categoryId');
-    BuiltValueNullFieldError.checkNotNull(
-        costCenterId, r'UpdateBankTransactionRequestDto', 'costCenterId');
-    BuiltValueNullFieldError.checkNotNull(
-        competencyDate, r'UpdateBankTransactionRequestDto', 'competencyDate');
-    BuiltValueNullFieldError.checkNotNull(
-        ignore, r'UpdateBankTransactionRequestDto', 'ignore');
-    BuiltValueNullFieldError.checkNotNull(
-        confirm, r'UpdateBankTransactionRequestDto', 'confirm');
-  }
+      {this.description,
+      this.categoryId,
+      this.costCenterId,
+      this.competencyDate,
+      this.ignore,
+      this.confirm})
+      : super._();
 
   @override
   UpdateBankTransactionRequestDto rebuild(
@@ -160,20 +147,12 @@ class UpdateBankTransactionRequestDtoBuilder
   _$UpdateBankTransactionRequestDto _build() {
     final _$result = _$v ??
         new _$UpdateBankTransactionRequestDto._(
-            description: BuiltValueNullFieldError.checkNotNull(
-                description, r'UpdateBankTransactionRequestDto', 'description'),
-            categoryId: BuiltValueNullFieldError.checkNotNull(
-                categoryId, r'UpdateBankTransactionRequestDto', 'categoryId'),
-            costCenterId: BuiltValueNullFieldError.checkNotNull(costCenterId,
-                r'UpdateBankTransactionRequestDto', 'costCenterId'),
-            competencyDate: BuiltValueNullFieldError.checkNotNull(
-                competencyDate,
-                r'UpdateBankTransactionRequestDto',
-                'competencyDate'),
-            ignore: BuiltValueNullFieldError.checkNotNull(
-                ignore, r'UpdateBankTransactionRequestDto', 'ignore'),
-            confirm: BuiltValueNullFieldError.checkNotNull(
-                confirm, r'UpdateBankTransactionRequestDto', 'confirm'));
+            description: description,
+            categoryId: categoryId,
+            costCenterId: costCenterId,
+            competencyDate: competencyDate,
+            ignore: ignore,
+            confirm: confirm);
     replace(_$result);
     return _$result;
   }

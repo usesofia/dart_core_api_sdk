@@ -20,22 +20,22 @@ part 'update_bank_transaction_request_dto.g.dart';
 @BuiltValue()
 abstract class UpdateBankTransactionRequestDto implements Built<UpdateBankTransactionRequestDto, UpdateBankTransactionRequestDtoBuilder> {
   @BuiltValueField(wireName: r'description')
-  String get description;
+  String? get description;
 
   @BuiltValueField(wireName: r'categoryId')
-  String get categoryId;
+  String? get categoryId;
 
   @BuiltValueField(wireName: r'costCenterId')
-  String get costCenterId;
+  String? get costCenterId;
 
   @BuiltValueField(wireName: r'competencyDate')
-  DateTime get competencyDate;
+  DateTime? get competencyDate;
 
   @BuiltValueField(wireName: r'ignore')
-  bool get ignore;
+  bool? get ignore;
 
   @BuiltValueField(wireName: r'confirm')
-  bool get confirm;
+  bool? get confirm;
 
   UpdateBankTransactionRequestDto._();
 
@@ -60,36 +60,48 @@ class _$UpdateBankTransactionRequestDtoSerializer implements PrimitiveSerializer
     UpdateBankTransactionRequestDto object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'description';
-    yield serializers.serialize(
-      object.description,
-      specifiedType: const FullType(String),
-    );
-    yield r'categoryId';
-    yield serializers.serialize(
-      object.categoryId,
-      specifiedType: const FullType(String),
-    );
-    yield r'costCenterId';
-    yield serializers.serialize(
-      object.costCenterId,
-      specifiedType: const FullType(String),
-    );
-    yield r'competencyDate';
-    yield serializers.serialize(
-      object.competencyDate,
-      specifiedType: const FullType(DateTime),
-    );
-    yield r'ignore';
-    yield serializers.serialize(
-      object.ignore,
-      specifiedType: const FullType(bool),
-    );
-    yield r'confirm';
-    yield serializers.serialize(
-      object.confirm,
-      specifiedType: const FullType(bool),
-    );
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.categoryId != null) {
+      yield r'categoryId';
+      yield serializers.serialize(
+        object.categoryId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.costCenterId != null) {
+      yield r'costCenterId';
+      yield serializers.serialize(
+        object.costCenterId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.competencyDate != null) {
+      yield r'competencyDate';
+      yield serializers.serialize(
+        object.competencyDate,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.ignore != null) {
+      yield r'ignore';
+      yield serializers.serialize(
+        object.ignore,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.confirm != null) {
+      yield r'confirm';
+      yield serializers.serialize(
+        object.confirm,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
   @override
