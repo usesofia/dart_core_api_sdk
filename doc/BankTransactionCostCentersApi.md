@@ -1,8 +1,8 @@
-# dart_api_sdk.api.BankTransactionCostCentersApi
+# dart_core_api_sdk.api.BankTransactionCostCentersApi
 
 ## Load the API package
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -20,9 +20,9 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankTransactionCostCentersApi();
+final api = DartCoreApiSdk().getBankTransactionCostCentersApi();
 final String workspaceId = workspaceId_example; // String | 
 final CreateBankTransactionCostCenterRequestDto createBankTransactionCostCenterRequestDto = ; // CreateBankTransactionCostCenterRequestDto | 
 
@@ -63,9 +63,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankTransactionCostCentersApi();
+final api = DartCoreApiSdk().getBankTransactionCostCentersApi();
 final String workspaceId = workspaceId_example; // String | 
 
 try {

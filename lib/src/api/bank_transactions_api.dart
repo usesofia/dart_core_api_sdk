@@ -8,13 +8,13 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
-import 'package:dart_api_sdk/src/api_util.dart';
-import 'package:dart_api_sdk/src/model/bank_transaction_entity.dart';
-import 'package:dart_api_sdk/src/model/bank_transactions_controller_get_bank_transactions_not_confirmed200_response.dart';
-import 'package:dart_api_sdk/src/model/bank_transactions_page_entity.dart';
-import 'package:dart_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_request_dto.dart';
-import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
-import 'package:dart_api_sdk/src/model/update_bank_transaction_request_dto.dart';
+import 'package:dart_core_api_sdk/src/api_util.dart';
+import 'package:dart_core_api_sdk/src/model/bank_transaction_entity.dart';
+import 'package:dart_core_api_sdk/src/model/bank_transactions_controller_get_bank_transactions_not_confirmed200_response.dart';
+import 'package:dart_core_api_sdk/src/model/bank_transactions_page_entity.dart';
+import 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
+import 'package:dart_core_api_sdk/src/model/update_bank_transaction_request_dto.dart';
 
 class BankTransactionsApi {
 

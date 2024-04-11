@@ -7,15 +7,15 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:dart_api_sdk/src/model/check_email_in_use_request_dto.dart';
-import 'package:dart_api_sdk/src/model/credentials_entity.dart';
-import 'package:dart_api_sdk/src/model/email_in_use_entity.dart';
-import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
-import 'package:dart_api_sdk/src/model/refresh_request_dto.dart';
-import 'package:dart_api_sdk/src/model/send_email_verification_code_request_dto.dart';
-import 'package:dart_api_sdk/src/model/sign_in_with_email_password_request_dto.dart';
-import 'package:dart_api_sdk/src/model/sign_up_with_email_password_request_dto.dart';
-import 'package:dart_api_sdk/src/model/user_entity.dart';
+import 'package:dart_core_api_sdk/src/model/check_email_in_use_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/credentials_entity.dart';
+import 'package:dart_core_api_sdk/src/model/email_in_use_entity.dart';
+import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
+import 'package:dart_core_api_sdk/src/model/refresh_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/send_email_verification_code_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/sign_in_with_email_password_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/sign_up_with_email_password_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/user_entity.dart';
 
 class AuthApi {
 

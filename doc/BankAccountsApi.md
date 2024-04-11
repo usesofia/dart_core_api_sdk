@@ -1,8 +1,8 @@
-# dart_api_sdk.api.BankAccountsApi
+# dart_core_api_sdk.api.BankAccountsApi
 
 ## Load the API package
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -25,9 +25,9 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankAccountsApi();
+final api = DartCoreApiSdk().getBankAccountsApi();
 final String bankAccountId = bankAccountId_example; // String | 
 
 try {
@@ -66,9 +66,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankAccountsApi();
+final api = DartCoreApiSdk().getBankAccountsApi();
 final String workspaceId = workspaceId_example; // String | 
 final CreateOrUpdateBankAccountRequestDto createOrUpdateBankAccountRequestDto = ; // CreateOrUpdateBankAccountRequestDto | 
 
@@ -109,9 +109,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankAccountsApi();
+final api = DartCoreApiSdk().getBankAccountsApi();
 final String workspaceId = workspaceId_example; // String | 
 final bool enabled = true; // bool | 
 final String types = types_example; // String | 
@@ -154,9 +154,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankAccountsApi();
+final api = DartCoreApiSdk().getBankAccountsApi();
 final String bankAccountId = bankAccountId_example; // String | 
 
 try {
@@ -195,9 +195,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankAccountsApi();
+final api = DartCoreApiSdk().getBankAccountsApi();
 final String workspaceId = workspaceId_example; // String | 
 final String bankConnectionId = bankConnectionId_example; // String | 
 final bool enabled = true; // bool | 
@@ -242,9 +242,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankAccountsApi();
+final api = DartCoreApiSdk().getBankAccountsApi();
 final String workspaceId = workspaceId_example; // String | 
 final bool enabled = true; // bool | 
 final String types = types_example; // String | 
@@ -287,9 +287,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankAccountsApi();
+final api = DartCoreApiSdk().getBankAccountsApi();
 final String bankAccountId = bankAccountId_example; // String | 
 
 try {

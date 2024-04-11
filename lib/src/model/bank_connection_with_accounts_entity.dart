@@ -3,9 +3,9 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:dart_core_api_sdk/src/model/plain_bank_account_entity.dart';
+import 'package:dart_core_api_sdk/src/model/bank_connector_entity.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:dart_api_sdk/src/model/plain_bank_account_entity.dart';
-import 'package:dart_api_sdk/src/model/bank_connector_entity.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

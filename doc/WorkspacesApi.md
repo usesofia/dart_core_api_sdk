@@ -1,8 +1,8 @@
-# dart_api_sdk.api.WorkspacesApi
+# dart_core_api_sdk.api.WorkspacesApi
 
 ## Load the API package
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -20,9 +20,9 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getWorkspacesApi();
+final api = DartCoreApiSdk().getWorkspacesApi();
 final CreateWorkspaceRequestDto createWorkspaceRequestDto = ; // CreateWorkspaceRequestDto | 
 
 try {
@@ -61,9 +61,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getWorkspacesApi();
+final api = DartCoreApiSdk().getWorkspacesApi();
 
 try {
     final response = api.workspacesControllerFetchUserRelatedWorkspaces();

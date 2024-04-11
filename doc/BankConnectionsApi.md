@@ -1,8 +1,8 @@
-# dart_api_sdk.api.BankConnectionsApi
+# dart_core_api_sdk.api.BankConnectionsApi
 
 ## Load the API package
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -23,9 +23,9 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankConnectionsApi();
+final api = DartCoreApiSdk().getBankConnectionsApi();
 final String bankConnectionId = bankConnectionId_example; // String | 
 
 try {
@@ -64,9 +64,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankConnectionsApi();
+final api = DartCoreApiSdk().getBankConnectionsApi();
 final String workspaceId = workspaceId_example; // String | 
 final CreateOrUpdateBankConnectionRequestDto createOrUpdateBankConnectionRequestDto = ; // CreateOrUpdateBankConnectionRequestDto | 
 
@@ -107,9 +107,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankConnectionsApi();
+final api = DartCoreApiSdk().getBankConnectionsApi();
 final String bankConnectionId = bankConnectionId_example; // String | 
 
 try {
@@ -148,9 +148,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankConnectionsApi();
+final api = DartCoreApiSdk().getBankConnectionsApi();
 final String workspaceId = workspaceId_example; // String | 
 final bool enabled = true; // bool | 
 
@@ -191,9 +191,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankConnectionsApi();
+final api = DartCoreApiSdk().getBankConnectionsApi();
 final String bankConnectionId = bankConnectionId_example; // String | 
 
 try {

@@ -4,32 +4,32 @@
 
 import 'package:dio/dio.dart';
 import 'package:built_value/serializer.dart';
-import 'package:dart_api_sdk/src/serializers.dart';
-import 'package:dart_api_sdk/src/auth/api_key_auth.dart';
-import 'package:dart_api_sdk/src/auth/basic_auth.dart';
-import 'package:dart_api_sdk/src/auth/bearer_auth.dart';
-import 'package:dart_api_sdk/src/auth/oauth.dart';
-import 'package:dart_api_sdk/src/api/auth_api.dart';
-import 'package:dart_api_sdk/src/api/bank_accounts_api.dart';
-import 'package:dart_api_sdk/src/api/bank_connections_api.dart';
-import 'package:dart_api_sdk/src/api/bank_transaction_categories_api.dart';
-import 'package:dart_api_sdk/src/api/bank_transaction_cost_centers_api.dart';
-import 'package:dart_api_sdk/src/api/bank_transactions_api.dart';
-import 'package:dart_api_sdk/src/api/pluggy_api.dart';
-import 'package:dart_api_sdk/src/api/profiles_api.dart';
-import 'package:dart_api_sdk/src/api/stripe_api.dart';
-import 'package:dart_api_sdk/src/api/subscription_products_api.dart';
-import 'package:dart_api_sdk/src/api/workspace_join_requests_api.dart';
-import 'package:dart_api_sdk/src/api/workspace_subscriptions_api.dart';
-import 'package:dart_api_sdk/src/api/workspaces_api.dart';
+import 'package:dart_core_api_sdk/src/serializers.dart';
+import 'package:dart_core_api_sdk/src/auth/api_key_auth.dart';
+import 'package:dart_core_api_sdk/src/auth/basic_auth.dart';
+import 'package:dart_core_api_sdk/src/auth/bearer_auth.dart';
+import 'package:dart_core_api_sdk/src/auth/oauth.dart';
+import 'package:dart_core_api_sdk/src/api/auth_api.dart';
+import 'package:dart_core_api_sdk/src/api/bank_accounts_api.dart';
+import 'package:dart_core_api_sdk/src/api/bank_connections_api.dart';
+import 'package:dart_core_api_sdk/src/api/bank_transaction_categories_api.dart';
+import 'package:dart_core_api_sdk/src/api/bank_transaction_cost_centers_api.dart';
+import 'package:dart_core_api_sdk/src/api/bank_transactions_api.dart';
+import 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
+import 'package:dart_core_api_sdk/src/api/profiles_api.dart';
+import 'package:dart_core_api_sdk/src/api/stripe_api.dart';
+import 'package:dart_core_api_sdk/src/api/subscription_products_api.dart';
+import 'package:dart_core_api_sdk/src/api/workspace_join_requests_api.dart';
+import 'package:dart_core_api_sdk/src/api/workspace_subscriptions_api.dart';
+import 'package:dart_core_api_sdk/src/api/workspaces_api.dart';
 
-class DartApiSdk {
+class DartCoreApiSdk {
   static const String basePath = r'http://localhost';
 
   final Dio dio;
   final Serializers serializers;
 
-  DartApiSdk({
+  DartCoreApiSdk({
     Dio? dio,
     Serializers? serializers,
     String? basePathOverride,

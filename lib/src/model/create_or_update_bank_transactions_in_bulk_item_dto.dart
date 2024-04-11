@@ -3,10 +3,10 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:dart_api_sdk/src/model/credit_card_metadata_dto.dart';
+import 'package:dart_core_api_sdk/src/model/category_guess_dto.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:dart_api_sdk/src/model/payment_data_dto.dart';
-import 'package:dart_api_sdk/src/model/category_guess_dto.dart';
+import 'package:dart_core_api_sdk/src/model/payment_data_dto.dart';
+import 'package:dart_core_api_sdk/src/model/credit_card_metadata_dto.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

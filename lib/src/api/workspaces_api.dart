@@ -8,10 +8,10 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
-import 'package:dart_api_sdk/src/model/create_workspace_request_dto.dart';
-import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
-import 'package:dart_api_sdk/src/model/user_related_workspace_entity.dart';
-import 'package:dart_api_sdk/src/model/workspace_entity.dart';
+import 'package:dart_core_api_sdk/src/model/create_workspace_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
+import 'package:dart_core_api_sdk/src/model/user_related_workspace_entity.dart';
+import 'package:dart_core_api_sdk/src/model/workspace_entity.dart';
 
 class WorkspacesApi {
 

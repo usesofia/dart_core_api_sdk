@@ -1,8 +1,8 @@
-# dart_api_sdk.api.BankTransactionsApi
+# dart_core_api_sdk.api.BankTransactionsApi
 
 ## Load the API package
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -24,9 +24,9 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankTransactionsApi();
+final api = DartCoreApiSdk().getBankTransactionsApi();
 final CreateOrUpdateBankTransactionsInBulkRequestDto createOrUpdateBankTransactionsInBulkRequestDto = ; // CreateOrUpdateBankTransactionsInBulkRequestDto | 
 
 try {
@@ -65,9 +65,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankTransactionsApi();
+final api = DartCoreApiSdk().getBankTransactionsApi();
 final String workspaceId = workspaceId_example; // String | 
 final num pageIndex = 8.14; // num | 
 final num pageSize = 8.14; // num | 
@@ -126,9 +126,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankTransactionsApi();
+final api = DartCoreApiSdk().getBankTransactionsApi();
 final String workspaceId = workspaceId_example; // String | 
 final num pageIndex = 8.14; // num | 
 final num pageSize = 8.14; // num | 
@@ -171,9 +171,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankTransactionsApi();
+final api = DartCoreApiSdk().getBankTransactionsApi();
 final String workspaceId = workspaceId_example; // String | 
 
 try {
@@ -212,9 +212,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankTransactionsApi();
+final api = DartCoreApiSdk().getBankTransactionsApi();
 final String bankTransactionId = bankTransactionId_example; // String | 
 
 try {
@@ -253,9 +253,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getBankTransactionsApi();
+final api = DartCoreApiSdk().getBankTransactionsApi();
 final String bankTransactionId = bankTransactionId_example; // String | 
 final UpdateBankTransactionRequestDto updateBankTransactionRequestDto = ; // UpdateBankTransactionRequestDto | 
 

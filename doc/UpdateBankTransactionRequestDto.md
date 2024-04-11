@@ -1,8 +1,8 @@
-# dart_api_sdk.model.UpdateBankTransactionRequestDto
+# dart_core_api_sdk.model.UpdateBankTransactionRequestDto
 
 ## Load the model package
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 ```
 
 ## Properties

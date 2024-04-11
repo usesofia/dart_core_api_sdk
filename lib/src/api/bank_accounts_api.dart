@@ -8,11 +8,11 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
-import 'package:dart_api_sdk/src/api_util.dart';
-import 'package:dart_api_sdk/src/model/bank_account_entity.dart';
-import 'package:dart_api_sdk/src/model/bank_accounts_balance_report_entity.dart';
-import 'package:dart_api_sdk/src/model/create_or_update_bank_account_request_dto.dart';
-import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
+import 'package:dart_core_api_sdk/src/api_util.dart';
+import 'package:dart_core_api_sdk/src/model/bank_account_entity.dart';
+import 'package:dart_core_api_sdk/src/model/bank_accounts_balance_report_entity.dart';
+import 'package:dart_core_api_sdk/src/model/create_or_update_bank_account_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
 
 class BankAccountsApi {
 

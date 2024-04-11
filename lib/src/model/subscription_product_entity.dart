@@ -3,10 +3,10 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:dart_api_sdk/src/model/connection_feature_specification_entity.dart';
-import 'package:dart_api_sdk/src/model/payments_manager_product_data_entity.dart';
-import 'package:dart_api_sdk/src/model/ai_chat_feature_specification_entity.dart';
-import 'package:dart_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
+import 'package:dart_core_api_sdk/src/model/connection_feature_specification_entity.dart';
+import 'package:dart_core_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
+import 'package:dart_core_api_sdk/src/model/payments_manager_product_data_entity.dart';
+import 'package:dart_core_api_sdk/src/model/ai_chat_feature_specification_entity.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 

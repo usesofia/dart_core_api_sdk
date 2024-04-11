@@ -1,8 +1,8 @@
-# dart_api_sdk.model.CategoryGuessDto
+# dart_core_api_sdk.model.CategoryGuessDto
 
 ## Load the model package
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 ```
 
 ## Properties

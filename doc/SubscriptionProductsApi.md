@@ -1,8 +1,8 @@
-# dart_api_sdk.api.SubscriptionProductsApi
+# dart_core_api_sdk.api.SubscriptionProductsApi
 
 ## Load the API package
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -19,9 +19,9 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getSubscriptionProductsApi();
+final api = DartCoreApiSdk().getSubscriptionProductsApi();
 final String workspaceId = workspaceId_example; // String | 
 
 try {

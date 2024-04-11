@@ -1,8 +1,8 @@
-# dart_api_sdk.api.AuthApi
+# dart_core_api_sdk.api.AuthApi
 
 ## Load the API package
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -23,9 +23,9 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getAuthApi();
+final api = DartCoreApiSdk().getAuthApi();
 final CheckEmailInUseRequestDto checkEmailInUseRequestDto = ; // CheckEmailInUseRequestDto | 
 
 try {
@@ -64,9 +64,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getAuthApi();
+final api = DartCoreApiSdk().getAuthApi();
 final RefreshRequestDto refreshRequestDto = ; // RefreshRequestDto | 
 
 try {
@@ -105,9 +105,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getAuthApi();
+final api = DartCoreApiSdk().getAuthApi();
 final SendEmailVerificationCodeRequestDto sendEmailVerificationCodeRequestDto = ; // SendEmailVerificationCodeRequestDto | 
 
 try {
@@ -145,9 +145,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getAuthApi();
+final api = DartCoreApiSdk().getAuthApi();
 final SignInWithEmailPasswordRequestDto signInWithEmailPasswordRequestDto = ; // SignInWithEmailPasswordRequestDto | 
 
 try {
@@ -186,9 +186,9 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:dart_api_sdk/api.dart';
+import 'package:dart_core_api_sdk/api.dart';
 
-final api = DartApiSdk().getAuthApi();
+final api = DartCoreApiSdk().getAuthApi();
 final SignUpWithEmailPasswordRequestDto signUpWithEmailPasswordRequestDto = ; // SignUpWithEmailPasswordRequestDto | 
 
 try {

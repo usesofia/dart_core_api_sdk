@@ -7,9 +7,9 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:dart_api_sdk/src/model/checkout_session_entity.dart';
-import 'package:dart_api_sdk/src/model/create_stripe_checkout_session_request_dto.dart';
-import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
+import 'package:dart_core_api_sdk/src/model/checkout_session_entity.dart';
+import 'package:dart_core_api_sdk/src/model/create_stripe_checkout_session_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
 
 class StripeApi {
 

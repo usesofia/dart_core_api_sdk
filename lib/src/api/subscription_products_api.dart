@@ -8,9 +8,9 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
-import 'package:dart_api_sdk/src/api_util.dart';
-import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
-import 'package:dart_api_sdk/src/model/subscription_product_entity.dart';
+import 'package:dart_core_api_sdk/src/api_util.dart';
+import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
+import 'package:dart_core_api_sdk/src/model/subscription_product_entity.dart';
 
 class SubscriptionProductsApi {
 

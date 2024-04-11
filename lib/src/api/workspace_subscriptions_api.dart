@@ -7,9 +7,9 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:dart_api_sdk/src/api_util.dart';
-import 'package:dart_api_sdk/src/model/exception_response_entity.dart';
-import 'package:dart_api_sdk/src/model/workspace_subscription_entity.dart';
+import 'package:dart_core_api_sdk/src/api_util.dart';
+import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
+import 'package:dart_core_api_sdk/src/model/workspace_subscription_entity.dart';
 
 class WorkspaceSubscriptionsApi {
 
