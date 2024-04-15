@@ -17,6 +17,7 @@ export 'package:dart_core_api_sdk/src/api/bank_transaction_cost_centers_api.dart
 export 'package:dart_core_api_sdk/src/api/bank_transactions_api.dart';
 export 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
 export 'package:dart_core_api_sdk/src/api/profiles_api.dart';
+export 'package:dart_core_api_sdk/src/api/reports_api.dart';
 export 'package:dart_core_api_sdk/src/api/stripe_api.dart';
 export 'package:dart_core_api_sdk/src/api/subscription_products_api.dart';
 export 'package:dart_core_api_sdk/src/api/workspace_join_requests_api.dart';

@@ -51,6 +51,7 @@ doc/PluggyConnectTokenEntity.md
 doc/ProfileEntity.md
 doc/ProfilesApi.md
 doc/RefreshRequestDto.md
+doc/ReportsApi.md
 doc/SendEmailVerificationCodeRequestDto.md
 doc/SignInWithEmailPasswordRequestDto.md
 doc/SignUpWithEmailPasswordRequestDto.md
@@ -76,6 +77,7 @@ lib/src/api/bank_transaction_cost_centers_api.dart
 lib/src/api/bank_transactions_api.dart
 lib/src/api/pluggy_api.dart
 lib/src/api/profiles_api.dart
+lib/src/api/reports_api.dart
 lib/src/api/stripe_api.dart
 lib/src/api/subscription_products_api.dart
 lib/src/api/workspace_join_requests_api.dart
@@ -143,3 +145,4 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/reports_api_test.dart
