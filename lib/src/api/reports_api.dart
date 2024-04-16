@@ -24,6 +24,7 @@ class ReportsApi {
   ///
   /// Parameters:
   /// * [workspaceId] 
+  /// * [ignoreInternalTransfers] 
   /// * [accountIds] 
   /// * [categoryIds] 
   /// * [costCenterIds] 
@@ -39,6 +40,7 @@ class ReportsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<JsonObject>> reportsControllerGetCashFlowReport({ 
     required String workspaceId,
+    required bool ignoreInternalTransfers,
     String? accountIds,
     String? categoryIds,
     String? costCenterIds,
@@ -68,6 +70,7 @@ class ReportsApi {
       if (categoryIds != null) r'categoryIds': encodeQueryParameter(_serializers, categoryIds, const FullType(String)),
       if (costCenterIds != null) r'costCenterIds': encodeQueryParameter(_serializers, costCenterIds, const FullType(String)),
       if (considerIgnored != null) r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
+      r'ignoreInternalTransfers': encodeQueryParameter(_serializers, ignoreInternalTransfers, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **reportsControllerGetCashFlowReport**
-> JsonObject reportsControllerGetCashFlowReport(workspaceId, accountIds, categoryIds, costCenterIds, considerIgnored)
+> JsonObject reportsControllerGetCashFlowReport(workspaceId, ignoreInternalTransfers, accountIds, categoryIds, costCenterIds, considerIgnored)
 
 
 
@@ -23,13 +23,14 @@ import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getReportsApi();
 final String workspaceId = workspaceId_example; // String | 
+final bool ignoreInternalTransfers = true; // bool | 
 final String accountIds = accountIds_example; // String | 
 final String categoryIds = categoryIds_example; // String | 
 final String costCenterIds = costCenterIds_example; // String | 
 final bool considerIgnored = true; // bool | 
 
 try {
-    final response = api.reportsControllerGetCashFlowReport(workspaceId, accountIds, categoryIds, costCenterIds, considerIgnored);
+    final response = api.reportsControllerGetCashFlowReport(workspaceId, ignoreInternalTransfers, accountIds, categoryIds, costCenterIds, considerIgnored);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling ReportsApi->reportsControllerGetCashFlowReport: $e\n');
@@ -41,6 +42,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspaceId** | **String**|  | 
+ **ignoreInternalTransfers** | **bool**|  | 
  **accountIds** | **String**|  | [optional] 
  **categoryIds** | **String**|  | [optional] 
  **costCenterIds** | **String**|  | [optional] 
