@@ -95,6 +95,7 @@ Class | Method | HTTP request | Description
 [*PluggyApi*](doc/PluggyApi.md) | [**pluggyControllerWebhook**](doc/PluggyApi.md#pluggycontrollerwebhook) | **POST** /pluggy/webhook | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerCreate**](doc/ProfilesApi.md#profilescontrollercreate) | **POST** /profiles | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerGetMy**](doc/ProfilesApi.md#profilescontrollergetmy) | **GET** /profiles/me | 
+[*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetAccountsEntriesByCategoryReport**](doc/ReportsApi.md#reportscontrollergetaccountsentriesbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/accounts/entries-by-category | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetCashFlowReport**](doc/ReportsApi.md#reportscontrollergetcashflowreport) | **GET** /workspaces/{workspaceId}/reports/accounts/cash-flow | 
 [*StripeApi*](doc/StripeApi.md) | [**stripeControllerCreateCheckoutSessionForStripe**](doc/StripeApi.md#stripecontrollercreatecheckoutsessionforstripe) | **POST** /stripe/checkout-session | 
 [*StripeApi*](doc/StripeApi.md) | [**stripeControllerStripeWebhook**](doc/StripeApi.md#stripecontrollerstripewebhook) | **POST** /stripe/webhook | 
