@@ -98,6 +98,7 @@ Class | Method | HTTP request | Description
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetAccountsEntriesByCategoryReport**](doc/ReportsApi.md#reportscontrollergetaccountsentriesbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/accounts/entries-by-category | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetAccountsOutputsByCategoryReport**](doc/ReportsApi.md#reportscontrollergetaccountsoutputsbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/accounts/outputs-by-category | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetCardsCashFlowReport**](doc/ReportsApi.md#reportscontrollergetcardscashflowreport) | **GET** /workspaces/{workspaceId}/reports/cards/cash-flow | 
+[*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetCardsOutputsByCategoryReport**](doc/ReportsApi.md#reportscontrollergetcardsoutputsbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/cards/outputs-by-category | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetCashFlowReport**](doc/ReportsApi.md#reportscontrollergetcashflowreport) | **GET** /workspaces/{workspaceId}/reports/accounts/cash-flow | 
 [*StripeApi*](doc/StripeApi.md) | [**stripeControllerCreateCheckoutSessionForStripe**](doc/StripeApi.md#stripecontrollercreatecheckoutsessionforstripe) | **POST** /stripe/checkout-session | 
 [*StripeApi*](doc/StripeApi.md) | [**stripeControllerStripeWebhook**](doc/StripeApi.md#stripecontrollerstripewebhook) | **POST** /stripe/webhook | 
