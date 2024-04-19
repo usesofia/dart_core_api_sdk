@@ -153,7 +153,3 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/cash_flow_report_daily_item_entity_test.dart
-test/cash_flow_report_entity_test.dart
-test/cash_flow_report_monthly_item_entity_test.dart
-test/cash_flow_report_weekly_item_entity_test.dart
