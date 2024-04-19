@@ -27,6 +27,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BankTransactionsControllerGetBankTransactionsNotConfirmed200Response
           .serializer)
       ..add(BankTransactionsPageEntity.serializer)
+      ..add(CashFlowReportDailyItemEntity.serializer)
+      ..add(CashFlowReportEntity.serializer)
+      ..add(CashFlowReportMonthlyItemEntity.serializer)
+      ..add(CashFlowReportWeeklyItemEntity.serializer)
       ..add(CategoryGuessDto.serializer)
       ..add(CheckEmailInUseRequestDto.serializer)
       ..add(CheckoutSessionEntity.serializer)
@@ -84,6 +88,66 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(BankTransactionEntity)]),
           () => new ListBuilder<BankTransactionEntity>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(CashFlowReportDailyItemEntity)]),
+          () => new ListBuilder<CashFlowReportDailyItemEntity>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(CashFlowReportDailyItemEntity)]),
+          () => new ListBuilder<CashFlowReportDailyItemEntity>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(CashFlowReportDailyItemEntity)]),
+          () => new ListBuilder<CashFlowReportDailyItemEntity>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(CashFlowReportDailyItemEntity)]),
+          () => new ListBuilder<CashFlowReportDailyItemEntity>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(CashFlowReportDailyItemEntity)]),
+          () => new ListBuilder<CashFlowReportDailyItemEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(CashFlowReportWeeklyItemEntity)]),
+          () => new ListBuilder<CashFlowReportWeeklyItemEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(CashFlowReportWeeklyItemEntity)]),
+          () => new ListBuilder<CashFlowReportWeeklyItemEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(CashFlowReportWeeklyItemEntity)]),
+          () => new ListBuilder<CashFlowReportWeeklyItemEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(CashFlowReportWeeklyItemEntity)]),
+          () => new ListBuilder<CashFlowReportWeeklyItemEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(CashFlowReportWeeklyItemEntity)]),
+          () => new ListBuilder<CashFlowReportWeeklyItemEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(CashFlowReportMonthlyItemEntity)]),
+          () => new ListBuilder<CashFlowReportMonthlyItemEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(CashFlowReportMonthlyItemEntity)]),
+          () => new ListBuilder<CashFlowReportMonthlyItemEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(CashFlowReportMonthlyItemEntity)]),
+          () => new ListBuilder<CashFlowReportMonthlyItemEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(CashFlowReportMonthlyItemEntity)]),
+          () => new ListBuilder<CashFlowReportMonthlyItemEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(CashFlowReportMonthlyItemEntity)]),
+          () => new ListBuilder<CashFlowReportMonthlyItemEntity>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(CategoryGuessDto)]),
           () => new ListBuilder<CategoryGuessDto>())

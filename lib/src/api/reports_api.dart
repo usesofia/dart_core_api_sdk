@@ -7,8 +7,8 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_value/json_object.dart';
 import 'package:dart_core_api_sdk/src/api_util.dart';
+import 'package:dart_core_api_sdk/src/model/cash_flow_report_entity.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
 
 class ReportsApi {
@@ -39,9 +39,9 @@ class ReportsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [JsonObject] as data
+  /// Returns a [Future] containing a [Response] with a [CashFlowReportEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<JsonObject>> reportsControllerGetAccountsEntriesByCategoryReport({ 
+  Future<Response<CashFlowReportEntity>> reportsControllerGetAccountsEntriesByCategoryReport({ 
     required String workspaceId,
     String? accountIds,
     String? costCenterIds,
@@ -91,14 +91,14 @@ class ReportsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    JsonObject? _responseData;
+    CashFlowReportEntity? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(JsonObject),
-      ) as JsonObject;
+        specifiedType: const FullType(CashFlowReportEntity),
+      ) as CashFlowReportEntity;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -110,7 +110,7 @@ class ReportsApi {
       );
     }
 
-    return Response<JsonObject>(
+    return Response<CashFlowReportEntity>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -142,9 +142,9 @@ class ReportsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [JsonObject] as data
+  /// Returns a [Future] containing a [Response] with a [CashFlowReportEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<JsonObject>> reportsControllerGetAccountsOutputsByCategoryReport({ 
+  Future<Response<CashFlowReportEntity>> reportsControllerGetAccountsOutputsByCategoryReport({ 
     required String workspaceId,
     String? accountIds,
     String? costCenterIds,
@@ -194,14 +194,14 @@ class ReportsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    JsonObject? _responseData;
+    CashFlowReportEntity? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(JsonObject),
-      ) as JsonObject;
+        specifiedType: const FullType(CashFlowReportEntity),
+      ) as CashFlowReportEntity;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -213,7 +213,7 @@ class ReportsApi {
       );
     }
 
-    return Response<JsonObject>(
+    return Response<CashFlowReportEntity>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -242,9 +242,9 @@ class ReportsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [JsonObject] as data
+  /// Returns a [Future] containing a [Response] with a [CashFlowReportEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<JsonObject>> reportsControllerGetCardsCashFlowReport({ 
+  Future<Response<CashFlowReportEntity>> reportsControllerGetCardsCashFlowReport({ 
     required String workspaceId,
     String? accountIds,
     String? categoryIds,
@@ -288,14 +288,14 @@ class ReportsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    JsonObject? _responseData;
+    CashFlowReportEntity? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(JsonObject),
-      ) as JsonObject;
+        specifiedType: const FullType(CashFlowReportEntity),
+      ) as CashFlowReportEntity;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -307,7 +307,7 @@ class ReportsApi {
       );
     }
 
-    return Response<JsonObject>(
+    return Response<CashFlowReportEntity>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -339,9 +339,9 @@ class ReportsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [JsonObject] as data
+  /// Returns a [Future] containing a [Response] with a [CashFlowReportEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<JsonObject>> reportsControllerGetCardsOutputsByCategoryReport({ 
+  Future<Response<CashFlowReportEntity>> reportsControllerGetCardsOutputsByCategoryReport({ 
     required String workspaceId,
     String? accountIds,
     String? costCenterIds,
@@ -391,14 +391,14 @@ class ReportsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    JsonObject? _responseData;
+    CashFlowReportEntity? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(JsonObject),
-      ) as JsonObject;
+        specifiedType: const FullType(CashFlowReportEntity),
+      ) as CashFlowReportEntity;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -410,7 +410,7 @@ class ReportsApi {
       );
     }
 
-    return Response<JsonObject>(
+    return Response<CashFlowReportEntity>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -439,9 +439,9 @@ class ReportsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [JsonObject] as data
+  /// Returns a [Future] containing a [Response] with a [CashFlowReportEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<JsonObject>> reportsControllerGetCashFlowReport({ 
+  Future<Response<CashFlowReportEntity>> reportsControllerGetCashFlowReport({ 
     required String workspaceId,
     String? accountIds,
     String? categoryIds,
@@ -485,14 +485,14 @@ class ReportsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    JsonObject? _responseData;
+    CashFlowReportEntity? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(JsonObject),
-      ) as JsonObject;
+        specifiedType: const FullType(CashFlowReportEntity),
+      ) as CashFlowReportEntity;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -504,7 +504,7 @@ class ReportsApi {
       );
     }
 
-    return Response<JsonObject>(
+    return Response<CashFlowReportEntity>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
