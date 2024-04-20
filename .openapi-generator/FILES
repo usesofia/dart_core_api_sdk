@@ -22,6 +22,8 @@ doc/BankTransactionPaymentDataEntity.md
 doc/BankTransactionsApi.md
 doc/BankTransactionsControllerGetBankTransactionsNotConfirmed200Response.md
 doc/BankTransactionsPageEntity.md
+doc/CashFlowByCategoryReportEntity.md
+doc/CashFlowByCategoryReportItemEntity.md
 doc/CashFlowReportDailyItemEntity.md
 doc/CashFlowReportEntity.md
 doc/CashFlowReportMonthlyItemEntity.md
@@ -109,6 +111,8 @@ lib/src/model/bank_transaction_entity.dart
 lib/src/model/bank_transaction_payment_data_entity.dart
 lib/src/model/bank_transactions_controller_get_bank_transactions_not_confirmed200_response.dart
 lib/src/model/bank_transactions_page_entity.dart
+lib/src/model/cash_flow_by_category_report_entity.dart
+lib/src/model/cash_flow_by_category_report_item_entity.dart
 lib/src/model/cash_flow_report_daily_item_entity.dart
 lib/src/model/cash_flow_report_entity.dart
 lib/src/model/cash_flow_report_monthly_item_entity.dart
@@ -153,3 +157,5 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/cash_flow_by_category_report_entity_test.dart
+test/cash_flow_by_category_report_item_entity_test.dart

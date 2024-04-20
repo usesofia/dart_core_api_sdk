@@ -100,6 +100,7 @@ Class | Method | HTTP request | Description
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetCardsCashFlowReport**](doc/ReportsApi.md#reportscontrollergetcardscashflowreport) | **GET** /workspaces/{workspaceId}/reports/cards/cash-flow | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetCardsOutputsByCategoryReport**](doc/ReportsApi.md#reportscontrollergetcardsoutputsbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/cards/outputs-by-category | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetCashFlowReport**](doc/ReportsApi.md#reportscontrollergetcashflowreport) | **GET** /workspaces/{workspaceId}/reports/accounts/cash-flow | 
+[*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetFinancialStatementReport**](doc/ReportsApi.md#reportscontrollergetfinancialstatementreport) | **GET** /workspaces/{workspaceId}/reports/financial-statement | 
 [*StripeApi*](doc/StripeApi.md) | [**stripeControllerCreateCheckoutSessionForStripe**](doc/StripeApi.md#stripecontrollercreatecheckoutsessionforstripe) | **POST** /stripe/checkout-session | 
 [*StripeApi*](doc/StripeApi.md) | [**stripeControllerStripeWebhook**](doc/StripeApi.md#stripecontrollerstripewebhook) | **POST** /stripe/webhook | 
 [*SubscriptionProductsApi*](doc/SubscriptionProductsApi.md) | [**subscriptionProductsControllerList**](doc/SubscriptionProductsApi.md#subscriptionproductscontrollerlist) | **GET** /workspaces/{workspaceId}/subscription-products | 
@@ -126,6 +127,8 @@ Class | Method | HTTP request | Description
  - [BankTransactionPaymentDataEntity](doc/BankTransactionPaymentDataEntity.md)
  - [BankTransactionsControllerGetBankTransactionsNotConfirmed200Response](doc/BankTransactionsControllerGetBankTransactionsNotConfirmed200Response.md)
  - [BankTransactionsPageEntity](doc/BankTransactionsPageEntity.md)
+ - [CashFlowByCategoryReportEntity](doc/CashFlowByCategoryReportEntity.md)
+ - [CashFlowByCategoryReportItemEntity](doc/CashFlowByCategoryReportItemEntity.md)
  - [CashFlowReportDailyItemEntity](doc/CashFlowReportDailyItemEntity.md)
  - [CashFlowReportEntity](doc/CashFlowReportEntity.md)
  - [CashFlowReportMonthlyItemEntity](doc/CashFlowReportMonthlyItemEntity.md)

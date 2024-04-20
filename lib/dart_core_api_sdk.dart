@@ -39,6 +39,8 @@ export 'package:dart_core_api_sdk/src/model/bank_transaction_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transaction_payment_data_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transactions_controller_get_bank_transactions_not_confirmed200_response.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transactions_page_entity.dart';
+export 'package:dart_core_api_sdk/src/model/cash_flow_by_category_report_entity.dart';
+export 'package:dart_core_api_sdk/src/model/cash_flow_by_category_report_item_entity.dart';
 export 'package:dart_core_api_sdk/src/model/cash_flow_report_daily_item_entity.dart';
 export 'package:dart_core_api_sdk/src/model/cash_flow_report_entity.dart';
 export 'package:dart_core_api_sdk/src/model/cash_flow_report_monthly_item_entity.dart';

@@ -27,6 +27,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BankTransactionsControllerGetBankTransactionsNotConfirmed200Response
           .serializer)
       ..add(BankTransactionsPageEntity.serializer)
+      ..add(CashFlowByCategoryReportEntity.serializer)
+      ..add(CashFlowByCategoryReportItemEntity.serializer)
       ..add(CashFlowReportDailyItemEntity.serializer)
       ..add(CashFlowReportEntity.serializer)
       ..add(CashFlowReportMonthlyItemEntity.serializer)
@@ -88,6 +90,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(BankTransactionEntity)]),
           () => new ListBuilder<BankTransactionEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(CashFlowByCategoryReportItemEntity)]),
+          () => new ListBuilder<CashFlowByCategoryReportItemEntity>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(CashFlowReportDailyItemEntity)]),

@@ -14,10 +14,11 @@ Method | HTTP request | Description
 [**reportsControllerGetCardsCashFlowReport**](ReportsApi.md#reportscontrollergetcardscashflowreport) | **GET** /workspaces/{workspaceId}/reports/cards/cash-flow | 
 [**reportsControllerGetCardsOutputsByCategoryReport**](ReportsApi.md#reportscontrollergetcardsoutputsbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/cards/outputs-by-category | 
 [**reportsControllerGetCashFlowReport**](ReportsApi.md#reportscontrollergetcashflowreport) | **GET** /workspaces/{workspaceId}/reports/accounts/cash-flow | 
+[**reportsControllerGetFinancialStatementReport**](ReportsApi.md#reportscontrollergetfinancialstatementreport) | **GET** /workspaces/{workspaceId}/reports/financial-statement | 
 
 
 # **reportsControllerGetAccountsEntriesByCategoryReport**
-> CashFlowReportEntity reportsControllerGetAccountsEntriesByCategoryReport(workspaceId, accountIds, costCenterIds, considerIgnored, ignoreInternalTransfers, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate)
+> CashFlowByCategoryReportEntity reportsControllerGetAccountsEntriesByCategoryReport(workspaceId, accountIds, costCenterIds, considerIgnored, ignoreInternalTransfers, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate)
 
 
 
@@ -60,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CashFlowReportEntity**](CashFlowReportEntity.md)
+[**CashFlowByCategoryReportEntity**](CashFlowByCategoryReportEntity.md)
 
 ### Authorization
 
@@ -74,7 +75,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **reportsControllerGetAccountsOutputsByCategoryReport**
-> CashFlowReportEntity reportsControllerGetAccountsOutputsByCategoryReport(workspaceId, accountIds, costCenterIds, considerIgnored, ignoreInternalTransfers, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate)
+> CashFlowByCategoryReportEntity reportsControllerGetAccountsOutputsByCategoryReport(workspaceId, accountIds, costCenterIds, considerIgnored, ignoreInternalTransfers, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate)
 
 
 
@@ -117,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CashFlowReportEntity**](CashFlowReportEntity.md)
+[**CashFlowByCategoryReportEntity**](CashFlowByCategoryReportEntity.md)
 
 ### Authorization
 
@@ -273,6 +274,61 @@ Name | Type | Description  | Notes
  **costCenterIds** | **String**|  | [optional] 
  **considerIgnored** | **bool**|  | [optional] 
  **ignoreInternalTransfers** | **bool**|  | [optional] 
+
+### Return type
+
+[**CashFlowReportEntity**](CashFlowReportEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **reportsControllerGetFinancialStatementReport**
+> CashFlowReportEntity reportsControllerGetFinancialStatementReport(workspaceId, accountIds, costCenterIds, considerIgnored, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getReportsApi();
+final String workspaceId = workspaceId_example; // String | 
+final String accountIds = accountIds_example; // String | 
+final String costCenterIds = costCenterIds_example; // String | 
+final bool considerIgnored = true; // bool | 
+final String minPostedDate = minPostedDate_example; // String | 
+final String maxPostedDate = maxPostedDate_example; // String | 
+final String minCompetencyDate = minCompetencyDate_example; // String | 
+final String maxCompetencyDate = maxCompetencyDate_example; // String | 
+
+try {
+    final response = api.reportsControllerGetFinancialStatementReport(workspaceId, accountIds, costCenterIds, considerIgnored, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling ReportsApi->reportsControllerGetFinancialStatementReport: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **workspaceId** | **String**|  | 
+ **accountIds** | **String**|  | [optional] 
+ **costCenterIds** | **String**|  | [optional] 
+ **considerIgnored** | **bool**|  | [optional] 
+ **minPostedDate** | **String**|  | [optional] 
+ **maxPostedDate** | **String**|  | [optional] 
+ **minCompetencyDate** | **String**|  | [optional] 
+ **maxCompetencyDate** | **String**|  | [optional] 
 
 ### Return type
 
