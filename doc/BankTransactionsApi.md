@@ -120,7 +120,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bankTransactionsControllerGetBankTransactionsNotConfirmed**
-> BankTransactionsControllerGetBankTransactionsNotConfirmed200Response bankTransactionsControllerGetBankTransactionsNotConfirmed(workspaceId, pageIndex, pageSize)
+> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactionsNotConfirmed(workspaceId, pageIndex, pageSize)
 
 
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BankTransactionsControllerGetBankTransactionsNotConfirmed200Response**](BankTransactionsControllerGetBankTransactionsNotConfirmed200Response.md)
+[**BankTransactionsPageEntity**](BankTransactionsPageEntity.md)
 
 ### Authorization
 

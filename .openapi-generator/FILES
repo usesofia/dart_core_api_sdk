@@ -20,7 +20,6 @@ doc/BankTransactionCreditCardMetadataEntity.md
 doc/BankTransactionEntity.md
 doc/BankTransactionPaymentDataEntity.md
 doc/BankTransactionsApi.md
-doc/BankTransactionsControllerGetBankTransactionsNotConfirmed200Response.md
 doc/BankTransactionsPageEntity.md
 doc/CashFlowByCategoryReportEntity.md
 doc/CashFlowByCategoryReportItemEntity.md
@@ -47,7 +46,6 @@ doc/EmailInUseEntity.md
 doc/ErrorEntity.md
 doc/ExceptionResponseEntity.md
 doc/FinancialTransactionsFeatureSpecificationEntity.md
-doc/PageResponseEntity.md
 doc/PaymentDataDto.md
 doc/PaymentsManagerProductDataEntity.md
 doc/PaymentsManagerProductPriceEntity.md
@@ -109,7 +107,6 @@ lib/src/model/bank_transaction_cost_center_entity.dart
 lib/src/model/bank_transaction_credit_card_metadata_entity.dart
 lib/src/model/bank_transaction_entity.dart
 lib/src/model/bank_transaction_payment_data_entity.dart
-lib/src/model/bank_transactions_controller_get_bank_transactions_not_confirmed200_response.dart
 lib/src/model/bank_transactions_page_entity.dart
 lib/src/model/cash_flow_by_category_report_entity.dart
 lib/src/model/cash_flow_by_category_report_item_entity.dart
@@ -137,7 +134,6 @@ lib/src/model/email_in_use_entity.dart
 lib/src/model/error_entity.dart
 lib/src/model/exception_response_entity.dart
 lib/src/model/financial_transactions_feature_specification_entity.dart
-lib/src/model/page_response_entity.dart
 lib/src/model/payment_data_dto.dart
 lib/src/model/payments_manager_product_data_entity.dart
 lib/src/model/payments_manager_product_price_entity.dart

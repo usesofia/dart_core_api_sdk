@@ -10,7 +10,6 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:dart_core_api_sdk/src/api_util.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_entity.dart';
-import 'package:dart_core_api_sdk/src/model/bank_transactions_controller_get_bank_transactions_not_confirmed200_response.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transactions_page_entity.dart';
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
@@ -242,9 +241,9 @@ class BankTransactionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BankTransactionsControllerGetBankTransactionsNotConfirmed200Response] as data
+  /// Returns a [Future] containing a [Response] with a [BankTransactionsPageEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankTransactionsControllerGetBankTransactionsNotConfirmed200Response>> bankTransactionsControllerGetBankTransactionsNotConfirmed({ 
+  Future<Response<BankTransactionsPageEntity>> bankTransactionsControllerGetBankTransactionsNotConfirmed({ 
     required String workspaceId,
     num? pageIndex,
     num? pageSize,
@@ -282,14 +281,14 @@ class BankTransactionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BankTransactionsControllerGetBankTransactionsNotConfirmed200Response? _responseData;
+    BankTransactionsPageEntity? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BankTransactionsControllerGetBankTransactionsNotConfirmed200Response),
-      ) as BankTransactionsControllerGetBankTransactionsNotConfirmed200Response;
+        specifiedType: const FullType(BankTransactionsPageEntity),
+      ) as BankTransactionsPageEntity;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -301,7 +300,7 @@ class BankTransactionsApi {
       );
     }
 
-    return Response<BankTransactionsControllerGetBankTransactionsNotConfirmed200Response>(
+    return Response<BankTransactionsPageEntity>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

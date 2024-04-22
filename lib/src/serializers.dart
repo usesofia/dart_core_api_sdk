@@ -27,7 +27,6 @@ import 'package:dart_core_api_sdk/src/model/bank_transaction_cost_center_entity.
 import 'package:dart_core_api_sdk/src/model/bank_transaction_credit_card_metadata_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_payment_data_entity.dart';
-import 'package:dart_core_api_sdk/src/model/bank_transactions_controller_get_bank_transactions_not_confirmed200_response.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transactions_page_entity.dart';
 import 'package:dart_core_api_sdk/src/model/cash_flow_by_category_report_entity.dart';
 import 'package:dart_core_api_sdk/src/model/cash_flow_by_category_report_item_entity.dart';
@@ -54,7 +53,6 @@ import 'package:dart_core_api_sdk/src/model/email_in_use_entity.dart';
 import 'package:dart_core_api_sdk/src/model/error_entity.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_core_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
-import 'package:dart_core_api_sdk/src/model/page_response_entity.dart';
 import 'package:dart_core_api_sdk/src/model/payment_data_dto.dart';
 import 'package:dart_core_api_sdk/src/model/payments_manager_product_data_entity.dart';
 import 'package:dart_core_api_sdk/src/model/payments_manager_product_price_entity.dart';
@@ -89,7 +87,6 @@ part 'serializers.g.dart';
   BankTransactionCreditCardMetadataEntity,
   BankTransactionEntity,
   BankTransactionPaymentDataEntity,
-  BankTransactionsControllerGetBankTransactionsNotConfirmed200Response,
   BankTransactionsPageEntity,
   CashFlowByCategoryReportEntity,
   CashFlowByCategoryReportItemEntity,
@@ -116,7 +113,6 @@ part 'serializers.g.dart';
   ErrorEntity,
   ExceptionResponseEntity,
   FinancialTransactionsFeatureSpecificationEntity,
-  PageResponseEntity,$PageResponseEntity,
   PaymentDataDto,
   PaymentsManagerProductDataEntity,
   PaymentsManagerProductPriceEntity,
@@ -164,7 +160,6 @@ Serializers serializers = (_$serializers.toBuilder()
         const FullType(BuiltList, [FullType(BankConnectionWithAccountsEntity)]),
         () => ListBuilder<BankConnectionWithAccountsEntity>(),
       )
-      ..add(PageResponseEntity.serializer)
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())
       ..add(const DateSerializer())

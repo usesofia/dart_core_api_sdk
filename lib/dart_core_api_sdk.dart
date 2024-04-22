@@ -37,7 +37,6 @@ export 'package:dart_core_api_sdk/src/model/bank_transaction_cost_center_entity.
 export 'package:dart_core_api_sdk/src/model/bank_transaction_credit_card_metadata_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transaction_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transaction_payment_data_entity.dart';
-export 'package:dart_core_api_sdk/src/model/bank_transactions_controller_get_bank_transactions_not_confirmed200_response.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transactions_page_entity.dart';
 export 'package:dart_core_api_sdk/src/model/cash_flow_by_category_report_entity.dart';
 export 'package:dart_core_api_sdk/src/model/cash_flow_by_category_report_item_entity.dart';
@@ -64,7 +63,6 @@ export 'package:dart_core_api_sdk/src/model/email_in_use_entity.dart';
 export 'package:dart_core_api_sdk/src/model/error_entity.dart';
 export 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
 export 'package:dart_core_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
-export 'package:dart_core_api_sdk/src/model/page_response_entity.dart';
 export 'package:dart_core_api_sdk/src/model/payment_data_dto.dart';
 export 'package:dart_core_api_sdk/src/model/payments_manager_product_data_entity.dart';
 export 'package:dart_core_api_sdk/src/model/payments_manager_product_price_entity.dart';
