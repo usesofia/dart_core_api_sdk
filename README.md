@@ -108,6 +108,7 @@ Class | Method | HTTP request | Description
 [*WorkspaceSubscriptionsApi*](doc/WorkspaceSubscriptionsApi.md) | [**workspaceSubscriptionsControllerGet**](doc/WorkspaceSubscriptionsApi.md#workspacesubscriptionscontrollerget) | **GET** /workspaces/{workspaceId}/subscription | 
 [*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerCreate**](doc/WorkspacesApi.md#workspacescontrollercreate) | **POST** /workspaces | 
 [*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerFetchUserRelatedWorkspaces**](doc/WorkspacesApi.md#workspacescontrollerfetchuserrelatedworkspaces) | **GET** /workspaces/related-to-me | 
+[*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerGet**](doc/WorkspacesApi.md#workspacescontrollerget) | **GET** /workspaces/{workspaceId} | 
 [*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerParcialUpdate**](doc/WorkspacesApi.md#workspacescontrollerparcialupdate) | **PATCH** /workspaces/{workspaceId} | 
 
 

@@ -155,4 +155,3 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/parcial_update_workspace_request_dto_test.dart

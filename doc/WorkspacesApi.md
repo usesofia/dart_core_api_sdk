@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**workspacesControllerCreate**](WorkspacesApi.md#workspacescontrollercreate) | **POST** /workspaces | 
 [**workspacesControllerFetchUserRelatedWorkspaces**](WorkspacesApi.md#workspacescontrollerfetchuserrelatedworkspaces) | **GET** /workspaces/related-to-me | 
+[**workspacesControllerGet**](WorkspacesApi.md#workspacescontrollerget) | **GET** /workspaces/{workspaceId} | 
 [**workspacesControllerParcialUpdate**](WorkspacesApi.md#workspacescontrollerparcialupdate) | **PATCH** /workspaces/{workspaceId} | 
 
 
@@ -80,6 +81,47 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**BuiltList&lt;UserRelatedWorkspaceEntity&gt;**](UserRelatedWorkspaceEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **workspacesControllerGet**
+> WorkspaceEntity workspacesControllerGet(workspaceId)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getWorkspacesApi();
+final String workspaceId = workspaceId_example; // String | 
+
+try {
+    final response = api.workspacesControllerGet(workspaceId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling WorkspacesApi->workspacesControllerGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **workspaceId** | **String**|  | 
+
+### Return type
+
+[**WorkspaceEntity**](WorkspaceEntity.md)
 
 ### Authorization
 
