@@ -108,6 +108,7 @@ Class | Method | HTTP request | Description
 [*WorkspaceSubscriptionsApi*](doc/WorkspaceSubscriptionsApi.md) | [**workspaceSubscriptionsControllerGet**](doc/WorkspaceSubscriptionsApi.md#workspacesubscriptionscontrollerget) | **GET** /workspaces/{workspaceId}/subscription | 
 [*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerCreate**](doc/WorkspacesApi.md#workspacescontrollercreate) | **POST** /workspaces | 
 [*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerFetchUserRelatedWorkspaces**](doc/WorkspacesApi.md#workspacescontrollerfetchuserrelatedworkspaces) | **GET** /workspaces/related-to-me | 
+[*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerParcialUpdate**](doc/WorkspacesApi.md#workspacescontrollerparcialupdate) | **PATCH** /workspaces/{workspaceId} | 
 
 
 ## Documentation For Models
@@ -151,6 +152,7 @@ Class | Method | HTTP request | Description
  - [ErrorEntity](doc/ErrorEntity.md)
  - [ExceptionResponseEntity](doc/ExceptionResponseEntity.md)
  - [FinancialTransactionsFeatureSpecificationEntity](doc/FinancialTransactionsFeatureSpecificationEntity.md)
+ - [ParcialUpdateWorkspaceRequestDto](doc/ParcialUpdateWorkspaceRequestDto.md)
  - [PaymentDataDto](doc/PaymentDataDto.md)
  - [PaymentsManagerProductDataEntity](doc/PaymentsManagerProductDataEntity.md)
  - [PaymentsManagerProductPriceEntity](doc/PaymentsManagerProductPriceEntity.md)

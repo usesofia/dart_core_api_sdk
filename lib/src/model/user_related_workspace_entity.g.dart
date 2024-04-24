@@ -21,6 +21,8 @@ class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
   final DateTime createdAt;
   @override
   final String relationType;
+  @override
+  final String? unverifiedBankTransactionHistory;
 
   factory _$UserRelatedWorkspaceEntity(
           [void Function(UserRelatedWorkspaceEntityBuilder)? updates]) =>
@@ -33,7 +35,8 @@ class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
       required this.type,
       required this.creatorUserId,
       required this.createdAt,
-      required this.relationType})
+      required this.relationType,
+      this.unverifiedBankTransactionHistory})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         id, r'UserRelatedWorkspaceEntity', 'id');
@@ -70,7 +73,9 @@ class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
         type == other.type &&
         creatorUserId == other.creatorUserId &&
         createdAt == other.createdAt &&
-        relationType == other.relationType;
+        relationType == other.relationType &&
+        unverifiedBankTransactionHistory ==
+            other.unverifiedBankTransactionHistory;
   }
 
   @override
@@ -83,6 +88,7 @@ class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
     _$hash = $jc(_$hash, creatorUserId.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, relationType.hashCode);
+    _$hash = $jc(_$hash, unverifiedBankTransactionHistory.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -96,7 +102,9 @@ class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
           ..add('type', type)
           ..add('creatorUserId', creatorUserId)
           ..add('createdAt', createdAt)
-          ..add('relationType', relationType))
+          ..add('relationType', relationType)
+          ..add('unverifiedBankTransactionHistory',
+              unverifiedBankTransactionHistory))
         .toString();
   }
 }
@@ -135,6 +143,14 @@ class UserRelatedWorkspaceEntityBuilder
   String? get relationType => _$this._relationType;
   set relationType(String? relationType) => _$this._relationType = relationType;
 
+  String? _unverifiedBankTransactionHistory;
+  String? get unverifiedBankTransactionHistory =>
+      _$this._unverifiedBankTransactionHistory;
+  set unverifiedBankTransactionHistory(
+          String? unverifiedBankTransactionHistory) =>
+      _$this._unverifiedBankTransactionHistory =
+          unverifiedBankTransactionHistory;
+
   UserRelatedWorkspaceEntityBuilder() {
     UserRelatedWorkspaceEntity._defaults(this);
   }
@@ -149,6 +165,7 @@ class UserRelatedWorkspaceEntityBuilder
       _creatorUserId = $v.creatorUserId;
       _createdAt = $v.createdAt;
       _relationType = $v.relationType;
+      _unverifiedBankTransactionHistory = $v.unverifiedBankTransactionHistory;
       _$v = null;
     }
     return this;
@@ -184,7 +201,8 @@ class UserRelatedWorkspaceEntityBuilder
             createdAt: BuiltValueNullFieldError.checkNotNull(
                 createdAt, r'UserRelatedWorkspaceEntity', 'createdAt'),
             relationType: BuiltValueNullFieldError.checkNotNull(
-                relationType, r'UserRelatedWorkspaceEntity', 'relationType'));
+                relationType, r'UserRelatedWorkspaceEntity', 'relationType'),
+            unverifiedBankTransactionHistory: unverifiedBankTransactionHistory);
     replace(_$result);
     return _$result;
   }
