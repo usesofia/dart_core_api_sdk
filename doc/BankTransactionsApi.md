@@ -120,7 +120,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bankTransactionsControllerGetBankTransactionsNotConfirmed**
-> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactionsNotConfirmed(workspaceId, considerIgnored, pageIndex, pageSize)
+> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactionsNotConfirmed(workspaceId, pageIndex, pageSize, considerIgnored)
 
 
 
@@ -130,12 +130,12 @@ import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getBankTransactionsApi();
 final String workspaceId = workspaceId_example; // String | 
-final bool considerIgnored = true; // bool | 
 final num pageIndex = 8.14; // num | 
 final num pageSize = 8.14; // num | 
+final bool considerIgnored = true; // bool | 
 
 try {
-    final response = api.bankTransactionsControllerGetBankTransactionsNotConfirmed(workspaceId, considerIgnored, pageIndex, pageSize);
+    final response = api.bankTransactionsControllerGetBankTransactionsNotConfirmed(workspaceId, pageIndex, pageSize, considerIgnored);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetBankTransactionsNotConfirmed: $e\n');
@@ -147,9 +147,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspaceId** | **String**|  | 
- **considerIgnored** | **bool**|  | 
  **pageIndex** | **num**|  | [optional] 
  **pageSize** | **num**|  | [optional] 
+ **considerIgnored** | **bool**|  | [optional] 
 
 ### Return type
 

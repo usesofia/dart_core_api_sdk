@@ -232,9 +232,9 @@ class BankTransactionsApi {
   ///
   /// Parameters:
   /// * [workspaceId] 
-  /// * [considerIgnored] 
   /// * [pageIndex] 
   /// * [pageSize] 
+  /// * [considerIgnored] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -246,9 +246,9 @@ class BankTransactionsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BankTransactionsPageEntity>> bankTransactionsControllerGetBankTransactionsNotConfirmed({ 
     required String workspaceId,
-    required bool considerIgnored,
     num? pageIndex,
     num? pageSize,
+    bool? considerIgnored,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -272,7 +272,7 @@ class BankTransactionsApi {
     final _queryParameters = <String, dynamic>{
       if (pageIndex != null) r'pageIndex': encodeQueryParameter(_serializers, pageIndex, const FullType(num)),
       if (pageSize != null) r'pageSize': encodeQueryParameter(_serializers, pageSize, const FullType(num)),
-      r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
+      if (considerIgnored != null) r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
