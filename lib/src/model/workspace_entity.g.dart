@@ -21,8 +21,6 @@ class _$WorkspaceEntity extends WorkspaceEntity {
   final DateTime createdAt;
   @override
   final String selectedTreeId;
-  @override
-  final String? unverifiedBankTransactionHistory;
 
   factory _$WorkspaceEntity([void Function(WorkspaceEntityBuilder)? updates]) =>
       (new WorkspaceEntityBuilder()..update(updates))._build();
@@ -34,8 +32,7 @@ class _$WorkspaceEntity extends WorkspaceEntity {
       required this.type,
       required this.creatorUserId,
       required this.createdAt,
-      required this.selectedTreeId,
-      this.unverifiedBankTransactionHistory})
+      required this.selectedTreeId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'WorkspaceEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
@@ -68,9 +65,7 @@ class _$WorkspaceEntity extends WorkspaceEntity {
         type == other.type &&
         creatorUserId == other.creatorUserId &&
         createdAt == other.createdAt &&
-        selectedTreeId == other.selectedTreeId &&
-        unverifiedBankTransactionHistory ==
-            other.unverifiedBankTransactionHistory;
+        selectedTreeId == other.selectedTreeId;
   }
 
   @override
@@ -83,7 +78,6 @@ class _$WorkspaceEntity extends WorkspaceEntity {
     _$hash = $jc(_$hash, creatorUserId.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, selectedTreeId.hashCode);
-    _$hash = $jc(_$hash, unverifiedBankTransactionHistory.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -97,9 +91,7 @@ class _$WorkspaceEntity extends WorkspaceEntity {
           ..add('type', type)
           ..add('creatorUserId', creatorUserId)
           ..add('createdAt', createdAt)
-          ..add('selectedTreeId', selectedTreeId)
-          ..add('unverifiedBankTransactionHistory',
-              unverifiedBankTransactionHistory))
+          ..add('selectedTreeId', selectedTreeId))
         .toString();
   }
 }
@@ -138,14 +130,6 @@ class WorkspaceEntityBuilder
   set selectedTreeId(String? selectedTreeId) =>
       _$this._selectedTreeId = selectedTreeId;
 
-  String? _unverifiedBankTransactionHistory;
-  String? get unverifiedBankTransactionHistory =>
-      _$this._unverifiedBankTransactionHistory;
-  set unverifiedBankTransactionHistory(
-          String? unverifiedBankTransactionHistory) =>
-      _$this._unverifiedBankTransactionHistory =
-          unverifiedBankTransactionHistory;
-
   WorkspaceEntityBuilder() {
     WorkspaceEntity._defaults(this);
   }
@@ -160,7 +144,6 @@ class WorkspaceEntityBuilder
       _creatorUserId = $v.creatorUserId;
       _createdAt = $v.createdAt;
       _selectedTreeId = $v.selectedTreeId;
-      _unverifiedBankTransactionHistory = $v.unverifiedBankTransactionHistory;
       _$v = null;
     }
     return this;
@@ -196,8 +179,7 @@ class WorkspaceEntityBuilder
             createdAt: BuiltValueNullFieldError.checkNotNull(
                 createdAt, r'WorkspaceEntity', 'createdAt'),
             selectedTreeId: BuiltValueNullFieldError.checkNotNull(
-                selectedTreeId, r'WorkspaceEntity', 'selectedTreeId'),
-            unverifiedBankTransactionHistory: unverifiedBankTransactionHistory);
+                selectedTreeId, r'WorkspaceEntity', 'selectedTreeId'));
     replace(_$result);
     return _$result;
   }

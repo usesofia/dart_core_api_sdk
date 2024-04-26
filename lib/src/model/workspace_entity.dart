@@ -18,7 +18,6 @@ part 'workspace_entity.g.dart';
 /// * [creatorUserId] 
 /// * [createdAt] 
 /// * [selectedTreeId] 
-/// * [unverifiedBankTransactionHistory] 
 @BuiltValue()
 abstract class WorkspaceEntity implements Built<WorkspaceEntity, WorkspaceEntityBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -41,9 +40,6 @@ abstract class WorkspaceEntity implements Built<WorkspaceEntity, WorkspaceEntity
 
   @BuiltValueField(wireName: r'selectedTreeId')
   String get selectedTreeId;
-
-  @BuiltValueField(wireName: r'unverifiedBankTransactionHistory')
-  String? get unverifiedBankTransactionHistory;
 
   WorkspaceEntity._();
 
@@ -103,13 +99,6 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
       object.selectedTreeId,
       specifiedType: const FullType(String),
     );
-    if (object.unverifiedBankTransactionHistory != null) {
-      yield r'unverifiedBankTransactionHistory';
-      yield serializers.serialize(
-        object.unverifiedBankTransactionHistory,
-        specifiedType: const FullType(String),
-      );
-    }
   }
 
   @override
@@ -181,13 +170,6 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
             specifiedType: const FullType(String),
           ) as String;
           result.selectedTreeId = valueDes;
-          break;
-        case r'unverifiedBankTransactionHistory':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.unverifiedBankTransactionHistory = valueDes;
           break;
         default:
           unhandled.add(key);

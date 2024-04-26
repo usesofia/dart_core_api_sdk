@@ -10,22 +10,14 @@ class _$ParcialUpdateWorkspaceRequestDto
     extends ParcialUpdateWorkspaceRequestDto {
   @override
   final String name;
-  @override
-  final String unverifiedBankTransactionHistory;
 
   factory _$ParcialUpdateWorkspaceRequestDto(
           [void Function(ParcialUpdateWorkspaceRequestDtoBuilder)? updates]) =>
       (new ParcialUpdateWorkspaceRequestDtoBuilder()..update(updates))._build();
 
-  _$ParcialUpdateWorkspaceRequestDto._(
-      {required this.name, required this.unverifiedBankTransactionHistory})
-      : super._() {
+  _$ParcialUpdateWorkspaceRequestDto._({required this.name}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         name, r'ParcialUpdateWorkspaceRequestDto', 'name');
-    BuiltValueNullFieldError.checkNotNull(
-        unverifiedBankTransactionHistory,
-        r'ParcialUpdateWorkspaceRequestDto',
-        'unverifiedBankTransactionHistory');
   }
 
   @override
@@ -40,17 +32,13 @@ class _$ParcialUpdateWorkspaceRequestDto
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is ParcialUpdateWorkspaceRequestDto &&
-        name == other.name &&
-        unverifiedBankTransactionHistory ==
-            other.unverifiedBankTransactionHistory;
+    return other is ParcialUpdateWorkspaceRequestDto && name == other.name;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, unverifiedBankTransactionHistory.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -58,9 +46,7 @@ class _$ParcialUpdateWorkspaceRequestDto
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ParcialUpdateWorkspaceRequestDto')
-          ..add('name', name)
-          ..add('unverifiedBankTransactionHistory',
-              unverifiedBankTransactionHistory))
+          ..add('name', name))
         .toString();
   }
 }
@@ -75,14 +61,6 @@ class ParcialUpdateWorkspaceRequestDtoBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  String? _unverifiedBankTransactionHistory;
-  String? get unverifiedBankTransactionHistory =>
-      _$this._unverifiedBankTransactionHistory;
-  set unverifiedBankTransactionHistory(
-          String? unverifiedBankTransactionHistory) =>
-      _$this._unverifiedBankTransactionHistory =
-          unverifiedBankTransactionHistory;
-
   ParcialUpdateWorkspaceRequestDtoBuilder() {
     ParcialUpdateWorkspaceRequestDto._defaults(this);
   }
@@ -91,7 +69,6 @@ class ParcialUpdateWorkspaceRequestDtoBuilder
     final $v = _$v;
     if ($v != null) {
       _name = $v.name;
-      _unverifiedBankTransactionHistory = $v.unverifiedBankTransactionHistory;
       _$v = null;
     }
     return this;
@@ -115,12 +92,7 @@ class ParcialUpdateWorkspaceRequestDtoBuilder
     final _$result = _$v ??
         new _$ParcialUpdateWorkspaceRequestDto._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'ParcialUpdateWorkspaceRequestDto', 'name'),
-            unverifiedBankTransactionHistory:
-                BuiltValueNullFieldError.checkNotNull(
-                    unverifiedBankTransactionHistory,
-                    r'ParcialUpdateWorkspaceRequestDto',
-                    'unverifiedBankTransactionHistory'));
+                name, r'ParcialUpdateWorkspaceRequestDto', 'name'));
     replace(_$result);
     return _$result;
   }

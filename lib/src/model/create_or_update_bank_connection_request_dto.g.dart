@@ -16,6 +16,8 @@ class _$CreateOrUpdateBankConnectionRequestDto
   final String providerItemId;
   @override
   final String providerConnectorId;
+  @override
+  final String historyRange;
 
   factory _$CreateOrUpdateBankConnectionRequestDto(
           [void Function(CreateOrUpdateBankConnectionRequestDtoBuilder)?
@@ -27,7 +29,8 @@ class _$CreateOrUpdateBankConnectionRequestDto
       {required this.createdByUserId,
       required this.provider,
       required this.providerItemId,
-      required this.providerConnectorId})
+      required this.providerConnectorId,
+      required this.historyRange})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(createdByUserId,
         r'CreateOrUpdateBankConnectionRequestDto', 'createdByUserId');
@@ -37,6 +40,8 @@ class _$CreateOrUpdateBankConnectionRequestDto
         r'CreateOrUpdateBankConnectionRequestDto', 'providerItemId');
     BuiltValueNullFieldError.checkNotNull(providerConnectorId,
         r'CreateOrUpdateBankConnectionRequestDto', 'providerConnectorId');
+    BuiltValueNullFieldError.checkNotNull(historyRange,
+        r'CreateOrUpdateBankConnectionRequestDto', 'historyRange');
   }
 
   @override
@@ -56,7 +61,8 @@ class _$CreateOrUpdateBankConnectionRequestDto
         createdByUserId == other.createdByUserId &&
         provider == other.provider &&
         providerItemId == other.providerItemId &&
-        providerConnectorId == other.providerConnectorId;
+        providerConnectorId == other.providerConnectorId &&
+        historyRange == other.historyRange;
   }
 
   @override
@@ -66,6 +72,7 @@ class _$CreateOrUpdateBankConnectionRequestDto
     _$hash = $jc(_$hash, provider.hashCode);
     _$hash = $jc(_$hash, providerItemId.hashCode);
     _$hash = $jc(_$hash, providerConnectorId.hashCode);
+    _$hash = $jc(_$hash, historyRange.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -77,7 +84,8 @@ class _$CreateOrUpdateBankConnectionRequestDto
           ..add('createdByUserId', createdByUserId)
           ..add('provider', provider)
           ..add('providerItemId', providerItemId)
-          ..add('providerConnectorId', providerConnectorId))
+          ..add('providerConnectorId', providerConnectorId)
+          ..add('historyRange', historyRange))
         .toString();
   }
 }
@@ -107,6 +115,10 @@ class CreateOrUpdateBankConnectionRequestDtoBuilder
   set providerConnectorId(String? providerConnectorId) =>
       _$this._providerConnectorId = providerConnectorId;
 
+  String? _historyRange;
+  String? get historyRange => _$this._historyRange;
+  set historyRange(String? historyRange) => _$this._historyRange = historyRange;
+
   CreateOrUpdateBankConnectionRequestDtoBuilder() {
     CreateOrUpdateBankConnectionRequestDto._defaults(this);
   }
@@ -118,6 +130,7 @@ class CreateOrUpdateBankConnectionRequestDtoBuilder
       _provider = $v.provider;
       _providerItemId = $v.providerItemId;
       _providerConnectorId = $v.providerConnectorId;
+      _historyRange = $v.historyRange;
       _$v = null;
     }
     return this;
@@ -145,8 +158,8 @@ class CreateOrUpdateBankConnectionRequestDtoBuilder
                 createdByUserId,
                 r'CreateOrUpdateBankConnectionRequestDto',
                 'createdByUserId'),
-            provider: BuiltValueNullFieldError.checkNotNull(provider,
-                r'CreateOrUpdateBankConnectionRequestDto', 'provider'),
+            provider: BuiltValueNullFieldError.checkNotNull(
+                provider, r'CreateOrUpdateBankConnectionRequestDto', 'provider'),
             providerItemId: BuiltValueNullFieldError.checkNotNull(
                 providerItemId,
                 r'CreateOrUpdateBankConnectionRequestDto',
@@ -154,7 +167,9 @@ class CreateOrUpdateBankConnectionRequestDtoBuilder
             providerConnectorId: BuiltValueNullFieldError.checkNotNull(
                 providerConnectorId,
                 r'CreateOrUpdateBankConnectionRequestDto',
-                'providerConnectorId'));
+                'providerConnectorId'),
+            historyRange: BuiltValueNullFieldError.checkNotNull(historyRange,
+                r'CreateOrUpdateBankConnectionRequestDto', 'historyRange'));
     replace(_$result);
     return _$result;
   }

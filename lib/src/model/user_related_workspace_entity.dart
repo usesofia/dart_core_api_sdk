@@ -18,7 +18,6 @@ part 'user_related_workspace_entity.g.dart';
 /// * [creatorUserId] 
 /// * [createdAt] 
 /// * [relationType] 
-/// * [unverifiedBankTransactionHistory] 
 @BuiltValue()
 abstract class UserRelatedWorkspaceEntity implements Built<UserRelatedWorkspaceEntity, UserRelatedWorkspaceEntityBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -41,9 +40,6 @@ abstract class UserRelatedWorkspaceEntity implements Built<UserRelatedWorkspaceE
 
   @BuiltValueField(wireName: r'relationType')
   String get relationType;
-
-  @BuiltValueField(wireName: r'unverifiedBankTransactionHistory')
-  String? get unverifiedBankTransactionHistory;
 
   UserRelatedWorkspaceEntity._();
 
@@ -103,13 +99,6 @@ class _$UserRelatedWorkspaceEntitySerializer implements PrimitiveSerializer<User
       object.relationType,
       specifiedType: const FullType(String),
     );
-    if (object.unverifiedBankTransactionHistory != null) {
-      yield r'unverifiedBankTransactionHistory';
-      yield serializers.serialize(
-        object.unverifiedBankTransactionHistory,
-        specifiedType: const FullType(String),
-      );
-    }
   }
 
   @override
@@ -181,13 +170,6 @@ class _$UserRelatedWorkspaceEntitySerializer implements PrimitiveSerializer<User
             specifiedType: const FullType(String),
           ) as String;
           result.relationType = valueDes;
-          break;
-        case r'unverifiedBankTransactionHistory':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.unverifiedBankTransactionHistory = valueDes;
           break;
         default:
           unhandled.add(key);

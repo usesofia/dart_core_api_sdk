@@ -12,14 +12,10 @@ part 'parcial_update_workspace_request_dto.g.dart';
 ///
 /// Properties:
 /// * [name] 
-/// * [unverifiedBankTransactionHistory] 
 @BuiltValue()
 abstract class ParcialUpdateWorkspaceRequestDto implements Built<ParcialUpdateWorkspaceRequestDto, ParcialUpdateWorkspaceRequestDtoBuilder> {
   @BuiltValueField(wireName: r'name')
   String get name;
-
-  @BuiltValueField(wireName: r'unverifiedBankTransactionHistory')
-  String get unverifiedBankTransactionHistory;
 
   ParcialUpdateWorkspaceRequestDto._();
 
@@ -47,11 +43,6 @@ class _$ParcialUpdateWorkspaceRequestDtoSerializer implements PrimitiveSerialize
     yield r'name';
     yield serializers.serialize(
       object.name,
-      specifiedType: const FullType(String),
-    );
-    yield r'unverifiedBankTransactionHistory';
-    yield serializers.serialize(
-      object.unverifiedBankTransactionHistory,
       specifiedType: const FullType(String),
     );
   }
@@ -83,13 +74,6 @@ class _$ParcialUpdateWorkspaceRequestDtoSerializer implements PrimitiveSerialize
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
-          break;
-        case r'unverifiedBankTransactionHistory':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.unverifiedBankTransactionHistory = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -18,6 +18,7 @@ part 'bank_connection_entity.g.dart';
 /// * [enabled] 
 /// * [provider] 
 /// * [providerItemId] 
+/// * [historyRange] 
 /// * [connectorId] 
 /// * [connector] 
 /// * [createdAt] 
@@ -41,6 +42,9 @@ abstract class BankConnectionEntity implements Built<BankConnectionEntity, BankC
 
   @BuiltValueField(wireName: r'providerItemId')
   String get providerItemId;
+
+  @BuiltValueField(wireName: r'historyRange')
+  String get historyRange;
 
   @BuiltValueField(wireName: r'connectorId')
   String get connectorId;
@@ -105,6 +109,11 @@ class _$BankConnectionEntitySerializer implements PrimitiveSerializer<BankConnec
     yield r'providerItemId';
     yield serializers.serialize(
       object.providerItemId,
+      specifiedType: const FullType(String),
+    );
+    yield r'historyRange';
+    yield serializers.serialize(
+      object.historyRange,
       specifiedType: const FullType(String),
     );
     yield r'connectorId';
@@ -191,6 +200,13 @@ class _$BankConnectionEntitySerializer implements PrimitiveSerializer<BankConnec
             specifiedType: const FullType(String),
           ) as String;
           result.providerItemId = valueDes;
+          break;
+        case r'historyRange':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.historyRange = valueDes;
           break;
         case r'connectorId':
           final valueDes = serializers.deserialize(

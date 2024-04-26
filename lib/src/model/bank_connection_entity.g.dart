@@ -20,6 +20,8 @@ class _$BankConnectionEntity extends BankConnectionEntity {
   @override
   final String providerItemId;
   @override
+  final String historyRange;
+  @override
   final String connectorId;
   @override
   final BankConnectorEntity connector;
@@ -39,6 +41,7 @@ class _$BankConnectionEntity extends BankConnectionEntity {
       required this.enabled,
       required this.provider,
       required this.providerItemId,
+      required this.historyRange,
       required this.connectorId,
       required this.connector,
       required this.createdAt,
@@ -55,6 +58,8 @@ class _$BankConnectionEntity extends BankConnectionEntity {
         provider, r'BankConnectionEntity', 'provider');
     BuiltValueNullFieldError.checkNotNull(
         providerItemId, r'BankConnectionEntity', 'providerItemId');
+    BuiltValueNullFieldError.checkNotNull(
+        historyRange, r'BankConnectionEntity', 'historyRange');
     BuiltValueNullFieldError.checkNotNull(
         connectorId, r'BankConnectionEntity', 'connectorId');
     BuiltValueNullFieldError.checkNotNull(
@@ -84,6 +89,7 @@ class _$BankConnectionEntity extends BankConnectionEntity {
         enabled == other.enabled &&
         provider == other.provider &&
         providerItemId == other.providerItemId &&
+        historyRange == other.historyRange &&
         connectorId == other.connectorId &&
         connector == other.connector &&
         createdAt == other.createdAt &&
@@ -99,6 +105,7 @@ class _$BankConnectionEntity extends BankConnectionEntity {
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, provider.hashCode);
     _$hash = $jc(_$hash, providerItemId.hashCode);
+    _$hash = $jc(_$hash, historyRange.hashCode);
     _$hash = $jc(_$hash, connectorId.hashCode);
     _$hash = $jc(_$hash, connector.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
@@ -116,6 +123,7 @@ class _$BankConnectionEntity extends BankConnectionEntity {
           ..add('enabled', enabled)
           ..add('provider', provider)
           ..add('providerItemId', providerItemId)
+          ..add('historyRange', historyRange)
           ..add('connectorId', connectorId)
           ..add('connector', connector)
           ..add('createdAt', createdAt)
@@ -154,6 +162,10 @@ class BankConnectionEntityBuilder
   set providerItemId(String? providerItemId) =>
       _$this._providerItemId = providerItemId;
 
+  String? _historyRange;
+  String? get historyRange => _$this._historyRange;
+  set historyRange(String? historyRange) => _$this._historyRange = historyRange;
+
   String? _connectorId;
   String? get connectorId => _$this._connectorId;
   set connectorId(String? connectorId) => _$this._connectorId = connectorId;
@@ -185,6 +197,7 @@ class BankConnectionEntityBuilder
       _enabled = $v.enabled;
       _provider = $v.provider;
       _providerItemId = $v.providerItemId;
+      _historyRange = $v.historyRange;
       _connectorId = $v.connectorId;
       _connector = $v.connector.toBuilder();
       _createdAt = $v.createdAt;
@@ -225,11 +238,12 @@ class BankConnectionEntityBuilder
                   provider, r'BankConnectionEntity', 'provider'),
               providerItemId: BuiltValueNullFieldError.checkNotNull(
                   providerItemId, r'BankConnectionEntity', 'providerItemId'),
-              connectorId: BuiltValueNullFieldError.checkNotNull(
-                  connectorId, r'BankConnectionEntity', 'connectorId'),
+              historyRange: BuiltValueNullFieldError.checkNotNull(
+                  historyRange, r'BankConnectionEntity', 'historyRange'),
+              connectorId:
+                  BuiltValueNullFieldError.checkNotNull(connectorId, r'BankConnectionEntity', 'connectorId'),
               connector: connector.build(),
-              createdAt: BuiltValueNullFieldError.checkNotNull(
-                  createdAt, r'BankConnectionEntity', 'createdAt'),
+              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankConnectionEntity', 'createdAt'),
               updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankConnectionEntity', 'updatedAt'));
     } catch (_) {
       late String _$failedField;
