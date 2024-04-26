@@ -13,6 +13,7 @@ part 'create_pluggy_connect_token_request_dto.g.dart';
 /// Properties:
 /// * [itemId] 
 /// * [workspaceId] 
+/// * [historyRange] 
 @BuiltValue()
 abstract class CreatePluggyConnectTokenRequestDto implements Built<CreatePluggyConnectTokenRequestDto, CreatePluggyConnectTokenRequestDtoBuilder> {
   @BuiltValueField(wireName: r'itemId')
@@ -20,6 +21,9 @@ abstract class CreatePluggyConnectTokenRequestDto implements Built<CreatePluggyC
 
   @BuiltValueField(wireName: r'workspaceId')
   String get workspaceId;
+
+  @BuiltValueField(wireName: r'historyRange')
+  String get historyRange;
 
   CreatePluggyConnectTokenRequestDto._();
 
@@ -54,6 +58,11 @@ class _$CreatePluggyConnectTokenRequestDtoSerializer implements PrimitiveSeriali
     yield r'workspaceId';
     yield serializers.serialize(
       object.workspaceId,
+      specifiedType: const FullType(String),
+    );
+    yield r'historyRange';
+    yield serializers.serialize(
+      object.historyRange,
       specifiedType: const FullType(String),
     );
   }
@@ -92,6 +101,13 @@ class _$CreatePluggyConnectTokenRequestDtoSerializer implements PrimitiveSeriali
             specifiedType: const FullType(String),
           ) as String;
           result.workspaceId = valueDes;
+          break;
+        case r'historyRange':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.historyRange = valueDes;
           break;
         default:
           unhandled.add(key);

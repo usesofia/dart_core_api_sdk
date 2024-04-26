@@ -12,6 +12,8 @@ class _$CreatePluggyConnectTokenRequestDto
   final String? itemId;
   @override
   final String workspaceId;
+  @override
+  final String historyRange;
 
   factory _$CreatePluggyConnectTokenRequestDto(
           [void Function(CreatePluggyConnectTokenRequestDtoBuilder)?
@@ -20,10 +22,12 @@ class _$CreatePluggyConnectTokenRequestDto
           ._build();
 
   _$CreatePluggyConnectTokenRequestDto._(
-      {this.itemId, required this.workspaceId})
+      {this.itemId, required this.workspaceId, required this.historyRange})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         workspaceId, r'CreatePluggyConnectTokenRequestDto', 'workspaceId');
+    BuiltValueNullFieldError.checkNotNull(
+        historyRange, r'CreatePluggyConnectTokenRequestDto', 'historyRange');
   }
 
   @override
@@ -40,7 +44,8 @@ class _$CreatePluggyConnectTokenRequestDto
     if (identical(other, this)) return true;
     return other is CreatePluggyConnectTokenRequestDto &&
         itemId == other.itemId &&
-        workspaceId == other.workspaceId;
+        workspaceId == other.workspaceId &&
+        historyRange == other.historyRange;
   }
 
   @override
@@ -48,6 +53,7 @@ class _$CreatePluggyConnectTokenRequestDto
     var _$hash = 0;
     _$hash = $jc(_$hash, itemId.hashCode);
     _$hash = $jc(_$hash, workspaceId.hashCode);
+    _$hash = $jc(_$hash, historyRange.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -56,7 +62,8 @@ class _$CreatePluggyConnectTokenRequestDto
   String toString() {
     return (newBuiltValueToStringHelper(r'CreatePluggyConnectTokenRequestDto')
           ..add('itemId', itemId)
-          ..add('workspaceId', workspaceId))
+          ..add('workspaceId', workspaceId)
+          ..add('historyRange', historyRange))
         .toString();
   }
 }
@@ -75,6 +82,10 @@ class CreatePluggyConnectTokenRequestDtoBuilder
   String? get workspaceId => _$this._workspaceId;
   set workspaceId(String? workspaceId) => _$this._workspaceId = workspaceId;
 
+  String? _historyRange;
+  String? get historyRange => _$this._historyRange;
+  set historyRange(String? historyRange) => _$this._historyRange = historyRange;
+
   CreatePluggyConnectTokenRequestDtoBuilder() {
     CreatePluggyConnectTokenRequestDto._defaults(this);
   }
@@ -84,6 +95,7 @@ class CreatePluggyConnectTokenRequestDtoBuilder
     if ($v != null) {
       _itemId = $v.itemId;
       _workspaceId = $v.workspaceId;
+      _historyRange = $v.historyRange;
       _$v = null;
     }
     return this;
@@ -109,7 +121,9 @@ class CreatePluggyConnectTokenRequestDtoBuilder
         new _$CreatePluggyConnectTokenRequestDto._(
             itemId: itemId,
             workspaceId: BuiltValueNullFieldError.checkNotNull(workspaceId,
-                r'CreatePluggyConnectTokenRequestDto', 'workspaceId'));
+                r'CreatePluggyConnectTokenRequestDto', 'workspaceId'),
+            historyRange: BuiltValueNullFieldError.checkNotNull(historyRange,
+                r'CreatePluggyConnectTokenRequestDto', 'historyRange'));
     replace(_$result);
     return _$result;
   }
