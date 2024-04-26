@@ -232,6 +232,7 @@ class BankTransactionsApi {
   ///
   /// Parameters:
   /// * [workspaceId] 
+  /// * [considerIgnored] 
   /// * [pageIndex] 
   /// * [pageSize] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -245,6 +246,7 @@ class BankTransactionsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BankTransactionsPageEntity>> bankTransactionsControllerGetBankTransactionsNotConfirmed({ 
     required String workspaceId,
+    required bool considerIgnored,
     num? pageIndex,
     num? pageSize,
     CancelToken? cancelToken,
@@ -270,6 +272,7 @@ class BankTransactionsApi {
     final _queryParameters = <String, dynamic>{
       if (pageIndex != null) r'pageIndex': encodeQueryParameter(_serializers, pageIndex, const FullType(num)),
       if (pageSize != null) r'pageSize': encodeQueryParameter(_serializers, pageSize, const FullType(num)),
+      r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
