@@ -23,6 +23,8 @@ class _$BankConnectionWithAccountsEntity
   @override
   final String providerItemId;
   @override
+  final String historyRange;
+  @override
   final String connectorId;
   @override
   final BankConnectorEntity connector;
@@ -43,6 +45,7 @@ class _$BankConnectionWithAccountsEntity
       required this.enabled,
       required this.provider,
       required this.providerItemId,
+      required this.historyRange,
       required this.connectorId,
       required this.connector,
       required this.createdAt,
@@ -62,6 +65,8 @@ class _$BankConnectionWithAccountsEntity
         provider, r'BankConnectionWithAccountsEntity', 'provider');
     BuiltValueNullFieldError.checkNotNull(
         providerItemId, r'BankConnectionWithAccountsEntity', 'providerItemId');
+    BuiltValueNullFieldError.checkNotNull(
+        historyRange, r'BankConnectionWithAccountsEntity', 'historyRange');
     BuiltValueNullFieldError.checkNotNull(
         connectorId, r'BankConnectionWithAccountsEntity', 'connectorId');
     BuiltValueNullFieldError.checkNotNull(
@@ -92,6 +97,7 @@ class _$BankConnectionWithAccountsEntity
         enabled == other.enabled &&
         provider == other.provider &&
         providerItemId == other.providerItemId &&
+        historyRange == other.historyRange &&
         connectorId == other.connectorId &&
         connector == other.connector &&
         createdAt == other.createdAt &&
@@ -108,6 +114,7 @@ class _$BankConnectionWithAccountsEntity
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, provider.hashCode);
     _$hash = $jc(_$hash, providerItemId.hashCode);
+    _$hash = $jc(_$hash, historyRange.hashCode);
     _$hash = $jc(_$hash, connectorId.hashCode);
     _$hash = $jc(_$hash, connector.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
@@ -126,6 +133,7 @@ class _$BankConnectionWithAccountsEntity
           ..add('enabled', enabled)
           ..add('provider', provider)
           ..add('providerItemId', providerItemId)
+          ..add('historyRange', historyRange)
           ..add('connectorId', connectorId)
           ..add('connector', connector)
           ..add('createdAt', createdAt)
@@ -172,6 +180,10 @@ class BankConnectionWithAccountsEntityBuilder
   set providerItemId(String? providerItemId) =>
       _$this._providerItemId = providerItemId;
 
+  String? _historyRange;
+  String? get historyRange => _$this._historyRange;
+  set historyRange(String? historyRange) => _$this._historyRange = historyRange;
+
   String? _connectorId;
   String? get connectorId => _$this._connectorId;
   set connectorId(String? connectorId) => _$this._connectorId = connectorId;
@@ -204,6 +216,7 @@ class BankConnectionWithAccountsEntityBuilder
       _enabled = $v.enabled;
       _provider = $v.provider;
       _providerItemId = $v.providerItemId;
+      _historyRange = $v.historyRange;
       _connectorId = $v.connectorId;
       _connector = $v.connector.toBuilder();
       _createdAt = $v.createdAt;
@@ -245,8 +258,9 @@ class BankConnectionWithAccountsEntityBuilder
                   provider, r'BankConnectionWithAccountsEntity', 'provider'),
               providerItemId: BuiltValueNullFieldError.checkNotNull(
                   providerItemId, r'BankConnectionWithAccountsEntity', 'providerItemId'),
-              connectorId: BuiltValueNullFieldError.checkNotNull(
-                  connectorId, r'BankConnectionWithAccountsEntity', 'connectorId'),
+              historyRange: BuiltValueNullFieldError.checkNotNull(
+                  historyRange, r'BankConnectionWithAccountsEntity', 'historyRange'),
+              connectorId: BuiltValueNullFieldError.checkNotNull(connectorId, r'BankConnectionWithAccountsEntity', 'connectorId'),
               connector: connector.build(),
               createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankConnectionWithAccountsEntity', 'createdAt'),
               updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankConnectionWithAccountsEntity', 'updatedAt'));

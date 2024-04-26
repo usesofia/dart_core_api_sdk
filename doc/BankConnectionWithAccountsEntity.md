@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **enabled** | **bool** |  | 
 **provider** | **String** |  | 
 **providerItemId** | **String** |  | 
+**historyRange** | **String** |  | 
 **connectorId** | **String** |  | 
 **connector** | [**BankConnectorEntity**](BankConnectorEntity.md) |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
