@@ -23,6 +23,7 @@ part 'bank_transaction_entity.g.dart';
 /// * [workspaceId] 
 /// * [provider] 
 /// * [providerTransactionId] 
+/// * [originalDescription] 
 /// * [description] 
 /// * [postedDate] 
 /// * [competencyDate] 
@@ -65,6 +66,9 @@ abstract class BankTransactionEntity implements Built<BankTransactionEntity, Ban
 
   @BuiltValueField(wireName: r'providerTransactionId')
   String get providerTransactionId;
+
+  @BuiltValueField(wireName: r'originalDescription')
+  String get originalDescription;
 
   @BuiltValueField(wireName: r'description')
   String get description;
@@ -185,6 +189,11 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
     yield r'providerTransactionId';
     yield serializers.serialize(
       object.providerTransactionId,
+      specifiedType: const FullType(String),
+    );
+    yield r'originalDescription';
+    yield serializers.serialize(
+      object.originalDescription,
       specifiedType: const FullType(String),
     );
     yield r'description';
@@ -389,6 +398,13 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
             specifiedType: const FullType(String),
           ) as String;
           result.providerTransactionId = valueDes;
+          break;
+        case r'originalDescription':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.originalDescription = valueDes;
           break;
         case r'description':
           final valueDes = serializers.deserialize(

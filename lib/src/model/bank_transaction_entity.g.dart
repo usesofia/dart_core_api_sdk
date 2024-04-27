@@ -195,6 +195,8 @@ class _$BankTransactionEntity extends BankTransactionEntity {
   @override
   final String providerTransactionId;
   @override
+  final String originalDescription;
+  @override
   final String description;
   @override
   final DateTime postedDate;
@@ -250,6 +252,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
       required this.workspaceId,
       required this.provider,
       required this.providerTransactionId,
+      required this.originalDescription,
       required this.description,
       required this.postedDate,
       required this.competencyDate,
@@ -284,6 +287,8 @@ class _$BankTransactionEntity extends BankTransactionEntity {
         provider, r'BankTransactionEntity', 'provider');
     BuiltValueNullFieldError.checkNotNull(providerTransactionId,
         r'BankTransactionEntity', 'providerTransactionId');
+    BuiltValueNullFieldError.checkNotNull(
+        originalDescription, r'BankTransactionEntity', 'originalDescription');
     BuiltValueNullFieldError.checkNotNull(
         description, r'BankTransactionEntity', 'description');
     BuiltValueNullFieldError.checkNotNull(
@@ -321,6 +326,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
         workspaceId == other.workspaceId &&
         provider == other.provider &&
         providerTransactionId == other.providerTransactionId &&
+        originalDescription == other.originalDescription &&
         description == other.description &&
         postedDate == other.postedDate &&
         competencyDate == other.competencyDate &&
@@ -354,6 +360,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
     _$hash = $jc(_$hash, workspaceId.hashCode);
     _$hash = $jc(_$hash, provider.hashCode);
     _$hash = $jc(_$hash, providerTransactionId.hashCode);
+    _$hash = $jc(_$hash, originalDescription.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, postedDate.hashCode);
     _$hash = $jc(_$hash, competencyDate.hashCode);
@@ -389,6 +396,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
           ..add('workspaceId', workspaceId)
           ..add('provider', provider)
           ..add('providerTransactionId', providerTransactionId)
+          ..add('originalDescription', originalDescription)
           ..add('description', description)
           ..add('postedDate', postedDate)
           ..add('competencyDate', competencyDate)
@@ -445,6 +453,11 @@ class BankTransactionEntityBuilder
   String? get providerTransactionId => _$this._providerTransactionId;
   set providerTransactionId(String? providerTransactionId) =>
       _$this._providerTransactionId = providerTransactionId;
+
+  String? _originalDescription;
+  String? get originalDescription => _$this._originalDescription;
+  set originalDescription(String? originalDescription) =>
+      _$this._originalDescription = originalDescription;
 
   String? _description;
   String? get description => _$this._description;
@@ -568,6 +581,7 @@ class BankTransactionEntityBuilder
       _workspaceId = $v.workspaceId;
       _provider = $v.provider;
       _providerTransactionId = $v.providerTransactionId;
+      _originalDescription = $v.originalDescription;
       _description = $v.description;
       _postedDate = $v.postedDate;
       _competencyDate = $v.competencyDate;
@@ -625,12 +639,13 @@ class BankTransactionEntityBuilder
                   provider, r'BankTransactionEntity', 'provider'),
               providerTransactionId: BuiltValueNullFieldError.checkNotNull(
                   providerTransactionId, r'BankTransactionEntity', 'providerTransactionId'),
+              originalDescription: BuiltValueNullFieldError.checkNotNull(
+                  originalDescription, r'BankTransactionEntity', 'originalDescription'),
               description: BuiltValueNullFieldError.checkNotNull(
                   description, r'BankTransactionEntity', 'description'),
               postedDate: BuiltValueNullFieldError.checkNotNull(
                   postedDate, r'BankTransactionEntity', 'postedDate'),
-              competencyDate: BuiltValueNullFieldError.checkNotNull(
-                  competencyDate, r'BankTransactionEntity', 'competencyDate'),
+              competencyDate: BuiltValueNullFieldError.checkNotNull(competencyDate, r'BankTransactionEntity', 'competencyDate'),
               amount: BuiltValueNullFieldError.checkNotNull(amount, r'BankTransactionEntity', 'amount'),
               type: BuiltValueNullFieldError.checkNotNull(type, r'BankTransactionEntity', 'type'),
               status: BuiltValueNullFieldError.checkNotNull(status, r'BankTransactionEntity', 'status'),

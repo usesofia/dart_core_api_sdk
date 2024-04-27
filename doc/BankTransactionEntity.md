@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **workspaceId** | **String** |  | 
 **provider** | **String** |  | 
 **providerTransactionId** | **String** |  | 
+**originalDescription** | **String** |  | 
 **description** | **String** |  | 
 **postedDate** | [**DateTime**](DateTime.md) |  | 
 **competencyDate** | [**DateTime**](DateTime.md) |  | 
