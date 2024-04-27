@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**bankTransactionsControllerCreateOrUpdateBankTransactionsInBulk**](BankTransactionsApi.md#banktransactionscontrollercreateorupdatebanktransactionsinbulk) | **PUT** /bank/transactions/bulk | 
 [**bankTransactionsControllerGetBankTransactions**](BankTransactionsApi.md#banktransactionscontrollergetbanktransactions) | **GET** /workspaces/{workspaceId}/bank/transactions | 
+[**bankTransactionsControllerGetBankTransactionsConfirmedTodayByMe**](BankTransactionsApi.md#banktransactionscontrollergetbanktransactionsconfirmedtodaybyme) | **GET** /workspaces/{workspaceId}/bank/transactions/confirmed-today-by-me | 
 [**bankTransactionsControllerGetBankTransactionsNotConfirmed**](BankTransactionsApi.md#banktransactionscontrollergetbanktransactionsnotconfirmed) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
 [**bankTransactionsControllerGetRecent**](BankTransactionsApi.md#banktransactionscontrollergetrecent) | **GET** /workspaces/{workspaceId}/bank/transactions/most-recent | 
 [**bankTransactionsControllerGetTransactionDetails**](BankTransactionsApi.md#banktransactionscontrollergettransactiondetails) | **GET** /bank/transactions/{bankTransactionId} | 
@@ -103,6 +104,51 @@ Name | Type | Description  | Notes
  **minCompetencyDate** | **String**|  | [optional] 
  **maxCompetencyDate** | **String**|  | [optional] 
  **showIgnored** | **bool**|  | [optional] 
+
+### Return type
+
+[**BankTransactionsPageEntity**](BankTransactionsPageEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bankTransactionsControllerGetBankTransactionsConfirmedTodayByMe**
+> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactionsConfirmedTodayByMe(workspaceId, pageIndex, pageSize)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getBankTransactionsApi();
+final String workspaceId = workspaceId_example; // String | 
+final num pageIndex = 8.14; // num | 
+final num pageSize = 8.14; // num | 
+
+try {
+    final response = api.bankTransactionsControllerGetBankTransactionsConfirmedTodayByMe(workspaceId, pageIndex, pageSize);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetBankTransactionsConfirmedTodayByMe: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **workspaceId** | **String**|  | 
+ **pageIndex** | **num**|  | [optional] 
+ **pageSize** | **num**|  | [optional] 
 
 ### Return type
 
