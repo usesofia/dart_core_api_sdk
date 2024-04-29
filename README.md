@@ -96,6 +96,7 @@ Class | Method | HTTP request | Description
 [*PluggyApi*](doc/PluggyApi.md) | [**pluggyControllerWebhook**](doc/PluggyApi.md#pluggycontrollerwebhook) | **POST** /pluggy/webhook | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerCreate**](doc/ProfilesApi.md#profilescontrollercreate) | **POST** /profiles | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerGetMy**](doc/ProfilesApi.md#profilescontrollergetmy) | **GET** /profiles/me | 
+[*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerParcialUpdate**](doc/ProfilesApi.md#profilescontrollerparcialupdate) | **PATCH** /profiles/me | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetAccountsEntriesByCategoryReport**](doc/ReportsApi.md#reportscontrollergetaccountsentriesbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/accounts/entries-by-category | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetAccountsOutputsByCategoryReport**](doc/ReportsApi.md#reportscontrollergetaccountsoutputsbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/accounts/outputs-by-category | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetCardsCashFlowReport**](doc/ReportsApi.md#reportscontrollergetcardscashflowreport) | **GET** /workspaces/{workspaceId}/reports/cards/cash-flow | 
@@ -154,6 +155,7 @@ Class | Method | HTTP request | Description
  - [ErrorEntity](doc/ErrorEntity.md)
  - [ExceptionResponseEntity](doc/ExceptionResponseEntity.md)
  - [FinancialTransactionsFeatureSpecificationEntity](doc/FinancialTransactionsFeatureSpecificationEntity.md)
+ - [ParcialUpdateProfileRequestDto](doc/ParcialUpdateProfileRequestDto.md)
  - [ParcialUpdateWorkspaceRequestDto](doc/ParcialUpdateWorkspaceRequestDto.md)
  - [PaymentDataDto](doc/PaymentDataDto.md)
  - [PaymentsManagerProductDataEntity](doc/PaymentsManagerProductDataEntity.md)

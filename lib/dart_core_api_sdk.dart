@@ -63,6 +63,7 @@ export 'package:dart_core_api_sdk/src/model/email_in_use_entity.dart';
 export 'package:dart_core_api_sdk/src/model/error_entity.dart';
 export 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
 export 'package:dart_core_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
+export 'package:dart_core_api_sdk/src/model/parcial_update_profile_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/parcial_update_workspace_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/payment_data_dto.dart';
 export 'package:dart_core_api_sdk/src/model/payments_manager_product_data_entity.dart';
