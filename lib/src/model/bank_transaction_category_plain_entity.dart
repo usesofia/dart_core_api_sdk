@@ -13,6 +13,7 @@ part 'bank_transaction_category_plain_entity.g.dart';
 /// Properties:
 /// * [id] 
 /// * [name] 
+/// * [nature] 
 /// * [parentId] 
 @BuiltValue()
 abstract class BankTransactionCategoryPlainEntity implements Built<BankTransactionCategoryPlainEntity, BankTransactionCategoryPlainEntityBuilder> {
@@ -21,6 +22,9 @@ abstract class BankTransactionCategoryPlainEntity implements Built<BankTransacti
 
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'nature')
+  String get nature;
 
   @BuiltValueField(wireName: r'parentId')
   String? get parentId;
@@ -56,6 +60,11 @@ class _$BankTransactionCategoryPlainEntitySerializer implements PrimitiveSeriali
     yield r'name';
     yield serializers.serialize(
       object.name,
+      specifiedType: const FullType(String),
+    );
+    yield r'nature';
+    yield serializers.serialize(
+      object.nature,
       specifiedType: const FullType(String),
     );
     if (object.parentId != null) {
@@ -101,6 +110,13 @@ class _$BankTransactionCategoryPlainEntitySerializer implements PrimitiveSeriali
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'nature':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.nature = valueDes;
           break;
         case r'parentId':
           final valueDes = serializers.deserialize(

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **bankTransactionCategoriesControllerGetBankTransactionCategories**
-> BuiltList<BankTransactionCategoryEntity> bankTransactionCategoriesControllerGetBankTransactionCategories(workspaceId, onlyLeafs)
+> BuiltList<BankTransactionCategoryEntity> bankTransactionCategoriesControllerGetBankTransactionCategories(workspaceId, onlyLeafs, transactionNatures)
 
 
 
@@ -24,9 +24,10 @@ import 'package:dart_core_api_sdk/api.dart';
 final api = DartCoreApiSdk().getBankTransactionCategoriesApi();
 final String workspaceId = workspaceId_example; // String | 
 final bool onlyLeafs = true; // bool | 
+final String transactionNatures = transactionNatures_example; // String | 
 
 try {
-    final response = api.bankTransactionCategoriesControllerGetBankTransactionCategories(workspaceId, onlyLeafs);
+    final response = api.bankTransactionCategoriesControllerGetBankTransactionCategories(workspaceId, onlyLeafs, transactionNatures);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling BankTransactionCategoriesApi->bankTransactionCategoriesControllerGetBankTransactionCategories: $e\n');
@@ -39,6 +40,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspaceId** | **String**|  | 
  **onlyLeafs** | **bool**|  | [optional] 
+ **transactionNatures** | **String**|  | [optional] 
 
 ### Return type
 

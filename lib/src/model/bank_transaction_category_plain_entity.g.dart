@@ -13,6 +13,8 @@ class _$BankTransactionCategoryPlainEntity
   @override
   final String name;
   @override
+  final String nature;
+  @override
   final String? parentId;
 
   factory _$BankTransactionCategoryPlainEntity(
@@ -22,12 +24,17 @@ class _$BankTransactionCategoryPlainEntity
           ._build();
 
   _$BankTransactionCategoryPlainEntity._(
-      {required this.id, required this.name, this.parentId})
+      {required this.id,
+      required this.name,
+      required this.nature,
+      this.parentId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         id, r'BankTransactionCategoryPlainEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
         name, r'BankTransactionCategoryPlainEntity', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        nature, r'BankTransactionCategoryPlainEntity', 'nature');
   }
 
   @override
@@ -45,6 +52,7 @@ class _$BankTransactionCategoryPlainEntity
     return other is BankTransactionCategoryPlainEntity &&
         id == other.id &&
         name == other.name &&
+        nature == other.nature &&
         parentId == other.parentId;
   }
 
@@ -53,6 +61,7 @@ class _$BankTransactionCategoryPlainEntity
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, nature.hashCode);
     _$hash = $jc(_$hash, parentId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -63,6 +72,7 @@ class _$BankTransactionCategoryPlainEntity
     return (newBuiltValueToStringHelper(r'BankTransactionCategoryPlainEntity')
           ..add('id', id)
           ..add('name', name)
+          ..add('nature', nature)
           ..add('parentId', parentId))
         .toString();
   }
@@ -82,6 +92,10 @@ class BankTransactionCategoryPlainEntityBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  String? _nature;
+  String? get nature => _$this._nature;
+  set nature(String? nature) => _$this._nature = nature;
+
   String? _parentId;
   String? get parentId => _$this._parentId;
   set parentId(String? parentId) => _$this._parentId = parentId;
@@ -95,6 +109,7 @@ class BankTransactionCategoryPlainEntityBuilder
     if ($v != null) {
       _id = $v.id;
       _name = $v.name;
+      _nature = $v.nature;
       _parentId = $v.parentId;
       _$v = null;
     }
@@ -123,6 +138,8 @@ class BankTransactionCategoryPlainEntityBuilder
                 id, r'BankTransactionCategoryPlainEntity', 'id'),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'BankTransactionCategoryPlainEntity', 'name'),
+            nature: BuiltValueNullFieldError.checkNotNull(
+                nature, r'BankTransactionCategoryPlainEntity', 'nature'),
             parentId: parentId);
     replace(_$result);
     return _$result;

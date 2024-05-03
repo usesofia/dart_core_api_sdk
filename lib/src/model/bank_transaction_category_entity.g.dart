@@ -12,6 +12,8 @@ class _$BankTransactionCategoryEntity extends BankTransactionCategoryEntity {
   @override
   final String name;
   @override
+  final String nature;
+  @override
   final String? parentId;
   @override
   final BuiltList<BankTransactionCategoryPlainEntity> path;
@@ -25,6 +27,7 @@ class _$BankTransactionCategoryEntity extends BankTransactionCategoryEntity {
   _$BankTransactionCategoryEntity._(
       {required this.id,
       required this.name,
+      required this.nature,
       this.parentId,
       required this.path,
       required this.children})
@@ -33,6 +36,8 @@ class _$BankTransactionCategoryEntity extends BankTransactionCategoryEntity {
         id, r'BankTransactionCategoryEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
         name, r'BankTransactionCategoryEntity', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        nature, r'BankTransactionCategoryEntity', 'nature');
     BuiltValueNullFieldError.checkNotNull(
         path, r'BankTransactionCategoryEntity', 'path');
     BuiltValueNullFieldError.checkNotNull(
@@ -54,6 +59,7 @@ class _$BankTransactionCategoryEntity extends BankTransactionCategoryEntity {
     return other is BankTransactionCategoryEntity &&
         id == other.id &&
         name == other.name &&
+        nature == other.nature &&
         parentId == other.parentId &&
         path == other.path &&
         children == other.children;
@@ -64,6 +70,7 @@ class _$BankTransactionCategoryEntity extends BankTransactionCategoryEntity {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, nature.hashCode);
     _$hash = $jc(_$hash, parentId.hashCode);
     _$hash = $jc(_$hash, path.hashCode);
     _$hash = $jc(_$hash, children.hashCode);
@@ -76,6 +83,7 @@ class _$BankTransactionCategoryEntity extends BankTransactionCategoryEntity {
     return (newBuiltValueToStringHelper(r'BankTransactionCategoryEntity')
           ..add('id', id)
           ..add('name', name)
+          ..add('nature', nature)
           ..add('parentId', parentId)
           ..add('path', path)
           ..add('children', children))
@@ -96,6 +104,10 @@ class BankTransactionCategoryEntityBuilder
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  String? _nature;
+  String? get nature => _$this._nature;
+  set nature(String? nature) => _$this._nature = nature;
 
   String? _parentId;
   String? get parentId => _$this._parentId;
@@ -123,6 +135,7 @@ class BankTransactionCategoryEntityBuilder
     if ($v != null) {
       _id = $v.id;
       _name = $v.name;
+      _nature = $v.nature;
       _parentId = $v.parentId;
       _path = $v.path.toBuilder();
       _children = $v.children.toBuilder();
@@ -154,6 +167,8 @@ class BankTransactionCategoryEntityBuilder
                   id, r'BankTransactionCategoryEntity', 'id'),
               name: BuiltValueNullFieldError.checkNotNull(
                   name, r'BankTransactionCategoryEntity', 'name'),
+              nature: BuiltValueNullFieldError.checkNotNull(
+                  nature, r'BankTransactionCategoryEntity', 'nature'),
               parentId: parentId,
               path: path.build(),
               children: children.build());
