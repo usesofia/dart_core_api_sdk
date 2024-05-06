@@ -171,10 +171,3 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/financial_statement_outcome_report_data_entity_test.dart
-test/financial_statement_outflows_subcategory_data_test.dart
-test/financial_statement_outlfows_category_data_test.dart
-test/financial_statement_report_item_entity_test.dart
-test/financial_statement_report_test.dart
-test/financial_statemente_entries_category_data_test.dart
-test/financial_statemente_entries_subcategory_data_test.dart
