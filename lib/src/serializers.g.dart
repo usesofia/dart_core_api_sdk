@@ -48,6 +48,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(EmailInUseEntity.serializer)
       ..add(ErrorEntity.serializer)
       ..add(ExceptionResponseEntity.serializer)
+      ..add(FinancialStatementOutcomeReportDataEntity.serializer)
+      ..add(FinancialStatementOutflowsSubcategoryData.serializer)
+      ..add(FinancialStatementOutlfowsCategoryData.serializer)
+      ..add(FinancialStatementReport.serializer)
+      ..add(FinancialStatementReportItemEntity.serializer)
+      ..add(FinancialStatementeEntriesCategoryData.serializer)
+      ..add(FinancialStatementeEntriesSubcategoryData.serializer)
       ..add(FinancialTransactionsFeatureSpecificationEntity.serializer)
       ..add(ParcialUpdateProfileRequestDto.serializer)
       ..add(ParcialUpdateWorkspaceRequestDto.serializer)
@@ -164,6 +171,20 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ErrorEntity)]),
           () => new ListBuilder<ErrorEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(FinancialStatementOutflowsSubcategoryData)
+          ]),
+          () => new ListBuilder<FinancialStatementOutflowsSubcategoryData>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(FinancialStatementReportItemEntity)]),
+          () => new ListBuilder<FinancialStatementReportItemEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(FinancialStatementeEntriesSubcategoryData)
+          ]),
+          () => new ListBuilder<FinancialStatementeEntriesSubcategoryData>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(PaymentsManagerProductPriceEntity)]),

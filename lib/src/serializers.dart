@@ -52,6 +52,13 @@ import 'package:dart_core_api_sdk/src/model/credit_card_metadata_dto.dart';
 import 'package:dart_core_api_sdk/src/model/email_in_use_entity.dart';
 import 'package:dart_core_api_sdk/src/model/error_entity.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
+import 'package:dart_core_api_sdk/src/model/financial_statement_outcome_report_data_entity.dart';
+import 'package:dart_core_api_sdk/src/model/financial_statement_outflows_subcategory_data.dart';
+import 'package:dart_core_api_sdk/src/model/financial_statement_outlfows_category_data.dart';
+import 'package:dart_core_api_sdk/src/model/financial_statement_report.dart';
+import 'package:dart_core_api_sdk/src/model/financial_statement_report_item_entity.dart';
+import 'package:dart_core_api_sdk/src/model/financial_statemente_entries_category_data.dart';
+import 'package:dart_core_api_sdk/src/model/financial_statemente_entries_subcategory_data.dart';
 import 'package:dart_core_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
 import 'package:dart_core_api_sdk/src/model/parcial_update_profile_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/parcial_update_workspace_request_dto.dart';
@@ -114,6 +121,13 @@ part 'serializers.g.dart';
   EmailInUseEntity,
   ErrorEntity,
   ExceptionResponseEntity,
+  FinancialStatementOutcomeReportDataEntity,
+  FinancialStatementOutflowsSubcategoryData,
+  FinancialStatementOutlfowsCategoryData,
+  FinancialStatementReport,
+  FinancialStatementReportItemEntity,
+  FinancialStatementeEntriesCategoryData,
+  FinancialStatementeEntriesSubcategoryData,
   FinancialTransactionsFeatureSpecificationEntity,
   ParcialUpdateProfileRequestDto,
   ParcialUpdateWorkspaceRequestDto,

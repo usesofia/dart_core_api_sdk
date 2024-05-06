@@ -11,6 +11,7 @@ import 'package:dart_core_api_sdk/src/api_util.dart';
 import 'package:dart_core_api_sdk/src/model/cash_flow_by_category_report_entity.dart';
 import 'package:dart_core_api_sdk/src/model/cash_flow_report_entity.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
+import 'package:dart_core_api_sdk/src/model/financial_statement_report.dart';
 
 class ReportsApi {
 
@@ -536,9 +537,9 @@ class ReportsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [CashFlowReportEntity] as data
+  /// Returns a [Future] containing a [Response] with a [FinancialStatementReport] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CashFlowReportEntity>> reportsControllerGetFinancialStatementReport({ 
+  Future<Response<FinancialStatementReport>> reportsControllerGetFinancialStatementReport({ 
     required String workspaceId,
     String? accountIds,
     String? costCenterIds,
@@ -586,14 +587,14 @@ class ReportsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    CashFlowReportEntity? _responseData;
+    FinancialStatementReport? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(CashFlowReportEntity),
-      ) as CashFlowReportEntity;
+        specifiedType: const FullType(FinancialStatementReport),
+      ) as FinancialStatementReport;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -605,7 +606,7 @@ class ReportsApi {
       );
     }
 
-    return Response<CashFlowReportEntity>(
+    return Response<FinancialStatementReport>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
