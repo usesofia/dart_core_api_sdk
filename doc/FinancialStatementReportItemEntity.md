@@ -9,9 +9,9 @@ import 'package:dart_core_api_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **String** |  | 
-**entriesCategoryData** | [**FinancialStatementeEntriesCategoryData**](FinancialStatementeEntriesCategoryData.md) |  | 
-**outflowsCategoryData** | [**FinancialStatementOutlfowsCategoryData**](FinancialStatementOutlfowsCategoryData.md) |  | 
-**outcomeData** | [**FinancialStatementOutcomeReportDataEntity**](FinancialStatementOutcomeReportDataEntity.md) |  | 
+**entriesCategoryData** | [**FinancialStatementeEntriesCategoryData**](FinancialStatementeEntriesCategoryData.md) |  | [optional] 
+**outflowsCategoryData** | [**FinancialStatementOutlfowsCategoryData**](FinancialStatementOutlfowsCategoryData.md) |  | [optional] 
+**outcomeData** | [**FinancialStatementOutcomeReportDataEntity**](FinancialStatementOutcomeReportDataEntity.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -24,13 +24,13 @@ abstract class FinancialStatementReportItemEntity implements Built<FinancialStat
   String get type;
 
   @BuiltValueField(wireName: r'entriesCategoryData')
-  FinancialStatementeEntriesCategoryData get entriesCategoryData;
+  FinancialStatementeEntriesCategoryData? get entriesCategoryData;
 
   @BuiltValueField(wireName: r'outflowsCategoryData')
-  FinancialStatementOutlfowsCategoryData get outflowsCategoryData;
+  FinancialStatementOutlfowsCategoryData? get outflowsCategoryData;
 
   @BuiltValueField(wireName: r'outcomeData')
-  FinancialStatementOutcomeReportDataEntity get outcomeData;
+  FinancialStatementOutcomeReportDataEntity? get outcomeData;
 
   FinancialStatementReportItemEntity._();
 
@@ -60,21 +60,27 @@ class _$FinancialStatementReportItemEntitySerializer implements PrimitiveSeriali
       object.type,
       specifiedType: const FullType(String),
     );
-    yield r'entriesCategoryData';
-    yield serializers.serialize(
-      object.entriesCategoryData,
-      specifiedType: const FullType(FinancialStatementeEntriesCategoryData),
-    );
-    yield r'outflowsCategoryData';
-    yield serializers.serialize(
-      object.outflowsCategoryData,
-      specifiedType: const FullType(FinancialStatementOutlfowsCategoryData),
-    );
-    yield r'outcomeData';
-    yield serializers.serialize(
-      object.outcomeData,
-      specifiedType: const FullType(FinancialStatementOutcomeReportDataEntity),
-    );
+    if (object.entriesCategoryData != null) {
+      yield r'entriesCategoryData';
+      yield serializers.serialize(
+        object.entriesCategoryData,
+        specifiedType: const FullType(FinancialStatementeEntriesCategoryData),
+      );
+    }
+    if (object.outflowsCategoryData != null) {
+      yield r'outflowsCategoryData';
+      yield serializers.serialize(
+        object.outflowsCategoryData,
+        specifiedType: const FullType(FinancialStatementOutlfowsCategoryData),
+      );
+    }
+    if (object.outcomeData != null) {
+      yield r'outcomeData';
+      yield serializers.serialize(
+        object.outcomeData,
+        specifiedType: const FullType(FinancialStatementOutcomeReportDataEntity),
+      );
+    }
   }
 
   @override

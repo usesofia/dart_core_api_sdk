@@ -11,11 +11,11 @@ class _$FinancialStatementReportItemEntity
   @override
   final String type;
   @override
-  final FinancialStatementeEntriesCategoryData entriesCategoryData;
+  final FinancialStatementeEntriesCategoryData? entriesCategoryData;
   @override
-  final FinancialStatementOutlfowsCategoryData outflowsCategoryData;
+  final FinancialStatementOutlfowsCategoryData? outflowsCategoryData;
   @override
-  final FinancialStatementOutcomeReportDataEntity outcomeData;
+  final FinancialStatementOutcomeReportDataEntity? outcomeData;
 
   factory _$FinancialStatementReportItemEntity(
           [void Function(FinancialStatementReportItemEntityBuilder)?
@@ -25,18 +25,12 @@ class _$FinancialStatementReportItemEntity
 
   _$FinancialStatementReportItemEntity._(
       {required this.type,
-      required this.entriesCategoryData,
-      required this.outflowsCategoryData,
-      required this.outcomeData})
+      this.entriesCategoryData,
+      this.outflowsCategoryData,
+      this.outcomeData})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         type, r'FinancialStatementReportItemEntity', 'type');
-    BuiltValueNullFieldError.checkNotNull(entriesCategoryData,
-        r'FinancialStatementReportItemEntity', 'entriesCategoryData');
-    BuiltValueNullFieldError.checkNotNull(outflowsCategoryData,
-        r'FinancialStatementReportItemEntity', 'outflowsCategoryData');
-    BuiltValueNullFieldError.checkNotNull(
-        outcomeData, r'FinancialStatementReportItemEntity', 'outcomeData');
   }
 
   @override
@@ -123,9 +117,9 @@ class FinancialStatementReportItemEntityBuilder
     final $v = _$v;
     if ($v != null) {
       _type = $v.type;
-      _entriesCategoryData = $v.entriesCategoryData.toBuilder();
-      _outflowsCategoryData = $v.outflowsCategoryData.toBuilder();
-      _outcomeData = $v.outcomeData.toBuilder();
+      _entriesCategoryData = $v.entriesCategoryData?.toBuilder();
+      _outflowsCategoryData = $v.outflowsCategoryData?.toBuilder();
+      _outcomeData = $v.outcomeData?.toBuilder();
       _$v = null;
     }
     return this;
@@ -153,18 +147,18 @@ class FinancialStatementReportItemEntityBuilder
           new _$FinancialStatementReportItemEntity._(
               type: BuiltValueNullFieldError.checkNotNull(
                   type, r'FinancialStatementReportItemEntity', 'type'),
-              entriesCategoryData: entriesCategoryData.build(),
-              outflowsCategoryData: outflowsCategoryData.build(),
-              outcomeData: outcomeData.build());
+              entriesCategoryData: _entriesCategoryData?.build(),
+              outflowsCategoryData: _outflowsCategoryData?.build(),
+              outcomeData: _outcomeData?.build());
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'entriesCategoryData';
-        entriesCategoryData.build();
+        _entriesCategoryData?.build();
         _$failedField = 'outflowsCategoryData';
-        outflowsCategoryData.build();
+        _outflowsCategoryData?.build();
         _$failedField = 'outcomeData';
-        outcomeData.build();
+        _outcomeData?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'FinancialStatementReportItemEntity', _$failedField, e.toString());
