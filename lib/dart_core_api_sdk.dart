@@ -15,6 +15,7 @@ export 'package:dart_core_api_sdk/src/api/bank_connections_api.dart';
 export 'package:dart_core_api_sdk/src/api/bank_transaction_categories_api.dart';
 export 'package:dart_core_api_sdk/src/api/bank_transaction_cost_centers_api.dart';
 export 'package:dart_core_api_sdk/src/api/bank_transactions_api.dart';
+export 'package:dart_core_api_sdk/src/api/message_tokens_api.dart';
 export 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
 export 'package:dart_core_api_sdk/src/api/profiles_api.dart';
 export 'package:dart_core_api_sdk/src/api/reports_api.dart';
@@ -53,6 +54,7 @@ export 'package:dart_core_api_sdk/src/model/create_or_update_bank_account_reques
 export 'package:dart_core_api_sdk/src/model/create_or_update_bank_connection_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_item_dto.dart';
 export 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_request_dto.dart';
+export 'package:dart_core_api_sdk/src/model/create_or_update_message_token_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/create_pluggy_connect_token_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/create_profile_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/create_stripe_checkout_session_request_dto.dart';
@@ -70,6 +72,7 @@ export 'package:dart_core_api_sdk/src/model/financial_statement_report_item_enti
 export 'package:dart_core_api_sdk/src/model/financial_statemente_entries_category_data.dart';
 export 'package:dart_core_api_sdk/src/model/financial_statemente_entries_subcategory_data.dart';
 export 'package:dart_core_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
+export 'package:dart_core_api_sdk/src/model/message_token_entity.dart';
 export 'package:dart_core_api_sdk/src/model/parcial_update_profile_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/parcial_update_workspace_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/payment_data_dto.dart';

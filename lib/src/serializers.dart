@@ -43,6 +43,7 @@ import 'package:dart_core_api_sdk/src/model/create_or_update_bank_account_reques
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_connection_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_item_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/create_or_update_message_token_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_pluggy_connect_token_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_profile_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_stripe_checkout_session_request_dto.dart';
@@ -60,6 +61,7 @@ import 'package:dart_core_api_sdk/src/model/financial_statement_report_item_enti
 import 'package:dart_core_api_sdk/src/model/financial_statemente_entries_category_data.dart';
 import 'package:dart_core_api_sdk/src/model/financial_statemente_entries_subcategory_data.dart';
 import 'package:dart_core_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
+import 'package:dart_core_api_sdk/src/model/message_token_entity.dart';
 import 'package:dart_core_api_sdk/src/model/parcial_update_profile_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/parcial_update_workspace_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/payment_data_dto.dart';
@@ -112,6 +114,7 @@ part 'serializers.g.dart';
   CreateOrUpdateBankConnectionRequestDto,
   CreateOrUpdateBankTransactionsInBulkItemDto,
   CreateOrUpdateBankTransactionsInBulkRequestDto,
+  CreateOrUpdateMessageTokenRequestDto,
   CreatePluggyConnectTokenRequestDto,
   CreateProfileRequestDto,
   CreateStripeCheckoutSessionRequestDto,
@@ -129,6 +132,7 @@ part 'serializers.g.dart';
   FinancialStatementeEntriesCategoryData,
   FinancialStatementeEntriesSubcategoryData,
   FinancialTransactionsFeatureSpecificationEntity,
+  MessageTokenEntity,
   ParcialUpdateProfileRequestDto,
   ParcialUpdateWorkspaceRequestDto,
   PaymentDataDto,
@@ -173,6 +177,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(BankAccountEntity)]),
         () => ListBuilder<BankAccountEntity>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(MessageTokenEntity)]),
+        () => ListBuilder<MessageTokenEntity>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(BankConnectionWithAccountsEntity)]),

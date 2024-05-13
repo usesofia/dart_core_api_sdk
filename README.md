@@ -92,6 +92,8 @@ Class | Method | HTTP request | Description
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetRecent**](doc/BankTransactionsApi.md#banktransactionscontrollergetrecent) | **GET** /workspaces/{workspaceId}/bank/transactions/most-recent | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetTransactionDetails**](doc/BankTransactionsApi.md#banktransactionscontrollergettransactiondetails) | **GET** /bank/transactions/{bankTransactionId} | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerUpdateTransaction**](doc/BankTransactionsApi.md#banktransactionscontrollerupdatetransaction) | **PATCH** /bank/transactions/{bankTransactionId} | 
+[*MessageTokensApi*](doc/MessageTokensApi.md) | [**messageTokensControllerCreateOrUpdateMessageToken**](doc/MessageTokensApi.md#messagetokenscontrollercreateorupdatemessagetoken) | **PUT** /workspaces/{workspaceId}/message-tokens | 
+[*MessageTokensApi*](doc/MessageTokensApi.md) | [**messageTokensControllerGetWorkspaceMessageTokens**](doc/MessageTokensApi.md#messagetokenscontrollergetworkspacemessagetokens) | **GET** /workspaces/{workspaceId}/message-tokens | 
 [*PluggyApi*](doc/PluggyApi.md) | [**pluggyControllerCreate**](doc/PluggyApi.md#pluggycontrollercreate) | **POST** /pluggy/connect-token | 
 [*PluggyApi*](doc/PluggyApi.md) | [**pluggyControllerWebhook**](doc/PluggyApi.md#pluggycontrollerwebhook) | **POST** /pluggy/webhook | 
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerCreate**](doc/ProfilesApi.md#profilescontrollercreate) | **POST** /profiles | 
@@ -145,6 +147,7 @@ Class | Method | HTTP request | Description
  - [CreateOrUpdateBankConnectionRequestDto](doc/CreateOrUpdateBankConnectionRequestDto.md)
  - [CreateOrUpdateBankTransactionsInBulkItemDto](doc/CreateOrUpdateBankTransactionsInBulkItemDto.md)
  - [CreateOrUpdateBankTransactionsInBulkRequestDto](doc/CreateOrUpdateBankTransactionsInBulkRequestDto.md)
+ - [CreateOrUpdateMessageTokenRequestDto](doc/CreateOrUpdateMessageTokenRequestDto.md)
  - [CreatePluggyConnectTokenRequestDto](doc/CreatePluggyConnectTokenRequestDto.md)
  - [CreateProfileRequestDto](doc/CreateProfileRequestDto.md)
  - [CreateStripeCheckoutSessionRequestDto](doc/CreateStripeCheckoutSessionRequestDto.md)
@@ -162,6 +165,7 @@ Class | Method | HTTP request | Description
  - [FinancialStatementeEntriesCategoryData](doc/FinancialStatementeEntriesCategoryData.md)
  - [FinancialStatementeEntriesSubcategoryData](doc/FinancialStatementeEntriesSubcategoryData.md)
  - [FinancialTransactionsFeatureSpecificationEntity](doc/FinancialTransactionsFeatureSpecificationEntity.md)
+ - [MessageTokenEntity](doc/MessageTokenEntity.md)
  - [ParcialUpdateProfileRequestDto](doc/ParcialUpdateProfileRequestDto.md)
  - [ParcialUpdateWorkspaceRequestDto](doc/ParcialUpdateWorkspaceRequestDto.md)
  - [PaymentDataDto](doc/PaymentDataDto.md)

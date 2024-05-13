@@ -15,6 +15,7 @@ import 'package:dart_core_api_sdk/src/api/bank_connections_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transaction_categories_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transaction_cost_centers_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transactions_api.dart';
+import 'package:dart_core_api_sdk/src/api/message_tokens_api.dart';
 import 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
 import 'package:dart_core_api_sdk/src/api/profiles_api.dart';
 import 'package:dart_core_api_sdk/src/api/reports_api.dart';
@@ -112,6 +113,12 @@ class DartCoreApiSdk {
   /// by doing that all interceptors will not be executed
   BankTransactionsApi getBankTransactionsApi() {
     return BankTransactionsApi(dio, serializers);
+  }
+
+  /// Get MessageTokensApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MessageTokensApi getMessageTokensApi() {
+    return MessageTokensApi(dio, serializers);
   }
 
   /// Get PluggyApi instance, base route and serializer can be overridden by a given but be careful,
