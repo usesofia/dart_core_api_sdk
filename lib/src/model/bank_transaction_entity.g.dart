@@ -81,6 +81,32 @@ final BuiltSet<BankTransactionEntityStatusEnum>
   _$bankTransactionEntityStatusEnum_POSTED,
 ]);
 
+const BankTransactionEntityLegalNatureEnum
+    _$bankTransactionEntityLegalNatureEnum_PERSONAL =
+    const BankTransactionEntityLegalNatureEnum._('PERSONAL');
+const BankTransactionEntityLegalNatureEnum
+    _$bankTransactionEntityLegalNatureEnum_BUSINESS =
+    const BankTransactionEntityLegalNatureEnum._('BUSINESS');
+
+BankTransactionEntityLegalNatureEnum
+    _$bankTransactionEntityLegalNatureEnumValueOf(String name) {
+  switch (name) {
+    case 'PERSONAL':
+      return _$bankTransactionEntityLegalNatureEnum_PERSONAL;
+    case 'BUSINESS':
+      return _$bankTransactionEntityLegalNatureEnum_BUSINESS;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<BankTransactionEntityLegalNatureEnum>
+    _$bankTransactionEntityLegalNatureEnumValues = new BuiltSet<
+        BankTransactionEntityLegalNatureEnum>(const <BankTransactionEntityLegalNatureEnum>[
+  _$bankTransactionEntityLegalNatureEnum_PERSONAL,
+  _$bankTransactionEntityLegalNatureEnum_BUSINESS,
+]);
+
 Serializer<BankTransactionEntityProviderEnum>
     _$bankTransactionEntityProviderEnumSerializer =
     new _$BankTransactionEntityProviderEnumSerializer();
@@ -90,6 +116,9 @@ Serializer<BankTransactionEntityTypeEnum>
 Serializer<BankTransactionEntityStatusEnum>
     _$bankTransactionEntityStatusEnumSerializer =
     new _$BankTransactionEntityStatusEnumSerializer();
+Serializer<BankTransactionEntityLegalNatureEnum>
+    _$bankTransactionEntityLegalNatureEnumSerializer =
+    new _$BankTransactionEntityLegalNatureEnumSerializer();
 
 class _$BankTransactionEntityProviderEnumSerializer
     implements PrimitiveSerializer<BankTransactionEntityProviderEnum> {
@@ -181,6 +210,38 @@ class _$BankTransactionEntityStatusEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
+class _$BankTransactionEntityLegalNatureEnumSerializer
+    implements PrimitiveSerializer<BankTransactionEntityLegalNatureEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'PERSONAL': 'PERSONAL',
+    'BUSINESS': 'BUSINESS',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'PERSONAL': 'PERSONAL',
+    'BUSINESS': 'BUSINESS',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    BankTransactionEntityLegalNatureEnum
+  ];
+  @override
+  final String wireName = 'BankTransactionEntityLegalNatureEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers, BankTransactionEntityLegalNatureEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  BankTransactionEntityLegalNatureEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      BankTransactionEntityLegalNatureEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$BankTransactionEntity extends BankTransactionEntity {
   @override
   final String id;
@@ -208,6 +269,8 @@ class _$BankTransactionEntity extends BankTransactionEntity {
   final BankTransactionEntityTypeEnum type;
   @override
   final BankTransactionEntityStatusEnum status;
+  @override
+  final BankTransactionEntityLegalNatureEnum legalNature;
   @override
   final String? providerCategoryId;
   @override
@@ -257,6 +320,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
       required this.amount,
       required this.type,
       required this.status,
+      required this.legalNature,
       this.providerCategoryId,
       this.providerCategoryName,
       this.categoryId,
@@ -299,6 +363,8 @@ class _$BankTransactionEntity extends BankTransactionEntity {
     BuiltValueNullFieldError.checkNotNull(
         status, r'BankTransactionEntity', 'status');
     BuiltValueNullFieldError.checkNotNull(
+        legalNature, r'BankTransactionEntity', 'legalNature');
+    BuiltValueNullFieldError.checkNotNull(
         tags, r'BankTransactionEntity', 'tags');
     BuiltValueNullFieldError.checkNotNull(
         createdAt, r'BankTransactionEntity', 'createdAt');
@@ -332,6 +398,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
         amount == other.amount &&
         type == other.type &&
         status == other.status &&
+        legalNature == other.legalNature &&
         providerCategoryId == other.providerCategoryId &&
         providerCategoryName == other.providerCategoryName &&
         categoryId == other.categoryId &&
@@ -365,6 +432,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
     _$hash = $jc(_$hash, amount.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, legalNature.hashCode);
     _$hash = $jc(_$hash, providerCategoryId.hashCode);
     _$hash = $jc(_$hash, providerCategoryName.hashCode);
     _$hash = $jc(_$hash, categoryId.hashCode);
@@ -400,6 +468,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
           ..add('amount', amount)
           ..add('type', type)
           ..add('status', status)
+          ..add('legalNature', legalNature)
           ..add('providerCategoryId', providerCategoryId)
           ..add('providerCategoryName', providerCategoryName)
           ..add('categoryId', categoryId)
@@ -480,6 +549,11 @@ class BankTransactionEntityBuilder
   BankTransactionEntityStatusEnum? get status => _$this._status;
   set status(BankTransactionEntityStatusEnum? status) =>
       _$this._status = status;
+
+  BankTransactionEntityLegalNatureEnum? _legalNature;
+  BankTransactionEntityLegalNatureEnum? get legalNature => _$this._legalNature;
+  set legalNature(BankTransactionEntityLegalNatureEnum? legalNature) =>
+      _$this._legalNature = legalNature;
 
   String? _providerCategoryId;
   String? get providerCategoryId => _$this._providerCategoryId;
@@ -579,6 +653,7 @@ class BankTransactionEntityBuilder
       _amount = $v.amount;
       _type = $v.type;
       _status = $v.status;
+      _legalNature = $v.legalNature;
       _providerCategoryId = $v.providerCategoryId;
       _providerCategoryName = $v.providerCategoryName;
       _categoryId = $v.categoryId;
@@ -639,6 +714,7 @@ class BankTransactionEntityBuilder
               amount: BuiltValueNullFieldError.checkNotNull(amount, r'BankTransactionEntity', 'amount'),
               type: BuiltValueNullFieldError.checkNotNull(type, r'BankTransactionEntity', 'type'),
               status: BuiltValueNullFieldError.checkNotNull(status, r'BankTransactionEntity', 'status'),
+              legalNature: BuiltValueNullFieldError.checkNotNull(legalNature, r'BankTransactionEntity', 'legalNature'),
               providerCategoryId: providerCategoryId,
               providerCategoryName: providerCategoryName,
               categoryId: categoryId,

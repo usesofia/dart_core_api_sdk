@@ -18,6 +18,7 @@ part 'update_bank_transaction_request_dto.g.dart';
 /// * [ignore] 
 /// * [confirm] 
 /// * [tagIds] 
+/// * [legalNature] 
 @BuiltValue()
 abstract class UpdateBankTransactionRequestDto implements Built<UpdateBankTransactionRequestDto, UpdateBankTransactionRequestDtoBuilder> {
   @BuiltValueField(wireName: r'description')
@@ -37,6 +38,9 @@ abstract class UpdateBankTransactionRequestDto implements Built<UpdateBankTransa
 
   @BuiltValueField(wireName: r'tagIds')
   BuiltList<String>? get tagIds;
+
+  @BuiltValueField(wireName: r'legalNature')
+  String get legalNature;
 
   UpdateBankTransactionRequestDto._();
 
@@ -103,6 +107,11 @@ class _$UpdateBankTransactionRequestDtoSerializer implements PrimitiveSerializer
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
+    yield r'legalNature';
+    yield serializers.serialize(
+      object.legalNature,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override
@@ -167,6 +176,13 @@ class _$UpdateBankTransactionRequestDtoSerializer implements PrimitiveSerializer
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.tagIds.replace(valueDes);
+          break;
+        case r'legalNature':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.legalNature = valueDes;
           break;
         default:
           unhandled.add(key);

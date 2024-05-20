@@ -29,6 +29,8 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
   @override
   final String status;
   @override
+  final String legalNature;
+  @override
   final String? providerCategoryId;
   @override
   final String? providerCategoryName;
@@ -61,6 +63,7 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
       required this.amount,
       required this.type,
       required this.status,
+      required this.legalNature,
       this.providerCategoryId,
       this.providerCategoryName,
       this.categoryId,
@@ -91,6 +94,8 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
         type, r'CreateOrUpdateBankTransactionsInBulkItemDto', 'type');
     BuiltValueNullFieldError.checkNotNull(
         status, r'CreateOrUpdateBankTransactionsInBulkItemDto', 'status');
+    BuiltValueNullFieldError.checkNotNull(legalNature,
+        r'CreateOrUpdateBankTransactionsInBulkItemDto', 'legalNature');
     BuiltValueNullFieldError.checkNotNull(paymentData,
         r'CreateOrUpdateBankTransactionsInBulkItemDto', 'paymentData');
     BuiltValueNullFieldError.checkNotNull(creditCardMetadata,
@@ -125,6 +130,7 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
         amount == other.amount &&
         type == other.type &&
         status == other.status &&
+        legalNature == other.legalNature &&
         providerCategoryId == other.providerCategoryId &&
         providerCategoryName == other.providerCategoryName &&
         categoryId == other.categoryId &&
@@ -147,6 +153,7 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
     _$hash = $jc(_$hash, amount.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, legalNature.hashCode);
     _$hash = $jc(_$hash, providerCategoryId.hashCode);
     _$hash = $jc(_$hash, providerCategoryName.hashCode);
     _$hash = $jc(_$hash, categoryId.hashCode);
@@ -172,6 +179,7 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
           ..add('amount', amount)
           ..add('type', type)
           ..add('status', status)
+          ..add('legalNature', legalNature)
           ..add('providerCategoryId', providerCategoryId)
           ..add('providerCategoryName', providerCategoryName)
           ..add('categoryId', categoryId)
@@ -231,6 +239,10 @@ class CreateOrUpdateBankTransactionsInBulkItemDtoBuilder
   String? get status => _$this._status;
   set status(String? status) => _$this._status = status;
 
+  String? _legalNature;
+  String? get legalNature => _$this._legalNature;
+  set legalNature(String? legalNature) => _$this._legalNature = legalNature;
+
   String? _providerCategoryId;
   String? get providerCategoryId => _$this._providerCategoryId;
   set providerCategoryId(String? providerCategoryId) =>
@@ -285,6 +297,7 @@ class CreateOrUpdateBankTransactionsInBulkItemDtoBuilder
       _amount = $v.amount;
       _type = $v.type;
       _status = $v.status;
+      _legalNature = $v.legalNature;
       _providerCategoryId = $v.providerCategoryId;
       _providerCategoryName = $v.providerCategoryName;
       _categoryId = $v.categoryId;
@@ -336,6 +349,7 @@ class CreateOrUpdateBankTransactionsInBulkItemDtoBuilder
               amount: BuiltValueNullFieldError.checkNotNull(amount, r'CreateOrUpdateBankTransactionsInBulkItemDto', 'amount'),
               type: BuiltValueNullFieldError.checkNotNull(type, r'CreateOrUpdateBankTransactionsInBulkItemDto', 'type'),
               status: BuiltValueNullFieldError.checkNotNull(status, r'CreateOrUpdateBankTransactionsInBulkItemDto', 'status'),
+              legalNature: BuiltValueNullFieldError.checkNotNull(legalNature, r'CreateOrUpdateBankTransactionsInBulkItemDto', 'legalNature'),
               providerCategoryId: providerCategoryId,
               providerCategoryName: providerCategoryName,
               categoryId: categoryId,

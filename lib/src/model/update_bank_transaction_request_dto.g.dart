@@ -20,6 +20,8 @@ class _$UpdateBankTransactionRequestDto
   final bool? confirm;
   @override
   final BuiltList<String>? tagIds;
+  @override
+  final String legalNature;
 
   factory _$UpdateBankTransactionRequestDto(
           [void Function(UpdateBankTransactionRequestDtoBuilder)? updates]) =>
@@ -31,8 +33,12 @@ class _$UpdateBankTransactionRequestDto
       this.competencyDate,
       this.ignore,
       this.confirm,
-      this.tagIds})
-      : super._();
+      this.tagIds,
+      required this.legalNature})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        legalNature, r'UpdateBankTransactionRequestDto', 'legalNature');
+  }
 
   @override
   UpdateBankTransactionRequestDto rebuild(
@@ -52,7 +58,8 @@ class _$UpdateBankTransactionRequestDto
         competencyDate == other.competencyDate &&
         ignore == other.ignore &&
         confirm == other.confirm &&
-        tagIds == other.tagIds;
+        tagIds == other.tagIds &&
+        legalNature == other.legalNature;
   }
 
   @override
@@ -64,6 +71,7 @@ class _$UpdateBankTransactionRequestDto
     _$hash = $jc(_$hash, ignore.hashCode);
     _$hash = $jc(_$hash, confirm.hashCode);
     _$hash = $jc(_$hash, tagIds.hashCode);
+    _$hash = $jc(_$hash, legalNature.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -76,7 +84,8 @@ class _$UpdateBankTransactionRequestDto
           ..add('competencyDate', competencyDate)
           ..add('ignore', ignore)
           ..add('confirm', confirm)
-          ..add('tagIds', tagIds))
+          ..add('tagIds', tagIds)
+          ..add('legalNature', legalNature))
         .toString();
   }
 }
@@ -113,6 +122,10 @@ class UpdateBankTransactionRequestDtoBuilder
       _$this._tagIds ??= new ListBuilder<String>();
   set tagIds(ListBuilder<String>? tagIds) => _$this._tagIds = tagIds;
 
+  String? _legalNature;
+  String? get legalNature => _$this._legalNature;
+  set legalNature(String? legalNature) => _$this._legalNature = legalNature;
+
   UpdateBankTransactionRequestDtoBuilder() {
     UpdateBankTransactionRequestDto._defaults(this);
   }
@@ -126,6 +139,7 @@ class UpdateBankTransactionRequestDtoBuilder
       _ignore = $v.ignore;
       _confirm = $v.confirm;
       _tagIds = $v.tagIds?.toBuilder();
+      _legalNature = $v.legalNature;
       _$v = null;
     }
     return this;
@@ -155,7 +169,9 @@ class UpdateBankTransactionRequestDtoBuilder
               competencyDate: competencyDate,
               ignore: ignore,
               confirm: confirm,
-              tagIds: _tagIds?.build());
+              tagIds: _tagIds?.build(),
+              legalNature: BuiltValueNullFieldError.checkNotNull(legalNature,
+                  r'UpdateBankTransactionRequestDto', 'legalNature'));
     } catch (_) {
       late String _$failedField;
       try {

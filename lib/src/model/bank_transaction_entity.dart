@@ -30,6 +30,7 @@ part 'bank_transaction_entity.g.dart';
 /// * [amount] 
 /// * [type] 
 /// * [status] 
+/// * [legalNature] 
 /// * [providerCategoryId] 
 /// * [providerCategoryName] 
 /// * [categoryId] 
@@ -88,6 +89,10 @@ abstract class BankTransactionEntity implements Built<BankTransactionEntity, Ban
   @BuiltValueField(wireName: r'status')
   BankTransactionEntityStatusEnum get status;
   // enum statusEnum {  PENDING,  POSTED,  };
+
+  @BuiltValueField(wireName: r'legalNature')
+  BankTransactionEntityLegalNatureEnum get legalNature;
+  // enum legalNatureEnum {  PERSONAL,  BUSINESS,  };
 
   @BuiltValueField(wireName: r'providerCategoryId')
   String? get providerCategoryId;
@@ -221,6 +226,11 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
     yield serializers.serialize(
       object.status,
       specifiedType: const FullType(BankTransactionEntityStatusEnum),
+    );
+    yield r'legalNature';
+    yield serializers.serialize(
+      object.legalNature,
+      specifiedType: const FullType(BankTransactionEntityLegalNatureEnum),
     );
     if (object.providerCategoryId != null) {
       yield r'providerCategoryId';
@@ -435,6 +445,13 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
           ) as BankTransactionEntityStatusEnum;
           result.status = valueDes;
           break;
+        case r'legalNature':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BankTransactionEntityLegalNatureEnum),
+          ) as BankTransactionEntityLegalNatureEnum;
+          result.legalNature = valueDes;
+          break;
         case r'providerCategoryId':
           final valueDes = serializers.deserialize(
             value,
@@ -612,5 +629,20 @@ class BankTransactionEntityStatusEnum extends EnumClass {
 
   static BuiltSet<BankTransactionEntityStatusEnum> get values => _$bankTransactionEntityStatusEnumValues;
   static BankTransactionEntityStatusEnum valueOf(String name) => _$bankTransactionEntityStatusEnumValueOf(name);
+}
+
+class BankTransactionEntityLegalNatureEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'PERSONAL')
+  static const BankTransactionEntityLegalNatureEnum PERSONAL = _$bankTransactionEntityLegalNatureEnum_PERSONAL;
+  @BuiltValueEnumConst(wireName: r'BUSINESS')
+  static const BankTransactionEntityLegalNatureEnum BUSINESS = _$bankTransactionEntityLegalNatureEnum_BUSINESS;
+
+  static Serializer<BankTransactionEntityLegalNatureEnum> get serializer => _$bankTransactionEntityLegalNatureEnumSerializer;
+
+  const BankTransactionEntityLegalNatureEnum._(String name): super(name);
+
+  static BuiltSet<BankTransactionEntityLegalNatureEnum> get values => _$bankTransactionEntityLegalNatureEnumValues;
+  static BankTransactionEntityLegalNatureEnum valueOf(String name) => _$bankTransactionEntityLegalNatureEnumValueOf(name);
 }
 

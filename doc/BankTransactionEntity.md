@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **amount** | **num** |  | 
 **type** | **String** |  | 
 **status** | **String** |  | 
+**legalNature** | **String** |  | 
 **providerCategoryId** | **String** |  | [optional] 
 **providerCategoryName** | **String** |  | [optional] 
 **categoryId** | **String** |  | [optional] 

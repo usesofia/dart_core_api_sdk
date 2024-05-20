@@ -25,6 +25,7 @@ part 'create_or_update_bank_transactions_in_bulk_item_dto.g.dart';
 /// * [amount] 
 /// * [type] 
 /// * [status] 
+/// * [legalNature] 
 /// * [providerCategoryId] 
 /// * [providerCategoryName] 
 /// * [categoryId] 
@@ -63,6 +64,9 @@ abstract class CreateOrUpdateBankTransactionsInBulkItemDto implements Built<Crea
 
   @BuiltValueField(wireName: r'status')
   String get status;
+
+  @BuiltValueField(wireName: r'legalNature')
+  String get legalNature;
 
   @BuiltValueField(wireName: r'providerCategoryId')
   String? get providerCategoryId;
@@ -156,6 +160,11 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDtoSerializer implements Primiti
     yield r'status';
     yield serializers.serialize(
       object.status,
+      specifiedType: const FullType(String),
+    );
+    yield r'legalNature';
+    yield serializers.serialize(
+      object.legalNature,
       specifiedType: const FullType(String),
     );
     if (object.providerCategoryId != null) {
@@ -291,6 +300,13 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDtoSerializer implements Primiti
             specifiedType: const FullType(String),
           ) as String;
           result.status = valueDes;
+          break;
+        case r'legalNature':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.legalNature = valueDes;
           break;
         case r'providerCategoryId':
           final valueDes = serializers.deserialize(
