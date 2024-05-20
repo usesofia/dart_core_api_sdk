@@ -28,7 +28,6 @@ part 'create_or_update_bank_transactions_in_bulk_item_dto.g.dart';
 /// * [providerCategoryId] 
 /// * [providerCategoryName] 
 /// * [categoryId] 
-/// * [costCenterId] 
 /// * [paymentData] 
 /// * [creditCardMetadata] 
 /// * [categoryGuesses] 
@@ -73,9 +72,6 @@ abstract class CreateOrUpdateBankTransactionsInBulkItemDto implements Built<Crea
 
   @BuiltValueField(wireName: r'categoryId')
   String? get categoryId;
-
-  @BuiltValueField(wireName: r'costCenterId')
-  String? get costCenterId;
 
   @BuiltValueField(wireName: r'paymentData')
   PaymentDataDto get paymentData;
@@ -180,13 +176,6 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDtoSerializer implements Primiti
       yield r'categoryId';
       yield serializers.serialize(
         object.categoryId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.costCenterId != null) {
-      yield r'costCenterId';
-      yield serializers.serialize(
-        object.costCenterId,
         specifiedType: const FullType(String),
       );
     }
@@ -323,13 +312,6 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDtoSerializer implements Primiti
             specifiedType: const FullType(String),
           ) as String;
           result.categoryId = valueDes;
-          break;
-        case r'costCenterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.costCenterId = valueDes;
           break;
         case r'paymentData':
           final valueDes = serializers.deserialize(

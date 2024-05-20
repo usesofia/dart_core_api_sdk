@@ -21,7 +21,6 @@ Name | Type | Description | Notes
 **providerCategoryId** | **String** |  | [optional] 
 **providerCategoryName** | **String** |  | [optional] 
 **categoryId** | **String** |  | [optional] 
-**costCenterId** | **String** |  | [optional] 
 **paymentData** | [**PaymentDataDto**](PaymentDataDto.md) |  | 
 **creditCardMetadata** | [**CreditCardMetadataDto**](CreditCardMetadataDto.md) |  | 
 **categoryGuesses** | [**BuiltList&lt;CategoryGuessDto&gt;**](CategoryGuessDto.md) |  | 

@@ -13,7 +13,7 @@ import 'package:dart_core_api_sdk/src/api/auth_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_accounts_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_connections_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transaction_categories_api.dart';
-import 'package:dart_core_api_sdk/src/api/bank_transaction_cost_centers_api.dart';
+import 'package:dart_core_api_sdk/src/api/bank_transaction_tags_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transactions_api.dart';
 import 'package:dart_core_api_sdk/src/api/message_tokens_api.dart';
 import 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
@@ -103,10 +103,10 @@ class DartCoreApiSdk {
     return BankTransactionCategoriesApi(dio, serializers);
   }
 
-  /// Get BankTransactionCostCentersApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get BankTransactionTagsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  BankTransactionCostCentersApi getBankTransactionCostCentersApi() {
-    return BankTransactionCostCentersApi(dio, serializers);
+  BankTransactionTagsApi getBankTransactionTagsApi() {
+    return BankTransactionTagsApi(dio, serializers);
   }
 
   /// Get BankTransactionsApi instance, base route and serializer can be overridden by a given but be careful,

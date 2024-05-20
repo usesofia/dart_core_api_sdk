@@ -13,13 +13,13 @@ class _$UpdateBankTransactionRequestDto
   @override
   final String? categoryId;
   @override
-  final String? costCenterId;
-  @override
   final DateTime? competencyDate;
   @override
   final bool? ignore;
   @override
   final bool? confirm;
+  @override
+  final BuiltList<String>? tagIds;
 
   factory _$UpdateBankTransactionRequestDto(
           [void Function(UpdateBankTransactionRequestDtoBuilder)? updates]) =>
@@ -28,10 +28,10 @@ class _$UpdateBankTransactionRequestDto
   _$UpdateBankTransactionRequestDto._(
       {this.description,
       this.categoryId,
-      this.costCenterId,
       this.competencyDate,
       this.ignore,
-      this.confirm})
+      this.confirm,
+      this.tagIds})
       : super._();
 
   @override
@@ -49,10 +49,10 @@ class _$UpdateBankTransactionRequestDto
     return other is UpdateBankTransactionRequestDto &&
         description == other.description &&
         categoryId == other.categoryId &&
-        costCenterId == other.costCenterId &&
         competencyDate == other.competencyDate &&
         ignore == other.ignore &&
-        confirm == other.confirm;
+        confirm == other.confirm &&
+        tagIds == other.tagIds;
   }
 
   @override
@@ -60,10 +60,10 @@ class _$UpdateBankTransactionRequestDto
     var _$hash = 0;
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, categoryId.hashCode);
-    _$hash = $jc(_$hash, costCenterId.hashCode);
     _$hash = $jc(_$hash, competencyDate.hashCode);
     _$hash = $jc(_$hash, ignore.hashCode);
     _$hash = $jc(_$hash, confirm.hashCode);
+    _$hash = $jc(_$hash, tagIds.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -73,10 +73,10 @@ class _$UpdateBankTransactionRequestDto
     return (newBuiltValueToStringHelper(r'UpdateBankTransactionRequestDto')
           ..add('description', description)
           ..add('categoryId', categoryId)
-          ..add('costCenterId', costCenterId)
           ..add('competencyDate', competencyDate)
           ..add('ignore', ignore)
-          ..add('confirm', confirm))
+          ..add('confirm', confirm)
+          ..add('tagIds', tagIds))
         .toString();
   }
 }
@@ -95,10 +95,6 @@ class UpdateBankTransactionRequestDtoBuilder
   String? get categoryId => _$this._categoryId;
   set categoryId(String? categoryId) => _$this._categoryId = categoryId;
 
-  String? _costCenterId;
-  String? get costCenterId => _$this._costCenterId;
-  set costCenterId(String? costCenterId) => _$this._costCenterId = costCenterId;
-
   DateTime? _competencyDate;
   DateTime? get competencyDate => _$this._competencyDate;
   set competencyDate(DateTime? competencyDate) =>
@@ -112,6 +108,11 @@ class UpdateBankTransactionRequestDtoBuilder
   bool? get confirm => _$this._confirm;
   set confirm(bool? confirm) => _$this._confirm = confirm;
 
+  ListBuilder<String>? _tagIds;
+  ListBuilder<String> get tagIds =>
+      _$this._tagIds ??= new ListBuilder<String>();
+  set tagIds(ListBuilder<String>? tagIds) => _$this._tagIds = tagIds;
+
   UpdateBankTransactionRequestDtoBuilder() {
     UpdateBankTransactionRequestDto._defaults(this);
   }
@@ -121,10 +122,10 @@ class UpdateBankTransactionRequestDtoBuilder
     if ($v != null) {
       _description = $v.description;
       _categoryId = $v.categoryId;
-      _costCenterId = $v.costCenterId;
       _competencyDate = $v.competencyDate;
       _ignore = $v.ignore;
       _confirm = $v.confirm;
+      _tagIds = $v.tagIds?.toBuilder();
       _$v = null;
     }
     return this;
@@ -145,14 +146,27 @@ class UpdateBankTransactionRequestDtoBuilder
   UpdateBankTransactionRequestDto build() => _build();
 
   _$UpdateBankTransactionRequestDto _build() {
-    final _$result = _$v ??
-        new _$UpdateBankTransactionRequestDto._(
-            description: description,
-            categoryId: categoryId,
-            costCenterId: costCenterId,
-            competencyDate: competencyDate,
-            ignore: ignore,
-            confirm: confirm);
+    _$UpdateBankTransactionRequestDto _$result;
+    try {
+      _$result = _$v ??
+          new _$UpdateBankTransactionRequestDto._(
+              description: description,
+              categoryId: categoryId,
+              competencyDate: competencyDate,
+              ignore: ignore,
+              confirm: confirm,
+              tagIds: _tagIds?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'tagIds';
+        _tagIds?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'UpdateBankTransactionRequestDto', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

@@ -127,7 +127,7 @@ class BankTransactionsApi {
   /// * [pageSize] 
   /// * [accountIds] 
   /// * [categoryIds] 
-  /// * [costCenterIds] 
+  /// * [tagIds] 
   /// * [minPostedDate] 
   /// * [maxPostedDate] 
   /// * [minCompetencyDate] 
@@ -148,7 +148,7 @@ class BankTransactionsApi {
     num? pageSize,
     String? accountIds,
     String? categoryIds,
-    String? costCenterIds,
+    String? tagIds,
     String? minPostedDate,
     String? maxPostedDate,
     String? minCompetencyDate,
@@ -179,7 +179,7 @@ class BankTransactionsApi {
       if (pageSize != null) r'pageSize': encodeQueryParameter(_serializers, pageSize, const FullType(num)),
       if (accountIds != null) r'accountIds': encodeQueryParameter(_serializers, accountIds, const FullType(String)),
       if (categoryIds != null) r'categoryIds': encodeQueryParameter(_serializers, categoryIds, const FullType(String)),
-      if (costCenterIds != null) r'costCenterIds': encodeQueryParameter(_serializers, costCenterIds, const FullType(String)),
+      if (tagIds != null) r'tagIds': encodeQueryParameter(_serializers, tagIds, const FullType(String)),
       if (minPostedDate != null) r'minPostedDate': encodeQueryParameter(_serializers, minPostedDate, const FullType(String)),
       if (maxPostedDate != null) r'maxPostedDate': encodeQueryParameter(_serializers, maxPostedDate, const FullType(String)),
       if (minCompetencyDate != null) r'minCompetencyDate': encodeQueryParameter(_serializers, minCompetencyDate, const FullType(String)),

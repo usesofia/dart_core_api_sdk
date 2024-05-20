@@ -23,10 +23,10 @@ import 'package:dart_core_api_sdk/src/model/bank_connection_with_accounts_entity
 import 'package:dart_core_api_sdk/src/model/bank_connector_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_category_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_category_plain_entity.dart';
-import 'package:dart_core_api_sdk/src/model/bank_transaction_cost_center_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_credit_card_metadata_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_payment_data_entity.dart';
+import 'package:dart_core_api_sdk/src/model/bank_transaction_tag_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transactions_page_entity.dart';
 import 'package:dart_core_api_sdk/src/model/cash_flow_by_category_report_entity.dart';
 import 'package:dart_core_api_sdk/src/model/cash_flow_by_category_report_item_entity.dart';
@@ -38,7 +38,7 @@ import 'package:dart_core_api_sdk/src/model/category_guess_dto.dart';
 import 'package:dart_core_api_sdk/src/model/check_email_in_use_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/checkout_session_entity.dart';
 import 'package:dart_core_api_sdk/src/model/connection_feature_specification_entity.dart';
-import 'package:dart_core_api_sdk/src/model/create_bank_transaction_cost_center_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/create_bank_transaction_tag_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_account_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_connection_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_item_dto.dart';
@@ -94,10 +94,10 @@ part 'serializers.g.dart';
   BankConnectorEntity,
   BankTransactionCategoryEntity,
   BankTransactionCategoryPlainEntity,
-  BankTransactionCostCenterEntity,
   BankTransactionCreditCardMetadataEntity,
   BankTransactionEntity,
   BankTransactionPaymentDataEntity,
+  BankTransactionTagEntity,
   BankTransactionsPageEntity,
   CashFlowByCategoryReportEntity,
   CashFlowByCategoryReportItemEntity,
@@ -109,7 +109,7 @@ part 'serializers.g.dart';
   CheckEmailInUseRequestDto,
   CheckoutSessionEntity,
   ConnectionFeatureSpecificationEntity,
-  CreateBankTransactionCostCenterRequestDto,
+  CreateBankTransactionTagRequestDto,
   CreateOrUpdateBankAccountRequestDto,
   CreateOrUpdateBankConnectionRequestDto,
   CreateOrUpdateBankTransactionsInBulkItemDto,
@@ -155,10 +155,6 @@ part 'serializers.g.dart';
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(BankTransactionCostCenterEntity)]),
-        () => ListBuilder<BankTransactionCostCenterEntity>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(SubscriptionProductEntity)]),
         () => ListBuilder<SubscriptionProductEntity>(),
       )
@@ -177,6 +173,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(BankAccountEntity)]),
         () => ListBuilder<BankAccountEntity>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(BankTransactionTagEntity)]),
+        () => ListBuilder<BankTransactionTagEntity>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(MessageTokenEntity)]),

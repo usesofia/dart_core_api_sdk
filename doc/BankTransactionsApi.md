@@ -60,7 +60,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bankTransactionsControllerGetBankTransactions**
-> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, costCenterIds, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored)
+> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored)
 
 
 
@@ -74,7 +74,7 @@ final num pageIndex = 8.14; // num |
 final num pageSize = 8.14; // num | 
 final String accountIds = accountIds_example; // String | 
 final String categoryIds = categoryIds_example; // String | 
-final String costCenterIds = costCenterIds_example; // String | 
+final String tagIds = tagIds_example; // String | 
 final String minPostedDate = minPostedDate_example; // String | 
 final String maxPostedDate = maxPostedDate_example; // String | 
 final String minCompetencyDate = minCompetencyDate_example; // String | 
@@ -82,7 +82,7 @@ final String maxCompetencyDate = maxCompetencyDate_example; // String |
 final bool showIgnored = true; // bool | 
 
 try {
-    final response = api.bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, costCenterIds, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored);
+    final response = api.bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetBankTransactions: $e\n');
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
  **pageSize** | **num**|  | [optional] 
  **accountIds** | **String**|  | [optional] 
  **categoryIds** | **String**|  | [optional] 
- **costCenterIds** | **String**|  | [optional] 
+ **tagIds** | **String**|  | [optional] 
  **minPostedDate** | **String**|  | [optional] 
  **maxPostedDate** | **String**|  | [optional] 
  **minCompetencyDate** | **String**|  | [optional] 

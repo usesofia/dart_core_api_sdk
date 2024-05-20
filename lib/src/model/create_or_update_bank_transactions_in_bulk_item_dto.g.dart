@@ -35,8 +35,6 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
   @override
   final String? categoryId;
   @override
-  final String? costCenterId;
-  @override
   final PaymentDataDto paymentData;
   @override
   final CreditCardMetadataDto creditCardMetadata;
@@ -66,7 +64,6 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
       this.providerCategoryId,
       this.providerCategoryName,
       this.categoryId,
-      this.costCenterId,
       required this.paymentData,
       required this.creditCardMetadata,
       required this.categoryGuesses,
@@ -131,7 +128,6 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
         providerCategoryId == other.providerCategoryId &&
         providerCategoryName == other.providerCategoryName &&
         categoryId == other.categoryId &&
-        costCenterId == other.costCenterId &&
         paymentData == other.paymentData &&
         creditCardMetadata == other.creditCardMetadata &&
         categoryGuesses == other.categoryGuesses &&
@@ -154,7 +150,6 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
     _$hash = $jc(_$hash, providerCategoryId.hashCode);
     _$hash = $jc(_$hash, providerCategoryName.hashCode);
     _$hash = $jc(_$hash, categoryId.hashCode);
-    _$hash = $jc(_$hash, costCenterId.hashCode);
     _$hash = $jc(_$hash, paymentData.hashCode);
     _$hash = $jc(_$hash, creditCardMetadata.hashCode);
     _$hash = $jc(_$hash, categoryGuesses.hashCode);
@@ -180,7 +175,6 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
           ..add('providerCategoryId', providerCategoryId)
           ..add('providerCategoryName', providerCategoryName)
           ..add('categoryId', categoryId)
-          ..add('costCenterId', costCenterId)
           ..add('paymentData', paymentData)
           ..add('creditCardMetadata', creditCardMetadata)
           ..add('categoryGuesses', categoryGuesses)
@@ -251,10 +245,6 @@ class CreateOrUpdateBankTransactionsInBulkItemDtoBuilder
   String? get categoryId => _$this._categoryId;
   set categoryId(String? categoryId) => _$this._categoryId = categoryId;
 
-  String? _costCenterId;
-  String? get costCenterId => _$this._costCenterId;
-  set costCenterId(String? costCenterId) => _$this._costCenterId = costCenterId;
-
   PaymentDataDtoBuilder? _paymentData;
   PaymentDataDtoBuilder get paymentData =>
       _$this._paymentData ??= new PaymentDataDtoBuilder();
@@ -298,7 +288,6 @@ class CreateOrUpdateBankTransactionsInBulkItemDtoBuilder
       _providerCategoryId = $v.providerCategoryId;
       _providerCategoryName = $v.providerCategoryName;
       _categoryId = $v.categoryId;
-      _costCenterId = $v.costCenterId;
       _paymentData = $v.paymentData.toBuilder();
       _creditCardMetadata = $v.creditCardMetadata.toBuilder();
       _categoryGuesses = $v.categoryGuesses.toBuilder();
@@ -350,7 +339,6 @@ class CreateOrUpdateBankTransactionsInBulkItemDtoBuilder
               providerCategoryId: providerCategoryId,
               providerCategoryName: providerCategoryName,
               categoryId: categoryId,
-              costCenterId: costCenterId,
               paymentData: paymentData.build(),
               creditCardMetadata: creditCardMetadata.build(),
               categoryGuesses: categoryGuesses.build(),

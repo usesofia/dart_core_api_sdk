@@ -16,13 +16,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BankConnectorEntity.serializer)
       ..add(BankTransactionCategoryEntity.serializer)
       ..add(BankTransactionCategoryPlainEntity.serializer)
-      ..add(BankTransactionCostCenterEntity.serializer)
       ..add(BankTransactionCreditCardMetadataEntity.serializer)
       ..add(BankTransactionEntity.serializer)
       ..add(BankTransactionEntityProviderEnum.serializer)
       ..add(BankTransactionEntityStatusEnum.serializer)
       ..add(BankTransactionEntityTypeEnum.serializer)
       ..add(BankTransactionPaymentDataEntity.serializer)
+      ..add(BankTransactionTagEntity.serializer)
       ..add(BankTransactionsPageEntity.serializer)
       ..add(CashFlowByCategoryReportEntity.serializer)
       ..add(CashFlowByCategoryReportItemEntity.serializer)
@@ -34,7 +34,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CheckEmailInUseRequestDto.serializer)
       ..add(CheckoutSessionEntity.serializer)
       ..add(ConnectionFeatureSpecificationEntity.serializer)
-      ..add(CreateBankTransactionCostCenterRequestDto.serializer)
+      ..add(CreateBankTransactionTagRequestDto.serializer)
       ..add(CreateOrUpdateBankAccountRequestDto.serializer)
       ..add(CreateOrUpdateBankConnectionRequestDto.serializer)
       ..add(CreateOrUpdateBankTransactionsInBulkItemDto.serializer)
@@ -99,6 +99,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(BankTransactionEntity)]),
           () => new ListBuilder<BankTransactionEntity>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(BankTransactionTagEntity)]),
+          () => new ListBuilder<BankTransactionTagEntity>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(CashFlowByCategoryReportItemEntity)]),
@@ -196,6 +200,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(PlainBankAccountEntity)]),
           () => new ListBuilder<PlainBankAccountEntity>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>()))

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -13,10 +14,10 @@ part 'update_bank_transaction_request_dto.g.dart';
 /// Properties:
 /// * [description] 
 /// * [categoryId] 
-/// * [costCenterId] 
 /// * [competencyDate] 
 /// * [ignore] 
 /// * [confirm] 
+/// * [tagIds] 
 @BuiltValue()
 abstract class UpdateBankTransactionRequestDto implements Built<UpdateBankTransactionRequestDto, UpdateBankTransactionRequestDtoBuilder> {
   @BuiltValueField(wireName: r'description')
@@ -24,9 +25,6 @@ abstract class UpdateBankTransactionRequestDto implements Built<UpdateBankTransa
 
   @BuiltValueField(wireName: r'categoryId')
   String? get categoryId;
-
-  @BuiltValueField(wireName: r'costCenterId')
-  String? get costCenterId;
 
   @BuiltValueField(wireName: r'competencyDate')
   DateTime? get competencyDate;
@@ -36,6 +34,9 @@ abstract class UpdateBankTransactionRequestDto implements Built<UpdateBankTransa
 
   @BuiltValueField(wireName: r'confirm')
   bool? get confirm;
+
+  @BuiltValueField(wireName: r'tagIds')
+  BuiltList<String>? get tagIds;
 
   UpdateBankTransactionRequestDto._();
 
@@ -74,13 +75,6 @@ class _$UpdateBankTransactionRequestDtoSerializer implements PrimitiveSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.costCenterId != null) {
-      yield r'costCenterId';
-      yield serializers.serialize(
-        object.costCenterId,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.competencyDate != null) {
       yield r'competencyDate';
       yield serializers.serialize(
@@ -100,6 +94,13 @@ class _$UpdateBankTransactionRequestDtoSerializer implements PrimitiveSerializer
       yield serializers.serialize(
         object.confirm,
         specifiedType: const FullType(bool),
+      );
+    }
+    if (object.tagIds != null) {
+      yield r'tagIds';
+      yield serializers.serialize(
+        object.tagIds,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
   }
@@ -139,13 +140,6 @@ class _$UpdateBankTransactionRequestDtoSerializer implements PrimitiveSerializer
           ) as String;
           result.categoryId = valueDes;
           break;
-        case r'costCenterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.costCenterId = valueDes;
-          break;
         case r'competencyDate':
           final valueDes = serializers.deserialize(
             value,
@@ -166,6 +160,13 @@ class _$UpdateBankTransactionRequestDtoSerializer implements PrimitiveSerializer
             specifiedType: const FullType(bool),
           ) as bool;
           result.confirm = valueDes;
+          break;
+        case r'tagIds':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.tagIds.replace(valueDes);
           break;
         default:
           unhandled.add(key);

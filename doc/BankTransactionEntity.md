@@ -25,8 +25,7 @@ Name | Type | Description | Notes
 **providerCategoryName** | **String** |  | [optional] 
 **categoryId** | **String** |  | [optional] 
 **category** | [**BankTransactionCategoryPlainEntity**](BankTransactionCategoryPlainEntity.md) |  | [optional] 
-**costCenterId** | **String** |  | [optional] 
-**costCenter** | [**BankTransactionCostCenterEntity**](BankTransactionCostCenterEntity.md) |  | [optional] 
+**tags** | [**BuiltList&lt;BankTransactionTagEntity&gt;**](BankTransactionTagEntity.md) |  | 
 **paymentDataId** | **String** |  | [optional] 
 **paymentData** | [**BankTransactionPaymentDataEntity**](BankTransactionPaymentDataEntity.md) |  | [optional] 
 **creditCardMetadataId** | **String** |  | [optional] 

@@ -217,9 +217,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
   @override
   final BankTransactionCategoryPlainEntity? category;
   @override
-  final String? costCenterId;
-  @override
-  final BankTransactionCostCenterEntity? costCenter;
+  final BuiltList<BankTransactionTagEntity> tags;
   @override
   final String? paymentDataId;
   @override
@@ -263,8 +261,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
       this.providerCategoryName,
       this.categoryId,
       this.category,
-      this.costCenterId,
-      this.costCenter,
+      required this.tags,
       this.paymentDataId,
       this.paymentData,
       this.creditCardMetadataId,
@@ -302,6 +299,8 @@ class _$BankTransactionEntity extends BankTransactionEntity {
     BuiltValueNullFieldError.checkNotNull(
         status, r'BankTransactionEntity', 'status');
     BuiltValueNullFieldError.checkNotNull(
+        tags, r'BankTransactionEntity', 'tags');
+    BuiltValueNullFieldError.checkNotNull(
         createdAt, r'BankTransactionEntity', 'createdAt');
     BuiltValueNullFieldError.checkNotNull(
         updatedAt, r'BankTransactionEntity', 'updatedAt');
@@ -337,8 +336,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
         providerCategoryName == other.providerCategoryName &&
         categoryId == other.categoryId &&
         category == other.category &&
-        costCenterId == other.costCenterId &&
-        costCenter == other.costCenter &&
+        tags == other.tags &&
         paymentDataId == other.paymentDataId &&
         paymentData == other.paymentData &&
         creditCardMetadataId == other.creditCardMetadataId &&
@@ -371,8 +369,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
     _$hash = $jc(_$hash, providerCategoryName.hashCode);
     _$hash = $jc(_$hash, categoryId.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
-    _$hash = $jc(_$hash, costCenterId.hashCode);
-    _$hash = $jc(_$hash, costCenter.hashCode);
+    _$hash = $jc(_$hash, tags.hashCode);
     _$hash = $jc(_$hash, paymentDataId.hashCode);
     _$hash = $jc(_$hash, paymentData.hashCode);
     _$hash = $jc(_$hash, creditCardMetadataId.hashCode);
@@ -407,8 +404,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
           ..add('providerCategoryName', providerCategoryName)
           ..add('categoryId', categoryId)
           ..add('category', category)
-          ..add('costCenterId', costCenterId)
-          ..add('costCenter', costCenter)
+          ..add('tags', tags)
           ..add('paymentDataId', paymentDataId)
           ..add('paymentData', paymentData)
           ..add('creditCardMetadataId', creditCardMetadataId)
@@ -505,15 +501,10 @@ class BankTransactionEntityBuilder
   set category(BankTransactionCategoryPlainEntityBuilder? category) =>
       _$this._category = category;
 
-  String? _costCenterId;
-  String? get costCenterId => _$this._costCenterId;
-  set costCenterId(String? costCenterId) => _$this._costCenterId = costCenterId;
-
-  BankTransactionCostCenterEntityBuilder? _costCenter;
-  BankTransactionCostCenterEntityBuilder get costCenter =>
-      _$this._costCenter ??= new BankTransactionCostCenterEntityBuilder();
-  set costCenter(BankTransactionCostCenterEntityBuilder? costCenter) =>
-      _$this._costCenter = costCenter;
+  ListBuilder<BankTransactionTagEntity>? _tags;
+  ListBuilder<BankTransactionTagEntity> get tags =>
+      _$this._tags ??= new ListBuilder<BankTransactionTagEntity>();
+  set tags(ListBuilder<BankTransactionTagEntity>? tags) => _$this._tags = tags;
 
   String? _paymentDataId;
   String? get paymentDataId => _$this._paymentDataId;
@@ -592,8 +583,7 @@ class BankTransactionEntityBuilder
       _providerCategoryName = $v.providerCategoryName;
       _categoryId = $v.categoryId;
       _category = $v.category?.toBuilder();
-      _costCenterId = $v.costCenterId;
-      _costCenter = $v.costCenter?.toBuilder();
+      _tags = $v.tags.toBuilder();
       _paymentDataId = $v.paymentDataId;
       _paymentData = $v.paymentData?.toBuilder();
       _creditCardMetadataId = $v.creditCardMetadataId;
@@ -653,8 +643,7 @@ class BankTransactionEntityBuilder
               providerCategoryName: providerCategoryName,
               categoryId: categoryId,
               category: _category?.build(),
-              costCenterId: costCenterId,
-              costCenter: _costCenter?.build(),
+              tags: tags.build(),
               paymentDataId: paymentDataId,
               paymentData: _paymentData?.build(),
               creditCardMetadataId: creditCardMetadataId,
@@ -673,9 +662,8 @@ class BankTransactionEntityBuilder
 
         _$failedField = 'category';
         _category?.build();
-
-        _$failedField = 'costCenter';
-        _costCenter?.build();
+        _$failedField = 'tags';
+        tags.build();
 
         _$failedField = 'paymentData';
         _paymentData?.build();

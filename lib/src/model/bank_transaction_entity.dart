@@ -5,9 +5,9 @@
 // ignore_for_file: unused_element
 import 'package:dart_core_api_sdk/src/model/bank_transaction_payment_data_entity.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:dart_core_api_sdk/src/model/bank_transaction_cost_center_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_category_plain_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_credit_card_metadata_entity.dart';
+import 'package:dart_core_api_sdk/src/model/bank_transaction_tag_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_account_entity.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -34,8 +34,7 @@ part 'bank_transaction_entity.g.dart';
 /// * [providerCategoryName] 
 /// * [categoryId] 
 /// * [category] 
-/// * [costCenterId] 
-/// * [costCenter] 
+/// * [tags] 
 /// * [paymentDataId] 
 /// * [paymentData] 
 /// * [creditCardMetadataId] 
@@ -102,11 +101,8 @@ abstract class BankTransactionEntity implements Built<BankTransactionEntity, Ban
   @BuiltValueField(wireName: r'category')
   BankTransactionCategoryPlainEntity? get category;
 
-  @BuiltValueField(wireName: r'costCenterId')
-  String? get costCenterId;
-
-  @BuiltValueField(wireName: r'costCenter')
-  BankTransactionCostCenterEntity? get costCenter;
+  @BuiltValueField(wireName: r'tags')
+  BuiltList<BankTransactionTagEntity> get tags;
 
   @BuiltValueField(wireName: r'paymentDataId')
   String? get paymentDataId;
@@ -254,20 +250,11 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
         specifiedType: const FullType(BankTransactionCategoryPlainEntity),
       );
     }
-    if (object.costCenterId != null) {
-      yield r'costCenterId';
-      yield serializers.serialize(
-        object.costCenterId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.costCenter != null) {
-      yield r'costCenter';
-      yield serializers.serialize(
-        object.costCenter,
-        specifiedType: const FullType(BankTransactionCostCenterEntity),
-      );
-    }
+    yield r'tags';
+    yield serializers.serialize(
+      object.tags,
+      specifiedType: const FullType(BuiltList, [FullType(BankTransactionTagEntity)]),
+    );
     if (object.paymentDataId != null) {
       yield r'paymentDataId';
       yield serializers.serialize(
@@ -476,19 +463,12 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
           ) as BankTransactionCategoryPlainEntity;
           result.category.replace(valueDes);
           break;
-        case r'costCenterId':
+        case r'tags':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.costCenterId = valueDes;
-          break;
-        case r'costCenter':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BankTransactionCostCenterEntity),
-          ) as BankTransactionCostCenterEntity;
-          result.costCenter.replace(valueDes);
+            specifiedType: const FullType(BuiltList, [FullType(BankTransactionTagEntity)]),
+          ) as BuiltList<BankTransactionTagEntity>;
+          result.tags.replace(valueDes);
           break;
         case r'paymentDataId':
           final valueDes = serializers.deserialize(
