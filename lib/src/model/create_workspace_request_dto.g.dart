@@ -11,22 +11,17 @@ class _$CreateWorkspaceRequestDto extends CreateWorkspaceRequestDto {
   final String prettyId;
   @override
   final String name;
-  @override
-  final String type;
 
   factory _$CreateWorkspaceRequestDto(
           [void Function(CreateWorkspaceRequestDtoBuilder)? updates]) =>
       (new CreateWorkspaceRequestDtoBuilder()..update(updates))._build();
 
-  _$CreateWorkspaceRequestDto._(
-      {required this.prettyId, required this.name, required this.type})
+  _$CreateWorkspaceRequestDto._({required this.prettyId, required this.name})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         prettyId, r'CreateWorkspaceRequestDto', 'prettyId');
     BuiltValueNullFieldError.checkNotNull(
         name, r'CreateWorkspaceRequestDto', 'name');
-    BuiltValueNullFieldError.checkNotNull(
-        type, r'CreateWorkspaceRequestDto', 'type');
   }
 
   @override
@@ -43,8 +38,7 @@ class _$CreateWorkspaceRequestDto extends CreateWorkspaceRequestDto {
     if (identical(other, this)) return true;
     return other is CreateWorkspaceRequestDto &&
         prettyId == other.prettyId &&
-        name == other.name &&
-        type == other.type;
+        name == other.name;
   }
 
   @override
@@ -52,7 +46,6 @@ class _$CreateWorkspaceRequestDto extends CreateWorkspaceRequestDto {
     var _$hash = 0;
     _$hash = $jc(_$hash, prettyId.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,8 +54,7 @@ class _$CreateWorkspaceRequestDto extends CreateWorkspaceRequestDto {
   String toString() {
     return (newBuiltValueToStringHelper(r'CreateWorkspaceRequestDto')
           ..add('prettyId', prettyId)
-          ..add('name', name)
-          ..add('type', type))
+          ..add('name', name))
         .toString();
   }
 }
@@ -80,10 +72,6 @@ class CreateWorkspaceRequestDtoBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  String? _type;
-  String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
-
   CreateWorkspaceRequestDtoBuilder() {
     CreateWorkspaceRequestDto._defaults(this);
   }
@@ -93,7 +81,6 @@ class CreateWorkspaceRequestDtoBuilder
     if ($v != null) {
       _prettyId = $v.prettyId;
       _name = $v.name;
-      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -119,9 +106,7 @@ class CreateWorkspaceRequestDtoBuilder
             prettyId: BuiltValueNullFieldError.checkNotNull(
                 prettyId, r'CreateWorkspaceRequestDto', 'prettyId'),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'CreateWorkspaceRequestDto', 'name'),
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'CreateWorkspaceRequestDto', 'type'));
+                name, r'CreateWorkspaceRequestDto', 'name'));
     replace(_$result);
     return _$result;
   }

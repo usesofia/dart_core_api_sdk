@@ -13,7 +13,6 @@ part 'create_workspace_request_dto.g.dart';
 /// Properties:
 /// * [prettyId] 
 /// * [name] 
-/// * [type] 
 @BuiltValue()
 abstract class CreateWorkspaceRequestDto implements Built<CreateWorkspaceRequestDto, CreateWorkspaceRequestDtoBuilder> {
   @BuiltValueField(wireName: r'prettyId')
@@ -21,9 +20,6 @@ abstract class CreateWorkspaceRequestDto implements Built<CreateWorkspaceRequest
 
   @BuiltValueField(wireName: r'name')
   String get name;
-
-  @BuiltValueField(wireName: r'type')
-  String get type;
 
   CreateWorkspaceRequestDto._();
 
@@ -56,11 +52,6 @@ class _$CreateWorkspaceRequestDtoSerializer implements PrimitiveSerializer<Creat
     yield r'name';
     yield serializers.serialize(
       object.name,
-      specifiedType: const FullType(String),
-    );
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
       specifiedType: const FullType(String),
     );
   }
@@ -99,13 +90,6 @@ class _$CreateWorkspaceRequestDtoSerializer implements PrimitiveSerializer<Creat
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
           break;
         default:
           unhandled.add(key);
