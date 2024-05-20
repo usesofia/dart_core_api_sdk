@@ -177,6 +177,3 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/bank_transaction_tag_entity_test.dart
-test/bank_transaction_tags_api_test.dart
-test/create_bank_transaction_tag_request_dto_test.dart
