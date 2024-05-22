@@ -128,6 +128,7 @@ class BankTransactionsApi {
   /// * [accountIds] 
   /// * [categoryIds] 
   /// * [tagIds] 
+  /// * [legalNatures] 
   /// * [minPostedDate] 
   /// * [maxPostedDate] 
   /// * [minCompetencyDate] 
@@ -149,6 +150,7 @@ class BankTransactionsApi {
     String? accountIds,
     String? categoryIds,
     String? tagIds,
+    String? legalNatures,
     String? minPostedDate,
     String? maxPostedDate,
     String? minCompetencyDate,
@@ -180,6 +182,7 @@ class BankTransactionsApi {
       if (accountIds != null) r'accountIds': encodeQueryParameter(_serializers, accountIds, const FullType(String)),
       if (categoryIds != null) r'categoryIds': encodeQueryParameter(_serializers, categoryIds, const FullType(String)),
       if (tagIds != null) r'tagIds': encodeQueryParameter(_serializers, tagIds, const FullType(String)),
+      if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
       if (minPostedDate != null) r'minPostedDate': encodeQueryParameter(_serializers, minPostedDate, const FullType(String)),
       if (maxPostedDate != null) r'maxPostedDate': encodeQueryParameter(_serializers, maxPostedDate, const FullType(String)),
       if (minCompetencyDate != null) r'minCompetencyDate': encodeQueryParameter(_serializers, minCompetencyDate, const FullType(String)),

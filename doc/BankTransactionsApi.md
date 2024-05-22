@@ -60,7 +60,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bankTransactionsControllerGetBankTransactions**
-> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored)
+> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored)
 
 
 
@@ -75,6 +75,7 @@ final num pageSize = 8.14; // num |
 final String accountIds = accountIds_example; // String | 
 final String categoryIds = categoryIds_example; // String | 
 final String tagIds = tagIds_example; // String | 
+final String legalNatures = legalNatures_example; // String | 
 final String minPostedDate = minPostedDate_example; // String | 
 final String maxPostedDate = maxPostedDate_example; // String | 
 final String minCompetencyDate = minCompetencyDate_example; // String | 
@@ -82,7 +83,7 @@ final String maxCompetencyDate = maxCompetencyDate_example; // String |
 final bool showIgnored = true; // bool | 
 
 try {
-    final response = api.bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored);
+    final response = api.bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetBankTransactions: $e\n');
@@ -99,6 +100,7 @@ Name | Type | Description  | Notes
  **accountIds** | **String**|  | [optional] 
  **categoryIds** | **String**|  | [optional] 
  **tagIds** | **String**|  | [optional] 
+ **legalNatures** | **String**|  | [optional] 
  **minPostedDate** | **String**|  | [optional] 
  **maxPostedDate** | **String**|  | [optional] 
  **minCompetencyDate** | **String**|  | [optional] 
