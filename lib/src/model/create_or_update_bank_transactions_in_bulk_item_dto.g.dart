@@ -35,7 +35,7 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
   @override
   final String? providerCategoryName;
   @override
-  final String? categoryId;
+  final String categoryId;
   @override
   final PaymentDataDto paymentData;
   @override
@@ -66,7 +66,7 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
       required this.legalNature,
       this.providerCategoryId,
       this.providerCategoryName,
-      this.categoryId,
+      required this.categoryId,
       required this.paymentData,
       required this.creditCardMetadata,
       required this.categoryGuesses,
@@ -96,6 +96,8 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
         status, r'CreateOrUpdateBankTransactionsInBulkItemDto', 'status');
     BuiltValueNullFieldError.checkNotNull(legalNature,
         r'CreateOrUpdateBankTransactionsInBulkItemDto', 'legalNature');
+    BuiltValueNullFieldError.checkNotNull(categoryId,
+        r'CreateOrUpdateBankTransactionsInBulkItemDto', 'categoryId');
     BuiltValueNullFieldError.checkNotNull(paymentData,
         r'CreateOrUpdateBankTransactionsInBulkItemDto', 'paymentData');
     BuiltValueNullFieldError.checkNotNull(creditCardMetadata,
@@ -352,7 +354,7 @@ class CreateOrUpdateBankTransactionsInBulkItemDtoBuilder
               legalNature: BuiltValueNullFieldError.checkNotNull(legalNature, r'CreateOrUpdateBankTransactionsInBulkItemDto', 'legalNature'),
               providerCategoryId: providerCategoryId,
               providerCategoryName: providerCategoryName,
-              categoryId: categoryId,
+              categoryId: BuiltValueNullFieldError.checkNotNull(categoryId, r'CreateOrUpdateBankTransactionsInBulkItemDto', 'categoryId'),
               paymentData: paymentData.build(),
               creditCardMetadata: creditCardMetadata.build(),
               categoryGuesses: categoryGuesses.build(),

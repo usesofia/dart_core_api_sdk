@@ -75,7 +75,7 @@ abstract class CreateOrUpdateBankTransactionsInBulkItemDto implements Built<Crea
   String? get providerCategoryName;
 
   @BuiltValueField(wireName: r'categoryId')
-  String? get categoryId;
+  String get categoryId;
 
   @BuiltValueField(wireName: r'paymentData')
   PaymentDataDto get paymentData;
@@ -181,13 +181,11 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDtoSerializer implements Primiti
         specifiedType: const FullType(String),
       );
     }
-    if (object.categoryId != null) {
-      yield r'categoryId';
-      yield serializers.serialize(
-        object.categoryId,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'categoryId';
+    yield serializers.serialize(
+      object.categoryId,
+      specifiedType: const FullType(String),
+    );
     yield r'paymentData';
     yield serializers.serialize(
       object.paymentData,
