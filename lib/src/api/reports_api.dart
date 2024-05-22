@@ -27,7 +27,8 @@ class ReportsApi {
   /// Parameters:
   /// * [workspaceId] 
   /// * [accountIds] 
-  /// * [costCenterIds] 
+  /// * [tagIds] 
+  /// * [legalNatures] 
   /// * [considerIgnored] 
   /// * [ignoreInternalTransfers] 
   /// * [minPostedDate] 
@@ -46,7 +47,8 @@ class ReportsApi {
   Future<Response<CashFlowByCategoryReportEntity>> reportsControllerGetAccountsEntriesByCategoryReport({ 
     required String workspaceId,
     String? accountIds,
-    String? costCenterIds,
+    String? tagIds,
+    String? legalNatures,
     bool? considerIgnored,
     bool? ignoreInternalTransfers,
     String? minPostedDate,
@@ -75,7 +77,8 @@ class ReportsApi {
 
     final _queryParameters = <String, dynamic>{
       if (accountIds != null) r'accountIds': encodeQueryParameter(_serializers, accountIds, const FullType(String)),
-      if (costCenterIds != null) r'costCenterIds': encodeQueryParameter(_serializers, costCenterIds, const FullType(String)),
+      if (tagIds != null) r'tagIds': encodeQueryParameter(_serializers, tagIds, const FullType(String)),
+      if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
       if (considerIgnored != null) r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
       if (ignoreInternalTransfers != null) r'ignoreInternalTransfers': encodeQueryParameter(_serializers, ignoreInternalTransfers, const FullType(bool)),
       if (minPostedDate != null) r'minPostedDate': encodeQueryParameter(_serializers, minPostedDate, const FullType(String)),
@@ -130,7 +133,8 @@ class ReportsApi {
   /// Parameters:
   /// * [workspaceId] 
   /// * [accountIds] 
-  /// * [costCenterIds] 
+  /// * [tagIds] 
+  /// * [legalNatures] 
   /// * [considerIgnored] 
   /// * [ignoreInternalTransfers] 
   /// * [minPostedDate] 
@@ -149,7 +153,8 @@ class ReportsApi {
   Future<Response<CashFlowByCategoryReportEntity>> reportsControllerGetAccountsOutputsByCategoryReport({ 
     required String workspaceId,
     String? accountIds,
-    String? costCenterIds,
+    String? tagIds,
+    String? legalNatures,
     bool? considerIgnored,
     bool? ignoreInternalTransfers,
     String? minPostedDate,
@@ -178,7 +183,8 @@ class ReportsApi {
 
     final _queryParameters = <String, dynamic>{
       if (accountIds != null) r'accountIds': encodeQueryParameter(_serializers, accountIds, const FullType(String)),
-      if (costCenterIds != null) r'costCenterIds': encodeQueryParameter(_serializers, costCenterIds, const FullType(String)),
+      if (tagIds != null) r'tagIds': encodeQueryParameter(_serializers, tagIds, const FullType(String)),
+      if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
       if (considerIgnored != null) r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
       if (ignoreInternalTransfers != null) r'ignoreInternalTransfers': encodeQueryParameter(_serializers, ignoreInternalTransfers, const FullType(bool)),
       if (minPostedDate != null) r'minPostedDate': encodeQueryParameter(_serializers, minPostedDate, const FullType(String)),
@@ -234,7 +240,8 @@ class ReportsApi {
   /// * [workspaceId] 
   /// * [accountIds] 
   /// * [categoryIds] 
-  /// * [costCenterIds] 
+  /// * [tagIds] 
+  /// * [legalNatures] 
   /// * [considerIgnored] 
   /// * [ignoreInvoiceRelated] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -250,7 +257,8 @@ class ReportsApi {
     required String workspaceId,
     String? accountIds,
     String? categoryIds,
-    String? costCenterIds,
+    String? tagIds,
+    String? legalNatures,
     bool? considerIgnored,
     bool? ignoreInvoiceRelated,
     CancelToken? cancelToken,
@@ -276,7 +284,8 @@ class ReportsApi {
     final _queryParameters = <String, dynamic>{
       if (accountIds != null) r'accountIds': encodeQueryParameter(_serializers, accountIds, const FullType(String)),
       if (categoryIds != null) r'categoryIds': encodeQueryParameter(_serializers, categoryIds, const FullType(String)),
-      if (costCenterIds != null) r'costCenterIds': encodeQueryParameter(_serializers, costCenterIds, const FullType(String)),
+      if (tagIds != null) r'tagIds': encodeQueryParameter(_serializers, tagIds, const FullType(String)),
+      if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
       if (considerIgnored != null) r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
       if (ignoreInvoiceRelated != null) r'ignoreInvoiceRelated': encodeQueryParameter(_serializers, ignoreInvoiceRelated, const FullType(bool)),
     };
@@ -327,7 +336,8 @@ class ReportsApi {
   /// Parameters:
   /// * [workspaceId] 
   /// * [accountIds] 
-  /// * [costCenterIds] 
+  /// * [tagIds] 
+  /// * [legalNatures] 
   /// * [considerIgnored] 
   /// * [minPostedDate] 
   /// * [maxPostedDate] 
@@ -346,7 +356,8 @@ class ReportsApi {
   Future<Response<CashFlowByCategoryReportEntity>> reportsControllerGetCardsOutputsByCategoryReport({ 
     required String workspaceId,
     String? accountIds,
-    String? costCenterIds,
+    String? tagIds,
+    String? legalNatures,
     bool? considerIgnored,
     String? minPostedDate,
     String? maxPostedDate,
@@ -375,7 +386,8 @@ class ReportsApi {
 
     final _queryParameters = <String, dynamic>{
       if (accountIds != null) r'accountIds': encodeQueryParameter(_serializers, accountIds, const FullType(String)),
-      if (costCenterIds != null) r'costCenterIds': encodeQueryParameter(_serializers, costCenterIds, const FullType(String)),
+      if (tagIds != null) r'tagIds': encodeQueryParameter(_serializers, tagIds, const FullType(String)),
+      if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
       if (considerIgnored != null) r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
       if (minPostedDate != null) r'minPostedDate': encodeQueryParameter(_serializers, minPostedDate, const FullType(String)),
       if (maxPostedDate != null) r'maxPostedDate': encodeQueryParameter(_serializers, maxPostedDate, const FullType(String)),
@@ -431,7 +443,8 @@ class ReportsApi {
   /// * [workspaceId] 
   /// * [accountIds] 
   /// * [categoryIds] 
-  /// * [costCenterIds] 
+  /// * [tagIds] 
+  /// * [legalNatures] 
   /// * [considerIgnored] 
   /// * [ignoreInternalTransfers] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -447,7 +460,8 @@ class ReportsApi {
     required String workspaceId,
     String? accountIds,
     String? categoryIds,
-    String? costCenterIds,
+    String? tagIds,
+    String? legalNatures,
     bool? considerIgnored,
     bool? ignoreInternalTransfers,
     CancelToken? cancelToken,
@@ -473,7 +487,8 @@ class ReportsApi {
     final _queryParameters = <String, dynamic>{
       if (accountIds != null) r'accountIds': encodeQueryParameter(_serializers, accountIds, const FullType(String)),
       if (categoryIds != null) r'categoryIds': encodeQueryParameter(_serializers, categoryIds, const FullType(String)),
-      if (costCenterIds != null) r'costCenterIds': encodeQueryParameter(_serializers, costCenterIds, const FullType(String)),
+      if (tagIds != null) r'tagIds': encodeQueryParameter(_serializers, tagIds, const FullType(String)),
+      if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
       if (considerIgnored != null) r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
       if (ignoreInternalTransfers != null) r'ignoreInternalTransfers': encodeQueryParameter(_serializers, ignoreInternalTransfers, const FullType(bool)),
     };
@@ -524,7 +539,8 @@ class ReportsApi {
   /// Parameters:
   /// * [workspaceId] 
   /// * [accountIds] 
-  /// * [costCenterIds] 
+  /// * [tagIds] 
+  /// * [legalNatures] 
   /// * [considerIgnored] 
   /// * [minPostedDate] 
   /// * [maxPostedDate] 
@@ -542,7 +558,8 @@ class ReportsApi {
   Future<Response<FinancialStatementReport>> reportsControllerGetFinancialStatementReport({ 
     required String workspaceId,
     String? accountIds,
-    String? costCenterIds,
+    String? tagIds,
+    String? legalNatures,
     bool? considerIgnored,
     String? minPostedDate,
     String? maxPostedDate,
@@ -570,7 +587,8 @@ class ReportsApi {
 
     final _queryParameters = <String, dynamic>{
       if (accountIds != null) r'accountIds': encodeQueryParameter(_serializers, accountIds, const FullType(String)),
-      if (costCenterIds != null) r'costCenterIds': encodeQueryParameter(_serializers, costCenterIds, const FullType(String)),
+      if (tagIds != null) r'tagIds': encodeQueryParameter(_serializers, tagIds, const FullType(String)),
+      if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
       if (considerIgnored != null) r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
       if (minPostedDate != null) r'minPostedDate': encodeQueryParameter(_serializers, minPostedDate, const FullType(String)),
       if (maxPostedDate != null) r'maxPostedDate': encodeQueryParameter(_serializers, maxPostedDate, const FullType(String)),
