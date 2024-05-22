@@ -11,12 +11,20 @@ class _$CreateWorkspaceRequestDto extends CreateWorkspaceRequestDto {
   final String prettyId;
   @override
   final String name;
+  @override
+  final String? businessSegment;
+  @override
+  final String? otherDescription;
 
   factory _$CreateWorkspaceRequestDto(
           [void Function(CreateWorkspaceRequestDtoBuilder)? updates]) =>
       (new CreateWorkspaceRequestDtoBuilder()..update(updates))._build();
 
-  _$CreateWorkspaceRequestDto._({required this.prettyId, required this.name})
+  _$CreateWorkspaceRequestDto._(
+      {required this.prettyId,
+      required this.name,
+      this.businessSegment,
+      this.otherDescription})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         prettyId, r'CreateWorkspaceRequestDto', 'prettyId');
@@ -38,7 +46,9 @@ class _$CreateWorkspaceRequestDto extends CreateWorkspaceRequestDto {
     if (identical(other, this)) return true;
     return other is CreateWorkspaceRequestDto &&
         prettyId == other.prettyId &&
-        name == other.name;
+        name == other.name &&
+        businessSegment == other.businessSegment &&
+        otherDescription == other.otherDescription;
   }
 
   @override
@@ -46,6 +56,8 @@ class _$CreateWorkspaceRequestDto extends CreateWorkspaceRequestDto {
     var _$hash = 0;
     _$hash = $jc(_$hash, prettyId.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, businessSegment.hashCode);
+    _$hash = $jc(_$hash, otherDescription.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -54,7 +66,9 @@ class _$CreateWorkspaceRequestDto extends CreateWorkspaceRequestDto {
   String toString() {
     return (newBuiltValueToStringHelper(r'CreateWorkspaceRequestDto')
           ..add('prettyId', prettyId)
-          ..add('name', name))
+          ..add('name', name)
+          ..add('businessSegment', businessSegment)
+          ..add('otherDescription', otherDescription))
         .toString();
   }
 }
@@ -72,6 +86,16 @@ class CreateWorkspaceRequestDtoBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
+  String? _businessSegment;
+  String? get businessSegment => _$this._businessSegment;
+  set businessSegment(String? businessSegment) =>
+      _$this._businessSegment = businessSegment;
+
+  String? _otherDescription;
+  String? get otherDescription => _$this._otherDescription;
+  set otherDescription(String? otherDescription) =>
+      _$this._otherDescription = otherDescription;
+
   CreateWorkspaceRequestDtoBuilder() {
     CreateWorkspaceRequestDto._defaults(this);
   }
@@ -81,6 +105,8 @@ class CreateWorkspaceRequestDtoBuilder
     if ($v != null) {
       _prettyId = $v.prettyId;
       _name = $v.name;
+      _businessSegment = $v.businessSegment;
+      _otherDescription = $v.otherDescription;
       _$v = null;
     }
     return this;
@@ -106,7 +132,9 @@ class CreateWorkspaceRequestDtoBuilder
             prettyId: BuiltValueNullFieldError.checkNotNull(
                 prettyId, r'CreateWorkspaceRequestDto', 'prettyId'),
             name: BuiltValueNullFieldError.checkNotNull(
-                name, r'CreateWorkspaceRequestDto', 'name'));
+                name, r'CreateWorkspaceRequestDto', 'name'),
+            businessSegment: businessSegment,
+            otherDescription: otherDescription);
     replace(_$result);
     return _$result;
   }

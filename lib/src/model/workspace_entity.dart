@@ -17,7 +17,8 @@ part 'workspace_entity.g.dart';
 /// * [type] 
 /// * [creatorUserId] 
 /// * [createdAt] 
-/// * [selectedTreeId] 
+/// * [selectedPersonalCategoryTreeId] 
+/// * [selectedBusinessCategoryTreeId] 
 @BuiltValue()
 abstract class WorkspaceEntity implements Built<WorkspaceEntity, WorkspaceEntityBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -38,8 +39,11 @@ abstract class WorkspaceEntity implements Built<WorkspaceEntity, WorkspaceEntity
   @BuiltValueField(wireName: r'createdAt')
   DateTime get createdAt;
 
-  @BuiltValueField(wireName: r'selectedTreeId')
-  String get selectedTreeId;
+  @BuiltValueField(wireName: r'selectedPersonalCategoryTreeId')
+  String? get selectedPersonalCategoryTreeId;
+
+  @BuiltValueField(wireName: r'selectedBusinessCategoryTreeId')
+  String? get selectedBusinessCategoryTreeId;
 
   WorkspaceEntity._();
 
@@ -94,11 +98,20 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
       object.createdAt,
       specifiedType: const FullType(DateTime),
     );
-    yield r'selectedTreeId';
-    yield serializers.serialize(
-      object.selectedTreeId,
-      specifiedType: const FullType(String),
-    );
+    if (object.selectedPersonalCategoryTreeId != null) {
+      yield r'selectedPersonalCategoryTreeId';
+      yield serializers.serialize(
+        object.selectedPersonalCategoryTreeId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.selectedBusinessCategoryTreeId != null) {
+      yield r'selectedBusinessCategoryTreeId';
+      yield serializers.serialize(
+        object.selectedBusinessCategoryTreeId,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -164,12 +177,19 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
           ) as DateTime;
           result.createdAt = valueDes;
           break;
-        case r'selectedTreeId':
+        case r'selectedPersonalCategoryTreeId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.selectedTreeId = valueDes;
+          result.selectedPersonalCategoryTreeId = valueDes;
+          break;
+        case r'selectedBusinessCategoryTreeId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.selectedBusinessCategoryTreeId = valueDes;
           break;
         default:
           unhandled.add(key);

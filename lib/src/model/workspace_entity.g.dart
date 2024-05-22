@@ -20,7 +20,9 @@ class _$WorkspaceEntity extends WorkspaceEntity {
   @override
   final DateTime createdAt;
   @override
-  final String selectedTreeId;
+  final String? selectedPersonalCategoryTreeId;
+  @override
+  final String? selectedBusinessCategoryTreeId;
 
   factory _$WorkspaceEntity([void Function(WorkspaceEntityBuilder)? updates]) =>
       (new WorkspaceEntityBuilder()..update(updates))._build();
@@ -32,7 +34,8 @@ class _$WorkspaceEntity extends WorkspaceEntity {
       required this.type,
       required this.creatorUserId,
       required this.createdAt,
-      required this.selectedTreeId})
+      this.selectedPersonalCategoryTreeId,
+      this.selectedBusinessCategoryTreeId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'WorkspaceEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
@@ -43,8 +46,6 @@ class _$WorkspaceEntity extends WorkspaceEntity {
         creatorUserId, r'WorkspaceEntity', 'creatorUserId');
     BuiltValueNullFieldError.checkNotNull(
         createdAt, r'WorkspaceEntity', 'createdAt');
-    BuiltValueNullFieldError.checkNotNull(
-        selectedTreeId, r'WorkspaceEntity', 'selectedTreeId');
   }
 
   @override
@@ -65,7 +66,9 @@ class _$WorkspaceEntity extends WorkspaceEntity {
         type == other.type &&
         creatorUserId == other.creatorUserId &&
         createdAt == other.createdAt &&
-        selectedTreeId == other.selectedTreeId;
+        selectedPersonalCategoryTreeId ==
+            other.selectedPersonalCategoryTreeId &&
+        selectedBusinessCategoryTreeId == other.selectedBusinessCategoryTreeId;
   }
 
   @override
@@ -77,7 +80,8 @@ class _$WorkspaceEntity extends WorkspaceEntity {
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, creatorUserId.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
-    _$hash = $jc(_$hash, selectedTreeId.hashCode);
+    _$hash = $jc(_$hash, selectedPersonalCategoryTreeId.hashCode);
+    _$hash = $jc(_$hash, selectedBusinessCategoryTreeId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -91,7 +95,10 @@ class _$WorkspaceEntity extends WorkspaceEntity {
           ..add('type', type)
           ..add('creatorUserId', creatorUserId)
           ..add('createdAt', createdAt)
-          ..add('selectedTreeId', selectedTreeId))
+          ..add(
+              'selectedPersonalCategoryTreeId', selectedPersonalCategoryTreeId)
+          ..add(
+              'selectedBusinessCategoryTreeId', selectedBusinessCategoryTreeId))
         .toString();
   }
 }
@@ -125,10 +132,17 @@ class WorkspaceEntityBuilder
   DateTime? get createdAt => _$this._createdAt;
   set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  String? _selectedTreeId;
-  String? get selectedTreeId => _$this._selectedTreeId;
-  set selectedTreeId(String? selectedTreeId) =>
-      _$this._selectedTreeId = selectedTreeId;
+  String? _selectedPersonalCategoryTreeId;
+  String? get selectedPersonalCategoryTreeId =>
+      _$this._selectedPersonalCategoryTreeId;
+  set selectedPersonalCategoryTreeId(String? selectedPersonalCategoryTreeId) =>
+      _$this._selectedPersonalCategoryTreeId = selectedPersonalCategoryTreeId;
+
+  String? _selectedBusinessCategoryTreeId;
+  String? get selectedBusinessCategoryTreeId =>
+      _$this._selectedBusinessCategoryTreeId;
+  set selectedBusinessCategoryTreeId(String? selectedBusinessCategoryTreeId) =>
+      _$this._selectedBusinessCategoryTreeId = selectedBusinessCategoryTreeId;
 
   WorkspaceEntityBuilder() {
     WorkspaceEntity._defaults(this);
@@ -143,7 +157,8 @@ class WorkspaceEntityBuilder
       _type = $v.type;
       _creatorUserId = $v.creatorUserId;
       _createdAt = $v.createdAt;
-      _selectedTreeId = $v.selectedTreeId;
+      _selectedPersonalCategoryTreeId = $v.selectedPersonalCategoryTreeId;
+      _selectedBusinessCategoryTreeId = $v.selectedBusinessCategoryTreeId;
       _$v = null;
     }
     return this;
@@ -178,8 +193,8 @@ class WorkspaceEntityBuilder
                 creatorUserId, r'WorkspaceEntity', 'creatorUserId'),
             createdAt: BuiltValueNullFieldError.checkNotNull(
                 createdAt, r'WorkspaceEntity', 'createdAt'),
-            selectedTreeId: BuiltValueNullFieldError.checkNotNull(
-                selectedTreeId, r'WorkspaceEntity', 'selectedTreeId'));
+            selectedPersonalCategoryTreeId: selectedPersonalCategoryTreeId,
+            selectedBusinessCategoryTreeId: selectedBusinessCategoryTreeId);
     replace(_$result);
     return _$result;
   }

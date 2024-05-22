@@ -27,6 +27,7 @@ class BankTransactionCategoriesApi {
   /// * [workspaceId] 
   /// * [onlyLeafs] 
   /// * [transactionNatures] 
+  /// * [legalNatures] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -40,6 +41,7 @@ class BankTransactionCategoriesApi {
     required String workspaceId,
     bool? onlyLeafs,
     String? transactionNatures,
+    String? legalNatures,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -63,6 +65,7 @@ class BankTransactionCategoriesApi {
     final _queryParameters = <String, dynamic>{
       if (onlyLeafs != null) r'onlyLeafs': encodeQueryParameter(_serializers, onlyLeafs, const FullType(bool)),
       if (transactionNatures != null) r'transactionNatures': encodeQueryParameter(_serializers, transactionNatures, const FullType(String)),
+      if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

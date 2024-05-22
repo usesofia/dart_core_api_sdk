@@ -13,6 +13,8 @@ part 'create_workspace_request_dto.g.dart';
 /// Properties:
 /// * [prettyId] 
 /// * [name] 
+/// * [businessSegment] 
+/// * [otherDescription] 
 @BuiltValue()
 abstract class CreateWorkspaceRequestDto implements Built<CreateWorkspaceRequestDto, CreateWorkspaceRequestDtoBuilder> {
   @BuiltValueField(wireName: r'prettyId')
@@ -20,6 +22,12 @@ abstract class CreateWorkspaceRequestDto implements Built<CreateWorkspaceRequest
 
   @BuiltValueField(wireName: r'name')
   String get name;
+
+  @BuiltValueField(wireName: r'businessSegment')
+  String? get businessSegment;
+
+  @BuiltValueField(wireName: r'otherDescription')
+  String? get otherDescription;
 
   CreateWorkspaceRequestDto._();
 
@@ -54,6 +62,20 @@ class _$CreateWorkspaceRequestDtoSerializer implements PrimitiveSerializer<Creat
       object.name,
       specifiedType: const FullType(String),
     );
+    if (object.businessSegment != null) {
+      yield r'businessSegment';
+      yield serializers.serialize(
+        object.businessSegment,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.otherDescription != null) {
+      yield r'otherDescription';
+      yield serializers.serialize(
+        object.otherDescription,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -90,6 +112,20 @@ class _$CreateWorkspaceRequestDtoSerializer implements PrimitiveSerializer<Creat
             specifiedType: const FullType(String),
           ) as String;
           result.name = valueDes;
+          break;
+        case r'businessSegment':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.businessSegment = valueDes;
+          break;
+        case r'otherDescription':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.otherDescription = valueDes;
           break;
         default:
           unhandled.add(key);
