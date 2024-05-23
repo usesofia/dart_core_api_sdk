@@ -60,7 +60,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bankTransactionsControllerGetBankTransactions**
-> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored)
+> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated)
 
 
 
@@ -81,9 +81,10 @@ final String maxPostedDate = maxPostedDate_example; // String |
 final String minCompetencyDate = minCompetencyDate_example; // String | 
 final String maxCompetencyDate = maxCompetencyDate_example; // String | 
 final bool showIgnored = true; // bool | 
+final bool ignoreAutomaticApplicationRelated = true; // bool | 
 
 try {
-    final response = api.bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored);
+    final response = api.bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetBankTransactions: $e\n');
@@ -106,6 +107,7 @@ Name | Type | Description  | Notes
  **minCompetencyDate** | **String**|  | [optional] 
  **maxCompetencyDate** | **String**|  | [optional] 
  **showIgnored** | **bool**|  | [optional] 
+ **ignoreAutomaticApplicationRelated** | **bool**|  | [optional] 
 
 ### Return type
 

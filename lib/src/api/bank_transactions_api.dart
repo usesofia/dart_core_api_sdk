@@ -134,6 +134,7 @@ class BankTransactionsApi {
   /// * [minCompetencyDate] 
   /// * [maxCompetencyDate] 
   /// * [showIgnored] 
+  /// * [ignoreAutomaticApplicationRelated] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -156,6 +157,7 @@ class BankTransactionsApi {
     String? minCompetencyDate,
     String? maxCompetencyDate,
     bool? showIgnored,
+    bool? ignoreAutomaticApplicationRelated,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -188,6 +190,7 @@ class BankTransactionsApi {
       if (minCompetencyDate != null) r'minCompetencyDate': encodeQueryParameter(_serializers, minCompetencyDate, const FullType(String)),
       if (maxCompetencyDate != null) r'maxCompetencyDate': encodeQueryParameter(_serializers, maxCompetencyDate, const FullType(String)),
       if (showIgnored != null) r'showIgnored': encodeQueryParameter(_serializers, showIgnored, const FullType(bool)),
+      if (ignoreAutomaticApplicationRelated != null) r'ignoreAutomaticApplicationRelated': encodeQueryParameter(_serializers, ignoreAutomaticApplicationRelated, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
