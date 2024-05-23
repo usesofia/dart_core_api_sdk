@@ -31,6 +31,7 @@ class ReportsApi {
   /// * [legalNatures] 
   /// * [considerIgnored] 
   /// * [ignoreInternalTransfers] 
+  /// * [ignoreAutomaticApplicationRelated] 
   /// * [minPostedDate] 
   /// * [maxPostedDate] 
   /// * [minCompetencyDate] 
@@ -51,6 +52,7 @@ class ReportsApi {
     String? legalNatures,
     bool? considerIgnored,
     bool? ignoreInternalTransfers,
+    bool? ignoreAutomaticApplicationRelated,
     String? minPostedDate,
     String? maxPostedDate,
     String? minCompetencyDate,
@@ -81,6 +83,7 @@ class ReportsApi {
       if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
       if (considerIgnored != null) r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
       if (ignoreInternalTransfers != null) r'ignoreInternalTransfers': encodeQueryParameter(_serializers, ignoreInternalTransfers, const FullType(bool)),
+      if (ignoreAutomaticApplicationRelated != null) r'ignoreAutomaticApplicationRelated': encodeQueryParameter(_serializers, ignoreAutomaticApplicationRelated, const FullType(bool)),
       if (minPostedDate != null) r'minPostedDate': encodeQueryParameter(_serializers, minPostedDate, const FullType(String)),
       if (maxPostedDate != null) r'maxPostedDate': encodeQueryParameter(_serializers, maxPostedDate, const FullType(String)),
       if (minCompetencyDate != null) r'minCompetencyDate': encodeQueryParameter(_serializers, minCompetencyDate, const FullType(String)),
@@ -137,6 +140,7 @@ class ReportsApi {
   /// * [legalNatures] 
   /// * [considerIgnored] 
   /// * [ignoreInternalTransfers] 
+  /// * [ignoreAutomaticApplicationRelated] 
   /// * [minPostedDate] 
   /// * [maxPostedDate] 
   /// * [minCompetencyDate] 
@@ -157,6 +161,7 @@ class ReportsApi {
     String? legalNatures,
     bool? considerIgnored,
     bool? ignoreInternalTransfers,
+    bool? ignoreAutomaticApplicationRelated,
     String? minPostedDate,
     String? maxPostedDate,
     String? minCompetencyDate,
@@ -187,6 +192,7 @@ class ReportsApi {
       if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
       if (considerIgnored != null) r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
       if (ignoreInternalTransfers != null) r'ignoreInternalTransfers': encodeQueryParameter(_serializers, ignoreInternalTransfers, const FullType(bool)),
+      if (ignoreAutomaticApplicationRelated != null) r'ignoreAutomaticApplicationRelated': encodeQueryParameter(_serializers, ignoreAutomaticApplicationRelated, const FullType(bool)),
       if (minPostedDate != null) r'minPostedDate': encodeQueryParameter(_serializers, minPostedDate, const FullType(String)),
       if (maxPostedDate != null) r'maxPostedDate': encodeQueryParameter(_serializers, maxPostedDate, const FullType(String)),
       if (minCompetencyDate != null) r'minCompetencyDate': encodeQueryParameter(_serializers, minCompetencyDate, const FullType(String)),
@@ -447,6 +453,7 @@ class ReportsApi {
   /// * [legalNatures] 
   /// * [considerIgnored] 
   /// * [ignoreInternalTransfers] 
+  /// * [ignoreAutomaticApplicationRelated] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -464,6 +471,7 @@ class ReportsApi {
     String? legalNatures,
     bool? considerIgnored,
     bool? ignoreInternalTransfers,
+    bool? ignoreAutomaticApplicationRelated,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -491,6 +499,7 @@ class ReportsApi {
       if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
       if (considerIgnored != null) r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
       if (ignoreInternalTransfers != null) r'ignoreInternalTransfers': encodeQueryParameter(_serializers, ignoreInternalTransfers, const FullType(bool)),
+      if (ignoreAutomaticApplicationRelated != null) r'ignoreAutomaticApplicationRelated': encodeQueryParameter(_serializers, ignoreAutomaticApplicationRelated, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(

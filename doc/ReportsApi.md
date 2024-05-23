@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **reportsControllerGetAccountsEntriesByCategoryReport**
-> CashFlowByCategoryReportEntity reportsControllerGetAccountsEntriesByCategoryReport(workspaceId, accountIds, tagIds, legalNatures, considerIgnored, ignoreInternalTransfers, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate)
+> CashFlowByCategoryReportEntity reportsControllerGetAccountsEntriesByCategoryReport(workspaceId, accountIds, tagIds, legalNatures, considerIgnored, ignoreInternalTransfers, ignoreAutomaticApplicationRelated, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate)
 
 
 
@@ -33,13 +33,14 @@ final String tagIds = tagIds_example; // String |
 final String legalNatures = legalNatures_example; // String | 
 final bool considerIgnored = true; // bool | 
 final bool ignoreInternalTransfers = true; // bool | 
+final bool ignoreAutomaticApplicationRelated = true; // bool | 
 final String minPostedDate = minPostedDate_example; // String | 
 final String maxPostedDate = maxPostedDate_example; // String | 
 final String minCompetencyDate = minCompetencyDate_example; // String | 
 final String maxCompetencyDate = maxCompetencyDate_example; // String | 
 
 try {
-    final response = api.reportsControllerGetAccountsEntriesByCategoryReport(workspaceId, accountIds, tagIds, legalNatures, considerIgnored, ignoreInternalTransfers, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate);
+    final response = api.reportsControllerGetAccountsEntriesByCategoryReport(workspaceId, accountIds, tagIds, legalNatures, considerIgnored, ignoreInternalTransfers, ignoreAutomaticApplicationRelated, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling ReportsApi->reportsControllerGetAccountsEntriesByCategoryReport: $e\n');
@@ -56,6 +57,7 @@ Name | Type | Description  | Notes
  **legalNatures** | **String**|  | [optional] 
  **considerIgnored** | **bool**|  | [optional] 
  **ignoreInternalTransfers** | **bool**|  | [optional] 
+ **ignoreAutomaticApplicationRelated** | **bool**|  | [optional] 
  **minPostedDate** | **String**|  | [optional] 
  **maxPostedDate** | **String**|  | [optional] 
  **minCompetencyDate** | **String**|  | [optional] 
@@ -77,7 +79,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **reportsControllerGetAccountsOutputsByCategoryReport**
-> CashFlowByCategoryReportEntity reportsControllerGetAccountsOutputsByCategoryReport(workspaceId, accountIds, tagIds, legalNatures, considerIgnored, ignoreInternalTransfers, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate)
+> CashFlowByCategoryReportEntity reportsControllerGetAccountsOutputsByCategoryReport(workspaceId, accountIds, tagIds, legalNatures, considerIgnored, ignoreInternalTransfers, ignoreAutomaticApplicationRelated, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate)
 
 
 
@@ -92,13 +94,14 @@ final String tagIds = tagIds_example; // String |
 final String legalNatures = legalNatures_example; // String | 
 final bool considerIgnored = true; // bool | 
 final bool ignoreInternalTransfers = true; // bool | 
+final bool ignoreAutomaticApplicationRelated = true; // bool | 
 final String minPostedDate = minPostedDate_example; // String | 
 final String maxPostedDate = maxPostedDate_example; // String | 
 final String minCompetencyDate = minCompetencyDate_example; // String | 
 final String maxCompetencyDate = maxCompetencyDate_example; // String | 
 
 try {
-    final response = api.reportsControllerGetAccountsOutputsByCategoryReport(workspaceId, accountIds, tagIds, legalNatures, considerIgnored, ignoreInternalTransfers, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate);
+    final response = api.reportsControllerGetAccountsOutputsByCategoryReport(workspaceId, accountIds, tagIds, legalNatures, considerIgnored, ignoreInternalTransfers, ignoreAutomaticApplicationRelated, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling ReportsApi->reportsControllerGetAccountsOutputsByCategoryReport: $e\n');
@@ -115,6 +118,7 @@ Name | Type | Description  | Notes
  **legalNatures** | **String**|  | [optional] 
  **considerIgnored** | **bool**|  | [optional] 
  **ignoreInternalTransfers** | **bool**|  | [optional] 
+ **ignoreAutomaticApplicationRelated** | **bool**|  | [optional] 
  **minPostedDate** | **String**|  | [optional] 
  **maxPostedDate** | **String**|  | [optional] 
  **minCompetencyDate** | **String**|  | [optional] 
@@ -248,7 +252,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **reportsControllerGetCashFlowReport**
-> CashFlowReportEntity reportsControllerGetCashFlowReport(workspaceId, accountIds, categoryIds, tagIds, legalNatures, considerIgnored, ignoreInternalTransfers)
+> CashFlowReportEntity reportsControllerGetCashFlowReport(workspaceId, accountIds, categoryIds, tagIds, legalNatures, considerIgnored, ignoreInternalTransfers, ignoreAutomaticApplicationRelated)
 
 
 
@@ -264,9 +268,10 @@ final String tagIds = tagIds_example; // String |
 final String legalNatures = legalNatures_example; // String | 
 final bool considerIgnored = true; // bool | 
 final bool ignoreInternalTransfers = true; // bool | 
+final bool ignoreAutomaticApplicationRelated = true; // bool | 
 
 try {
-    final response = api.reportsControllerGetCashFlowReport(workspaceId, accountIds, categoryIds, tagIds, legalNatures, considerIgnored, ignoreInternalTransfers);
+    final response = api.reportsControllerGetCashFlowReport(workspaceId, accountIds, categoryIds, tagIds, legalNatures, considerIgnored, ignoreInternalTransfers, ignoreAutomaticApplicationRelated);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling ReportsApi->reportsControllerGetCashFlowReport: $e\n');
@@ -284,6 +289,7 @@ Name | Type | Description  | Notes
  **legalNatures** | **String**|  | [optional] 
  **considerIgnored** | **bool**|  | [optional] 
  **ignoreInternalTransfers** | **bool**|  | [optional] 
+ **ignoreAutomaticApplicationRelated** | **bool**|  | [optional] 
 
 ### Return type
 
