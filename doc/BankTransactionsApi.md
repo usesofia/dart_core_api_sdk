@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**bankTransactionsControllerGetBankTransactions**](BankTransactionsApi.md#banktransactionscontrollergetbanktransactions) | **GET** /workspaces/{workspaceId}/bank/transactions | 
 [**bankTransactionsControllerGetBankTransactionsConfirmedTodayByMe**](BankTransactionsApi.md#banktransactionscontrollergetbanktransactionsconfirmedtodaybyme) | **GET** /workspaces/{workspaceId}/bank/transactions/confirmed-today-by-me | 
 [**bankTransactionsControllerGetBankTransactionsNotConfirmed**](BankTransactionsApi.md#banktransactionscontrollergetbanktransactionsnotconfirmed) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
+[**bankTransactionsControllerGetBankTransactionsTotals**](BankTransactionsApi.md#banktransactionscontrollergetbanktransactionstotals) | **GET** /workspaces/{workspaceId}/bank/transactions/totals | 
 [**bankTransactionsControllerGetRecent**](BankTransactionsApi.md#banktransactionscontrollergetrecent) | **GET** /workspaces/{workspaceId}/bank/transactions/most-recent | 
 [**bankTransactionsControllerGetTransactionDetails**](BankTransactionsApi.md#banktransactionscontrollergettransactiondetails) | **GET** /bank/transactions/{bankTransactionId} | 
 [**bankTransactionsControllerUpdateTransaction**](BankTransactionsApi.md#banktransactionscontrollerupdatetransaction) | **PATCH** /bank/transactions/{bankTransactionId} | 
@@ -200,6 +201,67 @@ Name | Type | Description  | Notes
  **pageIndex** | **num**|  | [optional] 
  **pageSize** | **num**|  | [optional] 
  **considerIgnored** | **bool**|  | [optional] 
+
+### Return type
+
+[**BankTransactionsPageEntity**](BankTransactionsPageEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bankTransactionsControllerGetBankTransactionsTotals**
+> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactionsTotals(workspaceId, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getBankTransactionsApi();
+final String workspaceId = workspaceId_example; // String | 
+final String accountIds = accountIds_example; // String | 
+final String categoryIds = categoryIds_example; // String | 
+final String tagIds = tagIds_example; // String | 
+final String legalNatures = legalNatures_example; // String | 
+final String minPostedDate = minPostedDate_example; // String | 
+final String maxPostedDate = maxPostedDate_example; // String | 
+final String minCompetencyDate = minCompetencyDate_example; // String | 
+final String maxCompetencyDate = maxCompetencyDate_example; // String | 
+final bool showIgnored = true; // bool | 
+final bool ignoreAutomaticApplicationRelated = true; // bool | 
+
+try {
+    final response = api.bankTransactionsControllerGetBankTransactionsTotals(workspaceId, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetBankTransactionsTotals: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **workspaceId** | **String**|  | 
+ **accountIds** | **String**|  | [optional] 
+ **categoryIds** | **String**|  | [optional] 
+ **tagIds** | **String**|  | [optional] 
+ **legalNatures** | **String**|  | [optional] 
+ **minPostedDate** | **String**|  | [optional] 
+ **maxPostedDate** | **String**|  | [optional] 
+ **minCompetencyDate** | **String**|  | [optional] 
+ **maxCompetencyDate** | **String**|  | [optional] 
+ **showIgnored** | **bool**|  | [optional] 
+ **ignoreAutomaticApplicationRelated** | **bool**|  | [optional] 
 
 ### Return type
 
