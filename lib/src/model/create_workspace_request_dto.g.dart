@@ -12,6 +12,8 @@ class _$CreateWorkspaceRequestDto extends CreateWorkspaceRequestDto {
   @override
   final String name;
   @override
+  final String? type;
+  @override
   final String? businessSegment;
   @override
   final String? otherDescription;
@@ -23,6 +25,7 @@ class _$CreateWorkspaceRequestDto extends CreateWorkspaceRequestDto {
   _$CreateWorkspaceRequestDto._(
       {required this.prettyId,
       required this.name,
+      this.type,
       this.businessSegment,
       this.otherDescription})
       : super._() {
@@ -47,6 +50,7 @@ class _$CreateWorkspaceRequestDto extends CreateWorkspaceRequestDto {
     return other is CreateWorkspaceRequestDto &&
         prettyId == other.prettyId &&
         name == other.name &&
+        type == other.type &&
         businessSegment == other.businessSegment &&
         otherDescription == other.otherDescription;
   }
@@ -56,6 +60,7 @@ class _$CreateWorkspaceRequestDto extends CreateWorkspaceRequestDto {
     var _$hash = 0;
     _$hash = $jc(_$hash, prettyId.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, businessSegment.hashCode);
     _$hash = $jc(_$hash, otherDescription.hashCode);
     _$hash = $jf(_$hash);
@@ -67,6 +72,7 @@ class _$CreateWorkspaceRequestDto extends CreateWorkspaceRequestDto {
     return (newBuiltValueToStringHelper(r'CreateWorkspaceRequestDto')
           ..add('prettyId', prettyId)
           ..add('name', name)
+          ..add('type', type)
           ..add('businessSegment', businessSegment)
           ..add('otherDescription', otherDescription))
         .toString();
@@ -85,6 +91,10 @@ class CreateWorkspaceRequestDtoBuilder
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
   String? _businessSegment;
   String? get businessSegment => _$this._businessSegment;
@@ -105,6 +115,7 @@ class CreateWorkspaceRequestDtoBuilder
     if ($v != null) {
       _prettyId = $v.prettyId;
       _name = $v.name;
+      _type = $v.type;
       _businessSegment = $v.businessSegment;
       _otherDescription = $v.otherDescription;
       _$v = null;
@@ -133,6 +144,7 @@ class CreateWorkspaceRequestDtoBuilder
                 prettyId, r'CreateWorkspaceRequestDto', 'prettyId'),
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'CreateWorkspaceRequestDto', 'name'),
+            type: type,
             businessSegment: businessSegment,
             otherDescription: otherDescription);
     replace(_$result);

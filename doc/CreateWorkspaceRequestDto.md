@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **prettyId** | **String** |  | 
 **name** | **String** |  | 
+**type** | **String** |  | [optional] 
 **businessSegment** | **String** |  | [optional] 
 **otherDescription** | **String** |  | [optional] 
 
