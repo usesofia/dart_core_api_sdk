@@ -40,7 +40,7 @@ abstract class UpdateBankTransactionRequestDto implements Built<UpdateBankTransa
   BuiltList<String>? get tagIds;
 
   @BuiltValueField(wireName: r'legalNature')
-  String get legalNature;
+  String? get legalNature;
 
   UpdateBankTransactionRequestDto._();
 
@@ -107,11 +107,13 @@ class _$UpdateBankTransactionRequestDtoSerializer implements PrimitiveSerializer
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
-    yield r'legalNature';
-    yield serializers.serialize(
-      object.legalNature,
-      specifiedType: const FullType(String),
-    );
+    if (object.legalNature != null) {
+      yield r'legalNature';
+      yield serializers.serialize(
+        object.legalNature,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override

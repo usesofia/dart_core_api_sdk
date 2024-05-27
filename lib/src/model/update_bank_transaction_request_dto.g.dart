@@ -21,7 +21,7 @@ class _$UpdateBankTransactionRequestDto
   @override
   final BuiltList<String>? tagIds;
   @override
-  final String legalNature;
+  final String? legalNature;
 
   factory _$UpdateBankTransactionRequestDto(
           [void Function(UpdateBankTransactionRequestDtoBuilder)? updates]) =>
@@ -34,11 +34,8 @@ class _$UpdateBankTransactionRequestDto
       this.ignore,
       this.confirm,
       this.tagIds,
-      required this.legalNature})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        legalNature, r'UpdateBankTransactionRequestDto', 'legalNature');
-  }
+      this.legalNature})
+      : super._();
 
   @override
   UpdateBankTransactionRequestDto rebuild(
@@ -170,8 +167,7 @@ class UpdateBankTransactionRequestDtoBuilder
               ignore: ignore,
               confirm: confirm,
               tagIds: _tagIds?.build(),
-              legalNature: BuiltValueNullFieldError.checkNotNull(legalNature,
-                  r'UpdateBankTransactionRequestDto', 'legalNature'));
+              legalNature: legalNature);
     } catch (_) {
       late String _$failedField;
       try {

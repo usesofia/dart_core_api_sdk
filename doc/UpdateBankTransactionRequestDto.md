@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **ignore** | **bool** |  | [optional] 
 **confirm** | **bool** |  | [optional] 
 **tagIds** | **BuiltList&lt;String&gt;** |  | [optional] 
-**legalNature** | **String** |  | 
+**legalNature** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
