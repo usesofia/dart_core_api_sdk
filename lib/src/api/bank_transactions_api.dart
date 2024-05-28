@@ -136,6 +136,8 @@ class BankTransactionsApi {
   /// * [maxCompetencyDate] 
   /// * [showIgnored] 
   /// * [ignoreAutomaticApplicationRelated] 
+  /// * [ignoreInternalTransfers] 
+  /// * [ignoreInvoiceRelated] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -160,6 +162,8 @@ class BankTransactionsApi {
     String? maxCompetencyDate,
     bool? showIgnored,
     bool? ignoreAutomaticApplicationRelated,
+    bool? ignoreInternalTransfers,
+    bool? ignoreInvoiceRelated,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -194,6 +198,8 @@ class BankTransactionsApi {
       if (maxCompetencyDate != null) r'maxCompetencyDate': encodeQueryParameter(_serializers, maxCompetencyDate, const FullType(String)),
       if (showIgnored != null) r'showIgnored': encodeQueryParameter(_serializers, showIgnored, const FullType(bool)),
       if (ignoreAutomaticApplicationRelated != null) r'ignoreAutomaticApplicationRelated': encodeQueryParameter(_serializers, ignoreAutomaticApplicationRelated, const FullType(bool)),
+      if (ignoreInternalTransfers != null) r'ignoreInternalTransfers': encodeQueryParameter(_serializers, ignoreInternalTransfers, const FullType(bool)),
+      if (ignoreInvoiceRelated != null) r'ignoreInvoiceRelated': encodeQueryParameter(_serializers, ignoreInvoiceRelated, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
@@ -424,6 +430,8 @@ class BankTransactionsApi {
   /// * [maxCompetencyDate] 
   /// * [showIgnored] 
   /// * [ignoreAutomaticApplicationRelated] 
+  /// * [ignoreInternalTransfers] 
+  /// * [ignoreInvoiceRelated] 
   /// * [types] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -446,6 +454,8 @@ class BankTransactionsApi {
     String? maxCompetencyDate,
     bool? showIgnored,
     bool? ignoreAutomaticApplicationRelated,
+    bool? ignoreInternalTransfers,
+    bool? ignoreInvoiceRelated,
     String? types,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -478,6 +488,8 @@ class BankTransactionsApi {
       if (maxCompetencyDate != null) r'maxCompetencyDate': encodeQueryParameter(_serializers, maxCompetencyDate, const FullType(String)),
       if (showIgnored != null) r'showIgnored': encodeQueryParameter(_serializers, showIgnored, const FullType(bool)),
       if (ignoreAutomaticApplicationRelated != null) r'ignoreAutomaticApplicationRelated': encodeQueryParameter(_serializers, ignoreAutomaticApplicationRelated, const FullType(bool)),
+      if (ignoreInternalTransfers != null) r'ignoreInternalTransfers': encodeQueryParameter(_serializers, ignoreInternalTransfers, const FullType(bool)),
+      if (ignoreInvoiceRelated != null) r'ignoreInvoiceRelated': encodeQueryParameter(_serializers, ignoreInvoiceRelated, const FullType(bool)),
       if (types != null) r'types': encodeQueryParameter(_serializers, types, const FullType(String)),
     };
 
