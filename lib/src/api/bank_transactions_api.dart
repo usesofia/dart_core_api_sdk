@@ -129,6 +129,7 @@ class BankTransactionsApi {
   /// * [categoryIds] 
   /// * [tagIds] 
   /// * [legalNatures] 
+  /// * [types] 
   /// * [minPostedDate] 
   /// * [maxPostedDate] 
   /// * [minCompetencyDate] 
@@ -152,6 +153,7 @@ class BankTransactionsApi {
     String? categoryIds,
     String? tagIds,
     String? legalNatures,
+    String? types,
     String? minPostedDate,
     String? maxPostedDate,
     String? minCompetencyDate,
@@ -185,6 +187,7 @@ class BankTransactionsApi {
       if (categoryIds != null) r'categoryIds': encodeQueryParameter(_serializers, categoryIds, const FullType(String)),
       if (tagIds != null) r'tagIds': encodeQueryParameter(_serializers, tagIds, const FullType(String)),
       if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
+      if (types != null) r'types': encodeQueryParameter(_serializers, types, const FullType(String)),
       if (minPostedDate != null) r'minPostedDate': encodeQueryParameter(_serializers, minPostedDate, const FullType(String)),
       if (maxPostedDate != null) r'maxPostedDate': encodeQueryParameter(_serializers, maxPostedDate, const FullType(String)),
       if (minCompetencyDate != null) r'minCompetencyDate': encodeQueryParameter(_serializers, minCompetencyDate, const FullType(String)),
@@ -421,6 +424,7 @@ class BankTransactionsApi {
   /// * [maxCompetencyDate] 
   /// * [showIgnored] 
   /// * [ignoreAutomaticApplicationRelated] 
+  /// * [types] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -442,6 +446,7 @@ class BankTransactionsApi {
     String? maxCompetencyDate,
     bool? showIgnored,
     bool? ignoreAutomaticApplicationRelated,
+    String? types,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -473,6 +478,7 @@ class BankTransactionsApi {
       if (maxCompetencyDate != null) r'maxCompetencyDate': encodeQueryParameter(_serializers, maxCompetencyDate, const FullType(String)),
       if (showIgnored != null) r'showIgnored': encodeQueryParameter(_serializers, showIgnored, const FullType(bool)),
       if (ignoreAutomaticApplicationRelated != null) r'ignoreAutomaticApplicationRelated': encodeQueryParameter(_serializers, ignoreAutomaticApplicationRelated, const FullType(bool)),
+      if (types != null) r'types': encodeQueryParameter(_serializers, types, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

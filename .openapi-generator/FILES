@@ -189,9 +189,3 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/balance_point_result_entity_test.dart
-test/bank_transaction_indicator_entity_test.dart
-test/dre_line_outcome_result_entity_test.dart
-test/mean_result_entity_test.dart
-test/mean_result_subcategory_item_entity_test.dart
-test/proportion_result_entity_test.dart

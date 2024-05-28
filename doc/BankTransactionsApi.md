@@ -61,7 +61,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bankTransactionsControllerGetBankTransactions**
-> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated)
+> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, legalNatures, types, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated)
 
 
 
@@ -77,6 +77,7 @@ final String accountIds = accountIds_example; // String |
 final String categoryIds = categoryIds_example; // String | 
 final String tagIds = tagIds_example; // String | 
 final String legalNatures = legalNatures_example; // String | 
+final String types = types_example; // String | 
 final String minPostedDate = minPostedDate_example; // String | 
 final String maxPostedDate = maxPostedDate_example; // String | 
 final String minCompetencyDate = minCompetencyDate_example; // String | 
@@ -85,7 +86,7 @@ final bool showIgnored = true; // bool |
 final bool ignoreAutomaticApplicationRelated = true; // bool | 
 
 try {
-    final response = api.bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated);
+    final response = api.bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, legalNatures, types, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetBankTransactions: $e\n');
@@ -103,6 +104,7 @@ Name | Type | Description  | Notes
  **categoryIds** | **String**|  | [optional] 
  **tagIds** | **String**|  | [optional] 
  **legalNatures** | **String**|  | [optional] 
+ **types** | **String**|  | [optional] 
  **minPostedDate** | **String**|  | [optional] 
  **maxPostedDate** | **String**|  | [optional] 
  **minCompetencyDate** | **String**|  | [optional] 
@@ -218,7 +220,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bankTransactionsControllerGetBankTransactionsTotals**
-> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactionsTotals(workspaceId, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated)
+> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactionsTotals(workspaceId, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated, types)
 
 
 
@@ -238,9 +240,10 @@ final String minCompetencyDate = minCompetencyDate_example; // String |
 final String maxCompetencyDate = maxCompetencyDate_example; // String | 
 final bool showIgnored = true; // bool | 
 final bool ignoreAutomaticApplicationRelated = true; // bool | 
+final String types = types_example; // String | 
 
 try {
-    final response = api.bankTransactionsControllerGetBankTransactionsTotals(workspaceId, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated);
+    final response = api.bankTransactionsControllerGetBankTransactionsTotals(workspaceId, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated, types);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetBankTransactionsTotals: $e\n');
@@ -262,6 +265,7 @@ Name | Type | Description  | Notes
  **maxCompetencyDate** | **String**|  | [optional] 
  **showIgnored** | **bool**|  | [optional] 
  **ignoreAutomaticApplicationRelated** | **bool**|  | [optional] 
+ **types** | **String**|  | [optional] 
 
 ### Return type
 
