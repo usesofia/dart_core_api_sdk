@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**reportsControllerGetAccountsEntriesByCategoryReport**](ReportsApi.md#reportscontrollergetaccountsentriesbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/accounts/entries-by-category | 
 [**reportsControllerGetAccountsOutputsByCategoryReport**](ReportsApi.md#reportscontrollergetaccountsoutputsbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/accounts/outputs-by-category | 
+[**reportsControllerGetBusinessIndicators**](ReportsApi.md#reportscontrollergetbusinessindicators) | **GET** /workspaces/{workspaceId}/reports/indicators/business | 
 [**reportsControllerGetCardsCashFlowReport**](ReportsApi.md#reportscontrollergetcardscashflowreport) | **GET** /workspaces/{workspaceId}/reports/cards/cash-flow | 
 [**reportsControllerGetCardsOutputsByCategoryReport**](ReportsApi.md#reportscontrollergetcardsoutputsbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/cards/outputs-by-category | 
 [**reportsControllerGetCashFlowReport**](ReportsApi.md#reportscontrollergetcashflowreport) | **GET** /workspaces/{workspaceId}/reports/accounts/cash-flow | 
@@ -127,6 +128,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CashFlowByCategoryReportEntity**](CashFlowByCategoryReportEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **reportsControllerGetBusinessIndicators**
+> BuiltList<BankTransactionIndicatorEntity> reportsControllerGetBusinessIndicators(workspaceId, accountIds, tagIds, considerIgnored, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getReportsApi();
+final String workspaceId = workspaceId_example; // String | 
+final String accountIds = accountIds_example; // String | 
+final String tagIds = tagIds_example; // String | 
+final bool considerIgnored = true; // bool | 
+final String minPostedDate = minPostedDate_example; // String | 
+final String maxPostedDate = maxPostedDate_example; // String | 
+final String minCompetencyDate = minCompetencyDate_example; // String | 
+final String maxCompetencyDate = maxCompetencyDate_example; // String | 
+
+try {
+    final response = api.reportsControllerGetBusinessIndicators(workspaceId, accountIds, tagIds, considerIgnored, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling ReportsApi->reportsControllerGetBusinessIndicators: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **workspaceId** | **String**|  | 
+ **accountIds** | **String**|  | [optional] 
+ **tagIds** | **String**|  | [optional] 
+ **considerIgnored** | **bool**|  | [optional] 
+ **minPostedDate** | **String**|  | [optional] 
+ **maxPostedDate** | **String**|  | [optional] 
+ **minCompetencyDate** | **String**|  | [optional] 
+ **maxCompetencyDate** | **String**|  | [optional] 
+
+### Return type
+
+[**BuiltList&lt;BankTransactionIndicatorEntity&gt;**](BankTransactionIndicatorEntity.md)
 
 ### Authorization
 

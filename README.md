@@ -102,6 +102,7 @@ Class | Method | HTTP request | Description
 [*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerParcialUpdate**](doc/ProfilesApi.md#profilescontrollerparcialupdate) | **PATCH** /profiles/me | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetAccountsEntriesByCategoryReport**](doc/ReportsApi.md#reportscontrollergetaccountsentriesbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/accounts/entries-by-category | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetAccountsOutputsByCategoryReport**](doc/ReportsApi.md#reportscontrollergetaccountsoutputsbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/accounts/outputs-by-category | 
+[*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetBusinessIndicators**](doc/ReportsApi.md#reportscontrollergetbusinessindicators) | **GET** /workspaces/{workspaceId}/reports/indicators/business | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetCardsCashFlowReport**](doc/ReportsApi.md#reportscontrollergetcardscashflowreport) | **GET** /workspaces/{workspaceId}/reports/cards/cash-flow | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetCardsOutputsByCategoryReport**](doc/ReportsApi.md#reportscontrollergetcardsoutputsbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/cards/outputs-by-category | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetCashFlowReport**](doc/ReportsApi.md#reportscontrollergetcashflowreport) | **GET** /workspaces/{workspaceId}/reports/accounts/cash-flow | 
@@ -120,6 +121,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AiChatFeatureSpecificationEntity](doc/AiChatFeatureSpecificationEntity.md)
+ - [BalancePointResultEntity](doc/BalancePointResultEntity.md)
  - [BankAccountEntity](doc/BankAccountEntity.md)
  - [BankAccountsBalanceReportEntity](doc/BankAccountsBalanceReportEntity.md)
  - [BankAccountsBalanceReportItemEntity](doc/BankAccountsBalanceReportItemEntity.md)
@@ -130,6 +132,7 @@ Class | Method | HTTP request | Description
  - [BankTransactionCategoryPlainEntity](doc/BankTransactionCategoryPlainEntity.md)
  - [BankTransactionCreditCardMetadataEntity](doc/BankTransactionCreditCardMetadataEntity.md)
  - [BankTransactionEntity](doc/BankTransactionEntity.md)
+ - [BankTransactionIndicatorEntity](doc/BankTransactionIndicatorEntity.md)
  - [BankTransactionPaymentDataEntity](doc/BankTransactionPaymentDataEntity.md)
  - [BankTransactionTagEntity](doc/BankTransactionTagEntity.md)
  - [BankTransactionsPageEntity](doc/BankTransactionsPageEntity.md)
@@ -155,6 +158,7 @@ Class | Method | HTTP request | Description
  - [CreateWorkspaceRequestDto](doc/CreateWorkspaceRequestDto.md)
  - [CredentialsEntity](doc/CredentialsEntity.md)
  - [CreditCardMetadataDto](doc/CreditCardMetadataDto.md)
+ - [DreLineOutcomeResultEntity](doc/DreLineOutcomeResultEntity.md)
  - [EmailInUseEntity](doc/EmailInUseEntity.md)
  - [ErrorEntity](doc/ErrorEntity.md)
  - [ExceptionResponseEntity](doc/ExceptionResponseEntity.md)
@@ -166,6 +170,8 @@ Class | Method | HTTP request | Description
  - [FinancialStatementeEntriesCategoryData](doc/FinancialStatementeEntriesCategoryData.md)
  - [FinancialStatementeEntriesSubcategoryData](doc/FinancialStatementeEntriesSubcategoryData.md)
  - [FinancialTransactionsFeatureSpecificationEntity](doc/FinancialTransactionsFeatureSpecificationEntity.md)
+ - [MeanResultEntity](doc/MeanResultEntity.md)
+ - [MeanResultSubcategoryItemEntity](doc/MeanResultSubcategoryItemEntity.md)
  - [MessageTokenEntity](doc/MessageTokenEntity.md)
  - [ParcialUpdateProfileRequestDto](doc/ParcialUpdateProfileRequestDto.md)
  - [ParcialUpdateWorkspaceRequestDto](doc/ParcialUpdateWorkspaceRequestDto.md)
@@ -175,6 +181,7 @@ Class | Method | HTTP request | Description
  - [PlainBankAccountEntity](doc/PlainBankAccountEntity.md)
  - [PluggyConnectTokenEntity](doc/PluggyConnectTokenEntity.md)
  - [ProfileEntity](doc/ProfileEntity.md)
+ - [ProportionResultEntity](doc/ProportionResultEntity.md)
  - [RefreshRequestDto](doc/RefreshRequestDto.md)
  - [SendEmailVerificationCodeRequestDto](doc/SendEmailVerificationCodeRequestDto.md)
  - [SignInWithEmailPasswordRequestDto](doc/SignInWithEmailPasswordRequestDto.md)

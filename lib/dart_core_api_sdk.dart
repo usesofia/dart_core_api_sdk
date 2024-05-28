@@ -26,6 +26,7 @@ export 'package:dart_core_api_sdk/src/api/workspace_subscriptions_api.dart';
 export 'package:dart_core_api_sdk/src/api/workspaces_api.dart';
 
 export 'package:dart_core_api_sdk/src/model/ai_chat_feature_specification_entity.dart';
+export 'package:dart_core_api_sdk/src/model/balance_point_result_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_account_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_accounts_balance_report_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_accounts_balance_report_item_entity.dart';
@@ -36,6 +37,7 @@ export 'package:dart_core_api_sdk/src/model/bank_transaction_category_entity.dar
 export 'package:dart_core_api_sdk/src/model/bank_transaction_category_plain_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transaction_credit_card_metadata_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transaction_entity.dart';
+export 'package:dart_core_api_sdk/src/model/bank_transaction_indicator_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transaction_payment_data_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transaction_tag_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transactions_page_entity.dart';
@@ -61,6 +63,7 @@ export 'package:dart_core_api_sdk/src/model/create_stripe_checkout_session_reque
 export 'package:dart_core_api_sdk/src/model/create_workspace_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/credentials_entity.dart';
 export 'package:dart_core_api_sdk/src/model/credit_card_metadata_dto.dart';
+export 'package:dart_core_api_sdk/src/model/dre_line_outcome_result_entity.dart';
 export 'package:dart_core_api_sdk/src/model/email_in_use_entity.dart';
 export 'package:dart_core_api_sdk/src/model/error_entity.dart';
 export 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
@@ -72,6 +75,8 @@ export 'package:dart_core_api_sdk/src/model/financial_statement_report_item_enti
 export 'package:dart_core_api_sdk/src/model/financial_statemente_entries_category_data.dart';
 export 'package:dart_core_api_sdk/src/model/financial_statemente_entries_subcategory_data.dart';
 export 'package:dart_core_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
+export 'package:dart_core_api_sdk/src/model/mean_result_entity.dart';
+export 'package:dart_core_api_sdk/src/model/mean_result_subcategory_item_entity.dart';
 export 'package:dart_core_api_sdk/src/model/message_token_entity.dart';
 export 'package:dart_core_api_sdk/src/model/parcial_update_profile_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/parcial_update_workspace_request_dto.dart';
@@ -81,6 +86,7 @@ export 'package:dart_core_api_sdk/src/model/payments_manager_product_price_entit
 export 'package:dart_core_api_sdk/src/model/plain_bank_account_entity.dart';
 export 'package:dart_core_api_sdk/src/model/pluggy_connect_token_entity.dart';
 export 'package:dart_core_api_sdk/src/model/profile_entity.dart';
+export 'package:dart_core_api_sdk/src/model/proportion_result_entity.dart';
 export 'package:dart_core_api_sdk/src/model/refresh_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/send_email_verification_code_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/sign_in_with_email_password_request_dto.dart';
