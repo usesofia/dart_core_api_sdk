@@ -11,9 +11,17 @@ part 'create_or_update_message_token_request_dto.g.dart';
 /// CreateOrUpdateMessageTokenRequestDto
 ///
 /// Properties:
+/// * [platform] 
+/// * [deviceId] 
 /// * [token] 
 @BuiltValue()
 abstract class CreateOrUpdateMessageTokenRequestDto implements Built<CreateOrUpdateMessageTokenRequestDto, CreateOrUpdateMessageTokenRequestDtoBuilder> {
+  @BuiltValueField(wireName: r'platform')
+  String get platform;
+
+  @BuiltValueField(wireName: r'deviceId')
+  String get deviceId;
+
   @BuiltValueField(wireName: r'token')
   String get token;
 
@@ -40,6 +48,16 @@ class _$CreateOrUpdateMessageTokenRequestDtoSerializer implements PrimitiveSeria
     CreateOrUpdateMessageTokenRequestDto object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    yield r'platform';
+    yield serializers.serialize(
+      object.platform,
+      specifiedType: const FullType(String),
+    );
+    yield r'deviceId';
+    yield serializers.serialize(
+      object.deviceId,
+      specifiedType: const FullType(String),
+    );
     yield r'token';
     yield serializers.serialize(
       object.token,
@@ -68,6 +86,20 @@ class _$CreateOrUpdateMessageTokenRequestDtoSerializer implements PrimitiveSeria
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'platform':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.platform = valueDes;
+          break;
+        case r'deviceId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.deviceId = valueDes;
+          break;
         case r'token':
           final valueDes = serializers.deserialize(
             value,

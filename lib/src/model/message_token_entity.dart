@@ -20,6 +20,8 @@ part 'message_token_entity.g.dart';
 /// * [userId] 
 /// * [user] 
 /// * [provider] 
+/// * [platform] 
+/// * [deviceId] 
 /// * [token] 
 /// * [createdAt] 
 /// * [updatedAt] 
@@ -43,6 +45,13 @@ abstract class MessageTokenEntity implements Built<MessageTokenEntity, MessageTo
   @BuiltValueField(wireName: r'provider')
   MessageTokenEntityProviderEnum get provider;
   // enum providerEnum {  FIREBASE_MESSAGING,  };
+
+  @BuiltValueField(wireName: r'platform')
+  MessageTokenEntityPlatformEnum get platform;
+  // enum platformEnum {  WEB,  ANDROID,  IOS,  };
+
+  @BuiltValueField(wireName: r'deviceId')
+  String get deviceId;
 
   @BuiltValueField(wireName: r'token')
   String get token;
@@ -105,6 +114,16 @@ class _$MessageTokenEntitySerializer implements PrimitiveSerializer<MessageToken
     yield serializers.serialize(
       object.provider,
       specifiedType: const FullType(MessageTokenEntityProviderEnum),
+    );
+    yield r'platform';
+    yield serializers.serialize(
+      object.platform,
+      specifiedType: const FullType(MessageTokenEntityPlatformEnum),
+    );
+    yield r'deviceId';
+    yield serializers.serialize(
+      object.deviceId,
+      specifiedType: const FullType(String),
     );
     yield r'token';
     yield serializers.serialize(
@@ -186,6 +205,20 @@ class _$MessageTokenEntitySerializer implements PrimitiveSerializer<MessageToken
           ) as MessageTokenEntityProviderEnum;
           result.provider = valueDes;
           break;
+        case r'platform':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(MessageTokenEntityPlatformEnum),
+          ) as MessageTokenEntityPlatformEnum;
+          result.platform = valueDes;
+          break;
+        case r'deviceId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.deviceId = valueDes;
+          break;
         case r'token':
           final valueDes = serializers.deserialize(
             value,
@@ -247,5 +280,22 @@ class MessageTokenEntityProviderEnum extends EnumClass {
 
   static BuiltSet<MessageTokenEntityProviderEnum> get values => _$messageTokenEntityProviderEnumValues;
   static MessageTokenEntityProviderEnum valueOf(String name) => _$messageTokenEntityProviderEnumValueOf(name);
+}
+
+class MessageTokenEntityPlatformEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'WEB')
+  static const MessageTokenEntityPlatformEnum WEB = _$messageTokenEntityPlatformEnum_WEB;
+  @BuiltValueEnumConst(wireName: r'ANDROID')
+  static const MessageTokenEntityPlatformEnum ANDROID = _$messageTokenEntityPlatformEnum_ANDROID;
+  @BuiltValueEnumConst(wireName: r'IOS')
+  static const MessageTokenEntityPlatformEnum IOS = _$messageTokenEntityPlatformEnum_IOS;
+
+  static Serializer<MessageTokenEntityPlatformEnum> get serializer => _$messageTokenEntityPlatformEnumSerializer;
+
+  const MessageTokenEntityPlatformEnum._(String name): super(name);
+
+  static BuiltSet<MessageTokenEntityPlatformEnum> get values => _$messageTokenEntityPlatformEnumValues;
+  static MessageTokenEntityPlatformEnum valueOf(String name) => _$messageTokenEntityPlatformEnumValueOf(name);
 }
 

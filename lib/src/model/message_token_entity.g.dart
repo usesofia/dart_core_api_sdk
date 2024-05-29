@@ -26,9 +26,41 @@ final BuiltSet<MessageTokenEntityProviderEnum>
   _$messageTokenEntityProviderEnum_FIREBASE_MESSAGING,
 ]);
 
+const MessageTokenEntityPlatformEnum _$messageTokenEntityPlatformEnum_WEB =
+    const MessageTokenEntityPlatformEnum._('WEB');
+const MessageTokenEntityPlatformEnum _$messageTokenEntityPlatformEnum_ANDROID =
+    const MessageTokenEntityPlatformEnum._('ANDROID');
+const MessageTokenEntityPlatformEnum _$messageTokenEntityPlatformEnum_IOS =
+    const MessageTokenEntityPlatformEnum._('IOS');
+
+MessageTokenEntityPlatformEnum _$messageTokenEntityPlatformEnumValueOf(
+    String name) {
+  switch (name) {
+    case 'WEB':
+      return _$messageTokenEntityPlatformEnum_WEB;
+    case 'ANDROID':
+      return _$messageTokenEntityPlatformEnum_ANDROID;
+    case 'IOS':
+      return _$messageTokenEntityPlatformEnum_IOS;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<MessageTokenEntityPlatformEnum>
+    _$messageTokenEntityPlatformEnumValues = new BuiltSet<
+        MessageTokenEntityPlatformEnum>(const <MessageTokenEntityPlatformEnum>[
+  _$messageTokenEntityPlatformEnum_WEB,
+  _$messageTokenEntityPlatformEnum_ANDROID,
+  _$messageTokenEntityPlatformEnum_IOS,
+]);
+
 Serializer<MessageTokenEntityProviderEnum>
     _$messageTokenEntityProviderEnumSerializer =
     new _$MessageTokenEntityProviderEnumSerializer();
+Serializer<MessageTokenEntityPlatformEnum>
+    _$messageTokenEntityPlatformEnumSerializer =
+    new _$MessageTokenEntityPlatformEnumSerializer();
 
 class _$MessageTokenEntityProviderEnumSerializer
     implements PrimitiveSerializer<MessageTokenEntityProviderEnum> {
@@ -58,6 +90,38 @@ class _$MessageTokenEntityProviderEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
+class _$MessageTokenEntityPlatformEnumSerializer
+    implements PrimitiveSerializer<MessageTokenEntityPlatformEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'WEB': 'WEB',
+    'ANDROID': 'ANDROID',
+    'IOS': 'IOS',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'WEB': 'WEB',
+    'ANDROID': 'ANDROID',
+    'IOS': 'IOS',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[MessageTokenEntityPlatformEnum];
+  @override
+  final String wireName = 'MessageTokenEntityPlatformEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers, MessageTokenEntityPlatformEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  MessageTokenEntityPlatformEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      MessageTokenEntityPlatformEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$MessageTokenEntity extends MessageTokenEntity {
   @override
   final String id;
@@ -71,6 +135,10 @@ class _$MessageTokenEntity extends MessageTokenEntity {
   final UserEntity user;
   @override
   final MessageTokenEntityProviderEnum provider;
+  @override
+  final MessageTokenEntityPlatformEnum platform;
+  @override
+  final String deviceId;
   @override
   final String token;
   @override
@@ -89,6 +157,8 @@ class _$MessageTokenEntity extends MessageTokenEntity {
       required this.userId,
       required this.user,
       required this.provider,
+      required this.platform,
+      required this.deviceId,
       required this.token,
       required this.createdAt,
       required this.updatedAt})
@@ -103,6 +173,10 @@ class _$MessageTokenEntity extends MessageTokenEntity {
     BuiltValueNullFieldError.checkNotNull(user, r'MessageTokenEntity', 'user');
     BuiltValueNullFieldError.checkNotNull(
         provider, r'MessageTokenEntity', 'provider');
+    BuiltValueNullFieldError.checkNotNull(
+        platform, r'MessageTokenEntity', 'platform');
+    BuiltValueNullFieldError.checkNotNull(
+        deviceId, r'MessageTokenEntity', 'deviceId');
     BuiltValueNullFieldError.checkNotNull(
         token, r'MessageTokenEntity', 'token');
     BuiltValueNullFieldError.checkNotNull(
@@ -130,6 +204,8 @@ class _$MessageTokenEntity extends MessageTokenEntity {
         userId == other.userId &&
         user == other.user &&
         provider == other.provider &&
+        platform == other.platform &&
+        deviceId == other.deviceId &&
         token == other.token &&
         createdAt == other.createdAt &&
         updatedAt == other.updatedAt;
@@ -144,6 +220,8 @@ class _$MessageTokenEntity extends MessageTokenEntity {
     _$hash = $jc(_$hash, userId.hashCode);
     _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, provider.hashCode);
+    _$hash = $jc(_$hash, platform.hashCode);
+    _$hash = $jc(_$hash, deviceId.hashCode);
     _$hash = $jc(_$hash, token.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
@@ -160,6 +238,8 @@ class _$MessageTokenEntity extends MessageTokenEntity {
           ..add('userId', userId)
           ..add('user', user)
           ..add('provider', provider)
+          ..add('platform', platform)
+          ..add('deviceId', deviceId)
           ..add('token', token)
           ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt))
@@ -198,6 +278,15 @@ class MessageTokenEntityBuilder
   set provider(MessageTokenEntityProviderEnum? provider) =>
       _$this._provider = provider;
 
+  MessageTokenEntityPlatformEnum? _platform;
+  MessageTokenEntityPlatformEnum? get platform => _$this._platform;
+  set platform(MessageTokenEntityPlatformEnum? platform) =>
+      _$this._platform = platform;
+
+  String? _deviceId;
+  String? get deviceId => _$this._deviceId;
+  set deviceId(String? deviceId) => _$this._deviceId = deviceId;
+
   String? _token;
   String? get token => _$this._token;
   set token(String? token) => _$this._token = token;
@@ -223,6 +312,8 @@ class MessageTokenEntityBuilder
       _userId = $v.userId;
       _user = $v.user.toBuilder();
       _provider = $v.provider;
+      _platform = $v.platform;
+      _deviceId = $v.deviceId;
       _token = $v.token;
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
@@ -260,12 +351,16 @@ class MessageTokenEntityBuilder
               user: user.build(),
               provider: BuiltValueNullFieldError.checkNotNull(
                   provider, r'MessageTokenEntity', 'provider'),
+              platform: BuiltValueNullFieldError.checkNotNull(
+                  platform, r'MessageTokenEntity', 'platform'),
+              deviceId: BuiltValueNullFieldError.checkNotNull(
+                  deviceId, r'MessageTokenEntity', 'deviceId'),
               token: BuiltValueNullFieldError.checkNotNull(
                   token, r'MessageTokenEntity', 'token'),
               createdAt: BuiltValueNullFieldError.checkNotNull(
                   createdAt, r'MessageTokenEntity', 'createdAt'),
-              updatedAt: BuiltValueNullFieldError.checkNotNull(
-                  updatedAt, r'MessageTokenEntity', 'updatedAt'));
+              updatedAt:
+                  BuiltValueNullFieldError.checkNotNull(updatedAt, r'MessageTokenEntity', 'updatedAt'));
     } catch (_) {
       late String _$failedField;
       try {

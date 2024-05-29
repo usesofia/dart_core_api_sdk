@@ -9,6 +9,10 @@ part of 'create_or_update_message_token_request_dto.dart';
 class _$CreateOrUpdateMessageTokenRequestDto
     extends CreateOrUpdateMessageTokenRequestDto {
   @override
+  final String platform;
+  @override
+  final String deviceId;
+  @override
   final String token;
 
   factory _$CreateOrUpdateMessageTokenRequestDto(
@@ -17,7 +21,13 @@ class _$CreateOrUpdateMessageTokenRequestDto
       (new CreateOrUpdateMessageTokenRequestDtoBuilder()..update(updates))
           ._build();
 
-  _$CreateOrUpdateMessageTokenRequestDto._({required this.token}) : super._() {
+  _$CreateOrUpdateMessageTokenRequestDto._(
+      {required this.platform, required this.deviceId, required this.token})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        platform, r'CreateOrUpdateMessageTokenRequestDto', 'platform');
+    BuiltValueNullFieldError.checkNotNull(
+        deviceId, r'CreateOrUpdateMessageTokenRequestDto', 'deviceId');
     BuiltValueNullFieldError.checkNotNull(
         token, r'CreateOrUpdateMessageTokenRequestDto', 'token');
   }
@@ -35,12 +45,16 @@ class _$CreateOrUpdateMessageTokenRequestDto
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CreateOrUpdateMessageTokenRequestDto &&
+        platform == other.platform &&
+        deviceId == other.deviceId &&
         token == other.token;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, platform.hashCode);
+    _$hash = $jc(_$hash, deviceId.hashCode);
     _$hash = $jc(_$hash, token.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -49,6 +63,8 @@ class _$CreateOrUpdateMessageTokenRequestDto
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CreateOrUpdateMessageTokenRequestDto')
+          ..add('platform', platform)
+          ..add('deviceId', deviceId)
           ..add('token', token))
         .toString();
   }
@@ -59,6 +75,14 @@ class CreateOrUpdateMessageTokenRequestDtoBuilder
         Builder<CreateOrUpdateMessageTokenRequestDto,
             CreateOrUpdateMessageTokenRequestDtoBuilder> {
   _$CreateOrUpdateMessageTokenRequestDto? _$v;
+
+  String? _platform;
+  String? get platform => _$this._platform;
+  set platform(String? platform) => _$this._platform = platform;
+
+  String? _deviceId;
+  String? get deviceId => _$this._deviceId;
+  set deviceId(String? deviceId) => _$this._deviceId = deviceId;
 
   String? _token;
   String? get token => _$this._token;
@@ -71,6 +95,8 @@ class CreateOrUpdateMessageTokenRequestDtoBuilder
   CreateOrUpdateMessageTokenRequestDtoBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _platform = $v.platform;
+      _deviceId = $v.deviceId;
       _token = $v.token;
       _$v = null;
     }
@@ -95,6 +121,10 @@ class CreateOrUpdateMessageTokenRequestDtoBuilder
   _$CreateOrUpdateMessageTokenRequestDto _build() {
     final _$result = _$v ??
         new _$CreateOrUpdateMessageTokenRequestDto._(
+            platform: BuiltValueNullFieldError.checkNotNull(
+                platform, r'CreateOrUpdateMessageTokenRequestDto', 'platform'),
+            deviceId: BuiltValueNullFieldError.checkNotNull(
+                deviceId, r'CreateOrUpdateMessageTokenRequestDto', 'deviceId'),
             token: BuiltValueNullFieldError.checkNotNull(
                 token, r'CreateOrUpdateMessageTokenRequestDto', 'token'));
     replace(_$result);

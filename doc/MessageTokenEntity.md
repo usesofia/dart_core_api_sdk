@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **userId** | **String** |  | 
 **user** | [**UserEntity**](UserEntity.md) |  | 
 **provider** | **String** |  | 
+**platform** | **String** |  | 
+**deviceId** | **String** |  | 
 **token** | **String** |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
