@@ -84,7 +84,7 @@ abstract class CreateOrUpdateBankTransactionsInBulkItemDto implements Built<Crea
   CreditCardMetadataDto get creditCardMetadata;
 
   @BuiltValueField(wireName: r'categoryGuesses')
-  BuiltList<CategoryGuessDto> get categoryGuesses;
+  BuiltList<CategoryGuessDto>? get categoryGuesses;
 
   @BuiltValueField(wireName: r'bestGuessCategoryId')
   String get bestGuessCategoryId;
@@ -196,11 +196,13 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDtoSerializer implements Primiti
       object.creditCardMetadata,
       specifiedType: const FullType(CreditCardMetadataDto),
     );
-    yield r'categoryGuesses';
-    yield serializers.serialize(
-      object.categoryGuesses,
-      specifiedType: const FullType(BuiltList, [FullType(CategoryGuessDto)]),
-    );
+    if (object.categoryGuesses != null) {
+      yield r'categoryGuesses';
+      yield serializers.serialize(
+        object.categoryGuesses,
+        specifiedType: const FullType(BuiltList, [FullType(CategoryGuessDto)]),
+      );
+    }
     yield r'bestGuessCategoryId';
     yield serializers.serialize(
       object.bestGuessCategoryId,

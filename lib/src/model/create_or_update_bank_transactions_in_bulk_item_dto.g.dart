@@ -41,7 +41,7 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
   @override
   final CreditCardMetadataDto creditCardMetadata;
   @override
-  final BuiltList<CategoryGuessDto> categoryGuesses;
+  final BuiltList<CategoryGuessDto>? categoryGuesses;
   @override
   final String bestGuessCategoryId;
 
@@ -69,7 +69,7 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
       required this.categoryId,
       required this.paymentData,
       required this.creditCardMetadata,
-      required this.categoryGuesses,
+      this.categoryGuesses,
       required this.bestGuessCategoryId})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
@@ -102,8 +102,6 @@ class _$CreateOrUpdateBankTransactionsInBulkItemDto
         r'CreateOrUpdateBankTransactionsInBulkItemDto', 'paymentData');
     BuiltValueNullFieldError.checkNotNull(creditCardMetadata,
         r'CreateOrUpdateBankTransactionsInBulkItemDto', 'creditCardMetadata');
-    BuiltValueNullFieldError.checkNotNull(categoryGuesses,
-        r'CreateOrUpdateBankTransactionsInBulkItemDto', 'categoryGuesses');
     BuiltValueNullFieldError.checkNotNull(bestGuessCategoryId,
         r'CreateOrUpdateBankTransactionsInBulkItemDto', 'bestGuessCategoryId');
   }
@@ -305,7 +303,7 @@ class CreateOrUpdateBankTransactionsInBulkItemDtoBuilder
       _categoryId = $v.categoryId;
       _paymentData = $v.paymentData.toBuilder();
       _creditCardMetadata = $v.creditCardMetadata.toBuilder();
-      _categoryGuesses = $v.categoryGuesses.toBuilder();
+      _categoryGuesses = $v.categoryGuesses?.toBuilder();
       _bestGuessCategoryId = $v.bestGuessCategoryId;
       _$v = null;
     }
@@ -357,7 +355,7 @@ class CreateOrUpdateBankTransactionsInBulkItemDtoBuilder
               categoryId: BuiltValueNullFieldError.checkNotNull(categoryId, r'CreateOrUpdateBankTransactionsInBulkItemDto', 'categoryId'),
               paymentData: paymentData.build(),
               creditCardMetadata: creditCardMetadata.build(),
-              categoryGuesses: categoryGuesses.build(),
+              categoryGuesses: _categoryGuesses?.build(),
               bestGuessCategoryId: BuiltValueNullFieldError.checkNotNull(bestGuessCategoryId, r'CreateOrUpdateBankTransactionsInBulkItemDto', 'bestGuessCategoryId'));
     } catch (_) {
       late String _$failedField;
@@ -367,7 +365,7 @@ class CreateOrUpdateBankTransactionsInBulkItemDtoBuilder
         _$failedField = 'creditCardMetadata';
         creditCardMetadata.build();
         _$failedField = 'categoryGuesses';
-        categoryGuesses.build();
+        _categoryGuesses?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'CreateOrUpdateBankTransactionsInBulkItemDto',

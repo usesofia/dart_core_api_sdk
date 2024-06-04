@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **categoryId** | **String** |  | 
 **paymentData** | [**PaymentDataDto**](PaymentDataDto.md) |  | 
 **creditCardMetadata** | [**CreditCardMetadataDto**](CreditCardMetadataDto.md) |  | 
-**categoryGuesses** | [**BuiltList&lt;CategoryGuessDto&gt;**](CategoryGuessDto.md) |  | 
+**categoryGuesses** | [**BuiltList&lt;CategoryGuessDto&gt;**](CategoryGuessDto.md) |  | [optional] 
 **bestGuessCategoryId** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
