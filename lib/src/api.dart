@@ -15,13 +15,13 @@ import 'package:dart_core_api_sdk/src/api/bank_connections_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transaction_categories_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transaction_tags_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transactions_api.dart';
-import 'package:dart_core_api_sdk/src/api/default_api.dart';
 import 'package:dart_core_api_sdk/src/api/message_tokens_api.dart';
 import 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
 import 'package:dart_core_api_sdk/src/api/profiles_api.dart';
 import 'package:dart_core_api_sdk/src/api/reports_api.dart';
 import 'package:dart_core_api_sdk/src/api/stripe_api.dart';
 import 'package:dart_core_api_sdk/src/api/subscription_products_api.dart';
+import 'package:dart_core_api_sdk/src/api/users_api.dart';
 import 'package:dart_core_api_sdk/src/api/workspace_join_requests_api.dart';
 import 'package:dart_core_api_sdk/src/api/workspace_subscriptions_api.dart';
 import 'package:dart_core_api_sdk/src/api/workspaces_api.dart';
@@ -116,12 +116,6 @@ class DartCoreApiSdk {
     return BankTransactionsApi(dio, serializers);
   }
 
-  /// Get DefaultApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  DefaultApi getDefaultApi() {
-    return DefaultApi(dio, serializers);
-  }
-
   /// Get MessageTokensApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   MessageTokensApi getMessageTokensApi() {
@@ -156,6 +150,12 @@ class DartCoreApiSdk {
   /// by doing that all interceptors will not be executed
   SubscriptionProductsApi getSubscriptionProductsApi() {
     return SubscriptionProductsApi(dio, serializers);
+  }
+
+  /// Get UsersApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  UsersApi getUsersApi() {
+    return UsersApi(dio, serializers);
   }
 
   /// Get WorkspaceJoinRequestsApi instance, base route and serializer can be overridden by a given but be careful,
