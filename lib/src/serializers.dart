@@ -84,6 +84,7 @@ import 'package:dart_core_api_sdk/src/model/subscription_product_entity.dart';
 import 'package:dart_core_api_sdk/src/model/update_bank_transaction_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/user_entity.dart';
 import 'package:dart_core_api_sdk/src/model/user_related_workspace_entity.dart';
+import 'package:dart_core_api_sdk/src/model/user_with_profile_entity.dart';
 import 'package:dart_core_api_sdk/src/model/workspace_entity.dart';
 import 'package:dart_core_api_sdk/src/model/workspace_join_request_entity.dart';
 import 'package:dart_core_api_sdk/src/model/workspace_subscription_entity.dart';
@@ -161,6 +162,7 @@ part 'serializers.g.dart';
   UpdateBankTransactionRequestDto,
   UserEntity,
   UserRelatedWorkspaceEntity,
+  UserWithProfileEntity,
   WorkspaceEntity,
   WorkspaceJoinRequestEntity,
   WorkspaceSubscriptionEntity,

@@ -45,6 +45,7 @@ doc/CreateStripeCheckoutSessionRequestDto.md
 doc/CreateWorkspaceRequestDto.md
 doc/CredentialsEntity.md
 doc/CreditCardMetadataDto.md
+doc/DefaultApi.md
 doc/DreLineOutcomeResultEntity.md
 doc/EmailInUseEntity.md
 doc/ErrorEntity.md
@@ -83,6 +84,7 @@ doc/SubscriptionProductsApi.md
 doc/UpdateBankTransactionRequestDto.md
 doc/UserEntity.md
 doc/UserRelatedWorkspaceEntity.md
+doc/UserWithProfileEntity.md
 doc/WorkspaceEntity.md
 doc/WorkspaceJoinRequestEntity.md
 doc/WorkspaceJoinRequestsApi.md
@@ -97,6 +99,7 @@ lib/src/api/bank_connections_api.dart
 lib/src/api/bank_transaction_categories_api.dart
 lib/src/api/bank_transaction_tags_api.dart
 lib/src/api/bank_transactions_api.dart
+lib/src/api/default_api.dart
 lib/src/api/message_tokens_api.dart
 lib/src/api/pluggy_api.dart
 lib/src/api/profiles_api.dart
@@ -184,8 +187,11 @@ lib/src/model/subscription_product_entity.dart
 lib/src/model/update_bank_transaction_request_dto.dart
 lib/src/model/user_entity.dart
 lib/src/model/user_related_workspace_entity.dart
+lib/src/model/user_with_profile_entity.dart
 lib/src/model/workspace_entity.dart
 lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/default_api_test.dart
+test/user_with_profile_entity_test.dart
