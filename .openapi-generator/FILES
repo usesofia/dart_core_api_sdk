@@ -199,6 +199,3 @@ lib/src/model/workspace_personal_settings_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/workspace_company_settings_entity_test.dart
-test/workspace_hybrid_settings_entity_test.dart
-test/workspace_personal_settings_entity_test.dart
