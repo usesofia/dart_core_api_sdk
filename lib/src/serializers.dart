@@ -85,8 +85,11 @@ import 'package:dart_core_api_sdk/src/model/update_bank_transaction_request_dto.
 import 'package:dart_core_api_sdk/src/model/user_entity.dart';
 import 'package:dart_core_api_sdk/src/model/user_related_workspace_entity.dart';
 import 'package:dart_core_api_sdk/src/model/user_with_profile_entity.dart';
+import 'package:dart_core_api_sdk/src/model/workspace_company_settings_entity.dart';
 import 'package:dart_core_api_sdk/src/model/workspace_entity.dart';
+import 'package:dart_core_api_sdk/src/model/workspace_hybrid_settings_entity.dart';
 import 'package:dart_core_api_sdk/src/model/workspace_join_request_entity.dart';
+import 'package:dart_core_api_sdk/src/model/workspace_personal_settings_entity.dart';
 import 'package:dart_core_api_sdk/src/model/workspace_subscription_entity.dart';
 
 part 'serializers.g.dart';
@@ -163,8 +166,11 @@ part 'serializers.g.dart';
   UserEntity,
   UserRelatedWorkspaceEntity,
   UserWithProfileEntity,
+  WorkspaceCompanySettingsEntity,
   WorkspaceEntity,
+  WorkspaceHybridSettingsEntity,
   WorkspaceJoinRequestEntity,
+  WorkspacePersonalSettingsEntity,
   WorkspaceSubscriptionEntity,
 ])
 Serializers serializers = (_$serializers.toBuilder()

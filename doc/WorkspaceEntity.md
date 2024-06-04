@@ -16,6 +16,9 @@ Name | Type | Description | Notes
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **selectedPersonalCategoryTreeId** | **String** |  | [optional] 
 **selectedBusinessCategoryTreeId** | **String** |  | [optional] 
+**hybridSettings** | [**WorkspaceHybridSettingsEntity**](WorkspaceHybridSettingsEntity.md) |  | [optional] 
+**companySettings** | [**WorkspaceCompanySettingsEntity**](WorkspaceCompanySettingsEntity.md) |  | [optional] 
+**personalSettings** | [**WorkspacePersonalSettingsEntity**](WorkspacePersonalSettingsEntity.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

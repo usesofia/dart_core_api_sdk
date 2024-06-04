@@ -3,6 +3,9 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:dart_core_api_sdk/src/model/workspace_personal_settings_entity.dart';
+import 'package:dart_core_api_sdk/src/model/workspace_hybrid_settings_entity.dart';
+import 'package:dart_core_api_sdk/src/model/workspace_company_settings_entity.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -19,6 +22,9 @@ part 'workspace_entity.g.dart';
 /// * [createdAt] 
 /// * [selectedPersonalCategoryTreeId] 
 /// * [selectedBusinessCategoryTreeId] 
+/// * [hybridSettings] 
+/// * [companySettings] 
+/// * [personalSettings] 
 @BuiltValue()
 abstract class WorkspaceEntity implements Built<WorkspaceEntity, WorkspaceEntityBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -44,6 +50,15 @@ abstract class WorkspaceEntity implements Built<WorkspaceEntity, WorkspaceEntity
 
   @BuiltValueField(wireName: r'selectedBusinessCategoryTreeId')
   String? get selectedBusinessCategoryTreeId;
+
+  @BuiltValueField(wireName: r'hybridSettings')
+  WorkspaceHybridSettingsEntity? get hybridSettings;
+
+  @BuiltValueField(wireName: r'companySettings')
+  WorkspaceCompanySettingsEntity? get companySettings;
+
+  @BuiltValueField(wireName: r'personalSettings')
+  WorkspacePersonalSettingsEntity? get personalSettings;
 
   WorkspaceEntity._();
 
@@ -110,6 +125,27 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
       yield serializers.serialize(
         object.selectedBusinessCategoryTreeId,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.hybridSettings != null) {
+      yield r'hybridSettings';
+      yield serializers.serialize(
+        object.hybridSettings,
+        specifiedType: const FullType(WorkspaceHybridSettingsEntity),
+      );
+    }
+    if (object.companySettings != null) {
+      yield r'companySettings';
+      yield serializers.serialize(
+        object.companySettings,
+        specifiedType: const FullType(WorkspaceCompanySettingsEntity),
+      );
+    }
+    if (object.personalSettings != null) {
+      yield r'personalSettings';
+      yield serializers.serialize(
+        object.personalSettings,
+        specifiedType: const FullType(WorkspacePersonalSettingsEntity),
       );
     }
   }
@@ -190,6 +226,27 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
             specifiedType: const FullType(String),
           ) as String;
           result.selectedBusinessCategoryTreeId = valueDes;
+          break;
+        case r'hybridSettings':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkspaceHybridSettingsEntity),
+          ) as WorkspaceHybridSettingsEntity;
+          result.hybridSettings.replace(valueDes);
+          break;
+        case r'companySettings':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkspaceCompanySettingsEntity),
+          ) as WorkspaceCompanySettingsEntity;
+          result.companySettings.replace(valueDes);
+          break;
+        case r'personalSettings':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WorkspacePersonalSettingsEntity),
+          ) as WorkspacePersonalSettingsEntity;
+          result.personalSettings.replace(valueDes);
           break;
         default:
           unhandled.add(key);

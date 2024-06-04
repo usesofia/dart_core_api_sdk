@@ -23,6 +23,12 @@ class _$WorkspaceEntity extends WorkspaceEntity {
   final String? selectedPersonalCategoryTreeId;
   @override
   final String? selectedBusinessCategoryTreeId;
+  @override
+  final WorkspaceHybridSettingsEntity? hybridSettings;
+  @override
+  final WorkspaceCompanySettingsEntity? companySettings;
+  @override
+  final WorkspacePersonalSettingsEntity? personalSettings;
 
   factory _$WorkspaceEntity([void Function(WorkspaceEntityBuilder)? updates]) =>
       (new WorkspaceEntityBuilder()..update(updates))._build();
@@ -35,7 +41,10 @@ class _$WorkspaceEntity extends WorkspaceEntity {
       required this.creatorUserId,
       required this.createdAt,
       this.selectedPersonalCategoryTreeId,
-      this.selectedBusinessCategoryTreeId})
+      this.selectedBusinessCategoryTreeId,
+      this.hybridSettings,
+      this.companySettings,
+      this.personalSettings})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'WorkspaceEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
@@ -68,7 +77,11 @@ class _$WorkspaceEntity extends WorkspaceEntity {
         createdAt == other.createdAt &&
         selectedPersonalCategoryTreeId ==
             other.selectedPersonalCategoryTreeId &&
-        selectedBusinessCategoryTreeId == other.selectedBusinessCategoryTreeId;
+        selectedBusinessCategoryTreeId ==
+            other.selectedBusinessCategoryTreeId &&
+        hybridSettings == other.hybridSettings &&
+        companySettings == other.companySettings &&
+        personalSettings == other.personalSettings;
   }
 
   @override
@@ -82,6 +95,9 @@ class _$WorkspaceEntity extends WorkspaceEntity {
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, selectedPersonalCategoryTreeId.hashCode);
     _$hash = $jc(_$hash, selectedBusinessCategoryTreeId.hashCode);
+    _$hash = $jc(_$hash, hybridSettings.hashCode);
+    _$hash = $jc(_$hash, companySettings.hashCode);
+    _$hash = $jc(_$hash, personalSettings.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -98,7 +114,10 @@ class _$WorkspaceEntity extends WorkspaceEntity {
           ..add(
               'selectedPersonalCategoryTreeId', selectedPersonalCategoryTreeId)
           ..add(
-              'selectedBusinessCategoryTreeId', selectedBusinessCategoryTreeId))
+              'selectedBusinessCategoryTreeId', selectedBusinessCategoryTreeId)
+          ..add('hybridSettings', hybridSettings)
+          ..add('companySettings', companySettings)
+          ..add('personalSettings', personalSettings))
         .toString();
   }
 }
@@ -144,6 +163,25 @@ class WorkspaceEntityBuilder
   set selectedBusinessCategoryTreeId(String? selectedBusinessCategoryTreeId) =>
       _$this._selectedBusinessCategoryTreeId = selectedBusinessCategoryTreeId;
 
+  WorkspaceHybridSettingsEntityBuilder? _hybridSettings;
+  WorkspaceHybridSettingsEntityBuilder get hybridSettings =>
+      _$this._hybridSettings ??= new WorkspaceHybridSettingsEntityBuilder();
+  set hybridSettings(WorkspaceHybridSettingsEntityBuilder? hybridSettings) =>
+      _$this._hybridSettings = hybridSettings;
+
+  WorkspaceCompanySettingsEntityBuilder? _companySettings;
+  WorkspaceCompanySettingsEntityBuilder get companySettings =>
+      _$this._companySettings ??= new WorkspaceCompanySettingsEntityBuilder();
+  set companySettings(WorkspaceCompanySettingsEntityBuilder? companySettings) =>
+      _$this._companySettings = companySettings;
+
+  WorkspacePersonalSettingsEntityBuilder? _personalSettings;
+  WorkspacePersonalSettingsEntityBuilder get personalSettings =>
+      _$this._personalSettings ??= new WorkspacePersonalSettingsEntityBuilder();
+  set personalSettings(
+          WorkspacePersonalSettingsEntityBuilder? personalSettings) =>
+      _$this._personalSettings = personalSettings;
+
   WorkspaceEntityBuilder() {
     WorkspaceEntity._defaults(this);
   }
@@ -159,6 +197,9 @@ class WorkspaceEntityBuilder
       _createdAt = $v.createdAt;
       _selectedPersonalCategoryTreeId = $v.selectedPersonalCategoryTreeId;
       _selectedBusinessCategoryTreeId = $v.selectedBusinessCategoryTreeId;
+      _hybridSettings = $v.hybridSettings?.toBuilder();
+      _companySettings = $v.companySettings?.toBuilder();
+      _personalSettings = $v.personalSettings?.toBuilder();
       _$v = null;
     }
     return this;
@@ -179,22 +220,42 @@ class WorkspaceEntityBuilder
   WorkspaceEntity build() => _build();
 
   _$WorkspaceEntity _build() {
-    final _$result = _$v ??
-        new _$WorkspaceEntity._(
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'WorkspaceEntity', 'id'),
-            prettyId: BuiltValueNullFieldError.checkNotNull(
-                prettyId, r'WorkspaceEntity', 'prettyId'),
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'WorkspaceEntity', 'name'),
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'WorkspaceEntity', 'type'),
-            creatorUserId: BuiltValueNullFieldError.checkNotNull(
-                creatorUserId, r'WorkspaceEntity', 'creatorUserId'),
-            createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'WorkspaceEntity', 'createdAt'),
-            selectedPersonalCategoryTreeId: selectedPersonalCategoryTreeId,
-            selectedBusinessCategoryTreeId: selectedBusinessCategoryTreeId);
+    _$WorkspaceEntity _$result;
+    try {
+      _$result = _$v ??
+          new _$WorkspaceEntity._(
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'WorkspaceEntity', 'id'),
+              prettyId: BuiltValueNullFieldError.checkNotNull(
+                  prettyId, r'WorkspaceEntity', 'prettyId'),
+              name: BuiltValueNullFieldError.checkNotNull(
+                  name, r'WorkspaceEntity', 'name'),
+              type: BuiltValueNullFieldError.checkNotNull(
+                  type, r'WorkspaceEntity', 'type'),
+              creatorUserId: BuiltValueNullFieldError.checkNotNull(
+                  creatorUserId, r'WorkspaceEntity', 'creatorUserId'),
+              createdAt: BuiltValueNullFieldError.checkNotNull(
+                  createdAt, r'WorkspaceEntity', 'createdAt'),
+              selectedPersonalCategoryTreeId: selectedPersonalCategoryTreeId,
+              selectedBusinessCategoryTreeId: selectedBusinessCategoryTreeId,
+              hybridSettings: _hybridSettings?.build(),
+              companySettings: _companySettings?.build(),
+              personalSettings: _personalSettings?.build());
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'hybridSettings';
+        _hybridSettings?.build();
+        _$failedField = 'companySettings';
+        _companySettings?.build();
+        _$failedField = 'personalSettings';
+        _personalSettings?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'WorkspaceEntity', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

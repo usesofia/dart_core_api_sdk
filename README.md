@@ -193,8 +193,11 @@ Class | Method | HTTP request | Description
  - [UserEntity](doc/UserEntity.md)
  - [UserRelatedWorkspaceEntity](doc/UserRelatedWorkspaceEntity.md)
  - [UserWithProfileEntity](doc/UserWithProfileEntity.md)
+ - [WorkspaceCompanySettingsEntity](doc/WorkspaceCompanySettingsEntity.md)
  - [WorkspaceEntity](doc/WorkspaceEntity.md)
+ - [WorkspaceHybridSettingsEntity](doc/WorkspaceHybridSettingsEntity.md)
  - [WorkspaceJoinRequestEntity](doc/WorkspaceJoinRequestEntity.md)
+ - [WorkspacePersonalSettingsEntity](doc/WorkspacePersonalSettingsEntity.md)
  - [WorkspaceSubscriptionEntity](doc/WorkspaceSubscriptionEntity.md)
 
 
