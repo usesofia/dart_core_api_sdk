@@ -18,7 +18,7 @@ part 'mean_result_entity.g.dart';
 @BuiltValue()
 abstract class MeanResultEntity implements Built<MeanResultEntity, MeanResultEntityBuilder> {
   @BuiltValueField(wireName: r'amountInCents')
-  num get amountInCents;
+  num? get amountInCents;
 
   @BuiltValueField(wireName: r'subcategories')
   BuiltList<MeanResultSubcategoryItemEntity>? get subcategories;
@@ -46,11 +46,13 @@ class _$MeanResultEntitySerializer implements PrimitiveSerializer<MeanResultEnti
     MeanResultEntity object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'amountInCents';
-    yield serializers.serialize(
-      object.amountInCents,
-      specifiedType: const FullType(num),
-    );
+    if (object.amountInCents != null) {
+      yield r'amountInCents';
+      yield serializers.serialize(
+        object.amountInCents,
+        specifiedType: const FullType(num),
+      );
+    }
     if (object.subcategories != null) {
       yield r'subcategories';
       yield serializers.serialize(

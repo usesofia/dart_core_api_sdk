@@ -8,7 +8,7 @@ part of 'mean_result_entity.dart';
 
 class _$MeanResultEntity extends MeanResultEntity {
   @override
-  final num amountInCents;
+  final num? amountInCents;
   @override
   final BuiltList<MeanResultSubcategoryItemEntity>? subcategories;
 
@@ -16,11 +16,7 @@ class _$MeanResultEntity extends MeanResultEntity {
           [void Function(MeanResultEntityBuilder)? updates]) =>
       (new MeanResultEntityBuilder()..update(updates))._build();
 
-  _$MeanResultEntity._({required this.amountInCents, this.subcategories})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        amountInCents, r'MeanResultEntity', 'amountInCents');
-  }
+  _$MeanResultEntity._({this.amountInCents, this.subcategories}) : super._();
 
   @override
   MeanResultEntity rebuild(void Function(MeanResultEntityBuilder) updates) =>
@@ -106,8 +102,7 @@ class MeanResultEntityBuilder
     try {
       _$result = _$v ??
           new _$MeanResultEntity._(
-              amountInCents: BuiltValueNullFieldError.checkNotNull(
-                  amountInCents, r'MeanResultEntity', 'amountInCents'),
+              amountInCents: amountInCents,
               subcategories: _subcategories?.build());
     } catch (_) {
       late String _$failedField;

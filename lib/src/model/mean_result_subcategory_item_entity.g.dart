@@ -13,7 +13,7 @@ class _$MeanResultSubcategoryItemEntity
   @override
   final String subcategoryName;
   @override
-  final num amountInCents;
+  final num? amountInCents;
 
   factory _$MeanResultSubcategoryItemEntity(
           [void Function(MeanResultSubcategoryItemEntityBuilder)? updates]) =>
@@ -22,14 +22,12 @@ class _$MeanResultSubcategoryItemEntity
   _$MeanResultSubcategoryItemEntity._(
       {required this.subcategoryId,
       required this.subcategoryName,
-      required this.amountInCents})
+      this.amountInCents})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         subcategoryId, r'MeanResultSubcategoryItemEntity', 'subcategoryId');
     BuiltValueNullFieldError.checkNotNull(
         subcategoryName, r'MeanResultSubcategoryItemEntity', 'subcategoryName');
-    BuiltValueNullFieldError.checkNotNull(
-        amountInCents, r'MeanResultSubcategoryItemEntity', 'amountInCents');
   }
 
   @override
@@ -129,8 +127,7 @@ class MeanResultSubcategoryItemEntityBuilder
                 subcategoryName,
                 r'MeanResultSubcategoryItemEntity',
                 'subcategoryName'),
-            amountInCents: BuiltValueNullFieldError.checkNotNull(amountInCents,
-                r'MeanResultSubcategoryItemEntity', 'amountInCents'));
+            amountInCents: amountInCents);
     replace(_$result);
     return _$result;
   }

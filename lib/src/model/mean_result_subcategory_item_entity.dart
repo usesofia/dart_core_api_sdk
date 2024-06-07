@@ -23,7 +23,7 @@ abstract class MeanResultSubcategoryItemEntity implements Built<MeanResultSubcat
   String get subcategoryName;
 
   @BuiltValueField(wireName: r'amountInCents')
-  num get amountInCents;
+  num? get amountInCents;
 
   MeanResultSubcategoryItemEntity._();
 
@@ -58,11 +58,13 @@ class _$MeanResultSubcategoryItemEntitySerializer implements PrimitiveSerializer
       object.subcategoryName,
       specifiedType: const FullType(String),
     );
-    yield r'amountInCents';
-    yield serializers.serialize(
-      object.amountInCents,
-      specifiedType: const FullType(num),
-    );
+    if (object.amountInCents != null) {
+      yield r'amountInCents';
+      yield serializers.serialize(
+        object.amountInCents,
+        specifiedType: const FullType(num),
+      );
+    }
   }
 
   @override
