@@ -7,7 +7,6 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
-      ..add(AiChatFeatureSpecificationEntity.serializer)
       ..add(BalancePointResultEntity.serializer)
       ..add(BankAccountEntity.serializer)
       ..add(BankAccountsBalanceReportEntity.serializer)
@@ -36,8 +35,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CashFlowReportWeeklyItemEntity.serializer)
       ..add(CategoryGuessDto.serializer)
       ..add(CheckEmailInUseRequestDto.serializer)
-      ..add(CheckoutSessionEntity.serializer)
-      ..add(ConnectionFeatureSpecificationEntity.serializer)
       ..add(CreateBankTransactionTagRequestDto.serializer)
       ..add(CreateOrUpdateBankAccountRequestDto.serializer)
       ..add(CreateOrUpdateBankConnectionRequestDto.serializer)
@@ -46,7 +43,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CreateOrUpdateMessageTokenRequestDto.serializer)
       ..add(CreatePluggyConnectTokenRequestDto.serializer)
       ..add(CreateProfileRequestDto.serializer)
-      ..add(CreateStripeCheckoutSessionRequestDto.serializer)
       ..add(CreateWorkspaceRequestDto.serializer)
       ..add(CredentialsEntity.serializer)
       ..add(CreditCardMetadataDto.serializer)
@@ -61,7 +57,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(FinancialStatementReportItemEntity.serializer)
       ..add(FinancialStatementeEntriesCategoryData.serializer)
       ..add(FinancialStatementeEntriesSubcategoryData.serializer)
-      ..add(FinancialTransactionsFeatureSpecificationEntity.serializer)
       ..add(MeanResultEntity.serializer)
       ..add(MeanResultSubcategoryItemEntity.serializer)
       ..add(MessageTokenEntity.serializer)
@@ -70,8 +65,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ParcialUpdateProfileRequestDto.serializer)
       ..add(ParcialUpdateWorkspaceRequestDto.serializer)
       ..add(PaymentDataDto.serializer)
-      ..add(PaymentsManagerProductDataEntity.serializer)
-      ..add(PaymentsManagerProductPriceEntity.serializer)
       ..add(PlainBankAccountEntity.serializer)
       ..add(PluggyConnectTokenEntity.serializer)
       ..add(ProfileEntity.serializer)
@@ -80,7 +73,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(SendEmailVerificationCodeRequestDto.serializer)
       ..add(SignInWithEmailPasswordRequestDto.serializer)
       ..add(SignUpWithEmailPasswordRequestDto.serializer)
-      ..add(SubscriptionProductEntity.serializer)
       ..add(UpdateBankTransactionRequestDto.serializer)
       ..add(UserEntity.serializer)
       ..add(UserRelatedWorkspaceEntity.serializer)
@@ -90,9 +82,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(WorkspaceHybridSettingsEntity.serializer)
       ..add(WorkspaceJoinRequestEntity.serializer)
       ..add(WorkspacePersonalSettingsEntity.serializer)
-      ..add(WorkspaceSubscriptionEntity.serializer)
-      ..add(WorkspaceSubscriptionEntityPaymentSystemEnum.serializer)
-      ..add(WorkspaceSubscriptionEntityStatusEnum.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(BankAccountsBalanceReportItemEntity)]),
@@ -209,10 +198,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(MeanResultSubcategoryItemEntity)]),
           () => new ListBuilder<MeanResultSubcategoryItemEntity>())
-      ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(PaymentsManagerProductPriceEntity)]),
-          () => new ListBuilder<PaymentsManagerProductPriceEntity>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(PlainBankAccountEntity)]),

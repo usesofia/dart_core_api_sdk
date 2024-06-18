@@ -108,12 +108,8 @@ Class | Method | HTTP request | Description
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetCardsOutputsByCategoryReport**](doc/ReportsApi.md#reportscontrollergetcardsoutputsbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/cards/outputs-by-category | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetCashFlowReport**](doc/ReportsApi.md#reportscontrollergetcashflowreport) | **GET** /workspaces/{workspaceId}/reports/accounts/cash-flow | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetFinancialStatementReport**](doc/ReportsApi.md#reportscontrollergetfinancialstatementreport) | **GET** /workspaces/{workspaceId}/reports/financial-statement | 
-[*StripeApi*](doc/StripeApi.md) | [**stripeControllerCreateCheckoutSessionForStripe**](doc/StripeApi.md#stripecontrollercreatecheckoutsessionforstripe) | **POST** /stripe/checkout-session | 
-[*StripeApi*](doc/StripeApi.md) | [**stripeControllerStripeWebhook**](doc/StripeApi.md#stripecontrollerstripewebhook) | **POST** /stripe/webhook | 
-[*SubscriptionProductsApi*](doc/SubscriptionProductsApi.md) | [**subscriptionProductsControllerList**](doc/SubscriptionProductsApi.md#subscriptionproductscontrollerlist) | **GET** /workspaces/{workspaceId}/subscription-products | 
 [*UsersApi*](doc/UsersApi.md) | [**usersControllerGet**](doc/UsersApi.md#userscontrollerget) | **GET** /users/users/{userId} | 
 [*WorkspaceJoinRequestsApi*](doc/WorkspaceJoinRequestsApi.md) | [**workspaceJoinRequestsControllerCreateNewPendingOrReturnCurrent**](doc/WorkspaceJoinRequestsApi.md#workspacejoinrequestscontrollercreatenewpendingorreturncurrent) | **POST** /workspaces/{workspaceId}/join-requests | 
-[*WorkspaceSubscriptionsApi*](doc/WorkspaceSubscriptionsApi.md) | [**workspaceSubscriptionsControllerGet**](doc/WorkspaceSubscriptionsApi.md#workspacesubscriptionscontrollerget) | **GET** /workspaces/{workspaceId}/subscription | 
 [*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerCreate**](doc/WorkspacesApi.md#workspacescontrollercreate) | **POST** /workspaces | 
 [*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerFetchUserRelatedWorkspaces**](doc/WorkspacesApi.md#workspacescontrollerfetchuserrelatedworkspaces) | **GET** /workspaces/related-to-me | 
 [*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerGet**](doc/WorkspacesApi.md#workspacescontrollerget) | **GET** /workspaces/{workspaceId} | 
@@ -122,7 +118,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [AiChatFeatureSpecificationEntity](doc/AiChatFeatureSpecificationEntity.md)
  - [BalancePointResultEntity](doc/BalancePointResultEntity.md)
  - [BankAccountEntity](doc/BankAccountEntity.md)
  - [BankAccountsBalanceReportEntity](doc/BankAccountsBalanceReportEntity.md)
@@ -147,8 +142,6 @@ Class | Method | HTTP request | Description
  - [CashFlowReportWeeklyItemEntity](doc/CashFlowReportWeeklyItemEntity.md)
  - [CategoryGuessDto](doc/CategoryGuessDto.md)
  - [CheckEmailInUseRequestDto](doc/CheckEmailInUseRequestDto.md)
- - [CheckoutSessionEntity](doc/CheckoutSessionEntity.md)
- - [ConnectionFeatureSpecificationEntity](doc/ConnectionFeatureSpecificationEntity.md)
  - [CreateBankTransactionTagRequestDto](doc/CreateBankTransactionTagRequestDto.md)
  - [CreateOrUpdateBankAccountRequestDto](doc/CreateOrUpdateBankAccountRequestDto.md)
  - [CreateOrUpdateBankConnectionRequestDto](doc/CreateOrUpdateBankConnectionRequestDto.md)
@@ -157,7 +150,6 @@ Class | Method | HTTP request | Description
  - [CreateOrUpdateMessageTokenRequestDto](doc/CreateOrUpdateMessageTokenRequestDto.md)
  - [CreatePluggyConnectTokenRequestDto](doc/CreatePluggyConnectTokenRequestDto.md)
  - [CreateProfileRequestDto](doc/CreateProfileRequestDto.md)
- - [CreateStripeCheckoutSessionRequestDto](doc/CreateStripeCheckoutSessionRequestDto.md)
  - [CreateWorkspaceRequestDto](doc/CreateWorkspaceRequestDto.md)
  - [CredentialsEntity](doc/CredentialsEntity.md)
  - [CreditCardMetadataDto](doc/CreditCardMetadataDto.md)
@@ -172,15 +164,12 @@ Class | Method | HTTP request | Description
  - [FinancialStatementReportItemEntity](doc/FinancialStatementReportItemEntity.md)
  - [FinancialStatementeEntriesCategoryData](doc/FinancialStatementeEntriesCategoryData.md)
  - [FinancialStatementeEntriesSubcategoryData](doc/FinancialStatementeEntriesSubcategoryData.md)
- - [FinancialTransactionsFeatureSpecificationEntity](doc/FinancialTransactionsFeatureSpecificationEntity.md)
  - [MeanResultEntity](doc/MeanResultEntity.md)
  - [MeanResultSubcategoryItemEntity](doc/MeanResultSubcategoryItemEntity.md)
  - [MessageTokenEntity](doc/MessageTokenEntity.md)
  - [ParcialUpdateProfileRequestDto](doc/ParcialUpdateProfileRequestDto.md)
  - [ParcialUpdateWorkspaceRequestDto](doc/ParcialUpdateWorkspaceRequestDto.md)
  - [PaymentDataDto](doc/PaymentDataDto.md)
- - [PaymentsManagerProductDataEntity](doc/PaymentsManagerProductDataEntity.md)
- - [PaymentsManagerProductPriceEntity](doc/PaymentsManagerProductPriceEntity.md)
  - [PlainBankAccountEntity](doc/PlainBankAccountEntity.md)
  - [PluggyConnectTokenEntity](doc/PluggyConnectTokenEntity.md)
  - [ProfileEntity](doc/ProfileEntity.md)
@@ -189,7 +178,6 @@ Class | Method | HTTP request | Description
  - [SendEmailVerificationCodeRequestDto](doc/SendEmailVerificationCodeRequestDto.md)
  - [SignInWithEmailPasswordRequestDto](doc/SignInWithEmailPasswordRequestDto.md)
  - [SignUpWithEmailPasswordRequestDto](doc/SignUpWithEmailPasswordRequestDto.md)
- - [SubscriptionProductEntity](doc/SubscriptionProductEntity.md)
  - [UpdateBankTransactionRequestDto](doc/UpdateBankTransactionRequestDto.md)
  - [UserEntity](doc/UserEntity.md)
  - [UserRelatedWorkspaceEntity](doc/UserRelatedWorkspaceEntity.md)
@@ -199,7 +187,6 @@ Class | Method | HTTP request | Description
  - [WorkspaceHybridSettingsEntity](doc/WorkspaceHybridSettingsEntity.md)
  - [WorkspaceJoinRequestEntity](doc/WorkspaceJoinRequestEntity.md)
  - [WorkspacePersonalSettingsEntity](doc/WorkspacePersonalSettingsEntity.md)
- - [WorkspaceSubscriptionEntity](doc/WorkspaceSubscriptionEntity.md)
 
 
 ## Documentation For Authorization

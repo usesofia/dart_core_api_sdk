@@ -13,7 +13,6 @@ part 'profile_entity.g.dart';
 /// Properties:
 /// * [id] 
 /// * [fullName] 
-/// * [phone] 
 /// * [birthDate] 
 /// * [userId] 
 /// * [createdAt] 
@@ -25,9 +24,6 @@ abstract class ProfileEntity implements Built<ProfileEntity, ProfileEntityBuilde
 
   @BuiltValueField(wireName: r'fullName')
   String get fullName;
-
-  @BuiltValueField(wireName: r'phone')
-  String get phone;
 
   @BuiltValueField(wireName: r'birthDate')
   DateTime get birthDate;
@@ -72,11 +68,6 @@ class _$ProfileEntitySerializer implements PrimitiveSerializer<ProfileEntity> {
     yield r'fullName';
     yield serializers.serialize(
       object.fullName,
-      specifiedType: const FullType(String),
-    );
-    yield r'phone';
-    yield serializers.serialize(
-      object.phone,
       specifiedType: const FullType(String),
     );
     yield r'birthDate';
@@ -135,13 +126,6 @@ class _$ProfileEntitySerializer implements PrimitiveSerializer<ProfileEntity> {
             specifiedType: const FullType(String),
           ) as String;
           result.fullName = valueDes;
-          break;
-        case r'phone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.phone = valueDes;
           break;
         case r'birthDate':
           final valueDes = serializers.deserialize(

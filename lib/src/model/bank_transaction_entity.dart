@@ -84,7 +84,7 @@ abstract class BankTransactionEntity implements Built<BankTransactionEntity, Ban
 
   @BuiltValueField(wireName: r'type')
   BankTransactionEntityTypeEnum get type;
-  // enum typeEnum {  DEBIT,  CREDIT,  };
+  // enum typeEnum {  DEBIT,  CREDIT,  UNDEFINED,  };
 
   @BuiltValueField(wireName: r'status')
   BankTransactionEntityStatusEnum get status;
@@ -607,6 +607,8 @@ class BankTransactionEntityTypeEnum extends EnumClass {
   static const BankTransactionEntityTypeEnum DEBIT = _$bankTransactionEntityTypeEnum_DEBIT;
   @BuiltValueEnumConst(wireName: r'CREDIT')
   static const BankTransactionEntityTypeEnum CREDIT = _$bankTransactionEntityTypeEnum_CREDIT;
+  @BuiltValueEnumConst(wireName: r'UNDEFINED')
+  static const BankTransactionEntityTypeEnum UNDEFINED = _$bankTransactionEntityTypeEnum_UNDEFINED;
 
   static Serializer<BankTransactionEntityTypeEnum> get serializer => _$bankTransactionEntityTypeEnumSerializer;
 

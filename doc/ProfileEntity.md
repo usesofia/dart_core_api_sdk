@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **fullName** | **String** |  | 
-**phone** | **String** |  | 
 **birthDate** | [**DateTime**](DateTime.md) |  | 
 **userId** | **String** |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 

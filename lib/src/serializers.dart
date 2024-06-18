@@ -14,7 +14,6 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:dart_core_api_sdk/src/date_serializer.dart';
 import 'package:dart_core_api_sdk/src/model/date.dart';
 
-import 'package:dart_core_api_sdk/src/model/ai_chat_feature_specification_entity.dart';
 import 'package:dart_core_api_sdk/src/model/balance_point_result_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_account_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_accounts_balance_report_entity.dart';
@@ -39,8 +38,6 @@ import 'package:dart_core_api_sdk/src/model/cash_flow_report_monthly_item_entity
 import 'package:dart_core_api_sdk/src/model/cash_flow_report_weekly_item_entity.dart';
 import 'package:dart_core_api_sdk/src/model/category_guess_dto.dart';
 import 'package:dart_core_api_sdk/src/model/check_email_in_use_request_dto.dart';
-import 'package:dart_core_api_sdk/src/model/checkout_session_entity.dart';
-import 'package:dart_core_api_sdk/src/model/connection_feature_specification_entity.dart';
 import 'package:dart_core_api_sdk/src/model/create_bank_transaction_tag_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_account_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_connection_request_dto.dart';
@@ -49,7 +46,6 @@ import 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_i
 import 'package:dart_core_api_sdk/src/model/create_or_update_message_token_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_pluggy_connect_token_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_profile_request_dto.dart';
-import 'package:dart_core_api_sdk/src/model/create_stripe_checkout_session_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_workspace_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/credentials_entity.dart';
 import 'package:dart_core_api_sdk/src/model/credit_card_metadata_dto.dart';
@@ -64,15 +60,12 @@ import 'package:dart_core_api_sdk/src/model/financial_statement_report.dart';
 import 'package:dart_core_api_sdk/src/model/financial_statement_report_item_entity.dart';
 import 'package:dart_core_api_sdk/src/model/financial_statemente_entries_category_data.dart';
 import 'package:dart_core_api_sdk/src/model/financial_statemente_entries_subcategory_data.dart';
-import 'package:dart_core_api_sdk/src/model/financial_transactions_feature_specification_entity.dart';
 import 'package:dart_core_api_sdk/src/model/mean_result_entity.dart';
 import 'package:dart_core_api_sdk/src/model/mean_result_subcategory_item_entity.dart';
 import 'package:dart_core_api_sdk/src/model/message_token_entity.dart';
 import 'package:dart_core_api_sdk/src/model/parcial_update_profile_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/parcial_update_workspace_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/payment_data_dto.dart';
-import 'package:dart_core_api_sdk/src/model/payments_manager_product_data_entity.dart';
-import 'package:dart_core_api_sdk/src/model/payments_manager_product_price_entity.dart';
 import 'package:dart_core_api_sdk/src/model/plain_bank_account_entity.dart';
 import 'package:dart_core_api_sdk/src/model/pluggy_connect_token_entity.dart';
 import 'package:dart_core_api_sdk/src/model/profile_entity.dart';
@@ -81,7 +74,6 @@ import 'package:dart_core_api_sdk/src/model/refresh_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/send_email_verification_code_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/sign_in_with_email_password_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/sign_up_with_email_password_request_dto.dart';
-import 'package:dart_core_api_sdk/src/model/subscription_product_entity.dart';
 import 'package:dart_core_api_sdk/src/model/update_bank_transaction_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/user_entity.dart';
 import 'package:dart_core_api_sdk/src/model/user_related_workspace_entity.dart';
@@ -91,12 +83,10 @@ import 'package:dart_core_api_sdk/src/model/workspace_entity.dart';
 import 'package:dart_core_api_sdk/src/model/workspace_hybrid_settings_entity.dart';
 import 'package:dart_core_api_sdk/src/model/workspace_join_request_entity.dart';
 import 'package:dart_core_api_sdk/src/model/workspace_personal_settings_entity.dart';
-import 'package:dart_core_api_sdk/src/model/workspace_subscription_entity.dart';
 
 part 'serializers.g.dart';
 
 @SerializersFor([
-  AiChatFeatureSpecificationEntity,
   BalancePointResultEntity,
   BankAccountEntity,
   BankAccountsBalanceReportEntity,
@@ -121,8 +111,6 @@ part 'serializers.g.dart';
   CashFlowReportWeeklyItemEntity,
   CategoryGuessDto,
   CheckEmailInUseRequestDto,
-  CheckoutSessionEntity,
-  ConnectionFeatureSpecificationEntity,
   CreateBankTransactionTagRequestDto,
   CreateOrUpdateBankAccountRequestDto,
   CreateOrUpdateBankConnectionRequestDto,
@@ -131,7 +119,6 @@ part 'serializers.g.dart';
   CreateOrUpdateMessageTokenRequestDto,
   CreatePluggyConnectTokenRequestDto,
   CreateProfileRequestDto,
-  CreateStripeCheckoutSessionRequestDto,
   CreateWorkspaceRequestDto,
   CredentialsEntity,
   CreditCardMetadataDto,
@@ -146,15 +133,12 @@ part 'serializers.g.dart';
   FinancialStatementReportItemEntity,
   FinancialStatementeEntriesCategoryData,
   FinancialStatementeEntriesSubcategoryData,
-  FinancialTransactionsFeatureSpecificationEntity,
   MeanResultEntity,
   MeanResultSubcategoryItemEntity,
   MessageTokenEntity,
   ParcialUpdateProfileRequestDto,
   ParcialUpdateWorkspaceRequestDto,
   PaymentDataDto,
-  PaymentsManagerProductDataEntity,
-  PaymentsManagerProductPriceEntity,
   PlainBankAccountEntity,
   PluggyConnectTokenEntity,
   ProfileEntity,
@@ -163,7 +147,6 @@ part 'serializers.g.dart';
   SendEmailVerificationCodeRequestDto,
   SignInWithEmailPasswordRequestDto,
   SignUpWithEmailPasswordRequestDto,
-  SubscriptionProductEntity,
   UpdateBankTransactionRequestDto,
   UserEntity,
   UserRelatedWorkspaceEntity,
@@ -173,16 +156,11 @@ part 'serializers.g.dart';
   WorkspaceHybridSettingsEntity,
   WorkspaceJoinRequestEntity,
   WorkspacePersonalSettingsEntity,
-  WorkspaceSubscriptionEntity,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(BankTransactionIndicatorEntity)]),
         () => ListBuilder<BankTransactionIndicatorEntity>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SubscriptionProductEntity)]),
-        () => ListBuilder<SubscriptionProductEntity>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(BankTransactionCategoryEntity)]),

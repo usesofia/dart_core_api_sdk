@@ -12,8 +12,6 @@ class _$ProfileEntity extends ProfileEntity {
   @override
   final String fullName;
   @override
-  final String phone;
-  @override
   final DateTime birthDate;
   @override
   final String userId;
@@ -28,7 +26,6 @@ class _$ProfileEntity extends ProfileEntity {
   _$ProfileEntity._(
       {required this.id,
       required this.fullName,
-      required this.phone,
       required this.birthDate,
       required this.userId,
       required this.createdAt,
@@ -37,7 +34,6 @@ class _$ProfileEntity extends ProfileEntity {
     BuiltValueNullFieldError.checkNotNull(id, r'ProfileEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
         fullName, r'ProfileEntity', 'fullName');
-    BuiltValueNullFieldError.checkNotNull(phone, r'ProfileEntity', 'phone');
     BuiltValueNullFieldError.checkNotNull(
         birthDate, r'ProfileEntity', 'birthDate');
     BuiltValueNullFieldError.checkNotNull(userId, r'ProfileEntity', 'userId');
@@ -60,7 +56,6 @@ class _$ProfileEntity extends ProfileEntity {
     return other is ProfileEntity &&
         id == other.id &&
         fullName == other.fullName &&
-        phone == other.phone &&
         birthDate == other.birthDate &&
         userId == other.userId &&
         createdAt == other.createdAt &&
@@ -72,7 +67,6 @@ class _$ProfileEntity extends ProfileEntity {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, fullName.hashCode);
-    _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, birthDate.hashCode);
     _$hash = $jc(_$hash, userId.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
@@ -86,7 +80,6 @@ class _$ProfileEntity extends ProfileEntity {
     return (newBuiltValueToStringHelper(r'ProfileEntity')
           ..add('id', id)
           ..add('fullName', fullName)
-          ..add('phone', phone)
           ..add('birthDate', birthDate)
           ..add('userId', userId)
           ..add('createdAt', createdAt)
@@ -106,10 +99,6 @@ class ProfileEntityBuilder
   String? _fullName;
   String? get fullName => _$this._fullName;
   set fullName(String? fullName) => _$this._fullName = fullName;
-
-  String? _phone;
-  String? get phone => _$this._phone;
-  set phone(String? phone) => _$this._phone = phone;
 
   DateTime? _birthDate;
   DateTime? get birthDate => _$this._birthDate;
@@ -136,7 +125,6 @@ class ProfileEntityBuilder
     if ($v != null) {
       _id = $v.id;
       _fullName = $v.fullName;
-      _phone = $v.phone;
       _birthDate = $v.birthDate;
       _userId = $v.userId;
       _createdAt = $v.createdAt;
@@ -167,8 +155,6 @@ class ProfileEntityBuilder
                 id, r'ProfileEntity', 'id'),
             fullName: BuiltValueNullFieldError.checkNotNull(
                 fullName, r'ProfileEntity', 'fullName'),
-            phone: BuiltValueNullFieldError.checkNotNull(
-                phone, r'ProfileEntity', 'phone'),
             birthDate: BuiltValueNullFieldError.checkNotNull(
                 birthDate, r'ProfileEntity', 'birthDate'),
             userId: BuiltValueNullFieldError.checkNotNull(

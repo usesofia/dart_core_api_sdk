@@ -1,7 +1,6 @@
 .gitignore
 README.md
 analysis_options.yaml
-doc/AiChatFeatureSpecificationEntity.md
 doc/AuthApi.md
 doc/BalancePointResultEntity.md
 doc/BankAccountEntity.md
@@ -32,8 +31,6 @@ doc/CashFlowReportMonthlyItemEntity.md
 doc/CashFlowReportWeeklyItemEntity.md
 doc/CategoryGuessDto.md
 doc/CheckEmailInUseRequestDto.md
-doc/CheckoutSessionEntity.md
-doc/ConnectionFeatureSpecificationEntity.md
 doc/CreateBankTransactionTagRequestDto.md
 doc/CreateOrUpdateBankAccountRequestDto.md
 doc/CreateOrUpdateBankConnectionRequestDto.md
@@ -42,7 +39,6 @@ doc/CreateOrUpdateBankTransactionsInBulkRequestDto.md
 doc/CreateOrUpdateMessageTokenRequestDto.md
 doc/CreatePluggyConnectTokenRequestDto.md
 doc/CreateProfileRequestDto.md
-doc/CreateStripeCheckoutSessionRequestDto.md
 doc/CreateWorkspaceRequestDto.md
 doc/CredentialsEntity.md
 doc/CreditCardMetadataDto.md
@@ -57,7 +53,6 @@ doc/FinancialStatementReport.md
 doc/FinancialStatementReportItemEntity.md
 doc/FinancialStatementeEntriesCategoryData.md
 doc/FinancialStatementeEntriesSubcategoryData.md
-doc/FinancialTransactionsFeatureSpecificationEntity.md
 doc/MeanResultEntity.md
 doc/MeanResultSubcategoryItemEntity.md
 doc/MessageTokenEntity.md
@@ -65,8 +60,6 @@ doc/MessageTokensApi.md
 doc/ParcialUpdateProfileRequestDto.md
 doc/ParcialUpdateWorkspaceRequestDto.md
 doc/PaymentDataDto.md
-doc/PaymentsManagerProductDataEntity.md
-doc/PaymentsManagerProductPriceEntity.md
 doc/PlainBankAccountEntity.md
 doc/PluggyApi.md
 doc/PluggyConnectTokenEntity.md
@@ -78,9 +71,6 @@ doc/ReportsApi.md
 doc/SendEmailVerificationCodeRequestDto.md
 doc/SignInWithEmailPasswordRequestDto.md
 doc/SignUpWithEmailPasswordRequestDto.md
-doc/StripeApi.md
-doc/SubscriptionProductEntity.md
-doc/SubscriptionProductsApi.md
 doc/UpdateBankTransactionRequestDto.md
 doc/UserEntity.md
 doc/UserRelatedWorkspaceEntity.md
@@ -92,8 +82,6 @@ doc/WorkspaceHybridSettingsEntity.md
 doc/WorkspaceJoinRequestEntity.md
 doc/WorkspaceJoinRequestsApi.md
 doc/WorkspacePersonalSettingsEntity.md
-doc/WorkspaceSubscriptionEntity.md
-doc/WorkspaceSubscriptionsApi.md
 doc/WorkspacesApi.md
 lib/dart_core_api_sdk.dart
 lib/src/api.dart
@@ -107,11 +95,8 @@ lib/src/api/message_tokens_api.dart
 lib/src/api/pluggy_api.dart
 lib/src/api/profiles_api.dart
 lib/src/api/reports_api.dart
-lib/src/api/stripe_api.dart
-lib/src/api/subscription_products_api.dart
 lib/src/api/users_api.dart
 lib/src/api/workspace_join_requests_api.dart
-lib/src/api/workspace_subscriptions_api.dart
 lib/src/api/workspaces_api.dart
 lib/src/api_util.dart
 lib/src/auth/api_key_auth.dart
@@ -120,7 +105,6 @@ lib/src/auth/basic_auth.dart
 lib/src/auth/bearer_auth.dart
 lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
-lib/src/model/ai_chat_feature_specification_entity.dart
 lib/src/model/balance_point_result_entity.dart
 lib/src/model/bank_account_entity.dart
 lib/src/model/bank_accounts_balance_report_entity.dart
@@ -145,8 +129,6 @@ lib/src/model/cash_flow_report_monthly_item_entity.dart
 lib/src/model/cash_flow_report_weekly_item_entity.dart
 lib/src/model/category_guess_dto.dart
 lib/src/model/check_email_in_use_request_dto.dart
-lib/src/model/checkout_session_entity.dart
-lib/src/model/connection_feature_specification_entity.dart
 lib/src/model/create_bank_transaction_tag_request_dto.dart
 lib/src/model/create_or_update_bank_account_request_dto.dart
 lib/src/model/create_or_update_bank_connection_request_dto.dart
@@ -155,7 +137,6 @@ lib/src/model/create_or_update_bank_transactions_in_bulk_request_dto.dart
 lib/src/model/create_or_update_message_token_request_dto.dart
 lib/src/model/create_pluggy_connect_token_request_dto.dart
 lib/src/model/create_profile_request_dto.dart
-lib/src/model/create_stripe_checkout_session_request_dto.dart
 lib/src/model/create_workspace_request_dto.dart
 lib/src/model/credentials_entity.dart
 lib/src/model/credit_card_metadata_dto.dart
@@ -171,15 +152,12 @@ lib/src/model/financial_statement_report.dart
 lib/src/model/financial_statement_report_item_entity.dart
 lib/src/model/financial_statemente_entries_category_data.dart
 lib/src/model/financial_statemente_entries_subcategory_data.dart
-lib/src/model/financial_transactions_feature_specification_entity.dart
 lib/src/model/mean_result_entity.dart
 lib/src/model/mean_result_subcategory_item_entity.dart
 lib/src/model/message_token_entity.dart
 lib/src/model/parcial_update_profile_request_dto.dart
 lib/src/model/parcial_update_workspace_request_dto.dart
 lib/src/model/payment_data_dto.dart
-lib/src/model/payments_manager_product_data_entity.dart
-lib/src/model/payments_manager_product_price_entity.dart
 lib/src/model/plain_bank_account_entity.dart
 lib/src/model/pluggy_connect_token_entity.dart
 lib/src/model/profile_entity.dart
@@ -188,7 +166,6 @@ lib/src/model/refresh_request_dto.dart
 lib/src/model/send_email_verification_code_request_dto.dart
 lib/src/model/sign_in_with_email_password_request_dto.dart
 lib/src/model/sign_up_with_email_password_request_dto.dart
-lib/src/model/subscription_product_entity.dart
 lib/src/model/update_bank_transaction_request_dto.dart
 lib/src/model/user_entity.dart
 lib/src/model/user_related_workspace_entity.dart
@@ -198,7 +175,5 @@ lib/src/model/workspace_entity.dart
 lib/src/model/workspace_hybrid_settings_entity.dart
 lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_personal_settings_entity.dart
-lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/bank_transactions_totals_entity_test.dart

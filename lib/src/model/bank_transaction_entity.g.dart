@@ -36,6 +36,8 @@ const BankTransactionEntityTypeEnum _$bankTransactionEntityTypeEnum_DEBIT =
     const BankTransactionEntityTypeEnum._('DEBIT');
 const BankTransactionEntityTypeEnum _$bankTransactionEntityTypeEnum_CREDIT =
     const BankTransactionEntityTypeEnum._('CREDIT');
+const BankTransactionEntityTypeEnum _$bankTransactionEntityTypeEnum_UNDEFINED =
+    const BankTransactionEntityTypeEnum._('UNDEFINED');
 
 BankTransactionEntityTypeEnum _$bankTransactionEntityTypeEnumValueOf(
     String name) {
@@ -44,6 +46,8 @@ BankTransactionEntityTypeEnum _$bankTransactionEntityTypeEnumValueOf(
       return _$bankTransactionEntityTypeEnum_DEBIT;
     case 'CREDIT':
       return _$bankTransactionEntityTypeEnum_CREDIT;
+    case 'UNDEFINED':
+      return _$bankTransactionEntityTypeEnum_UNDEFINED;
     default:
       throw new ArgumentError(name);
   }
@@ -54,6 +58,7 @@ final BuiltSet<BankTransactionEntityTypeEnum>
         BankTransactionEntityTypeEnum>(const <BankTransactionEntityTypeEnum>[
   _$bankTransactionEntityTypeEnum_DEBIT,
   _$bankTransactionEntityTypeEnum_CREDIT,
+  _$bankTransactionEntityTypeEnum_UNDEFINED,
 ]);
 
 const BankTransactionEntityStatusEnum
@@ -155,10 +160,12 @@ class _$BankTransactionEntityTypeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'DEBIT': 'DEBIT',
     'CREDIT': 'CREDIT',
+    'UNDEFINED': 'UNDEFINED',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'DEBIT': 'DEBIT',
     'CREDIT': 'CREDIT',
+    'UNDEFINED': 'UNDEFINED',
   };
 
   @override
