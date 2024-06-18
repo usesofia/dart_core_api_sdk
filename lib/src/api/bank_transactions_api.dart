@@ -11,6 +11,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:dart_core_api_sdk/src/api_util.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transactions_page_entity.dart';
+import 'package:dart_core_api_sdk/src/model/bank_transactions_totals_entity.dart';
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_core_api_sdk/src/model/update_bank_transaction_request_dto.dart';
@@ -525,9 +526,9 @@ class BankTransactionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BankTransactionsPageEntity] as data
+  /// Returns a [Future] containing a [Response] with a [BankTransactionsTotalsEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankTransactionsPageEntity>> bankTransactionsControllerGetBankTransactionsTotals({ 
+  Future<Response<BankTransactionsTotalsEntity>> bankTransactionsControllerGetBankTransactionsTotals({ 
     required String workspaceId,
     String? accountIds,
     String? categoryIds,
@@ -587,14 +588,14 @@ class BankTransactionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BankTransactionsPageEntity? _responseData;
+    BankTransactionsTotalsEntity? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BankTransactionsPageEntity),
-      ) as BankTransactionsPageEntity;
+        specifiedType: const FullType(BankTransactionsTotalsEntity),
+      ) as BankTransactionsTotalsEntity;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -606,7 +607,7 @@ class BankTransactionsApi {
       );
     }
 
-    return Response<BankTransactionsPageEntity>(
+    return Response<BankTransactionsTotalsEntity>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

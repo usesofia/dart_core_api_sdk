@@ -30,6 +30,7 @@ import 'package:dart_core_api_sdk/src/model/bank_transaction_indicator_entity.da
 import 'package:dart_core_api_sdk/src/model/bank_transaction_payment_data_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_tag_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transactions_page_entity.dart';
+import 'package:dart_core_api_sdk/src/model/bank_transactions_totals_entity.dart';
 import 'package:dart_core_api_sdk/src/model/cash_flow_by_category_report_entity.dart';
 import 'package:dart_core_api_sdk/src/model/cash_flow_by_category_report_item_entity.dart';
 import 'package:dart_core_api_sdk/src/model/cash_flow_report_daily_item_entity.dart';
@@ -111,6 +112,7 @@ part 'serializers.g.dart';
   BankTransactionPaymentDataEntity,
   BankTransactionTagEntity,
   BankTransactionsPageEntity,
+  BankTransactionsTotalsEntity,
   CashFlowByCategoryReportEntity,
   CashFlowByCategoryReportItemEntity,
   CashFlowReportDailyItemEntity,

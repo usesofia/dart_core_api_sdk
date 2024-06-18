@@ -23,6 +23,7 @@ doc/BankTransactionTagEntity.md
 doc/BankTransactionTagsApi.md
 doc/BankTransactionsApi.md
 doc/BankTransactionsPageEntity.md
+doc/BankTransactionsTotalsEntity.md
 doc/CashFlowByCategoryReportEntity.md
 doc/CashFlowByCategoryReportItemEntity.md
 doc/CashFlowReportDailyItemEntity.md
@@ -135,6 +136,7 @@ lib/src/model/bank_transaction_indicator_entity.dart
 lib/src/model/bank_transaction_payment_data_entity.dart
 lib/src/model/bank_transaction_tag_entity.dart
 lib/src/model/bank_transactions_page_entity.dart
+lib/src/model/bank_transactions_totals_entity.dart
 lib/src/model/cash_flow_by_category_report_entity.dart
 lib/src/model/cash_flow_by_category_report_item_entity.dart
 lib/src/model/cash_flow_report_daily_item_entity.dart
@@ -199,3 +201,4 @@ lib/src/model/workspace_personal_settings_entity.dart
 lib/src/model/workspace_subscription_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/bank_transactions_totals_entity_test.dart

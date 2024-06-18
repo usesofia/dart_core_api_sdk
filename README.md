@@ -138,6 +138,7 @@ Class | Method | HTTP request | Description
  - [BankTransactionPaymentDataEntity](doc/BankTransactionPaymentDataEntity.md)
  - [BankTransactionTagEntity](doc/BankTransactionTagEntity.md)
  - [BankTransactionsPageEntity](doc/BankTransactionsPageEntity.md)
+ - [BankTransactionsTotalsEntity](doc/BankTransactionsTotalsEntity.md)
  - [CashFlowByCategoryReportEntity](doc/CashFlowByCategoryReportEntity.md)
  - [CashFlowByCategoryReportItemEntity](doc/CashFlowByCategoryReportItemEntity.md)
  - [CashFlowReportDailyItemEntity](doc/CashFlowReportDailyItemEntity.md)
