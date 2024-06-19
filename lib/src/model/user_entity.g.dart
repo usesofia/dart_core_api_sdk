@@ -12,9 +12,9 @@ class _$UserEntity extends UserEntity {
   @override
   final String email;
   @override
-  final DateTime createdAt;
+  final String phone;
   @override
-  final String? passwordHash;
+  final String passwordHash;
 
   factory _$UserEntity([void Function(UserEntityBuilder)? updates]) =>
       (new UserEntityBuilder()..update(updates))._build();
@@ -22,13 +22,14 @@ class _$UserEntity extends UserEntity {
   _$UserEntity._(
       {required this.id,
       required this.email,
-      required this.createdAt,
-      this.passwordHash})
+      required this.phone,
+      required this.passwordHash})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'UserEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(email, r'UserEntity', 'email');
+    BuiltValueNullFieldError.checkNotNull(phone, r'UserEntity', 'phone');
     BuiltValueNullFieldError.checkNotNull(
-        createdAt, r'UserEntity', 'createdAt');
+        passwordHash, r'UserEntity', 'passwordHash');
   }
 
   @override
@@ -44,7 +45,7 @@ class _$UserEntity extends UserEntity {
     return other is UserEntity &&
         id == other.id &&
         email == other.email &&
-        createdAt == other.createdAt &&
+        phone == other.phone &&
         passwordHash == other.passwordHash;
   }
 
@@ -53,7 +54,7 @@ class _$UserEntity extends UserEntity {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, passwordHash.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -64,7 +65,7 @@ class _$UserEntity extends UserEntity {
     return (newBuiltValueToStringHelper(r'UserEntity')
           ..add('id', id)
           ..add('email', email)
-          ..add('createdAt', createdAt)
+          ..add('phone', phone)
           ..add('passwordHash', passwordHash))
         .toString();
   }
@@ -81,9 +82,9 @@ class UserEntityBuilder implements Builder<UserEntity, UserEntityBuilder> {
   String? get email => _$this._email;
   set email(String? email) => _$this._email = email;
 
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(String? phone) => _$this._phone = phone;
 
   String? _passwordHash;
   String? get passwordHash => _$this._passwordHash;
@@ -98,7 +99,7 @@ class UserEntityBuilder implements Builder<UserEntity, UserEntityBuilder> {
     if ($v != null) {
       _id = $v.id;
       _email = $v.email;
-      _createdAt = $v.createdAt;
+      _phone = $v.phone;
       _passwordHash = $v.passwordHash;
       _$v = null;
     }
@@ -125,9 +126,10 @@ class UserEntityBuilder implements Builder<UserEntity, UserEntityBuilder> {
             id: BuiltValueNullFieldError.checkNotNull(id, r'UserEntity', 'id'),
             email: BuiltValueNullFieldError.checkNotNull(
                 email, r'UserEntity', 'email'),
-            createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'UserEntity', 'createdAt'),
-            passwordHash: passwordHash);
+            phone: BuiltValueNullFieldError.checkNotNull(
+                phone, r'UserEntity', 'phone'),
+            passwordHash: BuiltValueNullFieldError.checkNotNull(
+                passwordHash, r'UserEntity', 'passwordHash'));
     replace(_$result);
     return _$result;
   }

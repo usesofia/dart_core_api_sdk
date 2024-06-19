@@ -10,10 +10,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **fullName** | **String** |  | 
-**birthDate** | [**DateTime**](DateTime.md) |  | 
+**birthDate** | [**JsonObject**](.md) |  | 
 **userId** | **String** |  | 
-**createdAt** | [**DateTime**](DateTime.md) |  | 
-**updatedAt** | [**DateTime**](DateTime.md) |  | 
+**createdAt** | [**JsonObject**](.md) |  | 
+**updatedAt** | [**JsonObject**](.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

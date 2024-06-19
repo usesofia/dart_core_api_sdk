@@ -3,81 +3,64 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'user_entity.g.dart';
+part 'exception_response_entity_errors_inner.g.dart';
 
-/// UserEntity
+/// ExceptionResponseEntityErrorsInner
 ///
 /// Properties:
-/// * [id] 
-/// * [email] 
-/// * [phone] 
-/// * [passwordHash] 
+/// * [fieldPath] 
+/// * [messages] 
 @BuiltValue()
-abstract class UserEntity implements Built<UserEntity, UserEntityBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String get id;
+abstract class ExceptionResponseEntityErrorsInner implements Built<ExceptionResponseEntityErrorsInner, ExceptionResponseEntityErrorsInnerBuilder> {
+  @BuiltValueField(wireName: r'fieldPath')
+  String get fieldPath;
 
-  @BuiltValueField(wireName: r'email')
-  String get email;
+  @BuiltValueField(wireName: r'messages')
+  BuiltList<String> get messages;
 
-  @BuiltValueField(wireName: r'phone')
-  String get phone;
+  ExceptionResponseEntityErrorsInner._();
 
-  @BuiltValueField(wireName: r'passwordHash')
-  String get passwordHash;
-
-  UserEntity._();
-
-  factory UserEntity([void updates(UserEntityBuilder b)]) = _$UserEntity;
+  factory ExceptionResponseEntityErrorsInner([void updates(ExceptionResponseEntityErrorsInnerBuilder b)]) = _$ExceptionResponseEntityErrorsInner;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserEntityBuilder b) => b;
+  static void _defaults(ExceptionResponseEntityErrorsInnerBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UserEntity> get serializer => _$UserEntitySerializer();
+  static Serializer<ExceptionResponseEntityErrorsInner> get serializer => _$ExceptionResponseEntityErrorsInnerSerializer();
 }
 
-class _$UserEntitySerializer implements PrimitiveSerializer<UserEntity> {
+class _$ExceptionResponseEntityErrorsInnerSerializer implements PrimitiveSerializer<ExceptionResponseEntityErrorsInner> {
   @override
-  final Iterable<Type> types = const [UserEntity, _$UserEntity];
+  final Iterable<Type> types = const [ExceptionResponseEntityErrorsInner, _$ExceptionResponseEntityErrorsInner];
 
   @override
-  final String wireName = r'UserEntity';
+  final String wireName = r'ExceptionResponseEntityErrorsInner';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    UserEntity object, {
+    ExceptionResponseEntityErrorsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'id';
+    yield r'fieldPath';
     yield serializers.serialize(
-      object.id,
+      object.fieldPath,
       specifiedType: const FullType(String),
     );
-    yield r'email';
+    yield r'messages';
     yield serializers.serialize(
-      object.email,
-      specifiedType: const FullType(String),
-    );
-    yield r'phone';
-    yield serializers.serialize(
-      object.phone,
-      specifiedType: const FullType(String),
-    );
-    yield r'passwordHash';
-    yield serializers.serialize(
-      object.passwordHash,
-      specifiedType: const FullType(String),
+      object.messages,
+      specifiedType: const FullType(BuiltList, [FullType(String)]),
     );
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    UserEntity object, {
+    ExceptionResponseEntityErrorsInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -88,40 +71,26 @@ class _$UserEntitySerializer implements PrimitiveSerializer<UserEntity> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required UserEntityBuilder result,
+    required ExceptionResponseEntityErrorsInnerBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'id':
+        case r'fieldPath':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.id = valueDes;
+          result.fieldPath = valueDes;
           break;
-        case r'email':
+        case r'messages':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.email = valueDes;
-          break;
-        case r'phone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.phone = valueDes;
-          break;
-        case r'passwordHash':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.passwordHash = valueDes;
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.messages.replace(valueDes);
           break;
         default:
           unhandled.add(key);
@@ -132,12 +101,12 @@ class _$UserEntitySerializer implements PrimitiveSerializer<UserEntity> {
   }
 
   @override
-  UserEntity deserialize(
+  ExceptionResponseEntityErrorsInner deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = UserEntityBuilder();
+    final result = ExceptionResponseEntityErrorsInnerBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

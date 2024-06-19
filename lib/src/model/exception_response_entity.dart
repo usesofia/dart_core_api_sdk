@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:dart_core_api_sdk/src/model/error_entity.dart';
+import 'package:dart_core_api_sdk/src/model/exception_response_entity_errors_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -25,7 +25,7 @@ abstract class ExceptionResponseEntity implements Built<ExceptionResponseEntity,
   String get message;
 
   @BuiltValueField(wireName: r'errors')
-  BuiltList<ErrorEntity> get errors;
+  BuiltList<ExceptionResponseEntityErrorsInner> get errors;
 
   ExceptionResponseEntity._();
 
@@ -63,7 +63,7 @@ class _$ExceptionResponseEntitySerializer implements PrimitiveSerializer<Excepti
     yield r'errors';
     yield serializers.serialize(
       object.errors,
-      specifiedType: const FullType(BuiltList, [FullType(ErrorEntity)]),
+      specifiedType: const FullType(BuiltList, [FullType(ExceptionResponseEntityErrorsInner)]),
     );
   }
 
@@ -105,8 +105,8 @@ class _$ExceptionResponseEntitySerializer implements PrimitiveSerializer<Excepti
         case r'errors':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(ErrorEntity)]),
-          ) as BuiltList<ErrorEntity>;
+            specifiedType: const FullType(BuiltList, [FullType(ExceptionResponseEntityErrorsInner)]),
+          ) as BuiltList<ExceptionResponseEntityErrorsInner>;
           result.errors.replace(valueDes);
           break;
         default:

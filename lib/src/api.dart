@@ -9,12 +9,12 @@ import 'package:dart_core_api_sdk/src/auth/api_key_auth.dart';
 import 'package:dart_core_api_sdk/src/auth/basic_auth.dart';
 import 'package:dart_core_api_sdk/src/auth/bearer_auth.dart';
 import 'package:dart_core_api_sdk/src/auth/oauth.dart';
-import 'package:dart_core_api_sdk/src/api/auth_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_accounts_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_connections_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transaction_categories_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transaction_tags_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transactions_api.dart';
+import 'package:dart_core_api_sdk/src/api/iam_auth_api.dart';
 import 'package:dart_core_api_sdk/src/api/message_tokens_api.dart';
 import 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
 import 'package:dart_core_api_sdk/src/api/profiles_api.dart';
@@ -77,12 +77,6 @@ class DartCoreApiSdk {
     }
   }
 
-  /// Get AuthApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  AuthApi getAuthApi() {
-    return AuthApi(dio, serializers);
-  }
-
   /// Get BankAccountsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   BankAccountsApi getBankAccountsApi() {
@@ -111,6 +105,12 @@ class DartCoreApiSdk {
   /// by doing that all interceptors will not be executed
   BankTransactionsApi getBankTransactionsApi() {
     return BankTransactionsApi(dio, serializers);
+  }
+
+  /// Get IamAuthApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  IamAuthApi getIamAuthApi() {
+    return IamAuthApi(dio, serializers);
   }
 
   /// Get MessageTokensApi instance, base route and serializer can be overridden by a given but be careful,

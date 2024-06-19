@@ -6,70 +6,43 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'user_entity.g.dart';
+part 'send_phone_verification_code_request_dto.g.dart';
 
-/// UserEntity
+/// SendPhoneVerificationCodeRequestDto
 ///
 /// Properties:
-/// * [id] 
-/// * [email] 
 /// * [phone] 
-/// * [passwordHash] 
 @BuiltValue()
-abstract class UserEntity implements Built<UserEntity, UserEntityBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
-  @BuiltValueField(wireName: r'email')
-  String get email;
-
+abstract class SendPhoneVerificationCodeRequestDto implements Built<SendPhoneVerificationCodeRequestDto, SendPhoneVerificationCodeRequestDtoBuilder> {
   @BuiltValueField(wireName: r'phone')
   String get phone;
 
-  @BuiltValueField(wireName: r'passwordHash')
-  String get passwordHash;
+  SendPhoneVerificationCodeRequestDto._();
 
-  UserEntity._();
-
-  factory UserEntity([void updates(UserEntityBuilder b)]) = _$UserEntity;
+  factory SendPhoneVerificationCodeRequestDto([void updates(SendPhoneVerificationCodeRequestDtoBuilder b)]) = _$SendPhoneVerificationCodeRequestDto;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserEntityBuilder b) => b;
+  static void _defaults(SendPhoneVerificationCodeRequestDtoBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UserEntity> get serializer => _$UserEntitySerializer();
+  static Serializer<SendPhoneVerificationCodeRequestDto> get serializer => _$SendPhoneVerificationCodeRequestDtoSerializer();
 }
 
-class _$UserEntitySerializer implements PrimitiveSerializer<UserEntity> {
+class _$SendPhoneVerificationCodeRequestDtoSerializer implements PrimitiveSerializer<SendPhoneVerificationCodeRequestDto> {
   @override
-  final Iterable<Type> types = const [UserEntity, _$UserEntity];
+  final Iterable<Type> types = const [SendPhoneVerificationCodeRequestDto, _$SendPhoneVerificationCodeRequestDto];
 
   @override
-  final String wireName = r'UserEntity';
+  final String wireName = r'SendPhoneVerificationCodeRequestDto';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    UserEntity object, {
+    SendPhoneVerificationCodeRequestDto object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
-    yield r'email';
-    yield serializers.serialize(
-      object.email,
-      specifiedType: const FullType(String),
-    );
     yield r'phone';
     yield serializers.serialize(
       object.phone,
-      specifiedType: const FullType(String),
-    );
-    yield r'passwordHash';
-    yield serializers.serialize(
-      object.passwordHash,
       specifiedType: const FullType(String),
     );
   }
@@ -77,7 +50,7 @@ class _$UserEntitySerializer implements PrimitiveSerializer<UserEntity> {
   @override
   Object serialize(
     Serializers serializers,
-    UserEntity object, {
+    SendPhoneVerificationCodeRequestDto object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -88,40 +61,19 @@ class _$UserEntitySerializer implements PrimitiveSerializer<UserEntity> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required UserEntityBuilder result,
+    required SendPhoneVerificationCodeRequestDtoBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.email = valueDes;
-          break;
         case r'phone':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.phone = valueDes;
-          break;
-        case r'passwordHash':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.passwordHash = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -132,12 +84,12 @@ class _$UserEntitySerializer implements PrimitiveSerializer<UserEntity> {
   }
 
   @override
-  UserEntity deserialize(
+  SendPhoneVerificationCodeRequestDto deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = UserEntityBuilder();
+    final result = SendPhoneVerificationCodeRequestDtoBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

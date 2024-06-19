@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **usersControllerGet**
-> UserWithProfileEntity usersControllerGet(userId)
+> UserEntity usersControllerGet(userId)
 
 
 
@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserWithProfileEntity**](UserWithProfileEntity.md)
+[**UserEntity**](UserEntity.md)
 
 ### Authorization
 

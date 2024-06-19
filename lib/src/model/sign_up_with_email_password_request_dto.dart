@@ -14,6 +14,7 @@ part 'sign_up_with_email_password_request_dto.g.dart';
 /// * [email] 
 /// * [password] 
 /// * [emailVerificationCode] 
+/// * [phoneVerificationCode] 
 @BuiltValue()
 abstract class SignUpWithEmailPasswordRequestDto implements Built<SignUpWithEmailPasswordRequestDto, SignUpWithEmailPasswordRequestDtoBuilder> {
   @BuiltValueField(wireName: r'email')
@@ -24,6 +25,9 @@ abstract class SignUpWithEmailPasswordRequestDto implements Built<SignUpWithEmai
 
   @BuiltValueField(wireName: r'emailVerificationCode')
   String get emailVerificationCode;
+
+  @BuiltValueField(wireName: r'phoneVerificationCode')
+  String get phoneVerificationCode;
 
   SignUpWithEmailPasswordRequestDto._();
 
@@ -61,6 +65,11 @@ class _$SignUpWithEmailPasswordRequestDtoSerializer implements PrimitiveSerializ
     yield r'emailVerificationCode';
     yield serializers.serialize(
       object.emailVerificationCode,
+      specifiedType: const FullType(String),
+    );
+    yield r'phoneVerificationCode';
+    yield serializers.serialize(
+      object.phoneVerificationCode,
       specifiedType: const FullType(String),
     );
   }
@@ -106,6 +115,13 @@ class _$SignUpWithEmailPasswordRequestDtoSerializer implements PrimitiveSerializ
             specifiedType: const FullType(String),
           ) as String;
           result.emailVerificationCode = valueDes;
+          break;
+        case r'phoneVerificationCode':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.phoneVerificationCode = valueDes;
           break;
         default:
           unhandled.add(key);

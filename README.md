@@ -47,14 +47,14 @@ Please follow the [installation procedure](#installation--usage) and then run th
 import 'package:dart_core_api_sdk/dart_core_api_sdk.dart';
 
 
-final api = DartCoreApiSdk().getAuthApi();
-final CheckEmailInUseRequestDto checkEmailInUseRequestDto = ; // CheckEmailInUseRequestDto | 
+final api = DartCoreApiSdk().getBankAccountsApi();
+final String bankAccountId = bankAccountId_example; // String | 
 
 try {
-    final response = await api.authControllerCheckEmailInUse(checkEmailInUseRequestDto);
+    final response = await api.bankAccountsControllerActivateBankAccount(bankAccountId);
     print(response);
 } catch on DioException (e) {
-    print("Exception when calling AuthApi->authControllerCheckEmailInUse: $e\n");
+    print("Exception when calling BankAccountsApi->bankAccountsControllerActivateBankAccount: $e\n");
 }
 
 ```
@@ -65,11 +65,6 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-[*AuthApi*](doc/AuthApi.md) | [**authControllerCheckEmailInUse**](doc/AuthApi.md#authcontrollercheckemailinuse) | **POST** /auth/check-email-in-use | 
-[*AuthApi*](doc/AuthApi.md) | [**authControllerRefresh**](doc/AuthApi.md#authcontrollerrefresh) | **POST** /auth/refresh | 
-[*AuthApi*](doc/AuthApi.md) | [**authControllerSendEmailVerificationCode**](doc/AuthApi.md#authcontrollersendemailverificationcode) | **POST** /auth/sign-up/email-verification-code | 
-[*AuthApi*](doc/AuthApi.md) | [**authControllerSignInWithEmailPassword**](doc/AuthApi.md#authcontrollersigninwithemailpassword) | **POST** /auth/sign-in/email-password | 
-[*AuthApi*](doc/AuthApi.md) | [**authControllerSignUpWithEmailPassword**](doc/AuthApi.md#authcontrollersignupwithemailpassword) | **POST** /auth/sign-up/email-password | 
 [*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerActivateBankAccount**](doc/BankAccountsApi.md#bankaccountscontrolleractivatebankaccount) | **POST** /bank/accounts/{bankAccountId}/activate | 
 [*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerCreateOrUpdateBankAccount**](doc/BankAccountsApi.md#bankaccountscontrollercreateorupdatebankaccount) | **PUT** /workspaces/{workspaceId}/bank/accounts | 
 [*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerCreateWorkspaceBankAccountsBalanceReport**](doc/BankAccountsApi.md#bankaccountscontrollercreateworkspacebankaccountsbalancereport) | **POST** /workspaces/{workspaceId}/bank/accounts/balance-report | 
@@ -94,6 +89,9 @@ Class | Method | HTTP request | Description
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetRecent**](doc/BankTransactionsApi.md#banktransactionscontrollergetrecent) | **GET** /workspaces/{workspaceId}/bank/transactions/most-recent | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetTransactionDetails**](doc/BankTransactionsApi.md#banktransactionscontrollergettransactiondetails) | **GET** /bank/transactions/{bankTransactionId} | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerUpdateTransaction**](doc/BankTransactionsApi.md#banktransactionscontrollerupdatetransaction) | **PATCH** /bank/transactions/{bankTransactionId} | 
+[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGenerateAndSendEmailVerificationCodeForSignUp**](doc/IamAuthApi.md#authcontrollergenerateandsendemailverificationcodeforsignup) | **POST** /iam/auth/sign-up/email-verification-code | 
+[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGenerateAndSendPhoneVerificationCodeForSignUp**](doc/IamAuthApi.md#authcontrollergenerateandsendphoneverificationcodeforsignup) | **POST** /iam/auth/sign-up/phone-verification-code | 
+[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerSignUpWithEmailPassword**](doc/IamAuthApi.md#authcontrollersignupwithemailpassword) | **POST** /iam/auth/sign-up/email-password | 
 [*MessageTokensApi*](doc/MessageTokensApi.md) | [**messageTokensControllerCreateOrUpdateMessageToken**](doc/MessageTokensApi.md#messagetokenscontrollercreateorupdatemessagetoken) | **PUT** /workspaces/{workspaceId}/message-tokens | 
 [*MessageTokensApi*](doc/MessageTokensApi.md) | [**messageTokensControllerGetWorkspaceMessageTokens**](doc/MessageTokensApi.md#messagetokenscontrollergetworkspacemessagetokens) | **GET** /workspaces/{workspaceId}/message-tokens | 
 [*PluggyApi*](doc/PluggyApi.md) | [**pluggyControllerCreate**](doc/PluggyApi.md#pluggycontrollercreate) | **POST** /pluggy/connect-token | 
@@ -141,7 +139,6 @@ Class | Method | HTTP request | Description
  - [CashFlowReportMonthlyItemEntity](doc/CashFlowReportMonthlyItemEntity.md)
  - [CashFlowReportWeeklyItemEntity](doc/CashFlowReportWeeklyItemEntity.md)
  - [CategoryGuessDto](doc/CategoryGuessDto.md)
- - [CheckEmailInUseRequestDto](doc/CheckEmailInUseRequestDto.md)
  - [CreateBankTransactionTagRequestDto](doc/CreateBankTransactionTagRequestDto.md)
  - [CreateOrUpdateBankAccountRequestDto](doc/CreateOrUpdateBankAccountRequestDto.md)
  - [CreateOrUpdateBankConnectionRequestDto](doc/CreateOrUpdateBankConnectionRequestDto.md)
@@ -151,12 +148,10 @@ Class | Method | HTTP request | Description
  - [CreatePluggyConnectTokenRequestDto](doc/CreatePluggyConnectTokenRequestDto.md)
  - [CreateProfileRequestDto](doc/CreateProfileRequestDto.md)
  - [CreateWorkspaceRequestDto](doc/CreateWorkspaceRequestDto.md)
- - [CredentialsEntity](doc/CredentialsEntity.md)
  - [CreditCardMetadataDto](doc/CreditCardMetadataDto.md)
  - [DreLineOutcomeResultEntity](doc/DreLineOutcomeResultEntity.md)
- - [EmailInUseEntity](doc/EmailInUseEntity.md)
- - [ErrorEntity](doc/ErrorEntity.md)
  - [ExceptionResponseEntity](doc/ExceptionResponseEntity.md)
+ - [ExceptionResponseEntityErrorsInner](doc/ExceptionResponseEntityErrorsInner.md)
  - [FinancialStatementOutcomeReportDataEntity](doc/FinancialStatementOutcomeReportDataEntity.md)
  - [FinancialStatementOutflowsSubcategoryData](doc/FinancialStatementOutflowsSubcategoryData.md)
  - [FinancialStatementOutlfowsCategoryData](doc/FinancialStatementOutlfowsCategoryData.md)
@@ -174,14 +169,12 @@ Class | Method | HTTP request | Description
  - [PluggyConnectTokenEntity](doc/PluggyConnectTokenEntity.md)
  - [ProfileEntity](doc/ProfileEntity.md)
  - [ProportionResultEntity](doc/ProportionResultEntity.md)
- - [RefreshRequestDto](doc/RefreshRequestDto.md)
  - [SendEmailVerificationCodeRequestDto](doc/SendEmailVerificationCodeRequestDto.md)
- - [SignInWithEmailPasswordRequestDto](doc/SignInWithEmailPasswordRequestDto.md)
+ - [SendPhoneVerificationCodeRequestDto](doc/SendPhoneVerificationCodeRequestDto.md)
  - [SignUpWithEmailPasswordRequestDto](doc/SignUpWithEmailPasswordRequestDto.md)
  - [UpdateBankTransactionRequestDto](doc/UpdateBankTransactionRequestDto.md)
  - [UserEntity](doc/UserEntity.md)
  - [UserRelatedWorkspaceEntity](doc/UserRelatedWorkspaceEntity.md)
- - [UserWithProfileEntity](doc/UserWithProfileEntity.md)
  - [WorkspaceCompanySettingsEntity](doc/WorkspaceCompanySettingsEntity.md)
  - [WorkspaceEntity](doc/WorkspaceEntity.md)
  - [WorkspaceHybridSettingsEntity](doc/WorkspaceHybridSettingsEntity.md)

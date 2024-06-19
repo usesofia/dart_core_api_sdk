@@ -12,7 +12,7 @@ class _$ExceptionResponseEntity extends ExceptionResponseEntity {
   @override
   final String message;
   @override
-  final BuiltList<ErrorEntity> errors;
+  final BuiltList<ExceptionResponseEntityErrorsInner> errors;
 
   factory _$ExceptionResponseEntity(
           [void Function(ExceptionResponseEntityBuilder)? updates]) =>
@@ -80,10 +80,11 @@ class ExceptionResponseEntityBuilder
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
 
-  ListBuilder<ErrorEntity>? _errors;
-  ListBuilder<ErrorEntity> get errors =>
-      _$this._errors ??= new ListBuilder<ErrorEntity>();
-  set errors(ListBuilder<ErrorEntity>? errors) => _$this._errors = errors;
+  ListBuilder<ExceptionResponseEntityErrorsInner>? _errors;
+  ListBuilder<ExceptionResponseEntityErrorsInner> get errors =>
+      _$this._errors ??= new ListBuilder<ExceptionResponseEntityErrorsInner>();
+  set errors(ListBuilder<ExceptionResponseEntityErrorsInner>? errors) =>
+      _$this._errors = errors;
 
   ExceptionResponseEntityBuilder() {
     ExceptionResponseEntity._defaults(this);

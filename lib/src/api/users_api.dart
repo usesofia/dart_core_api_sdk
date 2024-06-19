@@ -9,7 +9,7 @@ import 'package:dio/dio.dart';
 
 import 'package:dart_core_api_sdk/src/api_util.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
-import 'package:dart_core_api_sdk/src/model/user_with_profile_entity.dart';
+import 'package:dart_core_api_sdk/src/model/user_entity.dart';
 
 class UsersApi {
 
@@ -31,9 +31,9 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [UserWithProfileEntity] as data
+  /// Returns a [Future] containing a [Response] with a [UserEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserWithProfileEntity>> usersControllerGet({ 
+  Future<Response<UserEntity>> usersControllerGet({ 
     required String userId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -63,14 +63,14 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    UserWithProfileEntity? _responseData;
+    UserEntity? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(UserWithProfileEntity),
-      ) as UserWithProfileEntity;
+        specifiedType: const FullType(UserEntity),
+      ) as UserEntity;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -82,7 +82,7 @@ class UsersApi {
       );
     }
 
-    return Response<UserWithProfileEntity>(
+    return Response<UserEntity>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

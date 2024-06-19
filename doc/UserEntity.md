@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **email** | **String** |  | 
-**createdAt** | [**DateTime**](DateTime.md) |  | 
-**passwordHash** | **String** |  | [optional] 
+**phone** | **String** |  | 
+**passwordHash** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

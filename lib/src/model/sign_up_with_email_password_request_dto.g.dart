@@ -14,6 +14,8 @@ class _$SignUpWithEmailPasswordRequestDto
   final String password;
   @override
   final String emailVerificationCode;
+  @override
+  final String phoneVerificationCode;
 
   factory _$SignUpWithEmailPasswordRequestDto(
           [void Function(SignUpWithEmailPasswordRequestDtoBuilder)? updates]) =>
@@ -23,7 +25,8 @@ class _$SignUpWithEmailPasswordRequestDto
   _$SignUpWithEmailPasswordRequestDto._(
       {required this.email,
       required this.password,
-      required this.emailVerificationCode})
+      required this.emailVerificationCode,
+      required this.phoneVerificationCode})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         email, r'SignUpWithEmailPasswordRequestDto', 'email');
@@ -31,6 +34,8 @@ class _$SignUpWithEmailPasswordRequestDto
         password, r'SignUpWithEmailPasswordRequestDto', 'password');
     BuiltValueNullFieldError.checkNotNull(emailVerificationCode,
         r'SignUpWithEmailPasswordRequestDto', 'emailVerificationCode');
+    BuiltValueNullFieldError.checkNotNull(phoneVerificationCode,
+        r'SignUpWithEmailPasswordRequestDto', 'phoneVerificationCode');
   }
 
   @override
@@ -48,7 +53,8 @@ class _$SignUpWithEmailPasswordRequestDto
     return other is SignUpWithEmailPasswordRequestDto &&
         email == other.email &&
         password == other.password &&
-        emailVerificationCode == other.emailVerificationCode;
+        emailVerificationCode == other.emailVerificationCode &&
+        phoneVerificationCode == other.phoneVerificationCode;
   }
 
   @override
@@ -57,6 +63,7 @@ class _$SignUpWithEmailPasswordRequestDto
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, password.hashCode);
     _$hash = $jc(_$hash, emailVerificationCode.hashCode);
+    _$hash = $jc(_$hash, phoneVerificationCode.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -66,7 +73,8 @@ class _$SignUpWithEmailPasswordRequestDto
     return (newBuiltValueToStringHelper(r'SignUpWithEmailPasswordRequestDto')
           ..add('email', email)
           ..add('password', password)
-          ..add('emailVerificationCode', emailVerificationCode))
+          ..add('emailVerificationCode', emailVerificationCode)
+          ..add('phoneVerificationCode', phoneVerificationCode))
         .toString();
   }
 }
@@ -90,6 +98,11 @@ class SignUpWithEmailPasswordRequestDtoBuilder
   set emailVerificationCode(String? emailVerificationCode) =>
       _$this._emailVerificationCode = emailVerificationCode;
 
+  String? _phoneVerificationCode;
+  String? get phoneVerificationCode => _$this._phoneVerificationCode;
+  set phoneVerificationCode(String? phoneVerificationCode) =>
+      _$this._phoneVerificationCode = phoneVerificationCode;
+
   SignUpWithEmailPasswordRequestDtoBuilder() {
     SignUpWithEmailPasswordRequestDto._defaults(this);
   }
@@ -100,6 +113,7 @@ class SignUpWithEmailPasswordRequestDtoBuilder
       _email = $v.email;
       _password = $v.password;
       _emailVerificationCode = $v.emailVerificationCode;
+      _phoneVerificationCode = $v.phoneVerificationCode;
       _$v = null;
     }
     return this;
@@ -130,7 +144,11 @@ class SignUpWithEmailPasswordRequestDtoBuilder
             emailVerificationCode: BuiltValueNullFieldError.checkNotNull(
                 emailVerificationCode,
                 r'SignUpWithEmailPasswordRequestDto',
-                'emailVerificationCode'));
+                'emailVerificationCode'),
+            phoneVerificationCode: BuiltValueNullFieldError.checkNotNull(
+                phoneVerificationCode,
+                r'SignUpWithEmailPasswordRequestDto',
+                'phoneVerificationCode'));
     replace(_$result);
     return _$result;
   }
