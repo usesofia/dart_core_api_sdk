@@ -167,6 +167,3 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_personal_settings_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/exception_response_entity_errors_inner_test.dart
-test/iam_auth_api_test.dart
-test/send_phone_verification_code_request_dto_test.dart
