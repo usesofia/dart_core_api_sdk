@@ -83,6 +83,7 @@ export 'package:dart_core_api_sdk/src/model/update_bank_transaction_request_dto.
 export 'package:dart_core_api_sdk/src/model/user_entity.dart';
 export 'package:dart_core_api_sdk/src/model/user_related_workspace_entity.dart';
 export 'package:dart_core_api_sdk/src/model/verify_email_verification_code_request_dto.dart';
+export 'package:dart_core_api_sdk/src/model/verify_phone_verification_code_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/workspace_company_settings_entity.dart';
 export 'package:dart_core_api_sdk/src/model/workspace_entity.dart';
 export 'package:dart_core_api_sdk/src/model/workspace_hybrid_settings_entity.dart';

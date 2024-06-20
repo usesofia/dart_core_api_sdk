@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**authControllerGenerateAndSendPhoneVerificationCode**](IamAuthApi.md#authcontrollergenerateandsendphoneverificationcode) | **POST** /iam/auth/phone-verification-code | 
 [**authControllerSignUpWithEmailPassword**](IamAuthApi.md#authcontrollersignupwithemailpassword) | **POST** /iam/auth/sign-up/email-password | 
 [**authControllerVerifyEmailVerificationCode**](IamAuthApi.md#authcontrollerverifyemailverificationcode) | **GET** /iam/auth/email-verification-code/verify | 
+[**authControllerVerifyPhoneVerificationCode**](IamAuthApi.md#authcontrollerverifyphoneverificationcode) | **GET** /iam/auth/phone-verification-code/verify | 
 
 
 # **authControllerGenerateAndSendEmailVerificationCode**
@@ -160,6 +161,46 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **verifyEmailVerificationCodeRequestDto** | [**VerifyEmailVerificationCodeRequestDto**](VerifyEmailVerificationCodeRequestDto.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authControllerVerifyPhoneVerificationCode**
+> authControllerVerifyPhoneVerificationCode(verifyPhoneVerificationCodeRequestDto)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getIamAuthApi();
+final VerifyPhoneVerificationCodeRequestDto verifyPhoneVerificationCodeRequestDto = ; // VerifyPhoneVerificationCodeRequestDto | 
+
+try {
+    api.authControllerVerifyPhoneVerificationCode(verifyPhoneVerificationCodeRequestDto);
+} catch on DioException (e) {
+    print('Exception when calling IamAuthApi->authControllerVerifyPhoneVerificationCode: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **verifyPhoneVerificationCodeRequestDto** | [**VerifyPhoneVerificationCodeRequestDto**](VerifyPhoneVerificationCodeRequestDto.md)|  | 
 
 ### Return type
 
