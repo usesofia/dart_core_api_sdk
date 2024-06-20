@@ -57,6 +57,8 @@ import 'package:dart_core_api_sdk/src/model/financial_statement_report.dart';
 import 'package:dart_core_api_sdk/src/model/financial_statement_report_item_entity.dart';
 import 'package:dart_core_api_sdk/src/model/financial_statemente_entries_category_data.dart';
 import 'package:dart_core_api_sdk/src/model/financial_statemente_entries_subcategory_data.dart';
+import 'package:dart_core_api_sdk/src/model/generate_and_send_email_verification_code_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/generate_and_send_phone_verification_code_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/mean_result_entity.dart';
 import 'package:dart_core_api_sdk/src/model/mean_result_subcategory_item_entity.dart';
 import 'package:dart_core_api_sdk/src/model/message_token_entity.dart';
@@ -67,12 +69,11 @@ import 'package:dart_core_api_sdk/src/model/plain_bank_account_entity.dart';
 import 'package:dart_core_api_sdk/src/model/pluggy_connect_token_entity.dart';
 import 'package:dart_core_api_sdk/src/model/profile_entity.dart';
 import 'package:dart_core_api_sdk/src/model/proportion_result_entity.dart';
-import 'package:dart_core_api_sdk/src/model/send_email_verification_code_request_dto.dart';
-import 'package:dart_core_api_sdk/src/model/send_phone_verification_code_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/sign_up_with_email_password_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/update_bank_transaction_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/user_entity.dart';
 import 'package:dart_core_api_sdk/src/model/user_related_workspace_entity.dart';
+import 'package:dart_core_api_sdk/src/model/verify_email_verification_code_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/workspace_company_settings_entity.dart';
 import 'package:dart_core_api_sdk/src/model/workspace_entity.dart';
 import 'package:dart_core_api_sdk/src/model/workspace_hybrid_settings_entity.dart';
@@ -125,6 +126,8 @@ part 'serializers.g.dart';
   FinancialStatementReportItemEntity,
   FinancialStatementeEntriesCategoryData,
   FinancialStatementeEntriesSubcategoryData,
+  GenerateAndSendEmailVerificationCodeRequestDto,
+  GenerateAndSendPhoneVerificationCodeRequestDto,
   MeanResultEntity,
   MeanResultSubcategoryItemEntity,
   MessageTokenEntity,
@@ -135,12 +138,11 @@ part 'serializers.g.dart';
   PluggyConnectTokenEntity,
   ProfileEntity,
   ProportionResultEntity,
-  SendEmailVerificationCodeRequestDto,
-  SendPhoneVerificationCodeRequestDto,
   SignUpWithEmailPasswordRequestDto,
   UpdateBankTransactionRequestDto,
   UserEntity,
   UserRelatedWorkspaceEntity,
+  VerifyEmailVerificationCodeRequestDto,
   WorkspaceCompanySettingsEntity,
   WorkspaceEntity,
   WorkspaceHybridSettingsEntity,

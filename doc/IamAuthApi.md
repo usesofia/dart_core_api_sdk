@@ -9,13 +9,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**authControllerGenerateAndSendEmailVerificationCodeForSignUp**](IamAuthApi.md#authcontrollergenerateandsendemailverificationcodeforsignup) | **POST** /iam/auth/sign-up/email-verification-code | 
-[**authControllerGenerateAndSendPhoneVerificationCodeForSignUp**](IamAuthApi.md#authcontrollergenerateandsendphoneverificationcodeforsignup) | **POST** /iam/auth/sign-up/phone-verification-code | 
+[**authControllerGenerateAndSendEmailVerificationCode**](IamAuthApi.md#authcontrollergenerateandsendemailverificationcode) | **POST** /iam/auth/email-verification-code | 
+[**authControllerGenerateAndSendPhoneVerificationCode**](IamAuthApi.md#authcontrollergenerateandsendphoneverificationcode) | **POST** /iam/auth/phone-verification-code | 
 [**authControllerSignUpWithEmailPassword**](IamAuthApi.md#authcontrollersignupwithemailpassword) | **POST** /iam/auth/sign-up/email-password | 
+[**authControllerVerifyEmailVerificationCode**](IamAuthApi.md#authcontrollerverifyemailverificationcode) | **GET** /iam/auth/email-verification-code/verify | 
 
 
-# **authControllerGenerateAndSendEmailVerificationCodeForSignUp**
-> authControllerGenerateAndSendEmailVerificationCodeForSignUp(sendEmailVerificationCodeRequestDto)
+# **authControllerGenerateAndSendEmailVerificationCode**
+> authControllerGenerateAndSendEmailVerificationCode(generateAndSendEmailVerificationCodeRequestDto)
 
 
 
@@ -24,12 +25,12 @@ Method | HTTP request | Description
 import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getIamAuthApi();
-final SendEmailVerificationCodeRequestDto sendEmailVerificationCodeRequestDto = ; // SendEmailVerificationCodeRequestDto | 
+final GenerateAndSendEmailVerificationCodeRequestDto generateAndSendEmailVerificationCodeRequestDto = ; // GenerateAndSendEmailVerificationCodeRequestDto | 
 
 try {
-    api.authControllerGenerateAndSendEmailVerificationCodeForSignUp(sendEmailVerificationCodeRequestDto);
+    api.authControllerGenerateAndSendEmailVerificationCode(generateAndSendEmailVerificationCodeRequestDto);
 } catch on DioException (e) {
-    print('Exception when calling IamAuthApi->authControllerGenerateAndSendEmailVerificationCodeForSignUp: $e\n');
+    print('Exception when calling IamAuthApi->authControllerGenerateAndSendEmailVerificationCode: $e\n');
 }
 ```
 
@@ -37,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sendEmailVerificationCodeRequestDto** | [**SendEmailVerificationCodeRequestDto**](SendEmailVerificationCodeRequestDto.md)|  | 
+ **generateAndSendEmailVerificationCodeRequestDto** | [**GenerateAndSendEmailVerificationCodeRequestDto**](GenerateAndSendEmailVerificationCodeRequestDto.md)|  | 
 
 ### Return type
 
@@ -54,8 +55,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **authControllerGenerateAndSendPhoneVerificationCodeForSignUp**
-> authControllerGenerateAndSendPhoneVerificationCodeForSignUp(sendPhoneVerificationCodeRequestDto)
+# **authControllerGenerateAndSendPhoneVerificationCode**
+> authControllerGenerateAndSendPhoneVerificationCode(generateAndSendPhoneVerificationCodeRequestDto)
 
 
 
@@ -64,12 +65,12 @@ No authorization required
 import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getIamAuthApi();
-final SendPhoneVerificationCodeRequestDto sendPhoneVerificationCodeRequestDto = ; // SendPhoneVerificationCodeRequestDto | 
+final GenerateAndSendPhoneVerificationCodeRequestDto generateAndSendPhoneVerificationCodeRequestDto = ; // GenerateAndSendPhoneVerificationCodeRequestDto | 
 
 try {
-    api.authControllerGenerateAndSendPhoneVerificationCodeForSignUp(sendPhoneVerificationCodeRequestDto);
+    api.authControllerGenerateAndSendPhoneVerificationCode(generateAndSendPhoneVerificationCodeRequestDto);
 } catch on DioException (e) {
-    print('Exception when calling IamAuthApi->authControllerGenerateAndSendPhoneVerificationCodeForSignUp: $e\n');
+    print('Exception when calling IamAuthApi->authControllerGenerateAndSendPhoneVerificationCode: $e\n');
 }
 ```
 
@@ -77,7 +78,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sendPhoneVerificationCodeRequestDto** | [**SendPhoneVerificationCodeRequestDto**](SendPhoneVerificationCodeRequestDto.md)|  | 
+ **generateAndSendPhoneVerificationCodeRequestDto** | [**GenerateAndSendPhoneVerificationCodeRequestDto**](GenerateAndSendPhoneVerificationCodeRequestDto.md)|  | 
 
 ### Return type
 
@@ -123,6 +124,46 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UserEntity**](UserEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authControllerVerifyEmailVerificationCode**
+> authControllerVerifyEmailVerificationCode(verifyEmailVerificationCodeRequestDto)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getIamAuthApi();
+final VerifyEmailVerificationCodeRequestDto verifyEmailVerificationCodeRequestDto = ; // VerifyEmailVerificationCodeRequestDto | 
+
+try {
+    api.authControllerVerifyEmailVerificationCode(verifyEmailVerificationCodeRequestDto);
+} catch on DioException (e) {
+    print('Exception when calling IamAuthApi->authControllerVerifyEmailVerificationCode: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **verifyEmailVerificationCodeRequestDto** | [**VerifyEmailVerificationCodeRequestDto**](VerifyEmailVerificationCodeRequestDto.md)|  | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

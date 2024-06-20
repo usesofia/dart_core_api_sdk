@@ -8,10 +8,11 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
-import 'package:dart_core_api_sdk/src/model/send_email_verification_code_request_dto.dart';
-import 'package:dart_core_api_sdk/src/model/send_phone_verification_code_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/generate_and_send_email_verification_code_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/generate_and_send_phone_verification_code_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/sign_up_with_email_password_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/user_entity.dart';
+import 'package:dart_core_api_sdk/src/model/verify_email_verification_code_request_dto.dart';
 
 class IamAuthApi {
 
@@ -21,11 +22,11 @@ class IamAuthApi {
 
   const IamAuthApi(this._dio, this._serializers);
 
-  /// authControllerGenerateAndSendEmailVerificationCodeForSignUp
+  /// authControllerGenerateAndSendEmailVerificationCode
   /// 
   ///
   /// Parameters:
-  /// * [sendEmailVerificationCodeRequestDto] 
+  /// * [generateAndSendEmailVerificationCodeRequestDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,8 +36,8 @@ class IamAuthApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> authControllerGenerateAndSendEmailVerificationCodeForSignUp({ 
-    required SendEmailVerificationCodeRequestDto sendEmailVerificationCodeRequestDto,
+  Future<Response<void>> authControllerGenerateAndSendEmailVerificationCode({ 
+    required GenerateAndSendEmailVerificationCodeRequestDto generateAndSendEmailVerificationCodeRequestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -44,7 +45,7 @@ class IamAuthApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/iam/auth/sign-up/email-verification-code';
+    final _path = r'/iam/auth/email-verification-code';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -61,8 +62,8 @@ class IamAuthApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(SendEmailVerificationCodeRequestDto);
-      _bodyData = _serializers.serialize(sendEmailVerificationCodeRequestDto, specifiedType: _type);
+      const _type = FullType(GenerateAndSendEmailVerificationCodeRequestDto);
+      _bodyData = _serializers.serialize(generateAndSendEmailVerificationCodeRequestDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -88,11 +89,11 @@ class IamAuthApi {
     return _response;
   }
 
-  /// authControllerGenerateAndSendPhoneVerificationCodeForSignUp
+  /// authControllerGenerateAndSendPhoneVerificationCode
   /// 
   ///
   /// Parameters:
-  /// * [sendPhoneVerificationCodeRequestDto] 
+  /// * [generateAndSendPhoneVerificationCodeRequestDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -102,8 +103,8 @@ class IamAuthApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> authControllerGenerateAndSendPhoneVerificationCodeForSignUp({ 
-    required SendPhoneVerificationCodeRequestDto sendPhoneVerificationCodeRequestDto,
+  Future<Response<void>> authControllerGenerateAndSendPhoneVerificationCode({ 
+    required GenerateAndSendPhoneVerificationCodeRequestDto generateAndSendPhoneVerificationCodeRequestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -111,7 +112,7 @@ class IamAuthApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/iam/auth/sign-up/phone-verification-code';
+    final _path = r'/iam/auth/phone-verification-code';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -128,8 +129,8 @@ class IamAuthApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(SendPhoneVerificationCodeRequestDto);
-      _bodyData = _serializers.serialize(sendPhoneVerificationCodeRequestDto, specifiedType: _type);
+      const _type = FullType(GenerateAndSendPhoneVerificationCodeRequestDto);
+      _bodyData = _serializers.serialize(generateAndSendPhoneVerificationCodeRequestDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(
@@ -248,6 +249,73 @@ class IamAuthApi {
       statusMessage: _response.statusMessage,
       extra: _response.extra,
     );
+  }
+
+  /// authControllerVerifyEmailVerificationCode
+  /// 
+  ///
+  /// Parameters:
+  /// * [verifyEmailVerificationCodeRequestDto] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> authControllerVerifyEmailVerificationCode({ 
+    required VerifyEmailVerificationCodeRequestDto verifyEmailVerificationCodeRequestDto,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/iam/auth/email-verification-code/verify';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(VerifyEmailVerificationCodeRequestDto);
+      _bodyData = _serializers.serialize(verifyEmailVerificationCodeRequestDto, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioException(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
   }
 
 }

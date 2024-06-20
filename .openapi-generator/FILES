@@ -49,6 +49,8 @@ doc/FinancialStatementReport.md
 doc/FinancialStatementReportItemEntity.md
 doc/FinancialStatementeEntriesCategoryData.md
 doc/FinancialStatementeEntriesSubcategoryData.md
+doc/GenerateAndSendEmailVerificationCodeRequestDto.md
+doc/GenerateAndSendPhoneVerificationCodeRequestDto.md
 doc/IamAuthApi.md
 doc/MeanResultEntity.md
 doc/MeanResultSubcategoryItemEntity.md
@@ -64,13 +66,12 @@ doc/ProfileEntity.md
 doc/ProfilesApi.md
 doc/ProportionResultEntity.md
 doc/ReportsApi.md
-doc/SendEmailVerificationCodeRequestDto.md
-doc/SendPhoneVerificationCodeRequestDto.md
 doc/SignUpWithEmailPasswordRequestDto.md
 doc/UpdateBankTransactionRequestDto.md
 doc/UserEntity.md
 doc/UserRelatedWorkspaceEntity.md
 doc/UsersApi.md
+doc/VerifyEmailVerificationCodeRequestDto.md
 doc/WorkspaceCompanySettingsEntity.md
 doc/WorkspaceEntity.md
 doc/WorkspaceHybridSettingsEntity.md
@@ -144,6 +145,8 @@ lib/src/model/financial_statement_report.dart
 lib/src/model/financial_statement_report_item_entity.dart
 lib/src/model/financial_statemente_entries_category_data.dart
 lib/src/model/financial_statemente_entries_subcategory_data.dart
+lib/src/model/generate_and_send_email_verification_code_request_dto.dart
+lib/src/model/generate_and_send_phone_verification_code_request_dto.dart
 lib/src/model/mean_result_entity.dart
 lib/src/model/mean_result_subcategory_item_entity.dart
 lib/src/model/message_token_entity.dart
@@ -154,12 +157,11 @@ lib/src/model/plain_bank_account_entity.dart
 lib/src/model/pluggy_connect_token_entity.dart
 lib/src/model/profile_entity.dart
 lib/src/model/proportion_result_entity.dart
-lib/src/model/send_email_verification_code_request_dto.dart
-lib/src/model/send_phone_verification_code_request_dto.dart
 lib/src/model/sign_up_with_email_password_request_dto.dart
 lib/src/model/update_bank_transaction_request_dto.dart
 lib/src/model/user_entity.dart
 lib/src/model/user_related_workspace_entity.dart
+lib/src/model/verify_email_verification_code_request_dto.dart
 lib/src/model/workspace_company_settings_entity.dart
 lib/src/model/workspace_entity.dart
 lib/src/model/workspace_hybrid_settings_entity.dart
@@ -167,3 +169,6 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_personal_settings_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/generate_and_send_email_verification_code_request_dto_test.dart
+test/generate_and_send_phone_verification_code_request_dto_test.dart
+test/verify_email_verification_code_request_dto_test.dart

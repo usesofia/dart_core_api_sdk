@@ -89,9 +89,10 @@ Class | Method | HTTP request | Description
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetRecent**](doc/BankTransactionsApi.md#banktransactionscontrollergetrecent) | **GET** /workspaces/{workspaceId}/bank/transactions/most-recent | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetTransactionDetails**](doc/BankTransactionsApi.md#banktransactionscontrollergettransactiondetails) | **GET** /bank/transactions/{bankTransactionId} | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerUpdateTransaction**](doc/BankTransactionsApi.md#banktransactionscontrollerupdatetransaction) | **PATCH** /bank/transactions/{bankTransactionId} | 
-[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGenerateAndSendEmailVerificationCodeForSignUp**](doc/IamAuthApi.md#authcontrollergenerateandsendemailverificationcodeforsignup) | **POST** /iam/auth/sign-up/email-verification-code | 
-[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGenerateAndSendPhoneVerificationCodeForSignUp**](doc/IamAuthApi.md#authcontrollergenerateandsendphoneverificationcodeforsignup) | **POST** /iam/auth/sign-up/phone-verification-code | 
+[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGenerateAndSendEmailVerificationCode**](doc/IamAuthApi.md#authcontrollergenerateandsendemailverificationcode) | **POST** /iam/auth/email-verification-code | 
+[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGenerateAndSendPhoneVerificationCode**](doc/IamAuthApi.md#authcontrollergenerateandsendphoneverificationcode) | **POST** /iam/auth/phone-verification-code | 
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerSignUpWithEmailPassword**](doc/IamAuthApi.md#authcontrollersignupwithemailpassword) | **POST** /iam/auth/sign-up/email-password | 
+[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerVerifyEmailVerificationCode**](doc/IamAuthApi.md#authcontrollerverifyemailverificationcode) | **GET** /iam/auth/email-verification-code/verify | 
 [*MessageTokensApi*](doc/MessageTokensApi.md) | [**messageTokensControllerCreateOrUpdateMessageToken**](doc/MessageTokensApi.md#messagetokenscontrollercreateorupdatemessagetoken) | **PUT** /workspaces/{workspaceId}/message-tokens | 
 [*MessageTokensApi*](doc/MessageTokensApi.md) | [**messageTokensControllerGetWorkspaceMessageTokens**](doc/MessageTokensApi.md#messagetokenscontrollergetworkspacemessagetokens) | **GET** /workspaces/{workspaceId}/message-tokens | 
 [*PluggyApi*](doc/PluggyApi.md) | [**pluggyControllerCreate**](doc/PluggyApi.md#pluggycontrollercreate) | **POST** /pluggy/connect-token | 
@@ -159,6 +160,8 @@ Class | Method | HTTP request | Description
  - [FinancialStatementReportItemEntity](doc/FinancialStatementReportItemEntity.md)
  - [FinancialStatementeEntriesCategoryData](doc/FinancialStatementeEntriesCategoryData.md)
  - [FinancialStatementeEntriesSubcategoryData](doc/FinancialStatementeEntriesSubcategoryData.md)
+ - [GenerateAndSendEmailVerificationCodeRequestDto](doc/GenerateAndSendEmailVerificationCodeRequestDto.md)
+ - [GenerateAndSendPhoneVerificationCodeRequestDto](doc/GenerateAndSendPhoneVerificationCodeRequestDto.md)
  - [MeanResultEntity](doc/MeanResultEntity.md)
  - [MeanResultSubcategoryItemEntity](doc/MeanResultSubcategoryItemEntity.md)
  - [MessageTokenEntity](doc/MessageTokenEntity.md)
@@ -169,12 +172,11 @@ Class | Method | HTTP request | Description
  - [PluggyConnectTokenEntity](doc/PluggyConnectTokenEntity.md)
  - [ProfileEntity](doc/ProfileEntity.md)
  - [ProportionResultEntity](doc/ProportionResultEntity.md)
- - [SendEmailVerificationCodeRequestDto](doc/SendEmailVerificationCodeRequestDto.md)
- - [SendPhoneVerificationCodeRequestDto](doc/SendPhoneVerificationCodeRequestDto.md)
  - [SignUpWithEmailPasswordRequestDto](doc/SignUpWithEmailPasswordRequestDto.md)
  - [UpdateBankTransactionRequestDto](doc/UpdateBankTransactionRequestDto.md)
  - [UserEntity](doc/UserEntity.md)
  - [UserRelatedWorkspaceEntity](doc/UserRelatedWorkspaceEntity.md)
+ - [VerifyEmailVerificationCodeRequestDto](doc/VerifyEmailVerificationCodeRequestDto.md)
  - [WorkspaceCompanySettingsEntity](doc/WorkspaceCompanySettingsEntity.md)
  - [WorkspaceEntity](doc/WorkspaceEntity.md)
  - [WorkspaceHybridSettingsEntity](doc/WorkspaceHybridSettingsEntity.md)
