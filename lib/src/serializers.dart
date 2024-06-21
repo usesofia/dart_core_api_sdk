@@ -69,7 +69,7 @@ import 'package:dart_core_api_sdk/src/model/plain_bank_account_entity.dart';
 import 'package:dart_core_api_sdk/src/model/pluggy_connect_token_entity.dart';
 import 'package:dart_core_api_sdk/src/model/profile_entity.dart';
 import 'package:dart_core_api_sdk/src/model/proportion_result_entity.dart';
-import 'package:dart_core_api_sdk/src/model/sign_up_with_email_password_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/sign_up_with_email_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/update_bank_transaction_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/user_entity.dart';
 import 'package:dart_core_api_sdk/src/model/user_related_workspace_entity.dart';
@@ -139,7 +139,7 @@ part 'serializers.g.dart';
   PluggyConnectTokenEntity,
   ProfileEntity,
   ProportionResultEntity,
-  SignUpWithEmailPasswordRequestDto,
+  SignUpWithEmailRequestDto,
   UpdateBankTransactionRequestDto,
   UserEntity,
   UserRelatedWorkspaceEntity,

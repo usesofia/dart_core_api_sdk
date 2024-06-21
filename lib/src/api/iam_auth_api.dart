@@ -10,7 +10,7 @@ import 'package:dio/dio.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_core_api_sdk/src/model/generate_and_send_email_verification_code_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/generate_and_send_phone_verification_code_request_dto.dart';
-import 'package:dart_core_api_sdk/src/model/sign_up_with_email_password_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/sign_up_with_email_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/user_entity.dart';
 import 'package:dart_core_api_sdk/src/model/verify_email_verification_code_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/verify_phone_verification_code_request_dto.dart';
@@ -157,11 +157,11 @@ class IamAuthApi {
     return _response;
   }
 
-  /// authControllerSignUpWithEmailPassword
+  /// authControllerSignUpWithEmail
   /// 
   ///
   /// Parameters:
-  /// * [signUpWithEmailPasswordRequestDto] 
+  /// * [signUpWithEmailRequestDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -171,8 +171,8 @@ class IamAuthApi {
   ///
   /// Returns a [Future] containing a [Response] with a [UserEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserEntity>> authControllerSignUpWithEmailPassword({ 
-    required SignUpWithEmailPasswordRequestDto signUpWithEmailPasswordRequestDto,
+  Future<Response<UserEntity>> authControllerSignUpWithEmail({ 
+    required SignUpWithEmailRequestDto signUpWithEmailRequestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -180,7 +180,7 @@ class IamAuthApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/iam/auth/sign-up/email-password';
+    final _path = r'/iam/auth/sign-up/email';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -197,8 +197,8 @@ class IamAuthApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(SignUpWithEmailPasswordRequestDto);
-      _bodyData = _serializers.serialize(signUpWithEmailPasswordRequestDto, specifiedType: _type);
+      const _type = FullType(SignUpWithEmailRequestDto);
+      _bodyData = _serializers.serialize(signUpWithEmailRequestDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

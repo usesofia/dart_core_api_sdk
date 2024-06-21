@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**authControllerGenerateAndSendEmailVerificationCode**](IamAuthApi.md#authcontrollergenerateandsendemailverificationcode) | **POST** /iam/auth/email-verification-code | 
 [**authControllerGenerateAndSendPhoneVerificationCode**](IamAuthApi.md#authcontrollergenerateandsendphoneverificationcode) | **POST** /iam/auth/phone-verification-code | 
-[**authControllerSignUpWithEmailPassword**](IamAuthApi.md#authcontrollersignupwithemailpassword) | **POST** /iam/auth/sign-up/email-password | 
+[**authControllerSignUpWithEmail**](IamAuthApi.md#authcontrollersignupwithemail) | **POST** /iam/auth/sign-up/email | 
 [**authControllerVerifyEmailVerificationCode**](IamAuthApi.md#authcontrollerverifyemailverificationcode) | **GET** /iam/auth/email-verification-code/verify | 
 [**authControllerVerifyPhoneVerificationCode**](IamAuthApi.md#authcontrollerverifyphoneverificationcode) | **GET** /iam/auth/phone-verification-code/verify | 
 
@@ -96,8 +96,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **authControllerSignUpWithEmailPassword**
-> UserEntity authControllerSignUpWithEmailPassword(signUpWithEmailPasswordRequestDto)
+# **authControllerSignUpWithEmail**
+> UserEntity authControllerSignUpWithEmail(signUpWithEmailRequestDto)
 
 
 
@@ -106,13 +106,13 @@ No authorization required
 import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getIamAuthApi();
-final SignUpWithEmailPasswordRequestDto signUpWithEmailPasswordRequestDto = ; // SignUpWithEmailPasswordRequestDto | 
+final SignUpWithEmailRequestDto signUpWithEmailRequestDto = ; // SignUpWithEmailRequestDto | 
 
 try {
-    final response = api.authControllerSignUpWithEmailPassword(signUpWithEmailPasswordRequestDto);
+    final response = api.authControllerSignUpWithEmail(signUpWithEmailRequestDto);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling IamAuthApi->authControllerSignUpWithEmailPassword: $e\n');
+    print('Exception when calling IamAuthApi->authControllerSignUpWithEmail: $e\n');
 }
 ```
 
@@ -120,7 +120,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **signUpWithEmailPasswordRequestDto** | [**SignUpWithEmailPasswordRequestDto**](SignUpWithEmailPasswordRequestDto.md)|  | 
+ **signUpWithEmailRequestDto** | [**SignUpWithEmailRequestDto**](SignUpWithEmailRequestDto.md)|  | 
 
 ### Return type
 
