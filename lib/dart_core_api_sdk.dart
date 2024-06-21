@@ -55,6 +55,7 @@ export 'package:dart_core_api_sdk/src/model/create_or_update_message_token_reque
 export 'package:dart_core_api_sdk/src/model/create_pluggy_connect_token_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/create_profile_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/create_workspace_request_dto.dart';
+export 'package:dart_core_api_sdk/src/model/credentials_entity.dart';
 export 'package:dart_core_api_sdk/src/model/credit_card_metadata_dto.dart';
 export 'package:dart_core_api_sdk/src/model/dre_line_outcome_result_entity.dart';
 export 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
@@ -78,6 +79,7 @@ export 'package:dart_core_api_sdk/src/model/plain_bank_account_entity.dart';
 export 'package:dart_core_api_sdk/src/model/pluggy_connect_token_entity.dart';
 export 'package:dart_core_api_sdk/src/model/profile_entity.dart';
 export 'package:dart_core_api_sdk/src/model/proportion_result_entity.dart';
+export 'package:dart_core_api_sdk/src/model/sign_in_with_email_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/sign_up_with_email_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/update_bank_transaction_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/user_entity.dart';

@@ -38,6 +38,7 @@ doc/CreateOrUpdateMessageTokenRequestDto.md
 doc/CreatePluggyConnectTokenRequestDto.md
 doc/CreateProfileRequestDto.md
 doc/CreateWorkspaceRequestDto.md
+doc/CredentialsEntity.md
 doc/CreditCardMetadataDto.md
 doc/DreLineOutcomeResultEntity.md
 doc/ExceptionResponseEntity.md
@@ -66,6 +67,7 @@ doc/ProfileEntity.md
 doc/ProfilesApi.md
 doc/ProportionResultEntity.md
 doc/ReportsApi.md
+doc/SignInWithEmailRequestDto.md
 doc/SignUpWithEmailRequestDto.md
 doc/UpdateBankTransactionRequestDto.md
 doc/UserEntity.md
@@ -134,6 +136,7 @@ lib/src/model/create_or_update_message_token_request_dto.dart
 lib/src/model/create_pluggy_connect_token_request_dto.dart
 lib/src/model/create_profile_request_dto.dart
 lib/src/model/create_workspace_request_dto.dart
+lib/src/model/credentials_entity.dart
 lib/src/model/credit_card_metadata_dto.dart
 lib/src/model/date.dart
 lib/src/model/dre_line_outcome_result_entity.dart
@@ -158,6 +161,7 @@ lib/src/model/plain_bank_account_entity.dart
 lib/src/model/pluggy_connect_token_entity.dart
 lib/src/model/profile_entity.dart
 lib/src/model/proportion_result_entity.dart
+lib/src/model/sign_in_with_email_request_dto.dart
 lib/src/model/sign_up_with_email_request_dto.dart
 lib/src/model/update_bank_transaction_request_dto.dart
 lib/src/model/user_entity.dart
@@ -171,4 +175,4 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_personal_settings_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/sign_up_with_email_request_dto_test.dart
+test/sign_in_with_email_request_dto_test.dart

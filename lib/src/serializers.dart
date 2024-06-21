@@ -46,6 +46,7 @@ import 'package:dart_core_api_sdk/src/model/create_or_update_message_token_reque
 import 'package:dart_core_api_sdk/src/model/create_pluggy_connect_token_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_profile_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_workspace_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/credentials_entity.dart';
 import 'package:dart_core_api_sdk/src/model/credit_card_metadata_dto.dart';
 import 'package:dart_core_api_sdk/src/model/dre_line_outcome_result_entity.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
@@ -69,6 +70,7 @@ import 'package:dart_core_api_sdk/src/model/plain_bank_account_entity.dart';
 import 'package:dart_core_api_sdk/src/model/pluggy_connect_token_entity.dart';
 import 'package:dart_core_api_sdk/src/model/profile_entity.dart';
 import 'package:dart_core_api_sdk/src/model/proportion_result_entity.dart';
+import 'package:dart_core_api_sdk/src/model/sign_in_with_email_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/sign_up_with_email_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/update_bank_transaction_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/user_entity.dart';
@@ -116,6 +118,7 @@ part 'serializers.g.dart';
   CreatePluggyConnectTokenRequestDto,
   CreateProfileRequestDto,
   CreateWorkspaceRequestDto,
+  CredentialsEntity,
   CreditCardMetadataDto,
   DreLineOutcomeResultEntity,
   ExceptionResponseEntity,
@@ -139,6 +142,7 @@ part 'serializers.g.dart';
   PluggyConnectTokenEntity,
   ProfileEntity,
   ProportionResultEntity,
+  SignInWithEmailRequestDto,
   SignUpWithEmailRequestDto,
   UpdateBankTransactionRequestDto,
   UserEntity,

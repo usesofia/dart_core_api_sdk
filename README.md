@@ -91,6 +91,7 @@ Class | Method | HTTP request | Description
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerUpdateTransaction**](doc/BankTransactionsApi.md#banktransactionscontrollerupdatetransaction) | **PATCH** /bank/transactions/{bankTransactionId} | 
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGenerateAndSendEmailVerificationCode**](doc/IamAuthApi.md#authcontrollergenerateandsendemailverificationcode) | **POST** /iam/auth/email-verification-code | 
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGenerateAndSendPhoneVerificationCode**](doc/IamAuthApi.md#authcontrollergenerateandsendphoneverificationcode) | **POST** /iam/auth/phone-verification-code | 
+[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerSignInWithEmail**](doc/IamAuthApi.md#authcontrollersigninwithemail) | **POST** /iam/auth/sign-in/email | 
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerSignUpWithEmail**](doc/IamAuthApi.md#authcontrollersignupwithemail) | **POST** /iam/auth/sign-up/email | 
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerVerifyEmailVerificationCode**](doc/IamAuthApi.md#authcontrollerverifyemailverificationcode) | **GET** /iam/auth/email-verification-code/verify | 
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerVerifyPhoneVerificationCode**](doc/IamAuthApi.md#authcontrollerverifyphoneverificationcode) | **GET** /iam/auth/phone-verification-code/verify | 
@@ -150,6 +151,7 @@ Class | Method | HTTP request | Description
  - [CreatePluggyConnectTokenRequestDto](doc/CreatePluggyConnectTokenRequestDto.md)
  - [CreateProfileRequestDto](doc/CreateProfileRequestDto.md)
  - [CreateWorkspaceRequestDto](doc/CreateWorkspaceRequestDto.md)
+ - [CredentialsEntity](doc/CredentialsEntity.md)
  - [CreditCardMetadataDto](doc/CreditCardMetadataDto.md)
  - [DreLineOutcomeResultEntity](doc/DreLineOutcomeResultEntity.md)
  - [ExceptionResponseEntity](doc/ExceptionResponseEntity.md)
@@ -173,6 +175,7 @@ Class | Method | HTTP request | Description
  - [PluggyConnectTokenEntity](doc/PluggyConnectTokenEntity.md)
  - [ProfileEntity](doc/ProfileEntity.md)
  - [ProportionResultEntity](doc/ProportionResultEntity.md)
+ - [SignInWithEmailRequestDto](doc/SignInWithEmailRequestDto.md)
  - [SignUpWithEmailRequestDto](doc/SignUpWithEmailRequestDto.md)
  - [UpdateBankTransactionRequestDto](doc/UpdateBankTransactionRequestDto.md)
  - [UserEntity](doc/UserEntity.md)
