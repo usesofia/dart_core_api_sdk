@@ -171,4 +171,3 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_personal_settings_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/verify_phone_verification_code_request_dto_test.dart
