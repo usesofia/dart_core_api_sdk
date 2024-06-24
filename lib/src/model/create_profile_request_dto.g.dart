@@ -10,21 +10,16 @@ class _$CreateProfileRequestDto extends CreateProfileRequestDto {
   @override
   final String fullName;
   @override
-  final String phone;
-  @override
   final DateTime birthDate;
 
   factory _$CreateProfileRequestDto(
           [void Function(CreateProfileRequestDtoBuilder)? updates]) =>
       (new CreateProfileRequestDtoBuilder()..update(updates))._build();
 
-  _$CreateProfileRequestDto._(
-      {required this.fullName, required this.phone, required this.birthDate})
+  _$CreateProfileRequestDto._({required this.fullName, required this.birthDate})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         fullName, r'CreateProfileRequestDto', 'fullName');
-    BuiltValueNullFieldError.checkNotNull(
-        phone, r'CreateProfileRequestDto', 'phone');
     BuiltValueNullFieldError.checkNotNull(
         birthDate, r'CreateProfileRequestDto', 'birthDate');
   }
@@ -43,7 +38,6 @@ class _$CreateProfileRequestDto extends CreateProfileRequestDto {
     if (identical(other, this)) return true;
     return other is CreateProfileRequestDto &&
         fullName == other.fullName &&
-        phone == other.phone &&
         birthDate == other.birthDate;
   }
 
@@ -51,7 +45,6 @@ class _$CreateProfileRequestDto extends CreateProfileRequestDto {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, fullName.hashCode);
-    _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, birthDate.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -61,7 +54,6 @@ class _$CreateProfileRequestDto extends CreateProfileRequestDto {
   String toString() {
     return (newBuiltValueToStringHelper(r'CreateProfileRequestDto')
           ..add('fullName', fullName)
-          ..add('phone', phone)
           ..add('birthDate', birthDate))
         .toString();
   }
@@ -76,10 +68,6 @@ class CreateProfileRequestDtoBuilder
   String? get fullName => _$this._fullName;
   set fullName(String? fullName) => _$this._fullName = fullName;
 
-  String? _phone;
-  String? get phone => _$this._phone;
-  set phone(String? phone) => _$this._phone = phone;
-
   DateTime? _birthDate;
   DateTime? get birthDate => _$this._birthDate;
   set birthDate(DateTime? birthDate) => _$this._birthDate = birthDate;
@@ -92,7 +80,6 @@ class CreateProfileRequestDtoBuilder
     final $v = _$v;
     if ($v != null) {
       _fullName = $v.fullName;
-      _phone = $v.phone;
       _birthDate = $v.birthDate;
       _$v = null;
     }
@@ -118,8 +105,6 @@ class CreateProfileRequestDtoBuilder
         new _$CreateProfileRequestDto._(
             fullName: BuiltValueNullFieldError.checkNotNull(
                 fullName, r'CreateProfileRequestDto', 'fullName'),
-            phone: BuiltValueNullFieldError.checkNotNull(
-                phone, r'CreateProfileRequestDto', 'phone'),
             birthDate: BuiltValueNullFieldError.checkNotNull(
                 birthDate, r'CreateProfileRequestDto', 'birthDate'));
     replace(_$result);

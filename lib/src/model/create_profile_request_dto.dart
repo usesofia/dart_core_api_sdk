@@ -12,15 +12,11 @@ part 'create_profile_request_dto.g.dart';
 ///
 /// Properties:
 /// * [fullName] 
-/// * [phone] 
 /// * [birthDate] 
 @BuiltValue()
 abstract class CreateProfileRequestDto implements Built<CreateProfileRequestDto, CreateProfileRequestDtoBuilder> {
   @BuiltValueField(wireName: r'fullName')
   String get fullName;
-
-  @BuiltValueField(wireName: r'phone')
-  String get phone;
 
   @BuiltValueField(wireName: r'birthDate')
   DateTime get birthDate;
@@ -51,11 +47,6 @@ class _$CreateProfileRequestDtoSerializer implements PrimitiveSerializer<CreateP
     yield r'fullName';
     yield serializers.serialize(
       object.fullName,
-      specifiedType: const FullType(String),
-    );
-    yield r'phone';
-    yield serializers.serialize(
-      object.phone,
       specifiedType: const FullType(String),
     );
     yield r'birthDate';
@@ -92,13 +83,6 @@ class _$CreateProfileRequestDtoSerializer implements PrimitiveSerializer<CreateP
             specifiedType: const FullType(String),
           ) as String;
           result.fullName = valueDes;
-          break;
-        case r'phone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.phone = valueDes;
           break;
         case r'birthDate':
           final valueDes = serializers.deserialize(

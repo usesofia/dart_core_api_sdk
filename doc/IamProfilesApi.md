@@ -9,8 +9,50 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**profilesControllerCreate**](IamProfilesApi.md#profilescontrollercreate) | **POST** /iam/profiles | 
 [**profilesControllerGetMy**](IamProfilesApi.md#profilescontrollergetmy) | **GET** /iam/profiles/me | 
 
+
+# **profilesControllerCreate**
+> ProfileEntity profilesControllerCreate(createProfileRequestDto)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getIamProfilesApi();
+final CreateProfileRequestDto createProfileRequestDto = ; // CreateProfileRequestDto | 
+
+try {
+    final response = api.profilesControllerCreate(createProfileRequestDto);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling IamProfilesApi->profilesControllerCreate: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createProfileRequestDto** | [**CreateProfileRequestDto**](CreateProfileRequestDto.md)|  | 
+
+### Return type
+
+[**ProfileEntity**](ProfileEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **profilesControllerGetMy**
 > ProfileEntity profilesControllerGetMy()

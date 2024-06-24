@@ -44,6 +44,7 @@ import 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_i
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_or_update_message_token_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_pluggy_connect_token_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/create_profile_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_workspace_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/credentials_entity.dart';
 import 'package:dart_core_api_sdk/src/model/credit_card_metadata_dto.dart';
@@ -118,6 +119,7 @@ part 'serializers.g.dart';
   CreateOrUpdateBankTransactionsInBulkRequestDto,
   CreateOrUpdateMessageTokenRequestDto,
   CreatePluggyConnectTokenRequestDto,
+  CreateProfileRequestDto,
   CreateWorkspaceRequestDto,
   CredentialsEntity,
   CreditCardMetadataDto,
