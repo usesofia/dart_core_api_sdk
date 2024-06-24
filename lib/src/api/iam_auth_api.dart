@@ -11,6 +11,7 @@ import 'package:dart_core_api_sdk/src/model/credentials_entity.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_core_api_sdk/src/model/generate_and_send_email_verification_code_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/generate_and_send_phone_verification_code_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/refresh_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/sign_in_with_email_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/sign_up_with_email_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/user_entity.dart';
@@ -157,6 +158,101 @@ class IamAuthApi {
     );
 
     return _response;
+  }
+
+  /// authControllerRefresh
+  /// 
+  ///
+  /// Parameters:
+  /// * [refreshRequestDto] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [CredentialsEntity] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<CredentialsEntity>> authControllerRefresh({ 
+    required RefreshRequestDto refreshRequestDto,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/iam/auth/refresh';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(RefreshRequestDto);
+      _bodyData = _serializers.serialize(refreshRequestDto, specifiedType: _type);
+
+    } catch(error, stackTrace) {
+      throw DioException(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    CredentialsEntity? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(CredentialsEntity),
+      ) as CredentialsEntity;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<CredentialsEntity>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// authControllerSignInWithEmail
