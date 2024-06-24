@@ -93,6 +93,7 @@ Class | Method | HTTP request | Description
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGenerateAndSendPhoneVerificationCode**](doc/IamAuthApi.md#authcontrollergenerateandsendphoneverificationcode) | **POST** /iam/auth/phone-verification-code | 
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGenerateEmailInUseReport**](doc/IamAuthApi.md#authcontrollergenerateemailinusereport) | **POST** /iam/auth/email-in-use | 
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGeneratePhoneInUseReport**](doc/IamAuthApi.md#authcontrollergeneratephoneinusereport) | **POST** /iam/auth/phone-in-use | 
+[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerMe**](doc/IamAuthApi.md#authcontrollerme) | **GET** /iam/auth/me | 
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerRefresh**](doc/IamAuthApi.md#authcontrollerrefresh) | **POST** /iam/auth/refresh | 
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerSignInWithEmail**](doc/IamAuthApi.md#authcontrollersigninwithemail) | **POST** /iam/auth/sign-in/email | 
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerSignUpWithEmail**](doc/IamAuthApi.md#authcontrollersignupwithemail) | **POST** /iam/auth/sign-up/email | 

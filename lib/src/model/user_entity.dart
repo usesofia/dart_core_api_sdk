@@ -15,6 +15,8 @@ part 'user_entity.g.dart';
 /// * [email] 
 /// * [phone] 
 /// * [passwordHash] 
+/// * [isRoot] 
+/// * [createdAt] 
 @BuiltValue()
 abstract class UserEntity implements Built<UserEntity, UserEntityBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -28,6 +30,12 @@ abstract class UserEntity implements Built<UserEntity, UserEntityBuilder> {
 
   @BuiltValueField(wireName: r'passwordHash')
   String get passwordHash;
+
+  @BuiltValueField(wireName: r'isRoot')
+  bool get isRoot;
+
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime get createdAt;
 
   UserEntity._();
 
@@ -71,6 +79,16 @@ class _$UserEntitySerializer implements PrimitiveSerializer<UserEntity> {
     yield serializers.serialize(
       object.passwordHash,
       specifiedType: const FullType(String),
+    );
+    yield r'isRoot';
+    yield serializers.serialize(
+      object.isRoot,
+      specifiedType: const FullType(bool),
+    );
+    yield r'createdAt';
+    yield serializers.serialize(
+      object.createdAt,
+      specifiedType: const FullType(DateTime),
     );
   }
 
@@ -122,6 +140,20 @@ class _$UserEntitySerializer implements PrimitiveSerializer<UserEntity> {
             specifiedType: const FullType(String),
           ) as String;
           result.passwordHash = valueDes;
+          break;
+        case r'isRoot':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isRoot = valueDes;
+          break;
+        case r'createdAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
           break;
         default:
           unhandled.add(key);

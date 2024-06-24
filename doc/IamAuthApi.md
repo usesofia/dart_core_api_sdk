@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**authControllerGenerateAndSendPhoneVerificationCode**](IamAuthApi.md#authcontrollergenerateandsendphoneverificationcode) | **POST** /iam/auth/phone-verification-code | 
 [**authControllerGenerateEmailInUseReport**](IamAuthApi.md#authcontrollergenerateemailinusereport) | **POST** /iam/auth/email-in-use | 
 [**authControllerGeneratePhoneInUseReport**](IamAuthApi.md#authcontrollergeneratephoneinusereport) | **POST** /iam/auth/phone-in-use | 
+[**authControllerMe**](IamAuthApi.md#authcontrollerme) | **GET** /iam/auth/me | 
 [**authControllerRefresh**](IamAuthApi.md#authcontrollerrefresh) | **POST** /iam/auth/refresh | 
 [**authControllerSignInWithEmail**](IamAuthApi.md#authcontrollersigninwithemail) | **POST** /iam/auth/sign-in/email | 
 [**authControllerSignUpWithEmail**](IamAuthApi.md#authcontrollersignupwithemail) | **POST** /iam/auth/sign-up/email | 
@@ -178,6 +179,43 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authControllerMe**
+> UserEntity authControllerMe()
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getIamAuthApi();
+
+try {
+    final response = api.authControllerMe();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling IamAuthApi->authControllerMe: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UserEntity**](UserEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
