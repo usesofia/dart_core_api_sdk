@@ -63,6 +63,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(
           GenerateAndSendPhoneVerificationCodeRequestDtoPurposeEnum.serializer)
       ..add(GenerateEmailInUseReportRequestDto.serializer)
+      ..add(GeneratePhoneInUseReportRequestDto.serializer)
       ..add(MeanResultEntity.serializer)
       ..add(MeanResultSubcategoryItemEntity.serializer)
       ..add(MessageTokenEntity.serializer)

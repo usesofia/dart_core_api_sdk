@@ -62,6 +62,7 @@ import 'package:dart_core_api_sdk/src/model/financial_statemente_entries_subcate
 import 'package:dart_core_api_sdk/src/model/generate_and_send_email_verification_code_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/generate_and_send_phone_verification_code_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/generate_email_in_use_report_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/generate_phone_in_use_report_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/mean_result_entity.dart';
 import 'package:dart_core_api_sdk/src/model/mean_result_subcategory_item_entity.dart';
 import 'package:dart_core_api_sdk/src/model/message_token_entity.dart';
@@ -137,6 +138,7 @@ part 'serializers.g.dart';
   GenerateAndSendEmailVerificationCodeRequestDto,
   GenerateAndSendPhoneVerificationCodeRequestDto,
   GenerateEmailInUseReportRequestDto,
+  GeneratePhoneInUseReportRequestDto,
   MeanResultEntity,
   MeanResultSubcategoryItemEntity,
   MessageTokenEntity,

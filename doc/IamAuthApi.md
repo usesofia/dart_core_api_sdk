@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**authControllerGenerateAndSendEmailVerificationCode**](IamAuthApi.md#authcontrollergenerateandsendemailverificationcode) | **POST** /iam/auth/email-verification-code | 
 [**authControllerGenerateAndSendPhoneVerificationCode**](IamAuthApi.md#authcontrollergenerateandsendphoneverificationcode) | **POST** /iam/auth/phone-verification-code | 
 [**authControllerGenerateEmailInUseReport**](IamAuthApi.md#authcontrollergenerateemailinusereport) | **POST** /iam/auth/email-in-use | 
+[**authControllerGeneratePhoneInUseReport**](IamAuthApi.md#authcontrollergeneratephoneinusereport) | **POST** /iam/auth/phone-in-use | 
 [**authControllerRefresh**](IamAuthApi.md#authcontrollerrefresh) | **POST** /iam/auth/refresh | 
 [**authControllerSignInWithEmail**](IamAuthApi.md#authcontrollersigninwithemail) | **POST** /iam/auth/sign-in/email | 
 [**authControllerSignUpWithEmail**](IamAuthApi.md#authcontrollersignupwithemail) | **POST** /iam/auth/sign-up/email | 
@@ -124,6 +125,47 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **generateEmailInUseReportRequestDto** | [**GenerateEmailInUseReportRequestDto**](GenerateEmailInUseReportRequestDto.md)|  | 
+
+### Return type
+
+[**EmailInUseReportEntity**](EmailInUseReportEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authControllerGeneratePhoneInUseReport**
+> EmailInUseReportEntity authControllerGeneratePhoneInUseReport(generatePhoneInUseReportRequestDto)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getIamAuthApi();
+final GeneratePhoneInUseReportRequestDto generatePhoneInUseReportRequestDto = ; // GeneratePhoneInUseReportRequestDto | 
+
+try {
+    final response = api.authControllerGeneratePhoneInUseReport(generatePhoneInUseReportRequestDto);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling IamAuthApi->authControllerGeneratePhoneInUseReport: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **generatePhoneInUseReportRequestDto** | [**GeneratePhoneInUseReportRequestDto**](GeneratePhoneInUseReportRequestDto.md)|  | 
 
 ### Return type
 

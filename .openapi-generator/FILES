@@ -54,6 +54,7 @@ doc/FinancialStatementeEntriesSubcategoryData.md
 doc/GenerateAndSendEmailVerificationCodeRequestDto.md
 doc/GenerateAndSendPhoneVerificationCodeRequestDto.md
 doc/GenerateEmailInUseReportRequestDto.md
+doc/GeneratePhoneInUseReportRequestDto.md
 doc/IamAuthApi.md
 doc/MeanResultEntity.md
 doc/MeanResultSubcategoryItemEntity.md
@@ -156,6 +157,7 @@ lib/src/model/financial_statemente_entries_subcategory_data.dart
 lib/src/model/generate_and_send_email_verification_code_request_dto.dart
 lib/src/model/generate_and_send_phone_verification_code_request_dto.dart
 lib/src/model/generate_email_in_use_report_request_dto.dart
+lib/src/model/generate_phone_in_use_report_request_dto.dart
 lib/src/model/mean_result_entity.dart
 lib/src/model/mean_result_subcategory_item_entity.dart
 lib/src/model/message_token_entity.dart
@@ -181,5 +183,4 @@ lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_personal_settings_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/email_in_use_report_entity_test.dart
-test/generate_email_in_use_report_request_dto_test.dart
+test/generate_phone_in_use_report_request_dto_test.dart
