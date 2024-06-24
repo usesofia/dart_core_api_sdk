@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -13,9 +12,9 @@ part 'profile_entity.g.dart';
 ///
 /// Properties:
 /// * [id] 
+/// * [userId] 
 /// * [fullName] 
 /// * [birthDate] 
-/// * [userId] 
 /// * [createdAt] 
 /// * [updatedAt] 
 @BuiltValue()
@@ -23,20 +22,20 @@ abstract class ProfileEntity implements Built<ProfileEntity, ProfileEntityBuilde
   @BuiltValueField(wireName: r'id')
   String get id;
 
+  @BuiltValueField(wireName: r'userId')
+  String get userId;
+
   @BuiltValueField(wireName: r'fullName')
   String get fullName;
 
   @BuiltValueField(wireName: r'birthDate')
-  JsonObject? get birthDate;
-
-  @BuiltValueField(wireName: r'userId')
-  String get userId;
+  DateTime get birthDate;
 
   @BuiltValueField(wireName: r'createdAt')
-  JsonObject? get createdAt;
+  DateTime get createdAt;
 
   @BuiltValueField(wireName: r'updatedAt')
-  JsonObject? get updatedAt;
+  DateTime get updatedAt;
 
   ProfileEntity._();
 
@@ -66,30 +65,30 @@ class _$ProfileEntitySerializer implements PrimitiveSerializer<ProfileEntity> {
       object.id,
       specifiedType: const FullType(String),
     );
+    yield r'userId';
+    yield serializers.serialize(
+      object.userId,
+      specifiedType: const FullType(String),
+    );
     yield r'fullName';
     yield serializers.serialize(
       object.fullName,
       specifiedType: const FullType(String),
     );
     yield r'birthDate';
-    yield object.birthDate == null ? null : serializers.serialize(
-      object.birthDate,
-      specifiedType: const FullType.nullable(JsonObject),
-    );
-    yield r'userId';
     yield serializers.serialize(
-      object.userId,
-      specifiedType: const FullType(String),
+      object.birthDate,
+      specifiedType: const FullType(DateTime),
     );
     yield r'createdAt';
-    yield object.createdAt == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.createdAt,
-      specifiedType: const FullType.nullable(JsonObject),
+      specifiedType: const FullType(DateTime),
     );
     yield r'updatedAt';
-    yield object.updatedAt == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.updatedAt,
-      specifiedType: const FullType.nullable(JsonObject),
+      specifiedType: const FullType(DateTime),
     );
   }
 
@@ -121,6 +120,13 @@ class _$ProfileEntitySerializer implements PrimitiveSerializer<ProfileEntity> {
           ) as String;
           result.id = valueDes;
           break;
+        case r'userId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.userId = valueDes;
+          break;
         case r'fullName':
           final valueDes = serializers.deserialize(
             value,
@@ -131,32 +137,22 @@ class _$ProfileEntitySerializer implements PrimitiveSerializer<ProfileEntity> {
         case r'birthDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.birthDate = valueDes;
-          break;
-        case r'userId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.userId = valueDes;
           break;
         case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.updatedAt = valueDes;
           break;
         default:

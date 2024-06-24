@@ -44,7 +44,6 @@ import 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_i
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_or_update_message_token_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_pluggy_connect_token_request_dto.dart';
-import 'package:dart_core_api_sdk/src/model/create_profile_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_workspace_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/credentials_entity.dart';
 import 'package:dart_core_api_sdk/src/model/credit_card_metadata_dto.dart';
@@ -66,7 +65,6 @@ import 'package:dart_core_api_sdk/src/model/generate_phone_in_use_report_request
 import 'package:dart_core_api_sdk/src/model/mean_result_entity.dart';
 import 'package:dart_core_api_sdk/src/model/mean_result_subcategory_item_entity.dart';
 import 'package:dart_core_api_sdk/src/model/message_token_entity.dart';
-import 'package:dart_core_api_sdk/src/model/parcial_update_profile_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/parcial_update_workspace_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/payment_data_dto.dart';
 import 'package:dart_core_api_sdk/src/model/plain_bank_account_entity.dart';
@@ -120,7 +118,6 @@ part 'serializers.g.dart';
   CreateOrUpdateBankTransactionsInBulkRequestDto,
   CreateOrUpdateMessageTokenRequestDto,
   CreatePluggyConnectTokenRequestDto,
-  CreateProfileRequestDto,
   CreateWorkspaceRequestDto,
   CredentialsEntity,
   CreditCardMetadataDto,
@@ -142,7 +139,6 @@ part 'serializers.g.dart';
   MeanResultEntity,
   MeanResultSubcategoryItemEntity,
   MessageTokenEntity,
-  ParcialUpdateProfileRequestDto,
   ParcialUpdateWorkspaceRequestDto,
   PaymentDataDto,
   PlainBankAccountEntity,

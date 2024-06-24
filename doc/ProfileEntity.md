@@ -9,11 +9,11 @@ import 'package:dart_core_api_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
-**fullName** | **String** |  | 
-**birthDate** | [**JsonObject**](.md) |  | 
 **userId** | **String** |  | 
-**createdAt** | [**JsonObject**](.md) |  | 
-**updatedAt** | [**JsonObject**](.md) |  | 
+**fullName** | **String** |  | 
+**birthDate** | [**DateTime**](DateTime.md) |  | 
+**createdAt** | [**DateTime**](DateTime.md) |  | 
+**updatedAt** | [**DateTime**](DateTime.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

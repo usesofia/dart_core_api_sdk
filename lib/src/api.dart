@@ -15,9 +15,9 @@ import 'package:dart_core_api_sdk/src/api/bank_transaction_categories_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transaction_tags_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transactions_api.dart';
 import 'package:dart_core_api_sdk/src/api/iam_auth_api.dart';
+import 'package:dart_core_api_sdk/src/api/iam_profiles_api.dart';
 import 'package:dart_core_api_sdk/src/api/message_tokens_api.dart';
 import 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
-import 'package:dart_core_api_sdk/src/api/profiles_api.dart';
 import 'package:dart_core_api_sdk/src/api/reports_api.dart';
 import 'package:dart_core_api_sdk/src/api/users_api.dart';
 import 'package:dart_core_api_sdk/src/api/workspace_join_requests_api.dart';
@@ -113,6 +113,12 @@ class DartCoreApiSdk {
     return IamAuthApi(dio, serializers);
   }
 
+  /// Get IamProfilesApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  IamProfilesApi getIamProfilesApi() {
+    return IamProfilesApi(dio, serializers);
+  }
+
   /// Get MessageTokensApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   MessageTokensApi getMessageTokensApi() {
@@ -123,12 +129,6 @@ class DartCoreApiSdk {
   /// by doing that all interceptors will not be executed
   PluggyApi getPluggyApi() {
     return PluggyApi(dio, serializers);
-  }
-
-  /// Get ProfilesApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  ProfilesApi getProfilesApi() {
-    return ProfilesApi(dio, serializers);
   }
 
   /// Get ReportsApi instance, base route and serializer can be overridden by a given but be careful,

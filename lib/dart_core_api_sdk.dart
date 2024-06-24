@@ -15,9 +15,9 @@ export 'package:dart_core_api_sdk/src/api/bank_transaction_categories_api.dart';
 export 'package:dart_core_api_sdk/src/api/bank_transaction_tags_api.dart';
 export 'package:dart_core_api_sdk/src/api/bank_transactions_api.dart';
 export 'package:dart_core_api_sdk/src/api/iam_auth_api.dart';
+export 'package:dart_core_api_sdk/src/api/iam_profiles_api.dart';
 export 'package:dart_core_api_sdk/src/api/message_tokens_api.dart';
 export 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
-export 'package:dart_core_api_sdk/src/api/profiles_api.dart';
 export 'package:dart_core_api_sdk/src/api/reports_api.dart';
 export 'package:dart_core_api_sdk/src/api/users_api.dart';
 export 'package:dart_core_api_sdk/src/api/workspace_join_requests_api.dart';
@@ -53,7 +53,6 @@ export 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_i
 export 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/create_or_update_message_token_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/create_pluggy_connect_token_request_dto.dart';
-export 'package:dart_core_api_sdk/src/model/create_profile_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/create_workspace_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/credentials_entity.dart';
 export 'package:dart_core_api_sdk/src/model/credit_card_metadata_dto.dart';
@@ -75,7 +74,6 @@ export 'package:dart_core_api_sdk/src/model/generate_phone_in_use_report_request
 export 'package:dart_core_api_sdk/src/model/mean_result_entity.dart';
 export 'package:dart_core_api_sdk/src/model/mean_result_subcategory_item_entity.dart';
 export 'package:dart_core_api_sdk/src/model/message_token_entity.dart';
-export 'package:dart_core_api_sdk/src/model/parcial_update_profile_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/parcial_update_workspace_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/payment_data_dto.dart';
 export 'package:dart_core_api_sdk/src/model/plain_bank_account_entity.dart';
