@@ -89,6 +89,7 @@ Class | Method | HTTP request | Description
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetRecent**](doc/BankTransactionsApi.md#banktransactionscontrollergetrecent) | **GET** /workspaces/{workspaceId}/bank/transactions/most-recent | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetTransactionDetails**](doc/BankTransactionsApi.md#banktransactionscontrollergettransactiondetails) | **GET** /bank/transactions/{bankTransactionId} | 
 [*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerUpdateTransaction**](doc/BankTransactionsApi.md#banktransactionscontrollerupdatetransaction) | **PATCH** /bank/transactions/{bankTransactionId} | 
+[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerCheckEmailInUse**](doc/IamAuthApi.md#authcontrollercheckemailinuse) | **POST** /iam/auth/check-email-in-use | 
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGenerateAndSendEmailVerificationCode**](doc/IamAuthApi.md#authcontrollergenerateandsendemailverificationcode) | **POST** /iam/auth/email-verification-code | 
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGenerateAndSendPhoneVerificationCode**](doc/IamAuthApi.md#authcontrollergenerateandsendphoneverificationcode) | **POST** /iam/auth/phone-verification-code | 
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerRefresh**](doc/IamAuthApi.md#authcontrollerrefresh) | **POST** /iam/auth/refresh | 
@@ -143,6 +144,7 @@ Class | Method | HTTP request | Description
  - [CashFlowReportMonthlyItemEntity](doc/CashFlowReportMonthlyItemEntity.md)
  - [CashFlowReportWeeklyItemEntity](doc/CashFlowReportWeeklyItemEntity.md)
  - [CategoryGuessDto](doc/CategoryGuessDto.md)
+ - [CheckEmailInUseRequestDto](doc/CheckEmailInUseRequestDto.md)
  - [CreateBankTransactionTagRequestDto](doc/CreateBankTransactionTagRequestDto.md)
  - [CreateOrUpdateBankAccountRequestDto](doc/CreateOrUpdateBankAccountRequestDto.md)
  - [CreateOrUpdateBankConnectionRequestDto](doc/CreateOrUpdateBankConnectionRequestDto.md)
@@ -155,6 +157,7 @@ Class | Method | HTTP request | Description
  - [CredentialsEntity](doc/CredentialsEntity.md)
  - [CreditCardMetadataDto](doc/CreditCardMetadataDto.md)
  - [DreLineOutcomeResultEntity](doc/DreLineOutcomeResultEntity.md)
+ - [EmailInUseEntity](doc/EmailInUseEntity.md)
  - [ExceptionResponseEntity](doc/ExceptionResponseEntity.md)
  - [ExceptionResponseEntityErrorsInner](doc/ExceptionResponseEntityErrorsInner.md)
  - [FinancialStatementOutcomeReportDataEntity](doc/FinancialStatementOutcomeReportDataEntity.md)

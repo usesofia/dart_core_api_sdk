@@ -37,6 +37,7 @@ import 'package:dart_core_api_sdk/src/model/cash_flow_report_entity.dart';
 import 'package:dart_core_api_sdk/src/model/cash_flow_report_monthly_item_entity.dart';
 import 'package:dart_core_api_sdk/src/model/cash_flow_report_weekly_item_entity.dart';
 import 'package:dart_core_api_sdk/src/model/category_guess_dto.dart';
+import 'package:dart_core_api_sdk/src/model/check_email_in_use_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_bank_transaction_tag_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_account_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_connection_request_dto.dart';
@@ -49,6 +50,7 @@ import 'package:dart_core_api_sdk/src/model/create_workspace_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/credentials_entity.dart';
 import 'package:dart_core_api_sdk/src/model/credit_card_metadata_dto.dart';
 import 'package:dart_core_api_sdk/src/model/dre_line_outcome_result_entity.dart';
+import 'package:dart_core_api_sdk/src/model/email_in_use_entity.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity_errors_inner.dart';
 import 'package:dart_core_api_sdk/src/model/financial_statement_outcome_report_data_entity.dart';
@@ -110,6 +112,7 @@ part 'serializers.g.dart';
   CashFlowReportMonthlyItemEntity,
   CashFlowReportWeeklyItemEntity,
   CategoryGuessDto,
+  CheckEmailInUseRequestDto,
   CreateBankTransactionTagRequestDto,
   CreateOrUpdateBankAccountRequestDto,
   CreateOrUpdateBankConnectionRequestDto,
@@ -122,6 +125,7 @@ part 'serializers.g.dart';
   CredentialsEntity,
   CreditCardMetadataDto,
   DreLineOutcomeResultEntity,
+  EmailInUseEntity,
   ExceptionResponseEntity,
   ExceptionResponseEntityErrorsInner,
   FinancialStatementOutcomeReportDataEntity,

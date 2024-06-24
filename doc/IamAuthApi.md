@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**authControllerCheckEmailInUse**](IamAuthApi.md#authcontrollercheckemailinuse) | **POST** /iam/auth/check-email-in-use | 
 [**authControllerGenerateAndSendEmailVerificationCode**](IamAuthApi.md#authcontrollergenerateandsendemailverificationcode) | **POST** /iam/auth/email-verification-code | 
 [**authControllerGenerateAndSendPhoneVerificationCode**](IamAuthApi.md#authcontrollergenerateandsendphoneverificationcode) | **POST** /iam/auth/phone-verification-code | 
 [**authControllerRefresh**](IamAuthApi.md#authcontrollerrefresh) | **POST** /iam/auth/refresh | 
@@ -17,6 +18,47 @@ Method | HTTP request | Description
 [**authControllerVerifyEmailVerificationCode**](IamAuthApi.md#authcontrollerverifyemailverificationcode) | **GET** /iam/auth/email-verification-code/verify | 
 [**authControllerVerifyPhoneVerificationCode**](IamAuthApi.md#authcontrollerverifyphoneverificationcode) | **GET** /iam/auth/phone-verification-code/verify | 
 
+
+# **authControllerCheckEmailInUse**
+> EmailInUseEntity authControllerCheckEmailInUse(checkEmailInUseRequestDto)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getIamAuthApi();
+final CheckEmailInUseRequestDto checkEmailInUseRequestDto = ; // CheckEmailInUseRequestDto | 
+
+try {
+    final response = api.authControllerCheckEmailInUse(checkEmailInUseRequestDto);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling IamAuthApi->authControllerCheckEmailInUse: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **checkEmailInUseRequestDto** | [**CheckEmailInUseRequestDto**](CheckEmailInUseRequestDto.md)|  | 
+
+### Return type
+
+[**EmailInUseEntity**](EmailInUseEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **authControllerGenerateAndSendEmailVerificationCode**
 > authControllerGenerateAndSendEmailVerificationCode(generateAndSendEmailVerificationCodeRequestDto)
