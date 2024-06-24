@@ -101,6 +101,7 @@ Class | Method | HTTP request | Description
 [*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerVerifyPhoneVerificationCode**](doc/IamAuthApi.md#authcontrollerverifyphoneverificationcode) | **GET** /iam/auth/phone-verification-code/verify | 
 [*IamProfilesApi*](doc/IamProfilesApi.md) | [**profilesControllerCreate**](doc/IamProfilesApi.md#profilescontrollercreate) | **POST** /iam/profiles | 
 [*IamProfilesApi*](doc/IamProfilesApi.md) | [**profilesControllerGetMy**](doc/IamProfilesApi.md#profilescontrollergetmy) | **GET** /iam/profiles/me | 
+[*IamProfilesApi*](doc/IamProfilesApi.md) | [**profilesControllerPartialUpdate**](doc/IamProfilesApi.md#profilescontrollerpartialupdate) | **PATCH** /iam/profiles/me | 
 [*MessageTokensApi*](doc/MessageTokensApi.md) | [**messageTokensControllerCreateOrUpdateMessageToken**](doc/MessageTokensApi.md#messagetokenscontrollercreateorupdatemessagetoken) | **PUT** /workspaces/{workspaceId}/message-tokens | 
 [*MessageTokensApi*](doc/MessageTokensApi.md) | [**messageTokensControllerGetWorkspaceMessageTokens**](doc/MessageTokensApi.md#messagetokenscontrollergetworkspacemessagetokens) | **GET** /workspaces/{workspaceId}/message-tokens | 
 [*PluggyApi*](doc/PluggyApi.md) | [**pluggyControllerCreate**](doc/PluggyApi.md#pluggycontrollercreate) | **POST** /pluggy/connect-token | 
@@ -175,6 +176,7 @@ Class | Method | HTTP request | Description
  - [MeanResultSubcategoryItemEntity](doc/MeanResultSubcategoryItemEntity.md)
  - [MessageTokenEntity](doc/MessageTokenEntity.md)
  - [ParcialUpdateWorkspaceRequestDto](doc/ParcialUpdateWorkspaceRequestDto.md)
+ - [PartialUpdateProfileRequestDto](doc/PartialUpdateProfileRequestDto.md)
  - [PaymentDataDto](doc/PaymentDataDto.md)
  - [PlainBankAccountEntity](doc/PlainBankAccountEntity.md)
  - [PluggyConnectTokenEntity](doc/PluggyConnectTokenEntity.md)

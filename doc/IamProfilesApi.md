@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**profilesControllerCreate**](IamProfilesApi.md#profilescontrollercreate) | **POST** /iam/profiles | 
 [**profilesControllerGetMy**](IamProfilesApi.md#profilescontrollergetmy) | **GET** /iam/profiles/me | 
+[**profilesControllerPartialUpdate**](IamProfilesApi.md#profilescontrollerpartialupdate) | **PATCH** /iam/profiles/me | 
 
 
 # **profilesControllerCreate**
@@ -87,6 +88,47 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **profilesControllerPartialUpdate**
+> ProfileEntity profilesControllerPartialUpdate(partialUpdateProfileRequestDto)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getIamProfilesApi();
+final PartialUpdateProfileRequestDto partialUpdateProfileRequestDto = ; // PartialUpdateProfileRequestDto | 
+
+try {
+    final response = api.profilesControllerPartialUpdate(partialUpdateProfileRequestDto);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling IamProfilesApi->profilesControllerPartialUpdate: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **partialUpdateProfileRequestDto** | [**PartialUpdateProfileRequestDto**](PartialUpdateProfileRequestDto.md)|  | 
+
+### Return type
+
+[**ProfileEntity**](ProfileEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

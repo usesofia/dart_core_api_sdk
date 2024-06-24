@@ -76,6 +76,7 @@ export 'package:dart_core_api_sdk/src/model/mean_result_entity.dart';
 export 'package:dart_core_api_sdk/src/model/mean_result_subcategory_item_entity.dart';
 export 'package:dart_core_api_sdk/src/model/message_token_entity.dart';
 export 'package:dart_core_api_sdk/src/model/parcial_update_workspace_request_dto.dart';
+export 'package:dart_core_api_sdk/src/model/partial_update_profile_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/payment_data_dto.dart';
 export 'package:dart_core_api_sdk/src/model/plain_bank_account_entity.dart';
 export 'package:dart_core_api_sdk/src/model/pluggy_connect_token_entity.dart';
