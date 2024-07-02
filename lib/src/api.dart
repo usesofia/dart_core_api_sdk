@@ -19,7 +19,6 @@ import 'package:dart_core_api_sdk/src/api/iam_profiles_api.dart';
 import 'package:dart_core_api_sdk/src/api/message_tokens_api.dart';
 import 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
 import 'package:dart_core_api_sdk/src/api/reports_api.dart';
-import 'package:dart_core_api_sdk/src/api/users_api.dart';
 import 'package:dart_core_api_sdk/src/api/workspace_join_requests_api.dart';
 import 'package:dart_core_api_sdk/src/api/workspaces_api.dart';
 
@@ -135,12 +134,6 @@ class DartCoreApiSdk {
   /// by doing that all interceptors will not be executed
   ReportsApi getReportsApi() {
     return ReportsApi(dio, serializers);
-  }
-
-  /// Get UsersApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  UsersApi getUsersApi() {
-    return UsersApi(dio, serializers);
   }
 
   /// Get WorkspaceJoinRequestsApi instance, base route and serializer can be overridden by a given but be careful,

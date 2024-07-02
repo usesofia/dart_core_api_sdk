@@ -76,7 +76,6 @@ doc/SignUpWithEmailRequestDto.md
 doc/UpdateBankTransactionRequestDto.md
 doc/UserEntity.md
 doc/UserRelatedWorkspaceEntity.md
-doc/UsersApi.md
 doc/VerifyEmailVerificationCodeRequestDto.md
 doc/VerifyPhoneVerificationCodeRequestDto.md
 doc/WorkspaceCompanySettingsEntity.md
@@ -98,7 +97,6 @@ lib/src/api/iam_profiles_api.dart
 lib/src/api/message_tokens_api.dart
 lib/src/api/pluggy_api.dart
 lib/src/api/reports_api.dart
-lib/src/api/users_api.dart
 lib/src/api/workspace_join_requests_api.dart
 lib/src/api/workspaces_api.dart
 lib/src/api_util.dart

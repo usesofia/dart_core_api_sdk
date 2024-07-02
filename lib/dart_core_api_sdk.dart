@@ -19,7 +19,6 @@ export 'package:dart_core_api_sdk/src/api/iam_profiles_api.dart';
 export 'package:dart_core_api_sdk/src/api/message_tokens_api.dart';
 export 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
 export 'package:dart_core_api_sdk/src/api/reports_api.dart';
-export 'package:dart_core_api_sdk/src/api/users_api.dart';
 export 'package:dart_core_api_sdk/src/api/workspace_join_requests_api.dart';
 export 'package:dart_core_api_sdk/src/api/workspaces_api.dart';
 
