@@ -81,8 +81,6 @@ doc/VerifyPhoneVerificationCodeRequestDto.md
 doc/WorkspaceCompanySettingsEntity.md
 doc/WorkspaceEntity.md
 doc/WorkspaceHybridSettingsEntity.md
-doc/WorkspaceJoinRequestEntity.md
-doc/WorkspaceJoinRequestsApi.md
 doc/WorkspacePersonalSettingsEntity.md
 doc/WorkspacesApi.md
 lib/dart_core_api_sdk.dart
@@ -97,7 +95,6 @@ lib/src/api/iam_profiles_api.dart
 lib/src/api/message_tokens_api.dart
 lib/src/api/pluggy_api.dart
 lib/src/api/reports_api.dart
-lib/src/api/workspace_join_requests_api.dart
 lib/src/api/workspaces_api.dart
 lib/src/api_util.dart
 lib/src/auth/api_key_auth.dart
@@ -177,7 +174,6 @@ lib/src/model/verify_phone_verification_code_request_dto.dart
 lib/src/model/workspace_company_settings_entity.dart
 lib/src/model/workspace_entity.dart
 lib/src/model/workspace_hybrid_settings_entity.dart
-lib/src/model/workspace_join_request_entity.dart
 lib/src/model/workspace_personal_settings_entity.dart
 lib/src/serializers.dart
 pubspec.yaml

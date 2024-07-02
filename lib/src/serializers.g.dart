@@ -89,7 +89,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(WorkspaceCompanySettingsEntity.serializer)
       ..add(WorkspaceEntity.serializer)
       ..add(WorkspaceHybridSettingsEntity.serializer)
-      ..add(WorkspaceJoinRequestEntity.serializer)
       ..add(WorkspacePersonalSettingsEntity.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList,

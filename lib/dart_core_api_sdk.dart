@@ -19,7 +19,6 @@ export 'package:dart_core_api_sdk/src/api/iam_profiles_api.dart';
 export 'package:dart_core_api_sdk/src/api/message_tokens_api.dart';
 export 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
 export 'package:dart_core_api_sdk/src/api/reports_api.dart';
-export 'package:dart_core_api_sdk/src/api/workspace_join_requests_api.dart';
 export 'package:dart_core_api_sdk/src/api/workspaces_api.dart';
 
 export 'package:dart_core_api_sdk/src/model/balance_point_result_entity.dart';
@@ -92,5 +91,4 @@ export 'package:dart_core_api_sdk/src/model/verify_phone_verification_code_reque
 export 'package:dart_core_api_sdk/src/model/workspace_company_settings_entity.dart';
 export 'package:dart_core_api_sdk/src/model/workspace_entity.dart';
 export 'package:dart_core_api_sdk/src/model/workspace_hybrid_settings_entity.dart';
-export 'package:dart_core_api_sdk/src/model/workspace_join_request_entity.dart';
 export 'package:dart_core_api_sdk/src/model/workspace_personal_settings_entity.dart';
