@@ -29,7 +29,7 @@ abstract class ProfileEntity implements Built<ProfileEntity, ProfileEntityBuilde
   String get fullName;
 
   @BuiltValueField(wireName: r'birthDate')
-  DateTime get birthDate;
+  String get birthDate;
 
   @BuiltValueField(wireName: r'createdAt')
   DateTime get createdAt;
@@ -78,7 +78,7 @@ class _$ProfileEntitySerializer implements PrimitiveSerializer<ProfileEntity> {
     yield r'birthDate';
     yield serializers.serialize(
       object.birthDate,
-      specifiedType: const FullType(DateTime),
+      specifiedType: const FullType(String),
     );
     yield r'createdAt';
     yield serializers.serialize(
@@ -137,8 +137,8 @@ class _$ProfileEntitySerializer implements PrimitiveSerializer<ProfileEntity> {
         case r'birthDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType(String),
+          ) as String;
           result.birthDate = valueDes;
           break;
         case r'createdAt':

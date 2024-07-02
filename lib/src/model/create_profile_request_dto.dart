@@ -19,7 +19,7 @@ abstract class CreateProfileRequestDto implements Built<CreateProfileRequestDto,
   String get fullName;
 
   @BuiltValueField(wireName: r'birthDate')
-  DateTime get birthDate;
+  String get birthDate;
 
   CreateProfileRequestDto._();
 
@@ -52,7 +52,7 @@ class _$CreateProfileRequestDtoSerializer implements PrimitiveSerializer<CreateP
     yield r'birthDate';
     yield serializers.serialize(
       object.birthDate,
-      specifiedType: const FullType(DateTime),
+      specifiedType: const FullType(String),
     );
   }
 
@@ -87,8 +87,8 @@ class _$CreateProfileRequestDtoSerializer implements PrimitiveSerializer<CreateP
         case r'birthDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType(String),
+          ) as String;
           result.birthDate = valueDes;
           break;
         default:

@@ -9,7 +9,7 @@ import 'package:dart_core_api_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fullName** | **String** |  | [optional] 
-**birthDate** | [**DateTime**](DateTime.md) |  | [optional] 
+**birthDate** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

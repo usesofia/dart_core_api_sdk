@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | 
 **userId** | **String** |  | 
 **fullName** | **String** |  | 
-**birthDate** | [**DateTime**](DateTime.md) |  | 
+**birthDate** | **String** |  | 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 

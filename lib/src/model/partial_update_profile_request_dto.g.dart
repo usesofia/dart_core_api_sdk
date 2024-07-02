@@ -10,7 +10,7 @@ class _$PartialUpdateProfileRequestDto extends PartialUpdateProfileRequestDto {
   @override
   final String? fullName;
   @override
-  final DateTime? birthDate;
+  final String? birthDate;
 
   factory _$PartialUpdateProfileRequestDto(
           [void Function(PartialUpdateProfileRequestDtoBuilder)? updates]) =>
@@ -64,9 +64,9 @@ class PartialUpdateProfileRequestDtoBuilder
   String? get fullName => _$this._fullName;
   set fullName(String? fullName) => _$this._fullName = fullName;
 
-  DateTime? _birthDate;
-  DateTime? get birthDate => _$this._birthDate;
-  set birthDate(DateTime? birthDate) => _$this._birthDate = birthDate;
+  String? _birthDate;
+  String? get birthDate => _$this._birthDate;
+  set birthDate(String? birthDate) => _$this._birthDate = birthDate;
 
   PartialUpdateProfileRequestDtoBuilder() {
     PartialUpdateProfileRequestDto._defaults(this);

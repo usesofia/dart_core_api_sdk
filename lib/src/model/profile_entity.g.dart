@@ -14,7 +14,7 @@ class _$ProfileEntity extends ProfileEntity {
   @override
   final String fullName;
   @override
-  final DateTime birthDate;
+  final String birthDate;
   @override
   final DateTime createdAt;
   @override
@@ -104,9 +104,9 @@ class ProfileEntityBuilder
   String? get fullName => _$this._fullName;
   set fullName(String? fullName) => _$this._fullName = fullName;
 
-  DateTime? _birthDate;
-  DateTime? get birthDate => _$this._birthDate;
-  set birthDate(DateTime? birthDate) => _$this._birthDate = birthDate;
+  String? _birthDate;
+  String? get birthDate => _$this._birthDate;
+  set birthDate(String? birthDate) => _$this._birthDate = birthDate;
 
   DateTime? _createdAt;
   DateTime? get createdAt => _$this._createdAt;

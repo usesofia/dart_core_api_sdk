@@ -19,7 +19,7 @@ abstract class PartialUpdateProfileRequestDto implements Built<PartialUpdateProf
   String? get fullName;
 
   @BuiltValueField(wireName: r'birthDate')
-  DateTime? get birthDate;
+  String? get birthDate;
 
   PartialUpdateProfileRequestDto._();
 
@@ -55,7 +55,7 @@ class _$PartialUpdateProfileRequestDtoSerializer implements PrimitiveSerializer<
       yield r'birthDate';
       yield serializers.serialize(
         object.birthDate,
-        specifiedType: const FullType.nullable(DateTime),
+        specifiedType: const FullType.nullable(String),
       );
     }
   }
@@ -92,8 +92,8 @@ class _$PartialUpdateProfileRequestDtoSerializer implements PrimitiveSerializer<
         case r'birthDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(DateTime),
-          ) as DateTime?;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
           if (valueDes == null) continue;
           result.birthDate = valueDes;
           break;
