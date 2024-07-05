@@ -1,43 +1,49 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'workspace_entity.dart';
+part of 'user_entity_workspaces_inner.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-const WorkspaceEntityTypeEnum _$workspaceEntityTypeEnum_PERSONAL =
-    const WorkspaceEntityTypeEnum._('PERSONAL');
-const WorkspaceEntityTypeEnum _$workspaceEntityTypeEnum_BUSINESS =
-    const WorkspaceEntityTypeEnum._('BUSINESS');
-const WorkspaceEntityTypeEnum _$workspaceEntityTypeEnum_HYBRID =
-    const WorkspaceEntityTypeEnum._('HYBRID');
+const UserEntityWorkspacesInnerTypeEnum
+    _$userEntityWorkspacesInnerTypeEnum_PERSONAL =
+    const UserEntityWorkspacesInnerTypeEnum._('PERSONAL');
+const UserEntityWorkspacesInnerTypeEnum
+    _$userEntityWorkspacesInnerTypeEnum_BUSINESS =
+    const UserEntityWorkspacesInnerTypeEnum._('BUSINESS');
+const UserEntityWorkspacesInnerTypeEnum
+    _$userEntityWorkspacesInnerTypeEnum_HYBRID =
+    const UserEntityWorkspacesInnerTypeEnum._('HYBRID');
 
-WorkspaceEntityTypeEnum _$workspaceEntityTypeEnumValueOf(String name) {
+UserEntityWorkspacesInnerTypeEnum _$userEntityWorkspacesInnerTypeEnumValueOf(
+    String name) {
   switch (name) {
     case 'PERSONAL':
-      return _$workspaceEntityTypeEnum_PERSONAL;
+      return _$userEntityWorkspacesInnerTypeEnum_PERSONAL;
     case 'BUSINESS':
-      return _$workspaceEntityTypeEnum_BUSINESS;
+      return _$userEntityWorkspacesInnerTypeEnum_BUSINESS;
     case 'HYBRID':
-      return _$workspaceEntityTypeEnum_HYBRID;
+      return _$userEntityWorkspacesInnerTypeEnum_HYBRID;
     default:
       throw new ArgumentError(name);
   }
 }
 
-final BuiltSet<WorkspaceEntityTypeEnum> _$workspaceEntityTypeEnumValues =
-    new BuiltSet<WorkspaceEntityTypeEnum>(const <WorkspaceEntityTypeEnum>[
-  _$workspaceEntityTypeEnum_PERSONAL,
-  _$workspaceEntityTypeEnum_BUSINESS,
-  _$workspaceEntityTypeEnum_HYBRID,
+final BuiltSet<UserEntityWorkspacesInnerTypeEnum>
+    _$userEntityWorkspacesInnerTypeEnumValues = new BuiltSet<
+        UserEntityWorkspacesInnerTypeEnum>(const <UserEntityWorkspacesInnerTypeEnum>[
+  _$userEntityWorkspacesInnerTypeEnum_PERSONAL,
+  _$userEntityWorkspacesInnerTypeEnum_BUSINESS,
+  _$userEntityWorkspacesInnerTypeEnum_HYBRID,
 ]);
 
-Serializer<WorkspaceEntityTypeEnum> _$workspaceEntityTypeEnumSerializer =
-    new _$WorkspaceEntityTypeEnumSerializer();
+Serializer<UserEntityWorkspacesInnerTypeEnum>
+    _$userEntityWorkspacesInnerTypeEnumSerializer =
+    new _$UserEntityWorkspacesInnerTypeEnumSerializer();
 
-class _$WorkspaceEntityTypeEnumSerializer
-    implements PrimitiveSerializer<WorkspaceEntityTypeEnum> {
+class _$UserEntityWorkspacesInnerTypeEnumSerializer
+    implements PrimitiveSerializer<UserEntityWorkspacesInnerTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'PERSONAL': 'PERSONAL',
     'BUSINESS': 'BUSINESS',
@@ -50,24 +56,25 @@ class _$WorkspaceEntityTypeEnumSerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[WorkspaceEntityTypeEnum];
+  final Iterable<Type> types = const <Type>[UserEntityWorkspacesInnerTypeEnum];
   @override
-  final String wireName = 'WorkspaceEntityTypeEnum';
+  final String wireName = 'UserEntityWorkspacesInnerTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, WorkspaceEntityTypeEnum object,
+  Object serialize(
+          Serializers serializers, UserEntityWorkspacesInnerTypeEnum object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  WorkspaceEntityTypeEnum deserialize(
+  UserEntityWorkspacesInnerTypeEnum deserialize(
           Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      WorkspaceEntityTypeEnum.valueOf(
+      UserEntityWorkspacesInnerTypeEnum.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
-class _$WorkspaceEntity extends WorkspaceEntity {
+class _$UserEntityWorkspacesInner extends UserEntityWorkspacesInner {
   @override
   final String id;
   @override
@@ -75,7 +82,7 @@ class _$WorkspaceEntity extends WorkspaceEntity {
   @override
   final String name;
   @override
-  final WorkspaceEntityTypeEnum type;
+  final UserEntityWorkspacesInnerTypeEnum type;
   @override
   final String creatorUserId;
   @override
@@ -91,10 +98,11 @@ class _$WorkspaceEntity extends WorkspaceEntity {
   @override
   final JsonObject? createdAt;
 
-  factory _$WorkspaceEntity([void Function(WorkspaceEntityBuilder)? updates]) =>
-      (new WorkspaceEntityBuilder()..update(updates))._build();
+  factory _$UserEntityWorkspacesInner(
+          [void Function(UserEntityWorkspacesInnerBuilder)? updates]) =>
+      (new UserEntityWorkspacesInnerBuilder()..update(updates))._build();
 
-  _$WorkspaceEntity._(
+  _$UserEntityWorkspacesInner._(
       {required this.id,
       required this.prettyId,
       required this.name,
@@ -107,27 +115,31 @@ class _$WorkspaceEntity extends WorkspaceEntity {
       this.personalSettings,
       this.createdAt})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, r'WorkspaceEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        prettyId, r'WorkspaceEntity', 'prettyId');
-    BuiltValueNullFieldError.checkNotNull(name, r'WorkspaceEntity', 'name');
-    BuiltValueNullFieldError.checkNotNull(type, r'WorkspaceEntity', 'type');
+        id, r'UserEntityWorkspacesInner', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        creatorUserId, r'WorkspaceEntity', 'creatorUserId');
+        prettyId, r'UserEntityWorkspacesInner', 'prettyId');
+    BuiltValueNullFieldError.checkNotNull(
+        name, r'UserEntityWorkspacesInner', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        type, r'UserEntityWorkspacesInner', 'type');
+    BuiltValueNullFieldError.checkNotNull(
+        creatorUserId, r'UserEntityWorkspacesInner', 'creatorUserId');
   }
 
   @override
-  WorkspaceEntity rebuild(void Function(WorkspaceEntityBuilder) updates) =>
+  UserEntityWorkspacesInner rebuild(
+          void Function(UserEntityWorkspacesInnerBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  WorkspaceEntityBuilder toBuilder() =>
-      new WorkspaceEntityBuilder()..replace(this);
+  UserEntityWorkspacesInnerBuilder toBuilder() =>
+      new UserEntityWorkspacesInnerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is WorkspaceEntity &&
+    return other is UserEntityWorkspacesInner &&
         id == other.id &&
         prettyId == other.prettyId &&
         name == other.name &&
@@ -163,7 +175,7 @@ class _$WorkspaceEntity extends WorkspaceEntity {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'WorkspaceEntity')
+    return (newBuiltValueToStringHelper(r'UserEntityWorkspacesInner')
           ..add('id', id)
           ..add('prettyId', prettyId)
           ..add('name', name)
@@ -181,9 +193,10 @@ class _$WorkspaceEntity extends WorkspaceEntity {
   }
 }
 
-class WorkspaceEntityBuilder
-    implements Builder<WorkspaceEntity, WorkspaceEntityBuilder> {
-  _$WorkspaceEntity? _$v;
+class UserEntityWorkspacesInnerBuilder
+    implements
+        Builder<UserEntityWorkspacesInner, UserEntityWorkspacesInnerBuilder> {
+  _$UserEntityWorkspacesInner? _$v;
 
   String? _id;
   String? get id => _$this._id;
@@ -197,9 +210,9 @@ class WorkspaceEntityBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  WorkspaceEntityTypeEnum? _type;
-  WorkspaceEntityTypeEnum? get type => _$this._type;
-  set type(WorkspaceEntityTypeEnum? type) => _$this._type = type;
+  UserEntityWorkspacesInnerTypeEnum? _type;
+  UserEntityWorkspacesInnerTypeEnum? get type => _$this._type;
+  set type(UserEntityWorkspacesInnerTypeEnum? type) => _$this._type = type;
 
   String? _creatorUserId;
   String? get creatorUserId => _$this._creatorUserId;
@@ -246,11 +259,11 @@ class WorkspaceEntityBuilder
   JsonObject? get createdAt => _$this._createdAt;
   set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
-  WorkspaceEntityBuilder() {
-    WorkspaceEntity._defaults(this);
+  UserEntityWorkspacesInnerBuilder() {
+    UserEntityWorkspacesInner._defaults(this);
   }
 
-  WorkspaceEntityBuilder get _$this {
+  UserEntityWorkspacesInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
@@ -270,34 +283,34 @@ class WorkspaceEntityBuilder
   }
 
   @override
-  void replace(WorkspaceEntity other) {
+  void replace(UserEntityWorkspacesInner other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$WorkspaceEntity;
+    _$v = other as _$UserEntityWorkspacesInner;
   }
 
   @override
-  void update(void Function(WorkspaceEntityBuilder)? updates) {
+  void update(void Function(UserEntityWorkspacesInnerBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  WorkspaceEntity build() => _build();
+  UserEntityWorkspacesInner build() => _build();
 
-  _$WorkspaceEntity _build() {
-    _$WorkspaceEntity _$result;
+  _$UserEntityWorkspacesInner _build() {
+    _$UserEntityWorkspacesInner _$result;
     try {
       _$result = _$v ??
-          new _$WorkspaceEntity._(
+          new _$UserEntityWorkspacesInner._(
               id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'WorkspaceEntity', 'id'),
+                  id, r'UserEntityWorkspacesInner', 'id'),
               prettyId: BuiltValueNullFieldError.checkNotNull(
-                  prettyId, r'WorkspaceEntity', 'prettyId'),
+                  prettyId, r'UserEntityWorkspacesInner', 'prettyId'),
               name: BuiltValueNullFieldError.checkNotNull(
-                  name, r'WorkspaceEntity', 'name'),
+                  name, r'UserEntityWorkspacesInner', 'name'),
               type: BuiltValueNullFieldError.checkNotNull(
-                  type, r'WorkspaceEntity', 'type'),
+                  type, r'UserEntityWorkspacesInner', 'type'),
               creatorUserId: BuiltValueNullFieldError.checkNotNull(
-                  creatorUserId, r'WorkspaceEntity', 'creatorUserId'),
+                  creatorUserId, r'UserEntityWorkspacesInner', 'creatorUserId'),
               selectedPersonalCategoryTreeId: selectedPersonalCategoryTreeId,
               selectedBusinessCategoryTreeId: selectedBusinessCategoryTreeId,
               hybridSettings: _hybridSettings?.build(),
@@ -315,7 +328,7 @@ class WorkspaceEntityBuilder
         _personalSettings?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'WorkspaceEntity', _$failedField, e.toString());
+            r'UserEntityWorkspacesInner', _$failedField, e.toString());
       }
       rethrow;
     }

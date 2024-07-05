@@ -43,6 +43,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CreatePluggyConnectTokenRequestDto.serializer)
       ..add(CreateProfileRequestDto.serializer)
       ..add(CreateWorkspaceRequestDto.serializer)
+      ..add(CreateWorkspaceRequestDtoBusinessSegmentEnum.serializer)
+      ..add(CreateWorkspaceRequestDtoTypeEnum.serializer)
       ..add(CredentialsEntity.serializer)
       ..add(CreditCardMetadataDto.serializer)
       ..add(DreLineOutcomeResultEntity.serializer)
@@ -81,15 +83,18 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(SignUpWithEmailRequestDto.serializer)
       ..add(UpdateBankTransactionRequestDto.serializer)
       ..add(UserEntity.serializer)
-      ..add(UserRelatedWorkspaceEntity.serializer)
+      ..add(UserEntityWorkspacesInner.serializer)
+      ..add(UserEntityWorkspacesInnerHybridSettings.serializer)
+      ..add(
+          UserEntityWorkspacesInnerHybridSettingsBusinessSegmentEnum.serializer)
+      ..add(UserEntityWorkspacesInnerPersonalSettings.serializer)
+      ..add(UserEntityWorkspacesInnerTypeEnum.serializer)
       ..add(VerifyEmailVerificationCodeRequestDto.serializer)
       ..add(VerifyEmailVerificationCodeRequestDtoPurposeEnum.serializer)
       ..add(VerifyPhoneVerificationCodeRequestDto.serializer)
       ..add(VerifyPhoneVerificationCodeRequestDtoPurposeEnum.serializer)
-      ..add(WorkspaceCompanySettingsEntity.serializer)
       ..add(WorkspaceEntity.serializer)
-      ..add(WorkspaceHybridSettingsEntity.serializer)
-      ..add(WorkspacePersonalSettingsEntity.serializer)
+      ..add(WorkspaceEntityTypeEnum.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(BankAccountsBalanceReportItemEntity)]),
@@ -216,7 +221,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>()))
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(UserEntityWorkspacesInner)]),
+          () => new ListBuilder<UserEntityWorkspacesInner>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

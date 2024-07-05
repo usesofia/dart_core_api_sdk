@@ -1,4 +1,4 @@
-# dart_core_api_sdk.model.WorkspaceEntity
+# dart_core_api_sdk.model.UserEntityWorkspacesInner
 
 ## Load the model package
 ```dart

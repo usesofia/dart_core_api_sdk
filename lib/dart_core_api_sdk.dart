@@ -16,10 +16,10 @@ export 'package:dart_core_api_sdk/src/api/bank_transaction_tags_api.dart';
 export 'package:dart_core_api_sdk/src/api/bank_transactions_api.dart';
 export 'package:dart_core_api_sdk/src/api/iam_auth_api.dart';
 export 'package:dart_core_api_sdk/src/api/iam_profiles_api.dart';
+export 'package:dart_core_api_sdk/src/api/iam_workspaces_api.dart';
 export 'package:dart_core_api_sdk/src/api/message_tokens_api.dart';
 export 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
 export 'package:dart_core_api_sdk/src/api/reports_api.dart';
-export 'package:dart_core_api_sdk/src/api/workspaces_api.dart';
 
 export 'package:dart_core_api_sdk/src/model/balance_point_result_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_account_entity.dart';
@@ -85,10 +85,9 @@ export 'package:dart_core_api_sdk/src/model/sign_in_with_email_request_dto.dart'
 export 'package:dart_core_api_sdk/src/model/sign_up_with_email_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/update_bank_transaction_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/user_entity.dart';
-export 'package:dart_core_api_sdk/src/model/user_related_workspace_entity.dart';
+export 'package:dart_core_api_sdk/src/model/user_entity_workspaces_inner.dart';
+export 'package:dart_core_api_sdk/src/model/user_entity_workspaces_inner_hybrid_settings.dart';
+export 'package:dart_core_api_sdk/src/model/user_entity_workspaces_inner_personal_settings.dart';
 export 'package:dart_core_api_sdk/src/model/verify_email_verification_code_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/verify_phone_verification_code_request_dto.dart';
-export 'package:dart_core_api_sdk/src/model/workspace_company_settings_entity.dart';
 export 'package:dart_core_api_sdk/src/model/workspace_entity.dart';
-export 'package:dart_core_api_sdk/src/model/workspace_hybrid_settings_entity.dart';
-export 'package:dart_core_api_sdk/src/model/workspace_personal_settings_entity.dart';

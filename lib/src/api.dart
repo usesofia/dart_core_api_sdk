@@ -16,10 +16,10 @@ import 'package:dart_core_api_sdk/src/api/bank_transaction_tags_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transactions_api.dart';
 import 'package:dart_core_api_sdk/src/api/iam_auth_api.dart';
 import 'package:dart_core_api_sdk/src/api/iam_profiles_api.dart';
+import 'package:dart_core_api_sdk/src/api/iam_workspaces_api.dart';
 import 'package:dart_core_api_sdk/src/api/message_tokens_api.dart';
 import 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
 import 'package:dart_core_api_sdk/src/api/reports_api.dart';
-import 'package:dart_core_api_sdk/src/api/workspaces_api.dart';
 
 class DartCoreApiSdk {
   static const String basePath = r'http://localhost';
@@ -117,6 +117,12 @@ class DartCoreApiSdk {
     return IamProfilesApi(dio, serializers);
   }
 
+  /// Get IamWorkspacesApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  IamWorkspacesApi getIamWorkspacesApi() {
+    return IamWorkspacesApi(dio, serializers);
+  }
+
   /// Get MessageTokensApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   MessageTokensApi getMessageTokensApi() {
@@ -133,11 +139,5 @@ class DartCoreApiSdk {
   /// by doing that all interceptors will not be executed
   ReportsApi getReportsApi() {
     return ReportsApi(dio, serializers);
-  }
-
-  /// Get WorkspacesApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  WorkspacesApi getWorkspacesApi() {
-    return WorkspacesApi(dio, serializers);
   }
 }

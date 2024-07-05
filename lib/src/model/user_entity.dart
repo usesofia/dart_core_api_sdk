@@ -3,6 +3,9 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
+import 'package:dart_core_api_sdk/src/model/user_entity_workspaces_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -16,6 +19,7 @@ part 'user_entity.g.dart';
 /// * [phone] 
 /// * [passwordHash] 
 /// * [isRoot] 
+/// * [workspaces] 
 /// * [createdAt] 
 @BuiltValue()
 abstract class UserEntity implements Built<UserEntity, UserEntityBuilder> {
@@ -29,13 +33,16 @@ abstract class UserEntity implements Built<UserEntity, UserEntityBuilder> {
   String get phone;
 
   @BuiltValueField(wireName: r'passwordHash')
-  String get passwordHash;
+  String? get passwordHash;
 
   @BuiltValueField(wireName: r'isRoot')
   bool get isRoot;
 
+  @BuiltValueField(wireName: r'workspaces')
+  BuiltList<UserEntityWorkspacesInner>? get workspaces;
+
   @BuiltValueField(wireName: r'createdAt')
-  DateTime get createdAt;
+  JsonObject? get createdAt;
 
   UserEntity._();
 
@@ -75,20 +82,29 @@ class _$UserEntitySerializer implements PrimitiveSerializer<UserEntity> {
       object.phone,
       specifiedType: const FullType(String),
     );
-    yield r'passwordHash';
-    yield serializers.serialize(
-      object.passwordHash,
-      specifiedType: const FullType(String),
-    );
+    if (object.passwordHash != null) {
+      yield r'passwordHash';
+      yield serializers.serialize(
+        object.passwordHash,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
     yield r'isRoot';
     yield serializers.serialize(
       object.isRoot,
       specifiedType: const FullType(bool),
     );
+    if (object.workspaces != null) {
+      yield r'workspaces';
+      yield serializers.serialize(
+        object.workspaces,
+        specifiedType: const FullType.nullable(BuiltList, [FullType(UserEntityWorkspacesInner)]),
+      );
+    }
     yield r'createdAt';
-    yield serializers.serialize(
+    yield object.createdAt == null ? null : serializers.serialize(
       object.createdAt,
-      specifiedType: const FullType(DateTime),
+      specifiedType: const FullType.nullable(JsonObject),
     );
   }
 
@@ -137,8 +153,9 @@ class _$UserEntitySerializer implements PrimitiveSerializer<UserEntity> {
         case r'passwordHash':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.passwordHash = valueDes;
           break;
         case r'isRoot':
@@ -148,11 +165,20 @@ class _$UserEntitySerializer implements PrimitiveSerializer<UserEntity> {
           ) as bool;
           result.isRoot = valueDes;
           break;
+        case r'workspaces':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(BuiltList, [FullType(UserEntityWorkspacesInner)]),
+          ) as BuiltList<UserEntityWorkspacesInner>?;
+          if (valueDes == null) continue;
+          result.workspaces.replace(valueDes);
+          break;
         case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
           result.createdAt = valueDes;
           break;
         default:

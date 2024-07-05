@@ -78,13 +78,12 @@ import 'package:dart_core_api_sdk/src/model/sign_in_with_email_request_dto.dart'
 import 'package:dart_core_api_sdk/src/model/sign_up_with_email_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/update_bank_transaction_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/user_entity.dart';
-import 'package:dart_core_api_sdk/src/model/user_related_workspace_entity.dart';
+import 'package:dart_core_api_sdk/src/model/user_entity_workspaces_inner.dart';
+import 'package:dart_core_api_sdk/src/model/user_entity_workspaces_inner_hybrid_settings.dart';
+import 'package:dart_core_api_sdk/src/model/user_entity_workspaces_inner_personal_settings.dart';
 import 'package:dart_core_api_sdk/src/model/verify_email_verification_code_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/verify_phone_verification_code_request_dto.dart';
-import 'package:dart_core_api_sdk/src/model/workspace_company_settings_entity.dart';
 import 'package:dart_core_api_sdk/src/model/workspace_entity.dart';
-import 'package:dart_core_api_sdk/src/model/workspace_hybrid_settings_entity.dart';
-import 'package:dart_core_api_sdk/src/model/workspace_personal_settings_entity.dart';
 
 part 'serializers.g.dart';
 
@@ -153,13 +152,12 @@ part 'serializers.g.dart';
   SignUpWithEmailRequestDto,
   UpdateBankTransactionRequestDto,
   UserEntity,
-  UserRelatedWorkspaceEntity,
+  UserEntityWorkspacesInner,
+  UserEntityWorkspacesInnerHybridSettings,
+  UserEntityWorkspacesInnerPersonalSettings,
   VerifyEmailVerificationCodeRequestDto,
   VerifyPhoneVerificationCodeRequestDto,
-  WorkspaceCompanySettingsEntity,
   WorkspaceEntity,
-  WorkspaceHybridSettingsEntity,
-  WorkspacePersonalSettingsEntity,
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
@@ -169,10 +167,6 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(BankTransactionCategoryEntity)]),
         () => ListBuilder<BankTransactionCategoryEntity>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(UserRelatedWorkspaceEntity)]),
-        () => ListBuilder<UserRelatedWorkspaceEntity>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(BankTransactionEntity)]),

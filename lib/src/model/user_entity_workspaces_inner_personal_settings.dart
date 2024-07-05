@@ -6,53 +6,51 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'parcial_update_workspace_request_dto.g.dart';
+part 'user_entity_workspaces_inner_personal_settings.g.dart';
 
-/// ParcialUpdateWorkspaceRequestDto
+/// UserEntityWorkspacesInnerPersonalSettings
 ///
 /// Properties:
-/// * [name] 
+/// * [id] 
 @BuiltValue()
-abstract class ParcialUpdateWorkspaceRequestDto implements Built<ParcialUpdateWorkspaceRequestDto, ParcialUpdateWorkspaceRequestDtoBuilder> {
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+abstract class UserEntityWorkspacesInnerPersonalSettings implements Built<UserEntityWorkspacesInnerPersonalSettings, UserEntityWorkspacesInnerPersonalSettingsBuilder> {
+  @BuiltValueField(wireName: r'id')
+  String get id;
 
-  ParcialUpdateWorkspaceRequestDto._();
+  UserEntityWorkspacesInnerPersonalSettings._();
 
-  factory ParcialUpdateWorkspaceRequestDto([void updates(ParcialUpdateWorkspaceRequestDtoBuilder b)]) = _$ParcialUpdateWorkspaceRequestDto;
+  factory UserEntityWorkspacesInnerPersonalSettings([void updates(UserEntityWorkspacesInnerPersonalSettingsBuilder b)]) = _$UserEntityWorkspacesInnerPersonalSettings;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ParcialUpdateWorkspaceRequestDtoBuilder b) => b;
+  static void _defaults(UserEntityWorkspacesInnerPersonalSettingsBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ParcialUpdateWorkspaceRequestDto> get serializer => _$ParcialUpdateWorkspaceRequestDtoSerializer();
+  static Serializer<UserEntityWorkspacesInnerPersonalSettings> get serializer => _$UserEntityWorkspacesInnerPersonalSettingsSerializer();
 }
 
-class _$ParcialUpdateWorkspaceRequestDtoSerializer implements PrimitiveSerializer<ParcialUpdateWorkspaceRequestDto> {
+class _$UserEntityWorkspacesInnerPersonalSettingsSerializer implements PrimitiveSerializer<UserEntityWorkspacesInnerPersonalSettings> {
   @override
-  final Iterable<Type> types = const [ParcialUpdateWorkspaceRequestDto, _$ParcialUpdateWorkspaceRequestDto];
+  final Iterable<Type> types = const [UserEntityWorkspacesInnerPersonalSettings, _$UserEntityWorkspacesInnerPersonalSettings];
 
   @override
-  final String wireName = r'ParcialUpdateWorkspaceRequestDto';
+  final String wireName = r'UserEntityWorkspacesInnerPersonalSettings';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ParcialUpdateWorkspaceRequestDto object, {
+    UserEntityWorkspacesInnerPersonalSettings object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType.nullable(String),
-      );
-    }
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    ParcialUpdateWorkspaceRequestDto object, {
+    UserEntityWorkspacesInnerPersonalSettings object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -63,20 +61,19 @@ class _$ParcialUpdateWorkspaceRequestDtoSerializer implements PrimitiveSerialize
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ParcialUpdateWorkspaceRequestDtoBuilder result,
+    required UserEntityWorkspacesInnerPersonalSettingsBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'name':
+        case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(String),
-          ) as String?;
-          if (valueDes == null) continue;
-          result.name = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -87,12 +84,12 @@ class _$ParcialUpdateWorkspaceRequestDtoSerializer implements PrimitiveSerialize
   }
 
   @override
-  ParcialUpdateWorkspaceRequestDto deserialize(
+  UserEntityWorkspacesInnerPersonalSettings deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ParcialUpdateWorkspaceRequestDtoBuilder();
+    final result = UserEntityWorkspacesInnerPersonalSettingsBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

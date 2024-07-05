@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -16,6 +17,7 @@ part 'create_workspace_request_dto.g.dart';
 /// * [type] 
 /// * [businessSegment] 
 /// * [otherDescription] 
+/// * [throwAfterCreateWorkspace] 
 @BuiltValue()
 abstract class CreateWorkspaceRequestDto implements Built<CreateWorkspaceRequestDto, CreateWorkspaceRequestDtoBuilder> {
   @BuiltValueField(wireName: r'prettyId')
@@ -25,13 +27,18 @@ abstract class CreateWorkspaceRequestDto implements Built<CreateWorkspaceRequest
   String get name;
 
   @BuiltValueField(wireName: r'type')
-  String? get type;
+  CreateWorkspaceRequestDtoTypeEnum get type;
+  // enum typeEnum {  PERSONAL,  BUSINESS,  HYBRID,  };
 
   @BuiltValueField(wireName: r'businessSegment')
-  String? get businessSegment;
+  CreateWorkspaceRequestDtoBusinessSegmentEnum? get businessSegment;
+  // enum businessSegmentEnum {  ATTORNEY,  ARCHITECT,  CONSULTANT,  REALTOR,  INSURANCE_BROKER,  DENTIST,  PHYSIOTHERAPIST,  PHYSICIAN,  TUTOR,  PSYCHOLOGIST,  OTHER,  };
 
   @BuiltValueField(wireName: r'otherDescription')
   String? get otherDescription;
+
+  @BuiltValueField(wireName: r'throwAfterCreateWorkspace')
+  bool? get throwAfterCreateWorkspace;
 
   CreateWorkspaceRequestDto._();
 
@@ -66,25 +73,30 @@ class _$CreateWorkspaceRequestDtoSerializer implements PrimitiveSerializer<Creat
       object.name,
       specifiedType: const FullType(String),
     );
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(CreateWorkspaceRequestDtoTypeEnum),
+    );
     if (object.businessSegment != null) {
       yield r'businessSegment';
       yield serializers.serialize(
         object.businessSegment,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType.nullable(CreateWorkspaceRequestDtoBusinessSegmentEnum),
       );
     }
     if (object.otherDescription != null) {
       yield r'otherDescription';
       yield serializers.serialize(
         object.otherDescription,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.throwAfterCreateWorkspace != null) {
+      yield r'throwAfterCreateWorkspace';
+      yield serializers.serialize(
+        object.throwAfterCreateWorkspace,
+        specifiedType: const FullType.nullable(bool),
       );
     }
   }
@@ -127,23 +139,33 @@ class _$CreateWorkspaceRequestDtoSerializer implements PrimitiveSerializer<Creat
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType(CreateWorkspaceRequestDtoTypeEnum),
+          ) as CreateWorkspaceRequestDtoTypeEnum;
           result.type = valueDes;
           break;
         case r'businessSegment':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(CreateWorkspaceRequestDtoBusinessSegmentEnum),
+          ) as CreateWorkspaceRequestDtoBusinessSegmentEnum?;
+          if (valueDes == null) continue;
           result.businessSegment = valueDes;
           break;
         case r'otherDescription':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.otherDescription = valueDes;
+          break;
+        case r'throwAfterCreateWorkspace':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
+          result.throwAfterCreateWorkspace = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -172,5 +194,55 @@ class _$CreateWorkspaceRequestDtoSerializer implements PrimitiveSerializer<Creat
     );
     return result.build();
   }
+}
+
+class CreateWorkspaceRequestDtoTypeEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'PERSONAL')
+  static const CreateWorkspaceRequestDtoTypeEnum PERSONAL = _$createWorkspaceRequestDtoTypeEnum_PERSONAL;
+  @BuiltValueEnumConst(wireName: r'BUSINESS')
+  static const CreateWorkspaceRequestDtoTypeEnum BUSINESS = _$createWorkspaceRequestDtoTypeEnum_BUSINESS;
+  @BuiltValueEnumConst(wireName: r'HYBRID')
+  static const CreateWorkspaceRequestDtoTypeEnum HYBRID = _$createWorkspaceRequestDtoTypeEnum_HYBRID;
+
+  static Serializer<CreateWorkspaceRequestDtoTypeEnum> get serializer => _$createWorkspaceRequestDtoTypeEnumSerializer;
+
+  const CreateWorkspaceRequestDtoTypeEnum._(String name): super(name);
+
+  static BuiltSet<CreateWorkspaceRequestDtoTypeEnum> get values => _$createWorkspaceRequestDtoTypeEnumValues;
+  static CreateWorkspaceRequestDtoTypeEnum valueOf(String name) => _$createWorkspaceRequestDtoTypeEnumValueOf(name);
+}
+
+class CreateWorkspaceRequestDtoBusinessSegmentEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'ATTORNEY')
+  static const CreateWorkspaceRequestDtoBusinessSegmentEnum ATTORNEY = _$createWorkspaceRequestDtoBusinessSegmentEnum_ATTORNEY;
+  @BuiltValueEnumConst(wireName: r'ARCHITECT')
+  static const CreateWorkspaceRequestDtoBusinessSegmentEnum ARCHITECT = _$createWorkspaceRequestDtoBusinessSegmentEnum_ARCHITECT;
+  @BuiltValueEnumConst(wireName: r'CONSULTANT')
+  static const CreateWorkspaceRequestDtoBusinessSegmentEnum CONSULTANT = _$createWorkspaceRequestDtoBusinessSegmentEnum_CONSULTANT;
+  @BuiltValueEnumConst(wireName: r'REALTOR')
+  static const CreateWorkspaceRequestDtoBusinessSegmentEnum REALTOR = _$createWorkspaceRequestDtoBusinessSegmentEnum_REALTOR;
+  @BuiltValueEnumConst(wireName: r'INSURANCE_BROKER')
+  static const CreateWorkspaceRequestDtoBusinessSegmentEnum INSURANCE_BROKER = _$createWorkspaceRequestDtoBusinessSegmentEnum_INSURANCE_BROKER;
+  @BuiltValueEnumConst(wireName: r'DENTIST')
+  static const CreateWorkspaceRequestDtoBusinessSegmentEnum DENTIST = _$createWorkspaceRequestDtoBusinessSegmentEnum_DENTIST;
+  @BuiltValueEnumConst(wireName: r'PHYSIOTHERAPIST')
+  static const CreateWorkspaceRequestDtoBusinessSegmentEnum PHYSIOTHERAPIST = _$createWorkspaceRequestDtoBusinessSegmentEnum_PHYSIOTHERAPIST;
+  @BuiltValueEnumConst(wireName: r'PHYSICIAN')
+  static const CreateWorkspaceRequestDtoBusinessSegmentEnum PHYSICIAN = _$createWorkspaceRequestDtoBusinessSegmentEnum_PHYSICIAN;
+  @BuiltValueEnumConst(wireName: r'TUTOR')
+  static const CreateWorkspaceRequestDtoBusinessSegmentEnum TUTOR = _$createWorkspaceRequestDtoBusinessSegmentEnum_TUTOR;
+  @BuiltValueEnumConst(wireName: r'PSYCHOLOGIST')
+  static const CreateWorkspaceRequestDtoBusinessSegmentEnum PSYCHOLOGIST = _$createWorkspaceRequestDtoBusinessSegmentEnum_PSYCHOLOGIST;
+  @BuiltValueEnumConst(wireName: r'OTHER')
+  static const CreateWorkspaceRequestDtoBusinessSegmentEnum OTHER = _$createWorkspaceRequestDtoBusinessSegmentEnum_OTHER;
+
+  static Serializer<CreateWorkspaceRequestDtoBusinessSegmentEnum> get serializer => _$createWorkspaceRequestDtoBusinessSegmentEnumSerializer;
+
+  const CreateWorkspaceRequestDtoBusinessSegmentEnum._(String name): super(name);
+
+  static BuiltSet<CreateWorkspaceRequestDtoBusinessSegmentEnum> get values => _$createWorkspaceRequestDtoBusinessSegmentEnumValues;
+  static CreateWorkspaceRequestDtoBusinessSegmentEnum valueOf(String name) => _$createWorkspaceRequestDtoBusinessSegmentEnumValueOf(name);
 }
 

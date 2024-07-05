@@ -9,16 +9,13 @@ part of 'parcial_update_workspace_request_dto.dart';
 class _$ParcialUpdateWorkspaceRequestDto
     extends ParcialUpdateWorkspaceRequestDto {
   @override
-  final String name;
+  final String? name;
 
   factory _$ParcialUpdateWorkspaceRequestDto(
           [void Function(ParcialUpdateWorkspaceRequestDtoBuilder)? updates]) =>
       (new ParcialUpdateWorkspaceRequestDtoBuilder()..update(updates))._build();
 
-  _$ParcialUpdateWorkspaceRequestDto._({required this.name}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        name, r'ParcialUpdateWorkspaceRequestDto', 'name');
-  }
+  _$ParcialUpdateWorkspaceRequestDto._({this.name}) : super._();
 
   @override
   ParcialUpdateWorkspaceRequestDto rebuild(
@@ -89,10 +86,8 @@ class ParcialUpdateWorkspaceRequestDtoBuilder
   ParcialUpdateWorkspaceRequestDto build() => _build();
 
   _$ParcialUpdateWorkspaceRequestDto _build() {
-    final _$result = _$v ??
-        new _$ParcialUpdateWorkspaceRequestDto._(
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'ParcialUpdateWorkspaceRequestDto', 'name'));
+    final _$result =
+        _$v ?? new _$ParcialUpdateWorkspaceRequestDto._(name: name);
     replace(_$result);
     return _$result;
   }

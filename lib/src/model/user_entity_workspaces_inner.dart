@@ -10,9 +10,9 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'workspace_entity.g.dart';
+part 'user_entity_workspaces_inner.g.dart';
 
-/// WorkspaceEntity
+/// UserEntityWorkspacesInner
 ///
 /// Properties:
 /// * [id] 
@@ -27,7 +27,7 @@ part 'workspace_entity.g.dart';
 /// * [personalSettings] 
 /// * [createdAt] 
 @BuiltValue()
-abstract class WorkspaceEntity implements Built<WorkspaceEntity, WorkspaceEntityBuilder> {
+abstract class UserEntityWorkspacesInner implements Built<UserEntityWorkspacesInner, UserEntityWorkspacesInnerBuilder> {
   @BuiltValueField(wireName: r'id')
   String get id;
 
@@ -38,7 +38,7 @@ abstract class WorkspaceEntity implements Built<WorkspaceEntity, WorkspaceEntity
   String get name;
 
   @BuiltValueField(wireName: r'type')
-  WorkspaceEntityTypeEnum get type;
+  UserEntityWorkspacesInnerTypeEnum get type;
   // enum typeEnum {  PERSONAL,  BUSINESS,  HYBRID,  };
 
   @BuiltValueField(wireName: r'creatorUserId')
@@ -62,27 +62,27 @@ abstract class WorkspaceEntity implements Built<WorkspaceEntity, WorkspaceEntity
   @BuiltValueField(wireName: r'createdAt')
   JsonObject? get createdAt;
 
-  WorkspaceEntity._();
+  UserEntityWorkspacesInner._();
 
-  factory WorkspaceEntity([void updates(WorkspaceEntityBuilder b)]) = _$WorkspaceEntity;
+  factory UserEntityWorkspacesInner([void updates(UserEntityWorkspacesInnerBuilder b)]) = _$UserEntityWorkspacesInner;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(WorkspaceEntityBuilder b) => b;
+  static void _defaults(UserEntityWorkspacesInnerBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<WorkspaceEntity> get serializer => _$WorkspaceEntitySerializer();
+  static Serializer<UserEntityWorkspacesInner> get serializer => _$UserEntityWorkspacesInnerSerializer();
 }
 
-class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity> {
+class _$UserEntityWorkspacesInnerSerializer implements PrimitiveSerializer<UserEntityWorkspacesInner> {
   @override
-  final Iterable<Type> types = const [WorkspaceEntity, _$WorkspaceEntity];
+  final Iterable<Type> types = const [UserEntityWorkspacesInner, _$UserEntityWorkspacesInner];
 
   @override
-  final String wireName = r'WorkspaceEntity';
+  final String wireName = r'UserEntityWorkspacesInner';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    WorkspaceEntity object, {
+    UserEntityWorkspacesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'id';
@@ -103,7 +103,7 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(WorkspaceEntityTypeEnum),
+      specifiedType: const FullType(UserEntityWorkspacesInnerTypeEnum),
     );
     yield r'creatorUserId';
     yield serializers.serialize(
@@ -155,7 +155,7 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
   @override
   Object serialize(
     Serializers serializers,
-    WorkspaceEntity object, {
+    UserEntityWorkspacesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -166,7 +166,7 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required WorkspaceEntityBuilder result,
+    required UserEntityWorkspacesInnerBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -197,8 +197,8 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(WorkspaceEntityTypeEnum),
-          ) as WorkspaceEntityTypeEnum;
+            specifiedType: const FullType(UserEntityWorkspacesInnerTypeEnum),
+          ) as UserEntityWorkspacesInnerTypeEnum;
           result.type = valueDes;
           break;
         case r'creatorUserId':
@@ -265,12 +265,12 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
   }
 
   @override
-  WorkspaceEntity deserialize(
+  UserEntityWorkspacesInner deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = WorkspaceEntityBuilder();
+    final result = UserEntityWorkspacesInnerBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
@@ -285,20 +285,20 @@ class _$WorkspaceEntitySerializer implements PrimitiveSerializer<WorkspaceEntity
   }
 }
 
-class WorkspaceEntityTypeEnum extends EnumClass {
+class UserEntityWorkspacesInnerTypeEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'PERSONAL')
-  static const WorkspaceEntityTypeEnum PERSONAL = _$workspaceEntityTypeEnum_PERSONAL;
+  static const UserEntityWorkspacesInnerTypeEnum PERSONAL = _$userEntityWorkspacesInnerTypeEnum_PERSONAL;
   @BuiltValueEnumConst(wireName: r'BUSINESS')
-  static const WorkspaceEntityTypeEnum BUSINESS = _$workspaceEntityTypeEnum_BUSINESS;
+  static const UserEntityWorkspacesInnerTypeEnum BUSINESS = _$userEntityWorkspacesInnerTypeEnum_BUSINESS;
   @BuiltValueEnumConst(wireName: r'HYBRID')
-  static const WorkspaceEntityTypeEnum HYBRID = _$workspaceEntityTypeEnum_HYBRID;
+  static const UserEntityWorkspacesInnerTypeEnum HYBRID = _$userEntityWorkspacesInnerTypeEnum_HYBRID;
 
-  static Serializer<WorkspaceEntityTypeEnum> get serializer => _$workspaceEntityTypeEnumSerializer;
+  static Serializer<UserEntityWorkspacesInnerTypeEnum> get serializer => _$userEntityWorkspacesInnerTypeEnumSerializer;
 
-  const WorkspaceEntityTypeEnum._(String name): super(name);
+  const UserEntityWorkspacesInnerTypeEnum._(String name): super(name);
 
-  static BuiltSet<WorkspaceEntityTypeEnum> get values => _$workspaceEntityTypeEnumValues;
-  static WorkspaceEntityTypeEnum valueOf(String name) => _$workspaceEntityTypeEnumValueOf(name);
+  static BuiltSet<UserEntityWorkspacesInnerTypeEnum> get values => _$userEntityWorkspacesInnerTypeEnumValues;
+  static UserEntityWorkspacesInnerTypeEnum valueOf(String name) => _$userEntityWorkspacesInnerTypeEnumValueOf(name);
 }
 
