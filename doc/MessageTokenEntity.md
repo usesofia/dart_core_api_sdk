@@ -10,15 +10,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **workspaceId** | **String** |  | 
-**workspace** | [**WorkspaceEntity**](WorkspaceEntity.md) |  | 
+**worksapce** | [**MessageTokenEntityWorksapce**](MessageTokenEntityWorksapce.md) |  | [optional] 
 **userId** | **String** |  | 
-**user** | [**UserEntity**](UserEntity.md) |  | 
+**user** | [**MessageTokenEntityUser**](MessageTokenEntityUser.md) |  | [optional] 
 **provider** | **String** |  | 
 **platform** | **String** |  | 
 **deviceId** | **String** |  | 
 **token** | **String** |  | 
-**createdAt** | [**DateTime**](DateTime.md) |  | 
-**updatedAt** | [**DateTime**](DateTime.md) |  | 
+**createdAt** | [**JsonObject**](.md) |  | 
+**updatedAt** | [**JsonObject**](.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

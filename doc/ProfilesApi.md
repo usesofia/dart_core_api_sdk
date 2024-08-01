@@ -9,9 +9,9 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**profilesControllerCreate**](ProfilesApi.md#profilescontrollercreate) | **POST** /profiles | 
-[**profilesControllerGetMy**](ProfilesApi.md#profilescontrollergetmy) | **GET** /profiles/me | 
-[**profilesControllerParcialUpdate**](ProfilesApi.md#profilescontrollerparcialupdate) | **PATCH** /profiles/me | 
+[**profilesControllerCreate**](ProfilesApi.md#profilescontrollercreate) | **POST** /iam/profiles | 
+[**profilesControllerGetMy**](ProfilesApi.md#profilescontrollergetmy) | **GET** /iam/profiles/me | 
+[**profilesControllerPartialUpdate**](ProfilesApi.md#profilescontrollerpartialupdate) | **PATCH** /iam/profiles/me | 
 
 
 # **profilesControllerCreate**
@@ -92,8 +92,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **profilesControllerParcialUpdate**
-> ProfileEntity profilesControllerParcialUpdate(parcialUpdateProfileRequestDto)
+# **profilesControllerPartialUpdate**
+> ProfileEntity profilesControllerPartialUpdate(partialUpdateProfileRequestDto)
 
 
 
@@ -102,13 +102,13 @@ No authorization required
 import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getProfilesApi();
-final ParcialUpdateProfileRequestDto parcialUpdateProfileRequestDto = ; // ParcialUpdateProfileRequestDto | 
+final PartialUpdateProfileRequestDto partialUpdateProfileRequestDto = ; // PartialUpdateProfileRequestDto | 
 
 try {
-    final response = api.profilesControllerParcialUpdate(parcialUpdateProfileRequestDto);
+    final response = api.profilesControllerPartialUpdate(partialUpdateProfileRequestDto);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling ProfilesApi->profilesControllerParcialUpdate: $e\n');
+    print('Exception when calling ProfilesApi->profilesControllerPartialUpdate: $e\n');
 }
 ```
 
@@ -116,7 +116,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parcialUpdateProfileRequestDto** | [**ParcialUpdateProfileRequestDto**](ParcialUpdateProfileRequestDto.md)|  | 
+ **partialUpdateProfileRequestDto** | [**PartialUpdateProfileRequestDto**](PartialUpdateProfileRequestDto.md)|  | 
 
 ### Return type
 

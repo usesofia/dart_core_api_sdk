@@ -11,7 +11,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:dart_core_api_sdk/src/api_util.dart';
 import 'package:dart_core_api_sdk/src/model/create_workspace_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
-import 'package:dart_core_api_sdk/src/model/parcial_update_workspace_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/partial_update_workspace_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/user_related_workspace_entity.dart';
 import 'package:dart_core_api_sdk/src/model/workspace_entity.dart';
 
@@ -46,7 +46,7 @@ class WorkspacesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/workspaces';
+    final _path = r'/iam/workspaces';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -118,80 +118,7 @@ class WorkspacesApi {
     );
   }
 
-  /// workspacesControllerFetchUserRelatedWorkspaces
-  /// 
-  ///
-  /// Parameters:
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<UserRelatedWorkspaceEntity>] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<UserRelatedWorkspaceEntity>>> workspacesControllerFetchUserRelatedWorkspaces({ 
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/workspaces/related-to-me';
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    BuiltList<UserRelatedWorkspaceEntity>? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(UserRelatedWorkspaceEntity)]),
-      ) as BuiltList<UserRelatedWorkspaceEntity>;
-
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<BuiltList<UserRelatedWorkspaceEntity>>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// workspacesControllerGet
+  /// workspacesControllerGetById
   /// 
   ///
   /// Parameters:
@@ -205,7 +132,7 @@ class WorkspacesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [WorkspaceEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<WorkspaceEntity>> workspacesControllerGet({ 
+  Future<Response<WorkspaceEntity>> workspacesControllerGetById({ 
     required String workspaceId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -214,7 +141,7 @@ class WorkspacesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/workspaces/{workspaceId}'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _path = r'/iam/workspaces/{workspaceId}'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -266,12 +193,85 @@ class WorkspacesApi {
     );
   }
 
-  /// workspacesControllerParcialUpdate
+  /// workspacesControllerListMy
+  /// 
+  ///
+  /// Parameters:
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [BuiltList<UserRelatedWorkspaceEntity>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<BuiltList<UserRelatedWorkspaceEntity>>> workspacesControllerListMy({ 
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/iam/workspaces/my';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    BuiltList<UserRelatedWorkspaceEntity>? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(BuiltList, [FullType(UserRelatedWorkspaceEntity)]),
+      ) as BuiltList<UserRelatedWorkspaceEntity>;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<BuiltList<UserRelatedWorkspaceEntity>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// workspacesControllerPartialUpdate
   /// 
   ///
   /// Parameters:
   /// * [workspaceId] 
-  /// * [parcialUpdateWorkspaceRequestDto] 
+  /// * [partialUpdateWorkspaceRequestDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -281,9 +281,9 @@ class WorkspacesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [WorkspaceEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<WorkspaceEntity>> workspacesControllerParcialUpdate({ 
+  Future<Response<WorkspaceEntity>> workspacesControllerPartialUpdate({ 
     required String workspaceId,
-    required ParcialUpdateWorkspaceRequestDto parcialUpdateWorkspaceRequestDto,
+    required PartialUpdateWorkspaceRequestDto partialUpdateWorkspaceRequestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -291,7 +291,7 @@ class WorkspacesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/workspaces/{workspaceId}'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _path = r'/iam/workspaces/{workspaceId}'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -308,8 +308,8 @@ class WorkspacesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ParcialUpdateWorkspaceRequestDto);
-      _bodyData = _serializers.serialize(parcialUpdateWorkspaceRequestDto, specifiedType: _type);
+      const _type = FullType(PartialUpdateWorkspaceRequestDto);
+      _bodyData = _serializers.serialize(partialUpdateWorkspaceRequestDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **providerAccountId** | **String** |  | 
 **type** | **String** |  | 
 **number** | **String** |  | 
-**balance** | **num** |  | 
+**balance** | **int** |  | 
 **currencyCode** | **String** |  | 
 **name** | **String** |  | 
 

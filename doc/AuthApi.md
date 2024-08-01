@@ -9,15 +9,20 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**authControllerCheckEmailInUse**](AuthApi.md#authcontrollercheckemailinuse) | **POST** /auth/check-email-in-use | 
-[**authControllerRefresh**](AuthApi.md#authcontrollerrefresh) | **POST** /auth/refresh | 
-[**authControllerSendEmailVerificationCode**](AuthApi.md#authcontrollersendemailverificationcode) | **POST** /auth/sign-up/email-verification-code | 
-[**authControllerSignInWithEmailPassword**](AuthApi.md#authcontrollersigninwithemailpassword) | **POST** /auth/sign-in/email-password | 
-[**authControllerSignUpWithEmailPassword**](AuthApi.md#authcontrollersignupwithemailpassword) | **POST** /auth/sign-up/email-password | 
+[**authControllerGenerateAndSendEmailVerificationCode**](AuthApi.md#authcontrollergenerateandsendemailverificationcode) | **POST** /iam/auth/email-verification-code | 
+[**authControllerGenerateAndSendPhoneVerificationCode**](AuthApi.md#authcontrollergenerateandsendphoneverificationcode) | **POST** /iam/auth/phone-verification-code | 
+[**authControllerGenerateEmailInUseReport**](AuthApi.md#authcontrollergenerateemailinusereport) | **POST** /iam/auth/email-in-use | 
+[**authControllerGeneratePhoneInUseReport**](AuthApi.md#authcontrollergeneratephoneinusereport) | **POST** /iam/auth/phone-in-use | 
+[**authControllerGetMe**](AuthApi.md#authcontrollergetme) | **GET** /iam/auth/me | 
+[**authControllerRefresh**](AuthApi.md#authcontrollerrefresh) | **POST** /iam/auth/refresh | 
+[**authControllerSignInWithEmail**](AuthApi.md#authcontrollersigninwithemail) | **POST** /iam/auth/sign-in/email | 
+[**authControllerSignUpWithEmail**](AuthApi.md#authcontrollersignupwithemail) | **POST** /iam/auth/sign-up/email | 
+[**authControllerVerifyEmailVerificationCode**](AuthApi.md#authcontrollerverifyemailverificationcode) | **GET** /iam/auth/email-verification-code/verify | 
+[**authControllerVerifyPhoneVerificationCode**](AuthApi.md#authcontrollerverifyphoneverificationcode) | **GET** /iam/auth/phone-verification-code/verify | 
 
 
-# **authControllerCheckEmailInUse**
-> EmailInUseEntity authControllerCheckEmailInUse(checkEmailInUseRequestDto)
+# **authControllerGenerateAndSendEmailVerificationCode**
+> authControllerGenerateAndSendEmailVerificationCode(generateAndSendEmailVerificationCodeRequestDto)
 
 
 
@@ -26,13 +31,12 @@ Method | HTTP request | Description
 import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getAuthApi();
-final CheckEmailInUseRequestDto checkEmailInUseRequestDto = ; // CheckEmailInUseRequestDto | 
+final GenerateAndSendEmailVerificationCodeRequestDto generateAndSendEmailVerificationCodeRequestDto = ; // GenerateAndSendEmailVerificationCodeRequestDto | 
 
 try {
-    final response = api.authControllerCheckEmailInUse(checkEmailInUseRequestDto);
-    print(response);
+    api.authControllerGenerateAndSendEmailVerificationCode(generateAndSendEmailVerificationCodeRequestDto);
 } catch on DioException (e) {
-    print('Exception when calling AuthApi->authControllerCheckEmailInUse: $e\n');
+    print('Exception when calling AuthApi->authControllerGenerateAndSendEmailVerificationCode: $e\n');
 }
 ```
 
@@ -40,11 +44,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **checkEmailInUseRequestDto** | [**CheckEmailInUseRequestDto**](CheckEmailInUseRequestDto.md)|  | 
+ **generateAndSendEmailVerificationCodeRequestDto** | [**GenerateAndSendEmailVerificationCodeRequestDto**](GenerateAndSendEmailVerificationCodeRequestDto.md)|  | 
 
 ### Return type
 
-[**EmailInUseEntity**](EmailInUseEntity.md)
+void (empty response body)
 
 ### Authorization
 
@@ -53,6 +57,165 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authControllerGenerateAndSendPhoneVerificationCode**
+> authControllerGenerateAndSendPhoneVerificationCode(generateAndSendPhoneVerificationCodeRequestDto)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getAuthApi();
+final GenerateAndSendPhoneVerificationCodeRequestDto generateAndSendPhoneVerificationCodeRequestDto = ; // GenerateAndSendPhoneVerificationCodeRequestDto | 
+
+try {
+    api.authControllerGenerateAndSendPhoneVerificationCode(generateAndSendPhoneVerificationCodeRequestDto);
+} catch on DioException (e) {
+    print('Exception when calling AuthApi->authControllerGenerateAndSendPhoneVerificationCode: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **generateAndSendPhoneVerificationCodeRequestDto** | [**GenerateAndSendPhoneVerificationCodeRequestDto**](GenerateAndSendPhoneVerificationCodeRequestDto.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authControllerGenerateEmailInUseReport**
+> EmailInUseReportEntity authControllerGenerateEmailInUseReport(generateEmailInUseReportRequestDto)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getAuthApi();
+final GenerateEmailInUseReportRequestDto generateEmailInUseReportRequestDto = ; // GenerateEmailInUseReportRequestDto | 
+
+try {
+    final response = api.authControllerGenerateEmailInUseReport(generateEmailInUseReportRequestDto);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthApi->authControllerGenerateEmailInUseReport: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **generateEmailInUseReportRequestDto** | [**GenerateEmailInUseReportRequestDto**](GenerateEmailInUseReportRequestDto.md)|  | 
+
+### Return type
+
+[**EmailInUseReportEntity**](EmailInUseReportEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authControllerGeneratePhoneInUseReport**
+> EmailInUseReportEntity authControllerGeneratePhoneInUseReport(generatePhoneInUseReportRequestDto)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getAuthApi();
+final GeneratePhoneInUseReportRequestDto generatePhoneInUseReportRequestDto = ; // GeneratePhoneInUseReportRequestDto | 
+
+try {
+    final response = api.authControllerGeneratePhoneInUseReport(generatePhoneInUseReportRequestDto);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthApi->authControllerGeneratePhoneInUseReport: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **generatePhoneInUseReportRequestDto** | [**GeneratePhoneInUseReportRequestDto**](GeneratePhoneInUseReportRequestDto.md)|  | 
+
+### Return type
+
+[**EmailInUseReportEntity**](EmailInUseReportEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authControllerGetMe**
+> UserEntity authControllerGetMe()
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getAuthApi();
+
+try {
+    final response = api.authControllerGetMe();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AuthApi->authControllerGetMe: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UserEntity**](UserEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -98,8 +261,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **authControllerSendEmailVerificationCode**
-> authControllerSendEmailVerificationCode(sendEmailVerificationCodeRequestDto)
+# **authControllerSignInWithEmail**
+> CredentialsEntity authControllerSignInWithEmail(signInWithEmailRequestDto)
 
 
 
@@ -108,53 +271,13 @@ No authorization required
 import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getAuthApi();
-final SendEmailVerificationCodeRequestDto sendEmailVerificationCodeRequestDto = ; // SendEmailVerificationCodeRequestDto | 
+final SignInWithEmailRequestDto signInWithEmailRequestDto = ; // SignInWithEmailRequestDto | 
 
 try {
-    api.authControllerSendEmailVerificationCode(sendEmailVerificationCodeRequestDto);
-} catch on DioException (e) {
-    print('Exception when calling AuthApi->authControllerSendEmailVerificationCode: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sendEmailVerificationCodeRequestDto** | [**SendEmailVerificationCodeRequestDto**](SendEmailVerificationCodeRequestDto.md)|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **authControllerSignInWithEmailPassword**
-> CredentialsEntity authControllerSignInWithEmailPassword(signInWithEmailPasswordRequestDto)
-
-
-
-### Example
-```dart
-import 'package:dart_core_api_sdk/api.dart';
-
-final api = DartCoreApiSdk().getAuthApi();
-final SignInWithEmailPasswordRequestDto signInWithEmailPasswordRequestDto = ; // SignInWithEmailPasswordRequestDto | 
-
-try {
-    final response = api.authControllerSignInWithEmailPassword(signInWithEmailPasswordRequestDto);
+    final response = api.authControllerSignInWithEmail(signInWithEmailRequestDto);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AuthApi->authControllerSignInWithEmailPassword: $e\n');
+    print('Exception when calling AuthApi->authControllerSignInWithEmail: $e\n');
 }
 ```
 
@@ -162,7 +285,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **signInWithEmailPasswordRequestDto** | [**SignInWithEmailPasswordRequestDto**](SignInWithEmailPasswordRequestDto.md)|  | 
+ **signInWithEmailRequestDto** | [**SignInWithEmailRequestDto**](SignInWithEmailRequestDto.md)|  | 
 
 ### Return type
 
@@ -179,8 +302,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **authControllerSignUpWithEmailPassword**
-> UserEntity authControllerSignUpWithEmailPassword(signUpWithEmailPasswordRequestDto)
+# **authControllerSignUpWithEmail**
+> UserEntity authControllerSignUpWithEmail(signUpWithEmailRequestDto)
 
 
 
@@ -189,13 +312,13 @@ No authorization required
 import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getAuthApi();
-final SignUpWithEmailPasswordRequestDto signUpWithEmailPasswordRequestDto = ; // SignUpWithEmailPasswordRequestDto | 
+final SignUpWithEmailRequestDto signUpWithEmailRequestDto = ; // SignUpWithEmailRequestDto | 
 
 try {
-    final response = api.authControllerSignUpWithEmailPassword(signUpWithEmailPasswordRequestDto);
+    final response = api.authControllerSignUpWithEmail(signUpWithEmailRequestDto);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AuthApi->authControllerSignUpWithEmailPassword: $e\n');
+    print('Exception when calling AuthApi->authControllerSignUpWithEmail: $e\n');
 }
 ```
 
@@ -203,11 +326,91 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **signUpWithEmailPasswordRequestDto** | [**SignUpWithEmailPasswordRequestDto**](SignUpWithEmailPasswordRequestDto.md)|  | 
+ **signUpWithEmailRequestDto** | [**SignUpWithEmailRequestDto**](SignUpWithEmailRequestDto.md)|  | 
 
 ### Return type
 
 [**UserEntity**](UserEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authControllerVerifyEmailVerificationCode**
+> authControllerVerifyEmailVerificationCode(verifyEmailVerificationCodeRequestDto)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getAuthApi();
+final VerifyEmailVerificationCodeRequestDto verifyEmailVerificationCodeRequestDto = ; // VerifyEmailVerificationCodeRequestDto | 
+
+try {
+    api.authControllerVerifyEmailVerificationCode(verifyEmailVerificationCodeRequestDto);
+} catch on DioException (e) {
+    print('Exception when calling AuthApi->authControllerVerifyEmailVerificationCode: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **verifyEmailVerificationCodeRequestDto** | [**VerifyEmailVerificationCodeRequestDto**](VerifyEmailVerificationCodeRequestDto.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authControllerVerifyPhoneVerificationCode**
+> authControllerVerifyPhoneVerificationCode(verifyPhoneVerificationCodeRequestDto)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getAuthApi();
+final VerifyPhoneVerificationCodeRequestDto verifyPhoneVerificationCodeRequestDto = ; // VerifyPhoneVerificationCodeRequestDto | 
+
+try {
+    api.authControllerVerifyPhoneVerificationCode(verifyPhoneVerificationCodeRequestDto);
+} catch on DioException (e) {
+    print('Exception when calling AuthApi->authControllerVerifyPhoneVerificationCode: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **verifyPhoneVerificationCodeRequestDto** | [**VerifyPhoneVerificationCodeRequestDto**](VerifyPhoneVerificationCodeRequestDto.md)|  | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

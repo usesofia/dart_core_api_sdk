@@ -10,33 +10,31 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **accountId** | **String** |  | 
-**account** | [**BankAccountEntity**](BankAccountEntity.md) |  | 
+**account** | [**BankConnectionEntityAccountsInner**](BankConnectionEntityAccountsInner.md) |  | 
 **workspaceId** | **String** |  | 
 **provider** | **String** |  | 
 **providerTransactionId** | **String** |  | 
 **originalDescription** | **String** |  | 
 **description** | **String** |  | 
-**postedDate** | [**DateTime**](DateTime.md) |  | 
-**competencyDate** | [**DateTime**](DateTime.md) |  | 
-**amount** | **num** |  | 
-**type** | **String** |  | 
+**postedDate** | [**JsonObject**](.md) |  | 
+**competencyDate** | [**JsonObject**](.md) |  | 
+**amount** | **int** |  | 
+**directionNature** | **String** |  | 
 **status** | **String** |  | 
 **legalNature** | **String** |  | 
 **providerCategoryId** | **String** |  | [optional] 
 **providerCategoryName** | **String** |  | [optional] 
 **categoryId** | **String** |  | [optional] 
-**category** | [**BankTransactionCategoryPlainEntity**](BankTransactionCategoryPlainEntity.md) |  | [optional] 
-**tags** | [**BuiltList&lt;BankTransactionTagEntity&gt;**](BankTransactionTagEntity.md) |  | 
+**category** | [**BankTransactionEntityCategory**](BankTransactionEntityCategory.md) |  | [optional] 
+**tags** | [**BuiltList&lt;BankTransactionEntityTagsInner&gt;**](BankTransactionEntityTagsInner.md) |  | 
 **paymentDataId** | **String** |  | [optional] 
-**paymentData** | [**BankTransactionPaymentDataEntity**](BankTransactionPaymentDataEntity.md) |  | [optional] 
+**paymentData** | [**BankTransactionEntityPaymentData**](BankTransactionEntityPaymentData.md) |  | [optional] 
 **creditCardMetadataId** | **String** |  | [optional] 
-**creditCardMetadata** | [**BankTransactionCreditCardMetadataEntity**](BankTransactionCreditCardMetadataEntity.md) |  | [optional] 
-**bestGuessCategoryId** | **String** |  | [optional] 
-**bestGuessCategory** | [**BankTransactionCategoryPlainEntity**](BankTransactionCategoryPlainEntity.md) |  | [optional] 
-**ignoredAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**confirmedAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**createdAt** | [**DateTime**](DateTime.md) |  | 
-**updatedAt** | [**DateTime**](DateTime.md) |  | 
+**creditCardMetadata** | [**BankTransactionEntityCreditCardMetadata**](BankTransactionEntityCreditCardMetadata.md) |  | [optional] 
+**ignoredAt** | [**JsonObject**](.md) |  | [optional] 
+**verifiedAt** | [**JsonObject**](.md) |  | [optional] 
+**createdAt** | [**JsonObject**](.md) |  | 
+**updatedAt** | [**JsonObject**](.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

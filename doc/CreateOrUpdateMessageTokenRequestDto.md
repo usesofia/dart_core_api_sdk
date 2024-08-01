@@ -9,6 +9,7 @@ import 'package:dart_core_api_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **platform** | **String** |  | 
+**provider** | **String** |  | 
 **deviceId** | **String** |  | 
 **token** | **String** |  | 
 

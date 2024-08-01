@@ -10,7 +10,6 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:dart_core_api_sdk/src/api_util.dart';
 import 'package:dart_core_api_sdk/src/model/bank_connection_entity.dart';
-import 'package:dart_core_api_sdk/src/model/bank_connection_with_accounts_entity.dart';
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_connection_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
 
@@ -22,7 +21,7 @@ class BankConnectionsApi {
 
   const BankConnectionsApi(this._dio, this._serializers);
 
-  /// bankConnectionsControllerActivateBankConnection
+  /// bankConnectionsControllerActivate
   /// 
   ///
   /// Parameters:
@@ -36,7 +35,7 @@ class BankConnectionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BankConnectionEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankConnectionEntity>> bankConnectionsControllerActivateBankConnection({ 
+  Future<Response<BankConnectionEntity>> bankConnectionsControllerActivate({ 
     required String bankConnectionId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -97,7 +96,7 @@ class BankConnectionsApi {
     );
   }
 
-  /// bankConnectionsControllerCreateOrUpdateBankConnection
+  /// bankConnectionsControllerCreateOrUpdate
   /// 
   ///
   /// Parameters:
@@ -112,7 +111,7 @@ class BankConnectionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BankConnectionEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankConnectionEntity>> bankConnectionsControllerCreateOrUpdateBankConnection({ 
+  Future<Response<BankConnectionEntity>> bankConnectionsControllerCreateOrUpdate({ 
     required String workspaceId,
     required CreateOrUpdateBankConnectionRequestDto createOrUpdateBankConnectionRequestDto,
     CancelToken? cancelToken,
@@ -122,7 +121,7 @@ class BankConnectionsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/workspaces/{workspaceId}/bank/connections'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _path = r'/bank/workspaces/{workspaceId}/connections'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -194,7 +193,7 @@ class BankConnectionsApi {
     );
   }
 
-  /// bankConnectionsControllerDisableBankConnection
+  /// bankConnectionsControllerDisable
   /// 
   ///
   /// Parameters:
@@ -208,7 +207,7 @@ class BankConnectionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BankConnectionEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankConnectionEntity>> bankConnectionsControllerDisableBankConnection({ 
+  Future<Response<BankConnectionEntity>> bankConnectionsControllerDisable({ 
     required String bankConnectionId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -269,89 +268,7 @@ class BankConnectionsApi {
     );
   }
 
-  /// bankConnectionsControllerFetchUserBankConnections
-  /// 
-  ///
-  /// Parameters:
-  /// * [workspaceId] 
-  /// * [enabled] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<BankConnectionWithAccountsEntity>] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<BankConnectionWithAccountsEntity>>> bankConnectionsControllerFetchUserBankConnections({ 
-    required String workspaceId,
-    bool? enabled,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/workspaces/{workspaceId}/bank/connections'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      if (enabled != null) r'enabled': encodeQueryParameter(_serializers, enabled, const FullType(bool)),
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    BuiltList<BankConnectionWithAccountsEntity>? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(BankConnectionWithAccountsEntity)]),
-      ) as BuiltList<BankConnectionWithAccountsEntity>;
-
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<BuiltList<BankConnectionWithAccountsEntity>>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// bankConnectionsControllerGetBankConnectionDetails
+  /// bankConnectionsControllerGetById
   /// 
   ///
   /// Parameters:
@@ -363,9 +280,9 @@ class BankConnectionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BankConnectionWithAccountsEntity] as data
+  /// Returns a [Future] containing a [Response] with a [BankConnectionEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankConnectionWithAccountsEntity>> bankConnectionsControllerGetBankConnectionDetails({ 
+  Future<Response<BankConnectionEntity>> bankConnectionsControllerGetById({ 
     required String bankConnectionId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -395,14 +312,14 @@ class BankConnectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BankConnectionWithAccountsEntity? _responseData;
+    BankConnectionEntity? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BankConnectionWithAccountsEntity),
-      ) as BankConnectionWithAccountsEntity;
+        specifiedType: const FullType(BankConnectionEntity),
+      ) as BankConnectionEntity;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -414,7 +331,89 @@ class BankConnectionsApi {
       );
     }
 
-    return Response<BankConnectionWithAccountsEntity>(
+    return Response<BankConnectionEntity>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// bankConnectionsControllerList
+  /// 
+  ///
+  /// Parameters:
+  /// * [workspaceId] 
+  /// * [enabled] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [BuiltList<BankConnectionEntity>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<BuiltList<BankConnectionEntity>>> bankConnectionsControllerList({ 
+    required String workspaceId,
+    bool? enabled,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/bank/workspaces/{workspaceId}/connections'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (enabled != null) r'enabled': encodeQueryParameter(_serializers, enabled, const FullType(bool)),
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    BuiltList<BankConnectionEntity>? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(BuiltList, [FullType(BankConnectionEntity)]),
+      ) as BuiltList<BankConnectionEntity>;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<BuiltList<BankConnectionEntity>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

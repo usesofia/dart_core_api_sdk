@@ -9,12 +9,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bankTransactionTagsControllerCreateTag**](BankTransactionTagsApi.md#banktransactiontagscontrollercreatetag) | **POST** /workspaces/{workspaceId}/bank/transactions/tags | 
-[**bankTransactionTagsControllerListTags**](BankTransactionTagsApi.md#banktransactiontagscontrollerlisttags) | **GET** /workspaces/{workspaceId}/bank/transactions/tags | 
+[**bankTransactionTagsControllerCreate**](BankTransactionTagsApi.md#banktransactiontagscontrollercreate) | **POST** /bank/workspaces/{workspaceId}/transaction-tags | 
+[**bankTransactionTagsControllerList**](BankTransactionTagsApi.md#banktransactiontagscontrollerlist) | **GET** /bank/workspaces/{workspaceId}/transaction-tags | 
 
 
-# **bankTransactionTagsControllerCreateTag**
-> BankTransactionTagEntity bankTransactionTagsControllerCreateTag(workspaceId, createBankTransactionTagRequestDto)
+# **bankTransactionTagsControllerCreate**
+> BankTransactionTagEntity bankTransactionTagsControllerCreate(workspaceId, createBankTransactionTagRequestDto)
 
 
 
@@ -27,10 +27,10 @@ final String workspaceId = workspaceId_example; // String |
 final CreateBankTransactionTagRequestDto createBankTransactionTagRequestDto = ; // CreateBankTransactionTagRequestDto | 
 
 try {
-    final response = api.bankTransactionTagsControllerCreateTag(workspaceId, createBankTransactionTagRequestDto);
+    final response = api.bankTransactionTagsControllerCreate(workspaceId, createBankTransactionTagRequestDto);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankTransactionTagsApi->bankTransactionTagsControllerCreateTag: $e\n');
+    print('Exception when calling BankTransactionTagsApi->bankTransactionTagsControllerCreate: $e\n');
 }
 ```
 
@@ -56,8 +56,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bankTransactionTagsControllerListTags**
-> BuiltList<BankTransactionTagEntity> bankTransactionTagsControllerListTags(workspaceId)
+# **bankTransactionTagsControllerList**
+> BuiltList<BankTransactionTagEntity> bankTransactionTagsControllerList(workspaceId)
 
 
 
@@ -69,10 +69,10 @@ final api = DartCoreApiSdk().getBankTransactionTagsApi();
 final String workspaceId = workspaceId_example; // String | 
 
 try {
-    final response = api.bankTransactionTagsControllerListTags(workspaceId);
+    final response = api.bankTransactionTagsControllerList(workspaceId);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankTransactionTagsApi->bankTransactionTagsControllerListTags: $e\n');
+    print('Exception when calling BankTransactionTagsApi->bankTransactionTagsControllerList: $e\n');
 }
 ```
 

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -25,19 +26,21 @@ abstract class CreateOrUpdateBankAccountRequestDto implements Built<CreateOrUpda
   String get bankConnectionId;
 
   @BuiltValueField(wireName: r'provider')
-  String get provider;
+  CreateOrUpdateBankAccountRequestDtoProviderEnum get provider;
+  // enum providerEnum {  PLUGGY,  SOFIA,  };
 
   @BuiltValueField(wireName: r'providerAccountId')
   String get providerAccountId;
 
   @BuiltValueField(wireName: r'type')
-  String get type;
+  CreateOrUpdateBankAccountRequestDtoTypeEnum get type;
+  // enum typeEnum {  CHECKING,  SAVINGS,  CREDIT_CARD,  };
 
   @BuiltValueField(wireName: r'number')
   String get number;
 
   @BuiltValueField(wireName: r'balance')
-  num get balance;
+  int get balance;
 
   @BuiltValueField(wireName: r'currencyCode')
   String get currencyCode;
@@ -76,7 +79,7 @@ class _$CreateOrUpdateBankAccountRequestDtoSerializer implements PrimitiveSerial
     yield r'provider';
     yield serializers.serialize(
       object.provider,
-      specifiedType: const FullType(String),
+      specifiedType: const FullType(CreateOrUpdateBankAccountRequestDtoProviderEnum),
     );
     yield r'providerAccountId';
     yield serializers.serialize(
@@ -86,7 +89,7 @@ class _$CreateOrUpdateBankAccountRequestDtoSerializer implements PrimitiveSerial
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(String),
+      specifiedType: const FullType(CreateOrUpdateBankAccountRequestDtoTypeEnum),
     );
     yield r'number';
     yield serializers.serialize(
@@ -96,7 +99,7 @@ class _$CreateOrUpdateBankAccountRequestDtoSerializer implements PrimitiveSerial
     yield r'balance';
     yield serializers.serialize(
       object.balance,
-      specifiedType: const FullType(num),
+      specifiedType: const FullType(int),
     );
     yield r'currencyCode';
     yield serializers.serialize(
@@ -141,8 +144,8 @@ class _$CreateOrUpdateBankAccountRequestDtoSerializer implements PrimitiveSerial
         case r'provider':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType(CreateOrUpdateBankAccountRequestDtoProviderEnum),
+          ) as CreateOrUpdateBankAccountRequestDtoProviderEnum;
           result.provider = valueDes;
           break;
         case r'providerAccountId':
@@ -155,8 +158,8 @@ class _$CreateOrUpdateBankAccountRequestDtoSerializer implements PrimitiveSerial
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType(CreateOrUpdateBankAccountRequestDtoTypeEnum),
+          ) as CreateOrUpdateBankAccountRequestDtoTypeEnum;
           result.type = valueDes;
           break;
         case r'number':
@@ -169,8 +172,8 @@ class _$CreateOrUpdateBankAccountRequestDtoSerializer implements PrimitiveSerial
         case r'balance':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(num),
-          ) as num;
+            specifiedType: const FullType(int),
+          ) as int;
           result.balance = valueDes;
           break;
         case r'currencyCode':
@@ -214,5 +217,37 @@ class _$CreateOrUpdateBankAccountRequestDtoSerializer implements PrimitiveSerial
     );
     return result.build();
   }
+}
+
+class CreateOrUpdateBankAccountRequestDtoProviderEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'PLUGGY')
+  static const CreateOrUpdateBankAccountRequestDtoProviderEnum PLUGGY = _$createOrUpdateBankAccountRequestDtoProviderEnum_PLUGGY;
+  @BuiltValueEnumConst(wireName: r'SOFIA')
+  static const CreateOrUpdateBankAccountRequestDtoProviderEnum SOFIA = _$createOrUpdateBankAccountRequestDtoProviderEnum_SOFIA;
+
+  static Serializer<CreateOrUpdateBankAccountRequestDtoProviderEnum> get serializer => _$createOrUpdateBankAccountRequestDtoProviderEnumSerializer;
+
+  const CreateOrUpdateBankAccountRequestDtoProviderEnum._(String name): super(name);
+
+  static BuiltSet<CreateOrUpdateBankAccountRequestDtoProviderEnum> get values => _$createOrUpdateBankAccountRequestDtoProviderEnumValues;
+  static CreateOrUpdateBankAccountRequestDtoProviderEnum valueOf(String name) => _$createOrUpdateBankAccountRequestDtoProviderEnumValueOf(name);
+}
+
+class CreateOrUpdateBankAccountRequestDtoTypeEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'CHECKING')
+  static const CreateOrUpdateBankAccountRequestDtoTypeEnum CHECKING = _$createOrUpdateBankAccountRequestDtoTypeEnum_CHECKING;
+  @BuiltValueEnumConst(wireName: r'SAVINGS')
+  static const CreateOrUpdateBankAccountRequestDtoTypeEnum SAVINGS = _$createOrUpdateBankAccountRequestDtoTypeEnum_SAVINGS;
+  @BuiltValueEnumConst(wireName: r'CREDIT_CARD')
+  static const CreateOrUpdateBankAccountRequestDtoTypeEnum CREDIT_CARD = _$createOrUpdateBankAccountRequestDtoTypeEnum_CREDIT_CARD;
+
+  static Serializer<CreateOrUpdateBankAccountRequestDtoTypeEnum> get serializer => _$createOrUpdateBankAccountRequestDtoTypeEnumSerializer;
+
+  const CreateOrUpdateBankAccountRequestDtoTypeEnum._(String name): super(name);
+
+  static BuiltSet<CreateOrUpdateBankAccountRequestDtoTypeEnum> get values => _$createOrUpdateBankAccountRequestDtoTypeEnumValues;
+  static CreateOrUpdateBankAccountRequestDtoTypeEnum valueOf(String name) => _$createOrUpdateBankAccountRequestDtoTypeEnumValueOf(name);
 }
 

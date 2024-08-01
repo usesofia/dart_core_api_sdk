@@ -6,47 +6,83 @@ part of 'user_related_workspace_entity.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const UserRelatedWorkspaceEntityRelationTypeEnum
+    _$userRelatedWorkspaceEntityRelationTypeEnum_APPROVED =
+    const UserRelatedWorkspaceEntityRelationTypeEnum._('APPROVED');
+const UserRelatedWorkspaceEntityRelationTypeEnum
+    _$userRelatedWorkspaceEntityRelationTypeEnum_WAITING_APPROVAL =
+    const UserRelatedWorkspaceEntityRelationTypeEnum._('WAITING_APPROVAL');
+
+UserRelatedWorkspaceEntityRelationTypeEnum
+    _$userRelatedWorkspaceEntityRelationTypeEnumValueOf(String name) {
+  switch (name) {
+    case 'APPROVED':
+      return _$userRelatedWorkspaceEntityRelationTypeEnum_APPROVED;
+    case 'WAITING_APPROVAL':
+      return _$userRelatedWorkspaceEntityRelationTypeEnum_WAITING_APPROVAL;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<UserRelatedWorkspaceEntityRelationTypeEnum>
+    _$userRelatedWorkspaceEntityRelationTypeEnumValues = new BuiltSet<
+        UserRelatedWorkspaceEntityRelationTypeEnum>(const <UserRelatedWorkspaceEntityRelationTypeEnum>[
+  _$userRelatedWorkspaceEntityRelationTypeEnum_APPROVED,
+  _$userRelatedWorkspaceEntityRelationTypeEnum_WAITING_APPROVAL,
+]);
+
+Serializer<UserRelatedWorkspaceEntityRelationTypeEnum>
+    _$userRelatedWorkspaceEntityRelationTypeEnumSerializer =
+    new _$UserRelatedWorkspaceEntityRelationTypeEnumSerializer();
+
+class _$UserRelatedWorkspaceEntityRelationTypeEnumSerializer
+    implements PrimitiveSerializer<UserRelatedWorkspaceEntityRelationTypeEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'APPROVED': 'APPROVED',
+    'WAITING_APPROVAL': 'WAITING_APPROVAL',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'APPROVED': 'APPROVED',
+    'WAITING_APPROVAL': 'WAITING_APPROVAL',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    UserRelatedWorkspaceEntityRelationTypeEnum
+  ];
+  @override
+  final String wireName = 'UserRelatedWorkspaceEntityRelationTypeEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          UserRelatedWorkspaceEntityRelationTypeEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  UserRelatedWorkspaceEntityRelationTypeEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      UserRelatedWorkspaceEntityRelationTypeEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
   @override
-  final String id;
+  final UserEntityWorkspacesInner workspace;
   @override
-  final String prettyId;
-  @override
-  final String name;
-  @override
-  final String type;
-  @override
-  final String creatorUserId;
-  @override
-  final DateTime createdAt;
-  @override
-  final String relationType;
+  final UserRelatedWorkspaceEntityRelationTypeEnum relationType;
 
   factory _$UserRelatedWorkspaceEntity(
           [void Function(UserRelatedWorkspaceEntityBuilder)? updates]) =>
       (new UserRelatedWorkspaceEntityBuilder()..update(updates))._build();
 
   _$UserRelatedWorkspaceEntity._(
-      {required this.id,
-      required this.prettyId,
-      required this.name,
-      required this.type,
-      required this.creatorUserId,
-      required this.createdAt,
-      required this.relationType})
+      {required this.workspace, required this.relationType})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        id, r'UserRelatedWorkspaceEntity', 'id');
-    BuiltValueNullFieldError.checkNotNull(
-        prettyId, r'UserRelatedWorkspaceEntity', 'prettyId');
-    BuiltValueNullFieldError.checkNotNull(
-        name, r'UserRelatedWorkspaceEntity', 'name');
-    BuiltValueNullFieldError.checkNotNull(
-        type, r'UserRelatedWorkspaceEntity', 'type');
-    BuiltValueNullFieldError.checkNotNull(
-        creatorUserId, r'UserRelatedWorkspaceEntity', 'creatorUserId');
-    BuiltValueNullFieldError.checkNotNull(
-        createdAt, r'UserRelatedWorkspaceEntity', 'createdAt');
+        workspace, r'UserRelatedWorkspaceEntity', 'workspace');
     BuiltValueNullFieldError.checkNotNull(
         relationType, r'UserRelatedWorkspaceEntity', 'relationType');
   }
@@ -64,24 +100,14 @@ class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is UserRelatedWorkspaceEntity &&
-        id == other.id &&
-        prettyId == other.prettyId &&
-        name == other.name &&
-        type == other.type &&
-        creatorUserId == other.creatorUserId &&
-        createdAt == other.createdAt &&
+        workspace == other.workspace &&
         relationType == other.relationType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, prettyId.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, creatorUserId.hashCode);
-    _$hash = $jc(_$hash, createdAt.hashCode);
+    _$hash = $jc(_$hash, workspace.hashCode);
     _$hash = $jc(_$hash, relationType.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -90,12 +116,7 @@ class _$UserRelatedWorkspaceEntity extends UserRelatedWorkspaceEntity {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'UserRelatedWorkspaceEntity')
-          ..add('id', id)
-          ..add('prettyId', prettyId)
-          ..add('name', name)
-          ..add('type', type)
-          ..add('creatorUserId', creatorUserId)
-          ..add('createdAt', createdAt)
+          ..add('workspace', workspace)
           ..add('relationType', relationType))
         .toString();
   }
@@ -106,34 +127,17 @@ class UserRelatedWorkspaceEntityBuilder
         Builder<UserRelatedWorkspaceEntity, UserRelatedWorkspaceEntityBuilder> {
   _$UserRelatedWorkspaceEntity? _$v;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  UserEntityWorkspacesInnerBuilder? _workspace;
+  UserEntityWorkspacesInnerBuilder get workspace =>
+      _$this._workspace ??= new UserEntityWorkspacesInnerBuilder();
+  set workspace(UserEntityWorkspacesInnerBuilder? workspace) =>
+      _$this._workspace = workspace;
 
-  String? _prettyId;
-  String? get prettyId => _$this._prettyId;
-  set prettyId(String? prettyId) => _$this._prettyId = prettyId;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _type;
-  String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
-
-  String? _creatorUserId;
-  String? get creatorUserId => _$this._creatorUserId;
-  set creatorUserId(String? creatorUserId) =>
-      _$this._creatorUserId = creatorUserId;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  String? _relationType;
-  String? get relationType => _$this._relationType;
-  set relationType(String? relationType) => _$this._relationType = relationType;
+  UserRelatedWorkspaceEntityRelationTypeEnum? _relationType;
+  UserRelatedWorkspaceEntityRelationTypeEnum? get relationType =>
+      _$this._relationType;
+  set relationType(UserRelatedWorkspaceEntityRelationTypeEnum? relationType) =>
+      _$this._relationType = relationType;
 
   UserRelatedWorkspaceEntityBuilder() {
     UserRelatedWorkspaceEntity._defaults(this);
@@ -142,12 +146,7 @@ class UserRelatedWorkspaceEntityBuilder
   UserRelatedWorkspaceEntityBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
-      _prettyId = $v.prettyId;
-      _name = $v.name;
-      _type = $v.type;
-      _creatorUserId = $v.creatorUserId;
-      _createdAt = $v.createdAt;
+      _workspace = $v.workspace.toBuilder();
       _relationType = $v.relationType;
       _$v = null;
     }
@@ -169,22 +168,24 @@ class UserRelatedWorkspaceEntityBuilder
   UserRelatedWorkspaceEntity build() => _build();
 
   _$UserRelatedWorkspaceEntity _build() {
-    final _$result = _$v ??
-        new _$UserRelatedWorkspaceEntity._(
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'UserRelatedWorkspaceEntity', 'id'),
-            prettyId: BuiltValueNullFieldError.checkNotNull(
-                prettyId, r'UserRelatedWorkspaceEntity', 'prettyId'),
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'UserRelatedWorkspaceEntity', 'name'),
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'UserRelatedWorkspaceEntity', 'type'),
-            creatorUserId: BuiltValueNullFieldError.checkNotNull(
-                creatorUserId, r'UserRelatedWorkspaceEntity', 'creatorUserId'),
-            createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, r'UserRelatedWorkspaceEntity', 'createdAt'),
-            relationType: BuiltValueNullFieldError.checkNotNull(
-                relationType, r'UserRelatedWorkspaceEntity', 'relationType'));
+    _$UserRelatedWorkspaceEntity _$result;
+    try {
+      _$result = _$v ??
+          new _$UserRelatedWorkspaceEntity._(
+              workspace: workspace.build(),
+              relationType: BuiltValueNullFieldError.checkNotNull(
+                  relationType, r'UserRelatedWorkspaceEntity', 'relationType'));
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'workspace';
+        workspace.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'UserRelatedWorkspaceEntity', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

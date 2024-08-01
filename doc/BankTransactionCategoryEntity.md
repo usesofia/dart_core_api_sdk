@@ -10,10 +10,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **name** | **String** |  | 
-**nature** | **String** |  | 
+**directionNature** | **String** |  | 
 **parentId** | **String** |  | [optional] 
-**path** | [**BuiltList&lt;BankTransactionCategoryPlainEntity&gt;**](BankTransactionCategoryPlainEntity.md) |  | 
-**children** | [**BuiltList&lt;BankTransactionCategoryPlainEntity&gt;**](BankTransactionCategoryPlainEntity.md) |  | 
+**children** | [**BuiltList&lt;BankTransactionCategoryEntityChildrenInner&gt;**](BankTransactionCategoryEntityChildrenInner.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

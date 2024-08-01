@@ -21,7 +21,7 @@ class BankTransactionTagsApi {
 
   const BankTransactionTagsApi(this._dio, this._serializers);
 
-  /// bankTransactionTagsControllerCreateTag
+  /// bankTransactionTagsControllerCreate
   /// 
   ///
   /// Parameters:
@@ -36,7 +36,7 @@ class BankTransactionTagsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BankTransactionTagEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankTransactionTagEntity>> bankTransactionTagsControllerCreateTag({ 
+  Future<Response<BankTransactionTagEntity>> bankTransactionTagsControllerCreate({ 
     required String workspaceId,
     required CreateBankTransactionTagRequestDto createBankTransactionTagRequestDto,
     CancelToken? cancelToken,
@@ -46,7 +46,7 @@ class BankTransactionTagsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/workspaces/{workspaceId}/bank/transactions/tags'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _path = r'/bank/workspaces/{workspaceId}/transaction-tags'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -118,7 +118,7 @@ class BankTransactionTagsApi {
     );
   }
 
-  /// bankTransactionTagsControllerListTags
+  /// bankTransactionTagsControllerList
   /// 
   ///
   /// Parameters:
@@ -132,7 +132,7 @@ class BankTransactionTagsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<BankTransactionTagEntity>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<BankTransactionTagEntity>>> bankTransactionTagsControllerListTags({ 
+  Future<Response<BuiltList<BankTransactionTagEntity>>> bankTransactionTagsControllerList({ 
     required String workspaceId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -141,7 +141,7 @@ class BankTransactionTagsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/workspaces/{workspaceId}/bank/transactions/tags'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _path = r'/bank/workspaces/{workspaceId}/transaction-tags'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{

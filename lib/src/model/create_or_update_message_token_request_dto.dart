@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -12,12 +13,18 @@ part 'create_or_update_message_token_request_dto.g.dart';
 ///
 /// Properties:
 /// * [platform] 
+/// * [provider] 
 /// * [deviceId] 
 /// * [token] 
 @BuiltValue()
 abstract class CreateOrUpdateMessageTokenRequestDto implements Built<CreateOrUpdateMessageTokenRequestDto, CreateOrUpdateMessageTokenRequestDtoBuilder> {
   @BuiltValueField(wireName: r'platform')
-  String get platform;
+  CreateOrUpdateMessageTokenRequestDtoPlatformEnum get platform;
+  // enum platformEnum {  WEB,  ANDROID,  IOS,  };
+
+  @BuiltValueField(wireName: r'provider')
+  CreateOrUpdateMessageTokenRequestDtoProviderEnum get provider;
+  // enum providerEnum {  FIREBASE_MESSAGING,  };
 
   @BuiltValueField(wireName: r'deviceId')
   String get deviceId;
@@ -51,7 +58,12 @@ class _$CreateOrUpdateMessageTokenRequestDtoSerializer implements PrimitiveSeria
     yield r'platform';
     yield serializers.serialize(
       object.platform,
-      specifiedType: const FullType(String),
+      specifiedType: const FullType(CreateOrUpdateMessageTokenRequestDtoPlatformEnum),
+    );
+    yield r'provider';
+    yield serializers.serialize(
+      object.provider,
+      specifiedType: const FullType(CreateOrUpdateMessageTokenRequestDtoProviderEnum),
     );
     yield r'deviceId';
     yield serializers.serialize(
@@ -89,9 +101,16 @@ class _$CreateOrUpdateMessageTokenRequestDtoSerializer implements PrimitiveSeria
         case r'platform':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType(CreateOrUpdateMessageTokenRequestDtoPlatformEnum),
+          ) as CreateOrUpdateMessageTokenRequestDtoPlatformEnum;
           result.platform = valueDes;
+          break;
+        case r'provider':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(CreateOrUpdateMessageTokenRequestDtoProviderEnum),
+          ) as CreateOrUpdateMessageTokenRequestDtoProviderEnum;
+          result.provider = valueDes;
           break;
         case r'deviceId':
           final valueDes = serializers.deserialize(
@@ -134,5 +153,35 @@ class _$CreateOrUpdateMessageTokenRequestDtoSerializer implements PrimitiveSeria
     );
     return result.build();
   }
+}
+
+class CreateOrUpdateMessageTokenRequestDtoPlatformEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'WEB')
+  static const CreateOrUpdateMessageTokenRequestDtoPlatformEnum WEB = _$createOrUpdateMessageTokenRequestDtoPlatformEnum_WEB;
+  @BuiltValueEnumConst(wireName: r'ANDROID')
+  static const CreateOrUpdateMessageTokenRequestDtoPlatformEnum ANDROID = _$createOrUpdateMessageTokenRequestDtoPlatformEnum_ANDROID;
+  @BuiltValueEnumConst(wireName: r'IOS')
+  static const CreateOrUpdateMessageTokenRequestDtoPlatformEnum IOS = _$createOrUpdateMessageTokenRequestDtoPlatformEnum_IOS;
+
+  static Serializer<CreateOrUpdateMessageTokenRequestDtoPlatformEnum> get serializer => _$createOrUpdateMessageTokenRequestDtoPlatformEnumSerializer;
+
+  const CreateOrUpdateMessageTokenRequestDtoPlatformEnum._(String name): super(name);
+
+  static BuiltSet<CreateOrUpdateMessageTokenRequestDtoPlatformEnum> get values => _$createOrUpdateMessageTokenRequestDtoPlatformEnumValues;
+  static CreateOrUpdateMessageTokenRequestDtoPlatformEnum valueOf(String name) => _$createOrUpdateMessageTokenRequestDtoPlatformEnumValueOf(name);
+}
+
+class CreateOrUpdateMessageTokenRequestDtoProviderEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'FIREBASE_MESSAGING')
+  static const CreateOrUpdateMessageTokenRequestDtoProviderEnum FIREBASE_MESSAGING = _$createOrUpdateMessageTokenRequestDtoProviderEnum_FIREBASE_MESSAGING;
+
+  static Serializer<CreateOrUpdateMessageTokenRequestDtoProviderEnum> get serializer => _$createOrUpdateMessageTokenRequestDtoProviderEnumSerializer;
+
+  const CreateOrUpdateMessageTokenRequestDtoProviderEnum._(String name): super(name);
+
+  static BuiltSet<CreateOrUpdateMessageTokenRequestDtoProviderEnum> get values => _$createOrUpdateMessageTokenRequestDtoProviderEnumValues;
+  static CreateOrUpdateMessageTokenRequestDtoProviderEnum valueOf(String name) => _$createOrUpdateMessageTokenRequestDtoProviderEnumValueOf(name);
 }
 

@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bankTransactionCategoriesControllerGetBankTransactionCategories**](BankTransactionCategoriesApi.md#banktransactioncategoriescontrollergetbanktransactioncategories) | **GET** /workspaces/{workspaceId}/bank/transactions/categories | 
+[**bankTransactionCategoriesControllerList**](BankTransactionCategoriesApi.md#banktransactioncategoriescontrollerlist) | **GET** /bank/workspaces/{workspaceId}/transaction-categories | 
 
 
-# **bankTransactionCategoriesControllerGetBankTransactionCategories**
-> BuiltList<BankTransactionCategoryEntity> bankTransactionCategoriesControllerGetBankTransactionCategories(workspaceId, onlyLeafs, transactionNatures, legalNatures)
+# **bankTransactionCategoriesControllerList**
+> BuiltList<BankTransactionCategoryEntity> bankTransactionCategoriesControllerList(workspaceId, onlyLeafs, directionNatures, legalNatures)
 
 
 
@@ -24,14 +24,14 @@ import 'package:dart_core_api_sdk/api.dart';
 final api = DartCoreApiSdk().getBankTransactionCategoriesApi();
 final String workspaceId = workspaceId_example; // String | 
 final bool onlyLeafs = true; // bool | 
-final String transactionNatures = transactionNatures_example; // String | 
+final String directionNatures = directionNatures_example; // String | 
 final String legalNatures = legalNatures_example; // String | 
 
 try {
-    final response = api.bankTransactionCategoriesControllerGetBankTransactionCategories(workspaceId, onlyLeafs, transactionNatures, legalNatures);
+    final response = api.bankTransactionCategoriesControllerList(workspaceId, onlyLeafs, directionNatures, legalNatures);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankTransactionCategoriesApi->bankTransactionCategoriesControllerGetBankTransactionCategories: $e\n');
+    print('Exception when calling BankTransactionCategoriesApi->bankTransactionCategoriesControllerList: $e\n');
 }
 ```
 
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspaceId** | **String**|  | 
  **onlyLeafs** | **bool**|  | [optional] 
- **transactionNatures** | **String**|  | [optional] 
+ **directionNatures** | **String**|  | [optional] 
  **legalNatures** | **String**|  | [optional] 
 
 ### Return type

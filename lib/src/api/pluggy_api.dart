@@ -19,7 +19,7 @@ class PluggyApi {
 
   const PluggyApi(this._dio, this._serializers);
 
-  /// pluggyControllerCreate
+  /// pluggyControllerCreateConnectToken
   /// 
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class PluggyApi {
   ///
   /// Returns a [Future] containing a [Response] with a [PluggyConnectTokenEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<PluggyConnectTokenEntity>> pluggyControllerCreate({ 
+  Future<Response<PluggyConnectTokenEntity>> pluggyControllerCreateConnectToken({ 
     required CreatePluggyConnectTokenRequestDto createPluggyConnectTokenRequestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -42,7 +42,7 @@ class PluggyApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/pluggy/connect-token';
+    final _path = r'/pluggy/connect-tokens';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{

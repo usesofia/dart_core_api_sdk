@@ -3,12 +3,13 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:dart_core_api_sdk/src/model/bank_transaction_payment_data_entity.dart';
+import 'package:dart_core_api_sdk/src/model/bank_transaction_entity_tags_inner.dart';
+import 'package:dart_core_api_sdk/src/model/bank_transaction_entity_credit_card_metadata.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:dart_core_api_sdk/src/model/bank_transaction_category_plain_entity.dart';
-import 'package:dart_core_api_sdk/src/model/bank_transaction_credit_card_metadata_entity.dart';
-import 'package:dart_core_api_sdk/src/model/bank_transaction_tag_entity.dart';
-import 'package:dart_core_api_sdk/src/model/bank_account_entity.dart';
+import 'package:dart_core_api_sdk/src/model/bank_transaction_entity_category.dart';
+import 'package:dart_core_api_sdk/src/model/bank_connection_entity_accounts_inner.dart';
+import 'package:dart_core_api_sdk/src/model/bank_transaction_entity_payment_data.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -28,7 +29,7 @@ part 'bank_transaction_entity.g.dart';
 /// * [postedDate] 
 /// * [competencyDate] 
 /// * [amount] 
-/// * [type] 
+/// * [directionNature] 
 /// * [status] 
 /// * [legalNature] 
 /// * [providerCategoryId] 
@@ -40,10 +41,8 @@ part 'bank_transaction_entity.g.dart';
 /// * [paymentData] 
 /// * [creditCardMetadataId] 
 /// * [creditCardMetadata] 
-/// * [bestGuessCategoryId] 
-/// * [bestGuessCategory] 
 /// * [ignoredAt] 
-/// * [confirmedAt] 
+/// * [verifiedAt] 
 /// * [createdAt] 
 /// * [updatedAt] 
 @BuiltValue()
@@ -55,7 +54,7 @@ abstract class BankTransactionEntity implements Built<BankTransactionEntity, Ban
   String get accountId;
 
   @BuiltValueField(wireName: r'account')
-  BankAccountEntity get account;
+  BankConnectionEntityAccountsInner get account;
 
   @BuiltValueField(wireName: r'workspaceId')
   String get workspaceId;
@@ -74,17 +73,17 @@ abstract class BankTransactionEntity implements Built<BankTransactionEntity, Ban
   String get description;
 
   @BuiltValueField(wireName: r'postedDate')
-  DateTime get postedDate;
+  JsonObject? get postedDate;
 
   @BuiltValueField(wireName: r'competencyDate')
-  DateTime get competencyDate;
+  JsonObject? get competencyDate;
 
   @BuiltValueField(wireName: r'amount')
-  num get amount;
+  int get amount;
 
-  @BuiltValueField(wireName: r'type')
-  BankTransactionEntityTypeEnum get type;
-  // enum typeEnum {  DEBIT,  CREDIT,  UNDEFINED,  };
+  @BuiltValueField(wireName: r'directionNature')
+  BankTransactionEntityDirectionNatureEnum get directionNature;
+  // enum directionNatureEnum {  CREDIT,  DEBIT,  UNDEFINED,  };
 
   @BuiltValueField(wireName: r'status')
   BankTransactionEntityStatusEnum get status;
@@ -92,7 +91,7 @@ abstract class BankTransactionEntity implements Built<BankTransactionEntity, Ban
 
   @BuiltValueField(wireName: r'legalNature')
   BankTransactionEntityLegalNatureEnum get legalNature;
-  // enum legalNatureEnum {  PERSONAL,  BUSINESS,  };
+  // enum legalNatureEnum {  PERSONAL,  BUSINESS,  UNDEFINED,  };
 
   @BuiltValueField(wireName: r'providerCategoryId')
   String? get providerCategoryId;
@@ -104,40 +103,34 @@ abstract class BankTransactionEntity implements Built<BankTransactionEntity, Ban
   String? get categoryId;
 
   @BuiltValueField(wireName: r'category')
-  BankTransactionCategoryPlainEntity? get category;
+  BankTransactionEntityCategory? get category;
 
   @BuiltValueField(wireName: r'tags')
-  BuiltList<BankTransactionTagEntity> get tags;
+  BuiltList<BankTransactionEntityTagsInner> get tags;
 
   @BuiltValueField(wireName: r'paymentDataId')
   String? get paymentDataId;
 
   @BuiltValueField(wireName: r'paymentData')
-  BankTransactionPaymentDataEntity? get paymentData;
+  BankTransactionEntityPaymentData? get paymentData;
 
   @BuiltValueField(wireName: r'creditCardMetadataId')
   String? get creditCardMetadataId;
 
   @BuiltValueField(wireName: r'creditCardMetadata')
-  BankTransactionCreditCardMetadataEntity? get creditCardMetadata;
-
-  @BuiltValueField(wireName: r'bestGuessCategoryId')
-  String? get bestGuessCategoryId;
-
-  @BuiltValueField(wireName: r'bestGuessCategory')
-  BankTransactionCategoryPlainEntity? get bestGuessCategory;
+  BankTransactionEntityCreditCardMetadata? get creditCardMetadata;
 
   @BuiltValueField(wireName: r'ignoredAt')
-  DateTime? get ignoredAt;
+  JsonObject? get ignoredAt;
 
-  @BuiltValueField(wireName: r'confirmedAt')
-  DateTime? get confirmedAt;
+  @BuiltValueField(wireName: r'verifiedAt')
+  JsonObject? get verifiedAt;
 
   @BuiltValueField(wireName: r'createdAt')
-  DateTime get createdAt;
+  JsonObject? get createdAt;
 
   @BuiltValueField(wireName: r'updatedAt')
-  DateTime get updatedAt;
+  JsonObject? get updatedAt;
 
   BankTransactionEntity._();
 
@@ -175,7 +168,7 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
     yield r'account';
     yield serializers.serialize(
       object.account,
-      specifiedType: const FullType(BankAccountEntity),
+      specifiedType: const FullType(BankConnectionEntityAccountsInner),
     );
     yield r'workspaceId';
     yield serializers.serialize(
@@ -203,24 +196,24 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
       specifiedType: const FullType(String),
     );
     yield r'postedDate';
-    yield serializers.serialize(
+    yield object.postedDate == null ? null : serializers.serialize(
       object.postedDate,
-      specifiedType: const FullType(DateTime),
+      specifiedType: const FullType.nullable(JsonObject),
     );
     yield r'competencyDate';
-    yield serializers.serialize(
+    yield object.competencyDate == null ? null : serializers.serialize(
       object.competencyDate,
-      specifiedType: const FullType(DateTime),
+      specifiedType: const FullType.nullable(JsonObject),
     );
     yield r'amount';
     yield serializers.serialize(
       object.amount,
-      specifiedType: const FullType(num),
+      specifiedType: const FullType(int),
     );
-    yield r'type';
+    yield r'directionNature';
     yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(BankTransactionEntityTypeEnum),
+      object.directionNature,
+      specifiedType: const FullType(BankTransactionEntityDirectionNatureEnum),
     );
     yield r'status';
     yield serializers.serialize(
@@ -236,100 +229,86 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
       yield r'providerCategoryId';
       yield serializers.serialize(
         object.providerCategoryId,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.providerCategoryName != null) {
       yield r'providerCategoryName';
       yield serializers.serialize(
         object.providerCategoryName,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.categoryId != null) {
       yield r'categoryId';
       yield serializers.serialize(
         object.categoryId,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.category != null) {
       yield r'category';
       yield serializers.serialize(
         object.category,
-        specifiedType: const FullType(BankTransactionCategoryPlainEntity),
+        specifiedType: const FullType.nullable(BankTransactionEntityCategory),
       );
     }
     yield r'tags';
     yield serializers.serialize(
       object.tags,
-      specifiedType: const FullType(BuiltList, [FullType(BankTransactionTagEntity)]),
+      specifiedType: const FullType(BuiltList, [FullType(BankTransactionEntityTagsInner)]),
     );
     if (object.paymentDataId != null) {
       yield r'paymentDataId';
       yield serializers.serialize(
         object.paymentDataId,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.paymentData != null) {
       yield r'paymentData';
       yield serializers.serialize(
         object.paymentData,
-        specifiedType: const FullType(BankTransactionPaymentDataEntity),
+        specifiedType: const FullType.nullable(BankTransactionEntityPaymentData),
       );
     }
     if (object.creditCardMetadataId != null) {
       yield r'creditCardMetadataId';
       yield serializers.serialize(
         object.creditCardMetadataId,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.creditCardMetadata != null) {
       yield r'creditCardMetadata';
       yield serializers.serialize(
         object.creditCardMetadata,
-        specifiedType: const FullType(BankTransactionCreditCardMetadataEntity),
-      );
-    }
-    if (object.bestGuessCategoryId != null) {
-      yield r'bestGuessCategoryId';
-      yield serializers.serialize(
-        object.bestGuessCategoryId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.bestGuessCategory != null) {
-      yield r'bestGuessCategory';
-      yield serializers.serialize(
-        object.bestGuessCategory,
-        specifiedType: const FullType(BankTransactionCategoryPlainEntity),
+        specifiedType: const FullType.nullable(BankTransactionEntityCreditCardMetadata),
       );
     }
     if (object.ignoredAt != null) {
       yield r'ignoredAt';
       yield serializers.serialize(
         object.ignoredAt,
-        specifiedType: const FullType(DateTime),
+        specifiedType: const FullType.nullable(JsonObject),
       );
     }
-    if (object.confirmedAt != null) {
-      yield r'confirmedAt';
+    if (object.verifiedAt != null) {
+      yield r'verifiedAt';
       yield serializers.serialize(
-        object.confirmedAt,
-        specifiedType: const FullType(DateTime),
+        object.verifiedAt,
+        specifiedType: const FullType.nullable(JsonObject),
       );
     }
     yield r'createdAt';
-    yield serializers.serialize(
+    yield object.createdAt == null ? null : serializers.serialize(
       object.createdAt,
-      specifiedType: const FullType(DateTime),
+      specifiedType: const FullType.nullable(JsonObject),
     );
     yield r'updatedAt';
-    yield serializers.serialize(
+    yield object.updatedAt == null ? null : serializers.serialize(
       object.updatedAt,
-      specifiedType: const FullType(DateTime),
+      specifiedType: const FullType.nullable(JsonObject),
     );
   }
 
@@ -371,8 +350,8 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
         case r'account':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BankAccountEntity),
-          ) as BankAccountEntity;
+            specifiedType: const FullType(BankConnectionEntityAccountsInner),
+          ) as BankConnectionEntityAccountsInner;
           result.account.replace(valueDes);
           break;
         case r'workspaceId':
@@ -413,30 +392,32 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
         case r'postedDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
           result.postedDate = valueDes;
           break;
         case r'competencyDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
           result.competencyDate = valueDes;
           break;
         case r'amount':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(num),
-          ) as num;
+            specifiedType: const FullType(int),
+          ) as int;
           result.amount = valueDes;
           break;
-        case r'type':
+        case r'directionNature':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BankTransactionEntityTypeEnum),
-          ) as BankTransactionEntityTypeEnum;
-          result.type = valueDes;
+            specifiedType: const FullType(BankTransactionEntityDirectionNatureEnum),
+          ) as BankTransactionEntityDirectionNatureEnum;
+          result.directionNature = valueDes;
           break;
         case r'status':
           final valueDes = serializers.deserialize(
@@ -455,106 +436,104 @@ class _$BankTransactionEntitySerializer implements PrimitiveSerializer<BankTrans
         case r'providerCategoryId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.providerCategoryId = valueDes;
           break;
         case r'providerCategoryName':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.providerCategoryName = valueDes;
           break;
         case r'categoryId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.categoryId = valueDes;
           break;
         case r'category':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BankTransactionCategoryPlainEntity),
-          ) as BankTransactionCategoryPlainEntity;
+            specifiedType: const FullType.nullable(BankTransactionEntityCategory),
+          ) as BankTransactionEntityCategory?;
+          if (valueDes == null) continue;
           result.category.replace(valueDes);
           break;
         case r'tags':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BankTransactionTagEntity)]),
-          ) as BuiltList<BankTransactionTagEntity>;
+            specifiedType: const FullType(BuiltList, [FullType(BankTransactionEntityTagsInner)]),
+          ) as BuiltList<BankTransactionEntityTagsInner>;
           result.tags.replace(valueDes);
           break;
         case r'paymentDataId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.paymentDataId = valueDes;
           break;
         case r'paymentData':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BankTransactionPaymentDataEntity),
-          ) as BankTransactionPaymentDataEntity;
+            specifiedType: const FullType.nullable(BankTransactionEntityPaymentData),
+          ) as BankTransactionEntityPaymentData?;
+          if (valueDes == null) continue;
           result.paymentData.replace(valueDes);
           break;
         case r'creditCardMetadataId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.creditCardMetadataId = valueDes;
           break;
         case r'creditCardMetadata':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BankTransactionCreditCardMetadataEntity),
-          ) as BankTransactionCreditCardMetadataEntity;
+            specifiedType: const FullType.nullable(BankTransactionEntityCreditCardMetadata),
+          ) as BankTransactionEntityCreditCardMetadata?;
+          if (valueDes == null) continue;
           result.creditCardMetadata.replace(valueDes);
-          break;
-        case r'bestGuessCategoryId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.bestGuessCategoryId = valueDes;
-          break;
-        case r'bestGuessCategory':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BankTransactionCategoryPlainEntity),
-          ) as BankTransactionCategoryPlainEntity;
-          result.bestGuessCategory.replace(valueDes);
           break;
         case r'ignoredAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
           result.ignoredAt = valueDes;
           break;
-        case r'confirmedAt':
+        case r'verifiedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.confirmedAt = valueDes;
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
+          result.verifiedAt = valueDes;
           break;
         case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
           result.updatedAt = valueDes;
           break;
         default:
@@ -601,21 +580,21 @@ class BankTransactionEntityProviderEnum extends EnumClass {
   static BankTransactionEntityProviderEnum valueOf(String name) => _$bankTransactionEntityProviderEnumValueOf(name);
 }
 
-class BankTransactionEntityTypeEnum extends EnumClass {
+class BankTransactionEntityDirectionNatureEnum extends EnumClass {
 
-  @BuiltValueEnumConst(wireName: r'DEBIT')
-  static const BankTransactionEntityTypeEnum DEBIT = _$bankTransactionEntityTypeEnum_DEBIT;
   @BuiltValueEnumConst(wireName: r'CREDIT')
-  static const BankTransactionEntityTypeEnum CREDIT = _$bankTransactionEntityTypeEnum_CREDIT;
+  static const BankTransactionEntityDirectionNatureEnum CREDIT = _$bankTransactionEntityDirectionNatureEnum_CREDIT;
+  @BuiltValueEnumConst(wireName: r'DEBIT')
+  static const BankTransactionEntityDirectionNatureEnum DEBIT = _$bankTransactionEntityDirectionNatureEnum_DEBIT;
   @BuiltValueEnumConst(wireName: r'UNDEFINED')
-  static const BankTransactionEntityTypeEnum UNDEFINED = _$bankTransactionEntityTypeEnum_UNDEFINED;
+  static const BankTransactionEntityDirectionNatureEnum UNDEFINED = _$bankTransactionEntityDirectionNatureEnum_UNDEFINED;
 
-  static Serializer<BankTransactionEntityTypeEnum> get serializer => _$bankTransactionEntityTypeEnumSerializer;
+  static Serializer<BankTransactionEntityDirectionNatureEnum> get serializer => _$bankTransactionEntityDirectionNatureEnumSerializer;
 
-  const BankTransactionEntityTypeEnum._(String name): super(name);
+  const BankTransactionEntityDirectionNatureEnum._(String name): super(name);
 
-  static BuiltSet<BankTransactionEntityTypeEnum> get values => _$bankTransactionEntityTypeEnumValues;
-  static BankTransactionEntityTypeEnum valueOf(String name) => _$bankTransactionEntityTypeEnumValueOf(name);
+  static BuiltSet<BankTransactionEntityDirectionNatureEnum> get values => _$bankTransactionEntityDirectionNatureEnumValues;
+  static BankTransactionEntityDirectionNatureEnum valueOf(String name) => _$bankTransactionEntityDirectionNatureEnumValueOf(name);
 }
 
 class BankTransactionEntityStatusEnum extends EnumClass {
@@ -639,6 +618,8 @@ class BankTransactionEntityLegalNatureEnum extends EnumClass {
   static const BankTransactionEntityLegalNatureEnum PERSONAL = _$bankTransactionEntityLegalNatureEnum_PERSONAL;
   @BuiltValueEnumConst(wireName: r'BUSINESS')
   static const BankTransactionEntityLegalNatureEnum BUSINESS = _$bankTransactionEntityLegalNatureEnum_BUSINESS;
+  @BuiltValueEnumConst(wireName: r'UNDEFINED')
+  static const BankTransactionEntityLegalNatureEnum UNDEFINED = _$bankTransactionEntityLegalNatureEnum_UNDEFINED;
 
   static Serializer<BankTransactionEntityLegalNatureEnum> get serializer => _$bankTransactionEntityLegalNatureEnumSerializer;
 

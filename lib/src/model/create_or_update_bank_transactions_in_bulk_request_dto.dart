@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_request_dto_items_inner.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_item_dto.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -17,7 +17,7 @@ part 'create_or_update_bank_transactions_in_bulk_request_dto.g.dart';
 @BuiltValue()
 abstract class CreateOrUpdateBankTransactionsInBulkRequestDto implements Built<CreateOrUpdateBankTransactionsInBulkRequestDto, CreateOrUpdateBankTransactionsInBulkRequestDtoBuilder> {
   @BuiltValueField(wireName: r'items')
-  BuiltList<CreateOrUpdateBankTransactionsInBulkItemDto> get items;
+  BuiltList<CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner> get items;
 
   CreateOrUpdateBankTransactionsInBulkRequestDto._();
 
@@ -45,7 +45,7 @@ class _$CreateOrUpdateBankTransactionsInBulkRequestDtoSerializer implements Prim
     yield r'items';
     yield serializers.serialize(
       object.items,
-      specifiedType: const FullType(BuiltList, [FullType(CreateOrUpdateBankTransactionsInBulkItemDto)]),
+      specifiedType: const FullType(BuiltList, [FullType(CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner)]),
     );
   }
 
@@ -73,8 +73,8 @@ class _$CreateOrUpdateBankTransactionsInBulkRequestDtoSerializer implements Prim
         case r'items':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(CreateOrUpdateBankTransactionsInBulkItemDto)]),
-          ) as BuiltList<CreateOrUpdateBankTransactionsInBulkItemDto>;
+            specifiedType: const FullType(BuiltList, [FullType(CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner)]),
+          ) as BuiltList<CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner>;
           result.items.replace(valueDes);
           break;
         default:

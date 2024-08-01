@@ -9,19 +9,19 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bankTransactionsControllerCreateOrUpdateBankTransactionsInBulk**](BankTransactionsApi.md#banktransactionscontrollercreateorupdatebanktransactionsinbulk) | **PUT** /bank/transactions/bulk | 
-[**bankTransactionsControllerGetBankTransactionByProvider**](BankTransactionsApi.md#banktransactionscontrollergetbanktransactionbyprovider) | **GET** /workspaces/{workspaceId}/bank/transactions/by-provider | 
-[**bankTransactionsControllerGetBankTransactions**](BankTransactionsApi.md#banktransactionscontrollergetbanktransactions) | **GET** /workspaces/{workspaceId}/bank/transactions | 
-[**bankTransactionsControllerGetBankTransactionsConfirmedTodayByMe**](BankTransactionsApi.md#banktransactionscontrollergetbanktransactionsconfirmedtodaybyme) | **GET** /workspaces/{workspaceId}/bank/transactions/confirmed-today-by-me | 
-[**bankTransactionsControllerGetBankTransactionsNotConfirmed**](BankTransactionsApi.md#banktransactionscontrollergetbanktransactionsnotconfirmed) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
-[**bankTransactionsControllerGetBankTransactionsTotals**](BankTransactionsApi.md#banktransactionscontrollergetbanktransactionstotals) | **GET** /workspaces/{workspaceId}/bank/transactions/totals | 
-[**bankTransactionsControllerGetRecent**](BankTransactionsApi.md#banktransactionscontrollergetrecent) | **GET** /workspaces/{workspaceId}/bank/transactions/most-recent | 
-[**bankTransactionsControllerGetTransactionDetails**](BankTransactionsApi.md#banktransactionscontrollergettransactiondetails) | **GET** /bank/transactions/{bankTransactionId} | 
-[**bankTransactionsControllerUpdateTransaction**](BankTransactionsApi.md#banktransactionscontrollerupdatetransaction) | **PATCH** /bank/transactions/{bankTransactionId} | 
+[**bankTransactionsControllerCreateOrUpdateInBulk**](BankTransactionsApi.md#banktransactionscontrollercreateorupdateinbulk) | **PUT** /bank/transactions/bulk | 
+[**bankTransactionsControllerGetById**](BankTransactionsApi.md#banktransactionscontrollergetbyid) | **GET** /bank/transactions/{bankTransactionId} | 
+[**bankTransactionsControllerGetByProvider**](BankTransactionsApi.md#banktransactionscontrollergetbyprovider) | **GET** /bank/accounts/{accountId}/transactions/by-provider | 
+[**bankTransactionsControllerGetTotals**](BankTransactionsApi.md#banktransactionscontrollergettotals) | **GET** /bank/workspaces/{workspaceId}/transactions/totals | 
+[**bankTransactionsControllerList**](BankTransactionsApi.md#banktransactionscontrollerlist) | **GET** /bank/workspaces/{workspaceId}/transactions | 
+[**bankTransactionsControllerListMostRecent**](BankTransactionsApi.md#banktransactionscontrollerlistmostrecent) | **GET** /bank/workspaces/{workspaceId}/transactions/most-recent | 
+[**bankTransactionsControllerListNotVerified**](BankTransactionsApi.md#banktransactionscontrollerlistnotverified) | **GET** /bank/workspaces/{workspaceId}/transactions/not-verified | 
+[**bankTransactionsControllerListVerifiedByMe**](BankTransactionsApi.md#banktransactionscontrollerlistverifiedbyme) | **GET** /bank/workspaces/{workspaceId}/transactions/verified-by-me | 
+[**bankTransactionsControllerPartialUpdate**](BankTransactionsApi.md#banktransactionscontrollerpartialupdate) | **PATCH** /bank/transactions/{bankTransactionId} | 
 
 
-# **bankTransactionsControllerCreateOrUpdateBankTransactionsInBulk**
-> BuiltList<BankTransactionEntity> bankTransactionsControllerCreateOrUpdateBankTransactionsInBulk(createOrUpdateBankTransactionsInBulkRequestDto)
+# **bankTransactionsControllerCreateOrUpdateInBulk**
+> BuiltList<BankTransactionEntity> bankTransactionsControllerCreateOrUpdateInBulk(createOrUpdateBankTransactionsInBulkRequestDto)
 
 
 
@@ -33,10 +33,10 @@ final api = DartCoreApiSdk().getBankTransactionsApi();
 final CreateOrUpdateBankTransactionsInBulkRequestDto createOrUpdateBankTransactionsInBulkRequestDto = ; // CreateOrUpdateBankTransactionsInBulkRequestDto | 
 
 try {
-    final response = api.bankTransactionsControllerCreateOrUpdateBankTransactionsInBulk(createOrUpdateBankTransactionsInBulkRequestDto);
+    final response = api.bankTransactionsControllerCreateOrUpdateInBulk(createOrUpdateBankTransactionsInBulkRequestDto);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankTransactionsApi->bankTransactionsControllerCreateOrUpdateBankTransactionsInBulk: $e\n');
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerCreateOrUpdateInBulk: $e\n');
 }
 ```
 
@@ -61,8 +61,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bankTransactionsControllerGetBankTransactionByProvider**
-> BankTransactionEntity bankTransactionsControllerGetBankTransactionByProvider(workspaceId, provider, providerTransactionId)
+# **bankTransactionsControllerGetById**
+> BankTransactionEntity bankTransactionsControllerGetById(bankTransactionId)
 
 
 
@@ -71,15 +71,13 @@ No authorization required
 import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getBankTransactionsApi();
-final String workspaceId = workspaceId_example; // String | 
-final String provider = provider_example; // String | 
-final String providerTransactionId = providerTransactionId_example; // String | 
+final String bankTransactionId = bankTransactionId_example; // String | 
 
 try {
-    final response = api.bankTransactionsControllerGetBankTransactionByProvider(workspaceId, provider, providerTransactionId);
+    final response = api.bankTransactionsControllerGetById(bankTransactionId);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetBankTransactionByProvider: $e\n');
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetById: $e\n');
 }
 ```
 
@@ -87,7 +85,50 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workspaceId** | **String**|  | 
+ **bankTransactionId** | **String**|  | 
+
+### Return type
+
+[**BankTransactionEntity**](BankTransactionEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bankTransactionsControllerGetByProvider**
+> BankTransactionEntity bankTransactionsControllerGetByProvider(accountId, provider, providerTransactionId)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getBankTransactionsApi();
+final String accountId = accountId_example; // String | 
+final String provider = provider_example; // String | 
+final String providerTransactionId = providerTransactionId_example; // String | 
+
+try {
+    final response = api.bankTransactionsControllerGetByProvider(accountId, provider, providerTransactionId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetByProvider: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountId** | **String**|  | 
  **provider** | **String**|  | 
  **providerTransactionId** | **String**|  | 
 
@@ -106,8 +147,75 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bankTransactionsControllerGetBankTransactions**
-> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, legalNatures, types, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated, ignoreInternalTransfers, ignoreInvoiceRelated)
+# **bankTransactionsControllerGetTotals**
+> BankTransactionsPageEntity bankTransactionsControllerGetTotals(workspaceId, accountIds, categoryIds, tagIds, legalNatures, directionNatures, minPostedDatetime, maxPostedDatetime, minCompetencyDatetime, maxCompetencyDatetime, considerIgnored, considerAutomaticApplicationRelated, considerInternalTransfers, considerInvoiceRelated)
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getBankTransactionsApi();
+final String workspaceId = workspaceId_example; // String | 
+final String accountIds = accountIds_example; // String | 
+final String categoryIds = categoryIds_example; // String | 
+final String tagIds = tagIds_example; // String | 
+final String legalNatures = legalNatures_example; // String | 
+final String directionNatures = directionNatures_example; // String | 
+final String minPostedDatetime = minPostedDatetime_example; // String | 
+final String maxPostedDatetime = maxPostedDatetime_example; // String | 
+final String minCompetencyDatetime = minCompetencyDatetime_example; // String | 
+final String maxCompetencyDatetime = maxCompetencyDatetime_example; // String | 
+final bool considerIgnored = true; // bool | 
+final bool considerAutomaticApplicationRelated = true; // bool | 
+final bool considerInternalTransfers = true; // bool | 
+final String considerInvoiceRelated = considerInvoiceRelated_example; // String | 
+
+try {
+    final response = api.bankTransactionsControllerGetTotals(workspaceId, accountIds, categoryIds, tagIds, legalNatures, directionNatures, minPostedDatetime, maxPostedDatetime, minCompetencyDatetime, maxCompetencyDatetime, considerIgnored, considerAutomaticApplicationRelated, considerInternalTransfers, considerInvoiceRelated);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetTotals: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **workspaceId** | **String**|  | 
+ **accountIds** | **String**|  | [optional] 
+ **categoryIds** | **String**|  | [optional] 
+ **tagIds** | **String**|  | [optional] 
+ **legalNatures** | **String**|  | [optional] 
+ **directionNatures** | **String**|  | [optional] 
+ **minPostedDatetime** | **String**|  | [optional] 
+ **maxPostedDatetime** | **String**|  | [optional] 
+ **minCompetencyDatetime** | **String**|  | [optional] 
+ **maxCompetencyDatetime** | **String**|  | [optional] 
+ **considerIgnored** | **bool**|  | [optional] 
+ **considerAutomaticApplicationRelated** | **bool**|  | [optional] 
+ **considerInternalTransfers** | **bool**|  | [optional] 
+ **considerInvoiceRelated** | **String**|  | [optional] 
+
+### Return type
+
+[**BankTransactionsPageEntity**](BankTransactionsPageEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bankTransactionsControllerList**
+> BankTransactionsPageEntity bankTransactionsControllerList(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, legalNatures, directionNatures, minPostedDatetime, maxPostedDatetime, minCompetencyDatetime, maxCompetencyDatetime, considerIgnored, considerAutomaticApplicationRelated, considerInternalTransfers, considerInvoiceRelated)
 
 
 
@@ -123,21 +231,21 @@ final String accountIds = accountIds_example; // String |
 final String categoryIds = categoryIds_example; // String | 
 final String tagIds = tagIds_example; // String | 
 final String legalNatures = legalNatures_example; // String | 
-final String types = types_example; // String | 
-final String minPostedDate = minPostedDate_example; // String | 
-final String maxPostedDate = maxPostedDate_example; // String | 
-final String minCompetencyDate = minCompetencyDate_example; // String | 
-final String maxCompetencyDate = maxCompetencyDate_example; // String | 
-final bool showIgnored = true; // bool | 
-final bool ignoreAutomaticApplicationRelated = true; // bool | 
-final bool ignoreInternalTransfers = true; // bool | 
-final bool ignoreInvoiceRelated = true; // bool | 
+final String directionNatures = directionNatures_example; // String | 
+final String minPostedDatetime = minPostedDatetime_example; // String | 
+final String maxPostedDatetime = maxPostedDatetime_example; // String | 
+final String minCompetencyDatetime = minCompetencyDatetime_example; // String | 
+final String maxCompetencyDatetime = maxCompetencyDatetime_example; // String | 
+final bool considerIgnored = true; // bool | 
+final bool considerAutomaticApplicationRelated = true; // bool | 
+final bool considerInternalTransfers = true; // bool | 
+final String considerInvoiceRelated = considerInvoiceRelated_example; // String | 
 
 try {
-    final response = api.bankTransactionsControllerGetBankTransactions(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, legalNatures, types, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated, ignoreInternalTransfers, ignoreInvoiceRelated);
+    final response = api.bankTransactionsControllerList(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, legalNatures, directionNatures, minPostedDatetime, maxPostedDatetime, minCompetencyDatetime, maxCompetencyDatetime, considerIgnored, considerAutomaticApplicationRelated, considerInternalTransfers, considerInvoiceRelated);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetBankTransactions: $e\n');
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerList: $e\n');
 }
 ```
 
@@ -152,15 +260,15 @@ Name | Type | Description  | Notes
  **categoryIds** | **String**|  | [optional] 
  **tagIds** | **String**|  | [optional] 
  **legalNatures** | **String**|  | [optional] 
- **types** | **String**|  | [optional] 
- **minPostedDate** | **String**|  | [optional] 
- **maxPostedDate** | **String**|  | [optional] 
- **minCompetencyDate** | **String**|  | [optional] 
- **maxCompetencyDate** | **String**|  | [optional] 
- **showIgnored** | **bool**|  | [optional] 
- **ignoreAutomaticApplicationRelated** | **bool**|  | [optional] 
- **ignoreInternalTransfers** | **bool**|  | [optional] 
- **ignoreInvoiceRelated** | **bool**|  | [optional] 
+ **directionNatures** | **String**|  | [optional] 
+ **minPostedDatetime** | **String**|  | [optional] 
+ **maxPostedDatetime** | **String**|  | [optional] 
+ **minCompetencyDatetime** | **String**|  | [optional] 
+ **maxCompetencyDatetime** | **String**|  | [optional] 
+ **considerIgnored** | **bool**|  | [optional] 
+ **considerAutomaticApplicationRelated** | **bool**|  | [optional] 
+ **considerInternalTransfers** | **bool**|  | [optional] 
+ **considerInvoiceRelated** | **String**|  | [optional] 
 
 ### Return type
 
@@ -177,8 +285,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bankTransactionsControllerGetBankTransactionsConfirmedTodayByMe**
-> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactionsConfirmedTodayByMe(workspaceId, pageIndex, pageSize)
+# **bankTransactionsControllerListMostRecent**
+> BuiltList<BankTransactionEntity> bankTransactionsControllerListMostRecent(workspaceId)
 
 
 
@@ -188,14 +296,12 @@ import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getBankTransactionsApi();
 final String workspaceId = workspaceId_example; // String | 
-final num pageIndex = 8.14; // num | 
-final num pageSize = 8.14; // num | 
 
 try {
-    final response = api.bankTransactionsControllerGetBankTransactionsConfirmedTodayByMe(workspaceId, pageIndex, pageSize);
+    final response = api.bankTransactionsControllerListMostRecent(workspaceId);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetBankTransactionsConfirmedTodayByMe: $e\n');
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerListMostRecent: $e\n');
 }
 ```
 
@@ -204,12 +310,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspaceId** | **String**|  | 
- **pageIndex** | **num**|  | [optional] 
- **pageSize** | **num**|  | [optional] 
 
 ### Return type
 
-[**BankTransactionsPageEntity**](BankTransactionsPageEntity.md)
+[**BuiltList&lt;BankTransactionEntity&gt;**](BankTransactionEntity.md)
 
 ### Authorization
 
@@ -222,8 +326,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bankTransactionsControllerGetBankTransactionsNotConfirmed**
-> BankTransactionsPageEntity bankTransactionsControllerGetBankTransactionsNotConfirmed(workspaceId, pageIndex, pageSize, considerIgnored)
+# **bankTransactionsControllerListNotVerified**
+> BankTransactionsPageEntity bankTransactionsControllerListNotVerified(workspaceId, pageIndex, pageSize, considerIgnored)
 
 
 
@@ -238,10 +342,10 @@ final num pageSize = 8.14; // num |
 final bool considerIgnored = true; // bool | 
 
 try {
-    final response = api.bankTransactionsControllerGetBankTransactionsNotConfirmed(workspaceId, pageIndex, pageSize, considerIgnored);
+    final response = api.bankTransactionsControllerListNotVerified(workspaceId, pageIndex, pageSize, considerIgnored);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetBankTransactionsNotConfirmed: $e\n');
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerListNotVerified: $e\n');
 }
 ```
 
@@ -269,8 +373,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bankTransactionsControllerGetBankTransactionsTotals**
-> BankTransactionsTotalsEntity bankTransactionsControllerGetBankTransactionsTotals(workspaceId, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated, ignoreInternalTransfers, ignoreInvoiceRelated, types)
+# **bankTransactionsControllerListVerifiedByMe**
+> BankTransactionsPageEntity bankTransactionsControllerListVerifiedByMe(workspaceId, fromDatetime, toDatetime, pageIndex, pageSize)
 
 
 
@@ -280,25 +384,16 @@ import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getBankTransactionsApi();
 final String workspaceId = workspaceId_example; // String | 
-final String accountIds = accountIds_example; // String | 
-final String categoryIds = categoryIds_example; // String | 
-final String tagIds = tagIds_example; // String | 
-final String legalNatures = legalNatures_example; // String | 
-final String minPostedDate = minPostedDate_example; // String | 
-final String maxPostedDate = maxPostedDate_example; // String | 
-final String minCompetencyDate = minCompetencyDate_example; // String | 
-final String maxCompetencyDate = maxCompetencyDate_example; // String | 
-final bool showIgnored = true; // bool | 
-final bool ignoreAutomaticApplicationRelated = true; // bool | 
-final bool ignoreInternalTransfers = true; // bool | 
-final bool ignoreInvoiceRelated = true; // bool | 
-final String types = types_example; // String | 
+final String fromDatetime = fromDatetime_example; // String | 
+final String toDatetime = toDatetime_example; // String | 
+final num pageIndex = 8.14; // num | 
+final num pageSize = 8.14; // num | 
 
 try {
-    final response = api.bankTransactionsControllerGetBankTransactionsTotals(workspaceId, accountIds, categoryIds, tagIds, legalNatures, minPostedDate, maxPostedDate, minCompetencyDate, maxCompetencyDate, showIgnored, ignoreAutomaticApplicationRelated, ignoreInternalTransfers, ignoreInvoiceRelated, types);
+    final response = api.bankTransactionsControllerListVerifiedByMe(workspaceId, fromDatetime, toDatetime, pageIndex, pageSize);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetBankTransactionsTotals: $e\n');
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerListVerifiedByMe: $e\n');
 }
 ```
 
@@ -307,23 +402,14 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspaceId** | **String**|  | 
- **accountIds** | **String**|  | [optional] 
- **categoryIds** | **String**|  | [optional] 
- **tagIds** | **String**|  | [optional] 
- **legalNatures** | **String**|  | [optional] 
- **minPostedDate** | **String**|  | [optional] 
- **maxPostedDate** | **String**|  | [optional] 
- **minCompetencyDate** | **String**|  | [optional] 
- **maxCompetencyDate** | **String**|  | [optional] 
- **showIgnored** | **bool**|  | [optional] 
- **ignoreAutomaticApplicationRelated** | **bool**|  | [optional] 
- **ignoreInternalTransfers** | **bool**|  | [optional] 
- **ignoreInvoiceRelated** | **bool**|  | [optional] 
- **types** | **String**|  | [optional] 
+ **fromDatetime** | **String**|  | 
+ **toDatetime** | **String**|  | 
+ **pageIndex** | **num**|  | [optional] 
+ **pageSize** | **num**|  | [optional] 
 
 ### Return type
 
-[**BankTransactionsTotalsEntity**](BankTransactionsTotalsEntity.md)
+[**BankTransactionsPageEntity**](BankTransactionsPageEntity.md)
 
 ### Authorization
 
@@ -336,49 +422,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bankTransactionsControllerGetRecent**
-> BuiltList<BankTransactionEntity> bankTransactionsControllerGetRecent(workspaceId)
-
-
-
-### Example
-```dart
-import 'package:dart_core_api_sdk/api.dart';
-
-final api = DartCoreApiSdk().getBankTransactionsApi();
-final String workspaceId = workspaceId_example; // String | 
-
-try {
-    final response = api.bankTransactionsControllerGetRecent(workspaceId);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetRecent: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **workspaceId** | **String**|  | 
-
-### Return type
-
-[**BuiltList&lt;BankTransactionEntity&gt;**](BankTransactionEntity.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **bankTransactionsControllerGetTransactionDetails**
-> BankTransactionEntity bankTransactionsControllerGetTransactionDetails(bankTransactionId)
+# **bankTransactionsControllerPartialUpdate**
+> BankTransactionEntity bankTransactionsControllerPartialUpdate(bankTransactionId, partialUpdateBankTransactionRequestDto)
 
 
 
@@ -388,12 +433,13 @@ import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getBankTransactionsApi();
 final String bankTransactionId = bankTransactionId_example; // String | 
+final PartialUpdateBankTransactionRequestDto partialUpdateBankTransactionRequestDto = ; // PartialUpdateBankTransactionRequestDto | 
 
 try {
-    final response = api.bankTransactionsControllerGetTransactionDetails(bankTransactionId);
+    final response = api.bankTransactionsControllerPartialUpdate(bankTransactionId, partialUpdateBankTransactionRequestDto);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankTransactionsApi->bankTransactionsControllerGetTransactionDetails: $e\n');
+    print('Exception when calling BankTransactionsApi->bankTransactionsControllerPartialUpdate: $e\n');
 }
 ```
 
@@ -402,49 +448,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bankTransactionId** | **String**|  | 
-
-### Return type
-
-[**BankTransactionEntity**](BankTransactionEntity.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **bankTransactionsControllerUpdateTransaction**
-> BankTransactionEntity bankTransactionsControllerUpdateTransaction(bankTransactionId, updateBankTransactionRequestDto)
-
-
-
-### Example
-```dart
-import 'package:dart_core_api_sdk/api.dart';
-
-final api = DartCoreApiSdk().getBankTransactionsApi();
-final String bankTransactionId = bankTransactionId_example; // String | 
-final UpdateBankTransactionRequestDto updateBankTransactionRequestDto = ; // UpdateBankTransactionRequestDto | 
-
-try {
-    final response = api.bankTransactionsControllerUpdateTransaction(bankTransactionId, updateBankTransactionRequestDto);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling BankTransactionsApi->bankTransactionsControllerUpdateTransaction: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **bankTransactionId** | **String**|  | 
- **updateBankTransactionRequestDto** | [**UpdateBankTransactionRequestDto**](UpdateBankTransactionRequestDto.md)|  | 
+ **partialUpdateBankTransactionRequestDto** | [**PartialUpdateBankTransactionRequestDto**](PartialUpdateBankTransactionRequestDto.md)|  | 
 
 ### Return type
 

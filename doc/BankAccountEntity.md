@@ -10,17 +10,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **bankConnectionId** | **String** |  | 
-**bankConnection** | [**BankConnectionEntity**](BankConnectionEntity.md) |  | 
 **provider** | **String** |  | 
 **providerAccountId** | **String** |  | 
 **type** | **String** |  | 
 **enabled** | **bool** |  | 
 **number** | **String** |  | 
-**balance** | **num** |  | 
+**balance** | **int** |  | 
 **currencyCode** | **String** |  | 
 **name** | **String** |  | 
-**createdAt** | [**DateTime**](DateTime.md) |  | 
-**updatedAt** | [**DateTime**](DateTime.md) |  | 
+**createdAt** | [**JsonObject**](.md) |  | 
+**updatedAt** | [**JsonObject**](.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -8,15 +8,15 @@ part of 'bank_transactions_page_entity.dart';
 
 class _$BankTransactionsPageEntity extends BankTransactionsPageEntity {
   @override
-  final num pageIndex;
+  final int pageIndex;
   @override
-  final num pageSize;
+  final int pageSize;
   @override
-  final num totalItems;
+  final int totalItems;
   @override
-  final num totalPages;
+  final int totalPages;
   @override
-  final BuiltList<BankTransactionEntity> items;
+  final BuiltList<BankTransactionsPageEntityItemsInner> items;
 
   factory _$BankTransactionsPageEntity(
           [void Function(BankTransactionsPageEntityBuilder)? updates]) =>
@@ -90,26 +90,27 @@ class BankTransactionsPageEntityBuilder
         Builder<BankTransactionsPageEntity, BankTransactionsPageEntityBuilder> {
   _$BankTransactionsPageEntity? _$v;
 
-  num? _pageIndex;
-  num? get pageIndex => _$this._pageIndex;
-  set pageIndex(num? pageIndex) => _$this._pageIndex = pageIndex;
+  int? _pageIndex;
+  int? get pageIndex => _$this._pageIndex;
+  set pageIndex(int? pageIndex) => _$this._pageIndex = pageIndex;
 
-  num? _pageSize;
-  num? get pageSize => _$this._pageSize;
-  set pageSize(num? pageSize) => _$this._pageSize = pageSize;
+  int? _pageSize;
+  int? get pageSize => _$this._pageSize;
+  set pageSize(int? pageSize) => _$this._pageSize = pageSize;
 
-  num? _totalItems;
-  num? get totalItems => _$this._totalItems;
-  set totalItems(num? totalItems) => _$this._totalItems = totalItems;
+  int? _totalItems;
+  int? get totalItems => _$this._totalItems;
+  set totalItems(int? totalItems) => _$this._totalItems = totalItems;
 
-  num? _totalPages;
-  num? get totalPages => _$this._totalPages;
-  set totalPages(num? totalPages) => _$this._totalPages = totalPages;
+  int? _totalPages;
+  int? get totalPages => _$this._totalPages;
+  set totalPages(int? totalPages) => _$this._totalPages = totalPages;
 
-  ListBuilder<BankTransactionEntity>? _items;
-  ListBuilder<BankTransactionEntity> get items =>
-      _$this._items ??= new ListBuilder<BankTransactionEntity>();
-  set items(ListBuilder<BankTransactionEntity>? items) => _$this._items = items;
+  ListBuilder<BankTransactionsPageEntityItemsInner>? _items;
+  ListBuilder<BankTransactionsPageEntityItemsInner> get items =>
+      _$this._items ??= new ListBuilder<BankTransactionsPageEntityItemsInner>();
+  set items(ListBuilder<BankTransactionsPageEntityItemsInner>? items) =>
+      _$this._items = items;
 
   BankTransactionsPageEntityBuilder() {
     BankTransactionsPageEntity._defaults(this);

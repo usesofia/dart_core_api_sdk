@@ -20,13 +20,13 @@ class BankTransactionCategoriesApi {
 
   const BankTransactionCategoriesApi(this._dio, this._serializers);
 
-  /// bankTransactionCategoriesControllerGetBankTransactionCategories
+  /// bankTransactionCategoriesControllerList
   /// 
   ///
   /// Parameters:
   /// * [workspaceId] 
   /// * [onlyLeafs] 
-  /// * [transactionNatures] 
+  /// * [directionNatures] 
   /// * [legalNatures] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -37,10 +37,10 @@ class BankTransactionCategoriesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<BankTransactionCategoryEntity>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<BankTransactionCategoryEntity>>> bankTransactionCategoriesControllerGetBankTransactionCategories({ 
+  Future<Response<BuiltList<BankTransactionCategoryEntity>>> bankTransactionCategoriesControllerList({ 
     required String workspaceId,
     bool? onlyLeafs,
-    String? transactionNatures,
+    String? directionNatures,
     String? legalNatures,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -49,7 +49,7 @@ class BankTransactionCategoriesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/workspaces/{workspaceId}/bank/transactions/categories'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _path = r'/bank/workspaces/{workspaceId}/transaction-categories'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -64,7 +64,7 @@ class BankTransactionCategoriesApi {
 
     final _queryParameters = <String, dynamic>{
       if (onlyLeafs != null) r'onlyLeafs': encodeQueryParameter(_serializers, onlyLeafs, const FullType(bool)),
-      if (transactionNatures != null) r'transactionNatures': encodeQueryParameter(_serializers, transactionNatures, const FullType(String)),
+      if (directionNatures != null) r'directionNatures': encodeQueryParameter(_serializers, directionNatures, const FullType(String)),
       if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
     };
 

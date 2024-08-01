@@ -6,19 +6,88 @@ part of 'bank_transaction_category_entity.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const BankTransactionCategoryEntityDirectionNatureEnum
+    _$bankTransactionCategoryEntityDirectionNatureEnum_CREDIT =
+    const BankTransactionCategoryEntityDirectionNatureEnum._('CREDIT');
+const BankTransactionCategoryEntityDirectionNatureEnum
+    _$bankTransactionCategoryEntityDirectionNatureEnum_DEBIT =
+    const BankTransactionCategoryEntityDirectionNatureEnum._('DEBIT');
+const BankTransactionCategoryEntityDirectionNatureEnum
+    _$bankTransactionCategoryEntityDirectionNatureEnum_UNDEFINED =
+    const BankTransactionCategoryEntityDirectionNatureEnum._('UNDEFINED');
+
+BankTransactionCategoryEntityDirectionNatureEnum
+    _$bankTransactionCategoryEntityDirectionNatureEnumValueOf(String name) {
+  switch (name) {
+    case 'CREDIT':
+      return _$bankTransactionCategoryEntityDirectionNatureEnum_CREDIT;
+    case 'DEBIT':
+      return _$bankTransactionCategoryEntityDirectionNatureEnum_DEBIT;
+    case 'UNDEFINED':
+      return _$bankTransactionCategoryEntityDirectionNatureEnum_UNDEFINED;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<BankTransactionCategoryEntityDirectionNatureEnum>
+    _$bankTransactionCategoryEntityDirectionNatureEnumValues = new BuiltSet<
+        BankTransactionCategoryEntityDirectionNatureEnum>(const <BankTransactionCategoryEntityDirectionNatureEnum>[
+  _$bankTransactionCategoryEntityDirectionNatureEnum_CREDIT,
+  _$bankTransactionCategoryEntityDirectionNatureEnum_DEBIT,
+  _$bankTransactionCategoryEntityDirectionNatureEnum_UNDEFINED,
+]);
+
+Serializer<BankTransactionCategoryEntityDirectionNatureEnum>
+    _$bankTransactionCategoryEntityDirectionNatureEnumSerializer =
+    new _$BankTransactionCategoryEntityDirectionNatureEnumSerializer();
+
+class _$BankTransactionCategoryEntityDirectionNatureEnumSerializer
+    implements
+        PrimitiveSerializer<BankTransactionCategoryEntityDirectionNatureEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'CREDIT': 'CREDIT',
+    'DEBIT': 'DEBIT',
+    'UNDEFINED': 'UNDEFINED',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'CREDIT': 'CREDIT',
+    'DEBIT': 'DEBIT',
+    'UNDEFINED': 'UNDEFINED',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    BankTransactionCategoryEntityDirectionNatureEnum
+  ];
+  @override
+  final String wireName = 'BankTransactionCategoryEntityDirectionNatureEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          BankTransactionCategoryEntityDirectionNatureEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  BankTransactionCategoryEntityDirectionNatureEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      BankTransactionCategoryEntityDirectionNatureEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$BankTransactionCategoryEntity extends BankTransactionCategoryEntity {
   @override
   final String id;
   @override
   final String name;
   @override
-  final String nature;
+  final BankTransactionCategoryEntityDirectionNatureEnum directionNature;
   @override
   final String? parentId;
   @override
-  final BuiltList<BankTransactionCategoryPlainEntity> path;
-  @override
-  final BuiltList<BankTransactionCategoryPlainEntity> children;
+  final BuiltList<BankTransactionCategoryEntityChildrenInner> children;
 
   factory _$BankTransactionCategoryEntity(
           [void Function(BankTransactionCategoryEntityBuilder)? updates]) =>
@@ -27,9 +96,8 @@ class _$BankTransactionCategoryEntity extends BankTransactionCategoryEntity {
   _$BankTransactionCategoryEntity._(
       {required this.id,
       required this.name,
-      required this.nature,
+      required this.directionNature,
       this.parentId,
-      required this.path,
       required this.children})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
@@ -37,9 +105,7 @@ class _$BankTransactionCategoryEntity extends BankTransactionCategoryEntity {
     BuiltValueNullFieldError.checkNotNull(
         name, r'BankTransactionCategoryEntity', 'name');
     BuiltValueNullFieldError.checkNotNull(
-        nature, r'BankTransactionCategoryEntity', 'nature');
-    BuiltValueNullFieldError.checkNotNull(
-        path, r'BankTransactionCategoryEntity', 'path');
+        directionNature, r'BankTransactionCategoryEntity', 'directionNature');
     BuiltValueNullFieldError.checkNotNull(
         children, r'BankTransactionCategoryEntity', 'children');
   }
@@ -59,9 +125,8 @@ class _$BankTransactionCategoryEntity extends BankTransactionCategoryEntity {
     return other is BankTransactionCategoryEntity &&
         id == other.id &&
         name == other.name &&
-        nature == other.nature &&
+        directionNature == other.directionNature &&
         parentId == other.parentId &&
-        path == other.path &&
         children == other.children;
   }
 
@@ -70,9 +135,8 @@ class _$BankTransactionCategoryEntity extends BankTransactionCategoryEntity {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, nature.hashCode);
+    _$hash = $jc(_$hash, directionNature.hashCode);
     _$hash = $jc(_$hash, parentId.hashCode);
-    _$hash = $jc(_$hash, path.hashCode);
     _$hash = $jc(_$hash, children.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -83,9 +147,8 @@ class _$BankTransactionCategoryEntity extends BankTransactionCategoryEntity {
     return (newBuiltValueToStringHelper(r'BankTransactionCategoryEntity')
           ..add('id', id)
           ..add('name', name)
-          ..add('nature', nature)
+          ..add('directionNature', directionNature)
           ..add('parentId', parentId)
-          ..add('path', path)
           ..add('children', children))
         .toString();
   }
@@ -105,25 +168,23 @@ class BankTransactionCategoryEntityBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  String? _nature;
-  String? get nature => _$this._nature;
-  set nature(String? nature) => _$this._nature = nature;
+  BankTransactionCategoryEntityDirectionNatureEnum? _directionNature;
+  BankTransactionCategoryEntityDirectionNatureEnum? get directionNature =>
+      _$this._directionNature;
+  set directionNature(
+          BankTransactionCategoryEntityDirectionNatureEnum? directionNature) =>
+      _$this._directionNature = directionNature;
 
   String? _parentId;
   String? get parentId => _$this._parentId;
   set parentId(String? parentId) => _$this._parentId = parentId;
 
-  ListBuilder<BankTransactionCategoryPlainEntity>? _path;
-  ListBuilder<BankTransactionCategoryPlainEntity> get path =>
-      _$this._path ??= new ListBuilder<BankTransactionCategoryPlainEntity>();
-  set path(ListBuilder<BankTransactionCategoryPlainEntity>? path) =>
-      _$this._path = path;
-
-  ListBuilder<BankTransactionCategoryPlainEntity>? _children;
-  ListBuilder<BankTransactionCategoryPlainEntity> get children =>
+  ListBuilder<BankTransactionCategoryEntityChildrenInner>? _children;
+  ListBuilder<BankTransactionCategoryEntityChildrenInner> get children =>
       _$this._children ??=
-          new ListBuilder<BankTransactionCategoryPlainEntity>();
-  set children(ListBuilder<BankTransactionCategoryPlainEntity>? children) =>
+          new ListBuilder<BankTransactionCategoryEntityChildrenInner>();
+  set children(
+          ListBuilder<BankTransactionCategoryEntityChildrenInner>? children) =>
       _$this._children = children;
 
   BankTransactionCategoryEntityBuilder() {
@@ -135,9 +196,8 @@ class BankTransactionCategoryEntityBuilder
     if ($v != null) {
       _id = $v.id;
       _name = $v.name;
-      _nature = $v.nature;
+      _directionNature = $v.directionNature;
       _parentId = $v.parentId;
-      _path = $v.path.toBuilder();
       _children = $v.children.toBuilder();
       _$v = null;
     }
@@ -167,16 +227,15 @@ class BankTransactionCategoryEntityBuilder
                   id, r'BankTransactionCategoryEntity', 'id'),
               name: BuiltValueNullFieldError.checkNotNull(
                   name, r'BankTransactionCategoryEntity', 'name'),
-              nature: BuiltValueNullFieldError.checkNotNull(
-                  nature, r'BankTransactionCategoryEntity', 'nature'),
+              directionNature: BuiltValueNullFieldError.checkNotNull(
+                  directionNature,
+                  r'BankTransactionCategoryEntity',
+                  'directionNature'),
               parentId: parentId,
-              path: path.build(),
               children: children.build());
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'path';
-        path.build();
         _$failedField = 'children';
         children.build();
       } catch (e) {

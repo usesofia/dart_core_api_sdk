@@ -9,12 +9,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**messageTokensControllerCreateOrUpdateMessageToken**](MessageTokensApi.md#messagetokenscontrollercreateorupdatemessagetoken) | **PUT** /workspaces/{workspaceId}/message-tokens | 
-[**messageTokensControllerGetWorkspaceMessageTokens**](MessageTokensApi.md#messagetokenscontrollergetworkspacemessagetokens) | **GET** /workspaces/{workspaceId}/message-tokens | 
+[**messageTokensControllerCreateOrUpdate**](MessageTokensApi.md#messagetokenscontrollercreateorupdate) | **PUT** /communication/workspaces/{workspaceId}/message-tokens | 
+[**messageTokensControllerListByWorkspaceId**](MessageTokensApi.md#messagetokenscontrollerlistbyworkspaceid) | **GET** /communication/workspaces/{workspaceId}/message-tokens | 
 
 
-# **messageTokensControllerCreateOrUpdateMessageToken**
-> MessageTokenEntity messageTokensControllerCreateOrUpdateMessageToken(workspaceId, createOrUpdateMessageTokenRequestDto)
+# **messageTokensControllerCreateOrUpdate**
+> MessageTokenEntity messageTokensControllerCreateOrUpdate(workspaceId, createOrUpdateMessageTokenRequestDto)
 
 
 
@@ -27,10 +27,10 @@ final String workspaceId = workspaceId_example; // String |
 final CreateOrUpdateMessageTokenRequestDto createOrUpdateMessageTokenRequestDto = ; // CreateOrUpdateMessageTokenRequestDto | 
 
 try {
-    final response = api.messageTokensControllerCreateOrUpdateMessageToken(workspaceId, createOrUpdateMessageTokenRequestDto);
+    final response = api.messageTokensControllerCreateOrUpdate(workspaceId, createOrUpdateMessageTokenRequestDto);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageTokensApi->messageTokensControllerCreateOrUpdateMessageToken: $e\n');
+    print('Exception when calling MessageTokensApi->messageTokensControllerCreateOrUpdate: $e\n');
 }
 ```
 
@@ -56,8 +56,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **messageTokensControllerGetWorkspaceMessageTokens**
-> BuiltList<MessageTokenEntity> messageTokensControllerGetWorkspaceMessageTokens(workspaceId)
+# **messageTokensControllerListByWorkspaceId**
+> BuiltList<MessageTokenEntity> messageTokensControllerListByWorkspaceId(workspaceId)
 
 
 
@@ -69,10 +69,10 @@ final api = DartCoreApiSdk().getMessageTokensApi();
 final String workspaceId = workspaceId_example; // String | 
 
 try {
-    final response = api.messageTokensControllerGetWorkspaceMessageTokens(workspaceId);
+    final response = api.messageTokensControllerListByWorkspaceId(workspaceId);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageTokensApi->messageTokensControllerGetWorkspaceMessageTokens: $e\n');
+    print('Exception when calling MessageTokensApi->messageTokensControllerListByWorkspaceId: $e\n');
 }
 ```
 

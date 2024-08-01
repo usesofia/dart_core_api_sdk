@@ -6,18 +6,191 @@ part of 'create_or_update_bank_connection_request_dto.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const CreateOrUpdateBankConnectionRequestDtoProviderEnum
+    _$createOrUpdateBankConnectionRequestDtoProviderEnum_PLUGGY =
+    const CreateOrUpdateBankConnectionRequestDtoProviderEnum._('PLUGGY');
+const CreateOrUpdateBankConnectionRequestDtoProviderEnum
+    _$createOrUpdateBankConnectionRequestDtoProviderEnum_SOFIA =
+    const CreateOrUpdateBankConnectionRequestDtoProviderEnum._('SOFIA');
+
+CreateOrUpdateBankConnectionRequestDtoProviderEnum
+    _$createOrUpdateBankConnectionRequestDtoProviderEnumValueOf(String name) {
+  switch (name) {
+    case 'PLUGGY':
+      return _$createOrUpdateBankConnectionRequestDtoProviderEnum_PLUGGY;
+    case 'SOFIA':
+      return _$createOrUpdateBankConnectionRequestDtoProviderEnum_SOFIA;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<CreateOrUpdateBankConnectionRequestDtoProviderEnum>
+    _$createOrUpdateBankConnectionRequestDtoProviderEnumValues = new BuiltSet<
+        CreateOrUpdateBankConnectionRequestDtoProviderEnum>(const <CreateOrUpdateBankConnectionRequestDtoProviderEnum>[
+  _$createOrUpdateBankConnectionRequestDtoProviderEnum_PLUGGY,
+  _$createOrUpdateBankConnectionRequestDtoProviderEnum_SOFIA,
+]);
+
+const CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum
+    _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_ONE_DAY =
+    const CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum._('ONE_DAY');
+const CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum
+    _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_ONE_WEEK =
+    const CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum._('ONE_WEEK');
+const CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum
+    _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_ONE_MONTH =
+    const CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum._('ONE_MONTH');
+const CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum
+    _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_TWO_MONTHS =
+    const CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum._(
+        'TWO_MONTHS');
+const CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum
+    _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_THREE_MONTHS =
+    const CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum._(
+        'THREE_MONTHS');
+const CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum
+    _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_SIX_MONTHS =
+    const CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum._(
+        'SIX_MONTHS');
+const CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum
+    _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_ONE_YEAR =
+    const CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum._('ONE_YEAR');
+
+CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum
+    _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnumValueOf(
+        String name) {
+  switch (name) {
+    case 'ONE_DAY':
+      return _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_ONE_DAY;
+    case 'ONE_WEEK':
+      return _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_ONE_WEEK;
+    case 'ONE_MONTH':
+      return _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_ONE_MONTH;
+    case 'TWO_MONTHS':
+      return _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_TWO_MONTHS;
+    case 'THREE_MONTHS':
+      return _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_THREE_MONTHS;
+    case 'SIX_MONTHS':
+      return _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_SIX_MONTHS;
+    case 'ONE_YEAR':
+      return _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_ONE_YEAR;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum>
+    _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnumValues =
+    new BuiltSet<
+        CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum>(const <CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum>[
+  _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_ONE_DAY,
+  _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_ONE_WEEK,
+  _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_ONE_MONTH,
+  _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_TWO_MONTHS,
+  _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_THREE_MONTHS,
+  _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_SIX_MONTHS,
+  _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnum_ONE_YEAR,
+]);
+
+Serializer<CreateOrUpdateBankConnectionRequestDtoProviderEnum>
+    _$createOrUpdateBankConnectionRequestDtoProviderEnumSerializer =
+    new _$CreateOrUpdateBankConnectionRequestDtoProviderEnumSerializer();
+Serializer<CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum>
+    _$createOrUpdateBankConnectionRequestDtoHistoryRangeEnumSerializer =
+    new _$CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnumSerializer();
+
+class _$CreateOrUpdateBankConnectionRequestDtoProviderEnumSerializer
+    implements
+        PrimitiveSerializer<
+            CreateOrUpdateBankConnectionRequestDtoProviderEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'PLUGGY': 'PLUGGY',
+    'SOFIA': 'SOFIA',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'PLUGGY': 'PLUGGY',
+    'SOFIA': 'SOFIA',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    CreateOrUpdateBankConnectionRequestDtoProviderEnum
+  ];
+  @override
+  final String wireName = 'CreateOrUpdateBankConnectionRequestDtoProviderEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          CreateOrUpdateBankConnectionRequestDtoProviderEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  CreateOrUpdateBankConnectionRequestDtoProviderEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      CreateOrUpdateBankConnectionRequestDtoProviderEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
+class _$CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnumSerializer
+    implements
+        PrimitiveSerializer<
+            CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'ONE_DAY': 'ONE_DAY',
+    'ONE_WEEK': 'ONE_WEEK',
+    'ONE_MONTH': 'ONE_MONTH',
+    'TWO_MONTHS': 'TWO_MONTHS',
+    'THREE_MONTHS': 'THREE_MONTHS',
+    'SIX_MONTHS': 'SIX_MONTHS',
+    'ONE_YEAR': 'ONE_YEAR',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'ONE_DAY': 'ONE_DAY',
+    'ONE_WEEK': 'ONE_WEEK',
+    'ONE_MONTH': 'ONE_MONTH',
+    'TWO_MONTHS': 'TWO_MONTHS',
+    'THREE_MONTHS': 'THREE_MONTHS',
+    'SIX_MONTHS': 'SIX_MONTHS',
+    'ONE_YEAR': 'ONE_YEAR',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum
+  ];
+  @override
+  final String wireName =
+      'CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$CreateOrUpdateBankConnectionRequestDto
     extends CreateOrUpdateBankConnectionRequestDto {
   @override
   final String createdByUserId;
   @override
-  final String provider;
+  final CreateOrUpdateBankConnectionRequestDtoProviderEnum provider;
   @override
   final String providerItemId;
   @override
   final String providerConnectorId;
   @override
-  final String historyRange;
+  final CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum historyRange;
 
   factory _$CreateOrUpdateBankConnectionRequestDto(
           [void Function(CreateOrUpdateBankConnectionRequestDtoBuilder)?
@@ -101,9 +274,11 @@ class CreateOrUpdateBankConnectionRequestDtoBuilder
   set createdByUserId(String? createdByUserId) =>
       _$this._createdByUserId = createdByUserId;
 
-  String? _provider;
-  String? get provider => _$this._provider;
-  set provider(String? provider) => _$this._provider = provider;
+  CreateOrUpdateBankConnectionRequestDtoProviderEnum? _provider;
+  CreateOrUpdateBankConnectionRequestDtoProviderEnum? get provider =>
+      _$this._provider;
+  set provider(CreateOrUpdateBankConnectionRequestDtoProviderEnum? provider) =>
+      _$this._provider = provider;
 
   String? _providerItemId;
   String? get providerItemId => _$this._providerItemId;
@@ -115,9 +290,13 @@ class CreateOrUpdateBankConnectionRequestDtoBuilder
   set providerConnectorId(String? providerConnectorId) =>
       _$this._providerConnectorId = providerConnectorId;
 
-  String? _historyRange;
-  String? get historyRange => _$this._historyRange;
-  set historyRange(String? historyRange) => _$this._historyRange = historyRange;
+  CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum? _historyRange;
+  CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum? get historyRange =>
+      _$this._historyRange;
+  set historyRange(
+          CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum?
+              historyRange) =>
+      _$this._historyRange = historyRange;
 
   CreateOrUpdateBankConnectionRequestDtoBuilder() {
     CreateOrUpdateBankConnectionRequestDto._defaults(this);

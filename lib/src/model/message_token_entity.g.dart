@@ -128,11 +128,11 @@ class _$MessageTokenEntity extends MessageTokenEntity {
   @override
   final String workspaceId;
   @override
-  final WorkspaceEntity workspace;
+  final MessageTokenEntityWorksapce? worksapce;
   @override
   final String userId;
   @override
-  final UserEntity user;
+  final MessageTokenEntityUser? user;
   @override
   final MessageTokenEntityProviderEnum provider;
   @override
@@ -142,9 +142,9 @@ class _$MessageTokenEntity extends MessageTokenEntity {
   @override
   final String token;
   @override
-  final DateTime createdAt;
+  final JsonObject? createdAt;
   @override
-  final DateTime updatedAt;
+  final JsonObject? updatedAt;
 
   factory _$MessageTokenEntity(
           [void Function(MessageTokenEntityBuilder)? updates]) =>
@@ -153,24 +153,21 @@ class _$MessageTokenEntity extends MessageTokenEntity {
   _$MessageTokenEntity._(
       {required this.id,
       required this.workspaceId,
-      required this.workspace,
+      this.worksapce,
       required this.userId,
-      required this.user,
+      this.user,
       required this.provider,
       required this.platform,
       required this.deviceId,
       required this.token,
-      required this.createdAt,
-      required this.updatedAt})
+      this.createdAt,
+      this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'MessageTokenEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
         workspaceId, r'MessageTokenEntity', 'workspaceId');
     BuiltValueNullFieldError.checkNotNull(
-        workspace, r'MessageTokenEntity', 'workspace');
-    BuiltValueNullFieldError.checkNotNull(
         userId, r'MessageTokenEntity', 'userId');
-    BuiltValueNullFieldError.checkNotNull(user, r'MessageTokenEntity', 'user');
     BuiltValueNullFieldError.checkNotNull(
         provider, r'MessageTokenEntity', 'provider');
     BuiltValueNullFieldError.checkNotNull(
@@ -179,10 +176,6 @@ class _$MessageTokenEntity extends MessageTokenEntity {
         deviceId, r'MessageTokenEntity', 'deviceId');
     BuiltValueNullFieldError.checkNotNull(
         token, r'MessageTokenEntity', 'token');
-    BuiltValueNullFieldError.checkNotNull(
-        createdAt, r'MessageTokenEntity', 'createdAt');
-    BuiltValueNullFieldError.checkNotNull(
-        updatedAt, r'MessageTokenEntity', 'updatedAt');
   }
 
   @override
@@ -200,7 +193,7 @@ class _$MessageTokenEntity extends MessageTokenEntity {
     return other is MessageTokenEntity &&
         id == other.id &&
         workspaceId == other.workspaceId &&
-        workspace == other.workspace &&
+        worksapce == other.worksapce &&
         userId == other.userId &&
         user == other.user &&
         provider == other.provider &&
@@ -216,7 +209,7 @@ class _$MessageTokenEntity extends MessageTokenEntity {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, workspaceId.hashCode);
-    _$hash = $jc(_$hash, workspace.hashCode);
+    _$hash = $jc(_$hash, worksapce.hashCode);
     _$hash = $jc(_$hash, userId.hashCode);
     _$hash = $jc(_$hash, user.hashCode);
     _$hash = $jc(_$hash, provider.hashCode);
@@ -234,7 +227,7 @@ class _$MessageTokenEntity extends MessageTokenEntity {
     return (newBuiltValueToStringHelper(r'MessageTokenEntity')
           ..add('id', id)
           ..add('workspaceId', workspaceId)
-          ..add('workspace', workspace)
+          ..add('worksapce', worksapce)
           ..add('userId', userId)
           ..add('user', user)
           ..add('provider', provider)
@@ -259,19 +252,20 @@ class MessageTokenEntityBuilder
   String? get workspaceId => _$this._workspaceId;
   set workspaceId(String? workspaceId) => _$this._workspaceId = workspaceId;
 
-  WorkspaceEntityBuilder? _workspace;
-  WorkspaceEntityBuilder get workspace =>
-      _$this._workspace ??= new WorkspaceEntityBuilder();
-  set workspace(WorkspaceEntityBuilder? workspace) =>
-      _$this._workspace = workspace;
+  MessageTokenEntityWorksapceBuilder? _worksapce;
+  MessageTokenEntityWorksapceBuilder get worksapce =>
+      _$this._worksapce ??= new MessageTokenEntityWorksapceBuilder();
+  set worksapce(MessageTokenEntityWorksapceBuilder? worksapce) =>
+      _$this._worksapce = worksapce;
 
   String? _userId;
   String? get userId => _$this._userId;
   set userId(String? userId) => _$this._userId = userId;
 
-  UserEntityBuilder? _user;
-  UserEntityBuilder get user => _$this._user ??= new UserEntityBuilder();
-  set user(UserEntityBuilder? user) => _$this._user = user;
+  MessageTokenEntityUserBuilder? _user;
+  MessageTokenEntityUserBuilder get user =>
+      _$this._user ??= new MessageTokenEntityUserBuilder();
+  set user(MessageTokenEntityUserBuilder? user) => _$this._user = user;
 
   MessageTokenEntityProviderEnum? _provider;
   MessageTokenEntityProviderEnum? get provider => _$this._provider;
@@ -291,13 +285,13 @@ class MessageTokenEntityBuilder
   String? get token => _$this._token;
   set token(String? token) => _$this._token = token;
 
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
 
   MessageTokenEntityBuilder() {
     MessageTokenEntity._defaults(this);
@@ -308,9 +302,9 @@ class MessageTokenEntityBuilder
     if ($v != null) {
       _id = $v.id;
       _workspaceId = $v.workspaceId;
-      _workspace = $v.workspace.toBuilder();
+      _worksapce = $v.worksapce?.toBuilder();
       _userId = $v.userId;
-      _user = $v.user.toBuilder();
+      _user = $v.user?.toBuilder();
       _provider = $v.provider;
       _platform = $v.platform;
       _deviceId = $v.deviceId;
@@ -345,10 +339,10 @@ class MessageTokenEntityBuilder
                   id, r'MessageTokenEntity', 'id'),
               workspaceId: BuiltValueNullFieldError.checkNotNull(
                   workspaceId, r'MessageTokenEntity', 'workspaceId'),
-              workspace: workspace.build(),
+              worksapce: _worksapce?.build(),
               userId: BuiltValueNullFieldError.checkNotNull(
                   userId, r'MessageTokenEntity', 'userId'),
-              user: user.build(),
+              user: _user?.build(),
               provider: BuiltValueNullFieldError.checkNotNull(
                   provider, r'MessageTokenEntity', 'provider'),
               platform: BuiltValueNullFieldError.checkNotNull(
@@ -357,18 +351,16 @@ class MessageTokenEntityBuilder
                   deviceId, r'MessageTokenEntity', 'deviceId'),
               token: BuiltValueNullFieldError.checkNotNull(
                   token, r'MessageTokenEntity', 'token'),
-              createdAt: BuiltValueNullFieldError.checkNotNull(
-                  createdAt, r'MessageTokenEntity', 'createdAt'),
-              updatedAt:
-                  BuiltValueNullFieldError.checkNotNull(updatedAt, r'MessageTokenEntity', 'updatedAt'));
+              createdAt: createdAt,
+              updatedAt: updatedAt);
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'workspace';
-        workspace.build();
+        _$failedField = 'worksapce';
+        _worksapce?.build();
 
         _$failedField = 'user';
-        user.build();
+        _user?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'MessageTokenEntity', _$failedField, e.toString());

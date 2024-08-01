@@ -9,17 +9,20 @@ import 'package:dart_core_api_sdk/src/auth/api_key_auth.dart';
 import 'package:dart_core_api_sdk/src/auth/basic_auth.dart';
 import 'package:dart_core_api_sdk/src/auth/bearer_auth.dart';
 import 'package:dart_core_api_sdk/src/auth/oauth.dart';
+import 'package:dart_core_api_sdk/src/api/auth_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_accounts_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_connections_api.dart';
+import 'package:dart_core_api_sdk/src/api/bank_sync_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transaction_categories_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transaction_tags_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transactions_api.dart';
-import 'package:dart_core_api_sdk/src/api/iam_auth_api.dart';
-import 'package:dart_core_api_sdk/src/api/iam_profiles_api.dart';
-import 'package:dart_core_api_sdk/src/api/iam_workspaces_api.dart';
+import 'package:dart_core_api_sdk/src/api/bank_transactions_page_category_assigner_api.dart';
+import 'package:dart_core_api_sdk/src/api/bank_transactions_page_legal_nature_assigner_api.dart';
 import 'package:dart_core_api_sdk/src/api/message_tokens_api.dart';
 import 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
+import 'package:dart_core_api_sdk/src/api/profiles_api.dart';
 import 'package:dart_core_api_sdk/src/api/reports_api.dart';
+import 'package:dart_core_api_sdk/src/api/workspaces_api.dart';
 
 class DartCoreApiSdk {
   static const String basePath = r'http://localhost';
@@ -75,6 +78,12 @@ class DartCoreApiSdk {
     }
   }
 
+  /// Get AuthApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AuthApi getAuthApi() {
+    return AuthApi(dio, serializers);
+  }
+
   /// Get BankAccountsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   BankAccountsApi getBankAccountsApi() {
@@ -85,6 +94,12 @@ class DartCoreApiSdk {
   /// by doing that all interceptors will not be executed
   BankConnectionsApi getBankConnectionsApi() {
     return BankConnectionsApi(dio, serializers);
+  }
+
+  /// Get BankSyncApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  BankSyncApi getBankSyncApi() {
+    return BankSyncApi(dio, serializers);
   }
 
   /// Get BankTransactionCategoriesApi instance, base route and serializer can be overridden by a given but be careful,
@@ -105,22 +120,16 @@ class DartCoreApiSdk {
     return BankTransactionsApi(dio, serializers);
   }
 
-  /// Get IamAuthApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get BankTransactionsPageCategoryAssignerApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  IamAuthApi getIamAuthApi() {
-    return IamAuthApi(dio, serializers);
+  BankTransactionsPageCategoryAssignerApi getBankTransactionsPageCategoryAssignerApi() {
+    return BankTransactionsPageCategoryAssignerApi(dio, serializers);
   }
 
-  /// Get IamProfilesApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get BankTransactionsPageLegalNatureAssignerApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  IamProfilesApi getIamProfilesApi() {
-    return IamProfilesApi(dio, serializers);
-  }
-
-  /// Get IamWorkspacesApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  IamWorkspacesApi getIamWorkspacesApi() {
-    return IamWorkspacesApi(dio, serializers);
+  BankTransactionsPageLegalNatureAssignerApi getBankTransactionsPageLegalNatureAssignerApi() {
+    return BankTransactionsPageLegalNatureAssignerApi(dio, serializers);
   }
 
   /// Get MessageTokensApi instance, base route and serializer can be overridden by a given but be careful,
@@ -135,9 +144,21 @@ class DartCoreApiSdk {
     return PluggyApi(dio, serializers);
   }
 
+  /// Get ProfilesApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ProfilesApi getProfilesApi() {
+    return ProfilesApi(dio, serializers);
+  }
+
   /// Get ReportsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   ReportsApi getReportsApi() {
     return ReportsApi(dio, serializers);
+  }
+
+  /// Get WorkspacesApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  WorkspacesApi getWorkspacesApi() {
+    return WorkspacesApi(dio, serializers);
   }
 }

@@ -6,20 +6,153 @@ part of 'create_or_update_bank_account_request_dto.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const CreateOrUpdateBankAccountRequestDtoProviderEnum
+    _$createOrUpdateBankAccountRequestDtoProviderEnum_PLUGGY =
+    const CreateOrUpdateBankAccountRequestDtoProviderEnum._('PLUGGY');
+const CreateOrUpdateBankAccountRequestDtoProviderEnum
+    _$createOrUpdateBankAccountRequestDtoProviderEnum_SOFIA =
+    const CreateOrUpdateBankAccountRequestDtoProviderEnum._('SOFIA');
+
+CreateOrUpdateBankAccountRequestDtoProviderEnum
+    _$createOrUpdateBankAccountRequestDtoProviderEnumValueOf(String name) {
+  switch (name) {
+    case 'PLUGGY':
+      return _$createOrUpdateBankAccountRequestDtoProviderEnum_PLUGGY;
+    case 'SOFIA':
+      return _$createOrUpdateBankAccountRequestDtoProviderEnum_SOFIA;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<CreateOrUpdateBankAccountRequestDtoProviderEnum>
+    _$createOrUpdateBankAccountRequestDtoProviderEnumValues = new BuiltSet<
+        CreateOrUpdateBankAccountRequestDtoProviderEnum>(const <CreateOrUpdateBankAccountRequestDtoProviderEnum>[
+  _$createOrUpdateBankAccountRequestDtoProviderEnum_PLUGGY,
+  _$createOrUpdateBankAccountRequestDtoProviderEnum_SOFIA,
+]);
+
+const CreateOrUpdateBankAccountRequestDtoTypeEnum
+    _$createOrUpdateBankAccountRequestDtoTypeEnum_CHECKING =
+    const CreateOrUpdateBankAccountRequestDtoTypeEnum._('CHECKING');
+const CreateOrUpdateBankAccountRequestDtoTypeEnum
+    _$createOrUpdateBankAccountRequestDtoTypeEnum_SAVINGS =
+    const CreateOrUpdateBankAccountRequestDtoTypeEnum._('SAVINGS');
+const CreateOrUpdateBankAccountRequestDtoTypeEnum
+    _$createOrUpdateBankAccountRequestDtoTypeEnum_CREDIT_CARD =
+    const CreateOrUpdateBankAccountRequestDtoTypeEnum._('CREDIT_CARD');
+
+CreateOrUpdateBankAccountRequestDtoTypeEnum
+    _$createOrUpdateBankAccountRequestDtoTypeEnumValueOf(String name) {
+  switch (name) {
+    case 'CHECKING':
+      return _$createOrUpdateBankAccountRequestDtoTypeEnum_CHECKING;
+    case 'SAVINGS':
+      return _$createOrUpdateBankAccountRequestDtoTypeEnum_SAVINGS;
+    case 'CREDIT_CARD':
+      return _$createOrUpdateBankAccountRequestDtoTypeEnum_CREDIT_CARD;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<CreateOrUpdateBankAccountRequestDtoTypeEnum>
+    _$createOrUpdateBankAccountRequestDtoTypeEnumValues = new BuiltSet<
+        CreateOrUpdateBankAccountRequestDtoTypeEnum>(const <CreateOrUpdateBankAccountRequestDtoTypeEnum>[
+  _$createOrUpdateBankAccountRequestDtoTypeEnum_CHECKING,
+  _$createOrUpdateBankAccountRequestDtoTypeEnum_SAVINGS,
+  _$createOrUpdateBankAccountRequestDtoTypeEnum_CREDIT_CARD,
+]);
+
+Serializer<CreateOrUpdateBankAccountRequestDtoProviderEnum>
+    _$createOrUpdateBankAccountRequestDtoProviderEnumSerializer =
+    new _$CreateOrUpdateBankAccountRequestDtoProviderEnumSerializer();
+Serializer<CreateOrUpdateBankAccountRequestDtoTypeEnum>
+    _$createOrUpdateBankAccountRequestDtoTypeEnumSerializer =
+    new _$CreateOrUpdateBankAccountRequestDtoTypeEnumSerializer();
+
+class _$CreateOrUpdateBankAccountRequestDtoProviderEnumSerializer
+    implements
+        PrimitiveSerializer<CreateOrUpdateBankAccountRequestDtoProviderEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'PLUGGY': 'PLUGGY',
+    'SOFIA': 'SOFIA',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'PLUGGY': 'PLUGGY',
+    'SOFIA': 'SOFIA',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    CreateOrUpdateBankAccountRequestDtoProviderEnum
+  ];
+  @override
+  final String wireName = 'CreateOrUpdateBankAccountRequestDtoProviderEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          CreateOrUpdateBankAccountRequestDtoProviderEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  CreateOrUpdateBankAccountRequestDtoProviderEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      CreateOrUpdateBankAccountRequestDtoProviderEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
+class _$CreateOrUpdateBankAccountRequestDtoTypeEnumSerializer
+    implements
+        PrimitiveSerializer<CreateOrUpdateBankAccountRequestDtoTypeEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'CHECKING': 'CHECKING',
+    'SAVINGS': 'SAVINGS',
+    'CREDIT_CARD': 'CREDIT_CARD',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'CHECKING': 'CHECKING',
+    'SAVINGS': 'SAVINGS',
+    'CREDIT_CARD': 'CREDIT_CARD',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    CreateOrUpdateBankAccountRequestDtoTypeEnum
+  ];
+  @override
+  final String wireName = 'CreateOrUpdateBankAccountRequestDtoTypeEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          CreateOrUpdateBankAccountRequestDtoTypeEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  CreateOrUpdateBankAccountRequestDtoTypeEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      CreateOrUpdateBankAccountRequestDtoTypeEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$CreateOrUpdateBankAccountRequestDto
     extends CreateOrUpdateBankAccountRequestDto {
   @override
   final String bankConnectionId;
   @override
-  final String provider;
+  final CreateOrUpdateBankAccountRequestDtoProviderEnum provider;
   @override
   final String providerAccountId;
   @override
-  final String type;
+  final CreateOrUpdateBankAccountRequestDtoTypeEnum type;
   @override
   final String number;
   @override
-  final num balance;
+  final int balance;
   @override
   final String currencyCode;
   @override
@@ -123,26 +256,29 @@ class CreateOrUpdateBankAccountRequestDtoBuilder
   set bankConnectionId(String? bankConnectionId) =>
       _$this._bankConnectionId = bankConnectionId;
 
-  String? _provider;
-  String? get provider => _$this._provider;
-  set provider(String? provider) => _$this._provider = provider;
+  CreateOrUpdateBankAccountRequestDtoProviderEnum? _provider;
+  CreateOrUpdateBankAccountRequestDtoProviderEnum? get provider =>
+      _$this._provider;
+  set provider(CreateOrUpdateBankAccountRequestDtoProviderEnum? provider) =>
+      _$this._provider = provider;
 
   String? _providerAccountId;
   String? get providerAccountId => _$this._providerAccountId;
   set providerAccountId(String? providerAccountId) =>
       _$this._providerAccountId = providerAccountId;
 
-  String? _type;
-  String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
+  CreateOrUpdateBankAccountRequestDtoTypeEnum? _type;
+  CreateOrUpdateBankAccountRequestDtoTypeEnum? get type => _$this._type;
+  set type(CreateOrUpdateBankAccountRequestDtoTypeEnum? type) =>
+      _$this._type = type;
 
   String? _number;
   String? get number => _$this._number;
   set number(String? number) => _$this._number = number;
 
-  num? _balance;
-  num? get balance => _$this._balance;
-  set balance(num? balance) => _$this._balance = balance;
+  int? _balance;
+  int? get balance => _$this._balance;
+  set balance(int? balance) => _$this._balance = balance;
 
   String? _currencyCode;
   String? get currencyCode => _$this._currencyCode;

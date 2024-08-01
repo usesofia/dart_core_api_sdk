@@ -9,7 +9,7 @@ import 'package:dio/dio.dart';
 
 import 'package:dart_core_api_sdk/src/model/create_profile_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
-import 'package:dart_core_api_sdk/src/model/parcial_update_profile_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/partial_update_profile_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/profile_entity.dart';
 
 class ProfilesApi {
@@ -43,7 +43,7 @@ class ProfilesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/profiles';
+    final _path = r'/iam/profiles';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -136,7 +136,7 @@ class ProfilesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/profiles/me';
+    final _path = r'/iam/profiles/me';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -188,11 +188,11 @@ class ProfilesApi {
     );
   }
 
-  /// profilesControllerParcialUpdate
+  /// profilesControllerPartialUpdate
   /// 
   ///
   /// Parameters:
-  /// * [parcialUpdateProfileRequestDto] 
+  /// * [partialUpdateProfileRequestDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -202,8 +202,8 @@ class ProfilesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ProfileEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ProfileEntity>> profilesControllerParcialUpdate({ 
-    required ParcialUpdateProfileRequestDto parcialUpdateProfileRequestDto,
+  Future<Response<ProfileEntity>> profilesControllerPartialUpdate({ 
+    required PartialUpdateProfileRequestDto partialUpdateProfileRequestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -211,7 +211,7 @@ class ProfilesApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/profiles/me';
+    final _path = r'/iam/profiles/me';
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -228,8 +228,8 @@ class ProfilesApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ParcialUpdateProfileRequestDto);
-      _bodyData = _serializers.serialize(parcialUpdateProfileRequestDto, specifiedType: _type);
+      const _type = FullType(PartialUpdateProfileRequestDto);
+      _bodyData = _serializers.serialize(partialUpdateProfileRequestDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -23,7 +24,8 @@ abstract class CreatePluggyConnectTokenRequestDto implements Built<CreatePluggyC
   String get workspaceId;
 
   @BuiltValueField(wireName: r'historyRange')
-  String get historyRange;
+  CreatePluggyConnectTokenRequestDtoHistoryRangeEnum get historyRange;
+  // enum historyRangeEnum {  ONE_DAY,  ONE_WEEK,  ONE_MONTH,  TWO_MONTHS,  THREE_MONTHS,  SIX_MONTHS,  ONE_YEAR,  };
 
   CreatePluggyConnectTokenRequestDto._();
 
@@ -52,7 +54,7 @@ class _$CreatePluggyConnectTokenRequestDtoSerializer implements PrimitiveSeriali
       yield r'itemId';
       yield serializers.serialize(
         object.itemId,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType.nullable(String),
       );
     }
     yield r'workspaceId';
@@ -63,7 +65,7 @@ class _$CreatePluggyConnectTokenRequestDtoSerializer implements PrimitiveSeriali
     yield r'historyRange';
     yield serializers.serialize(
       object.historyRange,
-      specifiedType: const FullType(String),
+      specifiedType: const FullType(CreatePluggyConnectTokenRequestDtoHistoryRangeEnum),
     );
   }
 
@@ -91,8 +93,9 @@ class _$CreatePluggyConnectTokenRequestDtoSerializer implements PrimitiveSeriali
         case r'itemId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.itemId = valueDes;
           break;
         case r'workspaceId':
@@ -105,8 +108,8 @@ class _$CreatePluggyConnectTokenRequestDtoSerializer implements PrimitiveSeriali
         case r'historyRange':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType(CreatePluggyConnectTokenRequestDtoHistoryRangeEnum),
+          ) as CreatePluggyConnectTokenRequestDtoHistoryRangeEnum;
           result.historyRange = valueDes;
           break;
         default:
@@ -136,5 +139,30 @@ class _$CreatePluggyConnectTokenRequestDtoSerializer implements PrimitiveSeriali
     );
     return result.build();
   }
+}
+
+class CreatePluggyConnectTokenRequestDtoHistoryRangeEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'ONE_DAY')
+  static const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum ONE_DAY = _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_DAY;
+  @BuiltValueEnumConst(wireName: r'ONE_WEEK')
+  static const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum ONE_WEEK = _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_WEEK;
+  @BuiltValueEnumConst(wireName: r'ONE_MONTH')
+  static const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum ONE_MONTH = _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_MONTH;
+  @BuiltValueEnumConst(wireName: r'TWO_MONTHS')
+  static const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum TWO_MONTHS = _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_TWO_MONTHS;
+  @BuiltValueEnumConst(wireName: r'THREE_MONTHS')
+  static const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum THREE_MONTHS = _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_THREE_MONTHS;
+  @BuiltValueEnumConst(wireName: r'SIX_MONTHS')
+  static const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum SIX_MONTHS = _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_SIX_MONTHS;
+  @BuiltValueEnumConst(wireName: r'ONE_YEAR')
+  static const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum ONE_YEAR = _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_YEAR;
+
+  static Serializer<CreatePluggyConnectTokenRequestDtoHistoryRangeEnum> get serializer => _$createPluggyConnectTokenRequestDtoHistoryRangeEnumSerializer;
+
+  const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum._(String name): super(name);
+
+  static BuiltSet<CreatePluggyConnectTokenRequestDtoHistoryRangeEnum> get values => _$createPluggyConnectTokenRequestDtoHistoryRangeEnumValues;
+  static CreatePluggyConnectTokenRequestDtoHistoryRangeEnum valueOf(String name) => _$createPluggyConnectTokenRequestDtoHistoryRangeEnumValueOf(name);
 }
 

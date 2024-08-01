@@ -11,10 +11,9 @@ import 'package:built_collection/built_collection.dart';
 import 'package:dart_core_api_sdk/src/api_util.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transactions_page_entity.dart';
-import 'package:dart_core_api_sdk/src/model/bank_transactions_totals_entity.dart';
 import 'package:dart_core_api_sdk/src/model/create_or_update_bank_transactions_in_bulk_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/exception_response_entity.dart';
-import 'package:dart_core_api_sdk/src/model/update_bank_transaction_request_dto.dart';
+import 'package:dart_core_api_sdk/src/model/partial_update_bank_transaction_request_dto.dart';
 
 class BankTransactionsApi {
 
@@ -24,7 +23,7 @@ class BankTransactionsApi {
 
   const BankTransactionsApi(this._dio, this._serializers);
 
-  /// bankTransactionsControllerCreateOrUpdateBankTransactionsInBulk
+  /// bankTransactionsControllerCreateOrUpdateInBulk
   /// 
   ///
   /// Parameters:
@@ -38,7 +37,7 @@ class BankTransactionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<BankTransactionEntity>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<BankTransactionEntity>>> bankTransactionsControllerCreateOrUpdateBankTransactionsInBulk({ 
+  Future<Response<BuiltList<BankTransactionEntity>>> bankTransactionsControllerCreateOrUpdateInBulk({ 
     required CreateOrUpdateBankTransactionsInBulkRequestDto createOrUpdateBankTransactionsInBulkRequestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -119,11 +118,86 @@ class BankTransactionsApi {
     );
   }
 
-  /// bankTransactionsControllerGetBankTransactionByProvider
+  /// bankTransactionsControllerGetById
   /// 
   ///
   /// Parameters:
-  /// * [workspaceId] 
+  /// * [bankTransactionId] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [BankTransactionEntity] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<BankTransactionEntity>> bankTransactionsControllerGetById({ 
+    required String bankTransactionId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/bank/transactions/{bankTransactionId}'.replaceAll('{' r'bankTransactionId' '}', encodeQueryParameter(_serializers, bankTransactionId, const FullType(String)).toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    BankTransactionEntity? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(BankTransactionEntity),
+      ) as BankTransactionEntity;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<BankTransactionEntity>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// bankTransactionsControllerGetByProvider
+  /// 
+  ///
+  /// Parameters:
+  /// * [accountId] 
   /// * [provider] 
   /// * [providerTransactionId] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -135,8 +209,8 @@ class BankTransactionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BankTransactionEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankTransactionEntity>> bankTransactionsControllerGetBankTransactionByProvider({ 
-    required String workspaceId,
+  Future<Response<BankTransactionEntity>> bankTransactionsControllerGetByProvider({ 
+    required String accountId,
     required String provider,
     required String providerTransactionId,
     CancelToken? cancelToken,
@@ -146,7 +220,7 @@ class BankTransactionsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/workspaces/{workspaceId}/bank/transactions/by-provider'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _path = r'/bank/accounts/{accountId}/transactions/by-provider'.replaceAll('{' r'accountId' '}', encodeQueryParameter(_serializers, accountId, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -204,7 +278,125 @@ class BankTransactionsApi {
     );
   }
 
-  /// bankTransactionsControllerGetBankTransactions
+  /// bankTransactionsControllerGetTotals
+  /// 
+  ///
+  /// Parameters:
+  /// * [workspaceId] 
+  /// * [accountIds] 
+  /// * [categoryIds] 
+  /// * [tagIds] 
+  /// * [legalNatures] 
+  /// * [directionNatures] 
+  /// * [minPostedDatetime] 
+  /// * [maxPostedDatetime] 
+  /// * [minCompetencyDatetime] 
+  /// * [maxCompetencyDatetime] 
+  /// * [considerIgnored] 
+  /// * [considerAutomaticApplicationRelated] 
+  /// * [considerInternalTransfers] 
+  /// * [considerInvoiceRelated] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [BankTransactionsPageEntity] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<BankTransactionsPageEntity>> bankTransactionsControllerGetTotals({ 
+    required String workspaceId,
+    String? accountIds,
+    String? categoryIds,
+    String? tagIds,
+    String? legalNatures,
+    String? directionNatures,
+    String? minPostedDatetime,
+    String? maxPostedDatetime,
+    String? minCompetencyDatetime,
+    String? maxCompetencyDatetime,
+    bool? considerIgnored,
+    bool? considerAutomaticApplicationRelated,
+    bool? considerInternalTransfers,
+    String? considerInvoiceRelated,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/bank/workspaces/{workspaceId}/transactions/totals'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (accountIds != null) r'accountIds': encodeQueryParameter(_serializers, accountIds, const FullType(String)),
+      if (categoryIds != null) r'categoryIds': encodeQueryParameter(_serializers, categoryIds, const FullType(String)),
+      if (tagIds != null) r'tagIds': encodeQueryParameter(_serializers, tagIds, const FullType(String)),
+      if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
+      if (directionNatures != null) r'directionNatures': encodeQueryParameter(_serializers, directionNatures, const FullType(String)),
+      if (minPostedDatetime != null) r'minPostedDatetime': encodeQueryParameter(_serializers, minPostedDatetime, const FullType(String)),
+      if (maxPostedDatetime != null) r'maxPostedDatetime': encodeQueryParameter(_serializers, maxPostedDatetime, const FullType(String)),
+      if (minCompetencyDatetime != null) r'minCompetencyDatetime': encodeQueryParameter(_serializers, minCompetencyDatetime, const FullType(String)),
+      if (maxCompetencyDatetime != null) r'maxCompetencyDatetime': encodeQueryParameter(_serializers, maxCompetencyDatetime, const FullType(String)),
+      if (considerIgnored != null) r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
+      if (considerAutomaticApplicationRelated != null) r'considerAutomaticApplicationRelated': encodeQueryParameter(_serializers, considerAutomaticApplicationRelated, const FullType(bool)),
+      if (considerInternalTransfers != null) r'considerInternalTransfers': encodeQueryParameter(_serializers, considerInternalTransfers, const FullType(bool)),
+      if (considerInvoiceRelated != null) r'considerInvoiceRelated': encodeQueryParameter(_serializers, considerInvoiceRelated, const FullType(String)),
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    BankTransactionsPageEntity? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(BankTransactionsPageEntity),
+      ) as BankTransactionsPageEntity;
+
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<BankTransactionsPageEntity>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// bankTransactionsControllerList
   /// 
   ///
   /// Parameters:
@@ -215,15 +407,15 @@ class BankTransactionsApi {
   /// * [categoryIds] 
   /// * [tagIds] 
   /// * [legalNatures] 
-  /// * [types] 
-  /// * [minPostedDate] 
-  /// * [maxPostedDate] 
-  /// * [minCompetencyDate] 
-  /// * [maxCompetencyDate] 
-  /// * [showIgnored] 
-  /// * [ignoreAutomaticApplicationRelated] 
-  /// * [ignoreInternalTransfers] 
-  /// * [ignoreInvoiceRelated] 
+  /// * [directionNatures] 
+  /// * [minPostedDatetime] 
+  /// * [maxPostedDatetime] 
+  /// * [minCompetencyDatetime] 
+  /// * [maxCompetencyDatetime] 
+  /// * [considerIgnored] 
+  /// * [considerAutomaticApplicationRelated] 
+  /// * [considerInternalTransfers] 
+  /// * [considerInvoiceRelated] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -233,7 +425,7 @@ class BankTransactionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BankTransactionsPageEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankTransactionsPageEntity>> bankTransactionsControllerGetBankTransactions({ 
+  Future<Response<BankTransactionsPageEntity>> bankTransactionsControllerList({ 
     required String workspaceId,
     num? pageIndex,
     num? pageSize,
@@ -241,15 +433,15 @@ class BankTransactionsApi {
     String? categoryIds,
     String? tagIds,
     String? legalNatures,
-    String? types,
-    String? minPostedDate,
-    String? maxPostedDate,
-    String? minCompetencyDate,
-    String? maxCompetencyDate,
-    bool? showIgnored,
-    bool? ignoreAutomaticApplicationRelated,
-    bool? ignoreInternalTransfers,
-    bool? ignoreInvoiceRelated,
+    String? directionNatures,
+    String? minPostedDatetime,
+    String? maxPostedDatetime,
+    String? minCompetencyDatetime,
+    String? maxCompetencyDatetime,
+    bool? considerIgnored,
+    bool? considerAutomaticApplicationRelated,
+    bool? considerInternalTransfers,
+    String? considerInvoiceRelated,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -257,7 +449,7 @@ class BankTransactionsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/workspaces/{workspaceId}/bank/transactions'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _path = r'/bank/workspaces/{workspaceId}/transactions'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -277,15 +469,15 @@ class BankTransactionsApi {
       if (categoryIds != null) r'categoryIds': encodeQueryParameter(_serializers, categoryIds, const FullType(String)),
       if (tagIds != null) r'tagIds': encodeQueryParameter(_serializers, tagIds, const FullType(String)),
       if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
-      if (types != null) r'types': encodeQueryParameter(_serializers, types, const FullType(String)),
-      if (minPostedDate != null) r'minPostedDate': encodeQueryParameter(_serializers, minPostedDate, const FullType(String)),
-      if (maxPostedDate != null) r'maxPostedDate': encodeQueryParameter(_serializers, maxPostedDate, const FullType(String)),
-      if (minCompetencyDate != null) r'minCompetencyDate': encodeQueryParameter(_serializers, minCompetencyDate, const FullType(String)),
-      if (maxCompetencyDate != null) r'maxCompetencyDate': encodeQueryParameter(_serializers, maxCompetencyDate, const FullType(String)),
-      if (showIgnored != null) r'showIgnored': encodeQueryParameter(_serializers, showIgnored, const FullType(bool)),
-      if (ignoreAutomaticApplicationRelated != null) r'ignoreAutomaticApplicationRelated': encodeQueryParameter(_serializers, ignoreAutomaticApplicationRelated, const FullType(bool)),
-      if (ignoreInternalTransfers != null) r'ignoreInternalTransfers': encodeQueryParameter(_serializers, ignoreInternalTransfers, const FullType(bool)),
-      if (ignoreInvoiceRelated != null) r'ignoreInvoiceRelated': encodeQueryParameter(_serializers, ignoreInvoiceRelated, const FullType(bool)),
+      if (directionNatures != null) r'directionNatures': encodeQueryParameter(_serializers, directionNatures, const FullType(String)),
+      if (minPostedDatetime != null) r'minPostedDatetime': encodeQueryParameter(_serializers, minPostedDatetime, const FullType(String)),
+      if (maxPostedDatetime != null) r'maxPostedDatetime': encodeQueryParameter(_serializers, maxPostedDatetime, const FullType(String)),
+      if (minCompetencyDatetime != null) r'minCompetencyDatetime': encodeQueryParameter(_serializers, minCompetencyDatetime, const FullType(String)),
+      if (maxCompetencyDatetime != null) r'maxCompetencyDatetime': encodeQueryParameter(_serializers, maxCompetencyDatetime, const FullType(String)),
+      if (considerIgnored != null) r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
+      if (considerAutomaticApplicationRelated != null) r'considerAutomaticApplicationRelated': encodeQueryParameter(_serializers, considerAutomaticApplicationRelated, const FullType(bool)),
+      if (considerInternalTransfers != null) r'considerInternalTransfers': encodeQueryParameter(_serializers, considerInternalTransfers, const FullType(bool)),
+      if (considerInvoiceRelated != null) r'considerInvoiceRelated': encodeQueryParameter(_serializers, considerInvoiceRelated, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -328,13 +520,11 @@ class BankTransactionsApi {
     );
   }
 
-  /// bankTransactionsControllerGetBankTransactionsConfirmedTodayByMe
+  /// bankTransactionsControllerListMostRecent
   /// 
   ///
   /// Parameters:
   /// * [workspaceId] 
-  /// * [pageIndex] 
-  /// * [pageSize] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -342,12 +532,10 @@ class BankTransactionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BankTransactionsPageEntity] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<BankTransactionEntity>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankTransactionsPageEntity>> bankTransactionsControllerGetBankTransactionsConfirmedTodayByMe({ 
+  Future<Response<BuiltList<BankTransactionEntity>>> bankTransactionsControllerListMostRecent({ 
     required String workspaceId,
-    num? pageIndex,
-    num? pageSize,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -355,7 +543,7 @@ class BankTransactionsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/workspaces/{workspaceId}/bank/transactions/confirmed-today-by-me'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _path = r'/bank/workspaces/{workspaceId}/transactions/most-recent'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -368,28 +556,22 @@ class BankTransactionsApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      if (pageIndex != null) r'pageIndex': encodeQueryParameter(_serializers, pageIndex, const FullType(num)),
-      if (pageSize != null) r'pageSize': encodeQueryParameter(_serializers, pageSize, const FullType(num)),
-    };
-
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
 
-    BankTransactionsPageEntity? _responseData;
+    BuiltList<BankTransactionEntity>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BankTransactionsPageEntity),
-      ) as BankTransactionsPageEntity;
+        specifiedType: const FullType(BuiltList, [FullType(BankTransactionEntity)]),
+      ) as BuiltList<BankTransactionEntity>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -401,7 +583,7 @@ class BankTransactionsApi {
       );
     }
 
-    return Response<BankTransactionsPageEntity>(
+    return Response<BuiltList<BankTransactionEntity>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -413,7 +595,7 @@ class BankTransactionsApi {
     );
   }
 
-  /// bankTransactionsControllerGetBankTransactionsNotConfirmed
+  /// bankTransactionsControllerListNotVerified
   /// 
   ///
   /// Parameters:
@@ -430,7 +612,7 @@ class BankTransactionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BankTransactionsPageEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankTransactionsPageEntity>> bankTransactionsControllerGetBankTransactionsNotConfirmed({ 
+  Future<Response<BankTransactionsPageEntity>> bankTransactionsControllerListNotVerified({ 
     required String workspaceId,
     num? pageIndex,
     num? pageSize,
@@ -442,7 +624,7 @@ class BankTransactionsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/workspaces/{workspaceId}/bank/transactions/not-confirmed'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _path = r'/bank/workspaces/{workspaceId}/transactions/not-verified'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -501,24 +683,15 @@ class BankTransactionsApi {
     );
   }
 
-  /// bankTransactionsControllerGetBankTransactionsTotals
+  /// bankTransactionsControllerListVerifiedByMe
   /// 
   ///
   /// Parameters:
   /// * [workspaceId] 
-  /// * [accountIds] 
-  /// * [categoryIds] 
-  /// * [tagIds] 
-  /// * [legalNatures] 
-  /// * [minPostedDate] 
-  /// * [maxPostedDate] 
-  /// * [minCompetencyDate] 
-  /// * [maxCompetencyDate] 
-  /// * [showIgnored] 
-  /// * [ignoreAutomaticApplicationRelated] 
-  /// * [ignoreInternalTransfers] 
-  /// * [ignoreInvoiceRelated] 
-  /// * [types] 
+  /// * [fromDatetime] 
+  /// * [toDatetime] 
+  /// * [pageIndex] 
+  /// * [pageSize] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -526,23 +699,14 @@ class BankTransactionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BankTransactionsTotalsEntity] as data
+  /// Returns a [Future] containing a [Response] with a [BankTransactionsPageEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankTransactionsTotalsEntity>> bankTransactionsControllerGetBankTransactionsTotals({ 
+  Future<Response<BankTransactionsPageEntity>> bankTransactionsControllerListVerifiedByMe({ 
     required String workspaceId,
-    String? accountIds,
-    String? categoryIds,
-    String? tagIds,
-    String? legalNatures,
-    String? minPostedDate,
-    String? maxPostedDate,
-    String? minCompetencyDate,
-    String? maxCompetencyDate,
-    bool? showIgnored,
-    bool? ignoreAutomaticApplicationRelated,
-    bool? ignoreInternalTransfers,
-    bool? ignoreInvoiceRelated,
-    String? types,
+    required String fromDatetime,
+    required String toDatetime,
+    num? pageIndex,
+    num? pageSize,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -550,7 +714,7 @@ class BankTransactionsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/workspaces/{workspaceId}/bank/transactions/totals'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _path = r'/bank/workspaces/{workspaceId}/transactions/verified-by-me'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -564,19 +728,10 @@ class BankTransactionsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (accountIds != null) r'accountIds': encodeQueryParameter(_serializers, accountIds, const FullType(String)),
-      if (categoryIds != null) r'categoryIds': encodeQueryParameter(_serializers, categoryIds, const FullType(String)),
-      if (tagIds != null) r'tagIds': encodeQueryParameter(_serializers, tagIds, const FullType(String)),
-      if (legalNatures != null) r'legalNatures': encodeQueryParameter(_serializers, legalNatures, const FullType(String)),
-      if (minPostedDate != null) r'minPostedDate': encodeQueryParameter(_serializers, minPostedDate, const FullType(String)),
-      if (maxPostedDate != null) r'maxPostedDate': encodeQueryParameter(_serializers, maxPostedDate, const FullType(String)),
-      if (minCompetencyDate != null) r'minCompetencyDate': encodeQueryParameter(_serializers, minCompetencyDate, const FullType(String)),
-      if (maxCompetencyDate != null) r'maxCompetencyDate': encodeQueryParameter(_serializers, maxCompetencyDate, const FullType(String)),
-      if (showIgnored != null) r'showIgnored': encodeQueryParameter(_serializers, showIgnored, const FullType(bool)),
-      if (ignoreAutomaticApplicationRelated != null) r'ignoreAutomaticApplicationRelated': encodeQueryParameter(_serializers, ignoreAutomaticApplicationRelated, const FullType(bool)),
-      if (ignoreInternalTransfers != null) r'ignoreInternalTransfers': encodeQueryParameter(_serializers, ignoreInternalTransfers, const FullType(bool)),
-      if (ignoreInvoiceRelated != null) r'ignoreInvoiceRelated': encodeQueryParameter(_serializers, ignoreInvoiceRelated, const FullType(bool)),
-      if (types != null) r'types': encodeQueryParameter(_serializers, types, const FullType(String)),
+      r'fromDatetime': encodeQueryParameter(_serializers, fromDatetime, const FullType(String)),
+      r'toDatetime': encodeQueryParameter(_serializers, toDatetime, const FullType(String)),
+      if (pageIndex != null) r'pageIndex': encodeQueryParameter(_serializers, pageIndex, const FullType(num)),
+      if (pageSize != null) r'pageSize': encodeQueryParameter(_serializers, pageSize, const FullType(num)),
     };
 
     final _response = await _dio.request<Object>(
@@ -588,14 +743,14 @@ class BankTransactionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BankTransactionsTotalsEntity? _responseData;
+    BankTransactionsPageEntity? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BankTransactionsTotalsEntity),
-      ) as BankTransactionsTotalsEntity;
+        specifiedType: const FullType(BankTransactionsPageEntity),
+      ) as BankTransactionsPageEntity;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -607,7 +762,7 @@ class BankTransactionsApi {
       );
     }
 
-    return Response<BankTransactionsTotalsEntity>(
+    return Response<BankTransactionsPageEntity>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -619,86 +774,12 @@ class BankTransactionsApi {
     );
   }
 
-  /// bankTransactionsControllerGetRecent
-  /// 
-  ///
-  /// Parameters:
-  /// * [workspaceId] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<BankTransactionEntity>] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<BankTransactionEntity>>> bankTransactionsControllerGetRecent({ 
-    required String workspaceId,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/workspaces/{workspaceId}/bank/transactions/most-recent'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    BuiltList<BankTransactionEntity>? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(BankTransactionEntity)]),
-      ) as BuiltList<BankTransactionEntity>;
-
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<BuiltList<BankTransactionEntity>>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// bankTransactionsControllerGetTransactionDetails
+  /// bankTransactionsControllerPartialUpdate
   /// 
   ///
   /// Parameters:
   /// * [bankTransactionId] 
+  /// * [partialUpdateBankTransactionRequestDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -708,85 +789,9 @@ class BankTransactionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BankTransactionEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankTransactionEntity>> bankTransactionsControllerGetTransactionDetails({ 
+  Future<Response<BankTransactionEntity>> bankTransactionsControllerPartialUpdate({ 
     required String bankTransactionId,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/bank/transactions/{bankTransactionId}'.replaceAll('{' r'bankTransactionId' '}', encodeQueryParameter(_serializers, bankTransactionId, const FullType(String)).toString());
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    BankTransactionEntity? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BankTransactionEntity),
-      ) as BankTransactionEntity;
-
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<BankTransactionEntity>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// bankTransactionsControllerUpdateTransaction
-  /// 
-  ///
-  /// Parameters:
-  /// * [bankTransactionId] 
-  /// * [updateBankTransactionRequestDto] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [BankTransactionEntity] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<BankTransactionEntity>> bankTransactionsControllerUpdateTransaction({ 
-    required String bankTransactionId,
-    required UpdateBankTransactionRequestDto updateBankTransactionRequestDto,
+    required PartialUpdateBankTransactionRequestDto partialUpdateBankTransactionRequestDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -811,8 +816,8 @@ class BankTransactionsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UpdateBankTransactionRequestDto);
-      _bodyData = _serializers.serialize(updateBankTransactionRequestDto, specifiedType: _type);
+      const _type = FullType(PartialUpdateBankTransactionRequestDto);
+      _bodyData = _serializers.serialize(partialUpdateBankTransactionRequestDto, specifiedType: _type);
 
     } catch(error, stackTrace) {
       throw DioException(

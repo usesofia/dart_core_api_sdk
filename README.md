@@ -47,14 +47,13 @@ Please follow the [installation procedure](#installation--usage) and then run th
 import 'package:dart_core_api_sdk/dart_core_api_sdk.dart';
 
 
-final api = DartCoreApiSdk().getBankAccountsApi();
-final String bankAccountId = bankAccountId_example; // String | 
+final api = DartCoreApiSdk().getAuthApi();
+final GenerateAndSendEmailVerificationCodeRequestDto generateAndSendEmailVerificationCodeRequestDto = ; // GenerateAndSendEmailVerificationCodeRequestDto | 
 
 try {
-    final response = await api.bankAccountsControllerActivateBankAccount(bankAccountId);
-    print(response);
+    api.authControllerGenerateAndSendEmailVerificationCode(generateAndSendEmailVerificationCodeRequestDto);
 } catch on DioException (e) {
-    print("Exception when calling BankAccountsApi->bankAccountsControllerActivateBankAccount: $e\n");
+    print("Exception when calling AuthApi->authControllerGenerateAndSendEmailVerificationCode: $e\n");
 }
 
 ```
@@ -65,49 +64,52 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerActivateBankAccount**](doc/BankAccountsApi.md#bankaccountscontrolleractivatebankaccount) | **POST** /bank/accounts/{bankAccountId}/activate | 
-[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerCreateOrUpdateBankAccount**](doc/BankAccountsApi.md#bankaccountscontrollercreateorupdatebankaccount) | **PUT** /workspaces/{workspaceId}/bank/accounts | 
-[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerCreateWorkspaceBankAccountsBalanceReport**](doc/BankAccountsApi.md#bankaccountscontrollercreateworkspacebankaccountsbalancereport) | **POST** /workspaces/{workspaceId}/bank/accounts/balance-report | 
-[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerDisableBankAccount**](doc/BankAccountsApi.md#bankaccountscontrollerdisablebankaccount) | **POST** /bank/accounts/{bankAccountId}/disable | 
-[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerFetchConnectionBankAccounts**](doc/BankAccountsApi.md#bankaccountscontrollerfetchconnectionbankaccounts) | **GET** /workspaces/{workspaceId}/bank/connections/{bankConnectionId}/accounts | 
-[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerFetchWorkspaceBankAccounts**](doc/BankAccountsApi.md#bankaccountscontrollerfetchworkspacebankaccounts) | **GET** /workspaces/{workspaceId}/bank/accounts | 
-[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerGetBankAccountDetails**](doc/BankAccountsApi.md#bankaccountscontrollergetbankaccountdetails) | **GET** /bank/accounts/{bankAccountId} | 
-[*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerActivateBankConnection**](doc/BankConnectionsApi.md#bankconnectionscontrolleractivatebankconnection) | **POST** /bank/connections/{bankConnectionId}/activate | 
-[*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerCreateOrUpdateBankConnection**](doc/BankConnectionsApi.md#bankconnectionscontrollercreateorupdatebankconnection) | **PUT** /workspaces/{workspaceId}/bank/connections | 
-[*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerDisableBankConnection**](doc/BankConnectionsApi.md#bankconnectionscontrollerdisablebankconnection) | **POST** /bank/connections/{bankConnectionId}/disable | 
-[*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerFetchUserBankConnections**](doc/BankConnectionsApi.md#bankconnectionscontrollerfetchuserbankconnections) | **GET** /workspaces/{workspaceId}/bank/connections | 
-[*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerGetBankConnectionDetails**](doc/BankConnectionsApi.md#bankconnectionscontrollergetbankconnectiondetails) | **GET** /bank/connections/{bankConnectionId} | 
-[*BankTransactionCategoriesApi*](doc/BankTransactionCategoriesApi.md) | [**bankTransactionCategoriesControllerGetBankTransactionCategories**](doc/BankTransactionCategoriesApi.md#banktransactioncategoriescontrollergetbanktransactioncategories) | **GET** /workspaces/{workspaceId}/bank/transactions/categories | 
-[*BankTransactionTagsApi*](doc/BankTransactionTagsApi.md) | [**bankTransactionTagsControllerCreateTag**](doc/BankTransactionTagsApi.md#banktransactiontagscontrollercreatetag) | **POST** /workspaces/{workspaceId}/bank/transactions/tags | 
-[*BankTransactionTagsApi*](doc/BankTransactionTagsApi.md) | [**bankTransactionTagsControllerListTags**](doc/BankTransactionTagsApi.md#banktransactiontagscontrollerlisttags) | **GET** /workspaces/{workspaceId}/bank/transactions/tags | 
-[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerCreateOrUpdateBankTransactionsInBulk**](doc/BankTransactionsApi.md#banktransactionscontrollercreateorupdatebanktransactionsinbulk) | **PUT** /bank/transactions/bulk | 
-[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetBankTransactionByProvider**](doc/BankTransactionsApi.md#banktransactionscontrollergetbanktransactionbyprovider) | **GET** /workspaces/{workspaceId}/bank/transactions/by-provider | 
-[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetBankTransactions**](doc/BankTransactionsApi.md#banktransactionscontrollergetbanktransactions) | **GET** /workspaces/{workspaceId}/bank/transactions | 
-[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetBankTransactionsConfirmedTodayByMe**](doc/BankTransactionsApi.md#banktransactionscontrollergetbanktransactionsconfirmedtodaybyme) | **GET** /workspaces/{workspaceId}/bank/transactions/confirmed-today-by-me | 
-[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetBankTransactionsNotConfirmed**](doc/BankTransactionsApi.md#banktransactionscontrollergetbanktransactionsnotconfirmed) | **GET** /workspaces/{workspaceId}/bank/transactions/not-confirmed | 
-[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetBankTransactionsTotals**](doc/BankTransactionsApi.md#banktransactionscontrollergetbanktransactionstotals) | **GET** /workspaces/{workspaceId}/bank/transactions/totals | 
-[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetRecent**](doc/BankTransactionsApi.md#banktransactionscontrollergetrecent) | **GET** /workspaces/{workspaceId}/bank/transactions/most-recent | 
-[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetTransactionDetails**](doc/BankTransactionsApi.md#banktransactionscontrollergettransactiondetails) | **GET** /bank/transactions/{bankTransactionId} | 
-[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerUpdateTransaction**](doc/BankTransactionsApi.md#banktransactionscontrollerupdatetransaction) | **PATCH** /bank/transactions/{bankTransactionId} | 
-[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGenerateAndSendEmailVerificationCode**](doc/IamAuthApi.md#authcontrollergenerateandsendemailverificationcode) | **POST** /iam/auth/email-verification-code | 
-[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGenerateAndSendPhoneVerificationCode**](doc/IamAuthApi.md#authcontrollergenerateandsendphoneverificationcode) | **POST** /iam/auth/phone-verification-code | 
-[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGenerateEmailInUseReport**](doc/IamAuthApi.md#authcontrollergenerateemailinusereport) | **POST** /iam/auth/email-in-use | 
-[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerGeneratePhoneInUseReport**](doc/IamAuthApi.md#authcontrollergeneratephoneinusereport) | **POST** /iam/auth/phone-in-use | 
-[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerMe**](doc/IamAuthApi.md#authcontrollerme) | **GET** /iam/auth/me | 
-[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerRefresh**](doc/IamAuthApi.md#authcontrollerrefresh) | **POST** /iam/auth/refresh | 
-[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerSignInWithEmail**](doc/IamAuthApi.md#authcontrollersigninwithemail) | **POST** /iam/auth/sign-in/email | 
-[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerSignUpWithEmail**](doc/IamAuthApi.md#authcontrollersignupwithemail) | **POST** /iam/auth/sign-up/email | 
-[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerVerifyEmailVerificationCode**](doc/IamAuthApi.md#authcontrollerverifyemailverificationcode) | **GET** /iam/auth/email-verification-code/verify | 
-[*IamAuthApi*](doc/IamAuthApi.md) | [**authControllerVerifyPhoneVerificationCode**](doc/IamAuthApi.md#authcontrollerverifyphoneverificationcode) | **GET** /iam/auth/phone-verification-code/verify | 
-[*IamProfilesApi*](doc/IamProfilesApi.md) | [**profilesControllerCreate**](doc/IamProfilesApi.md#profilescontrollercreate) | **POST** /iam/profiles | 
-[*IamProfilesApi*](doc/IamProfilesApi.md) | [**profilesControllerGetMy**](doc/IamProfilesApi.md#profilescontrollergetmy) | **GET** /iam/profiles/me | 
-[*IamProfilesApi*](doc/IamProfilesApi.md) | [**profilesControllerPartialUpdate**](doc/IamProfilesApi.md#profilescontrollerpartialupdate) | **PATCH** /iam/profiles/me | 
-[*IamWorkspacesApi*](doc/IamWorkspacesApi.md) | [**workspacesControllerCreate**](doc/IamWorkspacesApi.md#workspacescontrollercreate) | **POST** /iam/workspaces | 
-[*IamWorkspacesApi*](doc/IamWorkspacesApi.md) | [**workspacesControllerParcialUpdate**](doc/IamWorkspacesApi.md#workspacescontrollerparcialupdate) | **PATCH** /iam/workspaces/{workspaceId} | 
-[*MessageTokensApi*](doc/MessageTokensApi.md) | [**messageTokensControllerCreateOrUpdateMessageToken**](doc/MessageTokensApi.md#messagetokenscontrollercreateorupdatemessagetoken) | **PUT** /workspaces/{workspaceId}/message-tokens | 
-[*MessageTokensApi*](doc/MessageTokensApi.md) | [**messageTokensControllerGetWorkspaceMessageTokens**](doc/MessageTokensApi.md#messagetokenscontrollergetworkspacemessagetokens) | **GET** /workspaces/{workspaceId}/message-tokens | 
-[*PluggyApi*](doc/PluggyApi.md) | [**pluggyControllerCreate**](doc/PluggyApi.md#pluggycontrollercreate) | **POST** /pluggy/connect-token | 
+[*AuthApi*](doc/AuthApi.md) | [**authControllerGenerateAndSendEmailVerificationCode**](doc/AuthApi.md#authcontrollergenerateandsendemailverificationcode) | **POST** /iam/auth/email-verification-code | 
+[*AuthApi*](doc/AuthApi.md) | [**authControllerGenerateAndSendPhoneVerificationCode**](doc/AuthApi.md#authcontrollergenerateandsendphoneverificationcode) | **POST** /iam/auth/phone-verification-code | 
+[*AuthApi*](doc/AuthApi.md) | [**authControllerGenerateEmailInUseReport**](doc/AuthApi.md#authcontrollergenerateemailinusereport) | **POST** /iam/auth/email-in-use | 
+[*AuthApi*](doc/AuthApi.md) | [**authControllerGeneratePhoneInUseReport**](doc/AuthApi.md#authcontrollergeneratephoneinusereport) | **POST** /iam/auth/phone-in-use | 
+[*AuthApi*](doc/AuthApi.md) | [**authControllerGetMe**](doc/AuthApi.md#authcontrollergetme) | **GET** /iam/auth/me | 
+[*AuthApi*](doc/AuthApi.md) | [**authControllerRefresh**](doc/AuthApi.md#authcontrollerrefresh) | **POST** /iam/auth/refresh | 
+[*AuthApi*](doc/AuthApi.md) | [**authControllerSignInWithEmail**](doc/AuthApi.md#authcontrollersigninwithemail) | **POST** /iam/auth/sign-in/email | 
+[*AuthApi*](doc/AuthApi.md) | [**authControllerSignUpWithEmail**](doc/AuthApi.md#authcontrollersignupwithemail) | **POST** /iam/auth/sign-up/email | 
+[*AuthApi*](doc/AuthApi.md) | [**authControllerVerifyEmailVerificationCode**](doc/AuthApi.md#authcontrollerverifyemailverificationcode) | **GET** /iam/auth/email-verification-code/verify | 
+[*AuthApi*](doc/AuthApi.md) | [**authControllerVerifyPhoneVerificationCode**](doc/AuthApi.md#authcontrollerverifyphoneverificationcode) | **GET** /iam/auth/phone-verification-code/verify | 
+[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerActivate**](doc/BankAccountsApi.md#bankaccountscontrolleractivate) | **POST** /bank/accounts/{bankAccountId}/activate | 
+[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerCreateOrUpdate**](doc/BankAccountsApi.md#bankaccountscontrollercreateorupdate) | **PUT** /bank/accounts | 
+[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerDisable**](doc/BankAccountsApi.md#bankaccountscontrollerdisable) | **POST** /bank/accounts/{bankAccountId}/disable | 
+[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerGetById**](doc/BankAccountsApi.md#bankaccountscontrollergetbyid) | **GET** /bank/accounts/{bankAccountId} | 
+[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerListByBankConnectionId**](doc/BankAccountsApi.md#bankaccountscontrollerlistbybankconnectionid) | **GET** /bank/connections/{bankConnectionId}/accounts | 
+[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerListByWorkspaceId**](doc/BankAccountsApi.md#bankaccountscontrollerlistbyworkspaceid) | **GET** /bank/workspaces/{workspaceId}/accounts | 
+[*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerActivate**](doc/BankConnectionsApi.md#bankconnectionscontrolleractivate) | **POST** /bank/connections/{bankConnectionId}/activate | 
+[*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerCreateOrUpdate**](doc/BankConnectionsApi.md#bankconnectionscontrollercreateorupdate) | **PUT** /bank/workspaces/{workspaceId}/connections | 
+[*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerDisable**](doc/BankConnectionsApi.md#bankconnectionscontrollerdisable) | **POST** /bank/connections/{bankConnectionId}/disable | 
+[*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerGetById**](doc/BankConnectionsApi.md#bankconnectionscontrollergetbyid) | **GET** /bank/connections/{bankConnectionId} | 
+[*BankConnectionsApi*](doc/BankConnectionsApi.md) | [**bankConnectionsControllerList**](doc/BankConnectionsApi.md#bankconnectionscontrollerlist) | **GET** /bank/workspaces/{workspaceId}/connections | 
+[*BankSyncApi*](doc/BankSyncApi.md) | [**bankSyncControllerSyncAccountTransactions**](doc/BankSyncApi.md#banksynccontrollersyncaccounttransactions) | **POST** /bank/sync/transactions | 
+[*BankSyncApi*](doc/BankSyncApi.md) | [**bankSyncControllerSyncItem**](doc/BankSyncApi.md#banksynccontrollersyncitem) | **POST** /bank/sync/items | 
+[*BankSyncApi*](doc/BankSyncApi.md) | [**bankSyncControllerSyncTransactionsPageBegin**](doc/BankSyncApi.md#banksynccontrollersynctransactionspagebegin) | **POST** /bank/sync/transactions/page/begin | 
+[*BankSyncApi*](doc/BankSyncApi.md) | [**bankSyncControllerSyncTransactionsPageEnd**](doc/BankSyncApi.md#banksynccontrollersynctransactionspageend) | **POST** /bank/sync/transactions/page/end | 
+[*BankTransactionCategoriesApi*](doc/BankTransactionCategoriesApi.md) | [**bankTransactionCategoriesControllerList**](doc/BankTransactionCategoriesApi.md#banktransactioncategoriescontrollerlist) | **GET** /bank/workspaces/{workspaceId}/transaction-categories | 
+[*BankTransactionTagsApi*](doc/BankTransactionTagsApi.md) | [**bankTransactionTagsControllerCreate**](doc/BankTransactionTagsApi.md#banktransactiontagscontrollercreate) | **POST** /bank/workspaces/{workspaceId}/transaction-tags | 
+[*BankTransactionTagsApi*](doc/BankTransactionTagsApi.md) | [**bankTransactionTagsControllerList**](doc/BankTransactionTagsApi.md#banktransactiontagscontrollerlist) | **GET** /bank/workspaces/{workspaceId}/transaction-tags | 
+[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerCreateOrUpdateInBulk**](doc/BankTransactionsApi.md#banktransactionscontrollercreateorupdateinbulk) | **PUT** /bank/transactions/bulk | 
+[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetById**](doc/BankTransactionsApi.md#banktransactionscontrollergetbyid) | **GET** /bank/transactions/{bankTransactionId} | 
+[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetByProvider**](doc/BankTransactionsApi.md#banktransactionscontrollergetbyprovider) | **GET** /bank/accounts/{accountId}/transactions/by-provider | 
+[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerGetTotals**](doc/BankTransactionsApi.md#banktransactionscontrollergettotals) | **GET** /bank/workspaces/{workspaceId}/transactions/totals | 
+[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerList**](doc/BankTransactionsApi.md#banktransactionscontrollerlist) | **GET** /bank/workspaces/{workspaceId}/transactions | 
+[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerListMostRecent**](doc/BankTransactionsApi.md#banktransactionscontrollerlistmostrecent) | **GET** /bank/workspaces/{workspaceId}/transactions/most-recent | 
+[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerListNotVerified**](doc/BankTransactionsApi.md#banktransactionscontrollerlistnotverified) | **GET** /bank/workspaces/{workspaceId}/transactions/not-verified | 
+[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerListVerifiedByMe**](doc/BankTransactionsApi.md#banktransactionscontrollerlistverifiedbyme) | **GET** /bank/workspaces/{workspaceId}/transactions/verified-by-me | 
+[*BankTransactionsApi*](doc/BankTransactionsApi.md) | [**bankTransactionsControllerPartialUpdate**](doc/BankTransactionsApi.md#banktransactionscontrollerpartialupdate) | **PATCH** /bank/transactions/{bankTransactionId} | 
+[*BankTransactionsPageCategoryAssignerApi*](doc/BankTransactionsPageCategoryAssignerApi.md) | [**bankTransactionsPageCategoryAssignerControllerAssign**](doc/BankTransactionsPageCategoryAssignerApi.md#banktransactionspagecategoryassignercontrollerassign) | **POST** /bank/transactions/page/category/assign | 
+[*BankTransactionsPageLegalNatureAssignerApi*](doc/BankTransactionsPageLegalNatureAssignerApi.md) | [**bankTransactionsPageLegalNatureAssignerControllerAssign**](doc/BankTransactionsPageLegalNatureAssignerApi.md#banktransactionspagelegalnatureassignercontrollerassign) | **POST** /bank/transactions/page/legal-nature/assign | 
+[*MessageTokensApi*](doc/MessageTokensApi.md) | [**messageTokensControllerCreateOrUpdate**](doc/MessageTokensApi.md#messagetokenscontrollercreateorupdate) | **PUT** /communication/workspaces/{workspaceId}/message-tokens | 
+[*MessageTokensApi*](doc/MessageTokensApi.md) | [**messageTokensControllerListByWorkspaceId**](doc/MessageTokensApi.md#messagetokenscontrollerlistbyworkspaceid) | **GET** /communication/workspaces/{workspaceId}/message-tokens | 
+[*PluggyApi*](doc/PluggyApi.md) | [**pluggyControllerCreateConnectToken**](doc/PluggyApi.md#pluggycontrollercreateconnecttoken) | **POST** /pluggy/connect-tokens | 
 [*PluggyApi*](doc/PluggyApi.md) | [**pluggyControllerWebhook**](doc/PluggyApi.md#pluggycontrollerwebhook) | **POST** /pluggy/webhook | 
+[*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerCreate**](doc/ProfilesApi.md#profilescontrollercreate) | **POST** /iam/profiles | 
+[*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerGetMy**](doc/ProfilesApi.md#profilescontrollergetmy) | **GET** /iam/profiles/me | 
+[*ProfilesApi*](doc/ProfilesApi.md) | [**profilesControllerPartialUpdate**](doc/ProfilesApi.md#profilescontrollerpartialupdate) | **PATCH** /iam/profiles/me | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetAccountsEntriesByCategoryReport**](doc/ReportsApi.md#reportscontrollergetaccountsentriesbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/accounts/entries-by-category | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetAccountsOutputsByCategoryReport**](doc/ReportsApi.md#reportscontrollergetaccountsoutputsbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/accounts/outputs-by-category | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetBusinessIndicators**](doc/ReportsApi.md#reportscontrollergetbusinessindicators) | **GET** /workspaces/{workspaceId}/reports/indicators/business | 
@@ -115,44 +117,52 @@ Class | Method | HTTP request | Description
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetCardsOutputsByCategoryReport**](doc/ReportsApi.md#reportscontrollergetcardsoutputsbycategoryreport) | **GET** /workspaces/{workspaceId}/reports/cards/outputs-by-category | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetCashFlowReport**](doc/ReportsApi.md#reportscontrollergetcashflowreport) | **GET** /workspaces/{workspaceId}/reports/accounts/cash-flow | 
 [*ReportsApi*](doc/ReportsApi.md) | [**reportsControllerGetFinancialStatementReport**](doc/ReportsApi.md#reportscontrollergetfinancialstatementreport) | **GET** /workspaces/{workspaceId}/reports/financial-statement | 
+[*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerCreate**](doc/WorkspacesApi.md#workspacescontrollercreate) | **POST** /iam/workspaces | 
+[*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerGetById**](doc/WorkspacesApi.md#workspacescontrollergetbyid) | **GET** /iam/workspaces/{workspaceId} | 
+[*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerListMy**](doc/WorkspacesApi.md#workspacescontrollerlistmy) | **GET** /iam/workspaces/my | 
+[*WorkspacesApi*](doc/WorkspacesApi.md) | [**workspacesControllerPartialUpdate**](doc/WorkspacesApi.md#workspacescontrollerpartialupdate) | **PATCH** /iam/workspaces/{workspaceId} | 
 
 
 ## Documentation For Models
 
+ - [AssignCategoryForBankTransactionsPageRequestDto](doc/AssignCategoryForBankTransactionsPageRequestDto.md)
+ - [AssignLegalNatureForBankTransactionsPageRequestDto](doc/AssignLegalNatureForBankTransactionsPageRequestDto.md)
  - [BalancePointResultEntity](doc/BalancePointResultEntity.md)
  - [BankAccountEntity](doc/BankAccountEntity.md)
- - [BankAccountsBalanceReportEntity](doc/BankAccountsBalanceReportEntity.md)
- - [BankAccountsBalanceReportItemEntity](doc/BankAccountsBalanceReportItemEntity.md)
  - [BankConnectionEntity](doc/BankConnectionEntity.md)
- - [BankConnectionWithAccountsEntity](doc/BankConnectionWithAccountsEntity.md)
- - [BankConnectorEntity](doc/BankConnectorEntity.md)
+ - [BankConnectionEntityAccountsInner](doc/BankConnectionEntityAccountsInner.md)
+ - [BankConnectionEntityConnector](doc/BankConnectionEntityConnector.md)
  - [BankTransactionCategoryEntity](doc/BankTransactionCategoryEntity.md)
- - [BankTransactionCategoryPlainEntity](doc/BankTransactionCategoryPlainEntity.md)
- - [BankTransactionCreditCardMetadataEntity](doc/BankTransactionCreditCardMetadataEntity.md)
+ - [BankTransactionCategoryEntityChildrenInner](doc/BankTransactionCategoryEntityChildrenInner.md)
  - [BankTransactionEntity](doc/BankTransactionEntity.md)
+ - [BankTransactionEntityCategory](doc/BankTransactionEntityCategory.md)
+ - [BankTransactionEntityCreditCardMetadata](doc/BankTransactionEntityCreditCardMetadata.md)
+ - [BankTransactionEntityPaymentData](doc/BankTransactionEntityPaymentData.md)
+ - [BankTransactionEntityTagsInner](doc/BankTransactionEntityTagsInner.md)
  - [BankTransactionIndicatorEntity](doc/BankTransactionIndicatorEntity.md)
- - [BankTransactionPaymentDataEntity](doc/BankTransactionPaymentDataEntity.md)
  - [BankTransactionTagEntity](doc/BankTransactionTagEntity.md)
  - [BankTransactionsPageEntity](doc/BankTransactionsPageEntity.md)
- - [BankTransactionsTotalsEntity](doc/BankTransactionsTotalsEntity.md)
+ - [BankTransactionsPageEntityItemsInner](doc/BankTransactionsPageEntityItemsInner.md)
  - [CashFlowByCategoryReportEntity](doc/CashFlowByCategoryReportEntity.md)
  - [CashFlowByCategoryReportItemEntity](doc/CashFlowByCategoryReportItemEntity.md)
  - [CashFlowReportDailyItemEntity](doc/CashFlowReportDailyItemEntity.md)
  - [CashFlowReportEntity](doc/CashFlowReportEntity.md)
  - [CashFlowReportMonthlyItemEntity](doc/CashFlowReportMonthlyItemEntity.md)
  - [CashFlowReportWeeklyItemEntity](doc/CashFlowReportWeeklyItemEntity.md)
- - [CategoryGuessDto](doc/CategoryGuessDto.md)
  - [CreateBankTransactionTagRequestDto](doc/CreateBankTransactionTagRequestDto.md)
  - [CreateOrUpdateBankAccountRequestDto](doc/CreateOrUpdateBankAccountRequestDto.md)
  - [CreateOrUpdateBankConnectionRequestDto](doc/CreateOrUpdateBankConnectionRequestDto.md)
- - [CreateOrUpdateBankTransactionsInBulkItemDto](doc/CreateOrUpdateBankTransactionsInBulkItemDto.md)
  - [CreateOrUpdateBankTransactionsInBulkRequestDto](doc/CreateOrUpdateBankTransactionsInBulkRequestDto.md)
+ - [CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner](doc/CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner.md)
+ - [CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerCategoryGuessesInner](doc/CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerCategoryGuessesInner.md)
+ - [CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerCreditCardMetadata](doc/CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerCreditCardMetadata.md)
+ - [CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerLegalNatureGuessesInner](doc/CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerLegalNatureGuessesInner.md)
+ - [CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerPaymentData](doc/CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerPaymentData.md)
  - [CreateOrUpdateMessageTokenRequestDto](doc/CreateOrUpdateMessageTokenRequestDto.md)
  - [CreatePluggyConnectTokenRequestDto](doc/CreatePluggyConnectTokenRequestDto.md)
  - [CreateProfileRequestDto](doc/CreateProfileRequestDto.md)
  - [CreateWorkspaceRequestDto](doc/CreateWorkspaceRequestDto.md)
  - [CredentialsEntity](doc/CredentialsEntity.md)
- - [CreditCardMetadataDto](doc/CreditCardMetadataDto.md)
  - [DreLineOutcomeResultEntity](doc/DreLineOutcomeResultEntity.md)
  - [EmailInUseReportEntity](doc/EmailInUseReportEntity.md)
  - [ExceptionResponseEntity](doc/ExceptionResponseEntity.md)
@@ -171,21 +181,35 @@ Class | Method | HTTP request | Description
  - [MeanResultEntity](doc/MeanResultEntity.md)
  - [MeanResultSubcategoryItemEntity](doc/MeanResultSubcategoryItemEntity.md)
  - [MessageTokenEntity](doc/MessageTokenEntity.md)
- - [ParcialUpdateWorkspaceRequestDto](doc/ParcialUpdateWorkspaceRequestDto.md)
+ - [MessageTokenEntityUser](doc/MessageTokenEntityUser.md)
+ - [MessageTokenEntityWorksapce](doc/MessageTokenEntityWorksapce.md)
+ - [PartialUpdateBankTransactionRequestDto](doc/PartialUpdateBankTransactionRequestDto.md)
  - [PartialUpdateProfileRequestDto](doc/PartialUpdateProfileRequestDto.md)
- - [PaymentDataDto](doc/PaymentDataDto.md)
- - [PlainBankAccountEntity](doc/PlainBankAccountEntity.md)
+ - [PartialUpdateWorkspaceRequestDto](doc/PartialUpdateWorkspaceRequestDto.md)
  - [PluggyConnectTokenEntity](doc/PluggyConnectTokenEntity.md)
  - [ProfileEntity](doc/ProfileEntity.md)
  - [ProportionResultEntity](doc/ProportionResultEntity.md)
  - [RefreshRequestDto](doc/RefreshRequestDto.md)
  - [SignInWithEmailRequestDto](doc/SignInWithEmailRequestDto.md)
  - [SignUpWithEmailRequestDto](doc/SignUpWithEmailRequestDto.md)
- - [UpdateBankTransactionRequestDto](doc/UpdateBankTransactionRequestDto.md)
+ - [SyncBankAccountTransactionsPageBeginRequestDto](doc/SyncBankAccountTransactionsPageBeginRequestDto.md)
+ - [SyncBankAccountTransactionsPageEndRequestDto](doc/SyncBankAccountTransactionsPageEndRequestDto.md)
+ - [SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPage](doc/SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPage.md)
+ - [SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInner](doc/SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInner.md)
+ - [SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInnerCreditCardMetadata](doc/SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInnerCreditCardMetadata.md)
+ - [SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInnerPaymentData](doc/SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInnerPaymentData.md)
+ - [SyncBankAccountTransactionsPageEndRequestDtoCategoryAssignRequestsInner](doc/SyncBankAccountTransactionsPageEndRequestDtoCategoryAssignRequestsInner.md)
+ - [SyncBankAccountTransactionsPageEndRequestDtoCategoryAssignRequestsInnerCategory](doc/SyncBankAccountTransactionsPageEndRequestDtoCategoryAssignRequestsInnerCategory.md)
+ - [SyncBankAccountTransactionsPageEndRequestDtoCategoryAssignRequestsInnerCategoryPredictionResponse](doc/SyncBankAccountTransactionsPageEndRequestDtoCategoryAssignRequestsInnerCategoryPredictionResponse.md)
+ - [SyncBankAccountTransactionsPageEndRequestDtoLegalNatureAssignRequestsInner](doc/SyncBankAccountTransactionsPageEndRequestDtoLegalNatureAssignRequestsInner.md)
+ - [SyncBankAccountTransactionsPageEndRequestDtoLegalNatureAssignRequestsInnerLegalNature](doc/SyncBankAccountTransactionsPageEndRequestDtoLegalNatureAssignRequestsInnerLegalNature.md)
+ - [SyncBankAccountTransactionsRequestDto](doc/SyncBankAccountTransactionsRequestDto.md)
+ - [SyncBankItemRequestDto](doc/SyncBankItemRequestDto.md)
  - [UserEntity](doc/UserEntity.md)
  - [UserEntityWorkspacesInner](doc/UserEntityWorkspacesInner.md)
  - [UserEntityWorkspacesInnerHybridSettings](doc/UserEntityWorkspacesInnerHybridSettings.md)
  - [UserEntityWorkspacesInnerPersonalSettings](doc/UserEntityWorkspacesInnerPersonalSettings.md)
+ - [UserRelatedWorkspaceEntity](doc/UserRelatedWorkspaceEntity.md)
  - [VerifyEmailVerificationCodeRequestDto](doc/VerifyEmailVerificationCodeRequestDto.md)
  - [VerifyPhoneVerificationCodeRequestDto](doc/VerifyPhoneVerificationCodeRequestDto.md)
  - [WorkspaceEntity](doc/WorkspaceEntity.md)

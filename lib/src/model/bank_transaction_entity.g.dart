@@ -32,33 +32,36 @@ final BuiltSet<BankTransactionEntityProviderEnum>
   _$bankTransactionEntityProviderEnum_SOFIA,
 ]);
 
-const BankTransactionEntityTypeEnum _$bankTransactionEntityTypeEnum_DEBIT =
-    const BankTransactionEntityTypeEnum._('DEBIT');
-const BankTransactionEntityTypeEnum _$bankTransactionEntityTypeEnum_CREDIT =
-    const BankTransactionEntityTypeEnum._('CREDIT');
-const BankTransactionEntityTypeEnum _$bankTransactionEntityTypeEnum_UNDEFINED =
-    const BankTransactionEntityTypeEnum._('UNDEFINED');
+const BankTransactionEntityDirectionNatureEnum
+    _$bankTransactionEntityDirectionNatureEnum_CREDIT =
+    const BankTransactionEntityDirectionNatureEnum._('CREDIT');
+const BankTransactionEntityDirectionNatureEnum
+    _$bankTransactionEntityDirectionNatureEnum_DEBIT =
+    const BankTransactionEntityDirectionNatureEnum._('DEBIT');
+const BankTransactionEntityDirectionNatureEnum
+    _$bankTransactionEntityDirectionNatureEnum_UNDEFINED =
+    const BankTransactionEntityDirectionNatureEnum._('UNDEFINED');
 
-BankTransactionEntityTypeEnum _$bankTransactionEntityTypeEnumValueOf(
-    String name) {
+BankTransactionEntityDirectionNatureEnum
+    _$bankTransactionEntityDirectionNatureEnumValueOf(String name) {
   switch (name) {
-    case 'DEBIT':
-      return _$bankTransactionEntityTypeEnum_DEBIT;
     case 'CREDIT':
-      return _$bankTransactionEntityTypeEnum_CREDIT;
+      return _$bankTransactionEntityDirectionNatureEnum_CREDIT;
+    case 'DEBIT':
+      return _$bankTransactionEntityDirectionNatureEnum_DEBIT;
     case 'UNDEFINED':
-      return _$bankTransactionEntityTypeEnum_UNDEFINED;
+      return _$bankTransactionEntityDirectionNatureEnum_UNDEFINED;
     default:
       throw new ArgumentError(name);
   }
 }
 
-final BuiltSet<BankTransactionEntityTypeEnum>
-    _$bankTransactionEntityTypeEnumValues = new BuiltSet<
-        BankTransactionEntityTypeEnum>(const <BankTransactionEntityTypeEnum>[
-  _$bankTransactionEntityTypeEnum_DEBIT,
-  _$bankTransactionEntityTypeEnum_CREDIT,
-  _$bankTransactionEntityTypeEnum_UNDEFINED,
+final BuiltSet<BankTransactionEntityDirectionNatureEnum>
+    _$bankTransactionEntityDirectionNatureEnumValues = new BuiltSet<
+        BankTransactionEntityDirectionNatureEnum>(const <BankTransactionEntityDirectionNatureEnum>[
+  _$bankTransactionEntityDirectionNatureEnum_CREDIT,
+  _$bankTransactionEntityDirectionNatureEnum_DEBIT,
+  _$bankTransactionEntityDirectionNatureEnum_UNDEFINED,
 ]);
 
 const BankTransactionEntityStatusEnum
@@ -92,6 +95,9 @@ const BankTransactionEntityLegalNatureEnum
 const BankTransactionEntityLegalNatureEnum
     _$bankTransactionEntityLegalNatureEnum_BUSINESS =
     const BankTransactionEntityLegalNatureEnum._('BUSINESS');
+const BankTransactionEntityLegalNatureEnum
+    _$bankTransactionEntityLegalNatureEnum_UNDEFINED =
+    const BankTransactionEntityLegalNatureEnum._('UNDEFINED');
 
 BankTransactionEntityLegalNatureEnum
     _$bankTransactionEntityLegalNatureEnumValueOf(String name) {
@@ -100,6 +106,8 @@ BankTransactionEntityLegalNatureEnum
       return _$bankTransactionEntityLegalNatureEnum_PERSONAL;
     case 'BUSINESS':
       return _$bankTransactionEntityLegalNatureEnum_BUSINESS;
+    case 'UNDEFINED':
+      return _$bankTransactionEntityLegalNatureEnum_UNDEFINED;
     default:
       throw new ArgumentError(name);
   }
@@ -110,14 +118,15 @@ final BuiltSet<BankTransactionEntityLegalNatureEnum>
         BankTransactionEntityLegalNatureEnum>(const <BankTransactionEntityLegalNatureEnum>[
   _$bankTransactionEntityLegalNatureEnum_PERSONAL,
   _$bankTransactionEntityLegalNatureEnum_BUSINESS,
+  _$bankTransactionEntityLegalNatureEnum_UNDEFINED,
 ]);
 
 Serializer<BankTransactionEntityProviderEnum>
     _$bankTransactionEntityProviderEnumSerializer =
     new _$BankTransactionEntityProviderEnumSerializer();
-Serializer<BankTransactionEntityTypeEnum>
-    _$bankTransactionEntityTypeEnumSerializer =
-    new _$BankTransactionEntityTypeEnumSerializer();
+Serializer<BankTransactionEntityDirectionNatureEnum>
+    _$bankTransactionEntityDirectionNatureEnumSerializer =
+    new _$BankTransactionEntityDirectionNatureEnumSerializer();
 Serializer<BankTransactionEntityStatusEnum>
     _$bankTransactionEntityStatusEnumSerializer =
     new _$BankTransactionEntityStatusEnumSerializer();
@@ -155,35 +164,37 @@ class _$BankTransactionEntityProviderEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
-class _$BankTransactionEntityTypeEnumSerializer
-    implements PrimitiveSerializer<BankTransactionEntityTypeEnum> {
+class _$BankTransactionEntityDirectionNatureEnumSerializer
+    implements PrimitiveSerializer<BankTransactionEntityDirectionNatureEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
-    'DEBIT': 'DEBIT',
     'CREDIT': 'CREDIT',
+    'DEBIT': 'DEBIT',
     'UNDEFINED': 'UNDEFINED',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
-    'DEBIT': 'DEBIT',
     'CREDIT': 'CREDIT',
+    'DEBIT': 'DEBIT',
     'UNDEFINED': 'UNDEFINED',
   };
 
   @override
-  final Iterable<Type> types = const <Type>[BankTransactionEntityTypeEnum];
+  final Iterable<Type> types = const <Type>[
+    BankTransactionEntityDirectionNatureEnum
+  ];
   @override
-  final String wireName = 'BankTransactionEntityTypeEnum';
+  final String wireName = 'BankTransactionEntityDirectionNatureEnum';
 
   @override
-  Object serialize(
-          Serializers serializers, BankTransactionEntityTypeEnum object,
+  Object serialize(Serializers serializers,
+          BankTransactionEntityDirectionNatureEnum object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  BankTransactionEntityTypeEnum deserialize(
+  BankTransactionEntityDirectionNatureEnum deserialize(
           Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      BankTransactionEntityTypeEnum.valueOf(
+      BankTransactionEntityDirectionNatureEnum.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
@@ -222,10 +233,12 @@ class _$BankTransactionEntityLegalNatureEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'PERSONAL': 'PERSONAL',
     'BUSINESS': 'BUSINESS',
+    'UNDEFINED': 'UNDEFINED',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'PERSONAL': 'PERSONAL',
     'BUSINESS': 'BUSINESS',
+    'UNDEFINED': 'UNDEFINED',
   };
 
   @override
@@ -255,7 +268,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
   @override
   final String accountId;
   @override
-  final BankAccountEntity account;
+  final BankConnectionEntityAccountsInner account;
   @override
   final String workspaceId;
   @override
@@ -267,13 +280,13 @@ class _$BankTransactionEntity extends BankTransactionEntity {
   @override
   final String description;
   @override
-  final DateTime postedDate;
+  final JsonObject? postedDate;
   @override
-  final DateTime competencyDate;
+  final JsonObject? competencyDate;
   @override
-  final num amount;
+  final int amount;
   @override
-  final BankTransactionEntityTypeEnum type;
+  final BankTransactionEntityDirectionNatureEnum directionNature;
   @override
   final BankTransactionEntityStatusEnum status;
   @override
@@ -285,29 +298,25 @@ class _$BankTransactionEntity extends BankTransactionEntity {
   @override
   final String? categoryId;
   @override
-  final BankTransactionCategoryPlainEntity? category;
+  final BankTransactionEntityCategory? category;
   @override
-  final BuiltList<BankTransactionTagEntity> tags;
+  final BuiltList<BankTransactionEntityTagsInner> tags;
   @override
   final String? paymentDataId;
   @override
-  final BankTransactionPaymentDataEntity? paymentData;
+  final BankTransactionEntityPaymentData? paymentData;
   @override
   final String? creditCardMetadataId;
   @override
-  final BankTransactionCreditCardMetadataEntity? creditCardMetadata;
+  final BankTransactionEntityCreditCardMetadata? creditCardMetadata;
   @override
-  final String? bestGuessCategoryId;
+  final JsonObject? ignoredAt;
   @override
-  final BankTransactionCategoryPlainEntity? bestGuessCategory;
+  final JsonObject? verifiedAt;
   @override
-  final DateTime? ignoredAt;
+  final JsonObject? createdAt;
   @override
-  final DateTime? confirmedAt;
-  @override
-  final DateTime createdAt;
-  @override
-  final DateTime updatedAt;
+  final JsonObject? updatedAt;
 
   factory _$BankTransactionEntity(
           [void Function(BankTransactionEntityBuilder)? updates]) =>
@@ -322,10 +331,10 @@ class _$BankTransactionEntity extends BankTransactionEntity {
       required this.providerTransactionId,
       required this.originalDescription,
       required this.description,
-      required this.postedDate,
-      required this.competencyDate,
+      this.postedDate,
+      this.competencyDate,
       required this.amount,
-      required this.type,
+      required this.directionNature,
       required this.status,
       required this.legalNature,
       this.providerCategoryId,
@@ -337,12 +346,10 @@ class _$BankTransactionEntity extends BankTransactionEntity {
       this.paymentData,
       this.creditCardMetadataId,
       this.creditCardMetadata,
-      this.bestGuessCategoryId,
-      this.bestGuessCategory,
       this.ignoredAt,
-      this.confirmedAt,
-      required this.createdAt,
-      required this.updatedAt})
+      this.verifiedAt,
+      this.createdAt,
+      this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'BankTransactionEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
@@ -360,23 +367,15 @@ class _$BankTransactionEntity extends BankTransactionEntity {
     BuiltValueNullFieldError.checkNotNull(
         description, r'BankTransactionEntity', 'description');
     BuiltValueNullFieldError.checkNotNull(
-        postedDate, r'BankTransactionEntity', 'postedDate');
-    BuiltValueNullFieldError.checkNotNull(
-        competencyDate, r'BankTransactionEntity', 'competencyDate');
-    BuiltValueNullFieldError.checkNotNull(
         amount, r'BankTransactionEntity', 'amount');
     BuiltValueNullFieldError.checkNotNull(
-        type, r'BankTransactionEntity', 'type');
+        directionNature, r'BankTransactionEntity', 'directionNature');
     BuiltValueNullFieldError.checkNotNull(
         status, r'BankTransactionEntity', 'status');
     BuiltValueNullFieldError.checkNotNull(
         legalNature, r'BankTransactionEntity', 'legalNature');
     BuiltValueNullFieldError.checkNotNull(
         tags, r'BankTransactionEntity', 'tags');
-    BuiltValueNullFieldError.checkNotNull(
-        createdAt, r'BankTransactionEntity', 'createdAt');
-    BuiltValueNullFieldError.checkNotNull(
-        updatedAt, r'BankTransactionEntity', 'updatedAt');
   }
 
   @override
@@ -403,7 +402,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
         postedDate == other.postedDate &&
         competencyDate == other.competencyDate &&
         amount == other.amount &&
-        type == other.type &&
+        directionNature == other.directionNature &&
         status == other.status &&
         legalNature == other.legalNature &&
         providerCategoryId == other.providerCategoryId &&
@@ -415,10 +414,8 @@ class _$BankTransactionEntity extends BankTransactionEntity {
         paymentData == other.paymentData &&
         creditCardMetadataId == other.creditCardMetadataId &&
         creditCardMetadata == other.creditCardMetadata &&
-        bestGuessCategoryId == other.bestGuessCategoryId &&
-        bestGuessCategory == other.bestGuessCategory &&
         ignoredAt == other.ignoredAt &&
-        confirmedAt == other.confirmedAt &&
+        verifiedAt == other.verifiedAt &&
         createdAt == other.createdAt &&
         updatedAt == other.updatedAt;
   }
@@ -437,7 +434,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
     _$hash = $jc(_$hash, postedDate.hashCode);
     _$hash = $jc(_$hash, competencyDate.hashCode);
     _$hash = $jc(_$hash, amount.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, directionNature.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, legalNature.hashCode);
     _$hash = $jc(_$hash, providerCategoryId.hashCode);
@@ -449,10 +446,8 @@ class _$BankTransactionEntity extends BankTransactionEntity {
     _$hash = $jc(_$hash, paymentData.hashCode);
     _$hash = $jc(_$hash, creditCardMetadataId.hashCode);
     _$hash = $jc(_$hash, creditCardMetadata.hashCode);
-    _$hash = $jc(_$hash, bestGuessCategoryId.hashCode);
-    _$hash = $jc(_$hash, bestGuessCategory.hashCode);
     _$hash = $jc(_$hash, ignoredAt.hashCode);
-    _$hash = $jc(_$hash, confirmedAt.hashCode);
+    _$hash = $jc(_$hash, verifiedAt.hashCode);
     _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, updatedAt.hashCode);
     _$hash = $jf(_$hash);
@@ -473,7 +468,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
           ..add('postedDate', postedDate)
           ..add('competencyDate', competencyDate)
           ..add('amount', amount)
-          ..add('type', type)
+          ..add('directionNature', directionNature)
           ..add('status', status)
           ..add('legalNature', legalNature)
           ..add('providerCategoryId', providerCategoryId)
@@ -485,10 +480,8 @@ class _$BankTransactionEntity extends BankTransactionEntity {
           ..add('paymentData', paymentData)
           ..add('creditCardMetadataId', creditCardMetadataId)
           ..add('creditCardMetadata', creditCardMetadata)
-          ..add('bestGuessCategoryId', bestGuessCategoryId)
-          ..add('bestGuessCategory', bestGuessCategory)
           ..add('ignoredAt', ignoredAt)
-          ..add('confirmedAt', confirmedAt)
+          ..add('verifiedAt', verifiedAt)
           ..add('createdAt', createdAt)
           ..add('updatedAt', updatedAt))
         .toString();
@@ -507,10 +500,11 @@ class BankTransactionEntityBuilder
   String? get accountId => _$this._accountId;
   set accountId(String? accountId) => _$this._accountId = accountId;
 
-  BankAccountEntityBuilder? _account;
-  BankAccountEntityBuilder get account =>
-      _$this._account ??= new BankAccountEntityBuilder();
-  set account(BankAccountEntityBuilder? account) => _$this._account = account;
+  BankConnectionEntityAccountsInnerBuilder? _account;
+  BankConnectionEntityAccountsInnerBuilder get account =>
+      _$this._account ??= new BankConnectionEntityAccountsInnerBuilder();
+  set account(BankConnectionEntityAccountsInnerBuilder? account) =>
+      _$this._account = account;
 
   String? _workspaceId;
   String? get workspaceId => _$this._workspaceId;
@@ -535,22 +529,25 @@ class BankTransactionEntityBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
-  DateTime? _postedDate;
-  DateTime? get postedDate => _$this._postedDate;
-  set postedDate(DateTime? postedDate) => _$this._postedDate = postedDate;
+  JsonObject? _postedDate;
+  JsonObject? get postedDate => _$this._postedDate;
+  set postedDate(JsonObject? postedDate) => _$this._postedDate = postedDate;
 
-  DateTime? _competencyDate;
-  DateTime? get competencyDate => _$this._competencyDate;
-  set competencyDate(DateTime? competencyDate) =>
+  JsonObject? _competencyDate;
+  JsonObject? get competencyDate => _$this._competencyDate;
+  set competencyDate(JsonObject? competencyDate) =>
       _$this._competencyDate = competencyDate;
 
-  num? _amount;
-  num? get amount => _$this._amount;
-  set amount(num? amount) => _$this._amount = amount;
+  int? _amount;
+  int? get amount => _$this._amount;
+  set amount(int? amount) => _$this._amount = amount;
 
-  BankTransactionEntityTypeEnum? _type;
-  BankTransactionEntityTypeEnum? get type => _$this._type;
-  set type(BankTransactionEntityTypeEnum? type) => _$this._type = type;
+  BankTransactionEntityDirectionNatureEnum? _directionNature;
+  BankTransactionEntityDirectionNatureEnum? get directionNature =>
+      _$this._directionNature;
+  set directionNature(
+          BankTransactionEntityDirectionNatureEnum? directionNature) =>
+      _$this._directionNature = directionNature;
 
   BankTransactionEntityStatusEnum? _status;
   BankTransactionEntityStatusEnum? get status => _$this._status;
@@ -576,26 +573,27 @@ class BankTransactionEntityBuilder
   String? get categoryId => _$this._categoryId;
   set categoryId(String? categoryId) => _$this._categoryId = categoryId;
 
-  BankTransactionCategoryPlainEntityBuilder? _category;
-  BankTransactionCategoryPlainEntityBuilder get category =>
-      _$this._category ??= new BankTransactionCategoryPlainEntityBuilder();
-  set category(BankTransactionCategoryPlainEntityBuilder? category) =>
+  BankTransactionEntityCategoryBuilder? _category;
+  BankTransactionEntityCategoryBuilder get category =>
+      _$this._category ??= new BankTransactionEntityCategoryBuilder();
+  set category(BankTransactionEntityCategoryBuilder? category) =>
       _$this._category = category;
 
-  ListBuilder<BankTransactionTagEntity>? _tags;
-  ListBuilder<BankTransactionTagEntity> get tags =>
-      _$this._tags ??= new ListBuilder<BankTransactionTagEntity>();
-  set tags(ListBuilder<BankTransactionTagEntity>? tags) => _$this._tags = tags;
+  ListBuilder<BankTransactionEntityTagsInner>? _tags;
+  ListBuilder<BankTransactionEntityTagsInner> get tags =>
+      _$this._tags ??= new ListBuilder<BankTransactionEntityTagsInner>();
+  set tags(ListBuilder<BankTransactionEntityTagsInner>? tags) =>
+      _$this._tags = tags;
 
   String? _paymentDataId;
   String? get paymentDataId => _$this._paymentDataId;
   set paymentDataId(String? paymentDataId) =>
       _$this._paymentDataId = paymentDataId;
 
-  BankTransactionPaymentDataEntityBuilder? _paymentData;
-  BankTransactionPaymentDataEntityBuilder get paymentData =>
-      _$this._paymentData ??= new BankTransactionPaymentDataEntityBuilder();
-  set paymentData(BankTransactionPaymentDataEntityBuilder? paymentData) =>
+  BankTransactionEntityPaymentDataBuilder? _paymentData;
+  BankTransactionEntityPaymentDataBuilder get paymentData =>
+      _$this._paymentData ??= new BankTransactionEntityPaymentDataBuilder();
+  set paymentData(BankTransactionEntityPaymentDataBuilder? paymentData) =>
       _$this._paymentData = paymentData;
 
   String? _creditCardMetadataId;
@@ -603,42 +601,29 @@ class BankTransactionEntityBuilder
   set creditCardMetadataId(String? creditCardMetadataId) =>
       _$this._creditCardMetadataId = creditCardMetadataId;
 
-  BankTransactionCreditCardMetadataEntityBuilder? _creditCardMetadata;
-  BankTransactionCreditCardMetadataEntityBuilder get creditCardMetadata =>
+  BankTransactionEntityCreditCardMetadataBuilder? _creditCardMetadata;
+  BankTransactionEntityCreditCardMetadataBuilder get creditCardMetadata =>
       _$this._creditCardMetadata ??=
-          new BankTransactionCreditCardMetadataEntityBuilder();
+          new BankTransactionEntityCreditCardMetadataBuilder();
   set creditCardMetadata(
-          BankTransactionCreditCardMetadataEntityBuilder? creditCardMetadata) =>
+          BankTransactionEntityCreditCardMetadataBuilder? creditCardMetadata) =>
       _$this._creditCardMetadata = creditCardMetadata;
 
-  String? _bestGuessCategoryId;
-  String? get bestGuessCategoryId => _$this._bestGuessCategoryId;
-  set bestGuessCategoryId(String? bestGuessCategoryId) =>
-      _$this._bestGuessCategoryId = bestGuessCategoryId;
+  JsonObject? _ignoredAt;
+  JsonObject? get ignoredAt => _$this._ignoredAt;
+  set ignoredAt(JsonObject? ignoredAt) => _$this._ignoredAt = ignoredAt;
 
-  BankTransactionCategoryPlainEntityBuilder? _bestGuessCategory;
-  BankTransactionCategoryPlainEntityBuilder get bestGuessCategory =>
-      _$this._bestGuessCategory ??=
-          new BankTransactionCategoryPlainEntityBuilder();
-  set bestGuessCategory(
-          BankTransactionCategoryPlainEntityBuilder? bestGuessCategory) =>
-      _$this._bestGuessCategory = bestGuessCategory;
+  JsonObject? _verifiedAt;
+  JsonObject? get verifiedAt => _$this._verifiedAt;
+  set verifiedAt(JsonObject? verifiedAt) => _$this._verifiedAt = verifiedAt;
 
-  DateTime? _ignoredAt;
-  DateTime? get ignoredAt => _$this._ignoredAt;
-  set ignoredAt(DateTime? ignoredAt) => _$this._ignoredAt = ignoredAt;
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
-  DateTime? _confirmedAt;
-  DateTime? get confirmedAt => _$this._confirmedAt;
-  set confirmedAt(DateTime? confirmedAt) => _$this._confirmedAt = confirmedAt;
-
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
-
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
 
   BankTransactionEntityBuilder() {
     BankTransactionEntity._defaults(this);
@@ -658,7 +643,7 @@ class BankTransactionEntityBuilder
       _postedDate = $v.postedDate;
       _competencyDate = $v.competencyDate;
       _amount = $v.amount;
-      _type = $v.type;
+      _directionNature = $v.directionNature;
       _status = $v.status;
       _legalNature = $v.legalNature;
       _providerCategoryId = $v.providerCategoryId;
@@ -670,10 +655,8 @@ class BankTransactionEntityBuilder
       _paymentData = $v.paymentData?.toBuilder();
       _creditCardMetadataId = $v.creditCardMetadataId;
       _creditCardMetadata = $v.creditCardMetadata?.toBuilder();
-      _bestGuessCategoryId = $v.bestGuessCategoryId;
-      _bestGuessCategory = $v.bestGuessCategory?.toBuilder();
       _ignoredAt = $v.ignoredAt;
-      _confirmedAt = $v.confirmedAt;
+      _verifiedAt = $v.verifiedAt;
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
       _$v = null;
@@ -715,11 +698,11 @@ class BankTransactionEntityBuilder
                   originalDescription, r'BankTransactionEntity', 'originalDescription'),
               description: BuiltValueNullFieldError.checkNotNull(
                   description, r'BankTransactionEntity', 'description'),
-              postedDate: BuiltValueNullFieldError.checkNotNull(
-                  postedDate, r'BankTransactionEntity', 'postedDate'),
-              competencyDate: BuiltValueNullFieldError.checkNotNull(competencyDate, r'BankTransactionEntity', 'competencyDate'),
-              amount: BuiltValueNullFieldError.checkNotNull(amount, r'BankTransactionEntity', 'amount'),
-              type: BuiltValueNullFieldError.checkNotNull(type, r'BankTransactionEntity', 'type'),
+              postedDate: postedDate,
+              competencyDate: competencyDate,
+              amount: BuiltValueNullFieldError.checkNotNull(
+                  amount, r'BankTransactionEntity', 'amount'),
+              directionNature: BuiltValueNullFieldError.checkNotNull(directionNature, r'BankTransactionEntity', 'directionNature'),
               status: BuiltValueNullFieldError.checkNotNull(status, r'BankTransactionEntity', 'status'),
               legalNature: BuiltValueNullFieldError.checkNotNull(legalNature, r'BankTransactionEntity', 'legalNature'),
               providerCategoryId: providerCategoryId,
@@ -731,12 +714,10 @@ class BankTransactionEntityBuilder
               paymentData: _paymentData?.build(),
               creditCardMetadataId: creditCardMetadataId,
               creditCardMetadata: _creditCardMetadata?.build(),
-              bestGuessCategoryId: bestGuessCategoryId,
-              bestGuessCategory: _bestGuessCategory?.build(),
               ignoredAt: ignoredAt,
-              confirmedAt: confirmedAt,
-              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankTransactionEntity', 'createdAt'),
-              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankTransactionEntity', 'updatedAt'));
+              verifiedAt: verifiedAt,
+              createdAt: createdAt,
+              updatedAt: updatedAt);
     } catch (_) {
       late String _$failedField;
       try {
@@ -753,9 +734,6 @@ class BankTransactionEntityBuilder
 
         _$failedField = 'creditCardMetadata';
         _creditCardMetadata?.build();
-
-        _$failedField = 'bestGuessCategory';
-        _bestGuessCategory?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'BankTransactionEntity', _$failedField, e.toString());

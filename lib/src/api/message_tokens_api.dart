@@ -21,7 +21,7 @@ class MessageTokensApi {
 
   const MessageTokensApi(this._dio, this._serializers);
 
-  /// messageTokensControllerCreateOrUpdateMessageToken
+  /// messageTokensControllerCreateOrUpdate
   /// 
   ///
   /// Parameters:
@@ -36,7 +36,7 @@ class MessageTokensApi {
   ///
   /// Returns a [Future] containing a [Response] with a [MessageTokenEntity] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MessageTokenEntity>> messageTokensControllerCreateOrUpdateMessageToken({ 
+  Future<Response<MessageTokenEntity>> messageTokensControllerCreateOrUpdate({ 
     required String workspaceId,
     required CreateOrUpdateMessageTokenRequestDto createOrUpdateMessageTokenRequestDto,
     CancelToken? cancelToken,
@@ -46,7 +46,7 @@ class MessageTokensApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/workspaces/{workspaceId}/message-tokens'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _path = r'/communication/workspaces/{workspaceId}/message-tokens'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -118,7 +118,7 @@ class MessageTokensApi {
     );
   }
 
-  /// messageTokensControllerGetWorkspaceMessageTokens
+  /// messageTokensControllerListByWorkspaceId
   /// 
   ///
   /// Parameters:
@@ -132,7 +132,7 @@ class MessageTokensApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<MessageTokenEntity>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<MessageTokenEntity>>> messageTokensControllerGetWorkspaceMessageTokens({ 
+  Future<Response<BuiltList<MessageTokenEntity>>> messageTokensControllerListByWorkspaceId({ 
     required String workspaceId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -141,7 +141,7 @@ class MessageTokensApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/workspaces/{workspaceId}/message-tokens'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
+    final _path = r'/communication/workspaces/{workspaceId}/message-tokens'.replaceAll('{' r'workspaceId' '}', encodeQueryParameter(_serializers, workspaceId, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{

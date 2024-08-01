@@ -6,6 +6,110 @@ part of 'create_pluggy_connect_token_request_dto.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum
+    _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_DAY =
+    const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum._('ONE_DAY');
+const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum
+    _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_WEEK =
+    const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum._('ONE_WEEK');
+const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum
+    _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_MONTH =
+    const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum._('ONE_MONTH');
+const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum
+    _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_TWO_MONTHS =
+    const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum._('TWO_MONTHS');
+const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum
+    _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_THREE_MONTHS =
+    const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum._('THREE_MONTHS');
+const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum
+    _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_SIX_MONTHS =
+    const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum._('SIX_MONTHS');
+const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum
+    _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_YEAR =
+    const CreatePluggyConnectTokenRequestDtoHistoryRangeEnum._('ONE_YEAR');
+
+CreatePluggyConnectTokenRequestDtoHistoryRangeEnum
+    _$createPluggyConnectTokenRequestDtoHistoryRangeEnumValueOf(String name) {
+  switch (name) {
+    case 'ONE_DAY':
+      return _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_DAY;
+    case 'ONE_WEEK':
+      return _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_WEEK;
+    case 'ONE_MONTH':
+      return _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_MONTH;
+    case 'TWO_MONTHS':
+      return _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_TWO_MONTHS;
+    case 'THREE_MONTHS':
+      return _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_THREE_MONTHS;
+    case 'SIX_MONTHS':
+      return _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_SIX_MONTHS;
+    case 'ONE_YEAR':
+      return _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_YEAR;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<CreatePluggyConnectTokenRequestDtoHistoryRangeEnum>
+    _$createPluggyConnectTokenRequestDtoHistoryRangeEnumValues = new BuiltSet<
+        CreatePluggyConnectTokenRequestDtoHistoryRangeEnum>(const <CreatePluggyConnectTokenRequestDtoHistoryRangeEnum>[
+  _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_DAY,
+  _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_WEEK,
+  _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_MONTH,
+  _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_TWO_MONTHS,
+  _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_THREE_MONTHS,
+  _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_SIX_MONTHS,
+  _$createPluggyConnectTokenRequestDtoHistoryRangeEnum_ONE_YEAR,
+]);
+
+Serializer<CreatePluggyConnectTokenRequestDtoHistoryRangeEnum>
+    _$createPluggyConnectTokenRequestDtoHistoryRangeEnumSerializer =
+    new _$CreatePluggyConnectTokenRequestDtoHistoryRangeEnumSerializer();
+
+class _$CreatePluggyConnectTokenRequestDtoHistoryRangeEnumSerializer
+    implements
+        PrimitiveSerializer<
+            CreatePluggyConnectTokenRequestDtoHistoryRangeEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'ONE_DAY': 'ONE_DAY',
+    'ONE_WEEK': 'ONE_WEEK',
+    'ONE_MONTH': 'ONE_MONTH',
+    'TWO_MONTHS': 'TWO_MONTHS',
+    'THREE_MONTHS': 'THREE_MONTHS',
+    'SIX_MONTHS': 'SIX_MONTHS',
+    'ONE_YEAR': 'ONE_YEAR',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'ONE_DAY': 'ONE_DAY',
+    'ONE_WEEK': 'ONE_WEEK',
+    'ONE_MONTH': 'ONE_MONTH',
+    'TWO_MONTHS': 'TWO_MONTHS',
+    'THREE_MONTHS': 'THREE_MONTHS',
+    'SIX_MONTHS': 'SIX_MONTHS',
+    'ONE_YEAR': 'ONE_YEAR',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    CreatePluggyConnectTokenRequestDtoHistoryRangeEnum
+  ];
+  @override
+  final String wireName = 'CreatePluggyConnectTokenRequestDtoHistoryRangeEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          CreatePluggyConnectTokenRequestDtoHistoryRangeEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  CreatePluggyConnectTokenRequestDtoHistoryRangeEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      CreatePluggyConnectTokenRequestDtoHistoryRangeEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$CreatePluggyConnectTokenRequestDto
     extends CreatePluggyConnectTokenRequestDto {
   @override
@@ -13,7 +117,7 @@ class _$CreatePluggyConnectTokenRequestDto
   @override
   final String workspaceId;
   @override
-  final String historyRange;
+  final CreatePluggyConnectTokenRequestDtoHistoryRangeEnum historyRange;
 
   factory _$CreatePluggyConnectTokenRequestDto(
           [void Function(CreatePluggyConnectTokenRequestDtoBuilder)?
@@ -82,9 +186,12 @@ class CreatePluggyConnectTokenRequestDtoBuilder
   String? get workspaceId => _$this._workspaceId;
   set workspaceId(String? workspaceId) => _$this._workspaceId = workspaceId;
 
-  String? _historyRange;
-  String? get historyRange => _$this._historyRange;
-  set historyRange(String? historyRange) => _$this._historyRange = historyRange;
+  CreatePluggyConnectTokenRequestDtoHistoryRangeEnum? _historyRange;
+  CreatePluggyConnectTokenRequestDtoHistoryRangeEnum? get historyRange =>
+      _$this._historyRange;
+  set historyRange(
+          CreatePluggyConnectTokenRequestDtoHistoryRangeEnum? historyRange) =>
+      _$this._historyRange = historyRange;
 
   CreatePluggyConnectTokenRequestDtoBuilder() {
     CreatePluggyConnectTokenRequestDto._defaults(this);

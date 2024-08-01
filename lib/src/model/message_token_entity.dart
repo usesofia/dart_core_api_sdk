@@ -3,9 +3,10 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:dart_core_api_sdk/src/model/workspace_entity.dart';
+import 'package:dart_core_api_sdk/src/model/message_token_entity_user.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:dart_core_api_sdk/src/model/user_entity.dart';
+import 'package:dart_core_api_sdk/src/model/message_token_entity_worksapce.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -16,7 +17,7 @@ part 'message_token_entity.g.dart';
 /// Properties:
 /// * [id] 
 /// * [workspaceId] 
-/// * [workspace] 
+/// * [worksapce] 
 /// * [userId] 
 /// * [user] 
 /// * [provider] 
@@ -33,14 +34,14 @@ abstract class MessageTokenEntity implements Built<MessageTokenEntity, MessageTo
   @BuiltValueField(wireName: r'workspaceId')
   String get workspaceId;
 
-  @BuiltValueField(wireName: r'workspace')
-  WorkspaceEntity get workspace;
+  @BuiltValueField(wireName: r'worksapce')
+  MessageTokenEntityWorksapce? get worksapce;
 
   @BuiltValueField(wireName: r'userId')
   String get userId;
 
   @BuiltValueField(wireName: r'user')
-  UserEntity get user;
+  MessageTokenEntityUser? get user;
 
   @BuiltValueField(wireName: r'provider')
   MessageTokenEntityProviderEnum get provider;
@@ -57,10 +58,10 @@ abstract class MessageTokenEntity implements Built<MessageTokenEntity, MessageTo
   String get token;
 
   @BuiltValueField(wireName: r'createdAt')
-  DateTime get createdAt;
+  JsonObject? get createdAt;
 
   @BuiltValueField(wireName: r'updatedAt')
-  DateTime get updatedAt;
+  JsonObject? get updatedAt;
 
   MessageTokenEntity._();
 
@@ -95,21 +96,25 @@ class _$MessageTokenEntitySerializer implements PrimitiveSerializer<MessageToken
       object.workspaceId,
       specifiedType: const FullType(String),
     );
-    yield r'workspace';
-    yield serializers.serialize(
-      object.workspace,
-      specifiedType: const FullType(WorkspaceEntity),
-    );
+    if (object.worksapce != null) {
+      yield r'worksapce';
+      yield serializers.serialize(
+        object.worksapce,
+        specifiedType: const FullType.nullable(MessageTokenEntityWorksapce),
+      );
+    }
     yield r'userId';
     yield serializers.serialize(
       object.userId,
       specifiedType: const FullType(String),
     );
-    yield r'user';
-    yield serializers.serialize(
-      object.user,
-      specifiedType: const FullType(UserEntity),
-    );
+    if (object.user != null) {
+      yield r'user';
+      yield serializers.serialize(
+        object.user,
+        specifiedType: const FullType.nullable(MessageTokenEntityUser),
+      );
+    }
     yield r'provider';
     yield serializers.serialize(
       object.provider,
@@ -131,14 +136,14 @@ class _$MessageTokenEntitySerializer implements PrimitiveSerializer<MessageToken
       specifiedType: const FullType(String),
     );
     yield r'createdAt';
-    yield serializers.serialize(
+    yield object.createdAt == null ? null : serializers.serialize(
       object.createdAt,
-      specifiedType: const FullType(DateTime),
+      specifiedType: const FullType.nullable(JsonObject),
     );
     yield r'updatedAt';
-    yield serializers.serialize(
+    yield object.updatedAt == null ? null : serializers.serialize(
       object.updatedAt,
-      specifiedType: const FullType(DateTime),
+      specifiedType: const FullType.nullable(JsonObject),
     );
   }
 
@@ -177,12 +182,13 @@ class _$MessageTokenEntitySerializer implements PrimitiveSerializer<MessageToken
           ) as String;
           result.workspaceId = valueDes;
           break;
-        case r'workspace':
+        case r'worksapce':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(WorkspaceEntity),
-          ) as WorkspaceEntity;
-          result.workspace.replace(valueDes);
+            specifiedType: const FullType.nullable(MessageTokenEntityWorksapce),
+          ) as MessageTokenEntityWorksapce?;
+          if (valueDes == null) continue;
+          result.worksapce.replace(valueDes);
           break;
         case r'userId':
           final valueDes = serializers.deserialize(
@@ -194,8 +200,9 @@ class _$MessageTokenEntitySerializer implements PrimitiveSerializer<MessageToken
         case r'user':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(UserEntity),
-          ) as UserEntity;
+            specifiedType: const FullType.nullable(MessageTokenEntityUser),
+          ) as MessageTokenEntityUser?;
+          if (valueDes == null) continue;
           result.user.replace(valueDes);
           break;
         case r'provider':
@@ -229,15 +236,17 @@ class _$MessageTokenEntitySerializer implements PrimitiveSerializer<MessageToken
         case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
           result.updatedAt = valueDes;
           break;
         default:

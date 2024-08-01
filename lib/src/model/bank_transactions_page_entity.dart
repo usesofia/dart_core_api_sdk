@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:dart_core_api_sdk/src/model/bank_transactions_page_entity_items_inner.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:dart_core_api_sdk/src/model/bank_transaction_entity.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -21,19 +21,19 @@ part 'bank_transactions_page_entity.g.dart';
 @BuiltValue()
 abstract class BankTransactionsPageEntity implements Built<BankTransactionsPageEntity, BankTransactionsPageEntityBuilder> {
   @BuiltValueField(wireName: r'pageIndex')
-  num get pageIndex;
+  int get pageIndex;
 
   @BuiltValueField(wireName: r'pageSize')
-  num get pageSize;
+  int get pageSize;
 
   @BuiltValueField(wireName: r'totalItems')
-  num get totalItems;
+  int get totalItems;
 
   @BuiltValueField(wireName: r'totalPages')
-  num get totalPages;
+  int get totalPages;
 
   @BuiltValueField(wireName: r'items')
-  BuiltList<BankTransactionEntity> get items;
+  BuiltList<BankTransactionsPageEntityItemsInner> get items;
 
   BankTransactionsPageEntity._();
 
@@ -61,27 +61,27 @@ class _$BankTransactionsPageEntitySerializer implements PrimitiveSerializer<Bank
     yield r'pageIndex';
     yield serializers.serialize(
       object.pageIndex,
-      specifiedType: const FullType(num),
+      specifiedType: const FullType(int),
     );
     yield r'pageSize';
     yield serializers.serialize(
       object.pageSize,
-      specifiedType: const FullType(num),
+      specifiedType: const FullType(int),
     );
     yield r'totalItems';
     yield serializers.serialize(
       object.totalItems,
-      specifiedType: const FullType(num),
+      specifiedType: const FullType(int),
     );
     yield r'totalPages';
     yield serializers.serialize(
       object.totalPages,
-      specifiedType: const FullType(num),
+      specifiedType: const FullType(int),
     );
     yield r'items';
     yield serializers.serialize(
       object.items,
-      specifiedType: const FullType(BuiltList, [FullType(BankTransactionEntity)]),
+      specifiedType: const FullType(BuiltList, [FullType(BankTransactionsPageEntityItemsInner)]),
     );
   }
 
@@ -109,36 +109,36 @@ class _$BankTransactionsPageEntitySerializer implements PrimitiveSerializer<Bank
         case r'pageIndex':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(num),
-          ) as num;
+            specifiedType: const FullType(int),
+          ) as int;
           result.pageIndex = valueDes;
           break;
         case r'pageSize':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(num),
-          ) as num;
+            specifiedType: const FullType(int),
+          ) as int;
           result.pageSize = valueDes;
           break;
         case r'totalItems':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(num),
-          ) as num;
+            specifiedType: const FullType(int),
+          ) as int;
           result.totalItems = valueDes;
           break;
         case r'totalPages':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(num),
-          ) as num;
+            specifiedType: const FullType(int),
+          ) as int;
           result.totalPages = valueDes;
           break;
         case r'items':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BankTransactionEntity)]),
-          ) as BuiltList<BankTransactionEntity>;
+            specifiedType: const FullType(BuiltList, [FullType(BankTransactionsPageEntityItemsInner)]),
+          ) as BuiltList<BankTransactionsPageEntityItemsInner>;
           result.items.replace(valueDes);
           break;
         default:

@@ -9,12 +9,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**pluggyControllerCreate**](PluggyApi.md#pluggycontrollercreate) | **POST** /pluggy/connect-token | 
+[**pluggyControllerCreateConnectToken**](PluggyApi.md#pluggycontrollercreateconnecttoken) | **POST** /pluggy/connect-tokens | 
 [**pluggyControllerWebhook**](PluggyApi.md#pluggycontrollerwebhook) | **POST** /pluggy/webhook | 
 
 
-# **pluggyControllerCreate**
-> PluggyConnectTokenEntity pluggyControllerCreate(createPluggyConnectTokenRequestDto)
+# **pluggyControllerCreateConnectToken**
+> PluggyConnectTokenEntity pluggyControllerCreateConnectToken(createPluggyConnectTokenRequestDto)
 
 
 
@@ -26,10 +26,10 @@ final api = DartCoreApiSdk().getPluggyApi();
 final CreatePluggyConnectTokenRequestDto createPluggyConnectTokenRequestDto = ; // CreatePluggyConnectTokenRequestDto | 
 
 try {
-    final response = api.pluggyControllerCreate(createPluggyConnectTokenRequestDto);
+    final response = api.pluggyControllerCreateConnectToken(createPluggyConnectTokenRequestDto);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling PluggyApi->pluggyControllerCreate: $e\n');
+    print('Exception when calling PluggyApi->pluggyControllerCreateConnectToken: $e\n');
 }
 ```
 

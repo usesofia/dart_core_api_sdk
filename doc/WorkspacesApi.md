@@ -9,10 +9,10 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**workspacesControllerCreate**](WorkspacesApi.md#workspacescontrollercreate) | **POST** /workspaces | 
-[**workspacesControllerFetchUserRelatedWorkspaces**](WorkspacesApi.md#workspacescontrollerfetchuserrelatedworkspaces) | **GET** /workspaces/related-to-me | 
-[**workspacesControllerGet**](WorkspacesApi.md#workspacescontrollerget) | **GET** /workspaces/{workspaceId} | 
-[**workspacesControllerParcialUpdate**](WorkspacesApi.md#workspacescontrollerparcialupdate) | **PATCH** /workspaces/{workspaceId} | 
+[**workspacesControllerCreate**](WorkspacesApi.md#workspacescontrollercreate) | **POST** /iam/workspaces | 
+[**workspacesControllerGetById**](WorkspacesApi.md#workspacescontrollergetbyid) | **GET** /iam/workspaces/{workspaceId} | 
+[**workspacesControllerListMy**](WorkspacesApi.md#workspacescontrollerlistmy) | **GET** /iam/workspaces/my | 
+[**workspacesControllerPartialUpdate**](WorkspacesApi.md#workspacescontrollerpartialupdate) | **PATCH** /iam/workspaces/{workspaceId} | 
 
 
 # **workspacesControllerCreate**
@@ -56,45 +56,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **workspacesControllerFetchUserRelatedWorkspaces**
-> BuiltList<UserRelatedWorkspaceEntity> workspacesControllerFetchUserRelatedWorkspaces()
-
-
-
-### Example
-```dart
-import 'package:dart_core_api_sdk/api.dart';
-
-final api = DartCoreApiSdk().getWorkspacesApi();
-
-try {
-    final response = api.workspacesControllerFetchUserRelatedWorkspaces();
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling WorkspacesApi->workspacesControllerFetchUserRelatedWorkspaces: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**BuiltList&lt;UserRelatedWorkspaceEntity&gt;**](UserRelatedWorkspaceEntity.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **workspacesControllerGet**
-> WorkspaceEntity workspacesControllerGet(workspaceId)
+# **workspacesControllerGetById**
+> WorkspaceEntity workspacesControllerGetById(workspaceId)
 
 
 
@@ -106,10 +69,10 @@ final api = DartCoreApiSdk().getWorkspacesApi();
 final String workspaceId = workspaceId_example; // String | 
 
 try {
-    final response = api.workspacesControllerGet(workspaceId);
+    final response = api.workspacesControllerGetById(workspaceId);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling WorkspacesApi->workspacesControllerGet: $e\n');
+    print('Exception when calling WorkspacesApi->workspacesControllerGetById: $e\n');
 }
 ```
 
@@ -134,8 +97,45 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **workspacesControllerParcialUpdate**
-> WorkspaceEntity workspacesControllerParcialUpdate(workspaceId, parcialUpdateWorkspaceRequestDto)
+# **workspacesControllerListMy**
+> BuiltList<UserRelatedWorkspaceEntity> workspacesControllerListMy()
+
+
+
+### Example
+```dart
+import 'package:dart_core_api_sdk/api.dart';
+
+final api = DartCoreApiSdk().getWorkspacesApi();
+
+try {
+    final response = api.workspacesControllerListMy();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling WorkspacesApi->workspacesControllerListMy: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;UserRelatedWorkspaceEntity&gt;**](UserRelatedWorkspaceEntity.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **workspacesControllerPartialUpdate**
+> WorkspaceEntity workspacesControllerPartialUpdate(workspaceId, partialUpdateWorkspaceRequestDto)
 
 
 
@@ -145,13 +145,13 @@ import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getWorkspacesApi();
 final String workspaceId = workspaceId_example; // String | 
-final ParcialUpdateWorkspaceRequestDto parcialUpdateWorkspaceRequestDto = ; // ParcialUpdateWorkspaceRequestDto | 
+final PartialUpdateWorkspaceRequestDto partialUpdateWorkspaceRequestDto = ; // PartialUpdateWorkspaceRequestDto | 
 
 try {
-    final response = api.workspacesControllerParcialUpdate(workspaceId, parcialUpdateWorkspaceRequestDto);
+    final response = api.workspacesControllerPartialUpdate(workspaceId, partialUpdateWorkspaceRequestDto);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling WorkspacesApi->workspacesControllerParcialUpdate: $e\n');
+    print('Exception when calling WorkspacesApi->workspacesControllerPartialUpdate: $e\n');
 }
 ```
 
@@ -160,7 +160,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **workspaceId** | **String**|  | 
- **parcialUpdateWorkspaceRequestDto** | [**ParcialUpdateWorkspaceRequestDto**](ParcialUpdateWorkspaceRequestDto.md)|  | 
+ **partialUpdateWorkspaceRequestDto** | [**PartialUpdateWorkspaceRequestDto**](PartialUpdateWorkspaceRequestDto.md)|  | 
 
 ### Return type
 

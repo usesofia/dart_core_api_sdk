@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:dart_core_api_sdk/src/model/bank_transaction_category_entity_children_inner.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:dart_core_api_sdk/src/model/bank_transaction_category_plain_entity.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -15,9 +15,8 @@ part 'bank_transaction_category_entity.g.dart';
 /// Properties:
 /// * [id] 
 /// * [name] 
-/// * [nature] 
+/// * [directionNature] 
 /// * [parentId] 
-/// * [path] 
 /// * [children] 
 @BuiltValue()
 abstract class BankTransactionCategoryEntity implements Built<BankTransactionCategoryEntity, BankTransactionCategoryEntityBuilder> {
@@ -27,17 +26,15 @@ abstract class BankTransactionCategoryEntity implements Built<BankTransactionCat
   @BuiltValueField(wireName: r'name')
   String get name;
 
-  @BuiltValueField(wireName: r'nature')
-  String get nature;
+  @BuiltValueField(wireName: r'directionNature')
+  BankTransactionCategoryEntityDirectionNatureEnum get directionNature;
+  // enum directionNatureEnum {  CREDIT,  DEBIT,  UNDEFINED,  };
 
   @BuiltValueField(wireName: r'parentId')
   String? get parentId;
 
-  @BuiltValueField(wireName: r'path')
-  BuiltList<BankTransactionCategoryPlainEntity> get path;
-
   @BuiltValueField(wireName: r'children')
-  BuiltList<BankTransactionCategoryPlainEntity> get children;
+  BuiltList<BankTransactionCategoryEntityChildrenInner> get children;
 
   BankTransactionCategoryEntity._();
 
@@ -72,27 +69,22 @@ class _$BankTransactionCategoryEntitySerializer implements PrimitiveSerializer<B
       object.name,
       specifiedType: const FullType(String),
     );
-    yield r'nature';
+    yield r'directionNature';
     yield serializers.serialize(
-      object.nature,
-      specifiedType: const FullType(String),
+      object.directionNature,
+      specifiedType: const FullType(BankTransactionCategoryEntityDirectionNatureEnum),
     );
     if (object.parentId != null) {
       yield r'parentId';
       yield serializers.serialize(
         object.parentId,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType.nullable(String),
       );
     }
-    yield r'path';
-    yield serializers.serialize(
-      object.path,
-      specifiedType: const FullType(BuiltList, [FullType(BankTransactionCategoryPlainEntity)]),
-    );
     yield r'children';
     yield serializers.serialize(
       object.children,
-      specifiedType: const FullType(BuiltList, [FullType(BankTransactionCategoryPlainEntity)]),
+      specifiedType: const FullType(BuiltList, [FullType(BankTransactionCategoryEntityChildrenInner)]),
     );
   }
 
@@ -131,32 +123,26 @@ class _$BankTransactionCategoryEntitySerializer implements PrimitiveSerializer<B
           ) as String;
           result.name = valueDes;
           break;
-        case r'nature':
+        case r'directionNature':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.nature = valueDes;
+            specifiedType: const FullType(BankTransactionCategoryEntityDirectionNatureEnum),
+          ) as BankTransactionCategoryEntityDirectionNatureEnum;
+          result.directionNature = valueDes;
           break;
         case r'parentId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
           result.parentId = valueDes;
-          break;
-        case r'path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(BankTransactionCategoryPlainEntity)]),
-          ) as BuiltList<BankTransactionCategoryPlainEntity>;
-          result.path.replace(valueDes);
           break;
         case r'children':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BankTransactionCategoryPlainEntity)]),
-          ) as BuiltList<BankTransactionCategoryPlainEntity>;
+            specifiedType: const FullType(BuiltList, [FullType(BankTransactionCategoryEntityChildrenInner)]),
+          ) as BuiltList<BankTransactionCategoryEntityChildrenInner>;
           result.children.replace(valueDes);
           break;
         default:
@@ -186,5 +172,22 @@ class _$BankTransactionCategoryEntitySerializer implements PrimitiveSerializer<B
     );
     return result.build();
   }
+}
+
+class BankTransactionCategoryEntityDirectionNatureEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'CREDIT')
+  static const BankTransactionCategoryEntityDirectionNatureEnum CREDIT = _$bankTransactionCategoryEntityDirectionNatureEnum_CREDIT;
+  @BuiltValueEnumConst(wireName: r'DEBIT')
+  static const BankTransactionCategoryEntityDirectionNatureEnum DEBIT = _$bankTransactionCategoryEntityDirectionNatureEnum_DEBIT;
+  @BuiltValueEnumConst(wireName: r'UNDEFINED')
+  static const BankTransactionCategoryEntityDirectionNatureEnum UNDEFINED = _$bankTransactionCategoryEntityDirectionNatureEnum_UNDEFINED;
+
+  static Serializer<BankTransactionCategoryEntityDirectionNatureEnum> get serializer => _$bankTransactionCategoryEntityDirectionNatureEnumSerializer;
+
+  const BankTransactionCategoryEntityDirectionNatureEnum._(String name): super(name);
+
+  static BuiltSet<BankTransactionCategoryEntityDirectionNatureEnum> get values => _$bankTransactionCategoryEntityDirectionNatureEnumValues;
+  static BankTransactionCategoryEntityDirectionNatureEnum valueOf(String name) => _$bankTransactionCategoryEntityDirectionNatureEnumValueOf(name);
 }
 

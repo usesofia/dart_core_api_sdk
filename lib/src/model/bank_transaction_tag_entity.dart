@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -24,10 +25,10 @@ abstract class BankTransactionTagEntity implements Built<BankTransactionTagEntit
   String get name;
 
   @BuiltValueField(wireName: r'createdAt')
-  DateTime get createdAt;
+  JsonObject? get createdAt;
 
   @BuiltValueField(wireName: r'updatedAt')
-  DateTime get updatedAt;
+  JsonObject? get updatedAt;
 
   BankTransactionTagEntity._();
 
@@ -63,14 +64,14 @@ class _$BankTransactionTagEntitySerializer implements PrimitiveSerializer<BankTr
       specifiedType: const FullType(String),
     );
     yield r'createdAt';
-    yield serializers.serialize(
+    yield object.createdAt == null ? null : serializers.serialize(
       object.createdAt,
-      specifiedType: const FullType(DateTime),
+      specifiedType: const FullType.nullable(JsonObject),
     );
     yield r'updatedAt';
-    yield serializers.serialize(
+    yield object.updatedAt == null ? null : serializers.serialize(
       object.updatedAt,
-      specifiedType: const FullType(DateTime),
+      specifiedType: const FullType.nullable(JsonObject),
     );
   }
 
@@ -112,15 +113,17 @@ class _$BankTransactionTagEntitySerializer implements PrimitiveSerializer<BankTr
         case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
           result.updatedAt = valueDes;
           break;
         default:

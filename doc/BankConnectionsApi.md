@@ -9,15 +9,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bankConnectionsControllerActivateBankConnection**](BankConnectionsApi.md#bankconnectionscontrolleractivatebankconnection) | **POST** /bank/connections/{bankConnectionId}/activate | 
-[**bankConnectionsControllerCreateOrUpdateBankConnection**](BankConnectionsApi.md#bankconnectionscontrollercreateorupdatebankconnection) | **PUT** /workspaces/{workspaceId}/bank/connections | 
-[**bankConnectionsControllerDisableBankConnection**](BankConnectionsApi.md#bankconnectionscontrollerdisablebankconnection) | **POST** /bank/connections/{bankConnectionId}/disable | 
-[**bankConnectionsControllerFetchUserBankConnections**](BankConnectionsApi.md#bankconnectionscontrollerfetchuserbankconnections) | **GET** /workspaces/{workspaceId}/bank/connections | 
-[**bankConnectionsControllerGetBankConnectionDetails**](BankConnectionsApi.md#bankconnectionscontrollergetbankconnectiondetails) | **GET** /bank/connections/{bankConnectionId} | 
+[**bankConnectionsControllerActivate**](BankConnectionsApi.md#bankconnectionscontrolleractivate) | **POST** /bank/connections/{bankConnectionId}/activate | 
+[**bankConnectionsControllerCreateOrUpdate**](BankConnectionsApi.md#bankconnectionscontrollercreateorupdate) | **PUT** /bank/workspaces/{workspaceId}/connections | 
+[**bankConnectionsControllerDisable**](BankConnectionsApi.md#bankconnectionscontrollerdisable) | **POST** /bank/connections/{bankConnectionId}/disable | 
+[**bankConnectionsControllerGetById**](BankConnectionsApi.md#bankconnectionscontrollergetbyid) | **GET** /bank/connections/{bankConnectionId} | 
+[**bankConnectionsControllerList**](BankConnectionsApi.md#bankconnectionscontrollerlist) | **GET** /bank/workspaces/{workspaceId}/connections | 
 
 
-# **bankConnectionsControllerActivateBankConnection**
-> BankConnectionEntity bankConnectionsControllerActivateBankConnection(bankConnectionId)
+# **bankConnectionsControllerActivate**
+> BankConnectionEntity bankConnectionsControllerActivate(bankConnectionId)
 
 
 
@@ -29,10 +29,10 @@ final api = DartCoreApiSdk().getBankConnectionsApi();
 final String bankConnectionId = bankConnectionId_example; // String | 
 
 try {
-    final response = api.bankConnectionsControllerActivateBankConnection(bankConnectionId);
+    final response = api.bankConnectionsControllerActivate(bankConnectionId);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankConnectionsApi->bankConnectionsControllerActivateBankConnection: $e\n');
+    print('Exception when calling BankConnectionsApi->bankConnectionsControllerActivate: $e\n');
 }
 ```
 
@@ -57,8 +57,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bankConnectionsControllerCreateOrUpdateBankConnection**
-> BankConnectionEntity bankConnectionsControllerCreateOrUpdateBankConnection(workspaceId, createOrUpdateBankConnectionRequestDto)
+# **bankConnectionsControllerCreateOrUpdate**
+> BankConnectionEntity bankConnectionsControllerCreateOrUpdate(workspaceId, createOrUpdateBankConnectionRequestDto)
 
 
 
@@ -71,10 +71,10 @@ final String workspaceId = workspaceId_example; // String |
 final CreateOrUpdateBankConnectionRequestDto createOrUpdateBankConnectionRequestDto = ; // CreateOrUpdateBankConnectionRequestDto | 
 
 try {
-    final response = api.bankConnectionsControllerCreateOrUpdateBankConnection(workspaceId, createOrUpdateBankConnectionRequestDto);
+    final response = api.bankConnectionsControllerCreateOrUpdate(workspaceId, createOrUpdateBankConnectionRequestDto);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankConnectionsApi->bankConnectionsControllerCreateOrUpdateBankConnection: $e\n');
+    print('Exception when calling BankConnectionsApi->bankConnectionsControllerCreateOrUpdate: $e\n');
 }
 ```
 
@@ -100,8 +100,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bankConnectionsControllerDisableBankConnection**
-> BankConnectionEntity bankConnectionsControllerDisableBankConnection(bankConnectionId)
+# **bankConnectionsControllerDisable**
+> BankConnectionEntity bankConnectionsControllerDisable(bankConnectionId)
 
 
 
@@ -113,10 +113,10 @@ final api = DartCoreApiSdk().getBankConnectionsApi();
 final String bankConnectionId = bankConnectionId_example; // String | 
 
 try {
-    final response = api.bankConnectionsControllerDisableBankConnection(bankConnectionId);
+    final response = api.bankConnectionsControllerDisable(bankConnectionId);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankConnectionsApi->bankConnectionsControllerDisableBankConnection: $e\n');
+    print('Exception when calling BankConnectionsApi->bankConnectionsControllerDisable: $e\n');
 }
 ```
 
@@ -141,8 +141,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bankConnectionsControllerFetchUserBankConnections**
-> BuiltList<BankConnectionWithAccountsEntity> bankConnectionsControllerFetchUserBankConnections(workspaceId, enabled)
+# **bankConnectionsControllerGetById**
+> BankConnectionEntity bankConnectionsControllerGetById(bankConnectionId)
 
 
 
@@ -151,14 +151,13 @@ No authorization required
 import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getBankConnectionsApi();
-final String workspaceId = workspaceId_example; // String | 
-final bool enabled = true; // bool | 
+final String bankConnectionId = bankConnectionId_example; // String | 
 
 try {
-    final response = api.bankConnectionsControllerFetchUserBankConnections(workspaceId, enabled);
+    final response = api.bankConnectionsControllerGetById(bankConnectionId);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankConnectionsApi->bankConnectionsControllerFetchUserBankConnections: $e\n');
+    print('Exception when calling BankConnectionsApi->bankConnectionsControllerGetById: $e\n');
 }
 ```
 
@@ -166,12 +165,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **workspaceId** | **String**|  | 
- **enabled** | **bool**|  | [optional] 
+ **bankConnectionId** | **String**|  | 
 
 ### Return type
 
-[**BuiltList&lt;BankConnectionWithAccountsEntity&gt;**](BankConnectionWithAccountsEntity.md)
+[**BankConnectionEntity**](BankConnectionEntity.md)
 
 ### Authorization
 
@@ -184,8 +182,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **bankConnectionsControllerGetBankConnectionDetails**
-> BankConnectionWithAccountsEntity bankConnectionsControllerGetBankConnectionDetails(bankConnectionId)
+# **bankConnectionsControllerList**
+> BuiltList<BankConnectionEntity> bankConnectionsControllerList(workspaceId, enabled)
 
 
 
@@ -194,13 +192,14 @@ No authorization required
 import 'package:dart_core_api_sdk/api.dart';
 
 final api = DartCoreApiSdk().getBankConnectionsApi();
-final String bankConnectionId = bankConnectionId_example; // String | 
+final String workspaceId = workspaceId_example; // String | 
+final bool enabled = true; // bool | 
 
 try {
-    final response = api.bankConnectionsControllerGetBankConnectionDetails(bankConnectionId);
+    final response = api.bankConnectionsControllerList(workspaceId, enabled);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling BankConnectionsApi->bankConnectionsControllerGetBankConnectionDetails: $e\n');
+    print('Exception when calling BankConnectionsApi->bankConnectionsControllerList: $e\n');
 }
 ```
 
@@ -208,11 +207,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bankConnectionId** | **String**|  | 
+ **workspaceId** | **String**|  | 
+ **enabled** | **bool**|  | [optional] 
 
 ### Return type
 
-[**BankConnectionWithAccountsEntity**](BankConnectionWithAccountsEntity.md)
+[**BuiltList&lt;BankConnectionEntity&gt;**](BankConnectionEntity.md)
 
 ### Authorization
 

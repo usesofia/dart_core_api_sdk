@@ -6,6 +6,167 @@ part of 'bank_connection_entity.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const BankConnectionEntityProviderEnum
+    _$bankConnectionEntityProviderEnum_PLUGGY =
+    const BankConnectionEntityProviderEnum._('PLUGGY');
+const BankConnectionEntityProviderEnum
+    _$bankConnectionEntityProviderEnum_SOFIA =
+    const BankConnectionEntityProviderEnum._('SOFIA');
+
+BankConnectionEntityProviderEnum _$bankConnectionEntityProviderEnumValueOf(
+    String name) {
+  switch (name) {
+    case 'PLUGGY':
+      return _$bankConnectionEntityProviderEnum_PLUGGY;
+    case 'SOFIA':
+      return _$bankConnectionEntityProviderEnum_SOFIA;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<BankConnectionEntityProviderEnum>
+    _$bankConnectionEntityProviderEnumValues = new BuiltSet<
+        BankConnectionEntityProviderEnum>(const <BankConnectionEntityProviderEnum>[
+  _$bankConnectionEntityProviderEnum_PLUGGY,
+  _$bankConnectionEntityProviderEnum_SOFIA,
+]);
+
+const BankConnectionEntityHistoryRangeEnum
+    _$bankConnectionEntityHistoryRangeEnum_ONE_DAY =
+    const BankConnectionEntityHistoryRangeEnum._('ONE_DAY');
+const BankConnectionEntityHistoryRangeEnum
+    _$bankConnectionEntityHistoryRangeEnum_ONE_WEEK =
+    const BankConnectionEntityHistoryRangeEnum._('ONE_WEEK');
+const BankConnectionEntityHistoryRangeEnum
+    _$bankConnectionEntityHistoryRangeEnum_ONE_MONTH =
+    const BankConnectionEntityHistoryRangeEnum._('ONE_MONTH');
+const BankConnectionEntityHistoryRangeEnum
+    _$bankConnectionEntityHistoryRangeEnum_TWO_MONTHS =
+    const BankConnectionEntityHistoryRangeEnum._('TWO_MONTHS');
+const BankConnectionEntityHistoryRangeEnum
+    _$bankConnectionEntityHistoryRangeEnum_THREE_MONTHS =
+    const BankConnectionEntityHistoryRangeEnum._('THREE_MONTHS');
+const BankConnectionEntityHistoryRangeEnum
+    _$bankConnectionEntityHistoryRangeEnum_SIX_MONTHS =
+    const BankConnectionEntityHistoryRangeEnum._('SIX_MONTHS');
+const BankConnectionEntityHistoryRangeEnum
+    _$bankConnectionEntityHistoryRangeEnum_ONE_YEAR =
+    const BankConnectionEntityHistoryRangeEnum._('ONE_YEAR');
+
+BankConnectionEntityHistoryRangeEnum
+    _$bankConnectionEntityHistoryRangeEnumValueOf(String name) {
+  switch (name) {
+    case 'ONE_DAY':
+      return _$bankConnectionEntityHistoryRangeEnum_ONE_DAY;
+    case 'ONE_WEEK':
+      return _$bankConnectionEntityHistoryRangeEnum_ONE_WEEK;
+    case 'ONE_MONTH':
+      return _$bankConnectionEntityHistoryRangeEnum_ONE_MONTH;
+    case 'TWO_MONTHS':
+      return _$bankConnectionEntityHistoryRangeEnum_TWO_MONTHS;
+    case 'THREE_MONTHS':
+      return _$bankConnectionEntityHistoryRangeEnum_THREE_MONTHS;
+    case 'SIX_MONTHS':
+      return _$bankConnectionEntityHistoryRangeEnum_SIX_MONTHS;
+    case 'ONE_YEAR':
+      return _$bankConnectionEntityHistoryRangeEnum_ONE_YEAR;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<BankConnectionEntityHistoryRangeEnum>
+    _$bankConnectionEntityHistoryRangeEnumValues = new BuiltSet<
+        BankConnectionEntityHistoryRangeEnum>(const <BankConnectionEntityHistoryRangeEnum>[
+  _$bankConnectionEntityHistoryRangeEnum_ONE_DAY,
+  _$bankConnectionEntityHistoryRangeEnum_ONE_WEEK,
+  _$bankConnectionEntityHistoryRangeEnum_ONE_MONTH,
+  _$bankConnectionEntityHistoryRangeEnum_TWO_MONTHS,
+  _$bankConnectionEntityHistoryRangeEnum_THREE_MONTHS,
+  _$bankConnectionEntityHistoryRangeEnum_SIX_MONTHS,
+  _$bankConnectionEntityHistoryRangeEnum_ONE_YEAR,
+]);
+
+Serializer<BankConnectionEntityProviderEnum>
+    _$bankConnectionEntityProviderEnumSerializer =
+    new _$BankConnectionEntityProviderEnumSerializer();
+Serializer<BankConnectionEntityHistoryRangeEnum>
+    _$bankConnectionEntityHistoryRangeEnumSerializer =
+    new _$BankConnectionEntityHistoryRangeEnumSerializer();
+
+class _$BankConnectionEntityProviderEnumSerializer
+    implements PrimitiveSerializer<BankConnectionEntityProviderEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'PLUGGY': 'PLUGGY',
+    'SOFIA': 'SOFIA',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'PLUGGY': 'PLUGGY',
+    'SOFIA': 'SOFIA',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[BankConnectionEntityProviderEnum];
+  @override
+  final String wireName = 'BankConnectionEntityProviderEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers, BankConnectionEntityProviderEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  BankConnectionEntityProviderEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      BankConnectionEntityProviderEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
+class _$BankConnectionEntityHistoryRangeEnumSerializer
+    implements PrimitiveSerializer<BankConnectionEntityHistoryRangeEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'ONE_DAY': 'ONE_DAY',
+    'ONE_WEEK': 'ONE_WEEK',
+    'ONE_MONTH': 'ONE_MONTH',
+    'TWO_MONTHS': 'TWO_MONTHS',
+    'THREE_MONTHS': 'THREE_MONTHS',
+    'SIX_MONTHS': 'SIX_MONTHS',
+    'ONE_YEAR': 'ONE_YEAR',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'ONE_DAY': 'ONE_DAY',
+    'ONE_WEEK': 'ONE_WEEK',
+    'ONE_MONTH': 'ONE_MONTH',
+    'TWO_MONTHS': 'TWO_MONTHS',
+    'THREE_MONTHS': 'THREE_MONTHS',
+    'SIX_MONTHS': 'SIX_MONTHS',
+    'ONE_YEAR': 'ONE_YEAR',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    BankConnectionEntityHistoryRangeEnum
+  ];
+  @override
+  final String wireName = 'BankConnectionEntityHistoryRangeEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers, BankConnectionEntityHistoryRangeEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  BankConnectionEntityHistoryRangeEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      BankConnectionEntityHistoryRangeEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$BankConnectionEntity extends BankConnectionEntity {
   @override
   final String id;
@@ -14,21 +175,23 @@ class _$BankConnectionEntity extends BankConnectionEntity {
   @override
   final String workspaceId;
   @override
+  final BuiltList<BankConnectionEntityAccountsInner>? accounts;
+  @override
   final bool enabled;
   @override
-  final String provider;
+  final BankConnectionEntityProviderEnum provider;
   @override
   final String providerItemId;
   @override
-  final String historyRange;
+  final BankConnectionEntityHistoryRangeEnum historyRange;
   @override
   final String connectorId;
   @override
-  final BankConnectorEntity connector;
+  final BankConnectionEntityConnector? connector;
   @override
-  final DateTime createdAt;
+  final JsonObject? createdAt;
   @override
-  final DateTime updatedAt;
+  final JsonObject? updatedAt;
 
   factory _$BankConnectionEntity(
           [void Function(BankConnectionEntityBuilder)? updates]) =>
@@ -38,14 +201,15 @@ class _$BankConnectionEntity extends BankConnectionEntity {
       {required this.id,
       required this.createdByUserId,
       required this.workspaceId,
+      this.accounts,
       required this.enabled,
       required this.provider,
       required this.providerItemId,
       required this.historyRange,
       required this.connectorId,
-      required this.connector,
-      required this.createdAt,
-      required this.updatedAt})
+      this.connector,
+      this.createdAt,
+      this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'BankConnectionEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
@@ -62,12 +226,6 @@ class _$BankConnectionEntity extends BankConnectionEntity {
         historyRange, r'BankConnectionEntity', 'historyRange');
     BuiltValueNullFieldError.checkNotNull(
         connectorId, r'BankConnectionEntity', 'connectorId');
-    BuiltValueNullFieldError.checkNotNull(
-        connector, r'BankConnectionEntity', 'connector');
-    BuiltValueNullFieldError.checkNotNull(
-        createdAt, r'BankConnectionEntity', 'createdAt');
-    BuiltValueNullFieldError.checkNotNull(
-        updatedAt, r'BankConnectionEntity', 'updatedAt');
   }
 
   @override
@@ -86,6 +244,7 @@ class _$BankConnectionEntity extends BankConnectionEntity {
         id == other.id &&
         createdByUserId == other.createdByUserId &&
         workspaceId == other.workspaceId &&
+        accounts == other.accounts &&
         enabled == other.enabled &&
         provider == other.provider &&
         providerItemId == other.providerItemId &&
@@ -102,6 +261,7 @@ class _$BankConnectionEntity extends BankConnectionEntity {
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, createdByUserId.hashCode);
     _$hash = $jc(_$hash, workspaceId.hashCode);
+    _$hash = $jc(_$hash, accounts.hashCode);
     _$hash = $jc(_$hash, enabled.hashCode);
     _$hash = $jc(_$hash, provider.hashCode);
     _$hash = $jc(_$hash, providerItemId.hashCode);
@@ -120,6 +280,7 @@ class _$BankConnectionEntity extends BankConnectionEntity {
           ..add('id', id)
           ..add('createdByUserId', createdByUserId)
           ..add('workspaceId', workspaceId)
+          ..add('accounts', accounts)
           ..add('enabled', enabled)
           ..add('provider', provider)
           ..add('providerItemId', providerItemId)
@@ -149,40 +310,49 @@ class BankConnectionEntityBuilder
   String? get workspaceId => _$this._workspaceId;
   set workspaceId(String? workspaceId) => _$this._workspaceId = workspaceId;
 
+  ListBuilder<BankConnectionEntityAccountsInner>? _accounts;
+  ListBuilder<BankConnectionEntityAccountsInner> get accounts =>
+      _$this._accounts ??= new ListBuilder<BankConnectionEntityAccountsInner>();
+  set accounts(ListBuilder<BankConnectionEntityAccountsInner>? accounts) =>
+      _$this._accounts = accounts;
+
   bool? _enabled;
   bool? get enabled => _$this._enabled;
   set enabled(bool? enabled) => _$this._enabled = enabled;
 
-  String? _provider;
-  String? get provider => _$this._provider;
-  set provider(String? provider) => _$this._provider = provider;
+  BankConnectionEntityProviderEnum? _provider;
+  BankConnectionEntityProviderEnum? get provider => _$this._provider;
+  set provider(BankConnectionEntityProviderEnum? provider) =>
+      _$this._provider = provider;
 
   String? _providerItemId;
   String? get providerItemId => _$this._providerItemId;
   set providerItemId(String? providerItemId) =>
       _$this._providerItemId = providerItemId;
 
-  String? _historyRange;
-  String? get historyRange => _$this._historyRange;
-  set historyRange(String? historyRange) => _$this._historyRange = historyRange;
+  BankConnectionEntityHistoryRangeEnum? _historyRange;
+  BankConnectionEntityHistoryRangeEnum? get historyRange =>
+      _$this._historyRange;
+  set historyRange(BankConnectionEntityHistoryRangeEnum? historyRange) =>
+      _$this._historyRange = historyRange;
 
   String? _connectorId;
   String? get connectorId => _$this._connectorId;
   set connectorId(String? connectorId) => _$this._connectorId = connectorId;
 
-  BankConnectorEntityBuilder? _connector;
-  BankConnectorEntityBuilder get connector =>
-      _$this._connector ??= new BankConnectorEntityBuilder();
-  set connector(BankConnectorEntityBuilder? connector) =>
+  BankConnectionEntityConnectorBuilder? _connector;
+  BankConnectionEntityConnectorBuilder get connector =>
+      _$this._connector ??= new BankConnectionEntityConnectorBuilder();
+  set connector(BankConnectionEntityConnectorBuilder? connector) =>
       _$this._connector = connector;
 
-  DateTime? _createdAt;
-  DateTime? get createdAt => _$this._createdAt;
-  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
+  JsonObject? _createdAt;
+  JsonObject? get createdAt => _$this._createdAt;
+  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
 
-  DateTime? _updatedAt;
-  DateTime? get updatedAt => _$this._updatedAt;
-  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
+  JsonObject? _updatedAt;
+  JsonObject? get updatedAt => _$this._updatedAt;
+  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
 
   BankConnectionEntityBuilder() {
     BankConnectionEntity._defaults(this);
@@ -194,12 +364,13 @@ class BankConnectionEntityBuilder
       _id = $v.id;
       _createdByUserId = $v.createdByUserId;
       _workspaceId = $v.workspaceId;
+      _accounts = $v.accounts?.toBuilder();
       _enabled = $v.enabled;
       _provider = $v.provider;
       _providerItemId = $v.providerItemId;
       _historyRange = $v.historyRange;
       _connectorId = $v.connectorId;
-      _connector = $v.connector.toBuilder();
+      _connector = $v.connector?.toBuilder();
       _createdAt = $v.createdAt;
       _updatedAt = $v.updatedAt;
       _$v = null;
@@ -232,6 +403,7 @@ class BankConnectionEntityBuilder
                   createdByUserId, r'BankConnectionEntity', 'createdByUserId'),
               workspaceId: BuiltValueNullFieldError.checkNotNull(
                   workspaceId, r'BankConnectionEntity', 'workspaceId'),
+              accounts: _accounts?.build(),
               enabled: BuiltValueNullFieldError.checkNotNull(
                   enabled, r'BankConnectionEntity', 'enabled'),
               provider: BuiltValueNullFieldError.checkNotNull(
@@ -240,16 +412,19 @@ class BankConnectionEntityBuilder
                   providerItemId, r'BankConnectionEntity', 'providerItemId'),
               historyRange: BuiltValueNullFieldError.checkNotNull(
                   historyRange, r'BankConnectionEntity', 'historyRange'),
-              connectorId:
-                  BuiltValueNullFieldError.checkNotNull(connectorId, r'BankConnectionEntity', 'connectorId'),
-              connector: connector.build(),
-              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankConnectionEntity', 'createdAt'),
-              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankConnectionEntity', 'updatedAt'));
+              connectorId: BuiltValueNullFieldError.checkNotNull(
+                  connectorId, r'BankConnectionEntity', 'connectorId'),
+              connector: _connector?.build(),
+              createdAt: createdAt,
+              updatedAt: updatedAt);
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'accounts';
+        _accounts?.build();
+
         _$failedField = 'connector';
-        connector.build();
+        _connector?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'BankConnectionEntity', _$failedField, e.toString());

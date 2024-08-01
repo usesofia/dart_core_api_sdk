@@ -9,7 +9,8 @@ part of 'create_or_update_bank_transactions_in_bulk_request_dto.dart';
 class _$CreateOrUpdateBankTransactionsInBulkRequestDto
     extends CreateOrUpdateBankTransactionsInBulkRequestDto {
   @override
-  final BuiltList<CreateOrUpdateBankTransactionsInBulkItemDto> items;
+  final BuiltList<CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner>
+      items;
 
   factory _$CreateOrUpdateBankTransactionsInBulkRequestDto(
           [void Function(CreateOrUpdateBankTransactionsInBulkRequestDtoBuilder)?
@@ -65,11 +66,13 @@ class CreateOrUpdateBankTransactionsInBulkRequestDtoBuilder
             CreateOrUpdateBankTransactionsInBulkRequestDtoBuilder> {
   _$CreateOrUpdateBankTransactionsInBulkRequestDto? _$v;
 
-  ListBuilder<CreateOrUpdateBankTransactionsInBulkItemDto>? _items;
-  ListBuilder<CreateOrUpdateBankTransactionsInBulkItemDto> get items =>
-      _$this._items ??=
-          new ListBuilder<CreateOrUpdateBankTransactionsInBulkItemDto>();
-  set items(ListBuilder<CreateOrUpdateBankTransactionsInBulkItemDto>? items) =>
+  ListBuilder<CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner>? _items;
+  ListBuilder<CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner>
+      get items => _$this._items ??= new ListBuilder<
+          CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner>();
+  set items(
+          ListBuilder<CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner>?
+              items) =>
       _$this._items = items;
 
   CreateOrUpdateBankTransactionsInBulkRequestDtoBuilder() {

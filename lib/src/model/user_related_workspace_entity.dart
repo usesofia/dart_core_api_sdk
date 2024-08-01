@@ -3,6 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
+import 'package:dart_core_api_sdk/src/model/user_entity_workspaces_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,35 +13,16 @@ part 'user_related_workspace_entity.g.dart';
 /// UserRelatedWorkspaceEntity
 ///
 /// Properties:
-/// * [id] 
-/// * [prettyId] 
-/// * [name] 
-/// * [type] 
-/// * [creatorUserId] 
-/// * [createdAt] 
+/// * [workspace] 
 /// * [relationType] 
 @BuiltValue()
 abstract class UserRelatedWorkspaceEntity implements Built<UserRelatedWorkspaceEntity, UserRelatedWorkspaceEntityBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String get id;
-
-  @BuiltValueField(wireName: r'prettyId')
-  String get prettyId;
-
-  @BuiltValueField(wireName: r'name')
-  String get name;
-
-  @BuiltValueField(wireName: r'type')
-  String get type;
-
-  @BuiltValueField(wireName: r'creatorUserId')
-  String get creatorUserId;
-
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime get createdAt;
+  @BuiltValueField(wireName: r'workspace')
+  UserEntityWorkspacesInner get workspace;
 
   @BuiltValueField(wireName: r'relationType')
-  String get relationType;
+  UserRelatedWorkspaceEntityRelationTypeEnum get relationType;
+  // enum relationTypeEnum {  APPROVED,  WAITING_APPROVAL,  };
 
   UserRelatedWorkspaceEntity._();
 
@@ -64,40 +47,15 @@ class _$UserRelatedWorkspaceEntitySerializer implements PrimitiveSerializer<User
     UserRelatedWorkspaceEntity object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'id';
+    yield r'workspace';
     yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
-    yield r'prettyId';
-    yield serializers.serialize(
-      object.prettyId,
-      specifiedType: const FullType(String),
-    );
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
-    yield r'type';
-    yield serializers.serialize(
-      object.type,
-      specifiedType: const FullType(String),
-    );
-    yield r'creatorUserId';
-    yield serializers.serialize(
-      object.creatorUserId,
-      specifiedType: const FullType(String),
-    );
-    yield r'createdAt';
-    yield serializers.serialize(
-      object.createdAt,
-      specifiedType: const FullType(DateTime),
+      object.workspace,
+      specifiedType: const FullType(UserEntityWorkspacesInner),
     );
     yield r'relationType';
     yield serializers.serialize(
       object.relationType,
-      specifiedType: const FullType(String),
+      specifiedType: const FullType(UserRelatedWorkspaceEntityRelationTypeEnum),
     );
   }
 
@@ -122,53 +80,18 @@ class _$UserRelatedWorkspaceEntitySerializer implements PrimitiveSerializer<User
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'id':
+        case r'workspace':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'prettyId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.prettyId = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
-          break;
-        case r'creatorUserId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.creatorUserId = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
+            specifiedType: const FullType(UserEntityWorkspacesInner),
+          ) as UserEntityWorkspacesInner;
+          result.workspace.replace(valueDes);
           break;
         case r'relationType':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType(UserRelatedWorkspaceEntityRelationTypeEnum),
+          ) as UserRelatedWorkspaceEntityRelationTypeEnum;
           result.relationType = valueDes;
           break;
         default:
@@ -198,5 +121,20 @@ class _$UserRelatedWorkspaceEntitySerializer implements PrimitiveSerializer<User
     );
     return result.build();
   }
+}
+
+class UserRelatedWorkspaceEntityRelationTypeEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'APPROVED')
+  static const UserRelatedWorkspaceEntityRelationTypeEnum APPROVED = _$userRelatedWorkspaceEntityRelationTypeEnum_APPROVED;
+  @BuiltValueEnumConst(wireName: r'WAITING_APPROVAL')
+  static const UserRelatedWorkspaceEntityRelationTypeEnum WAITING_APPROVAL = _$userRelatedWorkspaceEntityRelationTypeEnum_WAITING_APPROVAL;
+
+  static Serializer<UserRelatedWorkspaceEntityRelationTypeEnum> get serializer => _$userRelatedWorkspaceEntityRelationTypeEnumSerializer;
+
+  const UserRelatedWorkspaceEntityRelationTypeEnum._(String name): super(name);
+
+  static BuiltSet<UserRelatedWorkspaceEntityRelationTypeEnum> get values => _$userRelatedWorkspaceEntityRelationTypeEnumValues;
+  static UserRelatedWorkspaceEntityRelationTypeEnum valueOf(String name) => _$userRelatedWorkspaceEntityRelationTypeEnumValueOf(name);
 }
 

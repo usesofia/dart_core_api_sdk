@@ -3,7 +3,10 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:dart_core_api_sdk/src/model/bank_connector_entity.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:dart_core_api_sdk/src/model/bank_connection_entity_accounts_inner.dart';
+import 'package:dart_core_api_sdk/src/model/bank_connection_entity_connector.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -15,6 +18,7 @@ part 'bank_connection_entity.g.dart';
 /// * [id] 
 /// * [createdByUserId] 
 /// * [workspaceId] 
+/// * [accounts] 
 /// * [enabled] 
 /// * [provider] 
 /// * [providerItemId] 
@@ -34,29 +38,34 @@ abstract class BankConnectionEntity implements Built<BankConnectionEntity, BankC
   @BuiltValueField(wireName: r'workspaceId')
   String get workspaceId;
 
+  @BuiltValueField(wireName: r'accounts')
+  BuiltList<BankConnectionEntityAccountsInner>? get accounts;
+
   @BuiltValueField(wireName: r'enabled')
   bool get enabled;
 
   @BuiltValueField(wireName: r'provider')
-  String get provider;
+  BankConnectionEntityProviderEnum get provider;
+  // enum providerEnum {  PLUGGY,  SOFIA,  };
 
   @BuiltValueField(wireName: r'providerItemId')
   String get providerItemId;
 
   @BuiltValueField(wireName: r'historyRange')
-  String get historyRange;
+  BankConnectionEntityHistoryRangeEnum get historyRange;
+  // enum historyRangeEnum {  ONE_DAY,  ONE_WEEK,  ONE_MONTH,  TWO_MONTHS,  THREE_MONTHS,  SIX_MONTHS,  ONE_YEAR,  };
 
   @BuiltValueField(wireName: r'connectorId')
   String get connectorId;
 
   @BuiltValueField(wireName: r'connector')
-  BankConnectorEntity get connector;
+  BankConnectionEntityConnector? get connector;
 
   @BuiltValueField(wireName: r'createdAt')
-  DateTime get createdAt;
+  JsonObject? get createdAt;
 
   @BuiltValueField(wireName: r'updatedAt')
-  DateTime get updatedAt;
+  JsonObject? get updatedAt;
 
   BankConnectionEntity._();
 
@@ -96,6 +105,13 @@ class _$BankConnectionEntitySerializer implements PrimitiveSerializer<BankConnec
       object.workspaceId,
       specifiedType: const FullType(String),
     );
+    if (object.accounts != null) {
+      yield r'accounts';
+      yield serializers.serialize(
+        object.accounts,
+        specifiedType: const FullType.nullable(BuiltList, [FullType(BankConnectionEntityAccountsInner)]),
+      );
+    }
     yield r'enabled';
     yield serializers.serialize(
       object.enabled,
@@ -104,7 +120,7 @@ class _$BankConnectionEntitySerializer implements PrimitiveSerializer<BankConnec
     yield r'provider';
     yield serializers.serialize(
       object.provider,
-      specifiedType: const FullType(String),
+      specifiedType: const FullType(BankConnectionEntityProviderEnum),
     );
     yield r'providerItemId';
     yield serializers.serialize(
@@ -114,27 +130,29 @@ class _$BankConnectionEntitySerializer implements PrimitiveSerializer<BankConnec
     yield r'historyRange';
     yield serializers.serialize(
       object.historyRange,
-      specifiedType: const FullType(String),
+      specifiedType: const FullType(BankConnectionEntityHistoryRangeEnum),
     );
     yield r'connectorId';
     yield serializers.serialize(
       object.connectorId,
       specifiedType: const FullType(String),
     );
-    yield r'connector';
-    yield serializers.serialize(
-      object.connector,
-      specifiedType: const FullType(BankConnectorEntity),
-    );
+    if (object.connector != null) {
+      yield r'connector';
+      yield serializers.serialize(
+        object.connector,
+        specifiedType: const FullType.nullable(BankConnectionEntityConnector),
+      );
+    }
     yield r'createdAt';
-    yield serializers.serialize(
+    yield object.createdAt == null ? null : serializers.serialize(
       object.createdAt,
-      specifiedType: const FullType(DateTime),
+      specifiedType: const FullType.nullable(JsonObject),
     );
     yield r'updatedAt';
-    yield serializers.serialize(
+    yield object.updatedAt == null ? null : serializers.serialize(
       object.updatedAt,
-      specifiedType: const FullType(DateTime),
+      specifiedType: const FullType.nullable(JsonObject),
     );
   }
 
@@ -180,6 +198,14 @@ class _$BankConnectionEntitySerializer implements PrimitiveSerializer<BankConnec
           ) as String;
           result.workspaceId = valueDes;
           break;
+        case r'accounts':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(BuiltList, [FullType(BankConnectionEntityAccountsInner)]),
+          ) as BuiltList<BankConnectionEntityAccountsInner>?;
+          if (valueDes == null) continue;
+          result.accounts.replace(valueDes);
+          break;
         case r'enabled':
           final valueDes = serializers.deserialize(
             value,
@@ -190,8 +216,8 @@ class _$BankConnectionEntitySerializer implements PrimitiveSerializer<BankConnec
         case r'provider':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType(BankConnectionEntityProviderEnum),
+          ) as BankConnectionEntityProviderEnum;
           result.provider = valueDes;
           break;
         case r'providerItemId':
@@ -204,8 +230,8 @@ class _$BankConnectionEntitySerializer implements PrimitiveSerializer<BankConnec
         case r'historyRange':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType(BankConnectionEntityHistoryRangeEnum),
+          ) as BankConnectionEntityHistoryRangeEnum;
           result.historyRange = valueDes;
           break;
         case r'connectorId':
@@ -218,22 +244,25 @@ class _$BankConnectionEntitySerializer implements PrimitiveSerializer<BankConnec
         case r'connector':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BankConnectorEntity),
-          ) as BankConnectorEntity;
+            specifiedType: const FullType.nullable(BankConnectionEntityConnector),
+          ) as BankConnectionEntityConnector?;
+          if (valueDes == null) continue;
           result.connector.replace(valueDes);
           break;
         case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
           result.updatedAt = valueDes;
           break;
         default:
@@ -263,5 +292,45 @@ class _$BankConnectionEntitySerializer implements PrimitiveSerializer<BankConnec
     );
     return result.build();
   }
+}
+
+class BankConnectionEntityProviderEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'PLUGGY')
+  static const BankConnectionEntityProviderEnum PLUGGY = _$bankConnectionEntityProviderEnum_PLUGGY;
+  @BuiltValueEnumConst(wireName: r'SOFIA')
+  static const BankConnectionEntityProviderEnum SOFIA = _$bankConnectionEntityProviderEnum_SOFIA;
+
+  static Serializer<BankConnectionEntityProviderEnum> get serializer => _$bankConnectionEntityProviderEnumSerializer;
+
+  const BankConnectionEntityProviderEnum._(String name): super(name);
+
+  static BuiltSet<BankConnectionEntityProviderEnum> get values => _$bankConnectionEntityProviderEnumValues;
+  static BankConnectionEntityProviderEnum valueOf(String name) => _$bankConnectionEntityProviderEnumValueOf(name);
+}
+
+class BankConnectionEntityHistoryRangeEnum extends EnumClass {
+
+  @BuiltValueEnumConst(wireName: r'ONE_DAY')
+  static const BankConnectionEntityHistoryRangeEnum ONE_DAY = _$bankConnectionEntityHistoryRangeEnum_ONE_DAY;
+  @BuiltValueEnumConst(wireName: r'ONE_WEEK')
+  static const BankConnectionEntityHistoryRangeEnum ONE_WEEK = _$bankConnectionEntityHistoryRangeEnum_ONE_WEEK;
+  @BuiltValueEnumConst(wireName: r'ONE_MONTH')
+  static const BankConnectionEntityHistoryRangeEnum ONE_MONTH = _$bankConnectionEntityHistoryRangeEnum_ONE_MONTH;
+  @BuiltValueEnumConst(wireName: r'TWO_MONTHS')
+  static const BankConnectionEntityHistoryRangeEnum TWO_MONTHS = _$bankConnectionEntityHistoryRangeEnum_TWO_MONTHS;
+  @BuiltValueEnumConst(wireName: r'THREE_MONTHS')
+  static const BankConnectionEntityHistoryRangeEnum THREE_MONTHS = _$bankConnectionEntityHistoryRangeEnum_THREE_MONTHS;
+  @BuiltValueEnumConst(wireName: r'SIX_MONTHS')
+  static const BankConnectionEntityHistoryRangeEnum SIX_MONTHS = _$bankConnectionEntityHistoryRangeEnum_SIX_MONTHS;
+  @BuiltValueEnumConst(wireName: r'ONE_YEAR')
+  static const BankConnectionEntityHistoryRangeEnum ONE_YEAR = _$bankConnectionEntityHistoryRangeEnum_ONE_YEAR;
+
+  static Serializer<BankConnectionEntityHistoryRangeEnum> get serializer => _$bankConnectionEntityHistoryRangeEnumSerializer;
+
+  const BankConnectionEntityHistoryRangeEnum._(String name): super(name);
+
+  static BuiltSet<BankConnectionEntityHistoryRangeEnum> get values => _$bankConnectionEntityHistoryRangeEnumValues;
+  static BankConnectionEntityHistoryRangeEnum valueOf(String name) => _$bankConnectionEntityHistoryRangeEnumValueOf(name);
 }
 

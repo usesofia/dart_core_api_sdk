@@ -8,11 +8,11 @@ import 'package:dart_core_api_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pageIndex** | **num** |  | 
-**pageSize** | **num** |  | 
-**totalItems** | **num** |  | 
-**totalPages** | **num** |  | 
-**items** | [**BuiltList&lt;BankTransactionEntity&gt;**](BankTransactionEntity.md) |  | 
+**pageIndex** | **int** |  | 
+**pageSize** | **int** |  | 
+**totalItems** | **int** |  | 
+**totalPages** | **int** |  | 
+**items** | [**BuiltList&lt;BankTransactionsPageEntityItemsInner&gt;**](BankTransactionsPageEntityItemsInner.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

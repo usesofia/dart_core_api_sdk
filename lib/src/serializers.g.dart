@@ -7,46 +7,93 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(AssignCategoryForBankTransactionsPageRequestDto.serializer)
+      ..add(AssignLegalNatureForBankTransactionsPageRequestDto.serializer)
       ..add(BalancePointResultEntity.serializer)
       ..add(BankAccountEntity.serializer)
-      ..add(BankAccountsBalanceReportEntity.serializer)
-      ..add(BankAccountsBalanceReportItemEntity.serializer)
+      ..add(BankAccountEntityProviderEnum.serializer)
+      ..add(BankAccountEntityTypeEnum.serializer)
       ..add(BankConnectionEntity.serializer)
-      ..add(BankConnectionWithAccountsEntity.serializer)
-      ..add(BankConnectorEntity.serializer)
+      ..add(BankConnectionEntityAccountsInner.serializer)
+      ..add(BankConnectionEntityAccountsInnerProviderEnum.serializer)
+      ..add(BankConnectionEntityAccountsInnerTypeEnum.serializer)
+      ..add(BankConnectionEntityConnector.serializer)
+      ..add(BankConnectionEntityConnectorProviderEnum.serializer)
+      ..add(BankConnectionEntityConnectorTypeEnum.serializer)
+      ..add(BankConnectionEntityHistoryRangeEnum.serializer)
+      ..add(BankConnectionEntityProviderEnum.serializer)
       ..add(BankTransactionCategoryEntity.serializer)
-      ..add(BankTransactionCategoryPlainEntity.serializer)
-      ..add(BankTransactionCreditCardMetadataEntity.serializer)
+      ..add(BankTransactionCategoryEntityChildrenInner.serializer)
+      ..add(BankTransactionCategoryEntityChildrenInnerDirectionNatureEnum
+          .serializer)
+      ..add(BankTransactionCategoryEntityDirectionNatureEnum.serializer)
       ..add(BankTransactionEntity.serializer)
+      ..add(BankTransactionEntityCategory.serializer)
+      ..add(BankTransactionEntityCategoryDirectionNatureEnum.serializer)
+      ..add(BankTransactionEntityCreditCardMetadata.serializer)
+      ..add(BankTransactionEntityDirectionNatureEnum.serializer)
       ..add(BankTransactionEntityLegalNatureEnum.serializer)
+      ..add(BankTransactionEntityPaymentData.serializer)
       ..add(BankTransactionEntityProviderEnum.serializer)
       ..add(BankTransactionEntityStatusEnum.serializer)
-      ..add(BankTransactionEntityTypeEnum.serializer)
+      ..add(BankTransactionEntityTagsInner.serializer)
       ..add(BankTransactionIndicatorEntity.serializer)
-      ..add(BankTransactionPaymentDataEntity.serializer)
       ..add(BankTransactionTagEntity.serializer)
       ..add(BankTransactionsPageEntity.serializer)
-      ..add(BankTransactionsTotalsEntity.serializer)
+      ..add(BankTransactionsPageEntityItemsInner.serializer)
+      ..add(BankTransactionsPageEntityItemsInnerDirectionNatureEnum.serializer)
+      ..add(BankTransactionsPageEntityItemsInnerLegalNatureEnum.serializer)
+      ..add(BankTransactionsPageEntityItemsInnerProviderEnum.serializer)
+      ..add(BankTransactionsPageEntityItemsInnerStatusEnum.serializer)
       ..add(CashFlowByCategoryReportEntity.serializer)
       ..add(CashFlowByCategoryReportItemEntity.serializer)
       ..add(CashFlowReportDailyItemEntity.serializer)
       ..add(CashFlowReportEntity.serializer)
       ..add(CashFlowReportMonthlyItemEntity.serializer)
       ..add(CashFlowReportWeeklyItemEntity.serializer)
-      ..add(CategoryGuessDto.serializer)
       ..add(CreateBankTransactionTagRequestDto.serializer)
       ..add(CreateOrUpdateBankAccountRequestDto.serializer)
+      ..add(CreateOrUpdateBankAccountRequestDtoProviderEnum.serializer)
+      ..add(CreateOrUpdateBankAccountRequestDtoTypeEnum.serializer)
       ..add(CreateOrUpdateBankConnectionRequestDto.serializer)
-      ..add(CreateOrUpdateBankTransactionsInBulkItemDto.serializer)
+      ..add(CreateOrUpdateBankConnectionRequestDtoHistoryRangeEnum.serializer)
+      ..add(CreateOrUpdateBankConnectionRequestDtoProviderEnum.serializer)
       ..add(CreateOrUpdateBankTransactionsInBulkRequestDto.serializer)
+      ..add(CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner.serializer)
+      ..add(
+          CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerCategoryGuessesInner
+              .serializer)
+      ..add(
+          CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerCreditCardMetadata
+              .serializer)
+      ..add(
+          CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerDirectionNatureEnum
+              .serializer)
+      ..add(
+          CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerLegalNatureEnum
+              .serializer)
+      ..add(
+          CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerLegalNatureGuessesInner
+              .serializer)
+      ..add(
+          CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerLegalNatureGuessesInnerLegalNatureEnum
+              .serializer)
+      ..add(CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerPaymentData
+          .serializer)
+      ..add(CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerProviderEnum
+          .serializer)
+      ..add(CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerStatusEnum
+          .serializer)
       ..add(CreateOrUpdateMessageTokenRequestDto.serializer)
+      ..add(CreateOrUpdateMessageTokenRequestDtoPlatformEnum.serializer)
+      ..add(CreateOrUpdateMessageTokenRequestDtoProviderEnum.serializer)
       ..add(CreatePluggyConnectTokenRequestDto.serializer)
+      ..add(CreatePluggyConnectTokenRequestDtoHistoryRangeEnum.serializer)
       ..add(CreateProfileRequestDto.serializer)
       ..add(CreateWorkspaceRequestDto.serializer)
       ..add(CreateWorkspaceRequestDtoBusinessSegmentEnum.serializer)
       ..add(CreateWorkspaceRequestDtoTypeEnum.serializer)
       ..add(CredentialsEntity.serializer)
-      ..add(CreditCardMetadataDto.serializer)
       ..add(DreLineOutcomeResultEntity.serializer)
       ..add(EmailInUseReportEntity.serializer)
       ..add(ExceptionResponseEntity.serializer)
@@ -71,17 +118,67 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(MessageTokenEntity.serializer)
       ..add(MessageTokenEntityPlatformEnum.serializer)
       ..add(MessageTokenEntityProviderEnum.serializer)
-      ..add(ParcialUpdateWorkspaceRequestDto.serializer)
+      ..add(MessageTokenEntityUser.serializer)
+      ..add(MessageTokenEntityWorksapce.serializer)
+      ..add(MessageTokenEntityWorksapceTypeEnum.serializer)
+      ..add(PartialUpdateBankTransactionRequestDto.serializer)
+      ..add(PartialUpdateBankTransactionRequestDtoLegalNatureEnum.serializer)
       ..add(PartialUpdateProfileRequestDto.serializer)
-      ..add(PaymentDataDto.serializer)
-      ..add(PlainBankAccountEntity.serializer)
+      ..add(PartialUpdateWorkspaceRequestDto.serializer)
       ..add(PluggyConnectTokenEntity.serializer)
       ..add(ProfileEntity.serializer)
       ..add(ProportionResultEntity.serializer)
       ..add(RefreshRequestDto.serializer)
       ..add(SignInWithEmailRequestDto.serializer)
       ..add(SignUpWithEmailRequestDto.serializer)
-      ..add(UpdateBankTransactionRequestDto.serializer)
+      ..add(SyncBankAccountTransactionsPageBeginRequestDto.serializer)
+      ..add(SyncBankAccountTransactionsPageEndRequestDto.serializer)
+      ..add(
+          SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPage
+              .serializer)
+      ..add(
+          SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInner
+              .serializer)
+      ..add(
+          SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInnerCreditCardMetadata
+              .serializer)
+      ..add(
+          SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInnerDirectionNatureEnum
+              .serializer)
+      ..add(
+          SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInnerPaymentData
+              .serializer)
+      ..add(
+          SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInnerStatusEnum
+              .serializer)
+      ..add(
+          SyncBankAccountTransactionsPageEndRequestDtoCategoryAssignRequestsInner
+              .serializer)
+      ..add(
+          SyncBankAccountTransactionsPageEndRequestDtoCategoryAssignRequestsInnerCategory
+              .serializer)
+      ..add(
+          SyncBankAccountTransactionsPageEndRequestDtoCategoryAssignRequestsInnerCategoryOriginEnum
+              .serializer)
+      ..add(
+          SyncBankAccountTransactionsPageEndRequestDtoCategoryAssignRequestsInnerCategoryPredictionResponse
+              .serializer)
+      ..add(
+          SyncBankAccountTransactionsPageEndRequestDtoLegalNatureAssignRequestsInner
+              .serializer)
+      ..add(
+          SyncBankAccountTransactionsPageEndRequestDtoLegalNatureAssignRequestsInnerLegalNature
+              .serializer)
+      ..add(
+          SyncBankAccountTransactionsPageEndRequestDtoLegalNatureAssignRequestsInnerLegalNatureOriginEnum
+              .serializer)
+      ..add(
+          SyncBankAccountTransactionsPageEndRequestDtoLegalNatureAssignRequestsInnerLegalNatureValueEnum
+              .serializer)
+      ..add(SyncBankAccountTransactionsRequestDto.serializer)
+      ..add(SyncBankAccountTransactionsRequestDtoProviderEnum.serializer)
+      ..add(SyncBankItemRequestDto.serializer)
+      ..add(SyncBankItemRequestDtoProviderEnum.serializer)
       ..add(UserEntity.serializer)
       ..add(UserEntityWorkspacesInner.serializer)
       ..add(UserEntityWorkspacesInnerHybridSettings.serializer)
@@ -89,6 +186,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           UserEntityWorkspacesInnerHybridSettingsBusinessSegmentEnum.serializer)
       ..add(UserEntityWorkspacesInnerPersonalSettings.serializer)
       ..add(UserEntityWorkspacesInnerTypeEnum.serializer)
+      ..add(UserRelatedWorkspaceEntity.serializer)
+      ..add(UserRelatedWorkspaceEntityRelationTypeEnum.serializer)
       ..add(VerifyEmailVerificationCodeRequestDto.serializer)
       ..add(VerifyEmailVerificationCodeRequestDtoPurposeEnum.serializer)
       ..add(VerifyPhoneVerificationCodeRequestDto.serializer)
@@ -97,27 +196,25 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(WorkspaceEntityTypeEnum.serializer)
       ..addBuilderFactory(
           const FullType(BuiltList,
-              const [const FullType(BankAccountsBalanceReportItemEntity)]),
-          () => new ListBuilder<BankAccountsBalanceReportItemEntity>())
+              const [const FullType(BankConnectionEntityAccountsInner)]),
+          () => new ListBuilder<BankConnectionEntityAccountsInner>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(BankAccountEntity)]),
-          () => new ListBuilder<BankAccountEntity>())
-      ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(BankTransactionCategoryPlainEntity)]),
-          () => new ListBuilder<BankTransactionCategoryPlainEntity>())
+          const FullType(BuiltList, const [
+            const FullType(BankTransactionCategoryEntityChildrenInner)
+          ]),
+          () => new ListBuilder<BankTransactionCategoryEntityChildrenInner>())
       ..addBuilderFactory(
           const FullType(BuiltList,
-              const [const FullType(BankTransactionCategoryPlainEntity)]),
-          () => new ListBuilder<BankTransactionCategoryPlainEntity>())
+              const [const FullType(BankTransactionEntityTagsInner)]),
+          () => new ListBuilder<BankTransactionEntityTagsInner>())
       ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(BankTransactionEntity)]),
-          () => new ListBuilder<BankTransactionEntity>())
+          const FullType(BuiltList,
+              const [const FullType(BankTransactionEntityTagsInner)]),
+          () => new ListBuilder<BankTransactionEntityTagsInner>())
       ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(BankTransactionTagEntity)]),
-          () => new ListBuilder<BankTransactionTagEntity>())
+          const FullType(BuiltList,
+              const [const FullType(BankTransactionsPageEntityItemsInner)]),
+          () => new ListBuilder<BankTransactionsPageEntityItemsInner>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(CashFlowByCategoryReportItemEntity)]),
@@ -183,13 +280,33 @@ Serializers _$serializers = (new Serializers().toBuilder()
               const [const FullType(CashFlowReportMonthlyItemEntity)]),
           () => new ListBuilder<CashFlowReportMonthlyItemEntity>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(CategoryGuessDto)]),
-          () => new ListBuilder<CategoryGuessDto>())
+          const FullType(BuiltList, const [
+            const FullType(
+                CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner)
+          ]),
+          () => new ListBuilder<
+              CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
-            const FullType(CreateOrUpdateBankTransactionsInBulkItemDto)
+            const FullType(
+                CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerCategoryGuessesInner)
           ]),
-          () => new ListBuilder<CreateOrUpdateBankTransactionsInBulkItemDto>())
+          () => new ListBuilder<
+              CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerCategoryGuessesInner>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerCategoryGuessesInner)
+          ]),
+          () => new ListBuilder<
+              CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerCategoryGuessesInner>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerLegalNatureGuessesInner)
+          ]),
+          () => new ListBuilder<
+              CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerLegalNatureGuessesInner>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ExceptionResponseEntityErrorsInner)]),
@@ -213,15 +330,43 @@ Serializers _$serializers = (new Serializers().toBuilder()
               const [const FullType(MeanResultSubcategoryItemEntity)]),
           () => new ListBuilder<MeanResultSubcategoryItemEntity>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInner)
+          ]),
+          () => new ListBuilder<
+              SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInner>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                SyncBankAccountTransactionsPageEndRequestDtoLegalNatureAssignRequestsInner)
+          ]),
+          () => new ListBuilder<
+              SyncBankAccountTransactionsPageEndRequestDtoLegalNatureAssignRequestsInner>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                SyncBankAccountTransactionsPageEndRequestDtoLegalNatureAssignRequestsInner)
+          ]),
+          () => new ListBuilder<
+              SyncBankAccountTransactionsPageEndRequestDtoLegalNatureAssignRequestsInner>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(
+                SyncBankAccountTransactionsPageEndRequestDtoCategoryAssignRequestsInner)
+          ]),
+          () => new ListBuilder<
+              SyncBankAccountTransactionsPageEndRequestDtoCategoryAssignRequestsInner>())
+      ..addBuilderFactory(
           const FullType(
-              BuiltList, const [const FullType(PlainBankAccountEntity)]),
-          () => new ListBuilder<PlainBankAccountEntity>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
+              BuiltList, const [const FullType(UserEntityWorkspacesInner)]),
+          () => new ListBuilder<UserEntityWorkspacesInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(UserEntityWorkspacesInner)]),
