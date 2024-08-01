@@ -219,4 +219,3 @@ lib/src/model/verify_phone_verification_code_request_dto.dart
 lib/src/model/workspace_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/hello_api_test.dart
