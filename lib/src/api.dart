@@ -18,6 +18,7 @@ import 'package:dart_core_api_sdk/src/api/bank_transaction_tags_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transactions_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transactions_page_category_assigner_api.dart';
 import 'package:dart_core_api_sdk/src/api/bank_transactions_page_legal_nature_assigner_api.dart';
+import 'package:dart_core_api_sdk/src/api/hello_api.dart';
 import 'package:dart_core_api_sdk/src/api/message_tokens_api.dart';
 import 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
 import 'package:dart_core_api_sdk/src/api/profiles_api.dart';
@@ -130,6 +131,12 @@ class DartCoreApiSdk {
   /// by doing that all interceptors will not be executed
   BankTransactionsPageLegalNatureAssignerApi getBankTransactionsPageLegalNatureAssignerApi() {
     return BankTransactionsPageLegalNatureAssignerApi(dio, serializers);
+  }
+
+  /// Get HelloApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  HelloApi getHelloApi() {
+    return HelloApi(dio, serializers);
   }
 
   /// Get MessageTokensApi instance, base route and serializer can be overridden by a given but be careful,

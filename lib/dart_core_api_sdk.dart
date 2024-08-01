@@ -18,6 +18,7 @@ export 'package:dart_core_api_sdk/src/api/bank_transaction_tags_api.dart';
 export 'package:dart_core_api_sdk/src/api/bank_transactions_api.dart';
 export 'package:dart_core_api_sdk/src/api/bank_transactions_page_category_assigner_api.dart';
 export 'package:dart_core_api_sdk/src/api/bank_transactions_page_legal_nature_assigner_api.dart';
+export 'package:dart_core_api_sdk/src/api/hello_api.dart';
 export 'package:dart_core_api_sdk/src/api/message_tokens_api.dart';
 export 'package:dart_core_api_sdk/src/api/pluggy_api.dart';
 export 'package:dart_core_api_sdk/src/api/profiles_api.dart';

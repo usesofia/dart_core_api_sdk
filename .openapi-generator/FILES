@@ -63,6 +63,7 @@ doc/GenerateAndSendEmailVerificationCodeRequestDto.md
 doc/GenerateAndSendPhoneVerificationCodeRequestDto.md
 doc/GenerateEmailInUseReportRequestDto.md
 doc/GeneratePhoneInUseReportRequestDto.md
+doc/HelloApi.md
 doc/MeanResultEntity.md
 doc/MeanResultSubcategoryItemEntity.md
 doc/MessageTokenEntity.md
@@ -114,6 +115,7 @@ lib/src/api/bank_transaction_tags_api.dart
 lib/src/api/bank_transactions_api.dart
 lib/src/api/bank_transactions_page_category_assigner_api.dart
 lib/src/api/bank_transactions_page_legal_nature_assigner_api.dart
+lib/src/api/hello_api.dart
 lib/src/api/message_tokens_api.dart
 lib/src/api/pluggy_api.dart
 lib/src/api/profiles_api.dart
@@ -217,3 +219,4 @@ lib/src/model/verify_phone_verification_code_request_dto.dart
 lib/src/model/workspace_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
+test/hello_api_test.dart
