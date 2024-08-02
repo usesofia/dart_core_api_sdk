@@ -1,70 +1,78 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'bank_account_entity.dart';
+part of 'bank_transaction_entity_account.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-const BankAccountEntityProviderEnum _$bankAccountEntityProviderEnum_PLUGGY =
-    const BankAccountEntityProviderEnum._('PLUGGY');
-const BankAccountEntityProviderEnum _$bankAccountEntityProviderEnum_SOFIA =
-    const BankAccountEntityProviderEnum._('SOFIA');
+const BankTransactionEntityAccountProviderEnum
+    _$bankTransactionEntityAccountProviderEnum_PLUGGY =
+    const BankTransactionEntityAccountProviderEnum._('PLUGGY');
+const BankTransactionEntityAccountProviderEnum
+    _$bankTransactionEntityAccountProviderEnum_SOFIA =
+    const BankTransactionEntityAccountProviderEnum._('SOFIA');
 
-BankAccountEntityProviderEnum _$bankAccountEntityProviderEnumValueOf(
-    String name) {
+BankTransactionEntityAccountProviderEnum
+    _$bankTransactionEntityAccountProviderEnumValueOf(String name) {
   switch (name) {
     case 'PLUGGY':
-      return _$bankAccountEntityProviderEnum_PLUGGY;
+      return _$bankTransactionEntityAccountProviderEnum_PLUGGY;
     case 'SOFIA':
-      return _$bankAccountEntityProviderEnum_SOFIA;
+      return _$bankTransactionEntityAccountProviderEnum_SOFIA;
     default:
       throw new ArgumentError(name);
   }
 }
 
-final BuiltSet<BankAccountEntityProviderEnum>
-    _$bankAccountEntityProviderEnumValues = new BuiltSet<
-        BankAccountEntityProviderEnum>(const <BankAccountEntityProviderEnum>[
-  _$bankAccountEntityProviderEnum_PLUGGY,
-  _$bankAccountEntityProviderEnum_SOFIA,
+final BuiltSet<BankTransactionEntityAccountProviderEnum>
+    _$bankTransactionEntityAccountProviderEnumValues = new BuiltSet<
+        BankTransactionEntityAccountProviderEnum>(const <BankTransactionEntityAccountProviderEnum>[
+  _$bankTransactionEntityAccountProviderEnum_PLUGGY,
+  _$bankTransactionEntityAccountProviderEnum_SOFIA,
 ]);
 
-const BankAccountEntityTypeEnum _$bankAccountEntityTypeEnum_CHECKING =
-    const BankAccountEntityTypeEnum._('CHECKING');
-const BankAccountEntityTypeEnum _$bankAccountEntityTypeEnum_SAVINGS =
-    const BankAccountEntityTypeEnum._('SAVINGS');
-const BankAccountEntityTypeEnum _$bankAccountEntityTypeEnum_CREDIT_CARD =
-    const BankAccountEntityTypeEnum._('CREDIT_CARD');
+const BankTransactionEntityAccountTypeEnum
+    _$bankTransactionEntityAccountTypeEnum_CHECKING =
+    const BankTransactionEntityAccountTypeEnum._('CHECKING');
+const BankTransactionEntityAccountTypeEnum
+    _$bankTransactionEntityAccountTypeEnum_SAVINGS =
+    const BankTransactionEntityAccountTypeEnum._('SAVINGS');
+const BankTransactionEntityAccountTypeEnum
+    _$bankTransactionEntityAccountTypeEnum_CREDIT_CARD =
+    const BankTransactionEntityAccountTypeEnum._('CREDIT_CARD');
 
-BankAccountEntityTypeEnum _$bankAccountEntityTypeEnumValueOf(String name) {
+BankTransactionEntityAccountTypeEnum
+    _$bankTransactionEntityAccountTypeEnumValueOf(String name) {
   switch (name) {
     case 'CHECKING':
-      return _$bankAccountEntityTypeEnum_CHECKING;
+      return _$bankTransactionEntityAccountTypeEnum_CHECKING;
     case 'SAVINGS':
-      return _$bankAccountEntityTypeEnum_SAVINGS;
+      return _$bankTransactionEntityAccountTypeEnum_SAVINGS;
     case 'CREDIT_CARD':
-      return _$bankAccountEntityTypeEnum_CREDIT_CARD;
+      return _$bankTransactionEntityAccountTypeEnum_CREDIT_CARD;
     default:
       throw new ArgumentError(name);
   }
 }
 
-final BuiltSet<BankAccountEntityTypeEnum> _$bankAccountEntityTypeEnumValues =
-    new BuiltSet<BankAccountEntityTypeEnum>(const <BankAccountEntityTypeEnum>[
-  _$bankAccountEntityTypeEnum_CHECKING,
-  _$bankAccountEntityTypeEnum_SAVINGS,
-  _$bankAccountEntityTypeEnum_CREDIT_CARD,
+final BuiltSet<BankTransactionEntityAccountTypeEnum>
+    _$bankTransactionEntityAccountTypeEnumValues = new BuiltSet<
+        BankTransactionEntityAccountTypeEnum>(const <BankTransactionEntityAccountTypeEnum>[
+  _$bankTransactionEntityAccountTypeEnum_CHECKING,
+  _$bankTransactionEntityAccountTypeEnum_SAVINGS,
+  _$bankTransactionEntityAccountTypeEnum_CREDIT_CARD,
 ]);
 
-Serializer<BankAccountEntityProviderEnum>
-    _$bankAccountEntityProviderEnumSerializer =
-    new _$BankAccountEntityProviderEnumSerializer();
-Serializer<BankAccountEntityTypeEnum> _$bankAccountEntityTypeEnumSerializer =
-    new _$BankAccountEntityTypeEnumSerializer();
+Serializer<BankTransactionEntityAccountProviderEnum>
+    _$bankTransactionEntityAccountProviderEnumSerializer =
+    new _$BankTransactionEntityAccountProviderEnumSerializer();
+Serializer<BankTransactionEntityAccountTypeEnum>
+    _$bankTransactionEntityAccountTypeEnumSerializer =
+    new _$BankTransactionEntityAccountTypeEnumSerializer();
 
-class _$BankAccountEntityProviderEnumSerializer
-    implements PrimitiveSerializer<BankAccountEntityProviderEnum> {
+class _$BankTransactionEntityAccountProviderEnumSerializer
+    implements PrimitiveSerializer<BankTransactionEntityAccountProviderEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'PLUGGY': 'PLUGGY',
     'SOFIA': 'SOFIA',
@@ -75,56 +83,61 @@ class _$BankAccountEntityProviderEnumSerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[BankAccountEntityProviderEnum];
+  final Iterable<Type> types = const <Type>[
+    BankTransactionEntityAccountProviderEnum
+  ];
   @override
-  final String wireName = 'BankAccountEntityProviderEnum';
+  final String wireName = 'BankTransactionEntityAccountProviderEnum';
+
+  @override
+  Object serialize(Serializers serializers,
+          BankTransactionEntityAccountProviderEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  BankTransactionEntityAccountProviderEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      BankTransactionEntityAccountProviderEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
+class _$BankTransactionEntityAccountTypeEnumSerializer
+    implements PrimitiveSerializer<BankTransactionEntityAccountTypeEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'CHECKING': 'CHECKING',
+    'SAVINGS': 'SAVINGS',
+    'CREDIT_CARD': 'CREDIT_CARD',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'CHECKING': 'CHECKING',
+    'SAVINGS': 'SAVINGS',
+    'CREDIT_CARD': 'CREDIT_CARD',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    BankTransactionEntityAccountTypeEnum
+  ];
+  @override
+  final String wireName = 'BankTransactionEntityAccountTypeEnum';
 
   @override
   Object serialize(
-          Serializers serializers, BankAccountEntityProviderEnum object,
+          Serializers serializers, BankTransactionEntityAccountTypeEnum object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  BankAccountEntityProviderEnum deserialize(
+  BankTransactionEntityAccountTypeEnum deserialize(
           Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      BankAccountEntityProviderEnum.valueOf(
+      BankTransactionEntityAccountTypeEnum.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
-class _$BankAccountEntityTypeEnumSerializer
-    implements PrimitiveSerializer<BankAccountEntityTypeEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'CHECKING': 'CHECKING',
-    'SAVINGS': 'SAVINGS',
-    'CREDIT_CARD': 'CREDIT_CARD',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'CHECKING': 'CHECKING',
-    'SAVINGS': 'SAVINGS',
-    'CREDIT_CARD': 'CREDIT_CARD',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[BankAccountEntityTypeEnum];
-  @override
-  final String wireName = 'BankAccountEntityTypeEnum';
-
-  @override
-  Object serialize(Serializers serializers, BankAccountEntityTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  BankAccountEntityTypeEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      BankAccountEntityTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
-
-class _$BankAccountEntity extends BankAccountEntity {
+class _$BankTransactionEntityAccount extends BankTransactionEntityAccount {
   @override
   final String id;
   @override
@@ -132,11 +145,11 @@ class _$BankAccountEntity extends BankAccountEntity {
   @override
   final BankTransactionEntityAccountBankConnection bankConnection;
   @override
-  final BankAccountEntityProviderEnum provider;
+  final BankTransactionEntityAccountProviderEnum provider;
   @override
   final String providerAccountId;
   @override
-  final BankAccountEntityTypeEnum type;
+  final BankTransactionEntityAccountTypeEnum type;
   @override
   final bool enabled;
   @override
@@ -152,11 +165,11 @@ class _$BankAccountEntity extends BankAccountEntity {
   @override
   final DateTime updatedAt;
 
-  factory _$BankAccountEntity(
-          [void Function(BankAccountEntityBuilder)? updates]) =>
-      (new BankAccountEntityBuilder()..update(updates))._build();
+  factory _$BankTransactionEntityAccount(
+          [void Function(BankTransactionEntityAccountBuilder)? updates]) =>
+      (new BankTransactionEntityAccountBuilder()..update(updates))._build();
 
-  _$BankAccountEntity._(
+  _$BankTransactionEntityAccount._(
       {required this.id,
       required this.bankConnectionId,
       required this.bankConnection,
@@ -171,43 +184,47 @@ class _$BankAccountEntity extends BankAccountEntity {
       required this.createdAt,
       required this.updatedAt})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, r'BankAccountEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        bankConnectionId, r'BankAccountEntity', 'bankConnectionId');
+        id, r'BankTransactionEntityAccount', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        bankConnection, r'BankAccountEntity', 'bankConnection');
+        bankConnectionId, r'BankTransactionEntityAccount', 'bankConnectionId');
     BuiltValueNullFieldError.checkNotNull(
-        provider, r'BankAccountEntity', 'provider');
+        bankConnection, r'BankTransactionEntityAccount', 'bankConnection');
     BuiltValueNullFieldError.checkNotNull(
-        providerAccountId, r'BankAccountEntity', 'providerAccountId');
-    BuiltValueNullFieldError.checkNotNull(type, r'BankAccountEntity', 'type');
+        provider, r'BankTransactionEntityAccount', 'provider');
+    BuiltValueNullFieldError.checkNotNull(providerAccountId,
+        r'BankTransactionEntityAccount', 'providerAccountId');
     BuiltValueNullFieldError.checkNotNull(
-        enabled, r'BankAccountEntity', 'enabled');
+        type, r'BankTransactionEntityAccount', 'type');
     BuiltValueNullFieldError.checkNotNull(
-        number, r'BankAccountEntity', 'number');
+        enabled, r'BankTransactionEntityAccount', 'enabled');
     BuiltValueNullFieldError.checkNotNull(
-        balance, r'BankAccountEntity', 'balance');
+        number, r'BankTransactionEntityAccount', 'number');
     BuiltValueNullFieldError.checkNotNull(
-        currencyCode, r'BankAccountEntity', 'currencyCode');
-    BuiltValueNullFieldError.checkNotNull(name, r'BankAccountEntity', 'name');
+        balance, r'BankTransactionEntityAccount', 'balance');
     BuiltValueNullFieldError.checkNotNull(
-        createdAt, r'BankAccountEntity', 'createdAt');
+        currencyCode, r'BankTransactionEntityAccount', 'currencyCode');
     BuiltValueNullFieldError.checkNotNull(
-        updatedAt, r'BankAccountEntity', 'updatedAt');
+        name, r'BankTransactionEntityAccount', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'BankTransactionEntityAccount', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(
+        updatedAt, r'BankTransactionEntityAccount', 'updatedAt');
   }
 
   @override
-  BankAccountEntity rebuild(void Function(BankAccountEntityBuilder) updates) =>
+  BankTransactionEntityAccount rebuild(
+          void Function(BankTransactionEntityAccountBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  BankAccountEntityBuilder toBuilder() =>
-      new BankAccountEntityBuilder()..replace(this);
+  BankTransactionEntityAccountBuilder toBuilder() =>
+      new BankTransactionEntityAccountBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is BankAccountEntity &&
+    return other is BankTransactionEntityAccount &&
         id == other.id &&
         bankConnectionId == other.bankConnectionId &&
         bankConnection == other.bankConnection &&
@@ -245,7 +262,7 @@ class _$BankAccountEntity extends BankAccountEntity {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'BankAccountEntity')
+    return (newBuiltValueToStringHelper(r'BankTransactionEntityAccount')
           ..add('id', id)
           ..add('bankConnectionId', bankConnectionId)
           ..add('bankConnection', bankConnection)
@@ -263,9 +280,11 @@ class _$BankAccountEntity extends BankAccountEntity {
   }
 }
 
-class BankAccountEntityBuilder
-    implements Builder<BankAccountEntity, BankAccountEntityBuilder> {
-  _$BankAccountEntity? _$v;
+class BankTransactionEntityAccountBuilder
+    implements
+        Builder<BankTransactionEntityAccount,
+            BankTransactionEntityAccountBuilder> {
+  _$BankTransactionEntityAccount? _$v;
 
   String? _id;
   String? get id => _$this._id;
@@ -284,9 +303,9 @@ class BankAccountEntityBuilder
           BankTransactionEntityAccountBankConnectionBuilder? bankConnection) =>
       _$this._bankConnection = bankConnection;
 
-  BankAccountEntityProviderEnum? _provider;
-  BankAccountEntityProviderEnum? get provider => _$this._provider;
-  set provider(BankAccountEntityProviderEnum? provider) =>
+  BankTransactionEntityAccountProviderEnum? _provider;
+  BankTransactionEntityAccountProviderEnum? get provider => _$this._provider;
+  set provider(BankTransactionEntityAccountProviderEnum? provider) =>
       _$this._provider = provider;
 
   String? _providerAccountId;
@@ -294,9 +313,9 @@ class BankAccountEntityBuilder
   set providerAccountId(String? providerAccountId) =>
       _$this._providerAccountId = providerAccountId;
 
-  BankAccountEntityTypeEnum? _type;
-  BankAccountEntityTypeEnum? get type => _$this._type;
-  set type(BankAccountEntityTypeEnum? type) => _$this._type = type;
+  BankTransactionEntityAccountTypeEnum? _type;
+  BankTransactionEntityAccountTypeEnum? get type => _$this._type;
+  set type(BankTransactionEntityAccountTypeEnum? type) => _$this._type = type;
 
   bool? _enabled;
   bool? get enabled => _$this._enabled;
@@ -326,11 +345,11 @@ class BankAccountEntityBuilder
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
-  BankAccountEntityBuilder() {
-    BankAccountEntity._defaults(this);
+  BankTransactionEntityAccountBuilder() {
+    BankTransactionEntityAccount._defaults(this);
   }
 
-  BankAccountEntityBuilder get _$this {
+  BankTransactionEntityAccountBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
@@ -352,45 +371,46 @@ class BankAccountEntityBuilder
   }
 
   @override
-  void replace(BankAccountEntity other) {
+  void replace(BankTransactionEntityAccount other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$BankAccountEntity;
+    _$v = other as _$BankTransactionEntityAccount;
   }
 
   @override
-  void update(void Function(BankAccountEntityBuilder)? updates) {
+  void update(void Function(BankTransactionEntityAccountBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  BankAccountEntity build() => _build();
+  BankTransactionEntityAccount build() => _build();
 
-  _$BankAccountEntity _build() {
-    _$BankAccountEntity _$result;
+  _$BankTransactionEntityAccount _build() {
+    _$BankTransactionEntityAccount _$result;
     try {
       _$result = _$v ??
-          new _$BankAccountEntity._(
+          new _$BankTransactionEntityAccount._(
               id: BuiltValueNullFieldError.checkNotNull(
-                  id, r'BankAccountEntity', 'id'),
+                  id, r'BankTransactionEntityAccount', 'id'),
               bankConnectionId: BuiltValueNullFieldError.checkNotNull(
-                  bankConnectionId, r'BankAccountEntity', 'bankConnectionId'),
+                  bankConnectionId, r'BankTransactionEntityAccount', 'bankConnectionId'),
               bankConnection: bankConnection.build(),
               provider: BuiltValueNullFieldError.checkNotNull(
-                  provider, r'BankAccountEntity', 'provider'),
+                  provider, r'BankTransactionEntityAccount', 'provider'),
               providerAccountId: BuiltValueNullFieldError.checkNotNull(
-                  providerAccountId, r'BankAccountEntity', 'providerAccountId'),
+                  providerAccountId,
+                  r'BankTransactionEntityAccount',
+                  'providerAccountId'),
               type: BuiltValueNullFieldError.checkNotNull(
-                  type, r'BankAccountEntity', 'type'),
+                  type, r'BankTransactionEntityAccount', 'type'),
               enabled: BuiltValueNullFieldError.checkNotNull(
-                  enabled, r'BankAccountEntity', 'enabled'),
+                  enabled, r'BankTransactionEntityAccount', 'enabled'),
               number: BuiltValueNullFieldError.checkNotNull(
-                  number, r'BankAccountEntity', 'number'),
-              balance: BuiltValueNullFieldError.checkNotNull(
-                  balance, r'BankAccountEntity', 'balance'),
-              currencyCode: BuiltValueNullFieldError.checkNotNull(currencyCode, r'BankAccountEntity', 'currencyCode'),
-              name: BuiltValueNullFieldError.checkNotNull(name, r'BankAccountEntity', 'name'),
-              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankAccountEntity', 'createdAt'),
-              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankAccountEntity', 'updatedAt'));
+                  number, r'BankTransactionEntityAccount', 'number'),
+              balance: BuiltValueNullFieldError.checkNotNull(balance, r'BankTransactionEntityAccount', 'balance'),
+              currencyCode: BuiltValueNullFieldError.checkNotNull(currencyCode, r'BankTransactionEntityAccount', 'currencyCode'),
+              name: BuiltValueNullFieldError.checkNotNull(name, r'BankTransactionEntityAccount', 'name'),
+              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankTransactionEntityAccount', 'createdAt'),
+              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankTransactionEntityAccount', 'updatedAt'));
     } catch (_) {
       late String _$failedField;
       try {
@@ -398,7 +418,7 @@ class BankAccountEntityBuilder
         bankConnection.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'BankAccountEntity', _$failedField, e.toString());
+            r'BankTransactionEntityAccount', _$failedField, e.toString());
       }
       rethrow;
     }

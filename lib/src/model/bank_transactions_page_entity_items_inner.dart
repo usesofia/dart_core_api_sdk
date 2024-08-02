@@ -6,8 +6,8 @@
 import 'package:dart_core_api_sdk/src/model/bank_transaction_entity_tags_inner.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_entity_credit_card_metadata.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:dart_core_api_sdk/src/model/bank_transaction_entity_account.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_entity_category.dart';
-import 'package:dart_core_api_sdk/src/model/bank_connection_entity_accounts_inner.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_entity_payment_data.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -53,7 +53,7 @@ abstract class BankTransactionsPageEntityItemsInner implements Built<BankTransac
   String get accountId;
 
   @BuiltValueField(wireName: r'account')
-  BankConnectionEntityAccountsInner get account;
+  BankTransactionEntityAccount get account;
 
   @BuiltValueField(wireName: r'workspaceId')
   String get workspaceId;
@@ -167,7 +167,7 @@ class _$BankTransactionsPageEntityItemsInnerSerializer implements PrimitiveSeria
     yield r'account';
     yield serializers.serialize(
       object.account,
-      specifiedType: const FullType(BankConnectionEntityAccountsInner),
+      specifiedType: const FullType(BankTransactionEntityAccount),
     );
     yield r'workspaceId';
     yield serializers.serialize(
@@ -349,8 +349,8 @@ class _$BankTransactionsPageEntityItemsInnerSerializer implements PrimitiveSeria
         case r'account':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BankConnectionEntityAccountsInner),
-          ) as BankConnectionEntityAccountsInner;
+            specifiedType: const FullType(BankTransactionEntityAccount),
+          ) as BankTransactionEntityAccount;
           result.account.replace(valueDes);
           break;
         case r'workspaceId':

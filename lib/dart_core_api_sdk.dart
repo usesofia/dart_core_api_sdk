@@ -29,9 +29,7 @@ export 'package:dart_core_api_sdk/src/model/assign_category_for_bank_transaction
 export 'package:dart_core_api_sdk/src/model/assign_legal_nature_for_bank_transactions_page_request_dto.dart';
 export 'package:dart_core_api_sdk/src/model/balance_point_result_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_account_entity.dart';
-export 'package:dart_core_api_sdk/src/model/bank_account_entity_bank_connection.dart';
 export 'package:dart_core_api_sdk/src/model/bank_accounts_balance_report_entity.dart';
-export 'package:dart_core_api_sdk/src/model/bank_accounts_balance_report_entity_bank_accounts_inner.dart';
 export 'package:dart_core_api_sdk/src/model/bank_accounts_balance_report_entity_items_inner.dart';
 export 'package:dart_core_api_sdk/src/model/bank_connection_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_connection_entity_accounts_inner.dart';
@@ -39,6 +37,8 @@ export 'package:dart_core_api_sdk/src/model/bank_connection_entity_connector.dar
 export 'package:dart_core_api_sdk/src/model/bank_transaction_category_entity.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transaction_category_entity_children_inner.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transaction_entity.dart';
+export 'package:dart_core_api_sdk/src/model/bank_transaction_entity_account.dart';
+export 'package:dart_core_api_sdk/src/model/bank_transaction_entity_account_bank_connection.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transaction_entity_category.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transaction_entity_credit_card_metadata.dart';
 export 'package:dart_core_api_sdk/src/model/bank_transaction_entity_payment_data.dart';

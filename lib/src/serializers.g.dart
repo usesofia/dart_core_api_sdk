@@ -11,16 +11,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AssignLegalNatureForBankTransactionsPageRequestDto.serializer)
       ..add(BalancePointResultEntity.serializer)
       ..add(BankAccountEntity.serializer)
-      ..add(BankAccountEntityBankConnection.serializer)
-      ..add(BankAccountEntityBankConnectionHistoryRangeEnum.serializer)
-      ..add(BankAccountEntityBankConnectionProviderEnum.serializer)
       ..add(BankAccountEntityProviderEnum.serializer)
       ..add(BankAccountEntityTypeEnum.serializer)
       ..add(BankAccountsBalanceReportEntity.serializer)
-      ..add(BankAccountsBalanceReportEntityBankAccountsInner.serializer)
-      ..add(BankAccountsBalanceReportEntityBankAccountsInnerProviderEnum
-          .serializer)
-      ..add(BankAccountsBalanceReportEntityBankAccountsInnerTypeEnum.serializer)
       ..add(BankAccountsBalanceReportEntityItemsInner.serializer)
       ..add(BankConnectionEntity.serializer)
       ..add(BankConnectionEntityAccountsInner.serializer)
@@ -37,6 +30,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
           .serializer)
       ..add(BankTransactionCategoryEntityDirectionNatureEnum.serializer)
       ..add(BankTransactionEntity.serializer)
+      ..add(BankTransactionEntityAccount.serializer)
+      ..add(BankTransactionEntityAccountBankConnection.serializer)
+      ..add(
+          BankTransactionEntityAccountBankConnectionHistoryRangeEnum.serializer)
+      ..add(BankTransactionEntityAccountBankConnectionProviderEnum.serializer)
+      ..add(BankTransactionEntityAccountProviderEnum.serializer)
+      ..add(BankTransactionEntityAccountTypeEnum.serializer)
       ..add(BankTransactionEntityCategory.serializer)
       ..add(BankTransactionEntityCategoryDirectionNatureEnum.serializer)
       ..add(BankTransactionEntityCreditCardMetadata.serializer)
@@ -209,11 +209,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<BankAccountsBalanceReportEntityItemsInner>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(BankAccountsBalanceReportEntityBankAccountsInner)
-          ]),
-          () => new ListBuilder<
-              BankAccountsBalanceReportEntityBankAccountsInner>())
+          const FullType(
+              BuiltList, const [const FullType(BankTransactionEntityAccount)]),
+          () => new ListBuilder<BankTransactionEntityAccount>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(BankConnectionEntityAccountsInner)]),

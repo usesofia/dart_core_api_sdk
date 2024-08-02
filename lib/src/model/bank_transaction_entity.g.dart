@@ -268,7 +268,7 @@ class _$BankTransactionEntity extends BankTransactionEntity {
   @override
   final String accountId;
   @override
-  final BankConnectionEntityAccountsInner account;
+  final BankTransactionEntityAccount account;
   @override
   final String workspaceId;
   @override
@@ -508,10 +508,10 @@ class BankTransactionEntityBuilder
   String? get accountId => _$this._accountId;
   set accountId(String? accountId) => _$this._accountId = accountId;
 
-  BankConnectionEntityAccountsInnerBuilder? _account;
-  BankConnectionEntityAccountsInnerBuilder get account =>
-      _$this._account ??= new BankConnectionEntityAccountsInnerBuilder();
-  set account(BankConnectionEntityAccountsInnerBuilder? account) =>
+  BankTransactionEntityAccountBuilder? _account;
+  BankTransactionEntityAccountBuilder get account =>
+      _$this._account ??= new BankTransactionEntityAccountBuilder();
+  set account(BankTransactionEntityAccountBuilder? account) =>
       _$this._account = account;
 
   String? _workspaceId;

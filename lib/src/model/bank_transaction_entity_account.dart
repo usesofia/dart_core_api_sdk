@@ -8,9 +8,9 @@ import 'package:dart_core_api_sdk/src/model/bank_transaction_entity_account_bank
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'bank_account_entity.g.dart';
+part 'bank_transaction_entity_account.g.dart';
 
-/// BankAccountEntity
+/// BankTransactionEntityAccount
 ///
 /// Properties:
 /// * [id] 
@@ -27,7 +27,7 @@ part 'bank_account_entity.g.dart';
 /// * [createdAt] 
 /// * [updatedAt] 
 @BuiltValue()
-abstract class BankAccountEntity implements Built<BankAccountEntity, BankAccountEntityBuilder> {
+abstract class BankTransactionEntityAccount implements Built<BankTransactionEntityAccount, BankTransactionEntityAccountBuilder> {
   @BuiltValueField(wireName: r'id')
   String get id;
 
@@ -38,14 +38,14 @@ abstract class BankAccountEntity implements Built<BankAccountEntity, BankAccount
   BankTransactionEntityAccountBankConnection get bankConnection;
 
   @BuiltValueField(wireName: r'provider')
-  BankAccountEntityProviderEnum get provider;
+  BankTransactionEntityAccountProviderEnum get provider;
   // enum providerEnum {  PLUGGY,  SOFIA,  };
 
   @BuiltValueField(wireName: r'providerAccountId')
   String get providerAccountId;
 
   @BuiltValueField(wireName: r'type')
-  BankAccountEntityTypeEnum get type;
+  BankTransactionEntityAccountTypeEnum get type;
   // enum typeEnum {  CHECKING,  SAVINGS,  CREDIT_CARD,  };
 
   @BuiltValueField(wireName: r'enabled')
@@ -69,27 +69,27 @@ abstract class BankAccountEntity implements Built<BankAccountEntity, BankAccount
   @BuiltValueField(wireName: r'updatedAt')
   DateTime get updatedAt;
 
-  BankAccountEntity._();
+  BankTransactionEntityAccount._();
 
-  factory BankAccountEntity([void updates(BankAccountEntityBuilder b)]) = _$BankAccountEntity;
+  factory BankTransactionEntityAccount([void updates(BankTransactionEntityAccountBuilder b)]) = _$BankTransactionEntityAccount;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(BankAccountEntityBuilder b) => b;
+  static void _defaults(BankTransactionEntityAccountBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<BankAccountEntity> get serializer => _$BankAccountEntitySerializer();
+  static Serializer<BankTransactionEntityAccount> get serializer => _$BankTransactionEntityAccountSerializer();
 }
 
-class _$BankAccountEntitySerializer implements PrimitiveSerializer<BankAccountEntity> {
+class _$BankTransactionEntityAccountSerializer implements PrimitiveSerializer<BankTransactionEntityAccount> {
   @override
-  final Iterable<Type> types = const [BankAccountEntity, _$BankAccountEntity];
+  final Iterable<Type> types = const [BankTransactionEntityAccount, _$BankTransactionEntityAccount];
 
   @override
-  final String wireName = r'BankAccountEntity';
+  final String wireName = r'BankTransactionEntityAccount';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    BankAccountEntity object, {
+    BankTransactionEntityAccount object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'id';
@@ -110,7 +110,7 @@ class _$BankAccountEntitySerializer implements PrimitiveSerializer<BankAccountEn
     yield r'provider';
     yield serializers.serialize(
       object.provider,
-      specifiedType: const FullType(BankAccountEntityProviderEnum),
+      specifiedType: const FullType(BankTransactionEntityAccountProviderEnum),
     );
     yield r'providerAccountId';
     yield serializers.serialize(
@@ -120,7 +120,7 @@ class _$BankAccountEntitySerializer implements PrimitiveSerializer<BankAccountEn
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(BankAccountEntityTypeEnum),
+      specifiedType: const FullType(BankTransactionEntityAccountTypeEnum),
     );
     yield r'enabled';
     yield serializers.serialize(
@@ -162,7 +162,7 @@ class _$BankAccountEntitySerializer implements PrimitiveSerializer<BankAccountEn
   @override
   Object serialize(
     Serializers serializers,
-    BankAccountEntity object, {
+    BankTransactionEntityAccount object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
@@ -173,7 +173,7 @@ class _$BankAccountEntitySerializer implements PrimitiveSerializer<BankAccountEn
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required BankAccountEntityBuilder result,
+    required BankTransactionEntityAccountBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -204,8 +204,8 @@ class _$BankAccountEntitySerializer implements PrimitiveSerializer<BankAccountEn
         case r'provider':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BankAccountEntityProviderEnum),
-          ) as BankAccountEntityProviderEnum;
+            specifiedType: const FullType(BankTransactionEntityAccountProviderEnum),
+          ) as BankTransactionEntityAccountProviderEnum;
           result.provider = valueDes;
           break;
         case r'providerAccountId':
@@ -218,8 +218,8 @@ class _$BankAccountEntitySerializer implements PrimitiveSerializer<BankAccountEn
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BankAccountEntityTypeEnum),
-          ) as BankAccountEntityTypeEnum;
+            specifiedType: const FullType(BankTransactionEntityAccountTypeEnum),
+          ) as BankTransactionEntityAccountTypeEnum;
           result.type = valueDes;
           break;
         case r'enabled':
@@ -280,12 +280,12 @@ class _$BankAccountEntitySerializer implements PrimitiveSerializer<BankAccountEn
   }
 
   @override
-  BankAccountEntity deserialize(
+  BankTransactionEntityAccount deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = BankAccountEntityBuilder();
+    final result = BankTransactionEntityAccountBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
@@ -300,35 +300,35 @@ class _$BankAccountEntitySerializer implements PrimitiveSerializer<BankAccountEn
   }
 }
 
-class BankAccountEntityProviderEnum extends EnumClass {
+class BankTransactionEntityAccountProviderEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'PLUGGY')
-  static const BankAccountEntityProviderEnum PLUGGY = _$bankAccountEntityProviderEnum_PLUGGY;
+  static const BankTransactionEntityAccountProviderEnum PLUGGY = _$bankTransactionEntityAccountProviderEnum_PLUGGY;
   @BuiltValueEnumConst(wireName: r'SOFIA')
-  static const BankAccountEntityProviderEnum SOFIA = _$bankAccountEntityProviderEnum_SOFIA;
+  static const BankTransactionEntityAccountProviderEnum SOFIA = _$bankTransactionEntityAccountProviderEnum_SOFIA;
 
-  static Serializer<BankAccountEntityProviderEnum> get serializer => _$bankAccountEntityProviderEnumSerializer;
+  static Serializer<BankTransactionEntityAccountProviderEnum> get serializer => _$bankTransactionEntityAccountProviderEnumSerializer;
 
-  const BankAccountEntityProviderEnum._(String name): super(name);
+  const BankTransactionEntityAccountProviderEnum._(String name): super(name);
 
-  static BuiltSet<BankAccountEntityProviderEnum> get values => _$bankAccountEntityProviderEnumValues;
-  static BankAccountEntityProviderEnum valueOf(String name) => _$bankAccountEntityProviderEnumValueOf(name);
+  static BuiltSet<BankTransactionEntityAccountProviderEnum> get values => _$bankTransactionEntityAccountProviderEnumValues;
+  static BankTransactionEntityAccountProviderEnum valueOf(String name) => _$bankTransactionEntityAccountProviderEnumValueOf(name);
 }
 
-class BankAccountEntityTypeEnum extends EnumClass {
+class BankTransactionEntityAccountTypeEnum extends EnumClass {
 
   @BuiltValueEnumConst(wireName: r'CHECKING')
-  static const BankAccountEntityTypeEnum CHECKING = _$bankAccountEntityTypeEnum_CHECKING;
+  static const BankTransactionEntityAccountTypeEnum CHECKING = _$bankTransactionEntityAccountTypeEnum_CHECKING;
   @BuiltValueEnumConst(wireName: r'SAVINGS')
-  static const BankAccountEntityTypeEnum SAVINGS = _$bankAccountEntityTypeEnum_SAVINGS;
+  static const BankTransactionEntityAccountTypeEnum SAVINGS = _$bankTransactionEntityAccountTypeEnum_SAVINGS;
   @BuiltValueEnumConst(wireName: r'CREDIT_CARD')
-  static const BankAccountEntityTypeEnum CREDIT_CARD = _$bankAccountEntityTypeEnum_CREDIT_CARD;
+  static const BankTransactionEntityAccountTypeEnum CREDIT_CARD = _$bankTransactionEntityAccountTypeEnum_CREDIT_CARD;
 
-  static Serializer<BankAccountEntityTypeEnum> get serializer => _$bankAccountEntityTypeEnumSerializer;
+  static Serializer<BankTransactionEntityAccountTypeEnum> get serializer => _$bankTransactionEntityAccountTypeEnumSerializer;
 
-  const BankAccountEntityTypeEnum._(String name): super(name);
+  const BankTransactionEntityAccountTypeEnum._(String name): super(name);
 
-  static BuiltSet<BankAccountEntityTypeEnum> get values => _$bankAccountEntityTypeEnumValues;
-  static BankAccountEntityTypeEnum valueOf(String name) => _$bankAccountEntityTypeEnumValueOf(name);
+  static BuiltSet<BankTransactionEntityAccountTypeEnum> get values => _$bankTransactionEntityAccountTypeEnumValues;
+  static BankTransactionEntityAccountTypeEnum valueOf(String name) => _$bankTransactionEntityAccountTypeEnumValueOf(name);
 }
 
