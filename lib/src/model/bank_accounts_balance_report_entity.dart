@@ -3,9 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:dart_core_api_sdk/src/model/bank_accounts_balance_report_item_entity.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:dart_core_api_sdk/src/model/bank_account_entity.dart';
+import 'package:dart_core_api_sdk/src/model/bank_connection_entity_accounts_inner.dart';
+import 'package:dart_core_api_sdk/src/model/bank_accounts_balance_report_entity_items_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -19,10 +19,10 @@ part 'bank_accounts_balance_report_entity.g.dart';
 @BuiltValue()
 abstract class BankAccountsBalanceReportEntity implements Built<BankAccountsBalanceReportEntity, BankAccountsBalanceReportEntityBuilder> {
   @BuiltValueField(wireName: r'items')
-  BuiltList<BankAccountsBalanceReportItemEntity> get items;
+  BuiltList<BankAccountsBalanceReportEntityItemsInner> get items;
 
   @BuiltValueField(wireName: r'bankAccounts')
-  BuiltList<BankAccountEntity> get bankAccounts;
+  BuiltList<BankConnectionEntityAccountsInner> get bankAccounts;
 
   BankAccountsBalanceReportEntity._();
 
@@ -50,12 +50,12 @@ class _$BankAccountsBalanceReportEntitySerializer implements PrimitiveSerializer
     yield r'items';
     yield serializers.serialize(
       object.items,
-      specifiedType: const FullType(BuiltList, [FullType(BankAccountsBalanceReportItemEntity)]),
+      specifiedType: const FullType(BuiltList, [FullType(BankAccountsBalanceReportEntityItemsInner)]),
     );
     yield r'bankAccounts';
     yield serializers.serialize(
       object.bankAccounts,
-      specifiedType: const FullType(BuiltList, [FullType(BankAccountEntity)]),
+      specifiedType: const FullType(BuiltList, [FullType(BankConnectionEntityAccountsInner)]),
     );
   }
 
@@ -83,15 +83,15 @@ class _$BankAccountsBalanceReportEntitySerializer implements PrimitiveSerializer
         case r'items':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BankAccountsBalanceReportItemEntity)]),
-          ) as BuiltList<BankAccountsBalanceReportItemEntity>;
+            specifiedType: const FullType(BuiltList, [FullType(BankAccountsBalanceReportEntityItemsInner)]),
+          ) as BuiltList<BankAccountsBalanceReportEntityItemsInner>;
           result.items.replace(valueDes);
           break;
         case r'bankAccounts':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BankAccountEntity)]),
-          ) as BuiltList<BankAccountEntity>;
+            specifiedType: const FullType(BuiltList, [FullType(BankConnectionEntityAccountsInner)]),
+          ) as BuiltList<BankConnectionEntityAccountsInner>;
           result.bankAccounts.replace(valueDes);
           break;
         default:

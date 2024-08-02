@@ -9,9 +9,9 @@ part of 'bank_accounts_balance_report_entity.dart';
 class _$BankAccountsBalanceReportEntity
     extends BankAccountsBalanceReportEntity {
   @override
-  final BuiltList<BankAccountsBalanceReportItemEntity> items;
+  final BuiltList<BankAccountsBalanceReportEntityItemsInner> items;
   @override
-  final BuiltList<BankAccountEntity> bankAccounts;
+  final BuiltList<BankConnectionEntityAccountsInner> bankAccounts;
 
   factory _$BankAccountsBalanceReportEntity(
           [void Function(BankAccountsBalanceReportEntityBuilder)? updates]) =>
@@ -67,16 +67,19 @@ class BankAccountsBalanceReportEntityBuilder
             BankAccountsBalanceReportEntityBuilder> {
   _$BankAccountsBalanceReportEntity? _$v;
 
-  ListBuilder<BankAccountsBalanceReportItemEntity>? _items;
-  ListBuilder<BankAccountsBalanceReportItemEntity> get items =>
-      _$this._items ??= new ListBuilder<BankAccountsBalanceReportItemEntity>();
-  set items(ListBuilder<BankAccountsBalanceReportItemEntity>? items) =>
+  ListBuilder<BankAccountsBalanceReportEntityItemsInner>? _items;
+  ListBuilder<BankAccountsBalanceReportEntityItemsInner> get items =>
+      _$this._items ??=
+          new ListBuilder<BankAccountsBalanceReportEntityItemsInner>();
+  set items(ListBuilder<BankAccountsBalanceReportEntityItemsInner>? items) =>
       _$this._items = items;
 
-  ListBuilder<BankAccountEntity>? _bankAccounts;
-  ListBuilder<BankAccountEntity> get bankAccounts =>
-      _$this._bankAccounts ??= new ListBuilder<BankAccountEntity>();
-  set bankAccounts(ListBuilder<BankAccountEntity>? bankAccounts) =>
+  ListBuilder<BankConnectionEntityAccountsInner>? _bankAccounts;
+  ListBuilder<BankConnectionEntityAccountsInner> get bankAccounts =>
+      _$this._bankAccounts ??=
+          new ListBuilder<BankConnectionEntityAccountsInner>();
+  set bankAccounts(
+          ListBuilder<BankConnectionEntityAccountsInner>? bankAccounts) =>
       _$this._bankAccounts = bankAccounts;
 
   BankAccountsBalanceReportEntityBuilder() {

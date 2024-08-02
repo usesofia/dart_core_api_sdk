@@ -13,6 +13,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BankAccountEntity.serializer)
       ..add(BankAccountEntityProviderEnum.serializer)
       ..add(BankAccountEntityTypeEnum.serializer)
+      ..add(BankAccountsBalanceReportEntity.serializer)
+      ..add(BankAccountsBalanceReportEntityItemsInner.serializer)
       ..add(BankConnectionEntity.serializer)
       ..add(BankConnectionEntityAccountsInner.serializer)
       ..add(BankConnectionEntityAccountsInnerProviderEnum.serializer)
@@ -194,6 +196,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(VerifyPhoneVerificationCodeRequestDtoPurposeEnum.serializer)
       ..add(WorkspaceEntity.serializer)
       ..add(WorkspaceEntityTypeEnum.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(BankAccountsBalanceReportEntityItemsInner)
+          ]),
+          () => new ListBuilder<BankAccountsBalanceReportEntityItemsInner>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(BankConnectionEntityAccountsInner)]),
+          () => new ListBuilder<BankConnectionEntityAccountsInner>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(BankConnectionEntityAccountsInner)]),

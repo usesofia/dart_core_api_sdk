@@ -76,6 +76,7 @@ Class | Method | HTTP request | Description
 [*AuthApi*](doc/AuthApi.md) | [**authControllerVerifyPhoneVerificationCode**](doc/AuthApi.md#authcontrollerverifyphoneverificationcode) | **GET** /iam/auth/phone-verification-code/verify | 
 [*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerActivate**](doc/BankAccountsApi.md#bankaccountscontrolleractivate) | **POST** /bank/accounts/{bankAccountId}/activate | 
 [*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerCreateOrUpdate**](doc/BankAccountsApi.md#bankaccountscontrollercreateorupdate) | **PUT** /bank/accounts | 
+[*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerCreateWorkspaceBalanceReport**](doc/BankAccountsApi.md#bankaccountscontrollercreateworkspacebalancereport) | **POST** /bank/workspaces/{workspaceId}/accounts/balance-report | 
 [*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerDisable**](doc/BankAccountsApi.md#bankaccountscontrollerdisable) | **POST** /bank/accounts/{bankAccountId}/disable | 
 [*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerGetById**](doc/BankAccountsApi.md#bankaccountscontrollergetbyid) | **GET** /bank/accounts/{bankAccountId} | 
 [*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerListByBankConnectionId**](doc/BankAccountsApi.md#bankaccountscontrollerlistbybankconnectionid) | **GET** /bank/connections/{bankConnectionId}/accounts | 
@@ -130,6 +131,8 @@ Class | Method | HTTP request | Description
  - [AssignLegalNatureForBankTransactionsPageRequestDto](doc/AssignLegalNatureForBankTransactionsPageRequestDto.md)
  - [BalancePointResultEntity](doc/BalancePointResultEntity.md)
  - [BankAccountEntity](doc/BankAccountEntity.md)
+ - [BankAccountsBalanceReportEntity](doc/BankAccountsBalanceReportEntity.md)
+ - [BankAccountsBalanceReportEntityItemsInner](doc/BankAccountsBalanceReportEntityItemsInner.md)
  - [BankConnectionEntity](doc/BankConnectionEntity.md)
  - [BankConnectionEntityAccountsInner](doc/BankConnectionEntityAccountsInner.md)
  - [BankConnectionEntityConnector](doc/BankConnectionEntityConnector.md)
