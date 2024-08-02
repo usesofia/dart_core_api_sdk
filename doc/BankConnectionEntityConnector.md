@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **primaryColor** | **String** |  | 
 **type** | **String** |  | 
 **country** | **String** |  | 
-**createdAt** | [**JsonObject**](.md) |  | 
-**updatedAt** | [**JsonObject**](.md) |  | 
+**createdAt** | [**DateTime**](DateTime.md) |  | 
+**updatedAt** | [**DateTime**](DateTime.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

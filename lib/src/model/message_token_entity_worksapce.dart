@@ -6,7 +6,6 @@
 import 'package:dart_core_api_sdk/src/model/user_entity_workspaces_inner_hybrid_settings.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:dart_core_api_sdk/src/model/user_entity_workspaces_inner_personal_settings.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -60,7 +59,7 @@ abstract class MessageTokenEntityWorksapce implements Built<MessageTokenEntityWo
   UserEntityWorkspacesInnerPersonalSettings? get personalSettings;
 
   @BuiltValueField(wireName: r'createdAt')
-  JsonObject? get createdAt;
+  DateTime get createdAt;
 
   MessageTokenEntityWorksapce._();
 
@@ -146,9 +145,9 @@ class _$MessageTokenEntityWorksapceSerializer implements PrimitiveSerializer<Mes
       );
     }
     yield r'createdAt';
-    yield object.createdAt == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.createdAt,
-      specifiedType: const FullType.nullable(JsonObject),
+      specifiedType: const FullType(DateTime),
     );
   }
 
@@ -251,9 +250,8 @@ class _$MessageTokenEntityWorksapceSerializer implements PrimitiveSerializer<Mes
         case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.createdAt = valueDes;
           break;
         default:

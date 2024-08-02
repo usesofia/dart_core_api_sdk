@@ -171,9 +171,9 @@ class _$BankConnectionEntityConnector extends BankConnectionEntityConnector {
   @override
   final String country;
   @override
-  final JsonObject? createdAt;
+  final DateTime createdAt;
   @override
-  final JsonObject? updatedAt;
+  final DateTime updatedAt;
 
   factory _$BankConnectionEntityConnector(
           [void Function(BankConnectionEntityConnectorBuilder)? updates]) =>
@@ -188,8 +188,8 @@ class _$BankConnectionEntityConnector extends BankConnectionEntityConnector {
       required this.primaryColor,
       required this.type,
       required this.country,
-      this.createdAt,
-      this.updatedAt})
+      required this.createdAt,
+      required this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         id, r'BankConnectionEntityConnector', 'id');
@@ -207,6 +207,10 @@ class _$BankConnectionEntityConnector extends BankConnectionEntityConnector {
         type, r'BankConnectionEntityConnector', 'type');
     BuiltValueNullFieldError.checkNotNull(
         country, r'BankConnectionEntityConnector', 'country');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'BankConnectionEntityConnector', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(
+        updatedAt, r'BankConnectionEntityConnector', 'updatedAt');
   }
 
   @override
@@ -308,13 +312,13 @@ class BankConnectionEntityConnectorBuilder
   String? get country => _$this._country;
   set country(String? country) => _$this._country = country;
 
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  JsonObject? _updatedAt;
-  JsonObject? get updatedAt => _$this._updatedAt;
-  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   BankConnectionEntityConnectorBuilder() {
     BankConnectionEntityConnector._defaults(this);
@@ -371,8 +375,8 @@ class BankConnectionEntityConnectorBuilder
                 type, r'BankConnectionEntityConnector', 'type'),
             country: BuiltValueNullFieldError.checkNotNull(
                 country, r'BankConnectionEntityConnector', 'country'),
-            createdAt: createdAt,
-            updatedAt: updatedAt);
+            createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankConnectionEntityConnector', 'createdAt'),
+            updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankConnectionEntityConnector', 'updatedAt'));
     replace(_$result);
     return _$result;
   }

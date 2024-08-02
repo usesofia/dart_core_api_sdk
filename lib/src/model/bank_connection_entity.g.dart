@@ -189,9 +189,9 @@ class _$BankConnectionEntity extends BankConnectionEntity {
   @override
   final BankConnectionEntityConnector? connector;
   @override
-  final JsonObject? createdAt;
+  final DateTime createdAt;
   @override
-  final JsonObject? updatedAt;
+  final DateTime updatedAt;
 
   factory _$BankConnectionEntity(
           [void Function(BankConnectionEntityBuilder)? updates]) =>
@@ -208,8 +208,8 @@ class _$BankConnectionEntity extends BankConnectionEntity {
       required this.historyRange,
       required this.connectorId,
       this.connector,
-      this.createdAt,
-      this.updatedAt})
+      required this.createdAt,
+      required this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'BankConnectionEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
@@ -226,6 +226,10 @@ class _$BankConnectionEntity extends BankConnectionEntity {
         historyRange, r'BankConnectionEntity', 'historyRange');
     BuiltValueNullFieldError.checkNotNull(
         connectorId, r'BankConnectionEntity', 'connectorId');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'BankConnectionEntity', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(
+        updatedAt, r'BankConnectionEntity', 'updatedAt');
   }
 
   @override
@@ -346,13 +350,13 @@ class BankConnectionEntityBuilder
   set connector(BankConnectionEntityConnectorBuilder? connector) =>
       _$this._connector = connector;
 
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  JsonObject? _updatedAt;
-  JsonObject? get updatedAt => _$this._updatedAt;
-  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   BankConnectionEntityBuilder() {
     BankConnectionEntity._defaults(this);
@@ -412,11 +416,11 @@ class BankConnectionEntityBuilder
                   providerItemId, r'BankConnectionEntity', 'providerItemId'),
               historyRange: BuiltValueNullFieldError.checkNotNull(
                   historyRange, r'BankConnectionEntity', 'historyRange'),
-              connectorId: BuiltValueNullFieldError.checkNotNull(
-                  connectorId, r'BankConnectionEntity', 'connectorId'),
+              connectorId:
+                  BuiltValueNullFieldError.checkNotNull(connectorId, r'BankConnectionEntity', 'connectorId'),
               connector: _connector?.build(),
-              createdAt: createdAt,
-              updatedAt: updatedAt);
+              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankConnectionEntity', 'createdAt'),
+              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankConnectionEntity', 'updatedAt'));
     } catch (_) {
       late String _$failedField;
       try {

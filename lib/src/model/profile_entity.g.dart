@@ -16,9 +16,9 @@ class _$ProfileEntity extends ProfileEntity {
   @override
   final String birthDate;
   @override
-  final JsonObject? createdAt;
+  final DateTime createdAt;
   @override
-  final JsonObject? updatedAt;
+  final DateTime updatedAt;
 
   factory _$ProfileEntity([void Function(ProfileEntityBuilder)? updates]) =>
       (new ProfileEntityBuilder()..update(updates))._build();
@@ -28,8 +28,8 @@ class _$ProfileEntity extends ProfileEntity {
       required this.userId,
       required this.fullName,
       required this.birthDate,
-      this.createdAt,
-      this.updatedAt})
+      required this.createdAt,
+      required this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'ProfileEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(userId, r'ProfileEntity', 'userId');
@@ -37,6 +37,10 @@ class _$ProfileEntity extends ProfileEntity {
         fullName, r'ProfileEntity', 'fullName');
     BuiltValueNullFieldError.checkNotNull(
         birthDate, r'ProfileEntity', 'birthDate');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'ProfileEntity', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(
+        updatedAt, r'ProfileEntity', 'updatedAt');
   }
 
   @override
@@ -104,13 +108,13 @@ class ProfileEntityBuilder
   String? get birthDate => _$this._birthDate;
   set birthDate(String? birthDate) => _$this._birthDate = birthDate;
 
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  JsonObject? _updatedAt;
-  JsonObject? get updatedAt => _$this._updatedAt;
-  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   ProfileEntityBuilder() {
     ProfileEntity._defaults(this);
@@ -155,8 +159,10 @@ class ProfileEntityBuilder
                 fullName, r'ProfileEntity', 'fullName'),
             birthDate: BuiltValueNullFieldError.checkNotNull(
                 birthDate, r'ProfileEntity', 'birthDate'),
-            createdAt: createdAt,
-            updatedAt: updatedAt);
+            createdAt: BuiltValueNullFieldError.checkNotNull(
+                createdAt, r'ProfileEntity', 'createdAt'),
+            updatedAt: BuiltValueNullFieldError.checkNotNull(
+                updatedAt, r'ProfileEntity', 'updatedAt'));
     replace(_$result);
     return _$result;
   }

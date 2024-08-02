@@ -329,9 +329,9 @@ class _$CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner
   @override
   final String description;
   @override
-  final JsonObject? postedDate;
+  final DateTime postedDate;
   @override
-  final JsonObject? competencyDate;
+  final DateTime competencyDate;
   @override
   final num amount;
   @override
@@ -378,8 +378,8 @@ class _$CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner
       required this.workspaceId,
       required this.providerTransactionId,
       required this.description,
-      this.postedDate,
-      this.competencyDate,
+      required this.postedDate,
+      required this.competencyDate,
       required this.amount,
       required this.directionNature,
       required this.status,
@@ -412,6 +412,14 @@ class _$CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner
         description,
         r'CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner',
         'description');
+    BuiltValueNullFieldError.checkNotNull(
+        postedDate,
+        r'CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner',
+        'postedDate');
+    BuiltValueNullFieldError.checkNotNull(
+        competencyDate,
+        r'CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner',
+        'competencyDate');
     BuiltValueNullFieldError.checkNotNull(amount,
         r'CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner', 'amount');
     BuiltValueNullFieldError.checkNotNull(
@@ -545,13 +553,13 @@ class CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
-  JsonObject? _postedDate;
-  JsonObject? get postedDate => _$this._postedDate;
-  set postedDate(JsonObject? postedDate) => _$this._postedDate = postedDate;
+  DateTime? _postedDate;
+  DateTime? get postedDate => _$this._postedDate;
+  set postedDate(DateTime? postedDate) => _$this._postedDate = postedDate;
 
-  JsonObject? _competencyDate;
-  JsonObject? get competencyDate => _$this._competencyDate;
-  set competencyDate(JsonObject? competencyDate) =>
+  DateTime? _competencyDate;
+  DateTime? get competencyDate => _$this._competencyDate;
+  set competencyDate(DateTime? competencyDate) =>
       _$this._competencyDate = competencyDate;
 
   num? _amount;
@@ -712,8 +720,8 @@ class CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInnerBuilder
                   description,
                   r'CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner',
                   'description'),
-              postedDate: postedDate,
-              competencyDate: competencyDate,
+              postedDate: BuiltValueNullFieldError.checkNotNull(postedDate, r'CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner', 'postedDate'),
+              competencyDate: BuiltValueNullFieldError.checkNotNull(competencyDate, r'CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner', 'competencyDate'),
               amount: BuiltValueNullFieldError.checkNotNull(amount, r'CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner', 'amount'),
               directionNature: BuiltValueNullFieldError.checkNotNull(directionNature, r'CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner', 'directionNature'),
               status: BuiltValueNullFieldError.checkNotNull(status, r'CreateOrUpdateBankTransactionsInBulkRequestDtoItemsInner', 'status'),

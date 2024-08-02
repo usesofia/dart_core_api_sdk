@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **hybridSettings** | [**UserEntityWorkspacesInnerHybridSettings**](UserEntityWorkspacesInnerHybridSettings.md) |  | [optional] 
 **businessSettings** | [**UserEntityWorkspacesInnerHybridSettings**](UserEntityWorkspacesInnerHybridSettings.md) |  | [optional] 
 **personalSettings** | [**UserEntityWorkspacesInnerPersonalSettings**](UserEntityWorkspacesInnerPersonalSettings.md) |  | [optional] 
-**createdAt** | [**JsonObject**](.md) |  | 
+**createdAt** | [**DateTime**](DateTime.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -6,7 +6,6 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:dart_core_api_sdk/src/model/bank_connection_entity_accounts_inner.dart';
 import 'package:dart_core_api_sdk/src/model/bank_connection_entity_connector.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -62,10 +61,10 @@ abstract class BankConnectionEntity implements Built<BankConnectionEntity, BankC
   BankConnectionEntityConnector? get connector;
 
   @BuiltValueField(wireName: r'createdAt')
-  JsonObject? get createdAt;
+  DateTime get createdAt;
 
   @BuiltValueField(wireName: r'updatedAt')
-  JsonObject? get updatedAt;
+  DateTime get updatedAt;
 
   BankConnectionEntity._();
 
@@ -145,14 +144,14 @@ class _$BankConnectionEntitySerializer implements PrimitiveSerializer<BankConnec
       );
     }
     yield r'createdAt';
-    yield object.createdAt == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.createdAt,
-      specifiedType: const FullType.nullable(JsonObject),
+      specifiedType: const FullType(DateTime),
     );
     yield r'updatedAt';
-    yield object.updatedAt == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.updatedAt,
-      specifiedType: const FullType.nullable(JsonObject),
+      specifiedType: const FullType(DateTime),
     );
   }
 
@@ -252,17 +251,15 @@ class _$BankConnectionEntitySerializer implements PrimitiveSerializer<BankConnec
         case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.updatedAt = valueDes;
           break;
         default:

@@ -89,7 +89,7 @@ class _$WorkspaceEntity extends WorkspaceEntity {
   @override
   final UserEntityWorkspacesInnerPersonalSettings? personalSettings;
   @override
-  final JsonObject? createdAt;
+  final DateTime createdAt;
 
   factory _$WorkspaceEntity([void Function(WorkspaceEntityBuilder)? updates]) =>
       (new WorkspaceEntityBuilder()..update(updates))._build();
@@ -105,7 +105,7 @@ class _$WorkspaceEntity extends WorkspaceEntity {
       this.hybridSettings,
       this.businessSettings,
       this.personalSettings,
-      this.createdAt})
+      required this.createdAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'WorkspaceEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
@@ -114,6 +114,8 @@ class _$WorkspaceEntity extends WorkspaceEntity {
     BuiltValueNullFieldError.checkNotNull(type, r'WorkspaceEntity', 'type');
     BuiltValueNullFieldError.checkNotNull(
         creatorUserId, r'WorkspaceEntity', 'creatorUserId');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'WorkspaceEntity', 'createdAt');
   }
 
   @override
@@ -242,9 +244,9 @@ class WorkspaceEntityBuilder
           UserEntityWorkspacesInnerPersonalSettingsBuilder? personalSettings) =>
       _$this._personalSettings = personalSettings;
 
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
   WorkspaceEntityBuilder() {
     WorkspaceEntity._defaults(this);
@@ -303,7 +305,8 @@ class WorkspaceEntityBuilder
               hybridSettings: _hybridSettings?.build(),
               businessSettings: _businessSettings?.build(),
               personalSettings: _personalSettings?.build(),
-              createdAt: createdAt);
+              createdAt: BuiltValueNullFieldError.checkNotNull(
+                  createdAt, r'WorkspaceEntity', 'createdAt'));
     } catch (_) {
       late String _$failedField;
       try {

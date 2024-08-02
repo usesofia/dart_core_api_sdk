@@ -142,9 +142,9 @@ class _$MessageTokenEntity extends MessageTokenEntity {
   @override
   final String token;
   @override
-  final JsonObject? createdAt;
+  final DateTime createdAt;
   @override
-  final JsonObject? updatedAt;
+  final DateTime updatedAt;
 
   factory _$MessageTokenEntity(
           [void Function(MessageTokenEntityBuilder)? updates]) =>
@@ -160,8 +160,8 @@ class _$MessageTokenEntity extends MessageTokenEntity {
       required this.platform,
       required this.deviceId,
       required this.token,
-      this.createdAt,
-      this.updatedAt})
+      required this.createdAt,
+      required this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'MessageTokenEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
@@ -176,6 +176,10 @@ class _$MessageTokenEntity extends MessageTokenEntity {
         deviceId, r'MessageTokenEntity', 'deviceId');
     BuiltValueNullFieldError.checkNotNull(
         token, r'MessageTokenEntity', 'token');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'MessageTokenEntity', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(
+        updatedAt, r'MessageTokenEntity', 'updatedAt');
   }
 
   @override
@@ -285,13 +289,13 @@ class MessageTokenEntityBuilder
   String? get token => _$this._token;
   set token(String? token) => _$this._token = token;
 
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  JsonObject? _updatedAt;
-  JsonObject? get updatedAt => _$this._updatedAt;
-  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   MessageTokenEntityBuilder() {
     MessageTokenEntity._defaults(this);
@@ -351,8 +355,10 @@ class MessageTokenEntityBuilder
                   deviceId, r'MessageTokenEntity', 'deviceId'),
               token: BuiltValueNullFieldError.checkNotNull(
                   token, r'MessageTokenEntity', 'token'),
-              createdAt: createdAt,
-              updatedAt: updatedAt);
+              createdAt: BuiltValueNullFieldError.checkNotNull(
+                  createdAt, r'MessageTokenEntity', 'createdAt'),
+              updatedAt:
+                  BuiltValueNullFieldError.checkNotNull(updatedAt, r'MessageTokenEntity', 'updatedAt'));
     } catch (_) {
       late String _$failedField;
       try {

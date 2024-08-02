@@ -146,9 +146,9 @@ class _$BankAccountEntity extends BankAccountEntity {
   @override
   final String name;
   @override
-  final JsonObject? createdAt;
+  final DateTime createdAt;
   @override
-  final JsonObject? updatedAt;
+  final DateTime updatedAt;
 
   factory _$BankAccountEntity(
           [void Function(BankAccountEntityBuilder)? updates]) =>
@@ -165,8 +165,8 @@ class _$BankAccountEntity extends BankAccountEntity {
       required this.balance,
       required this.currencyCode,
       required this.name,
-      this.createdAt,
-      this.updatedAt})
+      required this.createdAt,
+      required this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'BankAccountEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
@@ -185,6 +185,10 @@ class _$BankAccountEntity extends BankAccountEntity {
     BuiltValueNullFieldError.checkNotNull(
         currencyCode, r'BankAccountEntity', 'currencyCode');
     BuiltValueNullFieldError.checkNotNull(name, r'BankAccountEntity', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'BankAccountEntity', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(
+        updatedAt, r'BankAccountEntity', 'updatedAt');
   }
 
   @override
@@ -298,13 +302,13 @@ class BankAccountEntityBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  JsonObject? _updatedAt;
-  JsonObject? get updatedAt => _$this._updatedAt;
-  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   BankAccountEntityBuilder() {
     BankAccountEntity._defaults(this);
@@ -365,8 +369,8 @@ class BankAccountEntityBuilder
                 balance, r'BankAccountEntity', 'balance'),
             currencyCode: BuiltValueNullFieldError.checkNotNull(currencyCode, r'BankAccountEntity', 'currencyCode'),
             name: BuiltValueNullFieldError.checkNotNull(name, r'BankAccountEntity', 'name'),
-            createdAt: createdAt,
-            updatedAt: updatedAt);
+            createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankAccountEntity', 'createdAt'),
+            updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankAccountEntity', 'updatedAt'));
     replace(_$result);
     return _$result;
   }

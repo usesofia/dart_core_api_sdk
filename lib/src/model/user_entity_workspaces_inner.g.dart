@@ -96,7 +96,7 @@ class _$UserEntityWorkspacesInner extends UserEntityWorkspacesInner {
   @override
   final UserEntityWorkspacesInnerPersonalSettings? personalSettings;
   @override
-  final JsonObject? createdAt;
+  final DateTime createdAt;
 
   factory _$UserEntityWorkspacesInner(
           [void Function(UserEntityWorkspacesInnerBuilder)? updates]) =>
@@ -113,7 +113,7 @@ class _$UserEntityWorkspacesInner extends UserEntityWorkspacesInner {
       this.hybridSettings,
       this.businessSettings,
       this.personalSettings,
-      this.createdAt})
+      required this.createdAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         id, r'UserEntityWorkspacesInner', 'id');
@@ -125,6 +125,8 @@ class _$UserEntityWorkspacesInner extends UserEntityWorkspacesInner {
         type, r'UserEntityWorkspacesInner', 'type');
     BuiltValueNullFieldError.checkNotNull(
         creatorUserId, r'UserEntityWorkspacesInner', 'creatorUserId');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'UserEntityWorkspacesInner', 'createdAt');
   }
 
   @override
@@ -255,9 +257,9 @@ class UserEntityWorkspacesInnerBuilder
           UserEntityWorkspacesInnerPersonalSettingsBuilder? personalSettings) =>
       _$this._personalSettings = personalSettings;
 
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
   UserEntityWorkspacesInnerBuilder() {
     UserEntityWorkspacesInner._defaults(this);
@@ -316,7 +318,8 @@ class UserEntityWorkspacesInnerBuilder
               hybridSettings: _hybridSettings?.build(),
               businessSettings: _businessSettings?.build(),
               personalSettings: _personalSettings?.build(),
-              createdAt: createdAt);
+              createdAt: BuiltValueNullFieldError.checkNotNull(
+                  createdAt, r'UserEntityWorkspacesInner', 'createdAt'));
     } catch (_) {
       late String _$failedField;
       try {

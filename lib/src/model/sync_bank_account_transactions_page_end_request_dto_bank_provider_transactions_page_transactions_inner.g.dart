@@ -169,7 +169,7 @@ class _$SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPage
   @override
   final String description;
   @override
-  final JsonObject? postedDate;
+  final DateTime postedDate;
   @override
   final int amount;
   @override
@@ -200,7 +200,7 @@ class _$SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPage
   _$SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInner._(
       {required this.id,
       required this.description,
-      this.postedDate,
+      required this.postedDate,
       required this.amount,
       required this.directionNature,
       required this.status,
@@ -217,6 +217,10 @@ class _$SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPage
         description,
         r'SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInner',
         'description');
+    BuiltValueNullFieldError.checkNotNull(
+        postedDate,
+        r'SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInner',
+        'postedDate');
     BuiltValueNullFieldError.checkNotNull(
         amount,
         r'SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInner',
@@ -313,9 +317,9 @@ class SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTr
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
-  JsonObject? _postedDate;
-  JsonObject? get postedDate => _$this._postedDate;
-  set postedDate(JsonObject? postedDate) => _$this._postedDate = postedDate;
+  DateTime? _postedDate;
+  DateTime? get postedDate => _$this._postedDate;
+  set postedDate(DateTime? postedDate) => _$this._postedDate = postedDate;
 
   int? _amount;
   int? get amount => _$this._amount;
@@ -425,7 +429,10 @@ class SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTr
                   description,
                   r'SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInner',
                   'description'),
-              postedDate: postedDate,
+              postedDate: BuiltValueNullFieldError.checkNotNull(
+                  postedDate,
+                  r'SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInner',
+                  'postedDate'),
               amount: BuiltValueNullFieldError.checkNotNull(
                   amount,
                   r'SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInner',
@@ -434,10 +441,7 @@ class SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTr
                   directionNature,
                   r'SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInner',
                   'directionNature'),
-              status: BuiltValueNullFieldError.checkNotNull(
-                  status,
-                  r'SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInner',
-                  'status'),
+              status: BuiltValueNullFieldError.checkNotNull(status, r'SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPageTransactionsInner', 'status'),
               categoryId: categoryId,
               categoryName: categoryName,
               paymentData: _paymentData?.build(),

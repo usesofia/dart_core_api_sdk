@@ -161,9 +161,9 @@ class _$BankConnectionEntityAccountsInner
   @override
   final String name;
   @override
-  final JsonObject? createdAt;
+  final DateTime createdAt;
   @override
-  final JsonObject? updatedAt;
+  final DateTime updatedAt;
 
   factory _$BankConnectionEntityAccountsInner(
           [void Function(BankConnectionEntityAccountsInnerBuilder)? updates]) =>
@@ -181,8 +181,8 @@ class _$BankConnectionEntityAccountsInner
       required this.balance,
       required this.currencyCode,
       required this.name,
-      this.createdAt,
-      this.updatedAt})
+      required this.createdAt,
+      required this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         id, r'BankConnectionEntityAccountsInner', 'id');
@@ -204,6 +204,10 @@ class _$BankConnectionEntityAccountsInner
         currencyCode, r'BankConnectionEntityAccountsInner', 'currencyCode');
     BuiltValueNullFieldError.checkNotNull(
         name, r'BankConnectionEntityAccountsInner', 'name');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'BankConnectionEntityAccountsInner', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(
+        updatedAt, r'BankConnectionEntityAccountsInner', 'updatedAt');
   }
 
   @override
@@ -322,13 +326,13 @@ class BankConnectionEntityAccountsInnerBuilder
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  JsonObject? _updatedAt;
-  JsonObject? get updatedAt => _$this._updatedAt;
-  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   BankConnectionEntityAccountsInnerBuilder() {
     BankConnectionEntityAccountsInner._defaults(this);
@@ -389,8 +393,8 @@ class BankConnectionEntityAccountsInnerBuilder
             balance: BuiltValueNullFieldError.checkNotNull(balance, r'BankConnectionEntityAccountsInner', 'balance'),
             currencyCode: BuiltValueNullFieldError.checkNotNull(currencyCode, r'BankConnectionEntityAccountsInner', 'currencyCode'),
             name: BuiltValueNullFieldError.checkNotNull(name, r'BankConnectionEntityAccountsInner', 'name'),
-            createdAt: createdAt,
-            updatedAt: updatedAt);
+            createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankConnectionEntityAccountsInner', 'createdAt'),
+            updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankConnectionEntityAccountsInner', 'updatedAt'));
     replace(_$result);
     return _$result;
   }

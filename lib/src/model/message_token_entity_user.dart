@@ -4,7 +4,6 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
 import 'package:dart_core_api_sdk/src/model/user_entity_workspaces_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -42,7 +41,7 @@ abstract class MessageTokenEntityUser implements Built<MessageTokenEntityUser, M
   BuiltList<UserEntityWorkspacesInner>? get workspaces;
 
   @BuiltValueField(wireName: r'createdAt')
-  JsonObject? get createdAt;
+  DateTime get createdAt;
 
   MessageTokenEntityUser._();
 
@@ -102,9 +101,9 @@ class _$MessageTokenEntityUserSerializer implements PrimitiveSerializer<MessageT
       );
     }
     yield r'createdAt';
-    yield object.createdAt == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.createdAt,
-      specifiedType: const FullType.nullable(JsonObject),
+      specifiedType: const FullType(DateTime),
     );
   }
 
@@ -176,9 +175,8 @@ class _$MessageTokenEntityUserSerializer implements PrimitiveSerializer<MessageT
         case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.createdAt = valueDes;
           break;
         default:

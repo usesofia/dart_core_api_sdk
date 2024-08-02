@@ -25,9 +25,9 @@ class _$BankTransactionEntityCreditCardMetadata
   @override
   final String? billId;
   @override
-  final JsonObject? createdAt;
+  final DateTime createdAt;
   @override
-  final JsonObject? updatedAt;
+  final DateTime updatedAt;
 
   factory _$BankTransactionEntityCreditCardMetadata(
           [void Function(BankTransactionEntityCreditCardMetadataBuilder)?
@@ -44,13 +44,17 @@ class _$BankTransactionEntityCreditCardMetadata
       this.payeeMCC,
       this.cardNumber,
       this.billId,
-      this.createdAt,
-      this.updatedAt})
+      required this.createdAt,
+      required this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         id, r'BankTransactionEntityCreditCardMetadata', 'id');
     BuiltValueNullFieldError.checkNotNull(transactionId,
         r'BankTransactionEntityCreditCardMetadata', 'transactionId');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'BankTransactionEntityCreditCardMetadata', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(
+        updatedAt, r'BankTransactionEntityCreditCardMetadata', 'updatedAt');
   }
 
   @override
@@ -155,13 +159,13 @@ class BankTransactionEntityCreditCardMetadataBuilder
   String? get billId => _$this._billId;
   set billId(String? billId) => _$this._billId = billId;
 
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  JsonObject? _updatedAt;
-  JsonObject? get updatedAt => _$this._updatedAt;
-  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   BankTransactionEntityCreditCardMetadataBuilder() {
     BankTransactionEntityCreditCardMetadata._defaults(this);
@@ -213,8 +217,10 @@ class BankTransactionEntityCreditCardMetadataBuilder
             payeeMCC: payeeMCC,
             cardNumber: cardNumber,
             billId: billId,
-            createdAt: createdAt,
-            updatedAt: updatedAt);
+            createdAt: BuiltValueNullFieldError.checkNotNull(createdAt,
+                r'BankTransactionEntityCreditCardMetadata', 'createdAt'),
+            updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt,
+                r'BankTransactionEntityCreditCardMetadata', 'updatedAt'));
     replace(_$result);
     return _$result;
   }

@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **workspaceId** | **String** |  | 
 **providerTransactionId** | **String** |  | 
 **description** | **String** |  | 
-**postedDate** | [**JsonObject**](.md) |  | 
-**competencyDate** | [**JsonObject**](.md) |  | 
+**postedDate** | [**DateTime**](DateTime.md) |  | 
+**competencyDate** | [**DateTime**](DateTime.md) |  | 
 **amount** | **num** |  | 
 **directionNature** | **String** |  | 
 **status** | **String** |  | 

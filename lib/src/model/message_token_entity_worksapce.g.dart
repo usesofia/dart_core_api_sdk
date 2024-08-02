@@ -98,7 +98,7 @@ class _$MessageTokenEntityWorksapce extends MessageTokenEntityWorksapce {
   @override
   final UserEntityWorkspacesInnerPersonalSettings? personalSettings;
   @override
-  final JsonObject? createdAt;
+  final DateTime createdAt;
 
   factory _$MessageTokenEntityWorksapce(
           [void Function(MessageTokenEntityWorksapceBuilder)? updates]) =>
@@ -115,7 +115,7 @@ class _$MessageTokenEntityWorksapce extends MessageTokenEntityWorksapce {
       this.hybridSettings,
       this.businessSettings,
       this.personalSettings,
-      this.createdAt})
+      required this.createdAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         id, r'MessageTokenEntityWorksapce', 'id');
@@ -127,6 +127,8 @@ class _$MessageTokenEntityWorksapce extends MessageTokenEntityWorksapce {
         type, r'MessageTokenEntityWorksapce', 'type');
     BuiltValueNullFieldError.checkNotNull(
         creatorUserId, r'MessageTokenEntityWorksapce', 'creatorUserId');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'MessageTokenEntityWorksapce', 'createdAt');
   }
 
   @override
@@ -258,9 +260,9 @@ class MessageTokenEntityWorksapceBuilder
           UserEntityWorkspacesInnerPersonalSettingsBuilder? personalSettings) =>
       _$this._personalSettings = personalSettings;
 
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
   MessageTokenEntityWorksapceBuilder() {
     MessageTokenEntityWorksapce._defaults(this);
@@ -321,7 +323,8 @@ class MessageTokenEntityWorksapceBuilder
               hybridSettings: _hybridSettings?.build(),
               businessSettings: _businessSettings?.build(),
               personalSettings: _personalSettings?.build(),
-              createdAt: createdAt);
+              createdAt: BuiltValueNullFieldError.checkNotNull(
+                  createdAt, r'MessageTokenEntityWorksapce', 'createdAt'));
     } catch (_) {
       late String _$failedField;
       try {

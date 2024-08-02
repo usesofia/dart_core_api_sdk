@@ -6,7 +6,6 @@
 import 'package:dart_core_api_sdk/src/model/sync_bank_account_transactions_page_end_request_dto_bank_provider_transactions_page_transactions_inner_payment_data.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:dart_core_api_sdk/src/model/sync_bank_account_transactions_page_end_request_dto_bank_provider_transactions_page_transactions_inner_credit_card_metadata.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -34,7 +33,7 @@ abstract class SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransacti
   String get description;
 
   @BuiltValueField(wireName: r'postedDate')
-  JsonObject? get postedDate;
+  DateTime get postedDate;
 
   @BuiltValueField(wireName: r'amount')
   int get amount;
@@ -93,9 +92,9 @@ class _$SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPage
       specifiedType: const FullType(String),
     );
     yield r'postedDate';
-    yield object.postedDate == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.postedDate,
-      specifiedType: const FullType.nullable(JsonObject),
+      specifiedType: const FullType(DateTime),
     );
     yield r'amount';
     yield serializers.serialize(
@@ -180,9 +179,8 @@ class _$SyncBankAccountTransactionsPageEndRequestDtoBankProviderTransactionsPage
         case r'postedDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.postedDate = valueDes;
           break;
         case r'amount':

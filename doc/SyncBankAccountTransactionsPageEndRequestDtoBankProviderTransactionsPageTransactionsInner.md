@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **description** | **String** |  | 
-**postedDate** | [**JsonObject**](.md) |  | 
+**postedDate** | [**DateTime**](DateTime.md) |  | 
 **amount** | **int** |  | 
 **directionNature** | **String** |  | 
 **status** | **String** |  | 

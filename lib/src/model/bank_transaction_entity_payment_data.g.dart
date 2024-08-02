@@ -49,9 +49,9 @@ class _$BankTransactionEntityPaymentData
   @override
   final String? receiverReferenceId;
   @override
-  final JsonObject? createdAt;
+  final DateTime createdAt;
   @override
-  final JsonObject? updatedAt;
+  final DateTime updatedAt;
 
   factory _$BankTransactionEntityPaymentData(
           [void Function(BankTransactionEntityPaymentDataBuilder)? updates]) =>
@@ -78,13 +78,17 @@ class _$BankTransactionEntityPaymentData
       this.paymentMethod,
       this.referenceNumber,
       this.receiverReferenceId,
-      this.createdAt,
-      this.updatedAt})
+      required this.createdAt,
+      required this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         id, r'BankTransactionEntityPaymentData', 'id');
     BuiltValueNullFieldError.checkNotNull(
         transactionId, r'BankTransactionEntityPaymentData', 'transactionId');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'BankTransactionEntityPaymentData', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(
+        updatedAt, r'BankTransactionEntityPaymentData', 'updatedAt');
   }
 
   @override
@@ -285,13 +289,13 @@ class BankTransactionEntityPaymentDataBuilder
   set receiverReferenceId(String? receiverReferenceId) =>
       _$this._receiverReferenceId = receiverReferenceId;
 
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  JsonObject? _updatedAt;
-  JsonObject? get updatedAt => _$this._updatedAt;
-  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   BankTransactionEntityPaymentDataBuilder() {
     BankTransactionEntityPaymentData._defaults(this);
@@ -366,8 +370,10 @@ class BankTransactionEntityPaymentDataBuilder
             paymentMethod: paymentMethod,
             referenceNumber: referenceNumber,
             receiverReferenceId: receiverReferenceId,
-            createdAt: createdAt,
-            updatedAt: updatedAt);
+            createdAt: BuiltValueNullFieldError.checkNotNull(
+                createdAt, r'BankTransactionEntityPaymentData', 'createdAt'),
+            updatedAt: BuiltValueNullFieldError.checkNotNull(
+                updatedAt, r'BankTransactionEntityPaymentData', 'updatedAt'));
     replace(_$result);
     return _$result;
   }

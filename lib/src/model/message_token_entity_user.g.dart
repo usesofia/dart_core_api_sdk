@@ -20,7 +20,7 @@ class _$MessageTokenEntityUser extends MessageTokenEntityUser {
   @override
   final BuiltList<UserEntityWorkspacesInner>? workspaces;
   @override
-  final JsonObject? createdAt;
+  final DateTime createdAt;
 
   factory _$MessageTokenEntityUser(
           [void Function(MessageTokenEntityUserBuilder)? updates]) =>
@@ -33,7 +33,7 @@ class _$MessageTokenEntityUser extends MessageTokenEntityUser {
       this.passwordHash,
       required this.isRoot,
       this.workspaces,
-      this.createdAt})
+      required this.createdAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'MessageTokenEntityUser', 'id');
     BuiltValueNullFieldError.checkNotNull(
@@ -42,6 +42,8 @@ class _$MessageTokenEntityUser extends MessageTokenEntityUser {
         phone, r'MessageTokenEntityUser', 'phone');
     BuiltValueNullFieldError.checkNotNull(
         isRoot, r'MessageTokenEntityUser', 'isRoot');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'MessageTokenEntityUser', 'createdAt');
   }
 
   @override
@@ -124,9 +126,9 @@ class MessageTokenEntityUserBuilder
   set workspaces(ListBuilder<UserEntityWorkspacesInner>? workspaces) =>
       _$this._workspaces = workspaces;
 
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
   MessageTokenEntityUserBuilder() {
     MessageTokenEntityUser._defaults(this);
@@ -176,7 +178,8 @@ class MessageTokenEntityUserBuilder
               isRoot: BuiltValueNullFieldError.checkNotNull(
                   isRoot, r'MessageTokenEntityUser', 'isRoot'),
               workspaces: _workspaces?.build(),
-              createdAt: createdAt);
+              createdAt: BuiltValueNullFieldError.checkNotNull(
+                  createdAt, r'MessageTokenEntityUser', 'createdAt'));
     } catch (_) {
       late String _$failedField;
       try {

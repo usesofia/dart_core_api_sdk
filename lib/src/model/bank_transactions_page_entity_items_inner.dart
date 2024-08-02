@@ -9,7 +9,6 @@ import 'package:built_collection/built_collection.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_entity_category.dart';
 import 'package:dart_core_api_sdk/src/model/bank_connection_entity_accounts_inner.dart';
 import 'package:dart_core_api_sdk/src/model/bank_transaction_entity_payment_data.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -73,10 +72,10 @@ abstract class BankTransactionsPageEntityItemsInner implements Built<BankTransac
   String get description;
 
   @BuiltValueField(wireName: r'postedDate')
-  JsonObject? get postedDate;
+  DateTime get postedDate;
 
   @BuiltValueField(wireName: r'competencyDate')
-  JsonObject? get competencyDate;
+  DateTime get competencyDate;
 
   @BuiltValueField(wireName: r'amount')
   int get amount;
@@ -121,16 +120,16 @@ abstract class BankTransactionsPageEntityItemsInner implements Built<BankTransac
   BankTransactionEntityCreditCardMetadata? get creditCardMetadata;
 
   @BuiltValueField(wireName: r'ignoredAt')
-  JsonObject? get ignoredAt;
+  DateTime? get ignoredAt;
 
   @BuiltValueField(wireName: r'verifiedAt')
-  JsonObject? get verifiedAt;
+  DateTime? get verifiedAt;
 
   @BuiltValueField(wireName: r'createdAt')
-  JsonObject? get createdAt;
+  DateTime get createdAt;
 
   @BuiltValueField(wireName: r'updatedAt')
-  JsonObject? get updatedAt;
+  DateTime get updatedAt;
 
   BankTransactionsPageEntityItemsInner._();
 
@@ -196,14 +195,14 @@ class _$BankTransactionsPageEntityItemsInnerSerializer implements PrimitiveSeria
       specifiedType: const FullType(String),
     );
     yield r'postedDate';
-    yield object.postedDate == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.postedDate,
-      specifiedType: const FullType.nullable(JsonObject),
+      specifiedType: const FullType(DateTime),
     );
     yield r'competencyDate';
-    yield object.competencyDate == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.competencyDate,
-      specifiedType: const FullType.nullable(JsonObject),
+      specifiedType: const FullType(DateTime),
     );
     yield r'amount';
     yield serializers.serialize(
@@ -290,25 +289,25 @@ class _$BankTransactionsPageEntityItemsInnerSerializer implements PrimitiveSeria
       yield r'ignoredAt';
       yield serializers.serialize(
         object.ignoredAt,
-        specifiedType: const FullType.nullable(JsonObject),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
     if (object.verifiedAt != null) {
       yield r'verifiedAt';
       yield serializers.serialize(
         object.verifiedAt,
-        specifiedType: const FullType.nullable(JsonObject),
+        specifiedType: const FullType.nullable(DateTime),
       );
     }
     yield r'createdAt';
-    yield object.createdAt == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.createdAt,
-      specifiedType: const FullType.nullable(JsonObject),
+      specifiedType: const FullType(DateTime),
     );
     yield r'updatedAt';
-    yield object.updatedAt == null ? null : serializers.serialize(
+    yield serializers.serialize(
       object.updatedAt,
-      specifiedType: const FullType.nullable(JsonObject),
+      specifiedType: const FullType(DateTime),
     );
   }
 
@@ -392,17 +391,15 @@ class _$BankTransactionsPageEntityItemsInnerSerializer implements PrimitiveSeria
         case r'postedDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.postedDate = valueDes;
           break;
         case r'competencyDate':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.competencyDate = valueDes;
           break;
         case r'amount':
@@ -507,33 +504,31 @@ class _$BankTransactionsPageEntityItemsInnerSerializer implements PrimitiveSeria
         case r'ignoredAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.ignoredAt = valueDes;
           break;
         case r'verifiedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
+            specifiedType: const FullType.nullable(DateTime),
+          ) as DateTime?;
           if (valueDes == null) continue;
           result.verifiedAt = valueDes;
           break;
         case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.createdAt = valueDes;
           break;
         case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
           result.updatedAt = valueDes;
           break;
         default:

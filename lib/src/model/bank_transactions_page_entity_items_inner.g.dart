@@ -296,9 +296,9 @@ class _$BankTransactionsPageEntityItemsInner
   @override
   final String description;
   @override
-  final JsonObject? postedDate;
+  final DateTime postedDate;
   @override
-  final JsonObject? competencyDate;
+  final DateTime competencyDate;
   @override
   final int amount;
   @override
@@ -326,13 +326,13 @@ class _$BankTransactionsPageEntityItemsInner
   @override
   final BankTransactionEntityCreditCardMetadata? creditCardMetadata;
   @override
-  final JsonObject? ignoredAt;
+  final DateTime? ignoredAt;
   @override
-  final JsonObject? verifiedAt;
+  final DateTime? verifiedAt;
   @override
-  final JsonObject? createdAt;
+  final DateTime createdAt;
   @override
-  final JsonObject? updatedAt;
+  final DateTime updatedAt;
 
   factory _$BankTransactionsPageEntityItemsInner(
           [void Function(BankTransactionsPageEntityItemsInnerBuilder)?
@@ -349,8 +349,8 @@ class _$BankTransactionsPageEntityItemsInner
       required this.providerTransactionId,
       required this.originalDescription,
       required this.description,
-      this.postedDate,
-      this.competencyDate,
+      required this.postedDate,
+      required this.competencyDate,
       required this.amount,
       required this.directionNature,
       required this.status,
@@ -366,8 +366,8 @@ class _$BankTransactionsPageEntityItemsInner
       this.creditCardMetadata,
       this.ignoredAt,
       this.verifiedAt,
-      this.createdAt,
-      this.updatedAt})
+      required this.createdAt,
+      required this.updatedAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         id, r'BankTransactionsPageEntityItemsInner', 'id');
@@ -386,6 +386,10 @@ class _$BankTransactionsPageEntityItemsInner
     BuiltValueNullFieldError.checkNotNull(
         description, r'BankTransactionsPageEntityItemsInner', 'description');
     BuiltValueNullFieldError.checkNotNull(
+        postedDate, r'BankTransactionsPageEntityItemsInner', 'postedDate');
+    BuiltValueNullFieldError.checkNotNull(competencyDate,
+        r'BankTransactionsPageEntityItemsInner', 'competencyDate');
+    BuiltValueNullFieldError.checkNotNull(
         amount, r'BankTransactionsPageEntityItemsInner', 'amount');
     BuiltValueNullFieldError.checkNotNull(directionNature,
         r'BankTransactionsPageEntityItemsInner', 'directionNature');
@@ -395,6 +399,10 @@ class _$BankTransactionsPageEntityItemsInner
         legalNature, r'BankTransactionsPageEntityItemsInner', 'legalNature');
     BuiltValueNullFieldError.checkNotNull(
         tags, r'BankTransactionsPageEntityItemsInner', 'tags');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'BankTransactionsPageEntityItemsInner', 'createdAt');
+    BuiltValueNullFieldError.checkNotNull(
+        updatedAt, r'BankTransactionsPageEntityItemsInner', 'updatedAt');
   }
 
   @override
@@ -551,13 +559,13 @@ class BankTransactionsPageEntityItemsInnerBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
-  JsonObject? _postedDate;
-  JsonObject? get postedDate => _$this._postedDate;
-  set postedDate(JsonObject? postedDate) => _$this._postedDate = postedDate;
+  DateTime? _postedDate;
+  DateTime? get postedDate => _$this._postedDate;
+  set postedDate(DateTime? postedDate) => _$this._postedDate = postedDate;
 
-  JsonObject? _competencyDate;
-  JsonObject? get competencyDate => _$this._competencyDate;
-  set competencyDate(JsonObject? competencyDate) =>
+  DateTime? _competencyDate;
+  DateTime? get competencyDate => _$this._competencyDate;
+  set competencyDate(DateTime? competencyDate) =>
       _$this._competencyDate = competencyDate;
 
   int? _amount;
@@ -634,21 +642,21 @@ class BankTransactionsPageEntityItemsInnerBuilder
           BankTransactionEntityCreditCardMetadataBuilder? creditCardMetadata) =>
       _$this._creditCardMetadata = creditCardMetadata;
 
-  JsonObject? _ignoredAt;
-  JsonObject? get ignoredAt => _$this._ignoredAt;
-  set ignoredAt(JsonObject? ignoredAt) => _$this._ignoredAt = ignoredAt;
+  DateTime? _ignoredAt;
+  DateTime? get ignoredAt => _$this._ignoredAt;
+  set ignoredAt(DateTime? ignoredAt) => _$this._ignoredAt = ignoredAt;
 
-  JsonObject? _verifiedAt;
-  JsonObject? get verifiedAt => _$this._verifiedAt;
-  set verifiedAt(JsonObject? verifiedAt) => _$this._verifiedAt = verifiedAt;
+  DateTime? _verifiedAt;
+  DateTime? get verifiedAt => _$this._verifiedAt;
+  set verifiedAt(DateTime? verifiedAt) => _$this._verifiedAt = verifiedAt;
 
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
-  JsonObject? _updatedAt;
-  JsonObject? get updatedAt => _$this._updatedAt;
-  set updatedAt(JsonObject? updatedAt) => _$this._updatedAt = updatedAt;
+  DateTime? _updatedAt;
+  DateTime? get updatedAt => _$this._updatedAt;
+  set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
   BankTransactionsPageEntityItemsInnerBuilder() {
     BankTransactionsPageEntityItemsInner._defaults(this);
@@ -727,8 +735,8 @@ class BankTransactionsPageEntityItemsInnerBuilder
                   r'BankTransactionsPageEntityItemsInner',
                   'originalDescription'),
               description: BuiltValueNullFieldError.checkNotNull(description, r'BankTransactionsPageEntityItemsInner', 'description'),
-              postedDate: postedDate,
-              competencyDate: competencyDate,
+              postedDate: BuiltValueNullFieldError.checkNotNull(postedDate, r'BankTransactionsPageEntityItemsInner', 'postedDate'),
+              competencyDate: BuiltValueNullFieldError.checkNotNull(competencyDate, r'BankTransactionsPageEntityItemsInner', 'competencyDate'),
               amount: BuiltValueNullFieldError.checkNotNull(amount, r'BankTransactionsPageEntityItemsInner', 'amount'),
               directionNature: BuiltValueNullFieldError.checkNotNull(directionNature, r'BankTransactionsPageEntityItemsInner', 'directionNature'),
               status: BuiltValueNullFieldError.checkNotNull(status, r'BankTransactionsPageEntityItemsInner', 'status'),
@@ -744,8 +752,8 @@ class BankTransactionsPageEntityItemsInnerBuilder
               creditCardMetadata: _creditCardMetadata?.build(),
               ignoredAt: ignoredAt,
               verifiedAt: verifiedAt,
-              createdAt: createdAt,
-              updatedAt: updatedAt);
+              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankTransactionsPageEntityItemsInner', 'createdAt'),
+              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankTransactionsPageEntityItemsInner', 'updatedAt'));
     } catch (_) {
       late String _$failedField;
       try {

@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **payeeMCC** | **num** |  | [optional] 
 **cardNumber** | **String** |  | [optional] 
 **billId** | **String** |  | [optional] 
-**createdAt** | [**JsonObject**](.md) |  | 
-**updatedAt** | [**JsonObject**](.md) |  | 
+**createdAt** | [**DateTime**](DateTime.md) |  | 
+**updatedAt** | [**DateTime**](DateTime.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -20,7 +20,7 @@ class _$UserEntity extends UserEntity {
   @override
   final BuiltList<UserEntityWorkspacesInner>? workspaces;
   @override
-  final JsonObject? createdAt;
+  final DateTime createdAt;
 
   factory _$UserEntity([void Function(UserEntityBuilder)? updates]) =>
       (new UserEntityBuilder()..update(updates))._build();
@@ -32,12 +32,14 @@ class _$UserEntity extends UserEntity {
       this.passwordHash,
       required this.isRoot,
       this.workspaces,
-      this.createdAt})
+      required this.createdAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, r'UserEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(email, r'UserEntity', 'email');
     BuiltValueNullFieldError.checkNotNull(phone, r'UserEntity', 'phone');
     BuiltValueNullFieldError.checkNotNull(isRoot, r'UserEntity', 'isRoot');
+    BuiltValueNullFieldError.checkNotNull(
+        createdAt, r'UserEntity', 'createdAt');
   }
 
   @override
@@ -117,9 +119,9 @@ class UserEntityBuilder implements Builder<UserEntity, UserEntityBuilder> {
   set workspaces(ListBuilder<UserEntityWorkspacesInner>? workspaces) =>
       _$this._workspaces = workspaces;
 
-  JsonObject? _createdAt;
-  JsonObject? get createdAt => _$this._createdAt;
-  set createdAt(JsonObject? createdAt) => _$this._createdAt = createdAt;
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
   UserEntityBuilder() {
     UserEntity._defaults(this);
@@ -169,7 +171,8 @@ class UserEntityBuilder implements Builder<UserEntity, UserEntityBuilder> {
               isRoot: BuiltValueNullFieldError.checkNotNull(
                   isRoot, r'UserEntity', 'isRoot'),
               workspaces: _workspaces?.build(),
-              createdAt: createdAt);
+              createdAt: BuiltValueNullFieldError.checkNotNull(
+                  createdAt, r'UserEntity', 'createdAt'));
     } catch (_) {
       late String _$failedField;
       try {

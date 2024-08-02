@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **providerTransactionId** | **String** |  | 
 **originalDescription** | **String** |  | 
 **description** | **String** |  | 
-**postedDate** | [**JsonObject**](.md) |  | 
-**competencyDate** | [**JsonObject**](.md) |  | 
+**postedDate** | [**DateTime**](DateTime.md) |  | 
+**competencyDate** | [**DateTime**](DateTime.md) |  | 
 **amount** | **int** |  | 
 **directionNature** | **String** |  | 
 **status** | **String** |  | 
@@ -31,10 +31,10 @@ Name | Type | Description | Notes
 **paymentData** | [**BankTransactionEntityPaymentData**](BankTransactionEntityPaymentData.md) |  | [optional] 
 **creditCardMetadataId** | **String** |  | [optional] 
 **creditCardMetadata** | [**BankTransactionEntityCreditCardMetadata**](BankTransactionEntityCreditCardMetadata.md) |  | [optional] 
-**ignoredAt** | [**JsonObject**](.md) |  | [optional] 
-**verifiedAt** | [**JsonObject**](.md) |  | [optional] 
-**createdAt** | [**JsonObject**](.md) |  | 
-**updatedAt** | [**JsonObject**](.md) |  | 
+**ignoredAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**verifiedAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**createdAt** | [**DateTime**](DateTime.md) |  | 
+**updatedAt** | [**DateTime**](DateTime.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
