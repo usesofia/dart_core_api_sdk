@@ -18,7 +18,9 @@ import 'package:dart_core_api_sdk/src/model/assign_category_for_bank_transaction
 import 'package:dart_core_api_sdk/src/model/assign_legal_nature_for_bank_transactions_page_request_dto.dart';
 import 'package:dart_core_api_sdk/src/model/balance_point_result_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_account_entity.dart';
+import 'package:dart_core_api_sdk/src/model/bank_account_entity_bank_connection.dart';
 import 'package:dart_core_api_sdk/src/model/bank_accounts_balance_report_entity.dart';
+import 'package:dart_core_api_sdk/src/model/bank_accounts_balance_report_entity_bank_accounts_inner.dart';
 import 'package:dart_core_api_sdk/src/model/bank_accounts_balance_report_entity_items_inner.dart';
 import 'package:dart_core_api_sdk/src/model/bank_connection_entity.dart';
 import 'package:dart_core_api_sdk/src/model/bank_connection_entity_accounts_inner.dart';
@@ -112,7 +114,9 @@ part 'serializers.g.dart';
   AssignLegalNatureForBankTransactionsPageRequestDto,
   BalancePointResultEntity,
   BankAccountEntity,
+  BankAccountEntityBankConnection,
   BankAccountsBalanceReportEntity,
+  BankAccountsBalanceReportEntityBankAccountsInner,
   BankAccountsBalanceReportEntityItemsInner,
   BankConnectionEntity,
   BankConnectionEntityAccountsInner,

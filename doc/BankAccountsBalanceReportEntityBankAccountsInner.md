@@ -1,4 +1,4 @@
-# dart_core_api_sdk.model.BankAccountEntity
+# dart_core_api_sdk.model.BankAccountsBalanceReportEntityBankAccountsInner
 
 ## Load the model package
 ```dart

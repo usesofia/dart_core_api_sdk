@@ -6,8 +6,10 @@ doc/AssignLegalNatureForBankTransactionsPageRequestDto.md
 doc/AuthApi.md
 doc/BalancePointResultEntity.md
 doc/BankAccountEntity.md
+doc/BankAccountEntityBankConnection.md
 doc/BankAccountsApi.md
 doc/BankAccountsBalanceReportEntity.md
+doc/BankAccountsBalanceReportEntityBankAccountsInner.md
 doc/BankAccountsBalanceReportEntityItemsInner.md
 doc/BankConnectionEntity.md
 doc/BankConnectionEntityAccountsInner.md
@@ -134,7 +136,9 @@ lib/src/model/assign_category_for_bank_transactions_page_request_dto.dart
 lib/src/model/assign_legal_nature_for_bank_transactions_page_request_dto.dart
 lib/src/model/balance_point_result_entity.dart
 lib/src/model/bank_account_entity.dart
+lib/src/model/bank_account_entity_bank_connection.dart
 lib/src/model/bank_accounts_balance_report_entity.dart
+lib/src/model/bank_accounts_balance_report_entity_bank_accounts_inner.dart
 lib/src/model/bank_accounts_balance_report_entity_items_inner.dart
 lib/src/model/bank_connection_entity.dart
 lib/src/model/bank_connection_entity_accounts_inner.dart
@@ -223,4 +227,5 @@ lib/src/model/verify_phone_verification_code_request_dto.dart
 lib/src/model/workspace_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/bank_accounts_balance_report_entity_items_inner_test.dart
+test/bank_account_entity_bank_connection_test.dart
+test/bank_accounts_balance_report_entity_bank_accounts_inner_test.dart

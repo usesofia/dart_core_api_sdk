@@ -4,8 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:dart_core_api_sdk/src/model/bank_connection_entity_accounts_inner.dart';
 import 'package:dart_core_api_sdk/src/model/bank_accounts_balance_report_entity_items_inner.dart';
+import 'package:dart_core_api_sdk/src/model/bank_accounts_balance_report_entity_bank_accounts_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -22,7 +22,7 @@ abstract class BankAccountsBalanceReportEntity implements Built<BankAccountsBala
   BuiltList<BankAccountsBalanceReportEntityItemsInner> get items;
 
   @BuiltValueField(wireName: r'bankAccounts')
-  BuiltList<BankConnectionEntityAccountsInner> get bankAccounts;
+  BuiltList<BankAccountsBalanceReportEntityBankAccountsInner> get bankAccounts;
 
   BankAccountsBalanceReportEntity._();
 
@@ -55,7 +55,7 @@ class _$BankAccountsBalanceReportEntitySerializer implements PrimitiveSerializer
     yield r'bankAccounts';
     yield serializers.serialize(
       object.bankAccounts,
-      specifiedType: const FullType(BuiltList, [FullType(BankConnectionEntityAccountsInner)]),
+      specifiedType: const FullType(BuiltList, [FullType(BankAccountsBalanceReportEntityBankAccountsInner)]),
     );
   }
 
@@ -90,8 +90,8 @@ class _$BankAccountsBalanceReportEntitySerializer implements PrimitiveSerializer
         case r'bankAccounts':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(BankConnectionEntityAccountsInner)]),
-          ) as BuiltList<BankConnectionEntityAccountsInner>;
+            specifiedType: const FullType(BuiltList, [FullType(BankAccountsBalanceReportEntityBankAccountsInner)]),
+          ) as BuiltList<BankAccountsBalanceReportEntityBankAccountsInner>;
           result.bankAccounts.replace(valueDes);
           break;
         default:

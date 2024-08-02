@@ -11,7 +11,8 @@ class _$BankAccountsBalanceReportEntity
   @override
   final BuiltList<BankAccountsBalanceReportEntityItemsInner> items;
   @override
-  final BuiltList<BankConnectionEntityAccountsInner> bankAccounts;
+  final BuiltList<BankAccountsBalanceReportEntityBankAccountsInner>
+      bankAccounts;
 
   factory _$BankAccountsBalanceReportEntity(
           [void Function(BankAccountsBalanceReportEntityBuilder)? updates]) =>
@@ -74,12 +75,13 @@ class BankAccountsBalanceReportEntityBuilder
   set items(ListBuilder<BankAccountsBalanceReportEntityItemsInner>? items) =>
       _$this._items = items;
 
-  ListBuilder<BankConnectionEntityAccountsInner>? _bankAccounts;
-  ListBuilder<BankConnectionEntityAccountsInner> get bankAccounts =>
-      _$this._bankAccounts ??=
-          new ListBuilder<BankConnectionEntityAccountsInner>();
+  ListBuilder<BankAccountsBalanceReportEntityBankAccountsInner>? _bankAccounts;
+  ListBuilder<BankAccountsBalanceReportEntityBankAccountsInner>
+      get bankAccounts => _$this._bankAccounts ??=
+          new ListBuilder<BankAccountsBalanceReportEntityBankAccountsInner>();
   set bankAccounts(
-          ListBuilder<BankConnectionEntityAccountsInner>? bankAccounts) =>
+          ListBuilder<BankAccountsBalanceReportEntityBankAccountsInner>?
+              bankAccounts) =>
       _$this._bankAccounts = bankAccounts;
 
   BankAccountsBalanceReportEntityBuilder() {

@@ -1,4 +1,4 @@
-# dart_core_api_sdk.model.BankAccountEntity
+# dart_core_api_sdk.model.BankAccountEntityBankConnection
 
 ## Load the model package
 ```dart
@@ -9,16 +9,14 @@ import 'package:dart_core_api_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
-**bankConnectionId** | **String** |  | 
-**bankConnection** | [**BankAccountEntityBankConnection**](BankAccountEntityBankConnection.md) |  | 
-**provider** | **String** |  | 
-**providerAccountId** | **String** |  | 
-**type** | **String** |  | 
+**createdByUserId** | **String** |  | 
+**workspaceId** | **String** |  | 
 **enabled** | **bool** |  | 
-**number** | **String** |  | 
-**balance** | **int** |  | 
-**currencyCode** | **String** |  | 
-**name** | **String** |  | 
+**provider** | **String** |  | 
+**providerItemId** | **String** |  | 
+**historyRange** | **String** |  | 
+**connectorId** | **String** |  | 
+**connector** | [**BankConnectionEntityConnector**](BankConnectionEntityConnector.md) |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 

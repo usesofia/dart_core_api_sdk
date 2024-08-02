@@ -130,6 +130,8 @@ class _$BankAccountEntity extends BankAccountEntity {
   @override
   final String bankConnectionId;
   @override
+  final BankAccountEntityBankConnection bankConnection;
+  @override
   final BankAccountEntityProviderEnum provider;
   @override
   final String providerAccountId;
@@ -157,6 +159,7 @@ class _$BankAccountEntity extends BankAccountEntity {
   _$BankAccountEntity._(
       {required this.id,
       required this.bankConnectionId,
+      required this.bankConnection,
       required this.provider,
       required this.providerAccountId,
       required this.type,
@@ -171,6 +174,8 @@ class _$BankAccountEntity extends BankAccountEntity {
     BuiltValueNullFieldError.checkNotNull(id, r'BankAccountEntity', 'id');
     BuiltValueNullFieldError.checkNotNull(
         bankConnectionId, r'BankAccountEntity', 'bankConnectionId');
+    BuiltValueNullFieldError.checkNotNull(
+        bankConnection, r'BankAccountEntity', 'bankConnection');
     BuiltValueNullFieldError.checkNotNull(
         provider, r'BankAccountEntity', 'provider');
     BuiltValueNullFieldError.checkNotNull(
@@ -205,6 +210,7 @@ class _$BankAccountEntity extends BankAccountEntity {
     return other is BankAccountEntity &&
         id == other.id &&
         bankConnectionId == other.bankConnectionId &&
+        bankConnection == other.bankConnection &&
         provider == other.provider &&
         providerAccountId == other.providerAccountId &&
         type == other.type &&
@@ -222,6 +228,7 @@ class _$BankAccountEntity extends BankAccountEntity {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, bankConnectionId.hashCode);
+    _$hash = $jc(_$hash, bankConnection.hashCode);
     _$hash = $jc(_$hash, provider.hashCode);
     _$hash = $jc(_$hash, providerAccountId.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
@@ -241,6 +248,7 @@ class _$BankAccountEntity extends BankAccountEntity {
     return (newBuiltValueToStringHelper(r'BankAccountEntity')
           ..add('id', id)
           ..add('bankConnectionId', bankConnectionId)
+          ..add('bankConnection', bankConnection)
           ..add('provider', provider)
           ..add('providerAccountId', providerAccountId)
           ..add('type', type)
@@ -267,6 +275,12 @@ class BankAccountEntityBuilder
   String? get bankConnectionId => _$this._bankConnectionId;
   set bankConnectionId(String? bankConnectionId) =>
       _$this._bankConnectionId = bankConnectionId;
+
+  BankAccountEntityBankConnectionBuilder? _bankConnection;
+  BankAccountEntityBankConnectionBuilder get bankConnection =>
+      _$this._bankConnection ??= new BankAccountEntityBankConnectionBuilder();
+  set bankConnection(BankAccountEntityBankConnectionBuilder? bankConnection) =>
+      _$this._bankConnection = bankConnection;
 
   BankAccountEntityProviderEnum? _provider;
   BankAccountEntityProviderEnum? get provider => _$this._provider;
@@ -319,6 +333,7 @@ class BankAccountEntityBuilder
     if ($v != null) {
       _id = $v.id;
       _bankConnectionId = $v.bankConnectionId;
+      _bankConnection = $v.bankConnection.toBuilder();
       _provider = $v.provider;
       _providerAccountId = $v.providerAccountId;
       _type = $v.type;
@@ -349,28 +364,42 @@ class BankAccountEntityBuilder
   BankAccountEntity build() => _build();
 
   _$BankAccountEntity _build() {
-    final _$result = _$v ??
-        new _$BankAccountEntity._(
-            id: BuiltValueNullFieldError.checkNotNull(
-                id, r'BankAccountEntity', 'id'),
-            bankConnectionId: BuiltValueNullFieldError.checkNotNull(
-                bankConnectionId, r'BankAccountEntity', 'bankConnectionId'),
-            provider: BuiltValueNullFieldError.checkNotNull(
-                provider, r'BankAccountEntity', 'provider'),
-            providerAccountId: BuiltValueNullFieldError.checkNotNull(
-                providerAccountId, r'BankAccountEntity', 'providerAccountId'),
-            type: BuiltValueNullFieldError.checkNotNull(
-                type, r'BankAccountEntity', 'type'),
-            enabled: BuiltValueNullFieldError.checkNotNull(
-                enabled, r'BankAccountEntity', 'enabled'),
-            number: BuiltValueNullFieldError.checkNotNull(
-                number, r'BankAccountEntity', 'number'),
-            balance: BuiltValueNullFieldError.checkNotNull(
-                balance, r'BankAccountEntity', 'balance'),
-            currencyCode: BuiltValueNullFieldError.checkNotNull(currencyCode, r'BankAccountEntity', 'currencyCode'),
-            name: BuiltValueNullFieldError.checkNotNull(name, r'BankAccountEntity', 'name'),
-            createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankAccountEntity', 'createdAt'),
-            updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankAccountEntity', 'updatedAt'));
+    _$BankAccountEntity _$result;
+    try {
+      _$result = _$v ??
+          new _$BankAccountEntity._(
+              id: BuiltValueNullFieldError.checkNotNull(
+                  id, r'BankAccountEntity', 'id'),
+              bankConnectionId: BuiltValueNullFieldError.checkNotNull(
+                  bankConnectionId, r'BankAccountEntity', 'bankConnectionId'),
+              bankConnection: bankConnection.build(),
+              provider: BuiltValueNullFieldError.checkNotNull(
+                  provider, r'BankAccountEntity', 'provider'),
+              providerAccountId: BuiltValueNullFieldError.checkNotNull(
+                  providerAccountId, r'BankAccountEntity', 'providerAccountId'),
+              type: BuiltValueNullFieldError.checkNotNull(
+                  type, r'BankAccountEntity', 'type'),
+              enabled: BuiltValueNullFieldError.checkNotNull(
+                  enabled, r'BankAccountEntity', 'enabled'),
+              number: BuiltValueNullFieldError.checkNotNull(
+                  number, r'BankAccountEntity', 'number'),
+              balance: BuiltValueNullFieldError.checkNotNull(
+                  balance, r'BankAccountEntity', 'balance'),
+              currencyCode: BuiltValueNullFieldError.checkNotNull(currencyCode, r'BankAccountEntity', 'currencyCode'),
+              name: BuiltValueNullFieldError.checkNotNull(name, r'BankAccountEntity', 'name'),
+              createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, r'BankAccountEntity', 'createdAt'),
+              updatedAt: BuiltValueNullFieldError.checkNotNull(updatedAt, r'BankAccountEntity', 'updatedAt'));
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'bankConnection';
+        bankConnection.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'BankAccountEntity', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }
