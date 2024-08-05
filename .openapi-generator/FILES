@@ -227,5 +227,3 @@ lib/src/model/verify_phone_verification_code_request_dto.dart
 lib/src/model/workspace_entity.dart
 lib/src/serializers.dart
 pubspec.yaml
-test/bank_transaction_entity_account_bank_connection_test.dart
-test/bank_transaction_entity_account_test.dart

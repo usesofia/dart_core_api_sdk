@@ -72,8 +72,8 @@ Class | Method | HTTP request | Description
 [*AuthApi*](doc/AuthApi.md) | [**authControllerRefresh**](doc/AuthApi.md#authcontrollerrefresh) | **POST** /iam/auth/refresh | 
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSignInWithEmail**](doc/AuthApi.md#authcontrollersigninwithemail) | **POST** /iam/auth/sign-in/email | 
 [*AuthApi*](doc/AuthApi.md) | [**authControllerSignUpWithEmail**](doc/AuthApi.md#authcontrollersignupwithemail) | **POST** /iam/auth/sign-up/email | 
-[*AuthApi*](doc/AuthApi.md) | [**authControllerVerifyEmailVerificationCode**](doc/AuthApi.md#authcontrollerverifyemailverificationcode) | **GET** /iam/auth/email-verification-code/verify | 
-[*AuthApi*](doc/AuthApi.md) | [**authControllerVerifyPhoneVerificationCode**](doc/AuthApi.md#authcontrollerverifyphoneverificationcode) | **GET** /iam/auth/phone-verification-code/verify | 
+[*AuthApi*](doc/AuthApi.md) | [**authControllerVerifyEmailVerificationCode**](doc/AuthApi.md#authcontrollerverifyemailverificationcode) | **POST** /iam/auth/email-verification-code/verify | 
+[*AuthApi*](doc/AuthApi.md) | [**authControllerVerifyPhoneVerificationCode**](doc/AuthApi.md#authcontrollerverifyphoneverificationcode) | **POST** /iam/auth/phone-verification-code/verify | 
 [*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerActivate**](doc/BankAccountsApi.md#bankaccountscontrolleractivate) | **POST** /bank/accounts/{bankAccountId}/activate | 
 [*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerCreateOrUpdate**](doc/BankAccountsApi.md#bankaccountscontrollercreateorupdate) | **PUT** /bank/accounts | 
 [*BankAccountsApi*](doc/BankAccountsApi.md) | [**bankAccountsControllerCreateWorkspaceBalanceReport**](doc/BankAccountsApi.md#bankaccountscontrollercreateworkspacebalancereport) | **POST** /bank/workspaces/{workspaceId}/accounts/balance-report | 

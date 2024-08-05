@@ -736,7 +736,7 @@ class AuthApi {
   }) async {
     final _path = r'/iam/auth/email-verification-code/verify';
     final _options = Options(
-      method: r'GET',
+      method: r'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -803,7 +803,7 @@ class AuthApi {
   }) async {
     final _path = r'/iam/auth/phone-verification-code/verify';
     final _options = Options(
-      method: r'GET',
+      method: r'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
