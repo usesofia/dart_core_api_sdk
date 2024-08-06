@@ -319,7 +319,7 @@ class BankTransactionsApi {
     bool? considerIgnored,
     bool? considerAutomaticApplicationRelated,
     bool? considerInternalTransfers,
-    String? considerInvoiceRelated,
+    bool? considerInvoiceRelated,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -353,7 +353,7 @@ class BankTransactionsApi {
       if (considerIgnored != null) r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
       if (considerAutomaticApplicationRelated != null) r'considerAutomaticApplicationRelated': encodeQueryParameter(_serializers, considerAutomaticApplicationRelated, const FullType(bool)),
       if (considerInternalTransfers != null) r'considerInternalTransfers': encodeQueryParameter(_serializers, considerInternalTransfers, const FullType(bool)),
-      if (considerInvoiceRelated != null) r'considerInvoiceRelated': encodeQueryParameter(_serializers, considerInvoiceRelated, const FullType(String)),
+      if (considerInvoiceRelated != null) r'considerInvoiceRelated': encodeQueryParameter(_serializers, considerInvoiceRelated, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
@@ -441,7 +441,7 @@ class BankTransactionsApi {
     bool? considerIgnored,
     bool? considerAutomaticApplicationRelated,
     bool? considerInternalTransfers,
-    String? considerInvoiceRelated,
+    bool? considerInvoiceRelated,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -477,7 +477,7 @@ class BankTransactionsApi {
       if (considerIgnored != null) r'considerIgnored': encodeQueryParameter(_serializers, considerIgnored, const FullType(bool)),
       if (considerAutomaticApplicationRelated != null) r'considerAutomaticApplicationRelated': encodeQueryParameter(_serializers, considerAutomaticApplicationRelated, const FullType(bool)),
       if (considerInternalTransfers != null) r'considerInternalTransfers': encodeQueryParameter(_serializers, considerInternalTransfers, const FullType(bool)),
-      if (considerInvoiceRelated != null) r'considerInvoiceRelated': encodeQueryParameter(_serializers, considerInvoiceRelated, const FullType(String)),
+      if (considerInvoiceRelated != null) r'considerInvoiceRelated': encodeQueryParameter(_serializers, considerInvoiceRelated, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(

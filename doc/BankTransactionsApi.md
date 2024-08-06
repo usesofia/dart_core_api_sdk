@@ -170,7 +170,7 @@ final String maxCompetencyDatetime = maxCompetencyDatetime_example; // String |
 final bool considerIgnored = true; // bool | 
 final bool considerAutomaticApplicationRelated = true; // bool | 
 final bool considerInternalTransfers = true; // bool | 
-final String considerInvoiceRelated = considerInvoiceRelated_example; // String | 
+final bool considerInvoiceRelated = true; // bool | 
 
 try {
     final response = api.bankTransactionsControllerGetTotals(workspaceId, accountIds, categoryIds, tagIds, legalNatures, directionNatures, minPostedDatetime, maxPostedDatetime, minCompetencyDatetime, maxCompetencyDatetime, considerIgnored, considerAutomaticApplicationRelated, considerInternalTransfers, considerInvoiceRelated);
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
  **considerIgnored** | **bool**|  | [optional] 
  **considerAutomaticApplicationRelated** | **bool**|  | [optional] 
  **considerInternalTransfers** | **bool**|  | [optional] 
- **considerInvoiceRelated** | **String**|  | [optional] 
+ **considerInvoiceRelated** | **bool**|  | [optional] 
 
 ### Return type
 
@@ -239,7 +239,7 @@ final String maxCompetencyDatetime = maxCompetencyDatetime_example; // String |
 final bool considerIgnored = true; // bool | 
 final bool considerAutomaticApplicationRelated = true; // bool | 
 final bool considerInternalTransfers = true; // bool | 
-final String considerInvoiceRelated = considerInvoiceRelated_example; // String | 
+final bool considerInvoiceRelated = true; // bool | 
 
 try {
     final response = api.bankTransactionsControllerList(workspaceId, pageIndex, pageSize, accountIds, categoryIds, tagIds, legalNatures, directionNatures, minPostedDatetime, maxPostedDatetime, minCompetencyDatetime, maxCompetencyDatetime, considerIgnored, considerAutomaticApplicationRelated, considerInternalTransfers, considerInvoiceRelated);
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
  **considerIgnored** | **bool**|  | [optional] 
  **considerAutomaticApplicationRelated** | **bool**|  | [optional] 
  **considerInternalTransfers** | **bool**|  | [optional] 
- **considerInvoiceRelated** | **String**|  | [optional] 
+ **considerInvoiceRelated** | **bool**|  | [optional] 
 
 ### Return type
 
